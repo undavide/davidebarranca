@@ -1,0 +1,364 @@
+---
+id: 1920
+title: 'Dan Margulis&#8217; Modern Photoshop Color Workflow, beta-readers interview'
+date: 2013-04-03T22:32:02+01:00
+author: Davide Barranca
+excerpt: |
+  Color Correction Maestro Dan Margulis has just published a new book about his latest research, appropriately called "Modern Photoshop Color Workflow - The Quartertone Quandary, the PPW, and Other Ideas for Speedy Image Enhancement". I've asked to three beta-readers, who happens to be among my best friends and experienced colleagues, few questions about the book's topics. Read along, I've a special guest too!
+layout: post
+guid: http://www.davidebarranca.com/?p=1920
+permalink: /2013/04/dan-margulis-modern-color-workflow-book-interview/
+standard_seo_post_level_layout:
+  - ""
+standard_link_url_field:
+  - ""
+standard_seo_post_meta_description:
+  - |
+    Interview with the italian professionals involved in the beta reading of the latest Dan Margulis' book, "Modern Photoshop Color Workflow".
+image: /wp-content/uploads/2013/04/ModernPhotoshopColorWorkflow_cover.jpg
+categories:
+  - Photoshop
+tags:
+  - beta-reader
+  - book
+  - Dan Margulis
+  - interview
+  - Modern Photoshop Color Workflow
+---
+<div class="pf-content">
+  <p>
+    <span itemprop="about" itemscope itemtype="http://schema.org/Book"><span itemprop="about">Color Correction</span> Maestro <span itemprop="author">Dan Margulis</span> has just published a new book about his latest research, titled <span itemprop="name">&#8220;Modern Photoshop Color Workflow &#8211; The Quartertone Quandary, the PPW, and Other Ideas for Speedy Image Enhancement&#8221;</span>.
+    
+    <meta itemprop="thumbnailUrl" content="http://localhost:8888/wp-content/uploads/2013/04/ModernPhotoshopColorWorkflow_cover-150x188.jpg" />
+    
+    <meta itemprop="datePublished" content="2013-03-25" />
+    </p> 
+    
+    <p>
+      Waiting for it to be shipped in my country too (it&#8217;s for sale on <a title="Modern Photoshop Color Workflow on Amazon.com " href="http://www.amazon.com/Modern-Photoshop-Color-Workflow-Quartertone/dp/0988280809" target="_blank">Amazon.com</a> priced for a limited time <span itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span itemprop="price">64.95 USD
+      
+      <meta itemprop="priceCurrency" content="USD" />
+      </span></span>, and with a well deserved 
+      <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">average customer review rating of <span itemprop="ratingValue">5</span> stars</span>) I&#8217;ve asked to three beta-readers, who happens to be among my best friends and experienced colleagues, few questions about the book&#8217;s topics. Read along, I&#8217;ve a special guest too!<!--more-->
+    </p>
+    
+    <h2>
+      The Book
+    </h2>
+    
+    <p>
+      As it is in his style &#8211; and this one is no exception &#8211; Dan&#8217;s books have two apparently conflicting characteristics:
+    </p>
+    
+    <ol>
+      <li>
+        They&#8217;re somehow timeless: Dan teaches concepts first, then he elaborates the techniques exploiting them.
+      </li>
+      <li>
+        They&#8217;re deeply rooted in the years they&#8217;re published in: for instance, if early books were mostly CMYK oriented, a mixed approach has been adopted lately, when the consumer digital devices market changed the business.
+      </li>
+    </ol>
+    
+    <p>
+      So to speak, <em>the times, they are a-changing…</em> and Modern Photoshop Color Workflow shows their evolution &#8211; targeting professionals&#8217; need of impressive results in a fraction of the time (which equals a fraction of the money) that was the norm in the past. The fact that, in order to learn speed, you&#8217;ve got to go through 450 pages of dense writing should suggest that the theory is quite structured. Nevertheless, the effort is well rewarded.
+    </p>
+    
+    <p>
+      <a href="http://localhost:8888/wp-content/uploads/2013/04/ModernPhotoshopColorWorkflow_spread.jpg"><img class="aligncenter size-full wp-image-1924" alt="Modern Photoshop Color Workflow cover spread" src="http://localhost:8888/wp-content/uploads/2013/04/ModernPhotoshopColorWorkflow_spread.jpg" width="1200" height="700" itemprop="image" srcset="http://localhost:8888/wp-content/uploads/2013/04/ModernPhotoshopColorWorkflow_spread.jpg 1200w, http://localhost:8888/wp-content/uploads/2013/04/ModernPhotoshopColorWorkflow_spread-150x87.jpg 150w, http://localhost:8888/wp-content/uploads/2013/04/ModernPhotoshopColorWorkflow_spread-300x175.jpg 300w, http://localhost:8888/wp-content/uploads/2013/04/ModernPhotoshopColorWorkflow_spread-1024x597.jpg 1024w" sizes="(max-width: 1200px) 100vw, 1200px" /></a>
+    </p>
+    
+    <p>
+      The <a title="Modern Photoshop Color Workflow official website" href="http://www.moderncolorworkflow.com" target="_blank" itemprop="url">book website</a> is now online, with tons of free learning resources such as videos and articles. Dan&#8217;s driven the development of a dedicated <a title="PPW Panel" href="http://www.ledet.com/margulis/ppw" target="_blank">Photoshop PPW panel</a> (Picture Postcard Workflow) too, which is available for free, that multiply your control over the workflow and makes it even more powerful.</span>
+    </p>
+    
+    <h2>
+      The Beta-Readers
+    </h2>
+    
+    <p>
+      Dan&#8217;s been <em>using</em> beta-readers &#8211; i.e. a small group, about ten people strong, which is asked to read and comment the book as the author writes (and possibly re-write) it. Among the people who volunteered from all over the world, four italians were deeply involved in the project:
+    </p>
+    
+    <ul>
+      <li>
+        <span itemprop="contributor" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Giuliana Abbiati</span></span> [codename: <strong>GA</strong>, PPW panel software architect]. <a href="http://www.cromaline.net" target="_blank" itemprop="url">Creative mind</a>, Photoshop extensions coder.
+      </li>
+      <li>
+        <span itemprop="contributor" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Alessandro Bernardi</span> [codename: <strong>AB</strong>, beta-reader] Professional retoucher/colorist, founder of the <a href="http://www.psschool.it" target="_blank" itemprop="url">PS-School</a> project</span>, which manages Dan Margulis classes in Italy.
+      </li>
+      <li>
+        <span itemprop="contributor" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Daniele Di Stanio</span> [codename: <strong>DDS</strong>, coordinator]. Professional teacher and founder of <a href="http://www.alberodelcolore.com" target="_blank" itemprop="url">Albero del Colore</a>, a unique web-based learning experience of comparative color correction challenges.</span>
+      </li>
+      <li>
+        <span itemprop="contributor" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Marco Olivotto</span> [codename: <strong>MO</strong>, beta-reader]. Professional teacher and founder of the <a href="http://www.colorcorrectioncampus.com" target="_blank" itemprop="url">Color Correction Campus</a> project</span>, ACT-like classes in Italy.
+      </li>
+    </ul>
+    
+    <h2>
+      Interviews
+    </h2>
+    
+    <p>
+      Due to work commitments she&#8217;s been engaged into, Giuliana couldn&#8217;t join the interview &#8211; but I plan to ask her questions on a dedicated blogpost when she&#8217;ll be back.
+    </p>
+    
+    <h3>
+      PPW Evolution
+    </h3>
+    
+    <p>
+      <strong>DB: I&#8217;ve bought my first Margulis&#8217; &#8220;Professional Photoshop&#8221; book in the year 2000 and I&#8217;ve followed him ever since, so I&#8217;ve a pretty decent grasp on how much, and in which direction, Dan&#8217;s techniques have evolved over time. To my eyes, it looks like this latest workflow marks both a discontinuity from the past and makes a good point being &#8220;fit&#8221; &#8211; if I may use this darwinian terminology &#8211; in our times: that&#8217;s probably because the image business, and as a consequence our jobs, have changed dramatically in few years. Could you tell us how Dan has shaped, refined, and systematized it since you&#8217;ve heard about it first?</strong>
+    </p>
+    
+    <p>
+      <strong>AB:</strong> Well, you’d surprised, but I often use a gastronomic example to explain the PPW because it’s like cooking a good recipe. Let’s say that you want to prepare a simple dish like “pasta alla carbonara”. Usually you start with very basic steps. The first ones are very important and will decide the success of your final dish. I mean that if you put the olive oil and then you burn too much the bacon, then your pasta will be too much “alla carbonara” and won’t be good. But also the middle steps are very important and so on.
+    </p>
+    
+    <p>
+      <img class="alignleft size-full wp-image-1928" alt="Alessandro Bernardi" src="http://localhost:8888/wp-content/uploads/2013/04/AB.jpg" width="214" height="300" srcset="http://localhost:8888/wp-content/uploads/2013/04/AB.jpg 214w, http://localhost:8888/wp-content/uploads/2013/04/AB-150x210.jpg 150w" sizes="(max-width: 214px) 100vw, 214px" />We have learned in Dan’s classes, many “cooking” techniques, but when you have to correct an image, that is the moment in which you have to take some decisions. You must decide how much contrast, how much color or sharpening you want to add to an image, and the way you cook and mix all these ingredients can lead to a success or a failure.
+    </p>
+    
+    <p>
+      Here comes the first key word: the <em>workflow</em>. My first impact with the Picture Postcard Workflow was in November 2007, in Dan’s Advanced class in Toronto. I had already attended his regular class in March, and Dan had presented the <span itemprop="mentions">PPW</span> in his first shape at Photoshop World one month later, in April. So, we were the first group of students that had the opportunity to test the workflow during the class. I was prepared to learn many new techniques, but when Dan showed the PPW in its first version, I was surprised to see how quickly he took all the critical decisions about luminosity and color that produced a good image in few minutes.
+    </p>
+    
+    <p>
+      The secret behind was the workflow: he had summarized all his knowledge and techniques in an effective workflow to allow good results in a matter of minutes. We began to experiment with the first PPW and the final results were pretty good, compared to the traditional workflows.
+    </p>
+    
+    <p>
+      The idea of splitting all the steps in three main ones (eliminating the color problems, optimizing luminosity and contrast, boosting colors) is simple, and simple ideas work in almost all cases. Once you have solved color issues, think of how liberating is to work on luminosity and contrast. You can concentrate only on that and decide better how to optimize them. And then the final touch, the color boost. And it was only the beginning.
+    </p>
+    
+    <p>
+      On my personal side I had the opportunity to see how the PPW evolved during the years as I have arranged all Dan’s classes here in Italy from 2009. So I’ve seen how it was introduced in his regular classes and how was taught in the advanced ones as well. In 2009 the workflow was already improved and some steps were revised to improve both speed and quality. After only one year, in 2010, we recorded what is currently <a title="PPW Video" href="http://www.psschool.it/picture_postcard_workflow.php" target="_blank">the most complete video resource about the PPW</a>. While we were taping I saw that the workflow was improved again, introducing some actions to speed up steps like the Color Boost and the Sharpening. After that came one of the most important additions: the <span itemprop="mentions">Man from Mars</span> technique became “Modern” as it was done through a simple action that required a rough selection to guide Photoshop for introducing color variation.
+    </p>
+    
+    <p>
+      Then the Skin Desaturation action was added to pre-desaturate images featuring faces and Dan’s attention moved on other aspects like the False Profile and, later, the Hemholtz Kohlrausch effect.
+    </p>
+    
+    <p>
+      This leads to the second key word: <em>evolution</em>. Thanks to Dan’s luminous mind and experimentation, and to the students’ feedbacks, the workflow was evolving. At that point was clear that having all these cooking, er, enhancing techniques inside the workflow required a better kind of automation. Dan had already started to work on a panel to put together all the actions. But I’m proud to say that it was during his first Italian advanced class, that what we call now the “PPW Team” came into the light.
+    </p>
+    
+    <p>
+      <img class="alignright size-medium wp-image-1931" alt="PPW panel V3" src="http://localhost:8888/wp-content/uploads/2013/04/PPW_panel_v3_final-206x300.jpg" width="206" height="300" srcset="http://localhost:8888/wp-content/uploads/2013/04/PPW_panel_v3_final-206x300.jpg 206w, http://localhost:8888/wp-content/uploads/2013/04/PPW_panel_v3_final-150x218.jpg 150w, http://localhost:8888/wp-content/uploads/2013/04/PPW_panel_v3_final.jpg 279w" sizes="(max-width: 206px) 100vw, 206px" />Giuliana Abbiati was involved in programming a <span itemprop="mentions"><a href="http://www.ledet.com/margulis/ppw" itemprop="url">PPW panel</a></span> and we worked hardly on the layout to build a flexible and comfortable tool that could speed up the entire workflow and make it more reliable. We decided to put all the documentation written by Dan inside the panel and put also some additional articles written by me and one of the best Italian color correction teachers, aka Marco Olivotto. And even the panel had evolved, thanks to Giuliana’s constant efforts. She introduced scripting through which the panel can intelligently recognize the color profile of your image when you apply the false Profile technique, not to talk about the options that expand the possibilities of the Bigger Hammer, Modern Man from Mars, Color Boost and Sharpening actions. Now I would say that the PPW would not be the same without this panel, but the panel won’t be as it is without Dan’s improvements to the workflow.
+    </p>
+    
+    <p>
+      And what about the workflow itself? I would say that in six years the key points are still the same (three main steps) but we have more options for specific cases and the speed has been improved around 40%, not to talk about the flexibility. This fits much better the current market’s needing, that is speed, quality and reliable results. Dan’s current approach has changed accordingly, moving from spending a lot of time on a single correction, to making different versions of the same image in the same amount of time, and blend their best part together.
+    </p>
+    
+    <p>
+      This was not possible in 2007 when PPW was born, as all the techniques had to be made by hand. But now, with the power of automation and a fully tested workflow, it’s feasible and can give impressive, though unpredicted, results.
+    </p>
+    
+    <h3>
+      Teaching the Workflow
+    </h3>
+    
+    <p>
+      <strong>DB: Color correction has always implied a broad knowledge of principles and techniques, which experience reinforces. Yet, if you see Dan working with the PPW panel, it looks like a fast and apparently effortless process. Since you&#8217;ve been teaching the PPW in your own advanced classes, what are the pitfalls from the educator&#8217;s point of view? How have you managed to pass the workflow&#8217;s concepts to your students effectively?</strong>
+    </p>
+    
+    <p>
+      <strong>MO:</strong> Short reply: I hope my efforts were effective, but I must say it&#8217;s not as easy as it may seem.
+    </p>
+    
+    <p>
+      More in detail, I&#8217;ve had three different approaches: a rather formal one, in a <a title="Marco Olivotto - Teacher In a Box video" href="http://www.teacher-in-a-box.it/videocorsi/photoshop-correzione-colore-estrema-per-fotografie-ad-alto-impatto-visivo_210.html" target="_blank">video-course</a>, where techniques must be made very clear to a potentially dishomogeneous audience; a rather &#8220;idealistic&#8221; one, in the class, where I may easily see if people are following or not, but usally attempt to deliver the philosophy of the workflow rather than every detail of the technique; finally, an informal approach, in workshops, where I have two to four hours to explain what the whole thing is about and show some examples.
+    </p>
+    
+    <p>
+      <img class="alignright size-medium wp-image-1935" alt="Marco Olivotto" src="http://localhost:8888/wp-content/uploads/2013/04/MarcoOlivotto-300x255.jpg" width="300" height="255" srcset="http://localhost:8888/wp-content/uploads/2013/04/MarcoOlivotto-300x255.jpg 300w, http://localhost:8888/wp-content/uploads/2013/04/MarcoOlivotto-150x127.jpg 150w, http://localhost:8888/wp-content/uploads/2013/04/MarcoOlivotto.jpg 570w" sizes="(max-width: 300px) 100vw, 300px" />Let me start from the bottom, i.e. workshops. The first time I attempted to explain the PPW in such a situation I failed flat. It was my fault &#8211; I had 90 minutes and that wasn&#8217;t even enough to scratch the surface. Moreover, it was at an exhibition, and these are known for utter chaos and a necessity to be quick and entertaining. I later discovered that I could throw together some decent ideas in a couple of hours, and finally settled on the fact that four hours are enough to cover the workflow in detail. What level of detail strictly depends on who is listening, though. In classes it&#8217;s easier: the people who attend already know the basics of color correction and can therefore can grasp ideas quickly. To me, the core of the PPW is perception: I try to always keep that light on when I explain things, because less experienced practitioners may think that the Helmholtz-Kohlrausch effect is a commodity rather than something intrinsic to our vision. All in all, the feedback has been good, so far. Finally, video-course: nobody ever complained, and the approach was not to do a set of images from start to finish, individually, but go through four images together, side by side and step by step. I thought that this approach might easily show when something is needed and when something is not needed at all.
+    </p>
+    
+    <p>
+      It must also be said that the PPW is highly volatile and somewhat dangerous, in general. It is a short workflow, but it takes time to see through it. I recently launched a small contest on facebook, and about 30 different versions of the same picture arrived. I think at least 15 of them, maybe more, either went through the PPW or something which seriously attempted to mime it. My own version, done in about five minutes, was better than most but definitely worse than at least two made by students of mine. The basic difference was that they cobbled together a way to get better luminosity than mine, and there was no discussion in the end: their approach was better. In this sense, PPW is very democratic: if someone finds a way to correctly enhance an important aspect of the picture and others won&#8217;t, his chances of winning in a comparison go skyrocketing.
+    </p>
+    
+    <h3>
+      The PPW from the user&#8217;s POV
+    </h3>
+    
+    <p>
+      <strong>DB: The book thoroughly describes each step of a workflow that can branches into several sub-strategies, and Dan&#8217;s worked hard to systematize the PPW up to a great extent. What is, in your opinion, the degree of freedom that a retoucher using the PPW has? Color correction challenges you&#8217;re leading on <a title="Albero Del Colore" href="http://www.alberodelcolore.com" target="_blank">your website</a> expose you to a large amount of versions of the same image made by different operators; from this peculiar position, what are as a teacher your suggestions to really master the PPW?</strong>
+    </p>
+    
+    <p>
+      <strong>DDS:</strong> Ciao Davide, and many greetings to your reader, it is a pleasure for me to be a guest in not-another-news-blog, but a website that goes in-depth and try to analyze what is around us. My experience as a color correction teacher is telling me that we have a big issue here.
+    </p>
+    
+    <p>
+      Let me explain, first, that the word &#8220;freedom&#8221; that is a good word in every professional field is not something you can easily use in same sentence with &#8220;<em>workflow</em>&#8220;. A workflow, is a series of steps that we code to avoid over-thinking, to cut out mistakes or just to save time. So how can we have a workflow that grants us freedom? The answer is surprisingly easy, and as a teacher I&#8217;m just delighted Dan chose this way. The PPW entrusts the user to make the right calls, at the right time, on the right images. Of course we can now see, also, the major drawback. Uneducated users will produce poor results. Also we should split our professional field in two areas, users who already know Margulis methods, and all others. Let&#8217;s not be worried with the first, let&#8217;s focus on the latter category.
+    </p>
+    
+    <p>
+      Our world is ruled by usually wrong ideas about Photoshop, and how to use it. But we need to be fair and understand that 100% users today starts learning it on web. Youtube videos, text and images tutorials. But teaching is a complicated matter, so large efforts are wasted on explain tools buttons, and showing where these tools are. But (at first) users grow their Photoshop culture like this, someone tells them where tools are, how to use it and what they do. But no one is telling me <em>when</em> they should use these or on what images (or why). And let&#8217;s not be mistaken, even this is already a huge effort for users, many of which are (for example) photographers that should be outside shooting.
+    </p>
+    
+    <p style="text-align: center;">
+      <img class="size-full wp-image-1927 aligncenter" alt="Daniele Di Stanio" src="http://localhost:8888/wp-content/uploads/2013/04/DDS.jpg" width="1024" height="683" srcset="http://localhost:8888/wp-content/uploads/2013/04/DDS.jpg 1024w, http://localhost:8888/wp-content/uploads/2013/04/DDS-150x100.jpg 150w, http://localhost:8888/wp-content/uploads/2013/04/DDS-300x200.jpg 300w" sizes="(max-width: 1024px) 100vw, 1024px" />
+    </p>
+    
+    <p>
+      Now imagine what happens when these users meet the PPW. At first they are lost. They are overwhelmed by possibilities, by the numbers of tools. Also, we&#8217;re talking about new users who are not so strong in image evaluation, so they will probably fail in choosing the correct approach many times. But this, this right here, is where the PPW really shines. And this is the reason why I think that Mr. Margulis invented something that no one ever did in the technique history.
+    </p>
+    
+    <p>
+      This is not (in my humble opinion) a workflow. This is a <em>workflow&#8217;s framework</em>. Dan built a subset of tools and instruments, and arranged them in a &#8220;progressive&#8221; way. All of this, more, is built on a software like Photoshop, that allows professional to work with degrees of freedom you can&#8217;t find anywhere else. Extremely beautiful, and very dangerous. I spent several months researching about how to teach the PPW. Not an easy matter, but I found just the best recipe. And it was so simple, I&#8217;m now feeling really stupid. Me and you, Davide, had the chance in seeing Dan start teaching PPW, it was 2009, and it was a stripped down version, it was the foundation of what it is today. Then we saw Dan adding tools, and refining procedures, and let me say we also saw Dan adapting everything to the latests technologies. I will start recording my videos that teaches PPW in the coming weeks, and my approach, the only sensible to me as of now (please note I&#8217;m talking about teaching to students that never heard about PPW) is to split my lessons in three categories, where in the first you get the core training, few essentials procedures. And built on top of that in the following two sessions, adding tools, degrees of freedom, choices and mistakes. And you can see my answer is complex like PPW, a workflow, well to me a workflow&#8217;s framework, that will allow each and every professional to adapt it to their own work, not the opposite we see every day.
+    </p>
+    
+    <h3>
+      New Frontiers
+    </h3>
+    
+    <p>
+      <strong>Dan&#8217;s been putting great effort constantly fine-tuning the workflow, and the Modern Color Workflow book will probably become a new standard in the field. Where do you think color correction research should point to, now? What&#8217;s the topic that interests you the most, given the PPW as the starting point?</strong>
+    </p>
+    
+    <p>
+      <strong>AB:</strong> This kind of question is always difficult to answer as we don’t know how the market will evolve in the next years, and how fast. From my point of view I see two main areas in which I’ll try to invest my time and experimentation on color correction.
+    </p>
+    
+    <p>
+      The first comes from my current specific field (retouch for advertising and fashion) and is creative color. What I think is one of the biggest Dan’s teachings is the way of controling images through the numbers, beyond the thought that is behind his techniques.
+    </p>
+    
+    <p>
+      The advantage of having a full workflow like the PPW with so many automated steps, gives me the chance to experiment with only one or few steps to get creative results. For example, using the Bigger Hammer without doing it manually, can lead to some unconventional results on portraits. And with so many options available in the panel, I can concentrate on the final result and do my experiments very quickly.
+    </p>
+    
+    <p>
+      Or, instead, think about the MMM action. We normally uses it to introduce color variation and make images more pleasant. But if you know how to use it, you can try the MMM on some “finished” images intentionally to introduce color shifts. This kind of results can be suitable for the creative market in which conventional colors are sacrificed in favor of the client’s personal taste to have particular color looks. Is what I call “Creative MMM” and thanks to Dan, we have now a dedicated video on the <a title="Modern Photoshop Color Workflow" href="http://www.moderncolorworkflow.com" target="_blank">book’s website</a>.
+    </p>
+    
+    <p>
+      <img class="aligncenter size-full wp-image-1934" alt="Alessandro Bernardi & Dan Margulis" src="http://localhost:8888/wp-content/uploads/2013/04/AlessandroBernardi_DanMargulis.jpg" width="1024" height="680" srcset="http://localhost:8888/wp-content/uploads/2013/04/AlessandroBernardi_DanMargulis.jpg 1024w, http://localhost:8888/wp-content/uploads/2013/04/AlessandroBernardi_DanMargulis-150x99.jpg 150w, http://localhost:8888/wp-content/uploads/2013/04/AlessandroBernardi_DanMargulis-300x199.jpg 300w" sizes="(max-width: 1024px) 100vw, 1024px" />
+    </p>
+    
+    <p>
+      The second area is one in which I’m currently investing the biggest amount of time: color correction for video. Now that Photoshop allows to manage decently video files, I can use some of Dan’s techniques for correcting colors in videos. It’s not so easy to realize and you must find some workarounds to make them suitable for videos, but it can produce stunning results. Enhancing a video through the use of channels, or some adjustment layers in combination with blending modes and smart filters is amazing and fascinating at the same time. And the nice thing is that you can integrate the possibilities offered by the PPW in Photoshop with the typical editing softwares like Adobe Premiere and After Effects.
+    </p>
+    
+    <p>
+      That’s why I think that the key word in the next years will be “integration”. Who knows, maybe in the near future we’ll be able to have a version of the PPW suitable for videos with a panel like the current one that could be switched to video mode.
+    </p>
+    
+    <p>
+      But without Dan’s techniques this could have never been possible to me. And, definitely, <em>this</em> is the most important key point.
+    </p>
+    
+    <hr />
+    
+    <p>
+      <strong>DDS:</strong> You&#8217;re not going to like my answer. I think our major shift in these last years, is that we&#8217;re struggling to understand exactly <em>how</em> our images are built or composed.
+    </p>
+    
+    <p>
+      The hardware&#8217;s processes are a bit out of hands, and RAW processors are forcing us to steep learning curve. We can say that our world is getting quite complicate out of Photoshop, something I think we were not needing. I sometimes ask myself if there is more to research on color correction, not an answer I found, yet. Studying with Dan shifted many things, I started researching on perception, for example. But I also found out that many times what we need is not really something entirely new, but to be able to define, or to find a name, for something already exists.
+    </p>
+    
+    <p>
+      <img class="size-medium wp-image-1936 alignleft" alt="Daniele Di Stanio" src="http://localhost:8888/wp-content/uploads/2013/04/DanieleDiStanio-204x300.jpg" width="204" height="300" srcset="http://localhost:8888/wp-content/uploads/2013/04/DanieleDiStanio-204x300.jpg 204w, http://localhost:8888/wp-content/uploads/2013/04/DanieleDiStanio-150x220.jpg 150w, http://localhost:8888/wp-content/uploads/2013/04/DanieleDiStanio.jpg 388w" sizes="(max-width: 204px) 100vw, 204px" />As a collective I think the best way to move forward is to take several steps backwards. To drop for good the &#8220;tutorial&#8221; way, if it is not carefully inserted in a honest context. To stop believing everyone can be a teacher.
+    </p>
+    
+    <p>
+      We&#8217;re blessed to live an era where Masters are still here, and still working for us, with us. I foresee the real direction for PPW, though, will not be pursued as a collective, but as singles. We have all the tools, and we have the chance to make those ours. As teachers the real challenge we&#8217;re up to is to successfully teach PPW. Something that happens, to me, not when the user understood all steps and is able to repeat those, but when feels confident in changing, experimenting and move the PPW forward to new directions. Thank you Davide. And many thanks to Dan Margulis that is, and will always be, my Maestro.
+    </p>
+    
+    <hr />
+    
+    <p>
+      <strong>MO:</strong> I think I understand about the future of color correction as much as I understand about women; that is, next to nothing.
+    </p>
+    
+    <p>
+      Seriously? The push is towards a fast workflow: with few notable exceptions, the time when one could spend 30 or 40 minutes per image are gone. Entire fields of photography rely on software like Lightroom, which is fine, but it has no layers, which makes it a completely different universe from the one I am used to live in. Add to it that some visible personalities are seemingly preaching that the only button missing in ACR is a large red thing labeled &#8220;PRINT!!!&#8221;, and you have the raw picture (sorry for the pun). I wonder if they ever realized how ridiculously bad the ACR preview can be (question: can one <em>really</em> sharpen in ACR? evaluate banding? subtle color changes?), but that&#8217;s it.
+    </p>
+    
+    <p>
+      <img class="aligncenter size-full wp-image-1942" alt="Marco Olivotto, Giuliana Abbiati, Dan Margulis" src="http://localhost:8888/wp-content/uploads/2013/04/GA_MO_DB1.jpg" width="570" height="314" srcset="http://localhost:8888/wp-content/uploads/2013/04/GA_MO_DB1.jpg 570w, http://localhost:8888/wp-content/uploads/2013/04/GA_MO_DB1-150x82.jpg 150w, http://localhost:8888/wp-content/uploads/2013/04/GA_MO_DB1-300x165.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" />
+    </p>
+    
+    <p>
+      A few things I&#8217;d love to see in Photoshop could possibly jeopardize some of the steps in the PPW, but I guess the PPW is more a philosophy than a settled bunch of advanced techniques: the proof of this is that some (possible) steps were almost completely erased, like Multiply in Lab (which I liked a lot, by the way). Overlay in Lab is off, Man from Mars has evolved in a totally different direction than the original&#8230; so, who can say where it may go?
+    </p>
+    
+    <p>
+      I can tell you what I would love to see in Photoshop CS-whatever, with whatever > 6, but I think this is going to remain a dream:
+    </p>
+    
+    <ul>
+      <li>
+        Better blurring algorithms, able to catch the borders of an object without being as clumsy as Surface Blur.
+      </li>
+      <li>
+        A revamped approach towards Unsharp Mask.
+      </li>
+      <li>
+        The ability to actually edit whatever color profile, 3D LUT&#8217;s included.
+      </li>
+      <li>
+        Better tools for local contrast: there is a huge literature out there, and seemingly someone is inventing something new everyday, but these tools never seem to get in the right place (but they may appear in ACR &#8211; guess why?)
+      </li>
+      <li>
+        Better demosaicing algorithms in ACR.
+      </li>
+      <li>
+        Some serious noise reduction.
+      </li>
+    </ul>
+    
+    <p>
+      As far as I am concerned, 3D and the Timeline are more than enough as they are, thank you. When I think of the possibility that in the next release someone may decide to add the opportunity to uhm, hey!, edit CSS natively in Photoshop, my gut reaction is to play &#8220;Radio Clash&#8221; at outrageously loud volume, and cry like a baby at the immortal verse: &#8220;Please save US, not the whales!&#8221;
+    </p>
+    
+    <h2>
+      A Very Special Guest
+    </h2>
+    
+    <p>
+      I&#8217;ve reached <span itemprop="contributor" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Dan Margulis</span>
+      
+      <meta itemprop="image" content="http://localhost:8888/wp-content/uploads/2013/04/DanMargulis-241x300.jpg" />
+      </span> few days before the book pressrun, and he&#8217;s been so kind (which is not a surprise at all) to answer my question too. Codename: 
+      <strong>DM</strong>.
+    </p>
+    
+    <p>
+      <strong><img class="alignright" alt="Dan Margulis" src="http://localhost:8888/wp-content/uploads/2013/04/DanMargulis-241x300.jpg" width="241" height="300" />DB: Over the years the techniques you&#8217;ve been advocating have evolved, because the (shared) knowledge in the color correction field has progressed. What looks bizarre to my eyes is that the PPW, as the latest application of a constantly advancing theory, makes use of tools (False profiles, Lab, masks, blending modes, etc.) that were available since Photoshop CS, i.e. 10 years ago. Of course we now use them in a modern way. Technologically speaking, the only real new, distinctive PPW tool (that fully exploit its power) is the panel &#8211; that is a tool that somehow you&#8217;ve built yourself &#8211; with Giuliana&#8217;s help. That&#8217;s paradoxical in my opinion. Image processing technology has evolved too, and at a high pace &#8211; but somehow these two lines didn&#8217;t cross too much (or not at all? May one provocatively state that Color Correction has progressed in spite of, and not thanks to, technology?). How is it, in your opinion &#8211; if you agree to some extent with the above? What should we look at now, as a generation of people willing to contribute to the evolution of the applied color theory?</strong>
+    </p>
+    
+    <p>
+      <strong>DM:</strong> One can provocatively state that Berlusconi should be the next pope, or whatever else one likes. However, both propositions are equally invalid.
+    </p>
+    
+    <p>
+      It&#8217;s true that Photoshop has stagnated. The development of hardware has not, and that has made all the difference. I don&#8217;t have the price lists for 10 and 15 years ago, but for the book I looked at 18 years ago. At that time, RAM was 5.000 times as expensive as today. This was a bargain compared to hard disks, which were 10,000 times as expensive. I can&#8217;t figure out the difference in computing speed, but it&#8217;s at least 500x and maybe 1000x.
+    </p>
+    
+    <p>
+      Something like the PPW sharpening action couldn&#8217;t possibly have run under these circumstances. First, we would not have the scratch space it requires, and second it would take an hour or so to sharpen a single image.
+    </p>
+    
+    <p>
+      Similarly, the signature move of the PPW, the MMM action, makes use of a command that nobody has heard of, Equalize. People haven&#8217;t heard of even though it has existed for more than 20 years, because in the early 1990s experts like myself dismissed it as useless. And we were right&#8211;it <em>was</em> useless at that time, because to get any benefit requires a complicated procedure that would have brought computers of that time to their knees.
+    </p>
+    
+    <p>
+      But probably the major impact of technology is communications. Without google, and without the means of transmitting large pictures cheaply, the development of knowledge is deterred because people interested in the subject can&#8217;t find and share information conveniently. My last three books were immeasurably better than anything previously because they were supported by international groups of beta readers. It wasn&#8217;t possible ten years ago, and my earlier books were published with many misconceptions for want of adequate feedback.
+    </p>
+    
+    <p>
+      You yourself represent the new order. Your ideas are out there for people to look at, discuss, and improve. It&#8217;s easier than ever for users to reject vendor hype and find their own best solutions. So I expect that the field will continue to evolve rapidly, and I hope you will be one of the big reasons!
+    </p>
+    
+    <p>
+      <em>[Thank so much to all the friends that made this possible! Dan&#8217;s picture is © J.Scarponi]</em>
+    </p></div> 
+    
+    <!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare_id="mys_shareit" myshare_url="http://localhost:8888/2013/04/dan-margulis-modern-color-workflow-book-interview/" myshare_title="Dan Margulis&#8217; Modern Photoshop Color Workflow, beta-readers interview" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
+    
+    <img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /></a> <!-- Share-Widget Button END -->

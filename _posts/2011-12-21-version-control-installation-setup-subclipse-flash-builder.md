@@ -1,0 +1,313 @@
+---
+id: 543
+title: 'Version Control in Flash Builder: installation and setup'
+date: 2011-12-21T23:19:55+01:00
+author: Davide Barranca
+excerpt: "Subclipse plugin adds the Subversion support (a Version Control System) to the Flash Builder 4.6 IDE. I'll show you how to install it and create a repository on a local disc."
+layout: post
+guid: http://www.davidebarranca.com/?p=543
+permalink: /2011/12/version-control-installation-setup-subclipse-flash-builder/
+standard_seo_post_level_layout:
+  - ""
+standard_link_url_field:
+  - ""
+standard_seo_post_meta_description:
+  - "Subclipse plugin adds the Subversion support to Flash Builder 4.6. I'll show you how to install it and create a repository on a local disc."
+categories:
+  - Coding
+tags:
+  - Flash Builder
+  - Subclipse
+  - Subversion
+  - svn
+  - Version Control
+---
+<div class="pf-content">
+  <p>
+    <img class="size-full wp-image-544 alignright" style="border-width: 0px;" alt="Folders" src="http://localhost:8888/wp-content/uploads/2011/12/Folders.png" width="204" height="216" srcset="http://localhost:8888/wp-content/uploads/2011/12/Folders.png 204w, http://localhost:8888/wp-content/uploads/2011/12/Folders-150x158.png 150w" sizes="(max-width: 204px) 100vw, 204px" />&#8220;<em>Save As</em>&#8221; is the very first, basic, form of Version Control &#8211; the business of tracking and/or reverting the changes you made to (code, images, files) over time. You know:
+  </p>
+  
+  <ul>
+    <li>
+      BlogPost.txt
+    </li>
+    <li>
+      BlogPost_V1.txt
+    </li>
+    <li>
+      BlogPost_V2_Links.txt
+    </li>
+    <li>
+      BlogPost_Final.txt
+    </li>
+    <li>
+      BlogPost_Final_OK.txt
+    </li>
+  </ul>
+  
+  <p>
+    Etc. The image at the right is a screenshot of my actual <a title="ALCE - Advanced Local Contrast Enhancer for Photoshop" href="http://www.bigano.com/ALCE" target="_blank">ALCE</a> development main folder, so I&#8217;ve decided to adopt some kind of Version Control, namely: <a title="Subclipse" href="http://subclipse.tigris.org/" target="_blank">Subclipse</a> (a <a title="Subversion" href="http://subversion.apache.org/" target="_blank">Subversion</a> support provider plugin) for Flash Builder 4.6.
+  </p>
+  
+  <p>
+    Since I&#8217;m still learning, I will show here my findings from the point of view of a single developer, hoping that this first post (about Installation and setup of a local repository) will save some time to those who, like me, are beginning to put some order to the chaos.
+  </p>
+  
+  <p>
+    <!--more-->
+  </p>
+  
+  <h2>
+    Subversion and Subclipse
+  </h2>
+  
+  <p>
+    First if you&#8217;re new to the topic (as I am), please have a look to this well done and super clear <a title="A Visual Guide to Version Control" href="http://betterexplained.com/articles/a-visual-guide-to-version-control/" target="_blank">Visual Guide to Version Control System (VCS)</a>. It explains the concept of revision control and its terminology.
+  </p>
+  
+  <blockquote>
+    <p>
+      Basically, in the centralized (and not distributed) paradigm you set a <em>Repository: </em>i.e. a folder (either local or on a remote server) that contains a reference copy of your code. You <em>Check Out</em> (download it) on your machine in order to be able to edit/change it; you <em>Synchronize with the Repository </em>and then <em>Commit</em> (or <em>Check In</em>, i.e. upload) the changes. The system keeps track of the changes (as a sum of differences), sets revision numbers, can backup and restore; moreover, you may <em>Branch</em> the code &#8211; that is: duplicate the <em>Trunk</em> to experiment new implementations &#8211; and eventually <em>Merge</em> them back on the main line. Plus a whole bunch of advanced features that I don&#8217;t understand yet.
+    </p>
+  </blockquote>
+  
+  <p>
+    A very common Version Control System is <a title="Subversion" href="http://subversion.apache.org/" target="_blank">Subversion</a>, also known as svn (the command line tool). If you wanna hear bad bad things about Subversion, <a title="Linus Torvalds on Git" href="http://www.youtube.com/watch?v=4XpnKHJAok8" target="_blank">Linus Torvalds is a great source</a>. And if you wonder why choose Subclipse and not Subversive as an Eclipse (and Flash Builder) plugin, there&#8217;s a <a title="SVN plugins for Eclipse" href="http://stackoverflow.com/questions/61320/svn-plugins-for-eclipse-subclipse-vs-subversive" target="_blank">Q&A worth reading here</a>.
+  </p>
+  
+  <h2>
+    Installation
+  </h2>
+  
+  <p>
+    In Flash Builder (I use 4.6 but afaik the same applies for 4.5 and 4.0), go to the menu:
+  </p>
+  
+  <p>
+    <em>Help &#8211; Eclipse Marketplace</em>
+  </p>
+  
+  <p>
+    and in the following window search for &#8220;Subclipse&#8221;:
+  </p>
+  
+  <p>
+    <img class="alignnone  wp-image-551" style="border-width: 0px;" alt="Eclipse Marketplace" src="http://localhost:8888/wp-content/uploads/2011/12/EclipseMarketplace.png" width="570" height="497" srcset="http://localhost:8888/wp-content/uploads/2011/12/EclipseMarketplace.png 609w, http://localhost:8888/wp-content/uploads/2011/12/EclipseMarketplace-150x130.png 150w, http://localhost:8888/wp-content/uploads/2011/12/EclipseMarketplace-300x261.png 300w" sizes="(max-width: 570px) 100vw, 570px" />
+  </p>
+  
+  <p>
+    Click the Install button and restart Flash Builder. It seems enough to consider Subclipse installed.
+  </p>
+  
+  <h2>
+    Setup of a Local Repository
+  </h2>
+  
+  <p>
+    Many of the tutorials I&#8217;ve read at this point show you how to setup a <em>repo</em> (we know the <em>lingo</em> now ;-)) on a remote server. Thanks, but I don&#8217;t collaborate with people who are in need to sync, and I don&#8217;t even know how to setup a remote server to put my small repo into. I just need a folder on my local disk. After a couple of unsuccessful tries (one of which involved MAMP), I&#8217;ve understood that the process is:
+  </p>
+  
+  <ol>
+    <li>
+      Locate a folder and tell svn (not Subclipse: svn, the command line tool) to create a new repository.
+    </li>
+    <li>
+      Point Subclipse to it.
+    </li>
+  </ol>
+  
+  <p>
+    It makes sense &#8211; but if you&#8217;re new to Version Control Systems you&#8217;d stare at Flash Builder (as I did) thinking: how on earth I&#8217;m supposed to do it?
+  </p>
+  
+  <h3>
+    Create a repository
+  </h3>
+  
+  <p>
+    First, Subclipse cannot create a repository.
+  </p>
+  
+  <p>
+    Let&#8217;s say that I want my &#8220;repo&#8221; folder (that will contain repositories) to be in my Home &#8211; I&#8217;ll use Finder to create that &#8220;repo&#8221; new folder as I would do for any other folder I need. Then, I must open the Terminal:
+  </p>
+  
+  <p style="text-align: center;">
+    <img class="aligncenter size-full wp-image-565" style="border-width: 0px;" alt="Terminal" src="http://localhost:8888/wp-content/uploads/2011/12/Terminal.png" width="570" height="137" srcset="http://localhost:8888/wp-content/uploads/2011/12/Terminal.png 570w, http://localhost:8888/wp-content/uploads/2011/12/Terminal-150x36.png 150w, http://localhost:8888/wp-content/uploads/2011/12/Terminal-300x72.png 300w" sizes="(max-width: 570px) 100vw, 570px" />
+  </p>
+  
+  <p>
+    And type a couple of commands:
+  </p>
+  
+  <pre>cd repo</pre>
+  
+  <p>
+    This first line is to enter into the &#8220;repo&#8221; folder I&#8217;ve just created in Finder.
+  </p>
+  
+  <pre>svnadmin create ALCE_repo</pre>
+  
+  <p>
+    This second line tells svn (the command line tool) to create, within the &#8220;repo&#8221; folder, an actual repository called &#8220;ALCE_repo&#8221; (that will contain my ALCE project).
+  </p>
+  
+  <div id="attachment_567" style="width: 312px" class="wp-caption alignright">
+    <img aria-describedby="caption-attachment-567" class="size-full wp-image-567 " alt="Repository structure" src="http://localhost:8888/wp-content/uploads/2011/12/Repository.png" width="302" height="110" srcset="http://localhost:8888/wp-content/uploads/2011/12/Repository.png 302w, http://localhost:8888/wp-content/uploads/2011/12/Repository-150x54.png 150w, http://localhost:8888/wp-content/uploads/2011/12/Repository-300x109.png 300w" sizes="(max-width: 302px) 100vw, 302px" />
+    
+    <p id="caption-attachment-567" class="wp-caption-text">
+      This is what a repository looks like
+    </p>
+  </div>
+  
+  <p>
+    That is: &#8220;repo&#8221; will contain as many different repositories as the projects I need to take control of. If you look at the command&#8217;s output, you&#8217;ll see several new files.
+  </p>
+  
+  <h3>
+    Fill a repository with things
+  </h3>
+  
+  <p>
+    We now have a brand new repo: the second step is to fill it with a Flash Builder project (either a CS extension, or any other Flash/AIR thing you&#8217;re coding).
+  </p>
+  
+  <div id="attachment_573" style="width: 117px" class="wp-caption alignleft">
+    <a href="http://localhost:8888/wp-content/uploads/2011/12/Perspective.png" target="_blank"><img aria-describedby="caption-attachment-573" class=" wp-image-573" alt="SVN Repository Exploring Perspective" src="http://localhost:8888/wp-content/uploads/2011/12/Perspective-150x209.png" width="107" height="150" srcset="http://localhost:8888/wp-content/uploads/2011/12/Perspective-150x209.png 150w, http://localhost:8888/wp-content/uploads/2011/12/Perspective-214x300.png 214w, http://localhost:8888/wp-content/uploads/2011/12/Perspective.png 237w" sizes="(max-width: 107px) 100vw, 107px" /></a>
+    
+    <p id="caption-attachment-573" class="wp-caption-text">
+      SVN Perspective
+    </p>
+  </div>
+  
+  <p>
+    In Flash Builder, from the menu <em>Window &#8211; Open Perspective &#8211; Other&#8230;</em> browse to <em>SVN Repository Exploring</em>.
+  </p>
+  
+  <p>
+    This perspective gives you access to the SVN Repositories panel, which should be empty. To make Flash Builder aware that a repository exists, right click inside the panel and select <em>New &#8211; Repository Location&#8230;</em> then in the following window, please enter:
+  </p>
+  
+  <pre>file:///Users/[your user]/repo/ALCE_repo</pre>
+  
+  <p>
+    <img class="aligncenter size-full wp-image-580" alt="Add SVN Repository" src="http://localhost:8888/wp-content/uploads/2011/12/AddSVNRepository.png" width="568" height="216" srcset="http://localhost:8888/wp-content/uploads/2011/12/AddSVNRepository.png 568w, http://localhost:8888/wp-content/uploads/2011/12/AddSVNRepository-150x57.png 150w, http://localhost:8888/wp-content/uploads/2011/12/AddSVNRepository-300x114.png 300w" sizes="(max-width: 568px) 100vw, 568px" />
+  </p>
+  
+  <p>
+    Please notice that &#8220;<em>file:///&#8221;</em> has a triple forward slash.
+  </p>
+  
+  <p>
+    <img class="alignright size-full wp-image-596" alt="Created Repository" src="http://localhost:8888/wp-content/uploads/2011/12/CreatedRepo.png" width="282" height="87" srcset="http://localhost:8888/wp-content/uploads/2011/12/CreatedRepo.png 282w, http://localhost:8888/wp-content/uploads/2011/12/CreatedRepo-150x46.png 150w" sizes="(max-width: 282px) 100vw, 282px" />
+  </p>
+  
+  <p>
+    A new location should be now set, as you see in the screenshot on the right &#8211; that is: Flash Builder knows about a repository location.
+  </p>
+  
+  <p>
+    <a href="http://localhost:8888/wp-content/uploads/2011/12/ShareProject.png" target="_blank"><img class="alignleft size-thumbnail wp-image-598" style="border-width: 0px;" alt="Share Project" src="http://localhost:8888/wp-content/uploads/2011/12/ShareProject-150x186.png" width="150" height="186" srcset="http://localhost:8888/wp-content/uploads/2011/12/ShareProject-150x186.png 150w, http://localhost:8888/wp-content/uploads/2011/12/ShareProject-241x300.png 241w, http://localhost:8888/wp-content/uploads/2011/12/ShareProject.png 650w" sizes="(max-width: 150px) 100vw, 150px" /></a>The next and final step is to link a project to this repo.
+  </p>
+  
+  <p>
+    The Subclipse commands in the Flash Builder IDE belongs to a menu item called <em>Team</em>. To access it, switch back to your usual Flex or Extension Builder perspective, in the <em>Package Explorer</em> panel right click on the project you want to add to the repository, then select:
+  </p>
+  
+  <p>
+    <em>Team &#8211; Share</em>
+  </p>
+  
+  <p>
+    In the following window select <em>SVN</em> as the repository type:
+  </p>
+  
+  <p>
+    <img class="aligncenter size-full wp-image-612" style="border-width: 0px;" alt="Share Project - SVN" src="http://localhost:8888/wp-content/uploads/2011/12/ShareProject_SVN.png" width="527" height="417" srcset="http://localhost:8888/wp-content/uploads/2011/12/ShareProject_SVN.png 527w, http://localhost:8888/wp-content/uploads/2011/12/ShareProject_SVN-150x118.png 150w, http://localhost:8888/wp-content/uploads/2011/12/ShareProject_SVN-300x237.png 300w" sizes="(max-width: 527px) 100vw, 527px" />
+  </p>
+  
+  <p>
+    then <em>Use existing repository location:</em>
+  </p>
+  
+  <p>
+    <img class="aligncenter size-full wp-image-613" style="border-width: 0px;" alt="Share Project - select repository" src="http://localhost:8888/wp-content/uploads/2011/12/ShareProject_SelRep.png" width="527" height="417" srcset="http://localhost:8888/wp-content/uploads/2011/12/ShareProject_SelRep.png 527w, http://localhost:8888/wp-content/uploads/2011/12/ShareProject_SelRep-150x118.png 150w, http://localhost:8888/wp-content/uploads/2011/12/ShareProject_SelRep-300x237.png 300w" sizes="(max-width: 527px) 100vw, 527px" />
+  </p>
+  
+  <p>
+    and finally <em>Use project name as folder name:</em>
+  </p>
+  
+  <p>
+    <img class="aligncenter size-full wp-image-614" style="border-width: 0px;" alt="Share Project - select name" src="http://localhost:8888/wp-content/uploads/2011/12/ShareProject_SelName.png" width="527" height="417" srcset="http://localhost:8888/wp-content/uploads/2011/12/ShareProject_SelName.png 527w, http://localhost:8888/wp-content/uploads/2011/12/ShareProject_SelName-150x118.png 150w, http://localhost:8888/wp-content/uploads/2011/12/ShareProject_SelName-300x237.png 300w" sizes="(max-width: 527px) 100vw, 527px" />
+  </p>
+  
+  <p>
+    Mind you, the Console will report a red warning saying that:
+  </p>
+  
+  <pre><span style="color: #ff0000;">Filesystem has no item svn: URL 'file:///Users/Davide/repo/ALCE_repo/myTest' non-existent in that revision</span></pre>
+  
+  <p>
+    Which you can safely ignore (the following command, mkdir, creates the missing myTest folder). According to the documentation, now the whole project should be committed &#8211; that is: all the files copied to the repository.
+  </p>
+  
+  <p>
+    <a href="http://localhost:8888/wp-content/uploads/2011/12/Commit.png" target="_blank"><img class="alignleft size-thumbnail wp-image-618" alt="Commit" src="http://localhost:8888/wp-content/uploads/2011/12/Commit-150x150.png" width="150" height="150" srcset="http://localhost:8888/wp-content/uploads/2011/12/Commit-150x150.png 150w, http://localhost:8888/wp-content/uploads/2011/12/Commit-300x300.png 300w, http://localhost:8888/wp-content/uploads/2011/12/Commit.png 800w" sizes="(max-width: 150px) 100vw, 150px" /></a>To me, this doesn&#8217;t happen, so I&#8217;ve to do it manually; right click on the project (myTest in this case, see the screenshot on the right) in the <em>Package Explorer</em> panel and choose:
+  </p>
+  
+  <p>
+    <em>Team &#8211; Commit</em>
+  </p>
+  
+  <p>
+    In the window that will pop up, you&#8217;re able to select which resource send to the repository &#8211; setting a custom comment too:
+  </p>
+  
+  <p>
+    <img class="aligncenter size-full wp-image-624" style="border-width: 0px;" alt="Commit and comment" src="http://localhost:8888/wp-content/uploads/2011/12/CommitComment.png" width="568" height="500" srcset="http://localhost:8888/wp-content/uploads/2011/12/CommitComment.png 568w, http://localhost:8888/wp-content/uploads/2011/12/CommitComment-150x132.png 150w, http://localhost:8888/wp-content/uploads/2011/12/CommitComment-300x264.png 300w" sizes="(max-width: 568px) 100vw, 568px" />
+  </p>
+  
+  <p>
+    That&#8217;s all! To check that everything went fine, you should notice several log messages in the console.
+  </p>
+  
+  <p>
+    <img class="alignleft size-full wp-image-627" alt="Repository content" src="http://localhost:8888/wp-content/uploads/2011/12/RepositoryContent.png" width="309" height="190" srcset="http://localhost:8888/wp-content/uploads/2011/12/RepositoryContent.png 309w, http://localhost:8888/wp-content/uploads/2011/12/RepositoryContent-150x92.png 150w, http://localhost:8888/wp-content/uploads/2011/12/RepositoryContent-300x184.png 300w" sizes="(max-width: 309px) 100vw, 309px" />Also, go to the <em>SVN repositories</em> panel and click the refresh button (the two yellow arrows) in order to display the changes. The repository now contains the myTest folder and all the project files.
+  </p>
+  
+  <p>
+    Now that the binding is done, you can start using the Version Control System &#8211; that is, code freely and <em>Commit</em> each time you want to set a new revision; revisions can be found later in the <em>History</em> panel.
+  </p>
+  
+  <p>
+    I hope this summary has been of some help for you. In the next post of this series, I&#8217;ll try to dig a little bit deeper (I&#8217;m still learning!) around Tags, Branches, revisions, etc. so stay tuned!
+  </p>
+  
+  <h2>
+    Useful links
+  </h2>
+  
+  <p>
+    I&#8217;ve collected a good amount of links while writing this post. Some of them may help you too:
+  </p>
+  
+  <ul>
+    <li>
+      <a title="SVN book" href="http://svnbook.red-bean.com/en/1.7/svn-book.pdf" target="_blank">Version Control with Subversion</a>, pdf version of the Subversion manual (also published by O&#8217;Reilly).
+    </li>
+    <li>
+      Guy Rutemberg on <a title="Creating Local SVN Repository" href="http://www.guyrutenberg.com/2007/10/29/creating-local-svn-repository-home-repository/" target="_blank">Creating Local SVN Repository</a> (with svn command line tools).
+    </li>
+    <li>
+      IBM howto about <a title="Subversion and Eclipse" href="http://www.ibm.com/developerworks/opensource/library/os-ecl-subversion/#resources" target="_blank">Subversion and Eclipse</a>.
+    </li>
+    <li>
+      North Carolina State University on <a title="Subclipse for Configuration Management" href="http://agile.csc.ncsu.edu/SEMaterials/tutorials/subclipse/index.html#section1_0" target="_blank">Subclipse for Configuration Management</a>.
+    </li>
+  </ul>
+</div>
+
+<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="http://localhost:8888/2011/12/version-control-installation-setup-subclipse-flash-builder/" myshare\_title="Version Control in Flash Builder: installation and setup" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
+
+<img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->

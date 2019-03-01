@@ -1,0 +1,352 @@
+---
+id: 429
+title: Adobe al bivio
+date: 2011-11-26T02:03:46+01:00
+author: Davide Barranca
+excerpt: Adobe Systems è ad un bivio, la sua situazione finanziaria impone una svolta radicale. Cosa sta per accadere? Come cambierà, di conseguenza, il nostro lavoro?
+layout: post
+guid: http://www.davidebarranca.com/?p=429
+permalink: /2011/11/adobe-al-bivio-quali-cambiamenti-ci-aspettano/
+image: /wp-content/uploads/2011/11/Crossroad.jpg
+categories:
+  - Photoshop @it
+---
+<div class="pf-content">
+  <p>
+    <img src="http://localhost:8888/wp-content/uploads/2011/11/Crossroad.jpg" alt="Crossroad @123rf.com - licensed to Davide Barranca" title="Crossroad @123rf.com - licensed to Davide Barranca" width="570" height="234" class="aligncenter size-full wp-image-491" style="border: 0px; margin-bottom:10px" srcset="http://localhost:8888/wp-content/uploads/2011/11/Crossroad.jpg 570w, http://localhost:8888/wp-content/uploads/2011/11/Crossroad-150x61.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/Crossroad-300x123.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" />Adobe sta cambiando rotta in maniera risoluta, veloce e, nell’opinione di molti, discutibile. Te ne sei accorto? Te ne accorgerai molto presto.
+  </p>
+  
+  <p>
+    <strong style="background:#ffd300; color:#000000"> AVVERTENZA! </strong><br /> Questo post contiene dati pubblicamente disponibili e molte considerazioni che ho raccolto da colleghi, clienti, utenti professionali e non, direttamente o partecipando a forum e usergroup internazionali. E’ territorio di critiche, speculazioni e informazioni poco note &#8211; leggi a tuo rischio e pericolo 🙂
+  </p>
+  
+  <p>
+    <!--more-->
+  </p>
+  
+  <p>
+    Lavoro con Photoshop dalla versione 5.0, l’ultima licenza che ho acquistato è della Master Collection CS5. Negli anni la mia attitudine verso Adobe &#8211; Photoshop in particolare &#8211; è cambiata: da entusiasta coi paraocchi sono diventato più critico e pessimista. Questo lungo post vuole dimostrare che non è (solo) senilità incipiente &#8211; se mi vuoi seguire, partiamo dalle ultime, sorprendenti, novità e vediamo dove portano.
+  </p>
+  
+  <h2>
+    Notizie ufficiali
+  </h2>
+  
+  <p>
+    Sorprendenti anche per te&#8230; oppure no? Da Aprile scorso, ed in particolare a cavallo del <a title="Adobe 2011 Financial Analyst Meeting svela il futuro della Tecnologia al servizio dei Creativi" href="http://localhost:8888/2011/11/adobe-2011-financial-analyst-meeting-svela-futuro-tecnologia-creativi/?lang=it" target="_blank">Financial Analyst Meeting</a> di Novembre, Adobe ha annunciato tra l’altro
+  </p>
+  
+  <ol>
+    <li>
+      <p>
+        La Creative Suite 5.5 (focalizzata al Digital Publishing).
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        Un programma di sottoscrizione (mensile o annuale) che si affianca al tradizionale acquisto di licenze per la Creative Suite.
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        750 licenziamenti di dipendenti fulltime (10% ca. della forza lavoro).
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        La donazione delle Flex SDK alla Apache Software Foundation.
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        L’abbandono dello sviluppo di Flash Player su dispositivi mobili.
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        La Creative Cloud, un servizio ad abbonamento che prevede tra l’altro la licenza per tutti i software Adobe CS.
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        Un taglio molto drastico alle politiche di aggiornamento della CS.
+      </p>
+    </li>
+  </ol>
+  
+  <p>
+    Se non sei uno sviluppatore Flex (o uno dei 750 ex-dipendenti), stai già per cambiare canale. Fermo lì. Aggiungi un paio di catalizzatori che vengono da dove proprio non ti aspetti e il quadro si trasforma in qualcosa&#8230; di più esplosivo.
+  </p>
+  
+  <h2>
+    Il capo indiano
+  </h2>
+  
+  <div id="attachment_432" style="width: 310px" class="wp-caption alignleft">
+    <a href="http://allthingsd.com/video/?video_id=1E8A4862-2E88-4BAA-BF7D-E39B074E6731" target="_blank"><img aria-describedby="caption-attachment-432" class="size-medium wp-image-432" title="Adobe Shantanu Narayen D9" src="http://localhost:8888/wp-content/uploads/2011/11/ShantanuNarayen-300x224.jpg" alt="Adobe Shantanu Narayen D9" width="300" height="224" srcset="http://localhost:8888/wp-content/uploads/2011/11/ShantanuNarayen-300x224.jpg 300w, http://localhost:8888/wp-content/uploads/2011/11/ShantanuNarayen-150x112.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/ShantanuNarayen-1024x767.jpg 1024w, http://localhost:8888/wp-content/uploads/2011/11/ShantanuNarayen.jpg 1423w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+    
+    <p id="caption-attachment-432" class="wp-caption-text">
+      Adobe CEO Adobe Shantanu Narayen, intervistato da Walt Mossberg (© Asa Mathat, All Things Digital - D9) Clicca sull'immagine per vedere il video
+    </p>
+  </div>
+  
+  <p>
+    Shantanu Narayen è il CEO (Chief Executive Officer) di Adobe da fine 2007, COO (Chief Operative Officer) e Presidente dal 2005. E’ un indiano di 48 anni con una laurea in Ingegneria Elettronica, master in Computer Science e Business Administration. Entra in Adobe nel ’98 ed alla mia età è già VP (Vice Presidente) della worldwide product research da un anno. Fa carriera molto in fretta dentro e fuori Adobe, tanto che Barack Obama lo ha inserito nel suo Management Advisory Board. Nel 2010, secondo Forbes, ha guadagnato la qualcosa come 12 milioni di dollari. Di sicuro non gli mancano: qualità, polso e abbondante pelo sullo stomaco.
+  </p>
+  
+  <p>
+    Narayen, secondo molti analisti, è nella scomodissima posizione di dover risolvere un problema da niente: la stagnazione delle azioni Adobe nella crisi finanziaria globale &#8211; azioni che, non dovessero rimbalzare in fretta, rischiano di trasformare l’azienda in bersaglio di acquisizione. Lo sapevi?
+  </p>
+  
+  <h2>
+    Ritmi forzati
+  </h2>
+  
+  <p>
+    I problemi hanno radici antiche. Stando a fonti attendibili, nel lontano 2000 Photoshop 6 uscì in ritardo rispetto alle previsioni, a causa di una prolungata fase di debug del codice; ciò venne malvisto dal management, che fissò tassativamente il ciclo delle future release a 18 mesi &#8211; in fondo, i bug possono essere corretti anche dopo&#8230;<br /> Le cose, da questo punto di vista, peggiorarono con l’introduzione delle <a href="http://it.wikipedia.org/wiki/Adobe_Creative_Suite" title="Adobe Creative Suite" target="_blank">Creative Suite</a> (CS1 a fine 2003) che impose cicli chiusi e coordinati tra le applicazioni. Photoshop, Illustrator, InDesign, Acrobat & C., dovevano essere pronti, e appetibili per l’upgrade, in contemporanea. E’ orgasmo simultaneo in un’orgia a 18 applicazioni, ad esempio per la Master Collection CS5. Un po’ improbabile &#8211; che tutti siano ugualmente soddisfatti, intendo. O no?
+  </p>
+  
+  <div id="attachment_444" style="width: 580px" class="wp-caption aligncenter">
+    <a href="http://localhost:8888/wp-content/uploads/2011/11/ADBE.gif"><img aria-describedby="caption-attachment-444" class="size-full wp-image-444" title="Adobe stock chart" src="http://localhost:8888/wp-content/uploads/2011/11/ADBE.gif" alt="Adobe stock chart" width="570" height="285" srcset="http://localhost:8888/wp-content/uploads/2011/11/ADBE.gif 570w, http://localhost:8888/wp-content/uploads/2011/11/ADBE-150x75.gif 150w, http://localhost:8888/wp-content/uploads/2011/11/ADBE-300x150.gif 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
+    
+    <p id="caption-attachment-444" class="wp-caption-text">
+      Andamento delle azioni Adobe (Fonte: Yahoo Finance - http://yhoo.it/rqU0Kv)
+    </p>
+  </div>
+  
+  <p>
+    E Infatti: la Creative Suite 4 esce in Ottobre 2008, e nel giro di nemmeno 4 mesi le azioni Adobe crollano verticalmente, da <strong>$43</strong> a <strong>$17</strong> (-53%), a causa delle rovinose vendite: è un fallimento.
+  </p>
+  
+  <p>
+    Con questi presupposti, Adobe comincia quella che qualcuno ha cinicamente chiamato la <em>“Layoffs Pre-Holiday season”</em> (la stagione dei licenziamenti prima delle feste).
+  </p>
+  
+  <blockquote>
+    <ul>
+      <li>
+        <p>
+          E’ del Dicembre 2008 la prima tornata di tagli che Shantanu avalla: <strong>600</strong> dipendenti (8% della forza lavoro).
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          Poco meno di un anno dopo, Novembre 2009: altri <strong>680</strong> licenziamenti (9%), quando le azioni sono tornate a $35 l’una, in attesa di vedere come andrà la CS5 (Aprile 2010).
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          E pochi giorni fa il nuovo annuncio, con perfetto timing pre-natalizio: Novembre 2011, sono <strong>750</strong> i dipendenti fulltime licenziati (10% della forza lavoro).
+        </p>
+      </li>
+    </ul>
+  </blockquote>
+  
+  <p>
+    In tre anni più di 2000 persone fatte fuori, un quarto del personale; chi ha più esperienza di me sostiene che sono poche le aziende in grado di ristrutturare così profondamente senza perdere pezzi per strada, o compromettere in modo grave il clima lavorativo.
+  </p>
+  
+  <h2>
+    Appuntamenti importanti
+  </h2>
+  
+  <p>
+    Riassumo: Adobe, stabilizzatasi su un ciclo di release “chiuso” per i programmi della Suite, ha scommesso gran parte del suo guadagno sulla fedeltà degli utenti agli upgrade. Nel processo, ha conquistato eccezionali traguardi: ad esempio InDesign ha soppiantato Quark XPress, sia perché il prodotto è migliore, sia perché costa meno.
+  </p>
+  
+  <p>
+    Ciò nonostante, Adobe non è (evidentemente) stata in grado di realizzare prodotti la cui qualità sostenesse le vendite necessarie ad evitare pesantissimi ridimensionamenti &#8211; vedi il buco della CS4. Ed oggi si trova in borsa a dovere risalire in fretta la china, pena il rischio di essere acquisita.
+  </p>
+  
+  <p>
+    In quest’ottica, alcune vecchie volpi sostengono che certe comunicazioni &#8211; anche quelle più apparentemente <em>tecniche</em> &#8211; siano in realtà rivolte a rassicurare gli analisti finanziari sul buon futuro dell’azienda, più che informare gli utenti. E da questo punto di vista in effetti la défaillance comunicativa sulla cessione di Flex (ne parlerò a breve) è stata esemplare: per 3 giorni l’<a title="Official Flex Team Blog" href="http://blogs.adobe.com/flex/" target="_blank">Official Flex Team Blog</a> è stato un delirio di commenti di sviluppatori di tutto il mondo in preda al panico.
+  </p>
+  
+  <div id="attachment_446" style="width: 160px" class="wp-caption alignleft">
+    <img aria-describedby="caption-attachment-446" class="size-thumbnail wp-image-446" title="Kevin Lynch" src="http://localhost:8888/wp-content/uploads/2011/11/KLynch-150x171.jpg" alt="Kevin Lynch" width="150" height="171" srcset="http://localhost:8888/wp-content/uploads/2011/11/KLynch-150x171.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/KLynch-262x300.jpg 262w, http://localhost:8888/wp-content/uploads/2011/11/KLynch.jpg 270w" sizes="(max-width: 150px) 100vw, 150px" />
+    
+    <p id="caption-attachment-446" class="wp-caption-text">
+      Kevin Lynch (CTO) con moiré
+    </p>
+  </div>
+  
+  <p>
+    Arriva un appuntamento molto importante questo Novembre, il <a title="Adobe 2011 Financial Analyst Meeting svela il futuro della Tecnologia al servizio dei Creativi" href="http://localhost:8888/2011/11/adobe-2011-financial-analyst-meeting-svela-futuro-tecnologia-creativi/?lang=it" target="_blank">Financial Analyst Meeting</a> (FAM), nel quale Shantanu Narayen e colleghi (in perfette business suits e con la voce che tradisce, a tratti, una certa tensione) sono a NYC di fronte agli analisti finanziari per raccontare in dettaglio le roadmap di Adobe. Con dettagli tecnici e strategici insospettati &#8211; i quali, abbiamo imparato, sono da leggere con occhio smaliziato.
+  </p>
+  
+  <h2>
+    Cosa bolle in pentola
+  </h2>
+  
+  <p>
+    Se sei saltato a questo paragrafo senza leggere i precedenti (&#8230;) sappi almeno che l’ecosistema nel quale Adobe vive è governato dalla finanza, ed Adobe ha visto giorni migliori. Deve escogitare qualcosa per sopravvivere, e le sue pensate influenzeranno molto pesantemente tutti.
+  </p>
+  
+  <div id="attachment_453" style="width: 172px" class="wp-caption alignright">
+    <img aria-describedby="caption-attachment-453" class="size-full wp-image-453" title="Acquisizioni Adobe del 2011" src="http://localhost:8888/wp-content/uploads/2011/11/Acquisitions.jpg" alt="Aziende acquisite da Adobe nel 2011" width="162" height="296" srcset="http://localhost:8888/wp-content/uploads/2011/11/Acquisitions.jpg 162w, http://localhost:8888/wp-content/uploads/2011/11/Acquisitions-150x274.jpg 150w" sizes="(max-width: 162px) 100vw, 162px" />
+    
+    <p id="caption-attachment-453" class="wp-caption-text">
+      Acquisizioni Adobe del 2011
+    </p>
+  </div>
+  
+  <p>
+    Al FAM, Adobe si presenta con un core business sostanzialmente bipartito: Digital Media e Digital Marketing. L’altra metà della torta rispetto al mondo Creative che conosciamo viene dall’acquisizione di <a title="Omniture" href="http://www.omniture.com" target="_blank">Omniture</a> (2009 &#8211; online marketing e web analytics), seguita più recentemente da <a title="Demdex" href="http://www.demdex.com/" target="_blank">Demdex</a> (audience management/optimization), <a title="Echosign" href="www.echosign.com" target="_blank">EchoSign</a> (online digital signatures), <a title="Auditude" href="http://www.auditude.com/" target="_blank">Auditude</a> (video advertising), e si occupa di monetizzare contenuti. Ripeto: metà del core business Adobe non è nemmeno lontano parente della creazione di contenuti creativi. Lo sapevi?
+  </p>
+  
+  <p>
+    Narayen annuncia per il 2012 la <a title="Adobe Creative Cloud details" href="http://blogs.adobe.com/conversations/2011/11/adobe-creative-cloud-and-adobe-creative-suite-new-choices-for-customers.html" target="_blank">Creative Cloud</a>, un servizio a sottoscrizione (mensile o annuale) che prevede l’accesso a tutti (<em>tutti!</em>) i programmi della CS, più software come <a href="http://muse.adobe.com/" title="Adobe Muse" target="_blank">Muse</a> (una specie di Dreamweaver visuale) ed <a href="http://labs.adobe.com/technologies/edge/" title="Adobe Edge" target="_blank">Edge</a> (animazioni HTML5) ancora in beta, e ancora: la <a href="http://www.adobe.com/it/products/digitalpublishingsuite/" title="Adobe Digital Publishing Suite" target="_blank">Digital Publishing Suite</a>, poi <a href="https://typekit.com/" title="Typekit" target="_blank">TypeKit</a> (font su web), le <a href="http://www.adobe.com/products/touchapps.html" title="Adobe Touch Apps" target="_blank">applicazioni touch per tablet</a> già prodotte ed in cantiere &#8211; perché Shantanu vuole portare i software classici (PS & C.) su mobile. C’è una parte importante di servizi social &#8211; un portale di condivisione del portfolio ad esempio &#8211; e file sharing. Il prezzo è estremamente aggressivo, <strong>$49.99</strong> al mese ma solo, apparentemente, per abbonamenti annuali.
+  </p>
+  
+  <p>
+    A supporto del lancio, si muove l’artiglieria pesante e non fa prigionieri.
+  </p>
+  
+  <ol>
+    <li>
+      <p>
+        Viene annunciato un ciclo di sviluppo annuale, che seguirà lo schema: un anno major release (CS5), un anno point release (CS5.5).
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        Si stringe il cappio al collo degli utenti sugli upgrade: sarà possibile aggiornare solo se si possiede la major release precedente &#8211; ovvero se vuoi passare alla CS6 devi avere la CS5, altrimenti ti tocca pagare il prezzo completo.
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        Per completare l’opera e con una certa spregiudicatezza finanziaria, Adobe a questo annuncio ha fatto seguire quello di sconti sull’upgrade alla CS5.5 fino al termine del 2011.
+      </p>
+    </li>
+  </ol>
+  
+  <p>
+    Come dire: l’anno prossimo uscirà la CS6 (bastano nozioni di algebra per prevederlo), se vuoi essere in grado di acquistarla come upgrade, devi per forza comprare, adesso, il passaggio alla CS5.5, ma fai in fretta! perché è a prezzo calmierato sono entro Dicembre. Col risultato di far gonfiare i guadagni da upgrade entro l’anno e tenere quieta la borsa per un po’.
+  </p>
+  
+  <div id="attachment_464" style="width: 160px" class="wp-caption alignleft">
+    <img aria-describedby="caption-attachment-464" class="size-full wp-image-464" title="HTML5" src="http://localhost:8888/wp-content/uploads/2011/11/HTML5.png" alt="HTML5" width="150" height="185" />
+    
+    <p id="caption-attachment-464" class="wp-caption-text">
+      Adobe sembra abbracciare totalmente HTML5
+    </p>
+  </div>
+  
+  <p>
+    Al FAM, Narayen e colleghi tentano di convincere gli analisti (secondo alcuni commentatori) con largo uso di <em>buzzwords</em> &#8211; paroloni ad effetto &#8211; ripetuti a mitragliatrice: ovvero Digital Publishing, HTML5 e Cloud. HTML5 è presentato come una tecnologia in fase ascendente, un vettore di innovazione destinato a durare nel tempo (<a title="Steve Jobs e Flash" href="http://allthingsd.com/20100601/d8-video-steve-jobs-on-flash-adobe-and-other-technology-apple-doesnt-use-anymore/" target="_blank">stesse, identiche parole di Steve Jobs</a>) e parlando di Adobe Edge, un nuovo software per le animazioni con gestione di una timeline ed export in HTML5, viene raccontato come Adobe abbia spostato i migliori developers dai team di Dreamweaver, Flash e Flex per farli lavorare sul nuovo progetto.
+  </p>
+  
+  <p>
+    <img class="alignright size-full wp-image-466" title="Adobe Flash, Adobe AIR" src="http://localhost:8888/wp-content/uploads/2011/11/FlashAir.jpg" alt="Adobe Flash, Adobe AIR" width="297" height="200" srcset="http://localhost:8888/wp-content/uploads/2011/11/FlashAir.jpg 297w, http://localhost:8888/wp-content/uploads/2011/11/FlashAir-150x101.jpg 150w" sizes="(max-width: 297px) 100vw, 297px" />Ma evidentemente lo spostamento di risorse ha avuto ripercussioni: è appena terminato il <a href="http://max.adobe.com/" title="Adobe MAX" target="_blank">MAX 2011</a> (appuntamento dedicato agli sviluppatori, dove si è parlato molto anche di Flash) che Adobe annuncia a freddo <a href="http://blogs.adobe.com/flashplatform/2011/11/flash-to-focus-on-pc-browsing-and-mobile-apps-adobe-to-more-aggressively-contribute-to-html5.html" title="Adobe drops flash player on mobile devices" target="_blank">l’abbandono del Flash Player su dispositivi mobili</a> (come pronosticato da Jobs) e rivela l’intenzione di donare alla Apache Software Foundation le Flex SDK. <a href="http://blogs.adobe.com/flex/2011/11/your-questions-about-flex.html" title="Il Flex team risponde alle domande degli sviluppatori" target="_blank">Gettando nel panico</a> la comunità internazionale di sviluppatori di applicazioni enterprise con una comunicazione ufficiale nella quale veniva riproposta la <em>buzzword #1: “In the long-term, we believe HTML5 will be the best technology for enterprise application development”</em> (Sul lungo periodo, crediamo che HTML5 sarà la migliore tecnologia per sviluppare applicazione enterprise).
+  </p>
+  
+  <h2>
+    Sul piede di guerra
+  </h2>
+  
+  <p>
+    Queste mosse, su diversi fronti, hanno scatenato commenti a livello mondiale.
+  </p>
+  
+  <p>
+    <a href="http://www.scottkelby.com/blog/2011/archives/22903" target="_blank"><img src="http://localhost:8888/wp-content/uploads/2011/11/ScottKelby-150x149.jpg" alt="Scott Kelby open letter to Adobe" title="Scott Kelby open letter to Adobe" width="150" height="149" class="alignleft size-thumbnail wp-image-479" srcset="http://localhost:8888/wp-content/uploads/2011/11/ScottKelby-150x149.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/ScottKelby-300x298.jpg 300w, http://localhost:8888/wp-content/uploads/2011/11/ScottKelby.jpg 437w" sizes="(max-width: 150px) 100vw, 150px" /></a>Scott Kelby, che come mi è stato fatto notare è legato a doppio filo ad Adobe nel bene e nel male, ha scritto una <a href="http://www.scottkelby.com/blog/2011/archives/22903" title="Lettera aperta ad Adobe System di Scott Kelby" target="_blank">lettera aperta</a> i cui toni, tenuto conto della sua posizione, sono il massimo di criticismo che può esprimere.<br /> Uno dei punti chiave dei malumori è l’estemporaneità del cambio di politica: non è <em>leale</em> nei confronti degli utenti rivoluzionare dal giorno alla notte gli upgrade, senza nessun avvertimento e (all’atto pratico) costringerli a decidere in pochissimi mesi una catena di aggiornamenti (CS5.5, in funzione di CS6). Non pensare solo alla tua copia di Photoshop&#8230; una Master Collection &#8211; magari a licenze multiple &#8211; ha tutt’altro prezzo. La finanza non ha molti scrupoli.
+  </p>
+  
+  <p>
+    E’ venuta meno, secondo alcuni, la <em>fiducia</em> nei confronti dell’azienda: ad esempio, su dispositivi mobili <a href="http://www.mikechambers.com/blog/2011/11/11/clarifications-on-flash-player-for-mobile-browsers-the-flash-platform-and-the-future-of-flash/" title="Mike Chambers on Flash" target="_blank">Flash resta supportato via AIR</a>, cosa garantisce gli sviluppatori che Adobe non lo tagli improvvisamente in futuro a fronte di nuove crisi? (non sarebbe la prima volta). Moltissime aziende il cui business è incentrato sulle applicazione enterprise si ritrovano a dover fronteggiare clienti a cui è giunta voce che Adobe ha abbandonato Flex, col risultato netto di lasciare nel limbo progetti in fase di partenza. HTML5 sarà il futuro (<a href="http://phonegap.com/" title="Phonegap" target="_blank">PhoneGap</a> di Nitobi è stata acquisita quest’anno da Adobe), ma al momento, ascoltando la voce di sviluppatori di mezzo mondo, non è tecnicamente in grado di rimpiazzare Flex/AS3, non fosse altro perché JS non è un linguaggio veramente OOP (orientato agli oggetti) ed in grado di restituire le stesse performance.
+  </p>
+  
+  <p>
+    E ancora: dato il nuovo modello <a href="http://it.wikipedia.org/wiki/Software-as-a-Service" title="SaaS" target="_blank">SaaS (Software as a Service)</a>, affidandoci ad un programma di sottoscrizione come la Creative Cloud non ci mettiamo completamente in mano ad un’azienda che ha dimostrato di essere capace di cambi di rotta repentini, economicamente parlando non favorevoli ai clienti di vecchia data? (vedi la nuova upgrade policy).
+  </p>
+  
+  <h2>
+    I conti della serva
+  </h2>
+  
+  <p>
+    Per quello che riguarda il mondo CS, facciamoci due conti in tasca.<br /> Una CS Design Premium CS 5.5 costa oggi:
+  </p>
+  
+  <ul>
+    <li>
+      $1.899 in licenza.
+    </li>
+    <li>
+      $649 come upgrade dalla CS4, $399 dalla CS5.
+    </li>
+    <li>
+      $95 al mese ($1.140 annui).
+    </li>
+  </ul>
+  
+  <p>
+    In 6 anni, un utente che aggiorna ad ogni versione (comprese le .5) per via tradizionale arriva a spendere <strong>$2.400</strong> circa, mentre se aggiorna ogni major release soltanto (ovvero le .0) spende <strong>$1.950</strong>. Nei <a href="http://www.adobe.com/aboutadobe/invrelations/2011_analyst_mtg/pdfs/FA2011_web_DavidWadhwani.pdf" title="Financial Analyst Meeting documentation" target="_blank">conti che provengono dal FAM</a>, un utente che sottoscrive la Creative Cloud spende gli stessi <strong>$2.400</strong> (con un ritorno in servizi decisamente maggiore. Adobe prevede 800 mila nuovi utenti e a lungo termine il 100% di passaggio al nuovo sistema a sottoscrizione.
+  </p>
+  
+  <p>
+    Commentatori indipendenti e di lungo corso sostengono che queste cifre siano <em>folli</em>, <em>insensate</em>, per lo stato attuale dell’industria e dell’economia. Soprattutto per quel che riguarda la Creative Cloud, che non può funzionare <em>sui grandi numeri</em> a quel prezzo.<br /> Da un lato l’allungamento a 2 anni per ciclo di major release è rassicurante (i software saranno migliori, forse). Ma d’altro canto, mentre in apparenza gli upgrade saranno più frequenti, è molto probabile che la maggioranza degli utenti scelga di non acquistare le point release, col risultato che gli aggiornamenti principali scendono ad una frequenza 3/4 inferiore &#8211; con conseguente leggero calo delle entrate. L’equazione sostenuta da alcuni (meno utenti, più aggiornati = pareggio di bilancio) è insufficiente: Adobe è in una delicata situazione in borsa e non deve, cambiando strategia, sperare in un pareggio, ma puntare ad una netto rimbalzo. E la soluzione che propone a noi (vuoi aggiornare? Aggiorna sempre) non è, così come è ora strutturata, accettabile.
+  </p>
+  
+  <h2>
+    Conclusioni&#8230;
+  </h2>
+  
+  <p>
+    Adobe è ad un bivio: per non rischiare di essere acquisita, le sue azioni in borsa devono risalire in fretta. Si presenta agli analisti come un’azienda pesantemente ristrutturata, a due facce &#8211; Digital Media e Digital Marketing, cioè produzione di contenuti e monetizzazione di contenuti &#8211; e con un piano molto aggressivo di crescita per il futuro.<br /> 
+    
+    <div id="attachment_484" style="width: 580px" class="wp-caption aligncenter">
+      <img aria-describedby="caption-attachment-484" src="http://localhost:8888/wp-content/uploads/2011/11/digital.jpg" alt="Digital Marketing e Digital Media" title="Digital Marketing e Digital Media" width="570" height="190" class="size-full wp-image-484" srcset="http://localhost:8888/wp-content/uploads/2011/11/digital.jpg 570w, http://localhost:8888/wp-content/uploads/2011/11/digital-150x50.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/digital-300x100.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" />
+      
+      <p id="caption-attachment-484" class="wp-caption-text">
+        Digital Marketing e Digital Media... in the Clouds
+      </p>
+    </div>
+    
+    <br /> Si presenta ai suoi clienti, invece, con un repentino cambiamento di politica sugli upgrade a nostro sfavore, volontà di aggiornamenti costanti &#8211; ma con una storia passata di aggiornamenti spesso insufficienti &#8211; nuovi prodotti con prezzi troppo alti per fare presa sulla maggioranza degli utenti e soluzioni SaaS inadatte a larga parte di loro. Concentrandosi su tecnologie in ascesa (HTML5) ma ancora immature per determinate applicazioni e mal comunicando la propria intenzione a riguardo di tecnologie consolidate (Flex) il cui futuro appare, se non incerto, molto meno certo di prima.<br /> Come si concilieranno questi due punti di vista, finanziario e degli utenti?
+  </p>
+  
+  <h2>
+    &#8230; e commenti molto personali
+  </h2>
+  
+  <p>
+    La mia percezione di Adobe, fino a poco tempo fa, si è esclusivamente basata sulle release dei software della CS &#8211; in particolare Photoshop. Nessun cambio sostanziale del paradigma del programma, nessun miglioramento sugli algoritmi di certi filtri, redesign dell’interfaccia a volte funesti (vedi pannello Adjustments &#8211; non per niente ho scritto un’estensione che si chiama <a href="http://blog.rbg.bigano.com/2011/05/04/free-cs-extension-1-floating-adjustments/" title="Floating Adjustment - estensione per Photoshop CS5" target="_blank">Floating Adjustments</a>), pesante accanimento su features (come il 3D &#8211; per i miei scopi del tutto inutile) e totale disattenzione ad una costellazione di piccoli ma fastidiosi bug che affliggono il programma.<br /> A parte l’introduzione di Flash nelle applicazioni della CS (spinta a suo tempo da John Nack, grazie al quale oggi posso scrivere estensioni in Flex senza scomodare il mio rudimentale C++), non ci sono molte altre <em>killer feature</em> che avessero reso imprescindibile l’upgrade.
+  </p>
+  
+  <p>
+    Eppure ho sempre aggiornato, un po’ perché l’economia lo permetteva, un po’ perché la componente di affezione al prodotto ha un suo peso &#8211; e come piccolo sviluppatore devo essere up-to-date. Con un certo fatalismo però, avendo appurato che le features di mio interesse non sarebbero mai state implementate. Ma se, quando ho cominciato dieci anni fa, era naturale presupporre l’aggiornamento alle nuove versioni salvo casi eccezionali, con gli anni la tendenza s’è invertita: ed ora per molti è diventato naturale il contrario &#8211; cioè presupporre di <em>non</em> acquistare l’upgrade &#8211; finché si può.
+  </p>
+  
+  <p>
+    Adobe propone ora soluzioni come la Creative Cloud che non mi intrigano in modo particolare, e cambiamenti di policy sugli aggiornamenti che hanno un timing maliziosamente spiacevole; che trovo modellati più sulle esigenze finanziarie loro, che non su quelle pratiche mie.<br /> Non amo le sottoscrizioni, gli affitti, ma un utente professionale ad un certo punto può anche cedere, in cambio di un servizio opportuno. Faccio molta fatica a credere che gli 800 mila nuovi utenti previsti aderiscano così incondizionatamente alla Creative Cloud &#8211; in specie se, come spesso capita &#8211; sono utenti non (esclusivamente) professionali. Mi piace ancora meno il comportamento tenuto sulla vicenda Flex/Flash, e comincio ad avere dubbi anche sulla tenuta futura di programmi come quello delle <a href="http://www.adobe.com/devnet/creativesuite/cs-extension-builder.html" title="Adobe Extension Builder &#038; CS SDK" target="_blank">CS SDK</a> (magari potrebbero essere abbandonate, o prese di mira dalla prossima layoffs pre-holiday season).
+  </p>
+  
+  <p>
+    C’è chi sostiene che l’azienda sia ostaggio della borsa, chi dice che Adobe sia diventata la nuova Microsoft (<em>troppo grande e piena di sé</em>), chi firma <a href="http://www.change.org/petitions/adobe-systems-shantanu-narayen-to-step-down-as-ceo" title="Petition - Adobe Systems: Shantanu Narayen to step down as CEO" target="_blank">petizioni per far dimettere il CEO</a>. In un accesso di ottimismo, potrei condividere la posizione di chi ha detto:
+  </p>
+  
+  <blockquote>
+    <p>
+      “Non sono particolarmente preoccupato dal comportamento di Adobe. In definitiva, non può permettersi di far costare i suoi prodotti e servizi più di quello che i suoi clienti sono in grado di pagare. E dato il clima economico di questi anni, i clienti non possono permettersi di pagare molto più di quando fanno ora. Quindi, Adobe sarà costretta a comportarsi razionalmente”.
+    </p>
+  </blockquote>
+  
+  <p>
+    Ma non è sempre, solo, una questione di prezzi: anche di tecnologie, offerte, cambiamento delle strategie &#8211; e di quanto queste si adattino alle personali esigenze di ognuno di noi. Buona fortuna.<br /> Tu cosa ne pensi?
+  </p>
+</div>
+
+<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="http://localhost:8888/2011/11/adobe-al-bivio-quali-cambiamenti-ci-aspettano/" myshare\_title="Adobe al bivio" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
+
+<img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->
