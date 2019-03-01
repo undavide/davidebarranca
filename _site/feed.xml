@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description>Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 01 Mar 2019 17:18:05 +0100</pubDate>
+    <lastBuildDate>Fri, 01 Mar 2019 17:18:05 +0100</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Adobe Extension Manager Error Codes</title>
+        <description>&lt;p&gt;Here is a list of Adobe Extension Manager &lt;code class=&quot;highlighter-rouge&quot;&gt;ExManCmd&lt;/code&gt; error codes.&lt;/p&gt;
+
+&lt;p&gt;I don’t use &lt;code class=&quot;highlighter-rouge&quot;&gt;zxp&lt;/code&gt; files to install my products, but some people do (e.g. with &lt;a href=&quot;https://install.anastasiy.com/&quot;&gt;Anastasiy’s Extension Manager&lt;/a&gt;, that under the hood calls &lt;code class=&quot;highlighter-rouge&quot;&gt;ExManCmd&lt;/code&gt;) and error numbers are always hard to decode. The list has been kindly provided by Adobe’s Erin Finnegan.&lt;/p&gt;
+
+&lt;h2 id=&quot;exmancmd-errors&quot;&gt;ExManCmd Errors&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;EXMAN_FAILED_INSUFFICIENT_PRIVILEDGE = -151
+EXMAN_FAILED_OPEN_FILES = -152
+EXMAN_FAILED_READ_FILES = -154
+EXMAN_FAILED_WRITE_FILES = -155
+EXMAN_FAILED_COPY_FILES = -156
+EXMAN_FAILED_DELETE_FILES = -157
+EXMAN_FAILED_CREATE_FILES = -158
+EXMAN_FAILED_FILE_TYPE_NOT_MATCH = -159
+EXMAN_FAILED_FILE_NOT_FOUND = -160
+EXMAN_FAILED_ITERATE_DIRECTORY = -161
+EXMAN_FAILED_FILE_EXISTS_ALREADY = -162
+EXMAN_FAILED_CHANGE_PERMISSION = -163
+EXMAN_FAILED_CREATE_DIRECTORY = -164
+EXMAN_FAILED_DIRECTORY_EXISTS_ALREADY = -165
+EXMAN_FAILED_IS_NOT_DIRECTORY = -166
+EXMAN_FAILED_IS_NOT_FILE = -167
+EXMAN_FAILED_PATH_INVALID = -168
+EXMAN_FAILED_PATH_NOT_FOUND = -169
+EXMAN_FAILED_ACCESS_DENIED = -170
+EXMAN_FAILED_FILE_LOCKED = -171
+EXMAN_FAILED_SHARING_VIOLATION = -172
+EXMAN_FAILED_JUDGE_FILE_EXIST = -173
+EXMAN_FAILED_FILESCHEMA_ILLEGAL = -174
+EXMAN_FAILED_ELEVATE_START = -175
+EXMAN_FAILED_ELEVATE_FILEDEL = -176
+EXMAN_FAILED_ELEVATE_FILECOPY = -178
+EXMAN_FAILED_ELEVATE_MAKEDIR = -179
+EXMAN_FAILED_UNHANDLED_EXCEPTION = -180
+EXMAN_FAILED_NO_INSTALLED_FILES = -181
+EXMAN_FAILED_ELEVATE_EXIST = -182
+EXMAN_FAILED_IS_NOT_LINK = -183
+EXMAN_FAILED_ELEVATE_ADDPERMISSION = -184
+EXMAN_FAILED_EXTRACT_ZXP = -201
+EXMAN_FAILED_DECRYPT = -202
+EXMAN_FAILED_ENCRYPT = -203
+EXMAN_FAILED_PARSE_XMANCONFIG = -251
+EXMAN_FAILED_PARSE_MXI = -252
+EXMAN_FAILED_DESTINATION_MISSING_TOKEN = -253
+EXMAN_FAILED_PARENT_FOLDER_IN_PATH = -254
+EXMAN_FAILED_SOURCE_FORMAT_ERROR = -255
+EXMAN_FAILED_UNKNOWN_TOKEN = -256
+EXMAN_FAILED_MANIFEST_NODE_NOT_FOUND = -257
+EXMAN_FAILED_XML_NOT_FOUND = -259
+EXMAN_FAILED_ELEMENT_NOT_FOUND = -260
+EXMAN_FAILED_INVALID_VALUE_IN_MXI = -261
+EXMAN_FAILED_OPEN_XMANCONFIG_URI = -262
+EXMAN_FAILED_DOWNLOAD_XMANCONFIG = -263
+EXMAN_FAILED_PARSE_TODOFILE = -264
+EXMAN_FAILED_PARSE_XML = -265
+EXMAN_FAILED_GENERATE_XMANCONFIG = -266
+EXMAN_FAILED_INVALID_MANIFEST = -267
+EXMAN_FAILED_INVALID_MANIFEST_VERSION = -268
+EXMAN_FAILED_INVALID_MANIFEST_BUNDLE_ID = -269
+EXMAN_FAILED_INVALID_MANIFEST_BUNDLE_VERSION = -270
+EXMAN_FAILED_MANIFEST_EXCEPTION = -271
+EXMAN_FAILED_RESOURCE_EXCEPTION = -272
+EXMAN_FAILED_BLOCK_LIST_EXCEPTION = -273
+EXMAN_FAILED_INVALID_BLOCK_LIST = -274
+EXMAN_FAILED_CLOSE_HEADLIGHTS_SESSION = -302
+EXMAN_FAILED_INIT_HEADLIGHTS = -303
+EXMAN_FAILED_NULL_POINTER = -351
+EXMAN_FAILED_BUFFER_NOT_ENOUGH = -352
+EXMAN_FAILED_REJECT_LICENSE_AGREEMENT = -401
+EXMAN_FAILED_SIGNATURE_VALIDATION = -402
+EXMAN_FAILED_NO_PRODUCT_SUPPORT_THIS_CEP = -403
+EXMAN_FAILED_CEP_NOT_SIGNED = -404
+EXMAN_FAILED_REJECT_SIGNATURE_VALIDATION = -405
+EXMAN_FAILED_EXTENSION_NOT_FOUND = -406
+EXMAN_FAILED_REQUIRED_EXTENSION_NOT_INSTALLED = -407
+EXMAN_FAILED_REQUIRED_EXTENSION_NOT_ENABLED = -408
+EXMAN_FAILED_EXTENSION_BLOCKED = -409
+EXMAN_FAILED_INVALID_ZXP_FILE = -410
+EXMAN_FAILED_NO_SUPPORTED_PRODUCT = -411
+EXMAN_FAILED_CONFLICT_EXTENSION_FOUND = -412
+EXMAN_FAILED_INVALID_EMBEDDED_EXTENSION = -413
+EXMAN_FAILED_EMBEDDED_EXTENSION_NOT_SIGNED = -414
+EXMAN_FAILED_RESOURCE_FOLDER_NOT_FOUND = -415
+EXMAN_FAILED_CREATE_EXTENSION = -416
+EXMAN_FAILED_WRONGDEPENDENCY = -417
+EXMAN_FAILED_NEWER_EXTENSION_INSTALLED = -418
+EXMAN_FAILED_DEPENDENCY_CHANGED_WHEN_UPDATE = -419
+EXMAN_FAILED_MXP_NO_SUPPORTED = -420
+EXMAN_FAILED_DOWNLOAD_EXTENSION = -421
+EXMAN_FAILED_REJECT_OVERWRITE_CONFLICT_EXTENSION = -422
+EXMAN_FAILED_USER_CANCEL_DOWNLOAD = -423
+EXMAN_FAILED_CAN_NOT_INSTALL_FOR_ALL = -424
+EXMAN_FAILED_PRODUCT_NOT_FOUND = -451
+EXMAN_FAILED_TOKEN_NOT_FOUND = -453
+EXMAN_FAILED_PRODUCT_NOT_SUPPORTED = -454
+EXMAN_FAILED_PARSER_PRODUCT_TOKEN = -455
+EXMAN_FAILED_POINT_PRODUCT_NEED_QUIT = -456
+EXMAN_FAILED_SPECIFIER_NOT_FOUND = -457
+EXMAN_FAILED_REQUIRED_PRODUCT_NOT_INSTALLED = -458
+EXMAN_FAILED_REQUIRED_VERSION_NOT_INSTALLED = -459
+EXMAN_FAILED_DBWRAPPER_COMMON = -500
+EXMAN_FAILED_DBWRAPPER_CONNECTFAILED = -501
+EXMAN_FAILED_DBWRAPPER_DISCONNECTFAILED = -502
+EXMAN_FAILED_DBWRAPPER_QUERYFAILED = -503
+EXMAN_FAILED_DBWRAPPER_NOTSTARTUP = -504
+EXMAN_FAILED_DBWRAPPER_NOTSHUTDOWN = -505
+EXMAN_FAILED_DBWRAPPER_DATANOTFOUND = -506
+EXMAN_FAILED_DBWRAPPER_CREATTABLFAILED = -507
+EXMAN_FAILED_DBWRAPPER_NAME_EXIST = -508
+EXMAN_FAILED_UPDATE_DATABASE = -509
+EXMAN_FAILED_INIT_BT_FAILED = -552
+EXMAN_FAILED_VALIDATE_LICENSE = -601
+EXMAN_FAILED_GET_USER_ACOUNTDAT = -602
+EXMAN_FAILED_INVALID_USERACOUNT = -603
+EXMAN_FAILED_GET_LICENSE_CHECK_RESPONSE = -604
+EXMAN_FAILED_COMMON_EXCEPTION = -651
+EXMAN_FAILED_SSL_CONTEXT_EXCEPTION = -652
+EXMAN_FAILED_SSL_EXCEPTION = -653
+EXMAN_FAILED_COMMON_SET_MGMT = -851
+EXMAN_FAILED_STRING_CONVERT = -901
+EXMAN_FAILED_USER_NOT_FOUND = -902
+EXMAN_FAILED_FETCH_USER_INFO = -903
+EXMAN_FAILED_GET_USER_HOME_FOLDER = -904&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Thu, 21 Feb 2019 11:04:05 +0100</pubDate>
+        <link>/2019/02/adobe-extension-manager-error-codes/</link>
+        <guid isPermaLink="true">/2019/02/adobe-extension-manager-error-codes/</guid>
+        
+        <category>Adobe Extension Manager</category>
+        
+        
+        <category>CEP</category>
+        
+      </item>
+    
+      <item>
+        <title>Professional Photoshop Scripting is published!</title>
+        <description>&lt;p&gt;After 10 months since the launch of the Early Access Program, I am incredibly happy to announce that my book is now complete! Read the full report below.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://ps-scripting.com/&quot;&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2019/02/cover-700x700.jpg&quot; alt=&quot;Professional Photoshop Scripting book cover&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;the-final-version-10&quot;&gt;The Final Version 1.0!&lt;/h3&gt;
+
+&lt;p&gt;The book is now &lt;strong&gt;12 Chapters/409 pages&lt;/strong&gt;, fully CC 2019 compliant: compared to the last EAP version 0.2, I’ve added one Chapter, an Appendix, a proper Acknowledgement section, some extra-content on ActionManager, and given it a final round of proofreading and fixes.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2019/02/open-book-5@2x-700x484.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve also finally credited my dear friend and colleague &lt;a href=&quot;http://zettagraphics.com/&quot;&gt;Sandra Voelker&lt;/a&gt; for her work as the &lt;strong&gt;Technical Editor&lt;/strong&gt; – she’s been providing suggestions and corrections of remarkably high value.&lt;/p&gt;
+
+&lt;p&gt;I am also especially honored to tell you that the book contains an awesome &lt;strong&gt;Foreword by Jeffrey Tranberry&lt;/strong&gt;, Sr. Product Manager, Digital Imaging at Adobe Systems, and author with Geoff Scott of the book “&lt;a href=&quot;https://www.amazon.com/Power-Speed-Automation-Adobe-Photoshop-ebook/dp/B0083JCBZ2/&quot;&gt;Power, Speed &amp;amp; Automation with Adobe Photoshop&lt;/a&gt;” (2012).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2019/02/open-book-2@2x-700x484.jpg&quot; alt=&quot;Professional Photoshop Scripting book sample content&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;All in all, I am quite happy about how it has turned out: it took me &lt;em&gt;just&lt;/em&gt; two years and a half! Dare I to say, you won’t find anywhere else such a comprehensive learning path that goes from the basics of the ExtendScript language, up to advanced topics such as ActionManager (~70 pages) and Adobe Generator (~60 pages).&lt;/p&gt;
+
+&lt;p&gt;The book V1.0. is for sale right now at &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;PS-Scripting.com&lt;/a&gt;, where you can also &lt;a href=&quot;https://www.ps-scripting.com/#get-sample&quot;&gt;Get Sample Content!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I really hope you’ll enjoy it! As I wrote in an earlier post, my intention is to match the &lt;a href=&quot;https://www.htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development&lt;/a&gt; course and add a series of video tutorials: I tested the equipment but stopped for the final rush needed to publish the book.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2018/11/DB-2018-11-18-at-11.23.40-700x426.jpg&quot; alt=&quot;Professional Photoshop Scripting course video recording&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Many thanks to all who have contributed, helped, and supported the project buying the EAP 🙏🏻 Your support has been truly appreciated.
+Thank you all!&lt;/p&gt;
+
+&lt;p&gt;👉 &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;Book Website&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 13 Feb 2019 01:43:32 +0100</pubDate>
+        <link>/2019/02/professional-photoshop-scripting-v1/</link>
+        <guid isPermaLink="true">/2019/02/professional-photoshop-scripting-v1/</guid>
+        
+        <category>Professional Photoshop Scripting</category>
+        
+        
+        <category>Scripting</category>
+        
+      </item>
+    
+      <item>
+        <title>Spectrum CSS VueJS Component: DropDown</title>
+        <description>&lt;p&gt;In a &lt;a href=&quot;/2018/11/adobe-spectrum-css-open-sourced/&quot;&gt;previous post&lt;/a&gt; I’ve introduced the recently open-sourced Spectrum CSS. Here, I’ll be demonstrating how to use them to build a simple Vue.js component: a DropDown menu.&lt;/p&gt;
+
+&lt;p&gt;Spectrum CSS are really appealing, but as I’ve mentioned &lt;a href=&quot;/2018/11/adobe-spectrum-css-open-sourced/&quot;&gt;earlier&lt;/a&gt;, they’re not bundled with any JavaScript – besides what you may borrow from the &lt;a href=&quot;http://opensource.adobe.com/spectrum-css&quot;&gt;online documentation&lt;/a&gt; page. While elements such as Sliders are &lt;em&gt;plug &amp;amp; play&lt;/em&gt;, for they actually do use a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;input type=&quot;range&quot;&amp;gt;&lt;/code&gt; wrapped in a lot of finely styled &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; tags, others such as the DropDown are not.&lt;/p&gt;
+
+&lt;figure&gt;
+	&lt;img width=&quot;300&quot; src=&quot;/wp-content/uploads/2018/12/dropdown.gif&quot; /&gt;
+	&lt;figcaption&gt;Screenshot from the Spectrum CSS documentation&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I.e. if you click on a Closed dropdown, it won’t open (the above is just a screenshot so it’s pointless to try, but the result would be the same). The reason being that a Spectrum DropDown is not really a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;select&amp;gt;&lt;/code&gt; element, as you can see in the snippet below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/12/code.png&quot; alt=&quot;The Spectrum code that renders a DropDown&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As far as I get, re-creating an element from scratch is a standard practice to avoid rendering differences between browsers (the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;select&amp;gt;&lt;/code&gt; is a good example here).&lt;/p&gt;
+
+&lt;p&gt;Anyways: no &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;select&amp;gt;&lt;/code&gt; means no default behavior on click, change, etc. In other words, you are the one in charge of populating the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements above and adding relevant event handlers so that the DropDown stops being a nice but still and useless object.&lt;/p&gt;
+
+&lt;p&gt;This is a perfect test case for encapsulating everything in a &lt;strong&gt;Vue.js Component&lt;/strong&gt;! The only drawback is that I don’t feel particularly comfortable with the idea of creating Components from scratch. All my CEP Panels use Vue.js now, that’s true, but frankly in a very simple and not over-engineered fashion: I’ve always used one shared &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;, the farther I’ve ventured into fanciness was setting up an Event Hub.&lt;/p&gt;
+
+&lt;p&gt;Thanks god I’ve a PhD in &lt;em&gt;Copy&amp;amp;Paste&lt;/em&gt;, so I’ve been able to adapt &lt;a href=&quot;https://vuejsexamples.com/a-prettier-way-to-display-select-boxes/&quot;&gt;this one&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/12/display-select-boxes.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;… into a proper Vue Component that wraps the Spectrum DropDown original markup. The &lt;code class=&quot;highlighter-rouge&quot;&gt;.vue&lt;/code&gt; file I came up with is as follows:&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;400: Invalid request
+&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/ec5c7ef0d83b5d14252a963e761896f7.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;I won’t go too much into the details here. If you look at the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;template&amp;gt;&lt;/code&gt; tag and compare it with the original Spectrum html, you can spot the differences: I’ve added a couple of classes that depend on the selected item or the &lt;code class=&quot;highlighter-rouge&quot;&gt;showMenu&lt;/code&gt;boolean, and used a &lt;code class=&quot;highlighter-rouge&quot;&gt;v-for&lt;/code&gt; loop to populate the options.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag is where the actual logic belongs: I’ve added two methods, one to show the opened dropdown and one to emit an event to the parent when something is selected. From the &lt;code class=&quot;highlighter-rouge&quot;&gt;props&lt;/code&gt; you’re able to tell how to consume such element, e.g.:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;drop-down&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:options=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;arrayOfObjects&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;v-on:updateOption=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;methodToRunOnSelect&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Select a thing...&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The result is this one:&lt;/p&gt;
+
+&lt;figure&gt;
+	&lt;img width=&quot;300&quot; src=&quot;/wp-content/uploads/2018/12/WorkingDropDown.gif&quot; /&gt;
+	&lt;figcaption&gt;The working DropDown Vue.js Component! (Wife was unimpressed)&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;It is quite bare, I may want to add transitions and such… but it works!&lt;/p&gt;
+
+&lt;p&gt;To tell you the truth, I thought I couldn’t be able to make it: I had a look at proper Vue.js UI Kits (like &lt;a href=&quot;https://vuikit.js.org/&quot;&gt;this one&lt;/a&gt;) and they exceed, by far, my understanding. Luckily I’ve been able to borrow code and adapt it, so I may be doing it again in the future for other elements that I would need.&lt;/p&gt;
+
+&lt;p&gt;If you’re up for the same thing, or you know how to make my code better, please let me know in the comments. Bye!&lt;/p&gt;
+</description>
+        <pubDate>Sun, 16 Dec 2018 11:19:58 +0100</pubDate>
+        <link>/2018/12/spectrum-css-vue-js-component-dropdown/</link>
+        <guid isPermaLink="true">/2018/12/spectrum-css-vue-js-component-dropdown/</guid>
+        
+        <category>CEP</category>
+        
+        <category>Vue.js</category>
+        
+        
+        <category>CEP</category>
+        
+      </item>
+    
+      <item>
+        <title>ESTK to be replaced by a Visual Studio Code plug-in</title>
+        <description>&lt;p&gt;Please do yourself a favour and read &lt;a href=&quot;https://medium.com/adobetech/the-future-of-extendscript-development-a-vscode-plugin-2d8d0172a357&quot;&gt;this Medium post&lt;/a&gt; by &lt;em&gt;Lead Technical Evangelist&lt;/em&gt; Ash Ryan Arnwine about the future of the ExtendScript ToolKit.&lt;/p&gt;
+
+&lt;p&gt;I’ll keep it short because I urge you to read the &lt;a href=&quot;https://medium.com/adobetech/the-future-of-extendscript-development-a-vscode-plugin-2d8d0172a357&quot;&gt;original news&lt;/a&gt;. No ETA yet, but ESTK is gonna die soon won’t be re-written to comply with Apple’s 32bit applications ban (macOS-next). Nobody in their right mind would have thought it anyway, but we’ve got an official confirmation.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;[confetti fall from the sky]&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Go download &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Visual Studio Code&lt;/a&gt; and familiarize with it, while waiting for the new Adobe Scripting plugin (Mac/Win compatible) to be released.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Wq7zF9yyd0I&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Wed, 12 Dec 2018 23:28:31 +0100</pubDate>
+        <link>/2018/12/estk-to-be-replaced-by-a-visual-studio-code-plug-in/</link>
+        <guid isPermaLink="true">/2018/12/estk-to-be-replaced-by-a-visual-studio-code-plug-in/</guid>
+        
+        <category>VSCode</category>
+        
+        
+        <category>Scripting</category>
+        
+      </item>
+    
+      <item>
+        <title>Adobe Spectrum CSS open-sourced!</title>
+        <description>&lt;p&gt;In case you’ve missed the news, Adobe has open-sourced the Spectrum CSS – the stylesheets they’re using for Photoshop’s own CEP Panels 🍾 The GitHub repository is &lt;a href=&quot;https://github.com/adobe/spectrum-css&quot;&gt;found here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/wp-content/uploads/2018/11/Spectrum.jpg&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2018/11/Spectrum.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The CSS is demoed &lt;a href=&quot;http://opensource.adobe.com/spectrum-css/2.6.0/docs&quot;&gt;in this page&lt;/a&gt;, where you can pick four themes (&lt;em&gt;Lighter, Light, Dark, Darkest&lt;/em&gt;) in four scales (&lt;em&gt;Medium, Large, Medium diff, Large diff&lt;/em&gt;). The component list, compared to &lt;a href=&quot;http://topcoat.io/topcoat/&quot;&gt;Topcoat&lt;/a&gt; which I’ve been using extensively in my projects, is quite larger – and frankly perhaps a tad overkill for CEP Panels, e.g. I doubt I would ever use a Calendar. But I’ve never complained of abundance: nice and very welcomed features are all kind of sliders, including ranges, and split-buttons, steppers, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/wp-content/uploads/2018/11/slider.jpg&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2018/11/slider.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can read in the &lt;a href=&quot;https://github.com/adobe/spectrum-css#where-is-the-javascript&quot;&gt;documentation page&lt;/a&gt; that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;We have found that JavaScript is where a framework or library quickly becomes opinionated and stops being easy to use with or across other frameworks. To avoid this problem, Spectrum CSS avoids implementation details that require JavaScript. Where an element might require multiple states, the documentation here will simply show all the states in a flat, static example. We leave it to the frameworks implementing Spectrum CSS to create JavaScript that suits their needs.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Which means that we’re left on our own, but that’s not a big issue I suppose – hopefully there will be a Vue.js Spectrum components implementation in the near future :-)&lt;/p&gt;
+
+&lt;h2 id=&quot;the-state-of-the-blog&quot;&gt;The state of the Blog&lt;/h2&gt;
+
+&lt;p&gt;That was it for Spectrum CSS, I take the chance here now to inform you about blog updates, etc. As a matter of fact, I’ve slowed down things quite a bit as you’ve noticed: I took fewer Panel jobs and tried to focus on books and courses. I’ve had greatly unwelcome issues with my house’s restoration works (started a couple of years ago – both the works and the issues…) that proved to be a time/concentration/money sink. As a result, progress on development-related tasks have been erratic, to say the least. Recently, I try to record a couple of test videos to be bundled with the &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;Professional Photoshop Scripting course&lt;/a&gt;, which will look more or less like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/11/DB-2018-11-18-at-11.23.40.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There is no ETA yet – I will be able to tell you more as soon as I get the estimate for the roofing works, which will be followed by the insulation works, then the stairs, etc. Hopefully, before my hair gets completely gray 😉 Thanks for reading and for your support!&lt;/p&gt;
+</description>
+        <pubDate>Sun, 18 Nov 2018 11:37:18 +0100</pubDate>
+        <link>/2018/11/adobe-spectrum-css-open-sourced/</link>
+        <guid isPermaLink="true">/2018/11/adobe-spectrum-css-open-sourced/</guid>
+        
+        <category>CSS</category>
+        
+        
+        <category>CEP</category>
+        
+        <category>Scripting</category>
+        
+      </item>
+    
+      <item>
+        <title>Professional Photoshop Scripting EAP Update</title>
+        <description>&lt;p&gt;I’ve added 60 pages to accommodate an amazing new chapter on Adobe Generator!&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;book&lt;/a&gt; is now 388 pages strong and packed with exclusive content found &lt;em&gt;nowhere else™&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/06/open-book-5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Adobe Generator is an amazing and very little known technology available in Photoshop since version CC. It features a Node.js instance running in the background that you can use in a variety of interesting ways.&lt;/p&gt;
+
+&lt;figure class=&quot;alignright&quot;&gt;
+	&lt;img width=&quot;150&quot; src=&quot;/wp-content/uploads/2018/06/RkFdg4PI.png&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;!-- [![](/wp-content/uploads/2018/06/RkFdg4PI_400x400-150x150.png)](/wp-content/uploads/2018/06/RkFdg4PI_400x400.png) --&gt;
+
+&lt;p&gt;I’ve built several Generator Plug-ins expressly for this book: Pixmap extraction, Artificial Intelligence via an external service, Photoshop remote control from the Browser, bi-directional Socket communication, just to name a few. I’m sure you’ll enjoy them! Did you know that Adobe Generator has got its own icon? 🙂 This marks Professional Photoshop Scripting &lt;strong&gt;EAP version 0.2&lt;/strong&gt; – I would say that the main content is already in place. I plan to gather minor topics in one or two chapters, then proceed with the publication. &lt;del&gt;You can still &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;buy it at a highly discounted price now&lt;/a&gt;!&lt;/del&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;the-final-product&quot;&gt;The Final Product:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Final Book + Code, &lt;strong&gt;$149&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Final Book + Videos + Code, &lt;strong&gt;$249&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Final Book + Videos + Code (Team/Enterprise License), &lt;strong&gt;$499&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;early-access-program&quot;&gt;Early Access Program&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;del&gt;Early Access Book + Code, &lt;strong&gt;$99&lt;/strong&gt;&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;Early Access Book + Code (Team/Enterprise License), &lt;strong&gt;$199&lt;/strong&gt;&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;Discount Coupon for the Videos when they will be recorded&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Visit &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;ps-scripting.com&lt;/a&gt; for details. Cheers!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 11 Jun 2018 17:21:58 +0200</pubDate>
+        <link>/2018/06/professional-photoshop-scripting-eap-update/</link>
+        <guid isPermaLink="true">/2018/06/professional-photoshop-scripting-eap-update/</guid>
+        
+        <category>EAP</category>
+        
+        <category>Professional Photoshop Scripting</category>
+        
+        
+        <category>Scripting</category>
+        
+      </item>
+    
+      <item>
+        <title>Automated check for corrupted image files with Python and ImageMagick</title>
+        <description>&lt;p&gt;How do you check if an image file (tiff, psd, psb) is corrupted, other than looking at its thumbnail with Bridge, or opening it on Photoshop? With a small Python script and ImageMagick!&lt;/p&gt;
+
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;The client of mine I work as a retoucher for had some problems with the so-called &lt;em&gt;Data Migration&lt;/em&gt; (the dull, time consuming, and error prone process of transferring a lifetime backup from old, once very expensive external drives to a set of new, somehow still equally expensive external drives). As a result, he got some corrupted files here and there in the destination drives – that’s the reason why you &lt;em&gt;migrate&lt;/em&gt; data: the source has insufficient capacity, it has become unstable, obsolete, or both combined. Problem is that we’re talking about several TB of data, mostly as .psb files (ranging from about 1 up to 20GB each), and it goes without saying that opening them all in Photoshop is not an option; nor you can trust Adobe Bridge thumbnails – provided that you’ve set the preferences to render previews for big files too – because it’s a manual process anyway. Even if I’m paid by the hour, staring at thumbs is not my preferred way to get blind. After some research, I’ve found no way (other than the one I’m about to describe) to check for psd/psb files corruption in an automated fashion. Which seems to me quite odd – if you have better, i.e. faster and/or simpler, solutions, please do suggest them to me in the comments below.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-you-need&quot;&gt;What you need&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.python.org/download/releases/3.0/&quot;&gt;Python 3&lt;/a&gt;, and &lt;a href=&quot;https://www.imagemagick.org/&quot;&gt;ImageMagick&lt;/a&gt;. Both will work either on Mac or Windows: I’ve no experience of them on the latter platform, so I will just assume that you will be successful in following the installation instruction provided in the official home pages. PC owners: read at least the part relative to ImageMagick. Mac users: read it all.&lt;/p&gt;
+
+&lt;h3 id=&quot;python-3&quot;&gt;Python 3&lt;/h3&gt;
+
+&lt;p&gt;If you’re on a Mac like me, you already have Python installed. Chances are that it is version 2.7, or another one but 3. Open the Terminal and type:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+Python 2.7.10&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This is what I still get after having installed Python 3.6 myself, via &lt;a href=&quot;https://brew.sh/index_it&quot;&gt;Homebrew&lt;/a&gt;. I’m no Python expert, so it took me some Google time to understand that on a Mac you can still have the &lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt; command pointing to the System’s old 2.7 version, even if you’ve freshly installed the new one. Solutions involve manually changing symlinks (power users advise against it), or using one of the available packages to create isolate Python environments (e.g. &lt;a href=&quot;https://virtualenv.pypa.io/en/stable/&quot;&gt;virtualenv&lt;/a&gt;, &lt;a href=&quot;https://github.com/pyenv/pyenv&quot;&gt;pyenv&lt;/a&gt;, etc. A list of them is found &lt;a href=&quot;https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe&quot;&gt;here&lt;/a&gt;). I couldn’t make neither of them to work in a reasonable amount of time, so I’ve resorted to simply use the &lt;code class=&quot;highlighter-rouge&quot;&gt;python3&lt;/code&gt; command, e.g.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3 &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
+Python 3.6.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;imagemagick&quot;&gt;ImageMagick&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.imagemagick.org/&quot;&gt;ImageMagick&lt;/a&gt; is a multiplatform, open source commandline utility that performs a huge amount of tasks on all kinds of image files. I’ve installed via Homebrew, but it turns out that, at least on the Mac, it doesn’t come by default with the proper Delegates (aka Libraries) to deal with .psb files, which is what I needed the most. Finding the proper way to do so proved almost impossible to me: while reading the source code documentation (the last thing I wanted to do was to compile it from the source), I’ve discovered that via Homebrew you can list all the possible installation options for a package:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew options imagemagick
+
+&lt;span class=&quot;nt&quot;&gt;--with-fftw&lt;/span&gt;
+  Compile with FFTW support
+&lt;span class=&quot;nt&quot;&gt;--with-fontconfig&lt;/span&gt;
+  Build with fontconfig support
+&lt;span class=&quot;nt&quot;&gt;--with-ghostscript&lt;/span&gt;
+  Build with ghostscript support
+&lt;span class=&quot;nt&quot;&gt;--with-hdri&lt;/span&gt;
+  Compile with HDRI support
+&lt;span class=&quot;nt&quot;&gt;--with-liblqr&lt;/span&gt;
+  Build with liblqr support
+&lt;span class=&quot;nt&quot;&gt;--with-librsvg&lt;/span&gt;
+  Build with librsvg support
+&lt;span class=&quot;nt&quot;&gt;--with-libwmf&lt;/span&gt;
+  Build with libwmf support
+&lt;span class=&quot;nt&quot;&gt;--with-little-cms&lt;/span&gt;
+  Build with little-cms support
+&lt;span class=&quot;nt&quot;&gt;--with-little-cms2&lt;/span&gt;
+  Build with little-cms2 support
+&lt;span class=&quot;nt&quot;&gt;--with-opencl&lt;/span&gt;
+  Compile with OpenCL support
+&lt;span class=&quot;nt&quot;&gt;--with-openexr&lt;/span&gt;
+  Build with openexr support
+&lt;span class=&quot;nt&quot;&gt;--with-openjpeg&lt;/span&gt;
+  Build with openjpeg support
+&lt;span class=&quot;nt&quot;&gt;--with-openmp&lt;/span&gt;
+  Compile with OpenMP support
+&lt;span class=&quot;nt&quot;&gt;--with-pango&lt;/span&gt;
+  Build with pango support
+&lt;span class=&quot;nt&quot;&gt;--with-perl&lt;/span&gt;
+  Compile with PerlMagick
+&lt;span class=&quot;nt&quot;&gt;--with-webp&lt;/span&gt;
+  Build with webp support
+&lt;span class=&quot;nt&quot;&gt;--with-x11&lt;/span&gt;
+  Build with x11 support
+&lt;span class=&quot;nt&quot;&gt;--with-zero-configuration&lt;/span&gt;
+  Disables depending on XML configuration files
+&lt;span class=&quot;nt&quot;&gt;--without-freetype&lt;/span&gt;
+  Build without freetype support
+&lt;span class=&quot;nt&quot;&gt;--without-jpeg&lt;/span&gt;
+  Build without jpeg support
+&lt;span class=&quot;nt&quot;&gt;--without-libpng&lt;/span&gt;
+  Build without libpng support
+&lt;span class=&quot;nt&quot;&gt;--without-libtiff&lt;/span&gt;
+  Build without libtiff support
+&lt;span class=&quot;nt&quot;&gt;--without-magick-plus-plus&lt;/span&gt;
+  disable build/install of Magick++
+&lt;span class=&quot;nt&quot;&gt;--without-modules&lt;/span&gt;
+  Disable support &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;dynamically loadable modules
+&lt;span class=&quot;nt&quot;&gt;--without-threads&lt;/span&gt;
+  Disable threads support
+&lt;span class=&quot;nt&quot;&gt;--HEAD&lt;/span&gt;
+  Install HEAD version&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;So, after a first installation (without psb support), with no clear hint about the proper option(s) to use in my case, and even less spare time to test, I’ve chained them all – at least the seemingly appropriate ones, with little worries about being redundant. At all events, no one was watching me, nor would have ever known :-) The embarrassing line I’ve used is:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew reinstall imagemagick  &lt;span class=&quot;nt&quot;&gt;--with-fftw&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-fontconfig&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-ghostscript&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-hdri&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-libde265&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-liblqr&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-librsvg&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-libwmf&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-little-cms&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-little-cms2&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-opencl&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-openexr&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-openjpeg&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-openmp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-pango&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-perl&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-webp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-x11&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;It worked, so I was a happy camper.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-python-script&quot;&gt;The Python Script&lt;/h2&gt;
+
+&lt;p&gt;Which is far from perfect, but it does the job – I’m sure that a proper Python developer can make it much better: it comes from surgical copy&amp;amp;paste from various Google Search result, plus a very light editing on my side.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;subprocess&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Popen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PIPE&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;folderToCheck&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/Volumes/16TB/whatever/path'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;fileExtension&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'.psb'&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;checkImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;proc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Popen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;\&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'identify'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'-verbose'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;\&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stdout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PIPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stderr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PIPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;proc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;communicate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;exitcode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;proc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;returncode&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exitcode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;subdirectories&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;walk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;folderToCheck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endswith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileExtension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ERROR &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;OK &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;-------------- DONE --------------&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;how-it-works&quot;&gt;How it works&lt;/h3&gt;
+
+&lt;p&gt;The basic is the &lt;code class=&quot;highlighter-rouge&quot;&gt;identify&lt;/code&gt; call (that comes from ImageMagick), which is set to &lt;code class=&quot;highlighter-rouge&quot;&gt;-verbose&lt;/code&gt;. This is what performs the check: the rest is just looping through the filesystem, looking for the appropriate file extension, and logging a message.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-use-it&quot;&gt;How to use it&lt;/h3&gt;
+
+&lt;p&gt;Save this on a file with a &lt;code class=&quot;highlighter-rouge&quot;&gt;.py&lt;/code&gt; extension, and then run it with the &lt;code class=&quot;highlighter-rouge&quot;&gt;python3&lt;/code&gt; command on a terminal, e.g.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3 check.py&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Before doing so, do change the content of the &lt;code class=&quot;highlighter-rouge&quot;&gt;folderToCheck&lt;/code&gt; variable with an actual folder on your disk (with absolute path), and the &lt;code class=&quot;highlighter-rouge&quot;&gt;fileExtension&lt;/code&gt; too: I’ve used &lt;code class=&quot;highlighter-rouge&quot;&gt;.psb&lt;/code&gt;, but you can change it to &lt;code class=&quot;highlighter-rouge&quot;&gt;.psd&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;.tif&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;.jpg&lt;/code&gt;, etc. As a result you’ll get a log in the Terminal; I’ve used a nifty, cheap application called &lt;a href=&quot;https://coderunnerapp.com/&quot;&gt;Code Runner&lt;/a&gt; for such tests, and this is the result:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/05/coderunner-700x426.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you see, I’m just logging OK/ERROR with the path, very basic. What to do with this newly acquired piece of knowledge is up to you. Please note that:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The script processes nested folders too.&lt;/li&gt;
+  &lt;li&gt;It is &lt;em&gt;awfully slow&lt;/em&gt; and hungry: it eats CPU cycles and RAM. But it’s automatic, so heck!&lt;/li&gt;
+  &lt;li&gt;The file extension is case sensitive, so &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;.JPG&quot;&lt;/code&gt; is different from &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;.jpg&quot;&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;how-to-make-it-better&quot;&gt;How to make it better&lt;/h3&gt;
+
+&lt;p&gt;Few suggestions for the skilled Python developer (which I’m not, alas)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Write on a log file instead of the console&lt;/li&gt;
+  &lt;li&gt;Keep track of the processing status and resume from there&lt;/li&gt;
+  &lt;li&gt;Display the advancement status (say, “image 34 of 320”)&lt;/li&gt;
+  &lt;li&gt;Make the file extension case insensitive.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you know how to do any of this, please share your knowledge in the comments! Thank you!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 08 May 2018 02:20:19 +0200</pubDate>
+        <link>/2018/05/automated-check-for-corrupted-image-files-with-python-and-imagemagick/</link>
+        <guid isPermaLink="true">/2018/05/automated-check-for-corrupted-image-files-with-python-and-imagemagick/</guid>
+        
+        <category>Python</category>
+        
+        <category>imagemagick</category>
+        
+        
+        <category>Coding</category>
+        
+      </item>
+    
+      <item>
+        <title>Professional Photoshop Scripting Course &amp;#8211; Early Access Program</title>
+        <description>&lt;p&gt;I’m glad to announce that I have opened the &lt;em&gt;Early Access Program&lt;/em&gt; to my new and very much awaited &lt;strong&gt;Professional Photoshop Scripting&lt;/strong&gt; course! Read along. The course that I have &lt;a href=&quot;/2017/08/photoshop-scripting-course-update-august-2017/&quot;&gt;announced&lt;/a&gt; in the past is now near completion: I would say 3/4 of the topics that I plan to cover have been written and edited – I’m at page 339 and counting! It took me way more than expected, though.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2018/04/PSScriptingCover-light.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;early-access-program&quot;&gt;Early Access Program&lt;/h2&gt;
+
+&lt;p&gt;In a fashion that is nowadays quite common among technical writers, I have opened what is referred to as an &lt;em&gt;“Early Access Program”&lt;/em&gt;. If you’re not familiar with it, the idea is that you are able to read the book as I finish writing it. The advantages:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You don’t have to wait for the final book to get started.&lt;/li&gt;
+  &lt;li&gt;You’ll be sent a notification and download link as soon as further updates are ready (new Chapters, fixes, etc).&lt;/li&gt;
+  &lt;li&gt;You can get the course at a ludicrously discounted price now, compared to book’s street price when it’ll be published.&lt;/li&gt;
+  &lt;li&gt;You can contribute to the writing process with suggestions and feedback.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sounds good?&lt;/p&gt;
+
+&lt;h2 id=&quot;full-course-and-pricing&quot;&gt;Full Course and Pricing&lt;/h2&gt;
+
+&lt;p&gt;This one will follow exactly the same price/bundle scheme of my previous &lt;a href=&quot;http://htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development&lt;/a&gt; course.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-final-product&quot;&gt;The Final Product:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Final Book + Code, &lt;strong&gt;$149&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Final Book + Videos + Code, &lt;strong&gt;$249&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Final Book + Videos + Code (Team/Enterprise License), &lt;strong&gt;$499&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;early-access-program-1&quot;&gt;Early Access Program&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;del&gt;Early Access Book + Code, &lt;strong&gt;$99&lt;/strong&gt;&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;Early Access Book + Code (Team/Enterprise License), &lt;strong&gt;$199&lt;/strong&gt;&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;Discount Coupon for the Videos when they will be recorded&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To be clear, the Early Access Program entitles you to all the work-in-progress updates, and the Final Release version too. Since I will record the videos when the book is completed, you’ll have access the video content as an optional upgrade.&lt;/p&gt;
+
+&lt;h2 id=&quot;launching-ps-scriptingcom&quot;&gt;Launching ps-scripting.com&lt;/h2&gt;
+
+&lt;p&gt;The course is for sale since April 23rd 2018, please head to the dedicated website &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;www.ps-scripting.com&lt;/a&gt;! And help me to spread the world. 🙏🏻&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 Apr 2018 16:05:04 +0200</pubDate>
+        <link>/2018/04/professional-photoshop-scripting-course-early-access-program/</link>
+        <guid isPermaLink="true">/2018/04/professional-photoshop-scripting-course-early-access-program/</guid>
+        
+        <category>Professional Photoshop Scripting</category>
+        
+        <category>EAP</category>
+        
+        
+        <category>Scripting</category>
+        
+      </item>
+    
+      <item>
+        <title>Luminosity Masks: How Does It Really Work?</title>
+        <description>&lt;p&gt;In this &lt;strong&gt;guest post&lt;/strong&gt;, the Photoshop Plug In developer &lt;a href=&quot;https://cc-extensions.com/&quot;&gt;Scott Murdock&lt;/a&gt; tackles the apparently familiar topic of Luminosity Masks – with very interesting findings for anybody using them. Enjoy!&lt;/p&gt;
+
+&lt;p&gt;Everywhere you go you read about Luminosity Masks – I’m really surprised it doesn’t have its own Wikipedia Page! (Maybe I’ll take care of that).  It is truly a great tool to have in your toolbox, very powerful when used correctly. It’s greatness by simplicity. But how does it works? Not in the sense “how to create it”, but what really happens behind the scenes? Well, let’s try answering that question, and doing it in a deep (and hopefully interesting) way.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-basics&quot;&gt;The Basics&lt;/h2&gt;
+
+&lt;h3 id=&quot;step-1--it-all-starts-with-a-grayscale-image&quot;&gt;Step 1 – It all starts with a Grayscale image&lt;/h3&gt;
+
+&lt;p&gt;You can have images with all the colors in the world, but the first step in creating a Luminosity Mask is getting a Grayscale image (a Single Channel Image). In most cases, it means to calculate the Luminosity Channel of the given image. Each one has his own recipe: most actions/panels based solutions use Photoshop Luminosity selection (&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl + Left Mouse Click&lt;/code&gt; on the RGB Channel in the Channels Palette).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2018/03/GrayScaleImageGeneration-700x216.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;By the way, any “Single Channel” image can do here. The best choice (i.e. Channel, or processed grayscale layer) is the one where the image features you want to select are more evident and easily separable from the rest – in the above example the trees are well distinct from the sky for instance, and the lake’s gradient below helps as well. The Channel of choice could be the Blue from RGB, the Magenta from CMYK, or a combination of all the 10 Channels an image provides (R, G, B, C, M ,Y, K, L, a, b): whatever, be creative. In case of a grayscale image, life is easier, just move over to Step 2.&lt;/p&gt;
+
+&lt;h3 id=&quot;step-2-apply-pixel-wise-transformation-on-the-grayscale-image&quot;&gt;Step 2 – Apply Pixel Wise Transformation on the Grayscale Image&lt;/h3&gt;
+
+&lt;p&gt;Now, this is where the magic happens. The idea is very simple: given the Gray Scale image as input, the output per pixel is a function of its value only. Well, this sentence might take some of us back to horrible school days but it is really simple when you think about it. Pixel comes in, states its value, and gets an output value based only on its value alone, and voilà! We have a Luminosity Mask. The name says it all, the Mask depends solely on the Luminosity (Tonal Range value) of the pixels. It has nothing to do with their location, not their surrounding pixels. Just using the Luminosity value. Nothing more, nothing less – power by simplicity.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2018/03/MaskGenerator-700x351.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The above Figure represents a &lt;strong&gt;Mask Generator&lt;/strong&gt;. The input pixels values are in the upper section. They get processed by this &lt;em&gt;black box&lt;/em&gt;, which operates based on a function &lt;script type=&quot;math/tex&quot;&gt;f \left( x \right)&lt;/script&gt; and the pixel output that is generated is found in the bottom section. At the output, everything is black (Low Values) with the exception of pixels around 128, that are mapped to white (High Values). This suggests that a “Midtones Mask” has been generated. Simple fact: images are &lt;em&gt;discrete&lt;/em&gt; in their values. For instance, in the case of an 8bit image, the discrete values are in the range {0, 1, …, 254, 255}, occupying 256 available slots, i.e. &lt;script type=&quot;math/tex&quot;&gt;{2}^{8}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;So a &lt;em&gt;Mask Generator&lt;/em&gt; (Luminosity Mask Generator) has to designate an output value for each value in the input discrete &lt;em&gt;domain&lt;/em&gt;.&lt;/strong&gt; If the output image is also, let’s say 8 Bit, then the output values are also within the range &lt;code class=&quot;highlighter-rouge&quot;&gt;{0, 1, ..., 254, 255}&lt;/code&gt; which means one need to map 256 values into 256 values. In the Computer Science world this process is done using a &lt;a href=&quot;https://en.wikipedia.org/wiki/Lookup_table&quot;&gt;Look Up Table (LUT)&lt;/a&gt;. Over time some masks got their own naming according to the properties of the values assigned:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If it designates high output values to low input values, and low values to the rest it is called &lt;strong&gt;Shadows Mask Generator&lt;/strong&gt;. The output mask is called &lt;strong&gt;Shadows Luminosity Mask&lt;/strong&gt; which reveals shadows and blocks everything else.&lt;/li&gt;
+  &lt;li&gt;If it designates high output values to mid input values, and low values to the rest it is called &lt;strong&gt;Midtones Mask Generator&lt;/strong&gt;. The output mask is called &lt;strong&gt;Midtones Luminosity Mask&lt;/strong&gt; which reveals midtones and blocks everything else.&lt;/li&gt;
+  &lt;li&gt;If it designates high output values to high input values, and low values to the rest it is called &lt;strong&gt;Highlights Mask Generator&lt;/strong&gt;. The output mask is called &lt;strong&gt;Highlights Luminosity Mask&lt;/strong&gt; which reveals highlights and blocks everything else.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This is the mask generation transformation (aka &lt;em&gt;mapping&lt;/em&gt;), and basically this is all theory there is to know.&lt;/p&gt;
+
+&lt;h3 id=&quot;examples&quot;&gt;Examples&lt;/h3&gt;
+
+&lt;p&gt;Let’s do some stretching by examining two simple examples of main building blocks in the Luminosity Mask world. We will assume an 8bit image, hence input and output pixel values are given by &lt;code class=&quot;highlighter-rouge&quot;&gt;{0, 1, 2, ..., 254, 255}&lt;/code&gt;. The most basic Mapping / LUT / Function (all are different names to the same idea) is the &lt;em&gt;identity&lt;/em&gt; mapping:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f \left( x \right) = x&lt;/script&gt;
+
+&lt;p&gt;Namely, the output value – that is $ f \left( x \right) $ – is identical to the input value, which is $ x $. This mask is called &lt;strong&gt;Highlights Luminosity Mask&lt;/strong&gt;. Why? Because low input values (Shadows) are mapped to low output values (Dark pixels), and high input values (Highlights) are mapped to high output values (Light pixes). The result is a mask where shadows are dark (not selected) and highlights are light (selected) – hence the name. Another basic mask is given by the negative (inverse) of the Highlights Mask which is the &lt;strong&gt;Shadows Luminosity Mask&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f \left( x \right) = 255 - x&lt;/script&gt;
+
+&lt;p&gt;Here, to low input values (shadows) correspond high output values, and to high input values correspond high output values (light pixes). The result is a mask where shadows are light (selected) and highlights are dark (not selected). Using those 2 building blocks one could generate many other masks targeting different Tonal Ranges – something we will get to later.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2018/03/LuminosityMaskShowCaseAnimated-700x266.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As can be seen above, the Midtones Mask is generated by scaled multiplication of the Highlights Mask and the Shadows Mask. This is one way to achieve this, not necessarily what’s used usually (we’ll talk about that). Moreover, as can be seen by the Harmonic Function, one could do any mapping one wish.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Remark:&lt;/strong&gt; in practice, data is scaled into &lt;code class=&quot;highlighter-rouge&quot;&gt;[0, 1]&lt;/code&gt; range as operations, such as multiplication, makes more sense in that domain. So the range &lt;code class=&quot;highlighter-rouge&quot;&gt;{0, 1, 2, ..., 254, 255}&lt;/code&gt; becomes &lt;code class=&quot;highlighter-rouge&quot;&gt;{0 / 255, 1 / 255, 2 /255, ..., 254 / 255, 255 / 255}&lt;/code&gt;. This is exactly what’s done in the above figure.&lt;/p&gt;
+
+&lt;h2 id=&quot;in-practice&quot;&gt;In Practice&lt;/h2&gt;
+
+&lt;p&gt;So now we know what a Luminosity Mask Generator is, and what it is doing. On the next step, let’s try to understand how this is done in Photoshop in most cases. As discussed above, one need to create a LUT and there are two main approaches doing so: the &lt;strong&gt;Calculations Tool&lt;/strong&gt; or the &lt;strong&gt;Curve Tool&lt;/strong&gt;. One can apply each of those on Grayscale Image and the output is basically a Luminosity Mask.&lt;/p&gt;
+
+&lt;h3 id=&quot;curve-tool&quot;&gt;Curve Tool&lt;/h3&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://helpx.adobe.com/photoshop/using/curves-adjustment.html&quot;&gt;Curve Tool&lt;/a&gt; is a LUT table visualized by a Curve. It practically lets the user draw the LUT using a &lt;em&gt;flexible curve&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2018/03/PhotoshopCurveTool.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;On the figure above, one could see Photoshop’s Curve tool. On its bottom, horizontally, you can see the input values. On the left, vertically, you can see the output value. You match between each value just by altering the curve according to your wish. Basically, school days function, that’s what it is, drawing a function. &lt;strong&gt;Luminosity Mask Recipe by Curve Tool&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Create a Grayscale version of the image in a new layer (&lt;a href=&quot;https://photoshoptrainingchannel.com/tips/loading-luminosity-keyboard-shortcut/&quot;&gt;Extract Luminosity&lt;/a&gt; / select one of the channels / desaturate the image / use Channel Mixer, etc…).&lt;/li&gt;
+  &lt;li&gt;Open the Curve Tool.&lt;/li&gt;
+  &lt;li&gt;Draw the desired LUT.&lt;/li&gt;
+  &lt;li&gt;Use the result as a mask -&amp;gt; Luminosity Mask.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;calculations-tool&quot;&gt;Calculations Tool&lt;/h3&gt;
+
+&lt;p&gt;Using &lt;a href=&quot;https://helpx.adobe.com/photoshop/using/channel-calculations.html&quot;&gt;Calculations Tool&lt;/a&gt; one could apply simple Math operations on Layer / Channel / etc… Namely we can combine Math operations (Add, Subtract, Multiply and even more esoteric functions) by repetitive use of the Calculation tool. For instance, using the Calculation Tool we could easily generate the Midtones Mask from above by multiplying a layer and its inverse and scaling result by 4. So it gives us the option to use &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;–&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt; on images, but not much more than that.&lt;/p&gt;
+
+&lt;h2 id=&quot;comparison&quot;&gt;Comparison&lt;/h2&gt;
+
+&lt;p&gt;Let’s summarize the differences between those 2 approaches:&lt;/p&gt;
+
+&lt;h3 id=&quot;curves&quot;&gt;Curves&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Pros&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;No limits what so ever on the shape of the selection.&lt;/li&gt;
+      &lt;li&gt;Complex mask can be achieved in operation.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Cons&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Photoshop Curves are quantized into 256 levels which makes them less smooth.&lt;/li&gt;
+      &lt;li&gt;No parameterization (Unless scripted) hence hard to be accurate and consistent.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Remarks&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Used by many Luminosity Mask panels out there, yet unless result can be achieved using Calculations, quality wise it is better use Calculations.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;calculations&quot;&gt;Calculations&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Pros&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Can be translated into exact Mathematical expression.&lt;/li&gt;
+      &lt;li&gt;Smooth result and gets better as the mode (8, 16, 32 Bit) get higher.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Cons&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Limited to what can be done using the Blend Mode operations on the base Grayscale image.&lt;/li&gt;
+      &lt;li&gt;Requires repetitive operations to get special selections (Slow).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Remarks&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Usually used for its quality yet limited either by speed or can get arbitrary selection.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;building-masks&quot;&gt;Building Masks&lt;/h2&gt;
+
+&lt;p&gt;In this part we will show how most of the masks out there are built using the Lego bricks we created.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2018/03/LuminosityMaskRecipesAnimated-700x266.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As one could see above, using Addition, Subtraction and Multiplication (Intersection), all operations available on Layers / Channels / Masks in Photoshop, one could easily generate all those “Classic” Luminosity Masks one could find in the wild (wild world of the Luminosity Masks Panels). Those with &lt;em&gt;sharp eye&lt;/em&gt; would pay attention to something strange: Midtones Mask 001 is all black, see the function below:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f \left( x \right) = 1 - x - ( 1 - x ) = 1 - 1 + x - x = 0&lt;/script&gt;
+
+&lt;p&gt;Yet in practice, in all products out there… It is not?! So what’s going on?  Clearly they all state that the Midtones Mask is created by subtracting the Highlights and Shadows masks from the all white mask. So it is, by all means, should be all black mask while it is not. Well, what you see above is ideal Masks, while &lt;strong&gt;Photoshop can not generate them in this quality&lt;/strong&gt;.  The current methods to create them usually use Photoshop’s steps which aren’t doing this exact Math. We’ll talk more on those pitfalls and strange behavior of classic Luminosity Masks (and their generation) in the next writing.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Now we’ve understood what Luminosity Masks really are, the actual operations and Math behind them.&lt;/li&gt;
+  &lt;li&gt;We have shown the Luminosity Mask generation is no more than the most simple operation on grayscale image - Apply LUT / Pixel Wise Mapping.&lt;/li&gt;
+  &lt;li&gt;What we saw is that there 2 main approaches for Luminosity Masks in Photoshop. While one gives the most flexibility and efficiency (Curve Tool) it lacks with quality and the other which generates smooth masks (Calculation Tool) has speed issues when trying to generate complex masks and some miss calculations in the process.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;How can we solve those? Well, do the algorithm outside the limitations of Photoshop. This is what &lt;a href=&quot;https://cc-extensions.com//products/zoneselector/&quot;&gt;Fixel Zone Selector&lt;/a&gt; is all about. In the next part we’ll have a deeper dive and talk about Zone Selector’s approach to Luminosity Masks.&lt;/p&gt;
+
+&lt;h4 id=&quot;image-credit&quot;&gt;Image Credit&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.flickr.com/photos/magnetismus/8399258607/&quot;&gt;Lighthouse Image&lt;/a&gt; - Credit to &lt;a href=&quot;https://www.flickr.com/people/magnetismus/&quot;&gt;magnetismus&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.freeimages.com/photo/schwaigsee-lake-1342788&quot;&gt;Schwaigsee Lake&lt;/a&gt; - Credit to &lt;a href=&quot;https://www.freeimages.com/photographer/Alfi007-51075&quot;&gt;Alfred Borchard&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.flickr.com/photos/lightsamples/22552453147&quot;&gt;Simple Living&lt;/a&gt; - Credit to &lt;a href=&quot;https://www.flickr.com/photos/lightsamples&quot;&gt;Malcolm Carlaw&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;resources&quot;&gt;Resources&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://fotographee.com/tutorial-image-editing-luminosity-masks/&quot;&gt;Luminosity Mask: The Complete Kickstarter’s Guide&lt;/a&gt; (video).&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xvjno4d8uJ8&quot;&gt;How to Generate the Classic Luminosity Masks Using Mask / Channel Operations (Add, Subtract, Intersect Multiply)&lt;/a&gt; (video).&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=43JbFIOckrM&quot;&gt;How to Generate the Classic Luminosity Masks Using Calculations (16 Bit Mode)&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=la-zWPwjuQw&quot;&gt;Selecting Using Luminosity Masks (Using Curve Tool)&lt;/a&gt; (video).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Author of this guest post&lt;/strong&gt;: &lt;a href=&quot;https://cc-extensions.com/&quot;&gt;Scott Murdock&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 10 Mar 2018 14:56:13 +0100</pubDate>
+        <link>/2018/03/luminosity-masks-how-does-it-really-work/</link>
+        <guid isPermaLink="true">/2018/03/luminosity-masks-how-does-it-really-work/</guid>
+        
+        <category>Luminosity Mask</category>
+        
+        
+        <category>Photoshop</category>
+        
+      </item>
+    
+      <item>
+        <title>A New Course on Adobe CEP Panels: Native Installers and Automation!</title>
+        <description>&lt;p&gt;After &lt;a href=&quot;http://htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development&lt;/a&gt;, I’ve now published a new Course, titled “The Ultimate Guide to Native Installers and Automated Build Systems”!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/01/Book_Cover_Blog.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For which title the gods of software development and copywriting will forgive me. Curious?&lt;/p&gt;
+
+&lt;p&gt;In the business of Adobe HTML Panels, sooner or later you’ll ask yourself: “how the heck do I do… &lt;em&gt;whatever it must be done&lt;/em&gt; to let my customers run my software on their Computers?” The typical stream of consciousness is as follows.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;I know I know: it’s just a matter of moving a folder to the right place, isn’t it? And perhaps few extra assets here and there… of course, I don’t want other developers to reverse engineer my own code, so it must be protected somehow. OK, I forgot signing and timestamping. And Code Certificates: should I buy one? Which one? Do they all work the same? I’ve heard that some classy people build Native Installers, like Apple and Windows programs with nice graphic interfaces, that defeat Gatekeeper and SmartScreen security warnings like a pro! Gee, do I have to go through all this, by hand, all the time? Each time I change my code, on each product? For real?&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Stream of consciousness ends on a sad note. Hey, look at that! (Spring from Vivaldi’s The Four Seasons plays in background)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/01/UG.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is what the cool guys are doing. Type a command, and look at things that build themselves. What is looping above is a sample project, including:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;HTML Panel&lt;/li&gt;
+  &lt;li&gt;Multiplatform Photoshop Plugin as &lt;code class=&quot;highlighter-rouge&quot;&gt;.plugin&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;.8bf&lt;/code&gt; files (optional).&lt;/li&gt;
+  &lt;li&gt;Readme documentation as a &lt;code class=&quot;highlighter-rouge&quot;&gt;.pdf&lt;/code&gt; file (optional).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Output&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Signed and Timestamped Panel folder with:
+    *   &lt;code class=&quot;highlighter-rouge&quot;&gt;.js&lt;/code&gt; files protected with advanced obfuscation algorithms.
+    *   &lt;code class=&quot;highlighter-rouge&quot;&gt;.jsx&lt;/code&gt; files exported as &lt;code class=&quot;highlighter-rouge&quot;&gt;.jsxbin&lt;/code&gt; with different advanced obfuscation algorithms.&lt;/li&gt;
+  &lt;li&gt;Zipped version for convenience.&lt;/li&gt;
+  &lt;li&gt;Hybrid Extension as a &lt;code class=&quot;highlighter-rouge&quot;&gt;.zxp&lt;/code&gt; file, ready for submission on Adobe Add-ons.&lt;/li&gt;
+  &lt;li&gt;Mac &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; package, that in turn contains:
+    *   a &lt;code class=&quot;highlighter-rouge&quot;&gt;.pkg&lt;/code&gt; native installer,
+    *   an uninstaller application,
+    *   the &lt;code class=&quot;highlighter-rouge&quot;&gt;.pdf&lt;/code&gt; documentation.&lt;/li&gt;
+  &lt;li&gt;Windows &lt;code class=&quot;highlighter-rouge&quot;&gt;.exe&lt;/code&gt; native installer that deploys Panel, Photoshop Plugin and Documentation
+    *   Uninstaller provided in Windows’ Control Panel.&lt;/li&gt;
+  &lt;li&gt;Both platforms’ native installers are signed with paid Code Certificates to comply with Windows and macOS security policies.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After many years of trial and errors, I’ve finally settled to the above setup for my own commercial products, which takes 20 seconds of computer work to automatically build all the above. The final result looks like that, first on Mac:&lt;/p&gt;
+
+&lt;video width=&quot;100%&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;
+    &lt;source src=&quot;/wp-content/uploads/2018/01/UGMac.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+
+&lt;p&gt;Then on Windows:&lt;/p&gt;
+
+&lt;video width=&quot;100%&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;
+    &lt;source src=&quot;/wp-content/uploads/2018/01/Windows.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+
+&lt;h2 id=&quot;the-course&quot;&gt;The Course&lt;/h2&gt;
+
+&lt;p&gt;How to get there? I’ve explained it all, step by step, in &lt;strong&gt;The Ultimate Guide to Native Installers and Automated Build Systems&lt;/strong&gt;, my new Course!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/01/shot.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It comes as a &lt;strong&gt;PDF ebook, bundled with the entire Sample Project code&lt;/strong&gt; – both the dummy Panel and assets, plus the automation. The course draws the &lt;em&gt;big picture&lt;/em&gt; first, aka what needs to be done; then shows you how to manually perform each step, why, suggesting best practice and which software to use; finally, it teaches you how to write and customize the code to build the entire automation pipeline.&lt;/p&gt;
+
+&lt;script src=&quot;https://gumroad.com/js/gumroad-embed.js&quot;&gt;&lt;/script&gt;
+
+&lt;div class=&quot;gumroad-product-embed&quot; data-gumroad-product-id=&quot;swCoT&quot;&gt;&lt;a href=&quot;https://gumroad.com/l/swCoT&quot;&gt;Loading...&lt;/a&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;faq&quot;&gt;FAQ&lt;/h3&gt;
+
+&lt;dl&gt;
+    &lt;dt&gt;Does the Course apply to Photoshop only?&lt;/dt&gt;
+    &lt;dd&gt;I've used PS as my Adobe app of choice, but no, the course applies to &lt;em&gt;every&lt;/em&gt; CEP-enabled app you're developing extensions for.&lt;/dd&gt;
+
+    &lt;dt&gt;Mac, Windows or both?&lt;/dt&gt;
+    &lt;dd&gt;I'm on Mac: it's the only platform that allows you to build both Mac &lt;em&gt;and&lt;/em&gt; Windows installers; yet the automation code can run on Windows as well, with the exception of the Mac installers part.&lt;/dd&gt;
+
+    &lt;dt&gt;Does the bundle include Code Certificates?&lt;/dt&gt;
+    &lt;dd&gt;No. On the one side, paid Code Certificates are strongly suggested but optional. On the other side, I could not buy them in your place! In fact, it took me quite some time and effort to acquire them just for myself.&lt;/dd&gt;
+
+    &lt;dt&gt;Does the Course cover Panels development?&lt;/dt&gt;
+    &lt;dd&gt;This one is about installers and automation only. If you want the Big One (300 pages, 3 hours of videotutorials, 28 sample Panels code), head to the &lt;a href=&quot;http://htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development Course&lt;/a&gt;.&lt;/dd&gt;
+
+    &lt;dt&gt;Why there's a 1 in the cover?&lt;/dt&gt;
+    &lt;dd&gt;You have a sharp eye! I plan to expand the collection with more specific and smaller Courses like this one, in the future. Feel free to suggest topics you'd like to see covered in the comments! And yes, I have a 🦊 as the Terminal prompt, isn't it cute?&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h2 id=&quot;thank-you&quot;&gt;Thank you!&lt;/h2&gt;
+
+&lt;p&gt;Over the years, I’ve always posted articles on this blog as a way to give back to the developers’ community what I’ve picked up myself in the first place – from Forums, chats, etc. Alas, we live in a (very) material and a (very) demanding world: projects like this one are fundamental for me to sustain my business and my family – and as a consequence maintain and update this blog too.&lt;/p&gt;
+
+&lt;p&gt;Thank you in advance for your support! 🙏🏻 It is really appreciated.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 23 Jan 2018 14:37:47 +0100</pubDate>
+        <link>/2018/01/ultimate-guide-native-installers-automated-build-system/</link>
+        <guid isPermaLink="true">/2018/01/ultimate-guide-native-installers-automated-build-system/</guid>
+        
+        <category>Automation</category>
+        
+        <category>Installer</category>
+        
+        <category>Native Installer</category>
+        
+        
+        <category>CEP</category>
+        
+      </item>
+    
+  </channel>
+</rss>

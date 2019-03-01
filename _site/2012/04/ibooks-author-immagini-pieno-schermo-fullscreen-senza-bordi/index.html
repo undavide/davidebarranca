@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>iBooks Author &amp;#8211; Immagini a pieno schermo | Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content="iBooks Author &amp;#8211; Immagini a pieno schermo | Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content="iBooks Author &amp;#8211; Immagini a pieno schermo | Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!">
+    <meta name="description" property="og:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+    <meta name="twitter:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <link rel="canonical" href="/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href=""><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                <article class="post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-04-06T21:47:27+02:00" itemprop="datePublished">6 Apr, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline">iBooks Author &#8211; Immagini a pieno schermo</h2>
+    </header>
+
+    <div class="post-content">
+        <div class="pf-content">
+  <p>
+    <img style="border-width: 0px;" src="http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-fullscreen.jpg" alt="IBooksAuthor fullscreen" width="570" height="447" />Una delle più interessanti (e ovvie) possibilità degli iBooks è l&#8217;ingrandimento delle immagini a pieno schermo, in modo che anche le più piccole illustrazioni a piè pagina possano essere apprezzate ad alta risoluzione. Peccato che esistano almeno tre modi diversi di farlo in <em>iBooks Author</em>, ognuno coi suoi pro e contro: perché <em>pieno schermo</em> e <em>senza bordi</em> non sono proprio sinonimi.
+  </p>
+  
+  <p>
+    <!--more-->
+  </p>
+  
+  <p>
+    <img style="float: left; border-width: 0px;" src="http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-insertImage.jpg" alt="IBooksAuthor - Insert Image" width="300" height="427" />
+  </p>
+  
+  <h3>
+    Immagini
+  </h3>
+  
+  <p>
+    Ti sarai accorto che non c&#8217;è una voce nei menu per le immagini. E&#8217; possibile trascinare direttamente nel documento un file JPG, o PNG se ti interessa la trasparenza, dal Finder o dal pannello <em>Media</em>, oppure <em>Inserisci &#8211; Scegli&#8230;</em> (Command Shift V). Come in <em>Pages</em>, puoi ridimensionare, spostare, ecc. In questo modo però un&#8217;immagine resta ancorata alla pagina e non potrà essere ingrandita su iPad, per quanto i tuoi utenti la sfreghino con le dita nel tentativo di azzeccare la <em>gesture</em> giusta. Devi trasformare l&#8217;immagine in un <em>Widget</em>.
+  </p>
+  
+  <h3>
+    Widget Immagine
+  </h3>
+  
+  <p>
+    <img class="alignright size-full wp-image-828" style="border-width: 0px;" src="http://localhost:8888/wp-content/uploads/2012/04/InspectorWidget.png" alt="Inspector - Widget" width="230" height="422" srcset="http://localhost:8888/wp-content/uploads/2012/04/InspectorWidget.png 230w, http://localhost:8888/wp-content/uploads/2012/04/InspectorWidget-150x275.png 150w, http://localhost:8888/wp-content/uploads/2012/04/InspectorWidget-163x300.png 163w" sizes="(max-width: 230px) 100vw, 230px" />In iBooks Author, seleziona l&#8217;immagine e apri il tab <em>Widget</em> del pannello <em>Impostazioni</em> (se non è visibile, clicca la &#8220;i&#8221; bianca su sfondo blu nella Toolbar).
+  </p>
+  
+  <p>
+    Seleziona almeno il check del <em>Titolo</em> o della <em>Caption</em> (didascalia), oppure entrambi, in modo da trasformare l&#8217;immagine in un widget vero e proprio. Hai la possibilità di aggiungere un <em>Label</em> (etichetta) al titolo, scegliendo dal menu a discesa la definizione più corretta (Diagramma, Figura, Galleria, Illustrazione, Immagine, Interattiva, Video, Review), abilitando la numerazione automatica (ad esempio: <em>Fig. 1.1</em>).
+  </p>
+  
+  <p>
+    Se non ti preme avere un titolo o una didascalia, cancella il testo presente nell&#8217;editor e lascia il campo vuoto. Nota bene: il <em>Label</em> non è vincolato al tipo di widget (è permesso, e non crea alcun problema, avere un&#8217;immagine che si chiama <em>Video 1.0</em>, ad esempio).
+  </p>
+  
+  <p>
+    <img class="alignright" style="border-style: initial; border-color: initial; margin-left: 10px; border-width: 0px;" src="http://localhost:8888/wp-content/uploads/2012/04/InspectorFullscreen1.png" alt="InspectorFullscreen" width="230" height="110" border="0" />
+  </p>
+  
+  <p>
+    Il tab <em>Interazione</em> (accanto a <em>Layout</em>) mostra un promettente checkbox <em>Full-screen only</em>. Ogni tutorial o articolo che ho trovato suggerisce di selezionarlo. Non fa nessuna differenza, anzi a dire il vero non ho capito a che serva, visto che le immagini sull&#8217;iPad vanno a pieno schermo con un doppio tap ugualmente:
+  </p>
+  
+  <p>
+    <img style="margin-left: auto; margin-right: auto; border-width: 0px;" src="http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-semiFullscreen.jpg" alt="IBooksAuthor semiFullscreen" width="570" height="447" border="0" />
+  </p>
+  
+  <p>
+    Eppure, sebbene l&#8217;immagine sia a <em>pieno schermo</em>, non è <em>senza bordi</em>, lasciando spazio ai testi. Se per qualche (buona) ragione vuoi che le tue immagini non siano mai ridimensionate in alcun modo, la dimensione massima ottenibile per questo tipo di visualizzazione è di <strong>2008 x 1319 px</strong>, quindi in questo caso è inutile produrre immagini più grandi. Un bordo di almeno 20 px è sempre e comunque mantenuto, e l&#8217;immagine ha un passepartout bianco. Non ho trovato ancora il modo di cambiare il colore.
+  </p>
+  
+  <h3>
+    Widget Galleria
+  </h3>
+  
+  <p>
+    Una vera immagine a pieno schermo può essere ottenuta attraverso il widget <em>Galleria</em>. Clicca sul pulsante <em>Widget</em> nella toolbar e seleziona <em>Galleria</em>, oppure passa dal menu <em>Inserisci &#8211; Widget &#8211; Galleria</em>. Si tratta di uno slideshow, una proiezione di più immagini, rappresentata sulla pagina da un unico segnaposto (sia le icone che le didascalie personalizzate sono opzionali): con un doppio tocco si passa a pieno schermo (senza bordi), e scorrendo con un dito si naviga attraverso le immagini. È possibile realizzare una Galleria fatta di una sola ed unica immagine:
+  </p>
+  
+  <p>
+    <img style="margin-left: auto; margin-right: auto; border-width: 0px;" src="http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-GalleryFullscreen.jpg" alt="IBooksAuthor GalleryFullscreen" width="570" height="447" border="0" />
+  </p>
+  
+  <p>
+    Un tocco sull&#8217;immagine e sia titolo che didascalia scompaiono. Qual è il problema, dunque?
+  </p>
+  
+  <p>
+    <img class="alignleft" style="border-style: initial; border-color: initial; margin-bottom: 30px; border-width: 0px;" src="http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-GalleryWidget.jpg" alt="IBooksAuthor GalleryWidget" width="300" height="285" border="0" />Non che il titolo sia <em>Galleria</em> e invece si tratti di un&#8217;immagine (puoi cambiarlo dal menu a discesa <em>Label</em>). Lo screenshot a sinistra viene da iBooks Author, e mostra due frecce grigie sotto l&#8217;immagine, per la navigazione. Non appaiono su iPad se la <em>Galleria</em> contiene una sola immagine, eppure tutto il widget mantiene quell&#8217;altezza, rovinando la composizione della pagina con un&#8217;incomprensibile spaziatura bianca in basso. A me infastidisce.
+  </p>
+  
+  <p>
+    Se per te non è grave, hai trovato la soluzione migliore: un vero pieno schermo, senza bordi, con titolo e didascalia opzionale &#8211; e un piccolo difetto di design.
+  </p>
+  
+  <h3>
+    Widget Immagine Interattiva
+  </h3>
+  
+  <p>
+    Serve ad ingrandire l&#8217;immagine in punti predefiniti, che di solito contengono didascalie personalizzate: così come puoi aggiungere una <em>Galleria</em> di un&#8217;immagine sola, è possibile inserire una <em>Immagine Interattiva</em> senza alcuna vista extra né ingrandimenti. Aggiungi il widget e cancella le viste di default nel tab <em>Widget</em> del pannello <em>Impostazioni</em>. Questo è il risultato finale dell&#8217;ingrandimento su iPad:
+  </p>
+  
+  <p>
+    <img style="margin-left: auto; margin-right: auto; border-width: 0px;" src="http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-InteractiveImage.jpg" alt="IBooksAuthor InteractiveImage" width="570" height="447" border="0" />
+  </p>
+  
+  <p>
+    E&#8217; privo di titolo e didascalia &#8211; che potrebbero invece servirti.
+  </p>
+  
+  <p>
+    <img style="float: left; border-width: 0px;" src="http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-InteractiveImageProblem.jpg" alt="IBooksAuthor InteractiveImageProblem" width="300" height="327" border="0" />
+  </p>
+  
+  <p>
+    Eppure il problema più grave a mio parere è che, in iBooks Author, è praticamente impossibile ridimensionare l&#8217;immagine con lo slider per farla stare dentro al box del widget (o ridimensionare opportunamente pure quello) se non al quindicesimo tentativo e con molta fortuna, evitando che rimangano barre bianche ai bordi. Ti ricordo di cliccare sul pulsante blu (<em>Set View</em> nell&#8217;immagine) per confermare la scelta, altrimenti il widget tornerà al livello di zoom predefinito.
+  </p>
+  
+  <p>
+    Ho lavorato con iBooks Author per alcuni giorni ormai, credo sia un ottimo software: per essere alla versione 1.1. Ha molti bug, il più noioso a mio parere è <del datetime="2012-04-08T14:56:27+00:00">l&#8217;impossibilità di aggiungere immagini segnaposto nelle pagine mastro</del> (<strong>AGGIORNAMENTO</strong>: per farlo, occorrono due passaggi, io saltavo il secondo. 1) <em>Formato &#8211; Avanzato &#8211; Definisci come immagine segnaposto</em>. 2) Nel pannello <em>Impostazioni</em>, scegli <em>Impostazioni layout</em> e sotto Oggetto layout seleziona il checkbox <em>Modificabile su pagine che utilizzano questo layout</em>).
+  </p>
+  
+  <p>
+    Spero che le prossime versioni sistemino i vari problemi, ma soprattutto spero di vedere aggiornamenti frequenti da parte di Apple: iBooks Author può avere un brillante futuro!
+  </p>
+  
+  <p>
+    &nbsp;
+  </p>
+  
+  <p>
+    <em>[Il copyright della fotografia è di <a href="http://www.bigano.com" target="_blank">Roberto Bigano</a>]</em>
+  </p>
+</div>
+
+<!-- Share-Widget Button BEGIN -->
+<p>&lt;a href=”javascript:void(0);” myshare_id=”mys_shareit” myshare_url=”http://localhost:8888/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/” myshare_title=”iBooks Author – Immagini a pieno schermo” rel=”nofollow” onclick=” return false;” style=”text-decoration:none; color:#000000; font-size:11px; line-height:20px;”&gt;</p>
+
+<p><img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> &lt;/a&gt; <!-- Share-Widget Button END --></p>
+
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=iBooks Author &#8211; Immagini a pieno schermo&p[summary]=
+  
+    Una delle più interessanti (e ovvie) possibilità degli iBooks è l&#8217;ingrandimento delle immagini a pieno schermo, in modo che...&p[url]=/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/&text=
+  
+    Una delle più interessanti (e ovvie) possibilità degli iBooks è l&#8217;ingrandimento delle immagini a pieno schermo, in modo che...&hashtags=" rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+<aside class="comments" role="complementary">
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = '/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/';
+            this.page.identifier = '4/6/2012';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//your_disqus_site.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</aside>
+
+            </main>
+        </div>
+
+        <script src="/assets/js/jquery-1.12.2.min.js"></script>
+<script src="/assets/js/backtotop.js"></script>
+<script src="/assets/js/lunr.min.js"></script>
+<script src="/assets/js/lunr-feed.js"></script>
+<script src="/assets/js/jquery.fitvids.js"></script>
+<script src="/assets/js/svg4everybody.min.js"></script>
+<script src="/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>

@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>A New Course on Adobe CEP Panels: Native Installers and Automation! | Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content="A New Course on Adobe CEP Panels: Native Installers and Automation! | Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content="A New Course on Adobe CEP Panels: Native Installers and Automation! | Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="The Ultimate Guide to Native Installers and Automated Build Systems, my new course on Adobe CEP Panels Development, is available for sale">
+    <meta name="description" property="og:description" content="The Ultimate Guide to Native Installers and Automated Build Systems, my new course on Adobe CEP Panels Development, is available for sale" />
+    <meta name="twitter:description" content="The Ultimate Guide to Native Installers and Automated Build Systems, my new course on Adobe CEP Panels Development, is available for sale" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="/2018/01/ultimate-guide-native-installers-automated-build-system/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <link rel="canonical" href="/2018/01/ultimate-guide-native-installers-automated-build-system/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href=""><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                <article class="post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2018-01-23T14:37:47+01:00" itemprop="datePublished">23 Jan, 2018</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline">A New Course on Adobe CEP Panels: Native Installers and Automation!</h2>
+    </header>
+
+    <div class="post-content">
+        <p>After <a href="http://htmlpanelsbook.com/">Adobe Photoshop HTML Panels Development</a>, I’ve now published a new Course, titled “The Ultimate Guide to Native Installers and Automated Build Systems”!</p>
+
+<p><img src="/wp-content/uploads/2018/01/Book_Cover_Blog.jpg" alt="" /></p>
+
+<p>For which title the gods of software development and copywriting will forgive me. Curious?</p>
+
+<p>In the business of Adobe HTML Panels, sooner or later you’ll ask yourself: “how the heck do I do… <em>whatever it must be done</em> to let my customers run my software on their Computers?” The typical stream of consciousness is as follows.</p>
+
+<blockquote>
+  <p><em>I know I know: it’s just a matter of moving a folder to the right place, isn’t it? And perhaps few extra assets here and there… of course, I don’t want other developers to reverse engineer my own code, so it must be protected somehow. OK, I forgot signing and timestamping. And Code Certificates: should I buy one? Which one? Do they all work the same? I’ve heard that some classy people build Native Installers, like Apple and Windows programs with nice graphic interfaces, that defeat Gatekeeper and SmartScreen security warnings like a pro! Gee, do I have to go through all this, by hand, all the time? Each time I change my code, on each product? For real?</em></p>
+</blockquote>
+
+<p>Stream of consciousness ends on a sad note. Hey, look at that! (Spring from Vivaldi’s The Four Seasons plays in background)</p>
+
+<p><img src="/wp-content/uploads/2018/01/UG.gif" alt="" /></p>
+
+<p>This is what the cool guys are doing. Type a command, and look at things that build themselves. What is looping above is a sample project, including:</p>
+
+<p><strong>Input</strong>:</p>
+<ul>
+  <li>HTML Panel</li>
+  <li>Multiplatform Photoshop Plugin as <code class="highlighter-rouge">.plugin</code> and <code class="highlighter-rouge">.8bf</code> files (optional).</li>
+  <li>Readme documentation as a <code class="highlighter-rouge">.pdf</code> file (optional).</li>
+</ul>
+
+<p><strong>Output</strong></p>
+<ul>
+  <li>Signed and Timestamped Panel folder with:
+    *   <code class="highlighter-rouge">.js</code> files protected with advanced obfuscation algorithms.
+    *   <code class="highlighter-rouge">.jsx</code> files exported as <code class="highlighter-rouge">.jsxbin</code> with different advanced obfuscation algorithms.</li>
+  <li>Zipped version for convenience.</li>
+  <li>Hybrid Extension as a <code class="highlighter-rouge">.zxp</code> file, ready for submission on Adobe Add-ons.</li>
+  <li>Mac <code class="highlighter-rouge">.dmg</code> package, that in turn contains:
+    *   a <code class="highlighter-rouge">.pkg</code> native installer,
+    *   an uninstaller application,
+    *   the <code class="highlighter-rouge">.pdf</code> documentation.</li>
+  <li>Windows <code class="highlighter-rouge">.exe</code> native installer that deploys Panel, Photoshop Plugin and Documentation
+    *   Uninstaller provided in Windows’ Control Panel.</li>
+  <li>Both platforms’ native installers are signed with paid Code Certificates to comply with Windows and macOS security policies.</li>
+</ul>
+
+<p>After many years of trial and errors, I’ve finally settled to the above setup for my own commercial products, which takes 20 seconds of computer work to automatically build all the above. The final result looks like that, first on Mac:</p>
+
+<video width="100%" autoplay="" loop="" muted="">
+    <source src="/wp-content/uploads/2018/01/UGMac.mp4" type="video/mp4" />
+</video>
+
+<p>Then on Windows:</p>
+
+<video width="100%" autoplay="" loop="" muted="">
+    <source src="/wp-content/uploads/2018/01/Windows.mp4" type="video/mp4" />
+</video>
+
+<h2 id="the-course">The Course</h2>
+
+<p>How to get there? I’ve explained it all, step by step, in <strong>The Ultimate Guide to Native Installers and Automated Build Systems</strong>, my new Course!</p>
+
+<p><img src="/wp-content/uploads/2018/01/shot.jpg" alt="" /></p>
+
+<p>It comes as a <strong>PDF ebook, bundled with the entire Sample Project code</strong> – both the dummy Panel and assets, plus the automation. The course draws the <em>big picture</em> first, aka what needs to be done; then shows you how to manually perform each step, why, suggesting best practice and which software to use; finally, it teaches you how to write and customize the code to build the entire automation pipeline.</p>
+
+<script src="https://gumroad.com/js/gumroad-embed.js"></script>
+
+<div class="gumroad-product-embed" data-gumroad-product-id="swCoT"><a href="https://gumroad.com/l/swCoT">Loading...</a></div>
+
+<h3 id="faq">FAQ</h3>
+
+<dl>
+    <dt>Does the Course apply to Photoshop only?</dt>
+    <dd>I've used PS as my Adobe app of choice, but no, the course applies to <em>every</em> CEP-enabled app you're developing extensions for.</dd>
+
+    <dt>Mac, Windows or both?</dt>
+    <dd>I'm on Mac: it's the only platform that allows you to build both Mac <em>and</em> Windows installers; yet the automation code can run on Windows as well, with the exception of the Mac installers part.</dd>
+
+    <dt>Does the bundle include Code Certificates?</dt>
+    <dd>No. On the one side, paid Code Certificates are strongly suggested but optional. On the other side, I could not buy them in your place! In fact, it took me quite some time and effort to acquire them just for myself.</dd>
+
+    <dt>Does the Course cover Panels development?</dt>
+    <dd>This one is about installers and automation only. If you want the Big One (300 pages, 3 hours of videotutorials, 28 sample Panels code), head to the <a href="http://htmlpanelsbook.com/">Adobe Photoshop HTML Panels Development Course</a>.</dd>
+
+    <dt>Why there's a 1 in the cover?</dt>
+    <dd>You have a sharp eye! I plan to expand the collection with more specific and smaller Courses like this one, in the future. Feel free to suggest topics you'd like to see covered in the comments! And yes, I have a 🦊 as the Terminal prompt, isn't it cute?</dd>
+</dl>
+
+<h2 id="thank-you">Thank you!</h2>
+
+<p>Over the years, I’ve always posted articles on this blog as a way to give back to the developers’ community what I’ve picked up myself in the first place – from Forums, chats, etc. Alas, we live in a (very) material and a (very) demanding world: projects like this one are fundamental for me to sustain my business and my family – and as a consequence maintain and update this blog too.</p>
+
+<p>Thank you in advance for your support! 🙏🏻 It is really appreciated.</p>
+
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=A New Course on Adobe CEP Panels: Native Installers and Automation!&p[summary]=After Adobe Photoshop HTML Panels Development, I’ve now published a new Course, titled “The Ultimate Guide to Native Installers and Autom...&p[url]=/2018/01/ultimate-guide-native-installers-automated-build-system/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2018/01/ultimate-guide-native-installers-automated-build-system/&text=After Adobe Photoshop HTML Panels Development, I’ve now published a new Course, titled “The Ultimate Guide to Native Installers and Autom...&hashtags=Automation,Installer,Native Installer," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Automation">Automation</a></li>
+                
+                <li><a href="/tag/Installer">Installer</a></li>
+                
+                <li><a href="/tag/Native Installer">Native Installer</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+<aside class="comments" role="complementary">
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = '/2018/01/ultimate-guide-native-installers-automated-build-system/';
+            this.page.identifier = '1/23/2018';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//your_disqus_site.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</aside>
+
+            </main>
+        </div>
+
+        <script src="/assets/js/jquery-1.12.2.min.js"></script>
+<script src="/assets/js/backtotop.js"></script>
+<script src="/assets/js/lunr.min.js"></script>
+<script src="/assets/js/lunr-feed.js"></script>
+<script src="/assets/js/jquery.fitvids.js"></script>
+<script src="/assets/js/svg4everybody.min.js"></script>
+<script src="/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>

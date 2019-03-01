@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Presets management with DropDownList and XML in ExtendScript | Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content="Presets management with DropDownList and XML in ExtendScript | Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content="Presets management with DropDownList and XML in ExtendScript | Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!">
+    <meta name="description" property="og:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+    <meta name="twitter:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="/2013/03/presets-management-with-dropdownlist-and-xml-in-extendscript/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <link rel="canonical" href="/2013/03/presets-management-with-dropdownlist-and-xml-in-extendscript/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href=""><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                <article class="post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2013-03-02T23:06:46+01:00" itemprop="datePublished">2 Mar, 2013</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline">Presets management with DropDownList and XML in ExtendScript</h2>
+    </header>
+
+    <div class="post-content">
+        <div class="pf-content">
+  <p>
+    <span itemprop="description">ScriptUI windows can contain several controls (checkboxes, sliders, etc), and to setup a Preset system is a very handy way to allow users save and retrieve their own preferred configurations easily. In this tutorial I&#8217;ll show you <span itemprop="name">how to implement <span itemprop="about">Presets</span> with a DropDownList menu based upon XML data</span>.</span><!--more-->
+  </p>
+  
+  <p>
+    <img class="aligncenter size-full wp-image-1772" alt="XML DropDownList Preset demo" src="http://localhost:8888/wp-content/uploads/2013/03/XML_DropDownList_Preset_demo.jpg" width="524" height="346" itemprop="image" srcset="http://localhost:8888/wp-content/uploads/2013/03/XML_DropDownList_Preset_demo.jpg 524w, http://localhost:8888/wp-content/uploads/2013/03/XML_DropDownList_Preset_demo-150x99.jpg 150w, http://localhost:8888/wp-content/uploads/2013/03/XML_DropDownList_Preset_demo-300x198.jpg 300w" sizes="(max-width: 524px) 100vw, 524px" />
+  </p>
+  
+  <h2>
+    Starting point
+  </h2>
+  
+  <p>
+    I&#8217;ve set up a simple demo dialog using a resource string &#8211; you can use it either in <span itemprop="mentions" itemscope="" itemtype="http://schema.org/SoftwareApplication">InDesign</span> or <span itemprop="mentions" itemscope="" itemtype="http://schema.org/SoftwareApplication">Photoshop</span> for instance: this is the <strong>base</strong> which I&#8217;ll be using throughout the post <strong>adding functional bits of code</strong>. (I&#8217;ve used <a title="CoffeeScript" href="http://www.coffeescript.org" target="_blank">CoffeeScript</a>, a nice language that compiles to JavaScript, to write the whole script; in this tutorial I&#8217;m going to show the JS only, but you can find the entire <span itemprop="mentions" itemscope="" itemtype="http://schema.org/SoftwareApplication">CoffeScript</span> code at the bottom of the page if you&#8217;re curious).
+  </p>
+  
+  <pre class="toolbar:1 lang:js decode:true" title="XML_DropDownList_preset.jsx - Starting point">#target photoshop;
+
+var win, windowResource;
+
+windowResource = "dialog {  \
+    orientation: 'column', \
+    alignChildren: ['fill', 'top'],  \
+    size:[410, 210], \
+    text: 'XML DropDownList Presets demo - www.davidebarranca.com',  \
+    margins:15, \
+    \
+    controlsPanel: Panel { \
+        orientation: 'column', \
+        alignChildren:'right', \
+        margins:15, \
+        text: 'Controls', \
+        controlsGroup: Group {  \
+        orientation: 'row', \
+        alignChildren:'center', \
+        st: StaticText { text: 'Amount:' }, \
+        mySlider: Slider { minvalue:0, maxvalue:500, value:300, size:[220,20] }, \
+        myText: EditText { text:'300', characters:5, justify:'left'} \
+        } \
+    }, \
+    presetsPanel: Panel { \
+        orientation: 'row', \
+        alignChildren: 'center', \
+        text: 'Presets', \
+        margins: 14, \
+        presetList: DropDownList {preferredSize: [163,20] }, \
+        saveNewPreset: Button { text: 'New', preferredSize: [44,24]}, \
+        deletePreset: Button { text: 'Remove', preferredSize: [60,24]}, \
+        resetPresets: Button { text: 'Reset', preferredSize: [50,24]} \
+    }, \
+    buttonsGroup: Group{\
+        alignChildren: 'bottom',\
+        cancelButton: Button { text: 'Cancel', properties:{name:'cancel'},size: [60,24], alignment:['right', 'center'] }, \
+        applyButton: Button { text: 'Apply', properties:{name:'apply'}, size: [100,24], alignment:['right', 'center'] }, \
+        }\
+    }";
+
+win = new Window(windowResource);
+// binds mySlider.value with myText.text
+win.controlsPanel.controlsGroup.myText.onChange = function() {
+  this.parent.mySlider.value = Number(this.text);
+};
+win.controlsPanel.controlsGroup.mySlider.onChange = function() { 
+  this.parent.myText.text = Math.ceil(this.value); }; win.show();&nbsp;</pre>
+  
+  <p>
+    This scheme lets you:
+  </p>
+  
+  <ul>
+    <li>
+      <strong>Save</strong> new custom presets.
+    </li>
+    <li>
+      <strong>Delete</strong> custom presets.
+    </li>
+    <li>
+      <strong>Reset</strong> to the default group of presets (which are <em>protected</em> and cannot be deleted).
+    </li>
+  </ul>
+  
+  <p>
+    The presets are stored as <strong>XML data</strong> in a file (in the example there&#8217;s a single value only, but they can be as many as you need)
+  </p>
+  
+  <pre class="toolbar:1 lang:xhtml decode:true" title="preset.xml">&lt;presets&gt;
+  &lt;preset default="true"&gt;
+    &lt;name&gt;select...&lt;/name&gt;
+    &lt;value/&gt;
+  &lt;/preset&gt;
+  &lt;preset default="true"&gt;
+    &lt;name&gt;Default value&lt;/name&gt;
+    &lt;value&gt;100&lt;/value&gt;
+  &lt;/preset&gt;
+  &lt;preset default="true"&gt;
+    &lt;name&gt;Low value&lt;/name&gt;
+    &lt;value&gt;10&lt;/value&gt;
+  &lt;/preset&gt;
+  &lt;preset default="true"&gt;
+    &lt;name&gt;High value&lt;/name&gt;
+    &lt;value&gt;400&lt;/value&gt;
+  &lt;/preset&gt;
+&lt;/presets&gt;</pre>
+  
+  <p>
+    The <code>default="true"</code> attribute marks this presets as read-only (i.e. the user can&#8217;t delete them)
+  </p>
+  
+  <h2>
+    Logic
+  </h2>
+  
+  <p>
+    This is how I&#8217;ve decomposed the problem (click to open a bigger version)
+  </p>
+  
+  <p style="text-align: center;">
+    <a href="http://localhost:8888/wp-content/uploads/2013/03/PresetsDemoWorkflow.png" target="_blank"><img class="aligncenter size-full wp-image-1767" alt="Presets Demo Workflow" src="http://localhost:8888/wp-content/uploads/2013/03/PresetsDemoWorkflow.png" width="1430" height="654" itemprop="image" srcset="http://localhost:8888/wp-content/uploads/2013/03/PresetsDemoWorkflow.png 1430w, http://localhost:8888/wp-content/uploads/2013/03/PresetsDemoWorkflow-150x68.png 150w, http://localhost:8888/wp-content/uploads/2013/03/PresetsDemoWorkflow-300x137.png 300w, http://localhost:8888/wp-content/uploads/2013/03/PresetsDemoWorkflow-1024x468.png 1024w" sizes="(max-width: 1430px) 100vw, 1430px" /></a>
+  </p>
+  
+  <h2>
+    Building the Presets system
+  </h2>
+  
+  <p>
+    Basically the core is an <strong>initialization routine</strong> that reads <span itemprop="about">XML</span> data from an XML file (or creates a default one if it&#8217;s missing) and fills the <span itemprop="about">DropDownList</span> (DDL from now on) with labels, so let&#8217;s start with it.
+  </p>
+  
+  <h3>
+    1. Initialization routine
+  </h3>
+  
+  <p>
+    I&#8217;ve set few globals that will be useful for other functions too &#8211; the code is commented so it should be quite self-explanatory.
+  </p>
+  
+  <pre class="toolbar:1 lang:js decode:true" title="1.1 Initialization routine">// the XML object holding the XML data
+var xmlData = null;
+
+// the array holding the preset labels, used later on 
+// to check for label duplicates when adding a new preset
+var presetNamesArray = [];
+
+// the preset file (which lives alongside this script)
+resPath = File($.fileName).parent;
+var presetFile = new File("" + resPath + "/presets.xml");
+
+// Initialization routine
+var initDDL = function() {
+  var i, nameListLength;
+
+  if (!presetFile.exists) {
+    createDefaultXML();
+    // recursive call, needed to read and fill the DDL
+    initDDL(); 
+  }
+
+  // retrieves XML Data
+  xmlData = readXML();
+  // empties the DDL before adding new content
+  if (win.presetsPanel.presetList.items.length !== 0) {
+    win.presetsPanel.presetList.removeAll();
+  }
+
+  // the number of preset labels
+  nameListLength = xmlData.preset.name.length();
+  presetNamesArray.length = 0;
+
+  // for each preset XML element, retrieve the &lt;name&gt; label
+  // and write it in the Labels array, then add it to the DDL
+  i = 0;
+  while (i &lt; nameListLength) {
+    presetNamesArray.push(xmlData.preset.name[i].toString());
+    win.presetsPanel.presetList.add("item", xmlData.preset.name[i]);
+    i++;
+  }
+
+  // set as the default the first preset
+  // which is the placeholder "select..."
+  win.presetsPanel.presetList.selection = win.presetsPanel.presetList.items[0];
+  return true;
+};</pre>
+  
+  <p>
+    As you&#8217;ve seen I&#8217;ve mentioned some utility functions like <code>readXML()</code> and <code>writeXML()</code>, alongside <code>createDefaultXML()</code>, here they are:
+  </p>
+  
+  <pre class="toolbar:1 lang:default decode:true" title="1.2 Utility functions">// holds the XML object containing the 
+// Default set of Presets
+var defaultXML = &lt;presets&gt;
+		   &lt;preset default="true"&gt;
+		   &lt;name&gt;select...&lt;/name&gt;
+		   &lt;value&gt;&lt;/value&gt;
+	        &lt;/preset&gt;
+	        &lt;preset default="true"&gt;
+		   &lt;name&gt;Default value&lt;/name&gt;
+		   &lt;value&gt;100&lt;/value&gt;
+	        &lt;/preset&gt;
+	        &lt;preset default="true"&gt;
+		   &lt;name&gt;Low value&lt;/name&gt;
+		   &lt;value&gt;10&lt;/value&gt;
+	        &lt;/preset&gt;
+	        &lt;preset default="true"&gt;
+	       	   &lt;name&gt;High value&lt;/name&gt;
+		   &lt;value&gt;400&lt;/value&gt;
+                &lt;/preset&gt;
+	     &lt;/presets&gt;;
+
+// writes an XML object to file
+writeXML = function(xml, file) {
+  if (file == null) {
+    // global, the preset.xml file already declared
+    file = presetFile;
+  }
+  try {
+    file.open("w");
+    file.write(xml);
+    file.close();
+  } catch (e) {
+    alert("" + e.message + "\nThere are problems writing the XML file!");
+  }
+  return true;
+};
+
+// reads an XML object from a file
+readXML = function(file) {
+  var content;
+  if (file == null) {
+    // global, the preset.xml file already declared
+    file = presetFile;
+  }
+  try {
+    file.open('r');
+    content = file.read();
+    file.close();
+    return new XML(content);
+  } catch (e) {
+    alert("" + e.message + "\nThere are problems reading the XML file!");
+  }
+  return true;
+};
+
+// creates a preset.xml file
+// using the default set of presets
+createDefaultXML = function() {
+  // global, the preset.xml file already declared
+  if (!presetFile.exists) {
+    writeXML(defaultXML);
+    return true;
+  } else {
+    presetFile.remove();
+    // recursive call
+    createDefaultXML();
+  }
+  return true;
+};</pre>
+  
+  <p>
+    So far the script detects whether a <code>preset.xml</code> file exists: if it doesn&#8217;t, it creates a default one &#8211; otherwise it reads it and use it to fill the DDL.
+  </p>
+  
+  <h3>
+    2. Save a new preset
+  </h3>
+  
+  <p>
+    I&#8217;ve setup the following <code>onClick()</code> function which makes use of <code>createPresetChild()</code>, another utility that grabs values from the GUI and creates a <code></code> node from them. Which node, in turn, will be appended to the existing XML data.
+  </p>
+  
+  <pre class="toolbar:1 lang:js decode:true" title="2.1 Save new preset">// used to workaround the lack of indexOf in ExtendScript
+var __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i &lt; l; i++) { if (i in this &amp;&amp; this[i] === item) return i; } return -1; };
+
+// creates a XML &lt;preset&gt; node 
+var createPresetChild = function(name, value) {
+  var child;
+  // mind you, each custom node has the default attribute
+  // set to "false", meaning that it can be deleted
+  return child = &lt;preset default="false"&gt;
+		    &lt;name&gt;{name}&lt;/name&gt;
+		    &lt;value&gt;{value}&lt;/value&gt;
+		 &lt;/preset&gt;;
+};
+
+// onClick handler for the Save New Preset button
+win.presetsPanel.saveNewPreset.onClick = function() {
+  var child, presetName;
+
+  // ask for a preset name
+  presetName = prompt("Give your preset a name!\nYou'll find it in the preset list.", "User Preset", "Save new Preset");
+  if (presetName == null) {
+    return;
+  }
+
+  // in case the name already exists
+  if (__indexOf.call(presetNamesArray, presetName) &gt;= 0) {
+    alert("Duplicate name!\nPlease find another one.");
+    // make a recursive call to this onClick function
+    win.presetsPanel.saveNewPreset.onClick.call();
+  }
+
+  // creates a &lt;preset&gt; node with values grabbed 
+  // from the window controls
+  child = createPresetChild(presetName, win.controlsPanel.controlsGroup.myText.text);
+
+  // appends the XML node to the existing XML data (global variable)
+  xmlData.appendChild(child);
+
+  // writes the XML object to the preset.xml file
+  writeXML(xmlData);
+
+  // you need to initialize again, in order to populate 
+  // the DDL with new values
+  initDDL();
+
+  // selects the last preset in the DDL
+  win.presetsPanel.presetList.selection = win.presetsPanel.presetList.items[win.presetsPanel.presetList.items.length - 1];
+};</pre>
+  
+  <p>
+    Please notice the lack of <code>indexOf</code> in ExtendScript (the used <code>__indexOf</code> is courtesy of CoffeeScript)
+  </p>
+  
+  <h3>
+     3. Delete preset
+  </h3>
+  
+  <p>
+    That&#8217;s pretty straightforward, you just need to check whether the <code>default</code> attribute of the preset is false (which means that the preset is not protected and can be deleted). Again, each preset&#8217;s modification needs to write the changes to disk in the <code>presets.xml</code> file and re-initialize the DDL in order to populate the menu properly.
+  </p>
+  
+  <pre class="toolbar:1 lang:js decode:true" title="3.1 Delete preset">// onClick handler for the Delete preset button
+win.presetsPanel.deletePreset.onClick = function() {
+
+  // mind you: typeof xmlData.preset[].@default = XML
+  if (xmlData.preset[win.presetsPanel.presetList.selection.index].@default.toString() === "true") {
+    alert("Can't delete \"" + xmlData.preset[win.presetsPanel.presetList.selection.index].name + "\"\nIt's part of the default set of Presets");
+    return;
+  }
+
+  // ask for confirmation
+  if (confirm("Are you sure you want to delete \"" + xmlData.preset[win.presetsPanel.presetList.selection.index].name + "\" preset?\nYou can't undo this.")) {
+    // delete the &lt;preset&gt; element
+    delete xmlData.preset[win.presetsPanel.presetList.selection.index];
+  }
+
+  // as usual, write to disk and initialize again
+  writeXML(xmlData);
+  return initDDL();
+};</pre>
+  
+  <h3>
+     4. Reset presets
+  </h3>
+  
+  <p>
+    Another easy task, just replace <code>presets.xml</code> with a default one (which is hardcoded inside the script).
+  </p>
+  
+  <pre class="toolbar:1 lang:default decode:true" title="4.1 Reset presets">// onClick handler for the Reset presets button
+win.presetsPanel.resetPresets.onClick = function() {
+  if (confirm("Warning\nAre you sure you want to reset the Preset list?", true)) {
+    createDefaultXML();
+    initDDL();
+  }
+};</pre>
+  
+  <h3>
+     5. Apply preset
+  </h3>
+  
+  <p>
+    The last thing we&#8217;ve to add is a handler for the DDL <code>onChange</code> event &#8211; that is, the user selects the preset and window controls must be updated with values coming from it.
+  </p>
+  
+  <pre class="toolbar:1 lang:js decode:true " title="5.1 Apply preset">// DDL onChange handler
+win.presetsPanel.presetList.onChange = function() {
+  if (this.selection !== null &amp;&amp; this.selection.index !== 0) {
+    // sets GUI controls
+    win.controlsPanel.controlsGroup.myText.text = xmlData.preset[this.selection.index].value;
+    win.controlsPanel.controlsGroup.mySlider.value = Number(xmlData.preset[this.selection.index].value);
+  }
+};</pre>
+  
+  <h2>
+    Completed script
+  </h2>
+  
+  <p>
+    Let&#8217;s put everything together! As follows both versions (JS and CoffeeScript). Speaking of the latter, XML management in ExtendScript made me use more than I wanted the backticks (which embed regular JS code), but that&#8217;s fine &#8211; I&#8217;m a big fan of CoffeeScript anyway 🙂
+  </p>
+  
+  <h3>
+    Javascript
+  </h3>
+  
+  <pre class="toolbar:1 lang:js decode:true" title="Completed script - Javascript version">#target photoshop;
+var createDefaultXML, createPresetChild, defaultXML, initDDL, presetFile, presetNamesArray, readXML, resPath, win, windowResource, writeXML, xmlData,
+  __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i &lt; l; i++) { if (i in this &amp;&amp; this[i] === item) return i; } return -1; };
+
+windowResource = "dialog {  \
+    orientation: 'column', \
+    alignChildren: ['fill', 'top'],  \
+    size:[410, 210], \
+    text: 'DropDownList Demo - www.davidebarranca.com',  \
+    margins:15, \
+    \
+    controlsPanel: Panel { \
+        orientation: 'column', \
+        alignChildren:'right', \
+        margins:15, \
+        text: 'Controls', \
+        controlsGroup: Group {  \
+            orientation: 'row', \
+            alignChildren:'center', \
+            st: StaticText { text: 'Amount:' }, \
+            mySlider: Slider { minvalue:0, maxvalue:500, value:300, size:[220,20] }, \
+            myText: EditText { text:'300', characters:5, justify:'left'} \
+    	} \
+    }, \
+    presetsPanel: Panel { \
+    	orientation: 'row', \
+    	alignChildren: 'center', \
+    	text: 'Presets', \
+    	margins: 14, \
+    	presetList: DropDownList {preferredSize: [163,20] }, \
+    	saveNewPreset: Button { text: 'New', preferredSize: [44,24]}, \
+    	deletePreset: Button { text: 'Remove', preferredSize: [60,24]}, \
+    	resetPresets: Button { text: 'Reset', preferredSize: [50,24]} \
+    }, \
+    buttonsGroup: Group{\
+        alignChildren: 'bottom',\
+        cancelButton: Button { text: 'Cancel', properties:{name:'cancel'},size: [60,24], alignment:['right', 'center'] }, \
+        applyButton: Button { text: 'Apply', properties:{name:'apply'}, size: [100,24], alignment:['right', 'center'] }, \
+    }\
+}";
+
+win = new Window(windowResource);
+xmlData = null;
+presetNamesArray = [];
+resPath = File($.fileName).parent;
+presetFile = new File("" + resPath + "/presets.xml");
+defaultXML = &lt;presets&gt;
+		&lt;preset default="true"&gt;
+			&lt;name&gt;select...&lt;/name&gt;
+			&lt;value&gt;&lt;/value&gt;
+		&lt;/preset&gt;
+		&lt;preset default="true"&gt;
+			&lt;name&gt;Default value&lt;/name&gt;
+			&lt;value&gt;100&lt;/value&gt;
+		&lt;/preset&gt;
+		&lt;preset default="true"&gt;
+			&lt;name&gt;Low value&lt;/name&gt;
+			&lt;value&gt;10&lt;/value&gt;
+		&lt;/preset&gt;
+		&lt;preset default="true"&gt;
+			&lt;name&gt;High value&lt;/name&gt;
+			&lt;value&gt;400&lt;/value&gt;
+		&lt;/preset&gt;
+	&lt;/presets&gt;;
+
+writeXML = function(xml, file) {
+  if (file == null) {
+    file = presetFile;
+  }
+  try {
+    file.open("w");
+    file.write(xml);
+    file.close();
+  } catch (e) {
+    alert("" + e.message + "\nThere are problems writing the XML file!");
+  }
+  return true;
+};
+
+readXML = function(file) {
+  var content;
+  if (file == null) {
+    file = presetFile;
+  }
+  try {
+    file.open('r');
+    content = file.read();
+    file.close();
+    return new XML(content);
+  } catch (e) {
+    alert("" + e.message + "\nThere are problems reading the XML file!");
+  }
+  return true;
+};
+
+createDefaultXML = function() {
+  if (!presetFile.exists) {
+    writeXML(defaultXML);
+    void 0;
+  } else {
+    presetFile.remove();
+    createDefaultXML();
+  }
+  return true;
+};
+
+createPresetChild = function(name, value) {
+  var child;
+  return child = &lt;preset default="false"&gt;
+				&lt;name&gt;{name}&lt;/name&gt;
+				&lt;value&gt;{value}&lt;/value&gt;
+			&lt;/preset&gt;;
+};
+
+initDDL = function() {
+  var i, nameListLength;
+  if (!presetFile.exists) {
+    createDefaultXML();
+    initDDL();
+  }
+  xmlData = readXML();
+  if (win.presetsPanel.presetList.items.length !== 0) {
+    win.presetsPanel.presetList.removeAll();
+  }
+  nameListLength = xmlData.preset.name.length();
+  presetNamesArray.length = 0;
+  i = 0;
+  while (i &lt; nameListLength) {
+    presetNamesArray.push(xmlData.preset.name[i].toString());
+    win.presetsPanel.presetList.add("item", xmlData.preset.name[i]);
+    i++;
+  }
+  win.presetsPanel.presetList.selection = win.presetsPanel.presetList.items[0];
+  return true;
+};
+
+win.controlsPanel.controlsGroup.myText.onChange = function() {
+  return this.parent.mySlider.value = Number(this.text);
+};
+
+win.controlsPanel.controlsGroup.mySlider.onChange = function() {
+  return this.parent.myText.text = Math.ceil(this.value);
+};
+
+win.presetsPanel.presetList.onChange = function() {
+  if (this.selection !== null &amp;&amp; this.selection.index !== 0) {
+    win.controlsPanel.controlsGroup.myText.text = xmlData.preset[this.selection.index].value;
+    win.controlsPanel.controlsGroup.mySlider.value = Number(xmlData.preset[this.selection.index].value);
+  }
+  return true;
+};
+
+win.presetsPanel.resetPresets.onClick = function() {
+  if (confirm("Warning\nAre you sure you want to reset the Preset list?", true)) {
+    createDefaultXML();
+    return initDDL();
+  }
+};
+
+win.presetsPanel.saveNewPreset.onClick = function() {
+  var child, presetName;
+  presetName = prompt("Give your preset a name!\nYou'll find it in the preset list.", "User Preset", "Save new Preset");
+  if (presetName == null) {
+    return;
+  }
+  if (__indexOf.call(presetNamesArray, presetName) &gt;= 0) {
+    alert("Duplicate name!\nPlease find another one.");
+    win.presetsPanel.saveNewPreset.onClick.call();
+  }
+  child = createPresetChild(presetName, win.controlsPanel.controlsGroup.myText.text);
+  xmlData.appendChild(child);
+  writeXML(xmlData);
+  initDDL();
+  return win.presetsPanel.presetList.selection = win.presetsPanel.presetList.items[win.presetsPanel.presetList.items.length - 1];
+};
+
+win.presetsPanel.deletePreset.onClick = function() {
+  if (xmlData.preset[win.presetsPanel.presetList.selection.index].@default.toString() === "true") {
+    alert("Can't delete \"" + xmlData.preset[win.presetsPanel.presetList.selection.index].name + "\"\nIt's part of the default set of Presets");
+    return;
+  }
+  if (confirm("Are you sure you want to delete \"" + xmlData.preset[win.presetsPanel.presetList.selection.index].name + "\" preset?\nYou can't undo this.")) {
+    delete xmlData.preset[win.presetsPanel.presetList.selection.index];
+  }
+  writeXML(xmlData);
+  return initDDL();
+};
+
+initDDL();
+
+win.show();</pre>
+  
+  <h3>
+     CoffeeScript
+  </h3>
+  
+  <pre class="toolbar:1 lang:coffee decode:true " title="Completed Script - CoffeeScript version">`#target photoshop`
+
+windowResource = "dialog {  \
+    orientation: 'column', \
+    alignChildren: ['fill', 'top'],  \
+    size:[410, 210], \
+    text: 'DropDownList Demo - www.davidebarranca.com',  \
+    margins:15, \
+    \
+    controlsPanel: Panel { \
+        orientation: 'column', \
+        alignChildren:'right', \
+        margins:15, \
+        text: 'Controls', \
+        controlsGroup: Group {  \
+            orientation: 'row', \
+            alignChildren:'center', \
+            st: StaticText { text: 'Amount:' }, \
+            mySlider: Slider { minvalue:0, maxvalue:500, value:300, size:[220,20] }, \
+            myText: EditText { text:'300', characters:5, justify:'left'} \
+    	} \
+    }, \
+    presetsPanel: Panel { \
+    	orientation: 'row', \
+    	alignChildren: 'center', \
+    	text: 'Presets', \
+    	margins: 14, \
+    	presetList: DropDownList {preferredSize: [163,20] }, \
+    	saveNewPreset: Button { text: 'New', preferredSize: [44,24]}, \
+    	deletePreset: Button { text: 'Remove', preferredSize: [60,24]}, \
+    	resetPresets: Button { text: 'Reset', preferredSize: [50,24]} \
+    }, \
+    buttonsGroup: Group{\
+        alignChildren: 'bottom',\
+        cancelButton: Button { text: 'Cancel', properties:{name:'cancel'},size: [60,24], alignment:['right', 'center'] }, \
+        applyButton: Button { text: 'Apply', properties:{name:'apply'}, size: [100,24], alignment:['right', 'center'] }, \
+    }\
+}";
+
+# Create Dialog
+win = new Window windowResource
+
+# globals
+xmlData = null
+presetNamesArray = []
+resPath = File($.fileName).parent
+presetFile = new File "#{resPath}/presets.xml"
+defaultXML = `&lt;presets&gt;
+					&lt;preset default="true"&gt;
+						&lt;name&gt;select...&lt;/name&gt;
+						&lt;value&gt;&lt;/value&gt;
+					&lt;/preset&gt;
+					&lt;preset default="true"&gt;
+						&lt;name&gt;Default value&lt;/name&gt;
+						&lt;value&gt;100&lt;/value&gt;
+					&lt;/preset&gt;
+					&lt;preset default="true"&gt;
+						&lt;name&gt;Low value&lt;/name&gt;
+						&lt;value&gt;10&lt;/value&gt;
+					&lt;/preset&gt;
+					&lt;preset default="true"&gt;
+						&lt;name&gt;High value&lt;/name&gt;
+						&lt;value&gt;400&lt;/value&gt;
+					&lt;/preset&gt;
+				&lt;/presets&gt;`
+
+# writes an XML object to a file
+writeXML = (xml, file=presetFile) -&gt;
+	try
+		file.open "w"
+		file.write xml
+		file.close()
+	catch e
+		alert "#{e.message}\nThere are problems writing the XML file!"
+	true
+
+# reads a file (default=presets.xml) and returns an XML object
+readXML = (file=presetFile) -&gt;
+	try  
+		file.open 'r'
+		content = file.read()
+		file.close()
+		return new XML content
+	catch e
+		alert "#{e.message}\nThere are problems reading the XML file!"
+	true
+
+# creates a Default XML file
+createDefaultXML = () -&gt;
+	# if file doesn't exist
+	if !presetFile.exists 
+		writeXML defaultXML
+		undefined
+	else
+		presetFile.remove()
+		createDefaultXML()
+	true
+
+# creates and returns an XML &lt;preset&gt; element
+createPresetChild = (name, value) -&gt;
+	child = `&lt;preset default="false"&gt;
+				&lt;name&gt;{name}&lt;/name&gt;
+				&lt;value&gt;{value}&lt;/value&gt;
+			&lt;/preset&gt;`
+
+# Initialize DropDownList
+initDDL = () -&gt;
+	# if file doesn't exist
+	if !presetFile.exists
+		createDefaultXML()
+		initDDL()
+
+	# file exists
+	xmlData = readXML() 
+	# clean DropDownList
+	win.presetsPanel.presetList.removeAll() if win.presetsPanel.presetList.items.length isnt 0
+	# how many presets?	 
+	nameListLength = xmlData.preset.name.length()
+	# empties the names array
+	presetNamesArray.length = 0
+	# fills the DDL and the presetNamesArray
+	i = 0
+	while i &lt; nameListLength
+		# toString() otherwise its an array of XML objects!
+		presetNamesArray.push xmlData.preset.name[i].toString()
+		win.presetsPanel.presetList.add "item", xmlData.preset.name[i]
+		i++
+	win.presetsPanel.presetList.selection = win.presetsPanel.presetList.items[0]
+	true
+
+# binds mySlider.value and myText.text
+win.controlsPanel.controlsGroup.myText.onChange = () -&gt;
+	@parent.mySlider.value = Number @text
+
+# binds mySlider.value and myText.text
+win.controlsPanel.controlsGroup.mySlider.onChange = () -&gt;
+	@parent.myText.text = Math.ceil @value
+
+win.presetsPanel.presetList.onChange = () -&gt;
+	if @selection isnt null and @selection.index isnt 0
+		win.controlsPanel.controlsGroup.myText.text = xmlData.preset[@selection.index].value
+		win.controlsPanel.controlsGroup.mySlider.value = Number xmlData.preset[@selection.index].value
+	true
+
+win.presetsPanel.resetPresets.onClick = () -&gt;
+	if confirm "Warning\nAre you sure you want to reset the Preset list?", true
+		# remove existing preset file, creates a Default XML file
+		createDefaultXML()
+		# refresh the DropDownList!
+		initDDL()
+
+win.presetsPanel.saveNewPreset.onClick = () -&gt;
+	presetName = prompt "Give your preset a name!\nYou'll find it in the preset list.", "User Preset", "Save new Preset"
+	if !presetName? then return
+	if presetName in presetNamesArray
+		alert "Duplicate name!\nPlease find another one."
+		# recursion again?!
+		win.presetsPanel.saveNewPreset.onClick.call()
+	# create a &lt;preset&gt; xml child
+	child = createPresetChild presetName, win.controlsPanel.controlsGroup.myText.text
+	# append the child to the xmlData
+	xmlData.appendChild child
+	writeXML xmlData
+	# re-initialize the DDL in order to make changes appear
+	initDDL()
+	# select the last preset
+	win.presetsPanel.presetList.selection = win.presetsPanel.presetList.items[win.presetsPanel.presetList.items.length - 1]
+
+win.presetsPanel.deletePreset.onClick = () -&gt;
+	# "true" is a string in the XML, not a boolean!
+	if `xmlData.preset[win.presetsPanel.presetList.selection.index].@default.toString()` is "true"
+		alert "Can't delete \"#{xmlData.preset[win.presetsPanel.presetList.selection.index].name}\"\nIt's part of the default set of Presets"
+		return
+	if confirm "Are you sure you want to delete \"#{xmlData.preset[win.presetsPanel.presetList.selection.index].name}\" preset?\nYou can't undo this."
+		`delete xmlData.preset[win.presetsPanel.presetList.selection.index]`
+	writeXML xmlData
+	# re-initialize the DDL in order to make changes appear
+	initDDL()
+
+# Init the DropDownList
+initDDL()
+
+# Show the window
+win.show()</pre>
+</div>
+
+<!-- Share-Widget Button BEGIN -->
+<p>&lt;a href=”javascript:void(0);” myshare_id=”mys_shareit” myshare_url=”http://localhost:8888/2013/03/presets-management-with-dropdownlist-and-xml-in-extendscript/” myshare_title=”Presets management with DropDownList and XML in ExtendScript” rel=”nofollow” onclick=” return false;” style=”text-decoration:none; color:#000000; font-size:11px; line-height:20px;”&gt;</p>
+
+<p><img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> &lt;/a&gt; <!-- Share-Widget Button END --></p>
+
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Presets management with DropDownList and XML in ExtendScript&p[summary]=
+  
+    ScriptUI windows can contain several controls (checkboxes, sliders, etc), and to setup a Preset system is a very handy way to all...&p[url]=/2013/03/presets-management-with-dropdownlist-and-xml-in-extendscript/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2013/03/presets-management-with-dropdownlist-and-xml-in-extendscript/&text=
+  
+    ScriptUI windows can contain several controls (checkboxes, sliders, etc), and to setup a Preset system is a very handy way to all...&hashtags=CoffeeScript,dropdownlist,Extendscript,presets,xml," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/CoffeeScript">CoffeeScript</a></li>
+                
+                <li><a href="/tag/dropdownlist">dropdownlist</a></li>
+                
+                <li><a href="/tag/Extendscript">Extendscript</a></li>
+                
+                <li><a href="/tag/presets">presets</a></li>
+                
+                <li><a href="/tag/xml">xml</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+<aside class="comments" role="complementary">
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = '/2013/03/presets-management-with-dropdownlist-and-xml-in-extendscript/';
+            this.page.identifier = '3/2/2013';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//your_disqus_site.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</aside>
+
+            </main>
+        </div>
+
+        <script src="/assets/js/jquery-1.12.2.min.js"></script>
+<script src="/assets/js/backtotop.js"></script>
+<script src="/assets/js/lunr.min.js"></script>
+<script src="/assets/js/lunr-feed.js"></script>
+<script src="/assets/js/jquery.fitvids.js"></script>
+<script src="/assets/js/svg4everybody.min.js"></script>
+<script src="/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>

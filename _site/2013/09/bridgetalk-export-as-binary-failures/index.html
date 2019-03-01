@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BridgeTalk Export as Binary failure | Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content="BridgeTalk Export as Binary failure | Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content="BridgeTalk Export as Binary failure | Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!">
+    <meta name="description" property="og:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+    <meta name="twitter:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="/2013/09/bridgetalk-export-as-binary-failures/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <link rel="canonical" href="/2013/09/bridgetalk-export-as-binary-failures/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href=""><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                <article class="post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2013-09-16T23:53:37+02:00" itemprop="datePublished">16 Sep, 2013</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline">BridgeTalk Export as Binary failure</h2>
+    </header>
+
+    <div class="post-content">
+        <div class="pf-content">
+  <p>
+    BridgeTalk, the system that enables messaging between applications in the Adobe scripting ecosystem, is prone to failure when evaluating functions via <code>.toSource()</code> &#8211; be aware and stringify them in advance!
+  </p>
+  
+  <h2>
+    BridgeTalk 101
+  </h2>
+  
+  <p>
+    This simple script sends a message from Photoshop to Adobe Bridge &#8211; that is to say, Photoshop gives Bridge some code to execute:
+  </p>
+  
+  <pre class="lang:default decode:true">#target photoshop
+var bt = new BridgeTalk()
+bt.target = 'bridge';
+bt.timeout = 30;
+bt.body = "$.writeln('Greetings from Bridge'); true;";
+bt.onReceived = function(btObj) {
+	return $.writeln('Message received.');
+};
+bt.onResult = function(btObj) {
+	return $.writeln('BridgeTalk result: ' + btObj.body);
+};
+bt.onError = function(btObj) {
+	return $.writeln(btObj.body);
+};
+bt.onTimeOut = function(btObj) {
+	return $.writeln(btObj.body);
+};
+bt.send(31);</pre>
+  
+  <p>
+    The Console outputs:
+  </p>
+  
+  <pre class="lang:default highlight:0 decode:true ">Greetings from Bridge
+BridgeTalk result: true
+Result: true</pre>
+  
+  <p>
+    It does the job configuring a <strong>BridgeTalk Object</strong>, which <code>.body</code> is the actual part of the script in charge of Bridge (here just a String).
+  </p>
+  
+  <p>
+    You can specify <strong>callbacks</strong> invoked by the target application (in the example Bridge) such as:
+  </p>
+  
+  <ul>
+    <li>
+      <code>onResult()</code> &#8211; to return a response (to Photoshop), which is handled by the function;
+    </li>
+    <li>
+      <code>onError()</code> &#8211; to return and handle an error;
+    </li>
+    <li>
+      <code>onTimeout()</code> &#8211; when a timeout occurs;
+    </li>
+    <li>
+      <code>onReceived()</code> &#8211; handler fired when the target app receives the message. For some reason, it&#8217;s triggered after, and not before, <code>onResult()</code>.
+    </li>
+  </ul>
+  
+  <p>
+    Mind you, if the <code>.send()</code> method is called without any argument, the message is <strong>asynchronous</strong>, while if you specify the number of seconds to wait for before returning from the function, the message is sent <strong>synchronously</strong>. More info about BridgeTalk in the JavaScript Tools Guide CC, from page 170 onwards.
+  </p>
+  
+  <h2>
+    Using functions
+  </h2>
+  
+  <p>
+    When the message body is trivial, it can be assigned to a String literal; conversely, when you need the target app to perform some more elaborated tasks, it&#8217;s common practice to use a separate function. This is the same as the first example (I will omit some of the callbacks):
+  </p>
+  
+  <pre class="lang:default decode:true">var bridgeFun = function () {
+	$.writeln('Greetings from Bridge');
+	return true;
+}
+var bt = new BridgeTalk()
+bt.target = 'bridge';
+bt.body = "var bridgeFun = " + bridgeFun.toSource() + "; bridgeFun();";
+bt.onResult = function(btObj) {
+	return $.writeln('BridgeTalk result: ' + btObj.body);
+};
+bt.send(31);</pre>
+  
+  <p>
+    The <code>.toSource()</code> method returns a string representing the source code for the function. So the message body (<code>bt.body</code>) is:
+  </p>
+  
+  <pre class="lang:default decode:true ">var bridgeFun = (function () { $.writeln('Greetings from Bridge'); return true; }); bridgeFun();</pre>
+  
+  <h2>
+    Beware .toSource()
+  </h2>
+  
+  <p>
+    There are at least a couple of issues with <code>.toSource()</code>. First be careful when <strong>commenting lines</strong> in the separate function &#8211; always use <code>/* */</code> and not <code>//</code> because chances are that the latter will comment out everything after it.
+  </p>
+  
+  <p>
+    Second, if you <strong>Export as Binary</strong> the code from ESTK, it fails:
+  </p>
+  
+  <pre class="lang:default decode:true ">eval("@JSXBIN@ES@2.0@MyBbyBn0AJJAnASzJjCjSjJjEjHjFiGjVjOByBNyBnAMAbyBn0ACJBnAEXzHjXjSj\
+JjUjFjMjOCfjzBhEDfRBFeViHjSjFjFjUjJjOjHjThAjGjSjPjNhAiCjSjJjEjHjFffZCnAFct0DzAE\
+CDnftJFnASzCjCjUFyBEjzKiCjSjJjEjHjFiUjBjMjLGfntnftJGnABXzGjUjBjSjHjFjUHfVFfyBne\
+GjCjSjJjEjHjFfJHnABXzHjUjJjNjFjPjVjUIfVFfyBndgefJInABXzEjCjPjEjZJfVFfyBCzBhLKCK\
+nEXzIjUjPiTjPjVjSjDjFLfVBfyBnfeQjWjBjShAjCjSjJjEjHjFiGjVjOhAhdhAnnneOhbhAjCjSjJ\
+jEjHjFiGjVjOhIhJhbnfJJnABXzIjPjOiSjFjTjVjMjUMfVFfyBNyBnAMJbyBn0ABZKnAEXCfjDfRBC\
+KnXJfVzFjCjUiPjCjKNfAeTiCjSjJjEjHjFiUjBjMjLhAjSjFjTjVjMjUhahAnffABN40BhAB0AECLn\
+fJMnABXzHjPjOiFjSjSjPjSOfVFfyBNyBnAMMbyBn0ABZNnAEXCfjDfRBXJfVNfAffABN40BhAB0AEC\
+OnfJPnABXzJjPjOiUjJjNjFiPjVjUPfVFfyBNyBnAMPbyBn0ABZQnAEXCfjDfRBXJfVNfAffABN40Bh\
+AB0AECRnfJSnAEXzEjTjFjOjEQfVFfyBRBFdgfffACF4B0AiAB40BiAACAEByB");</pre>
+  
+  <p>
+    (Remember to surround the binary chars blob with <code>eval(" ")</code> and close the lines with a <code>\</code>). The Console outputs:
+  </p>
+  
+  <pre class="lang:default highlight:0 decode:true">Error in 
+Line 2: var bridgeFun = (function anonymous() {  [compiled code] } ); bridgeFun();
+Expected: ]
+
+Result: true</pre>
+  
+  <p>
+    That&#8217;s because the purpose of binary encoding is hiding the code, so the function reads <code>[compiled code]</code> and is not stringified nor interpreted correctly.
+  </p>
+  
+  <h2>
+    Workarounds
+  </h2>
+  
+  <p>
+    You have a couple of choices to make it work. Either you can <strong>move the separate function out</strong> of the binary encoding and leave it readable:
+  </p>
+  
+  <pre class="lang:default decode:true">var bridgeFun = function () {
+	$.writeln('Greetings from Bridge');
+	return true;
+}
+
+eval("@JSXBIN@ES@2.0@MyBbyBn0AIJAnASzCjCjUByBEjzKiCjSjJjEjHjFiUjBjMjLCfntnftJBnABXzGjU\
+jBjSjHjFjUDfVBfyBneGjCjSjJjEjHjFfJCnABXzHjUjJjNjFjPjVjUEfVBfyBndgefJDnABXzEjCjP\
+jEjZFfVBfyBCzBhLGCGnEXzIjUjPiTjPjVjSjDjFHfjzJjCjSjJjEjHjFiGjVjOIfnfeQjWjBjShAjC\
+jSjJjEjHjFiGjVjOhAhdhAnnneOhbhAjCjSjJjEjHjFiGjVjOhIhJhbnfJEnABXzIjPjOiSjFjTjVjM\
+jUJfVBfyBNyBnAMEbyBn0ABZFnAEXzHjXjSjJjUjFjMjOKfjzBhELfRBCGnXFfVzFjCjUiPjCjKMfAe\
+TiCjSjJjEjHjFiUjBjMjLhAjSjFjTjVjMjUhahAnffABM40BhAB0AzANCGnfJHnABXzHjPjOiFjSjSj\
+PjSOfVBfyBNyBnAMHbyBn0ABZInAEXKfjLfRBXFfVMfAffABM40BhAB0ANCJnfJKnABXzJjPjOiUjJj\
+NjFiPjVjUPfVBfyBNyBnAMKbyBn0ABZLnAEXKfjLfRBXFfVMfAffABM40BhAB0ANCMnfJNnAEXzEjTj\
+FjOjEQfVBfyBRBFdgfffABB40BiAABANByB");</pre>
+  
+  <p>
+    (Mind you: I&#8217;ve cut the function out, then exported the binary, then pasted the function back above the binary).
+  </p>
+  
+  <p>
+    Or you can <strong>stringify the function</strong> and insert it as a String literal: for instance calling <code>$.writeln(bt.body)</code> on the original version and copy/paste the result from the Console back to the message body. The following version exports as binary without a glitch!
+  </p>
+  
+  <pre class="lang:default decode:true">var bt = new BridgeTalk()
+bt.target = 'bridge';
+bt.body = "var bridgeFun = (function () { $.writeln('Greetings from Bridge'); return true; }); bridgeFun();"
+bt.onResult = function(btObj) {
+	return $.writeln('BridgeTalk result: ' + btObj.body);
+};
+bt.send(31);</pre>
+  
+  <p>
+    &nbsp;
+  </p>
+</div>
+
+<!-- Share-Widget Button BEGIN -->
+<p>&lt;a href=”javascript:void(0);” myshare_id=”mys_shareit” myshare_url=”http://localhost:8888/2013/09/bridgetalk-export-as-binary-failures/” myshare_title=”BridgeTalk Export as Binary failure” rel=”nofollow” onclick=” return false;” style=”text-decoration:none; color:#000000; font-size:11px; line-height:20px;”&gt;</p>
+
+<p><img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> &lt;/a&gt; <!-- Share-Widget Button END --></p>
+
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=BridgeTalk Export as Binary failure&p[summary]=
+  
+    BridgeTalk, the system that enables messaging between applications in the Adobe scripting ecosystem, is prone to failure when eva...&p[url]=/2013/09/bridgetalk-export-as-binary-failures/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2013/09/bridgetalk-export-as-binary-failures/&text=
+  
+    BridgeTalk, the system that enables messaging between applications in the Adobe scripting ecosystem, is prone to failure when eva...&hashtags=binary,BridgeTalk,export,Extendscript,toSource," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/binary">binary</a></li>
+                
+                <li><a href="/tag/BridgeTalk">BridgeTalk</a></li>
+                
+                <li><a href="/tag/export">export</a></li>
+                
+                <li><a href="/tag/Extendscript">Extendscript</a></li>
+                
+                <li><a href="/tag/toSource">toSource</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+<aside class="comments" role="complementary">
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = '/2013/09/bridgetalk-export-as-binary-failures/';
+            this.page.identifier = '9/16/2013';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//your_disqus_site.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</aside>
+
+            </main>
+        </div>
+
+        <script src="/assets/js/jquery-1.12.2.min.js"></script>
+<script src="/assets/js/backtotop.js"></script>
+<script src="/assets/js/lunr.min.js"></script>
+<script src="/assets/js/lunr-feed.js"></script>
+<script src="/assets/js/jquery.fitvids.js"></script>
+<script src="/assets/js/svg4everybody.min.js"></script>
+<script src="/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>

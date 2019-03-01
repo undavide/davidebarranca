@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content=" Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content=" Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!">
+    <meta name="description" property="og:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+    <meta name="twitter:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <link rel="canonical" href="/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href=""><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="" class="active">Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2019-02-21T11:04:05+01:00" itemprop="datePublished">21 Feb, 2019</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2019/02/adobe-extension-manager-error-codes/">Adobe Extension Manager Error Codes</a></h2>
+    </header>
+
+    <div class="post-content">
+        Here is a comprehensive list of all Adobe Extension Manager (ExManCmd) error codes.
+
+        
+            <p><a href="/2019/02/adobe-extension-manager-error-codes/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Adobe Extension Manager Error Codes&p[summary]=Here is a comprehensive list of all Adobe Extension Manager (ExManCmd) error codes.&p[url]=/2019/02/adobe-extension-manager-error-codes/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2019/02/adobe-extension-manager-error-codes/&text=Here is a comprehensive list of all Adobe Extension Manager (ExManCmd) error codes.&hashtags=Adobe Extension Manager," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Adobe Extension Manager">Adobe Extension Manager</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2019-02-13T01:43:32+01:00" itemprop="datePublished">13 Feb, 2019</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2019/02/professional-photoshop-scripting-v1/">Professional Photoshop Scripting is published!</a></h2>
+    </header>
+
+    <div class="post-content">
+        After 10 months since the launch of the Early Access Program, I am incredibly happy to announce that my book is now complete!
+
+        
+            <p><a href="/2019/02/professional-photoshop-scripting-v1/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Professional Photoshop Scripting is published!&p[summary]=After 10 months since the launch of the Early Access Program, I am incredibly happy to announce that my book is now complete!&p[url]=/2019/02/professional-photoshop-scripting-v1/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2019/02/professional-photoshop-scripting-v1/&text=After 10 months since the launch of the Early Access Program, I am incredibly happy to announce that my book is now complete!&hashtags=Professional Photoshop Scripting," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Professional Photoshop Scripting">Professional Photoshop Scripting</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2018-12-16T11:19:58+01:00" itemprop="datePublished">16 Dec, 2018</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2018/12/spectrum-css-vue-js-component-dropdown/">Spectrum CSS VueJS Component: DropDown</a></h2>
+    </header>
+
+    <div class="post-content">
+        In a previous post I have introduced the recently open-sourced Spectrum CSS. Here, I'll be demonstrating how to use them to build a simple VueJS DropDown component
+
+        
+            <p><a href="/2018/12/spectrum-css-vue-js-component-dropdown/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Spectrum CSS VueJS Component: DropDown&p[summary]=In a previous post I have introduced the recently open-sourced Spectrum CSS. Here, I'll be demonstrating how to use them to build a simpl...&p[url]=/2018/12/spectrum-css-vue-js-component-dropdown/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2018/12/spectrum-css-vue-js-component-dropdown/&text=In a previous post I have introduced the recently open-sourced Spectrum CSS. Here, I'll be demonstrating how to use them to build a simpl...&hashtags=CEP,Vue.js," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/CEP">CEP</a></li>
+                
+                <li><a href="/tag/Vue.js">Vue.js</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2018-12-12T23:28:31+01:00" itemprop="datePublished">12 Dec, 2018</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2018/12/estk-to-be-replaced-by-a-visual-studio-code-plug-in/">ESTK to be replaced by a Visual Studio Code plug-in</a></h2>
+    </header>
+
+    <div class="post-content">
+        Please do yourself a favour and read this Medium post by Lead Technical Evangelist Ash Ryan Arnwine about the future of the ExtendScript ToolKit.
+
+        
+            <p><a href="/2018/12/estk-to-be-replaced-by-a-visual-studio-code-plug-in/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=ESTK to be replaced by a Visual Studio Code plug-in&p[summary]=Please do yourself a favour and read this Medium post by Lead Technical Evangelist Ash Ryan Arnwine about the future of the ExtendScript ...&p[url]=/2018/12/estk-to-be-replaced-by-a-visual-studio-code-plug-in/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2018/12/estk-to-be-replaced-by-a-visual-studio-code-plug-in/&text=Please do yourself a favour and read this Medium post by Lead Technical Evangelist Ash Ryan Arnwine about the future of the ExtendScript ...&hashtags=VSCode," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/VSCode">VSCode</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2018-11-18T11:37:18+01:00" itemprop="datePublished">18 Nov, 2018</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2018/11/adobe-spectrum-css-open-sourced/">Adobe Spectrum CSS open-sourced!</a></h2>
+    </header>
+
+    <div class="post-content">
+        In case you've missed the news, Adobe has open-sourced the Spectrum CSS: the stylesheets they're using for Photoshop's own CEP Panels
+
+        
+            <p><a href="/2018/11/adobe-spectrum-css-open-sourced/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Adobe Spectrum CSS open-sourced!&p[summary]=In case you've missed the news, Adobe has open-sourced the Spectrum CSS: the stylesheets they're using for Photoshop's own CEP Panels&p[url]=/2018/11/adobe-spectrum-css-open-sourced/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2018/11/adobe-spectrum-css-open-sourced/&text=In case you've missed the news, Adobe has open-sourced the Spectrum CSS: the stylesheets they're using for Photoshop's own CEP Panels&hashtags=CSS," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/CSS">CSS</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2018-06-11T17:21:58+02:00" itemprop="datePublished">11 Jun, 2018</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2018/06/professional-photoshop-scripting-eap-update/">Professional Photoshop Scripting EAP Update</a></h2>
+    </header>
+
+    <div class="post-content">
+        I've added 60 pages to accommodate an amazing new chapter on Adobe Generator! The book is now 388 pages strong and packed with exclusive content found nowhere else.
+
+        
+            <p><a href="/2018/06/professional-photoshop-scripting-eap-update/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Professional Photoshop Scripting EAP Update&p[summary]=I've added 60 pages to accommodate an amazing new chapter on Adobe Generator! The book is now 388 pages strong and packed with exclusive ...&p[url]=/2018/06/professional-photoshop-scripting-eap-update/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2018/06/professional-photoshop-scripting-eap-update/&text=I've added 60 pages to accommodate an amazing new chapter on Adobe Generator! The book is now 388 pages strong and packed with exclusive ...&hashtags=EAP,Professional Photoshop Scripting," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/EAP">EAP</a></li>
+                
+                <li><a href="/tag/Professional Photoshop Scripting">Professional Photoshop Scripting</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2018-05-08T02:20:19+02:00" itemprop="datePublished">8 May, 2018</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2018/05/automated-check-for-corrupted-image-files-with-python-and-imagemagick/">Automated check for corrupted image files with Python and ImageMagick</a></h2>
+    </header>
+
+    <div class="post-content">
+        How do you check if an image file (tiff, psd, psb) is corrupted, other than looking at its thumbnail with Bridge, or opening it on Photoshop? With a small Python script and ImageMagick!
+
+        
+            <p><a href="/2018/05/automated-check-for-corrupted-image-files-with-python-and-imagemagick/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Automated check for corrupted image files with Python and ImageMagick&p[summary]=How do you check if an image file (tiff, psd, psb) is corrupted, other than looking at its thumbnail with Bridge, or opening it on Photos...&p[url]=/2018/05/automated-check-for-corrupted-image-files-with-python-and-imagemagick/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2018/05/automated-check-for-corrupted-image-files-with-python-and-imagemagick/&text=How do you check if an image file (tiff, psd, psb) is corrupted, other than looking at its thumbnail with Bridge, or opening it on Photos...&hashtags=Python,imagemagick," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Python">Python</a></li>
+                
+                <li><a href="/tag/imagemagick">imagemagick</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2018-04-20T16:05:04+02:00" itemprop="datePublished">20 Apr, 2018</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2018/04/professional-photoshop-scripting-course-early-access-program/">Professional Photoshop Scripting Course &#8211; Early Access Program</a></h2>
+    </header>
+
+    <div class="post-content">
+        I'm glad to announce that I have opened the Early Access Program to my new and very much awaited Professional Photoshop Scripting course!
+
+        
+            <p><a href="/2018/04/professional-photoshop-scripting-course-early-access-program/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Professional Photoshop Scripting Course &#8211; Early Access Program&p[summary]=I'm glad to announce that I have opened the Early Access Program to my new and very much awaited Professional Photoshop Scripting course!&p[url]=/2018/04/professional-photoshop-scripting-course-early-access-program/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2018/04/professional-photoshop-scripting-course-early-access-program/&text=I'm glad to announce that I have opened the Early Access Program to my new and very much awaited Professional Photoshop Scripting course!&hashtags=Professional Photoshop Scripting,EAP," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Professional Photoshop Scripting">Professional Photoshop Scripting</a></li>
+                
+                <li><a href="/tag/EAP">EAP</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2018-03-10T14:56:13+01:00" itemprop="datePublished">10 Mar, 2018</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2018/03/luminosity-masks-how-does-it-really-work/">Luminosity Masks: How Does It Really Work?</a></h2>
+    </header>
+
+    <div class="post-content">
+        In this guest post, the Photoshop developer Scott Murdock tackles the apparently familiar topic of Luminosity Masks – with very interesting findings for anybody using them. Enjoy!
+
+        
+            <p><a href="/2018/03/luminosity-masks-how-does-it-really-work/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Luminosity Masks: How Does It Really Work?&p[summary]=In this guest post, the Photoshop developer Scott Murdock tackles the apparently familiar topic of Luminosity Masks – with very interesti...&p[url]=/2018/03/luminosity-masks-how-does-it-really-work/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2018/03/luminosity-masks-how-does-it-really-work/&text=In this guest post, the Photoshop developer Scott Murdock tackles the apparently familiar topic of Luminosity Masks – with very interesti...&hashtags=Luminosity Mask," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Luminosity Mask">Luminosity Mask</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2018-01-23T14:37:47+01:00" itemprop="datePublished">23 Jan, 2018</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2018/01/ultimate-guide-native-installers-automated-build-system/">A New Course on Adobe CEP Panels: Native Installers and Automation!</a></h2>
+    </header>
+
+    <div class="post-content">
+        After Adobe Photoshop HTML Panels Development, I've now published a new Course, titled "The Ultimate Guide to Native Installers and Automated Build Systems"
+
+        
+            <p><a href="/2018/01/ultimate-guide-native-installers-automated-build-system/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=A New Course on Adobe CEP Panels: Native Installers and Automation!&p[summary]=After Adobe Photoshop HTML Panels Development, I've now published a new Course, titled "The Ultimate Guide to Native Installers and Autom...&p[url]=/2018/01/ultimate-guide-native-installers-automated-build-system/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2018/01/ultimate-guide-native-installers-automated-build-system/&text=After Adobe Photoshop HTML Panels Development, I've now published a new Course, titled "The Ultimate Guide to Native Installers and Autom...&hashtags=Automation,Installer,Native Installer," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Automation">Automation</a></li>
+                
+                <li><a href="/tag/Installer">Installer</a></li>
+                
+                <li><a href="/tag/Native Installer">Native Installer</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2017-10-23T01:04:41+02:00" itemprop="datePublished">23 Oct, 2017</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2017/10/html-panel-tips-25-cc-2018-survival-guide/">HTML Panel Tips #25: CC 2018 Survival Guide</a></h2>
+    </header>
+
+    <div class="post-content">
+        That time of the year has come, and Photoshop CC 2018 is here. Read along to find out Everything You Always Wanted to Know About CEP 8* (*But Were Afraid to Ask).
+
+        
+            <p><a href="/2017/10/html-panel-tips-25-cc-2018-survival-guide/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panel Tips #25: CC 2018 Survival Guide&p[summary]=That time of the year has come, and Photoshop CC 2018 is here. Read along to find out Everything You Always Wanted to Know About CEP 8* (...&p[url]=/2017/10/html-panel-tips-25-cc-2018-survival-guide/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2017/10/html-panel-tips-25-cc-2018-survival-guide/&text=That time of the year has come, and Photoshop CC 2018 is here. Read along to find out Everything You Always Wanted to Know About CEP 8* (...&hashtags=CC 2018,HTML Panels Tips," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/CC 2018">CC 2018</a></li>
+                
+                <li><a href="/tag/HTML Panels Tips">HTML Panels Tips</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2017-08-25T02:48:56+02:00" itemprop="datePublished">25 Aug, 2017</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2017/08/photoshop-scripting-course-update-august-2017/">Photoshop Scripting Course Update (August 2017)</a></h2>
+    </header>
+
+    <div class="post-content">
+        In October 2016 I've announced to be working on a course about Photoshop Scripting. Is it ready for release?
+
+        
+            <p><a href="/2017/08/photoshop-scripting-course-update-august-2017/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Photoshop Scripting Course Update (August 2017)&p[summary]=In October 2016 I've announced to be working on a course about Photoshop Scripting. Is it ready for release?&p[url]=/2017/08/photoshop-scripting-course-update-august-2017/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2017/08/photoshop-scripting-course-update-august-2017/&text=In October 2016 I've announced to be working on a course about Photoshop Scripting. Is it ready for release?&hashtags=Professional Photoshop Scripting,Personal," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Professional Photoshop Scripting">Professional Photoshop Scripting</a></li>
+                
+                <li><a href="/tag/Personal">Personal</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2017-05-25T01:26:12+02:00" itemprop="datePublished">25 May, 2017</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2017/05/photoshop-panel-configurator-reloaded/">Third-party Photoshop Panels: Configurator Reloaded</a></h2>
+    </header>
+
+    <div class="post-content">
+        I'm not used to talking about commercial products I've not personally developed on my blog, but I've decided it might be interesting to cover the work of other developers here, from time to time or when something catches my eye.
+
+        
+            <p><a href="/2017/05/photoshop-panel-configurator-reloaded/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Third-party Photoshop Panels: Configurator Reloaded&p[summary]=I'm not used to talking about commercial products I've not personally developed on my blog, but I've decided it might be interesting to c...&p[url]=/2017/05/photoshop-panel-configurator-reloaded/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2017/05/photoshop-panel-configurator-reloaded/&text=I'm not used to talking about commercial products I've not personally developed on my blog, but I've decided it might be interesting to c...&hashtags=Panels," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Panels">Panels</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2017-04-29T02:46:45+02:00" itemprop="datePublished">29 Apr, 2017</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2017/04/html-panel-tips-24-fixing-zxp-timestamping-errors/">HTML Panel Tips #24: Fixing ZXP Timestamping errors</a></h2>
+    </header>
+
+    <div class="post-content">
+        Recently, running the ZXPSignCmd command line utility to sign and timestamp HTML Panels has proved to cause errors – also for users of Adobe Configurator 4, which relies on it behind the scenes to export the (Flash) panel as ZXP. Quick fix as follows.
+
+        
+            <p><a href="/2017/04/html-panel-tips-24-fixing-zxp-timestamping-errors/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panel Tips #24: Fixing ZXP Timestamping errors&p[summary]=Recently, running the ZXPSignCmd command line utility to sign and timestamp HTML Panels has proved to cause errors – also for users of Ad...&p[url]=/2017/04/html-panel-tips-24-fixing-zxp-timestamping-errors/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2017/04/html-panel-tips-24-fixing-zxp-timestamping-errors/&text=Recently, running the ZXPSignCmd command line utility to sign and timestamp HTML Panels has proved to cause errors – also for users of Ad...&hashtags=timestamp,ZXPSignCmd,HTML Panels Tips," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/timestamp">timestamp</a></li>
+                
+                <li><a href="/tag/ZXPSignCmd">ZXPSignCmd</a></li>
+                
+                <li><a href="/tag/HTML Panels Tips">HTML Panels Tips</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2017-02-20T21:49:53+01:00" itemprop="datePublished">20 Feb, 2017</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2017/02/double-usm-v2-for-photoshop-has-been-released/">Double USM v2 for Photoshop has been released!</a></h2>
+    </header>
+
+    <div class="post-content">
+        A major reworking of my Sharpening extension for Photoshop has been released.
+
+        
+            <p><a href="/2017/02/double-usm-v2-for-photoshop-has-been-released/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Double USM v2 for Photoshop has been released!&p[summary]=A major reworking of my Sharpening extension for Photoshop has been released.&p[url]=/2017/02/double-usm-v2-for-photoshop-has-been-released/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2017/02/double-usm-v2-for-photoshop-has-been-released/&text=A major reworking of my Sharpening extension for Photoshop has been released.&hashtags=Double USM,sharpening," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Double USM">Double USM</a></li>
+                
+                <li><a href="/tag/sharpening">sharpening</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2017-02-11T01:06:28+01:00" itemprop="datePublished">11 Feb, 2017</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2017/02/html-panel-tips-23-javascriptobfuscator-api-gulp-js-plugin/">HTML Panel Tips #23: JavascriptObfuscator API Gulp.js Plugin</a></h2>
+    </header>
+
+    <div class="post-content">
+        Keep your code away from prying eyes with javascriptobfuscator.com
+
+        
+            <p><a href="/2017/02/html-panel-tips-23-javascriptobfuscator-api-gulp-js-plugin/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panel Tips #23: JavascriptObfuscator API Gulp.js Plugin&p[summary]=Keep your code away from prying eyes with javascriptobfuscator.com&p[url]=/2017/02/html-panel-tips-23-javascriptobfuscator-api-gulp-js-plugin/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2017/02/html-panel-tips-23-javascriptobfuscator-api-gulp-js-plugin/&text=Keep your code away from prying eyes with javascriptobfuscator.com&hashtags=Gulp,obfuscation,HTML Panels Tips," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Gulp">Gulp</a></li>
+                
+                <li><a href="/tag/obfuscation">obfuscation</a></li>
+                
+                <li><a href="/tag/HTML Panels Tips">HTML Panels Tips</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2017-01-14T11:31:43+01:00" itemprop="datePublished">14 Jan, 2017</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2017/01/vue-js-nonlinear-sliders-with-computed-properties/">Vue.js – Nonlinear Sliders with Computed Properties</a></h2>
+    </header>
+
+    <div class="post-content">
+        How do you fit a large range (say, 1..500, with floating point precision) into a Slider which has, at best, less than 200 possible, real slots? Nonlinear sliders and VueJS Computed Properties are the answer
+
+        
+            <p><a href="/2017/01/vue-js-nonlinear-sliders-with-computed-properties/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Vue.js – Nonlinear Sliders with Computed Properties&p[summary]=How do you fit a large range (say, 1..500, with floating point precision) into a Slider which has, at best, less than 200 possible, real ...&p[url]=/2017/01/vue-js-nonlinear-sliders-with-computed-properties/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2017/01/vue-js-nonlinear-sliders-with-computed-properties/&text=How do you fit a large range (say, 1..500, with floating point precision) into a Slider which has, at best, less than 200 possible, real ...&hashtags=Vue.js," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Vue.js">Vue.js</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2016-10-20T17:02:17+02:00" itemprop="datePublished">20 Oct, 2016</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2016/10/new-course-photoshop-scripting/">I am authoring a new Course! And it will be on Photoshop Scripting</a></h2>
+    </header>
+
+    <div class="post-content">
+        One year ago I started writing my Photoshop HTML Panels Development course, which I've successfully published in late March 2016. I'm now back at my desk, working on a very similar project, and targeting no less than... Photoshop Scripting.
+
+        
+            <p><a href="/2016/10/new-course-photoshop-scripting/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=I am authoring a new Course! And it will be on Photoshop Scripting&p[summary]=One year ago I started writing my Photoshop HTML Panels Development course, which I've successfully published in late March 2016. I'm now...&p[url]=/2016/10/new-course-photoshop-scripting/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2016/10/new-course-photoshop-scripting/&text=One year ago I started writing my Photoshop HTML Panels Development course, which I've successfully published in late March 2016. I'm now...&hashtags=Professional Photoshop Scripting," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Professional Photoshop Scripting">Professional Photoshop Scripting</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2016-08-02T00:21:10+02:00" itemprop="datePublished">2 Aug, 2016</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2016/08/vue-js-binding-a-component-in-a-v-for-loop-to-the-parent-model/">Vue.js – Binding a Component in a v-for loop to the Parent model</a></h2>
+    </header>
+
+    <div class="post-content">
+        Today's stumbling block is bi-directionally binding of a Component (v-model), to the root data object – being the Components generated in a v-for loop.
+
+        
+            <p><a href="/2016/08/vue-js-binding-a-component-in-a-v-for-loop-to-the-parent-model/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Vue.js – Binding a Component in a v-for loop to the Parent model&p[summary]=Today's stumbling block is bi-directionally binding of a Component (v-model), to the root data object – being the Components generated in...&p[url]=/2016/08/vue-js-binding-a-component-in-a-v-for-loop-to-the-parent-model/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2016/08/vue-js-binding-a-component-in-a-v-for-loop-to-the-parent-model/&text=Today's stumbling block is bi-directionally binding of a Component (v-model), to the root data object – being the Components generated in...&hashtags=Vue.js," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/Vue.js">Vue.js</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2016-07-27T16:21:18+02:00" itemprop="datePublished">27 Jul, 2016</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="/2016/07/html-panel-tips-22-protecting-your-code/">HTML Panel Tips #22: Protecting your Code</a></h2>
+    </header>
+
+    <div class="post-content">
+        How to protect your code (especially, but not only, ExtendScript) in the context of HTML Panels, and keep it away from prying eyes.
+
+        
+            <p><a href="/2016/07/html-panel-tips-22-protecting-your-code/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panel Tips #22: Protecting your Code&p[summary]=How to protect your code (especially, but not only, ExtendScript) in the context of HTML Panels, and keep it away from prying eyes.&p[url]=/2016/07/html-panel-tips-22-protecting-your-code/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=/2016/07/html-panel-tips-22-protecting-your-code/&text=How to protect your code (especially, but not only, ExtendScript) in the context of HTML Panels, and keep it away from prying eyes.&hashtags=obfuscation,HTML Panels Tips," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="/tag/obfuscation">obfuscation</a></li>
+                
+                <li><a href="/tag/HTML Panels Tips">HTML Panels Tips</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+
+
+<div class="pagination next" role="navigation" aria-label="pagination">
+    
+
+    <span class="page_number">Page 1 of 8</span>
+
+    
+        <a href="/page2/" class="next">Next &rarr;</a>
+    
+</div>
+
+            </main>
+        </div>
+
+        <script src="/assets/js/jquery-1.12.2.min.js"></script>
+<script src="/assets/js/backtotop.js"></script>
+<script src="/assets/js/lunr.min.js"></script>
+<script src="/assets/js/lunr-feed.js"></script>
+<script src="/assets/js/jquery.fitvids.js"></script>
+<script src="/assets/js/svg4everybody.min.js"></script>
+<script src="/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>
