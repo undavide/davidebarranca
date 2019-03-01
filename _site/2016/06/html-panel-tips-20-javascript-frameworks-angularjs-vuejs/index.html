@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>HTML Panel Tips #20: Javascript Frameworks | Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content="HTML Panel Tips #20: Javascript Frameworks | Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content="HTML Panel Tips #20: Javascript Frameworks | Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="What is the 'best' Javascript framework for Adobe Photoshop HTML Panels? I review AngularJS and Vue.js as two of the options that I've used.">
+    <meta name="description" property="og:description" content="What is the 'best' Javascript framework for Adobe Photoshop HTML Panels? I review AngularJS and Vue.js as two of the options that I've used." />
+    <meta name="twitter:description" content="What is the 'best' Javascript framework for Adobe Photoshop HTML Panels? I review AngularJS and Vue.js as two of the options that I've used." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="http://localhost:4000/2016/06/html-panel-tips-20-javascript-frameworks-angularjs-vuejs/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+    <link rel="canonical" href="http://localhost:4000/2016/06/html-panel-tips-20-javascript-frameworks-angularjs-vuejs/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href="http://localhost:4000"><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="http://localhost:4000" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="http://localhost:4000/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="http://localhost:4000/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                <article class="post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2016-06-10T01:07:42+02:00" itemprop="datePublished">10 Jun, 2016</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline">HTML Panel Tips #20: Javascript Frameworks</h2>
+    </header>
+
+    <div class="post-content">
+        <p>Javascript definitely has a problem: too many frameworks! But as my Color Correction maestro Dan Margulis would put it: <em>“the opposite problem might be much worse”</em>. I’ve tackled the issue of JS frameworks in a dedicated chapter of my <a href="http://htmlpanelsbook.com">Photoshop HTML Panels Development course</a>, but I’d like to add some new thoughts here as well.</p>
+
+<p>This is an <em>atypical Tip:</em> the topic needs more than a quick coverage so bear with me and read along. Also, note that I’m not, strictly speaking, a front-end JS expert: I know how to put together <em>some</em> stuff, but I’m not really into Webpack, Babel, EcmaScript 2015, etc. so I’ve a pragmatic approach. Coming from Flash Panels and the Olav Kvern school of <a href="http://blogs.adobe.com/cssdk/author/olav-kvern">blogposts</a>, I’ve been using MVC patterns in ActionScript; like many others, I’ve found myself stuck in a dead end when wind changed and turned to HTML. As Matthias Petter Johansson predicts in an entertaining video appropriately called <a href="https://www.youtube.com/watch?v=DFP6UDgVJtE">Too many tools and frameworks</a> I chose my framework based on the combination of <strong>Popularity</strong> (how much it is widespread and adopted) and <strong>Authority</strong> (who’s build it) – you can’t fail this way, can you? So I went with Google AngularJS.</p>
+
+<h2 id="angularjs">AngularJS</h2>
+
+<p>Being a self-taught JS developer, the framework learning curve was quite steep: so I bought courses, books etc. and started climbing mount Angular. I’ve used it in some of my commercial products and, as I’ve mentioned, I’ve also built a dedicated demo panel in AngularJS for my <a href="http://htmlpanelsbook.com">Photoshop HTML Panels Development course</a>. Per se, that Panel is not rocket science: it scans your PS open document and seeks for Text layers, retrieving the text content and letting you update it. It features three tabs (just a pretext to use routing) and looks like that:</p>
+
+<p><a href="http://htmlpanelsbook.com"><img src="/wp-content/uploads/2016/06/AngularPanel.png" alt="AngularPanel" /></a></p>
+
+<p>Yet I’ve built it in AngularJS trying to use all the best practices I knew: separation of concerns, modularity, you name it. I ended up with a code by all means exaggerated for that little panel, but which architecture can scale and support much more complex and elaborated projects. You can have a look at the dependencies schema used in this image.</p>
+
+<p><a href="http://htmlpanelsbook.com"><img src="/wp-content/uploads/2016/06/schema.png" alt="schema" /></a></p>
+
+<p>If you’re familiar with AngularJS you can understand what’s in there – I won’t get through it in this very post: the full Panel’s code, with detailed explanations, is available for download alongside in a <strong>28 custom made panels</strong> bundle with the <a href="http://htmlpanelsbook.com">Panels course</a> – you can borrow it and use it in your own projects if you want.</p>
+
+<p>Now, after having written that chapter, I ended up using the very same architecture in an actual, commercial product: a contract job for a Panel that looks apparently simple (but it’s not 😶). Compared to other jobs I did in the past, this one features a great amount of <strong>modularity</strong>: possibly it wasn’t totally needed <em>when I build it</em>, but being a contract job I’ve preferred to overdo when coding it, and then ensure hopefully easier updates in the future. As a compulsive new technologies addicted, I have now to face the advent of <strong>AngularJS v2</strong>, which scrambles all the rules of v1 and is an entirely different beast. Mind you, I went with Angular from the beginning mostly because I like learning new stuff, and for knowing a framework such as AngularJS might be useful for my career apart from HTML Panels (wishful thinking).</p>
+
+<p>Mind you, <strong>I can stay with v1 for a long long time!</strong> Stuff evolves so rapidly in JS land that by the time Angular v1 is ultimately unsupported, new players will have hit the field: so basically… why bother now (besides, Adobe <em>isn’t the fastest company</em> in updating SDK). Also, I’m not a full-time developer and another steep learning curve will eat time that (a) I don’t have, and (b) that I can spend more profitably, i.e. writing another book. Angular v2 is better experienced using TypeScript – I can barely stand CoffeeScript as a language to compile to JS, I’m sorry but another strongly typed language is not in my plans. So… I’ve taken the chance to get accustomed to a valid alternative (at least for HTML Panels) that I’d like to suggest you.</p>
+
+<h2 id="vuejs">VueJS</h2>
+
+<p>Let’s start with downsides: <del>it isn’t as widespread as AngularJS</del> (note by my future self from 2019: it really is now!!) or the other framework that everybody’s excited about (<strong>React</strong> – which frankly I don’t know, but the article “<a href="https://daveceddia.com/timeline-for-learning-react/">Your Timeline for Learning React</a>“ is enough to make me skip it altogether – if you really think I should get into React instead, please let me know in the comments the reason), nonetheless <a href="http://vuejs.org/">Vue.js</a> has some respectable 20K stars on <a href="https://github.com/vuejs">Github</a>. Another concern may be that Vue.js is a personal project: yes, it’s mainly built by <a href="http://blog.evanyou.me/">Evan You</a>, not an enterprise backed developers team. If you can live with that… Vue.js has:</p>
+
+<ul>
+  <li>an amazing community: apparently it’s very popular among Laravel developers</li>
+  <li>very good documentation: IMHO uber-important factor when choosing a framework</li>
+  <li>reactive data binding: rendered templates are always up-to-date</li>
+  <li>components</li>
+  <li>routing</li>
+</ul>
+
+<p>and much more, that I won’t cover here ’cause frankly I can’t understand it yet – I’ve just started approaching the framework… How sad is truth, isn’t it?! Vue.js implements a <strong>MVVM</strong> (Model - View - ViewModel) pattern, which is considered a good choice for user interfaces (like… Panels!).</p>
+
+<p>One of the most understandable articles on MVVM is by <a href="https://addyosmani.com/blog/understanding-mvvm-a-guide-for-javascript-developers/">Addy Osmani</a>, and I don’t know why, this doesn’t surprise me. Let’s have a look at a dead simple example: In this case, the <strong>View</strong> is the templating in the HTML, the <strong>Model</strong> is the <code class="highlighter-rouge">model</code> object (a regular, plain JS object) and the <strong>ViewModel</strong> is the Vue instance that binds the View (here the <code class="highlighter-rouge">"app"</code> element – think about it as the Vue’s version of Angular <code class="highlighter-rouge">ng-app</code>), and binds the Model.</p>
+
+<p><em>Reactivity</em> means that there’s no need to update the view if/when the model changes – as soon as <code class="highlighter-rouge">model</code> is updated, the view will reflect the new value. This leads to two-way data binding, such as: Here you see <code class="highlighter-rouge">v-model</code> (equivalent to Angular <code class="highlighter-rouge">ng-model</code>) and the use of a JSON filter with <code class="highlighter-rouge">$data</code>. Refactoring the same example with modular ViewModel (usually called just vm) you can see that it’s really the data that drives everything, so if you need two Vue instances – and their parent – to share the same model, just <strong>share it by identity</strong>: In the above example, the <code class="highlighter-rouge">globalModel</code> var contains <em>reactive</em> data that is used by both <code class="highlighter-rouge">vmRadius</code> and <code class="highlighter-rouge">vmOpacity</code>. Extending further the idea, each vm can bind model data that is both shared and private, like: If you need it, you can always use a PubSub pattern with <code class="highlighter-rouge">$on</code>, <code class="highlighter-rouge">$emit</code> and <code class="highlighter-rouge">$broadcast</code>, similarly to Angular.</p>
+
+<p>Vue.js also has all the directive that you’re used to in Angular, so <code class="highlighter-rouge">v-if</code>, <code class="highlighter-rouge">v-show</code>, <code class="highlighter-rouge">v-for</code>, <code class="highlighter-rouge">v-on</code>, etc. I haven’t talked about <strong>methods</strong> (i.e. functions that you define in the <code class="highlighter-rouge">vm</code>), but I’m not really writing a Vue tutorial here – the official documentation is remarkably good and there’s also <a href="https://laracasts.com/series/learning-vue-step-by-step">this videoseries</a> (mostly free) by the always great Jeffrey Way – let me just briefly mention <strong>components</strong>: Everything I’ve shown here is really basic, there’s so much more to discover in Vue.js! Hopefully I’ve raised to your attention what seems to me a valuable alternative to more known and opinionated frameworks that, in the context of HTML Panels, for some among us are either overkill and/or difficult to master and maintain.</p>
+
+<hr />
+
+<h3 id="the-photoshop-html-panels-development-course">The Photoshop HTML Panels Development Course</h3>
+
+<figure class="alignleft">
+  <a href="https://htmlpanelsbook.com" target="_blank">
+	<img src="/wp-content/uploads/2016/03/BookVideo.jpg" alt="Photoshop HTML Panels Development course" /></a>
+	<figcaption>Updated to CC 2019.</figcaption>
+</figure>
+
+<p>If you’re reading here, you might be interested in my Photoshop Panels development – so let me inform you that I’ve authored a full course:</p>
+
+<ul>
+  <li><strong>300 pages</strong> PDF</li>
+  <li><strong>3 hours</strong> of HD screencasts</li>
+  <li><strong>28 custom Panels</strong> with commented code</li>
+</ul>
+
+<p><a href="http://htmlpanelsbook.com">Check it out!</a> Please help me spread the news – I’ll be able to keep producing more exclusive content on this blog. Thank you!</p>
+
+
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panel Tips #20: Javascript Frameworks&p[summary]=Javascript definitely has a problem: too many frameworks! But as my Color Correction maestro Dan Margulis would put it: “the opposite pro...&p[url]=http://localhost:4000/2016/06/html-panel-tips-20-javascript-frameworks-angularjs-vuejs/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2016/06/html-panel-tips-20-javascript-frameworks-angularjs-vuejs/&text=Javascript definitely has a problem: too many frameworks! But as my Color Correction maestro Dan Margulis would put it: “the opposite pro...&hashtags=HTML Panels Tips,Angular,Vue.js," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/HTML Panels Tips">HTML Panels Tips</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Angular">Angular</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Vue.js">Vue.js</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+<aside class="comments" role="complementary">
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'http://localhost:4000/2016/06/html-panel-tips-20-javascript-frameworks-angularjs-vuejs/';
+            this.page.identifier = '6/10/2016';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//your_disqus_site.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</aside>
+
+            </main>
+        </div>
+
+        <script src="http://localhost:4000/assets/js/jquery-1.12.2.min.js"></script>
+<script src="http://localhost:4000/assets/js/backtotop.js"></script>
+<script src="http://localhost:4000/assets/js/lunr.min.js"></script>
+<script src="http://localhost:4000/assets/js/lunr-feed.js"></script>
+<script src="http://localhost:4000/assets/js/jquery.fitvids.js"></script>
+<script src="http://localhost:4000/assets/js/svg4everybody.min.js"></script>
+<script src="http://localhost:4000/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>

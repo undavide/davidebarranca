@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content=" Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content=" Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!">
+    <meta name="description" property="og:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+    <meta name="twitter:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="http://localhost:4000/page5/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+    <link rel="canonical" href="http://localhost:4000/page5/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href="http://localhost:4000"><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="http://localhost:4000" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="http://localhost:4000/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="http://localhost:4000/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2013-01-27T17:50:30+01:00" itemprop="datePublished">27 Jan, 2013</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2013/01/double-usm-photoshop-sharpening-script-1-introduction/">Double USM Photoshop Sharpening Script #1: Introduction</a></h2>
+    </header>
+
+    <div class="post-content">
+        Double USM is the brand new Sharpening Photoshop's script I've coded! Let me introduce it to you in a three posts series: in this first one I'll be discussing why it's useful and how it works. Post #2 will be about the interface and how it works. In Post #3 I'll show you examples and we'll try to find a place for it in your own image processing workflow.
+
+        
+            <p><a href="http://localhost:4000/2013/01/double-usm-photoshop-sharpening-script-1-introduction/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Double USM Photoshop Sharpening Script #1: Introduction&p[summary]=Double USM is the brand new Sharpening Photoshop's script I've coded! Let me introduce it to you in a three posts series: in this first o...&p[url]=http://localhost:4000/2013/01/double-usm-photoshop-sharpening-script-1-introduction/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2013/01/double-usm-photoshop-sharpening-script-1-introduction/&text=Double USM is the brand new Sharpening Photoshop's script I've coded! Let me introduce it to you in a three posts series: in this first o...&hashtags=Double USM,halos,sharpening,unsharp mask," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Double USM">Double USM</a></li>
+                
+                <li><a href="http://localhost:4000/tag/halos">halos</a></li>
+                
+                <li><a href="http://localhost:4000/tag/sharpening">sharpening</a></li>
+                
+                <li><a href="http://localhost:4000/tag/unsharp mask">unsharp mask</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2013-01-14T17:13:31+01:00" itemprop="datePublished">14 Jan, 2013</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2013/01/selling-digital-books-with-apple-ibooksauthor-indesign-adobe-digital-publishing-suite/">Selling digital books with Apple: iBooksAuthor, InDesign, Digital Publishing Suite</a></h2>
+    </header>
+
+    <div class="post-content">
+        If you're willing to produce digital books to be sold by Apple, be aware that each one of the available tools will shape your content and how it is going to be delivered in a very peculiar way. This post will cover InDesign, iBooksAuthor and the Adobe Digital Publishing Suite targeting Apple iBookStore and AppStore with ePub, iBooks and Apps. Which one does fit your needs the best?
+
+        
+            <p><a href="http://localhost:4000/2013/01/selling-digital-books-with-apple-ibooksauthor-indesign-adobe-digital-publishing-suite/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Selling digital books with Apple: iBooksAuthor, InDesign, Digital Publishing Suite&p[summary]=If you're willing to produce digital books to be sold by Apple, be aware that each one of the available tools will shape your content and...&p[url]=http://localhost:4000/2013/01/selling-digital-books-with-apple-ibooksauthor-indesign-adobe-digital-publishing-suite/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2013/01/selling-digital-books-with-apple-ibooksauthor-indesign-adobe-digital-publishing-suite/&text=If you're willing to produce digital books to be sold by Apple, be aware that each one of the available tools will shape your content and...&hashtags=Adobe,app,App Store,Apple,Digital Publishing Suite,ePub,iBooks,iBooksAuthor,iBookStore,InDesign," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Adobe">Adobe</a></li>
+                
+                <li><a href="http://localhost:4000/tag/app">app</a></li>
+                
+                <li><a href="http://localhost:4000/tag/App Store">App Store</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Apple">Apple</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Digital Publishing Suite">Digital Publishing Suite</a></li>
+                
+                <li><a href="http://localhost:4000/tag/ePub">ePub</a></li>
+                
+                <li><a href="http://localhost:4000/tag/iBooks">iBooks</a></li>
+                
+                <li><a href="http://localhost:4000/tag/iBooksAuthor">iBooksAuthor</a></li>
+                
+                <li><a href="http://localhost:4000/tag/iBookStore">iBookStore</a></li>
+                
+                <li><a href="http://localhost:4000/tag/InDesign">InDesign</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2013-01-11T16:18:02+01:00" itemprop="datePublished">11 Jan, 2013</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2013/01/cs-extensions-photoshop-cs6-panels-scripts-resource/">CS Extensions: Photoshop CS6 Extensions and Scripts website</a></h2>
+    </header>
+
+    <div class="post-content">
+        Are you looking for Photoshop Extensions? I'm pleased to announce that CS Extensions, a brand new website entirely dedicated to Creative Suite products targeted to Photographers and Retouchers, is finally online (a project that kept me quite busy in the last two months).
+
+        
+            <p><a href="http://localhost:4000/2013/01/cs-extensions-photoshop-cs6-panels-scripts-resource/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=CS Extensions: Photoshop CS6 Extensions and Scripts website&p[summary]=Are you looking for Photoshop Extensions? I'm pleased to announce that CS Extensions, a brand new website entirely dedicated to Creative ...&p[url]=http://localhost:4000/2013/01/cs-extensions-photoshop-cs6-panels-scripts-resource/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2013/01/cs-extensions-photoshop-cs6-panels-scripts-resource/&text=Are you looking for Photoshop Extensions? I'm pleased to announce that CS Extensions, a brand new website entirely dedicated to Creative ...&hashtags=Adobe Exchange,extensions,photographers,Photoshop CS6,plugins,retouchers," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Adobe Exchange">Adobe Exchange</a></li>
+                
+                <li><a href="http://localhost:4000/tag/extensions">extensions</a></li>
+                
+                <li><a href="http://localhost:4000/tag/photographers">photographers</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Photoshop CS6">Photoshop CS6</a></li>
+                
+                <li><a href="http://localhost:4000/tag/plugins">plugins</a></li>
+                
+                <li><a href="http://localhost:4000/tag/retouchers">retouchers</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-11-08T12:37:52+01:00" itemprop="datePublished">8 Nov, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/11/capture-one-7-db-lens-correction-bug/">Capture One 7 DB &#8211; Lens Correction bug</a></h2>
+    </header>
+
+    <div class="post-content">
+        Capture One 7 looks like a good improvement over the previous version, but shows a nasty bug when you use a particular combination of lens corrections (with raw files coming from P1 digital back at least). Be aware!
+
+        
+            <p><a href="http://localhost:4000/2012/11/capture-one-7-db-lens-correction-bug/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Capture One 7 DB &#8211; Lens Correction bug&p[summary]=Capture One 7 looks like a good improvement over the previous version, but shows a nasty bug when you use a particular combination of len...&p[url]=http://localhost:4000/2012/11/capture-one-7-db-lens-correction-bug/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/11/capture-one-7-db-lens-correction-bug/&text=Capture One 7 looks like a good improvement over the previous version, but shows a nasty bug when you use a particular combination of len...&hashtags=bug,Capture One,issue,Lens Correction,Phase One," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/bug">bug</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Capture One">Capture One</a></li>
+                
+                <li><a href="http://localhost:4000/tag/issue">issue</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Lens Correction">Lens Correction</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Phase One">Phase One</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-11-07T23:16:55+01:00" itemprop="datePublished">7 Nov, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/11/action-recordable-scripts-in-photoshop/">Action recordable scripts in Photoshop</a></h2>
+    </header>
+
+    <div class="post-content">
+        In order to build a script that requires user input (from a GUI) and can be recorded into an Action, you must code a particular set of features - I'll be providing a commented example, to be used as a template.
+
+        
+            <p><a href="http://localhost:4000/2012/11/action-recordable-scripts-in-photoshop/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Action recordable scripts in Photoshop&p[summary]=In order to build a script that requires user input (from a GUI) and can be recorded into an Action, you must code a particular set of fe...&p[url]=http://localhost:4000/2012/11/action-recordable-scripts-in-photoshop/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/11/action-recordable-scripts-in-photoshop/&text=In order to build a script that requires user input (from a GUI) and can be recorded into an Action, you must code a particular set of fe...&hashtags=Action,GUI,recordable,script,tutorial," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Action">Action</a></li>
+                
+                <li><a href="http://localhost:4000/tag/GUI">GUI</a></li>
+                
+                <li><a href="http://localhost:4000/tag/recordable">recordable</a></li>
+                
+                <li><a href="http://localhost:4000/tag/script">script</a></li>
+                
+                <li><a href="http://localhost:4000/tag/tutorial">tutorial</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-11-01T22:29:23+01:00" itemprop="datePublished">1 Nov, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/11/scriptui-bridgetalk-persistent-window-examples/">ScriptUI &#8211; BridgeTalk persistent Window examples</a></h2>
+    </header>
+
+    <div class="post-content">
+        ScriptUI Windows can be tricky in Photoshop, especially if you want to create a non-modal, persistent and idle palette. While a couple of workarounds are possible, as I've shown in a previous post, there's a better alternative involving BridgeTalk.
+
+        
+            <p><a href="http://localhost:4000/2012/11/scriptui-bridgetalk-persistent-window-examples/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=ScriptUI &#8211; BridgeTalk persistent Window examples&p[summary]=ScriptUI Windows can be tricky in Photoshop, especially if you want to create a non-modal, persistent and idle palette. While a couple of...&p[url]=http://localhost:4000/2012/11/scriptui-bridgetalk-persistent-window-examples/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/11/scriptui-bridgetalk-persistent-window-examples/&text=ScriptUI Windows can be tricky in Photoshop, especially if you want to create a non-modal, persistent and idle palette. While a couple of...&hashtags=BridgeTalk,Extendscript,palette,ScriptUI,tutorial,Window," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/BridgeTalk">BridgeTalk</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Extendscript">Extendscript</a></li>
+                
+                <li><a href="http://localhost:4000/tag/palette">palette</a></li>
+                
+                <li><a href="http://localhost:4000/tag/ScriptUI">ScriptUI</a></li>
+                
+                <li><a href="http://localhost:4000/tag/tutorial">tutorial</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Window">Window</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-10-28T02:50:22+02:00" itemprop="datePublished">28 Oct, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/10/scriptui-window-in-photoshop-palette-vs-dialog/">ScriptUI Window in Photoshop &#8211; Palette vs. Dialog</a></h2>
+    </header>
+
+    <div class="post-content">
+        Photoshop is a bit picky when it comes to ScriptUI Window elements - compared to other Creative Suite applications, 'palette' and 'dialog' work in a peculiar way and their behavior is platform / version dependent - alas.
+
+        
+            <p><a href="http://localhost:4000/2012/10/scriptui-window-in-photoshop-palette-vs-dialog/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=ScriptUI Window in Photoshop &#8211; Palette vs. Dialog&p[summary]=Photoshop is a bit picky when it comes to ScriptUI Window elements - compared to other Creative Suite applications, 'palette' and 'dialog...&p[url]=http://localhost:4000/2012/10/scriptui-window-in-photoshop-palette-vs-dialog/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/10/scriptui-window-in-photoshop-palette-vs-dialog/&text=Photoshop is a bit picky when it comes to ScriptUI Window elements - compared to other Creative Suite applications, 'palette' and 'dialog...&hashtags=dialog,Extendscript,Javascript,palette,Photoshop @en,ScriptUI,waitForRedraw(),Window," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/dialog">dialog</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Extendscript">Extendscript</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Javascript">Javascript</a></li>
+                
+                <li><a href="http://localhost:4000/tag/palette">palette</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Photoshop @en">Photoshop @en</a></li>
+                
+                <li><a href="http://localhost:4000/tag/ScriptUI">ScriptUI</a></li>
+                
+                <li><a href="http://localhost:4000/tag/waitForRedraw()">waitForRedraw()</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Window">Window</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-10-14T02:30:15+02:00" itemprop="datePublished">14 Oct, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/10/crypto-js-tutorial-cryptography-for-dummies/">CryptoJS Tutorial For Dummies</a></h2>
+    </header>
+
+    <div class="post-content">
+        If you need cryptography in your Javascript or Extendscript files but your topic's knowledge ends with Alan Turing breaking the Enigma machine in WWII, read along. I'll try to save you some time showing basic operations with the great Crypto-JS package.
+
+        
+            <p><a href="http://localhost:4000/2012/10/crypto-js-tutorial-cryptography-for-dummies/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=CryptoJS Tutorial For Dummies&p[summary]=If you need cryptography in your Javascript or Extendscript files but your topic's knowledge ends with Alan Turing breaking the Enigma ma...&p[url]=http://localhost:4000/2012/10/crypto-js-tutorial-cryptography-for-dummies/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/10/crypto-js-tutorial-cryptography-for-dummies/&text=If you need cryptography in your Javascript or Extendscript files but your topic's knowledge ends with Alan Turing breaking the Enigma ma...&hashtags=Crypto-JS,cryptography,Extendscript,Javascript,tutorial," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Crypto-JS">Crypto-JS</a></li>
+                
+                <li><a href="http://localhost:4000/tag/cryptography">cryptography</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Extendscript">Extendscript</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Javascript">Javascript</a></li>
+                
+                <li><a href="http://localhost:4000/tag/tutorial">tutorial</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-10-01T01:36:09+02:00" itemprop="datePublished">1 Oct, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/10/hahnemuhle-photorag-baryta-paper-issues-surface-imperfections/">Hahnemühle PhotoRag Baryta paper issues</a></h2>
+    </header>
+
+    <div class="post-content">
+        The expensive Hahnemühle PhotoRag Baryta paper keeps showing unacceptable surface imperfections such as bumps, dots, hairs, stains. Avoid it if you can!
+
+        
+            <p><a href="http://localhost:4000/2012/10/hahnemuhle-photorag-baryta-paper-issues-surface-imperfections/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Hahnemühle PhotoRag Baryta paper issues&p[summary]=The expensive Hahnemühle PhotoRag Baryta paper keeps showing unacceptable surface imperfections such as bumps, dots, hairs, stains. Avoid...&p[url]=http://localhost:4000/2012/10/hahnemuhle-photorag-baryta-paper-issues-surface-imperfections/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/10/hahnemuhle-photorag-baryta-paper-issues-surface-imperfections/&text=The expensive Hahnemühle PhotoRag Baryta paper keeps showing unacceptable surface imperfections such as bumps, dots, hairs, stains. Avoid...&hashtags=archival,cotton,Hahnemuhle @en,inkjet,issues,paper,rag,surface," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/archival">archival</a></li>
+                
+                <li><a href="http://localhost:4000/tag/cotton">cotton</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Hahnemuhle @en">Hahnemuhle @en</a></li>
+                
+                <li><a href="http://localhost:4000/tag/inkjet">inkjet</a></li>
+                
+                <li><a href="http://localhost:4000/tag/issues">issues</a></li>
+                
+                <li><a href="http://localhost:4000/tag/paper">paper</a></li>
+                
+                <li><a href="http://localhost:4000/tag/rag">rag</a></li>
+                
+                <li><a href="http://localhost:4000/tag/surface">surface</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-09-15T17:59:47+02:00" itemprop="datePublished">15 Sep, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/09/decomposing-sharpening-part5-arithmetic-matters/">Decomposing Sharpening #5 Arithmetic matters</a></h2>
+    </header>
+
+    <div class="post-content">
+        When you miss the obvious, bumping into it makes you hyper and lose heart at the same time. I've found a better way to deal with Lab split Dark/Light halos Unsharp Mask and I'm ready to show it to you! 
+
+        
+            <p><a href="http://localhost:4000/2012/09/decomposing-sharpening-part5-arithmetic-matters/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Decomposing Sharpening #5 Arithmetic matters&p[summary]=When you miss the obvious, bumping into it makes you hyper and lose heart at the same time. I've found a better way to deal with Lab spli...&p[url]=http://localhost:4000/2012/09/decomposing-sharpening-part5-arithmetic-matters/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/09/decomposing-sharpening-part5-arithmetic-matters/&text=When you miss the obvious, bumping into it makes you hyper and lose heart at the same time. I've found a better way to deal with Lab spli...&hashtags=blending modes,Lab,sharpening,smart filter,smart object," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/blending modes">blending modes</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Lab">Lab</a></li>
+                
+                <li><a href="http://localhost:4000/tag/sharpening">sharpening</a></li>
+                
+                <li><a href="http://localhost:4000/tag/smart filter">smart filter</a></li>
+                
+                <li><a href="http://localhost:4000/tag/smart object">smart object</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-09-08T19:47:12+02:00" itemprop="datePublished">8 Sep, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/09/decomposing-sharpening-part4-the-lab-way/">Decomposing Sharpening #4 The Lab way</a></h2>
+    </header>
+
+    <div class="post-content">
+        Lab colorspace is picky and doesn't allow many useful Blending Modes: a different routine (compared to the RGB one) is needed in order to split Dark and Light Halos in the Unsharp Mask Photoshop filter.
+
+        
+            <p><a href="http://localhost:4000/2012/09/decomposing-sharpening-part4-the-lab-way/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Decomposing Sharpening #4 The Lab way&p[summary]=Lab colorspace is picky and doesn't allow many useful Blending Modes: a different routine (compared to the RGB one) is needed in order to...&p[url]=http://localhost:4000/2012/09/decomposing-sharpening-part4-the-lab-way/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/09/decomposing-sharpening-part4-the-lab-way/&text=Lab colorspace is picky and doesn't allow many useful Blending Modes: a different routine (compared to the RGB one) is needed in order to...&hashtags=blending modes,Lab,sharpening,smart filter,smart object," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/blending modes">blending modes</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Lab">Lab</a></li>
+                
+                <li><a href="http://localhost:4000/tag/sharpening">sharpening</a></li>
+                
+                <li><a href="http://localhost:4000/tag/smart filter">smart filter</a></li>
+                
+                <li><a href="http://localhost:4000/tag/smart object">smart object</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-09-08T16:05:21+02:00" itemprop="datePublished">8 Sep, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/09/decomposing-sharpening-part3-workaround/">Decomposing Sharpening #3 Workaround</a></h2>
+    </header>
+
+    <div class="post-content">
+        How to replicate Unsharp Mask with Smart Filters, allowing the separate control of Dark and Light halos? Read along one viable workaround.
+
+        
+            <p><a href="http://localhost:4000/2012/09/decomposing-sharpening-part3-workaround/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Decomposing Sharpening #3 Workaround&p[summary]=How to replicate Unsharp Mask with Smart Filters, allowing the separate control of Dark and Light halos? Read along one viable workaround.&p[url]=http://localhost:4000/2012/09/decomposing-sharpening-part3-workaround/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/09/decomposing-sharpening-part3-workaround/&text=How to replicate Unsharp Mask with Smart Filters, allowing the separate control of Dark and Light halos? Read along one viable workaround.&hashtags=blending modes,sharpening,smart filter,smart object," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/blending modes">blending modes</a></li>
+                
+                <li><a href="http://localhost:4000/tag/sharpening">sharpening</a></li>
+                
+                <li><a href="http://localhost:4000/tag/smart filter">smart filter</a></li>
+                
+                <li><a href="http://localhost:4000/tag/smart object">smart object</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-09-08T11:53:13+02:00" itemprop="datePublished">8 Sep, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/09/decomposing-sharpening-part2-mistakes/">Decomposing Sharpening #2 Mistakes</a></h2>
+    </header>
+
+    <div class="post-content">
+        Easy, intuitive solutions may not survive accurate tests, proving to be… simply wrong. That's true in coding, Photoshop and life in general!
+
+        
+            <p><a href="http://localhost:4000/2012/09/decomposing-sharpening-part2-mistakes/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Decomposing Sharpening #2 Mistakes&p[summary]=Easy, intuitive solutions may not survive accurate tests, proving to be… simply wrong. That's true in coding, Photoshop and life in general!&p[url]=http://localhost:4000/2012/09/decomposing-sharpening-part2-mistakes/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/09/decomposing-sharpening-part2-mistakes/&text=Easy, intuitive solutions may not survive accurate tests, proving to be… simply wrong. That's true in coding, Photoshop and life in general!&hashtags=blending modes,sharpening,smart filter,smart object," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/blending modes">blending modes</a></li>
+                
+                <li><a href="http://localhost:4000/tag/sharpening">sharpening</a></li>
+                
+                <li><a href="http://localhost:4000/tag/smart filter">smart filter</a></li>
+                
+                <li><a href="http://localhost:4000/tag/smart object">smart object</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-09-08T00:01:46+02:00" itemprop="datePublished">8 Sep, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/09/decomposing_sharpening_part_1/">Decomposing Sharpening #1 Introduction</a></h2>
+    </header>
+
+    <div class="post-content">
+        First part of a series about the Photoshop sharpening algorithm and ways to decompose it in order to create new detail enhancing tools.
+
+        
+            <p><a href="http://localhost:4000/2012/09/decomposing_sharpening_part_1/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Decomposing Sharpening #1 Introduction&p[summary]=First part of a series about the Photoshop sharpening algorithm and ways to decompose it in order to create new detail enhancing tools.&p[url]=http://localhost:4000/2012/09/decomposing_sharpening_part_1/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/09/decomposing_sharpening_part_1/&text=First part of a series about the Photoshop sharpening algorithm and ways to decompose it in order to create new detail enhancing tools.&hashtags=blending modes,Calculations,high pass,sharpening," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/blending modes">blending modes</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Calculations">Calculations</a></li>
+                
+                <li><a href="http://localhost:4000/tag/high pass">high pass</a></li>
+                
+                <li><a href="http://localhost:4000/tag/sharpening">sharpening</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-07-13T00:45:45+02:00" itemprop="datePublished">13 Jul, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/07/adobe-exchange-cs-extensions-featuring-alce/">Adobe Exchange &#8211; featuring ALCE</a></h2>
+    </header>
+
+    <div class="post-content">
+        Adobe Exchange is now live in the Adobe Labs, and ALCE is a featured product for the launch!
+
+        
+            <p><a href="http://localhost:4000/2012/07/adobe-exchange-cs-extensions-featuring-alce/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Adobe Exchange &#8211; featuring ALCE&p[summary]=Adobe Exchange is now live in the Adobe Labs, and ALCE is a featured product for the launch!&p[url]=http://localhost:4000/2012/07/adobe-exchange-cs-extensions-featuring-alce/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/07/adobe-exchange-cs-extensions-featuring-alce/&text=Adobe Exchange is now live in the Adobe Labs, and ALCE is a featured product for the launch!&hashtags=Adobe Exchange,ALCE,Creative Suite," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Adobe Exchange">Adobe Exchange</a></li>
+                
+                <li><a href="http://localhost:4000/tag/ALCE">ALCE</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Creative Suite">Creative Suite</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-06-23T17:25:02+02:00" itemprop="datePublished">23 Jun, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/06/earthquake-italy-emilia-romagna/">Earthquake down time</a></h2>
+    </header>
+
+    <div class="post-content">
+        Due to the Italy's earthquake in the Emilia-Romagna region (May 2012) I've added no new content recently - because I live(d) exactly there!
+
+        
+            <p><a href="http://localhost:4000/2012/06/earthquake-italy-emilia-romagna/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Earthquake down time&p[summary]=Due to the Italy's earthquake in the Emilia-Romagna region (May 2012) I've added no new content recently - because I live(d) exactly there!&p[url]=http://localhost:4000/2012/06/earthquake-italy-emilia-romagna/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/06/earthquake-italy-emilia-romagna/&text=Due to the Italy's earthquake in the Emilia-Romagna region (May 2012) I've added no new content recently - because I live(d) exactly there!&hashtags=Earthquake,Emilia-Romagna,Italy," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Earthquake">Earthquake</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Emilia-Romagna">Emilia-Romagna</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Italy">Italy</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-04-29T00:31:32+02:00" itemprop="datePublished">29 Apr, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/04/dorsi-digitali-phase-one-iiq-adobe-camera-raw-paneling-bug/">Dorsi digitali Phase One e Adobe Camera Raw &#8211; Paneling &#8220;bug&#8221;</a></h2>
+    </header>
+
+    <div class="post-content">
+        I files raw dei dorsi digitali Phase One non sono pienamente supportati da Adobe Camera Raw (7.0 e precedenti), che non interpreta i dati di calibrazione del sensore incorporati nei .IIQ. Questo paneling "bug" incide sull'uniformità dell'immagine - in questo post ti propongo una soluzione.
+
+
+        
+            <p><a href="http://localhost:4000/2012/04/dorsi-digitali-phase-one-iiq-adobe-camera-raw-paneling-bug/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Dorsi digitali Phase One e Adobe Camera Raw &#8211; Paneling &#8220;bug&#8221;&p[summary]=I files raw dei dorsi digitali Phase One non sono pienamente supportati da Adobe Camera Raw (7.0 e precedenti), che non interpreta i dati...&p[url]=http://localhost:4000/2012/04/dorsi-digitali-phase-one-iiq-adobe-camera-raw-paneling-bug/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/04/dorsi-digitali-phase-one-iiq-adobe-camera-raw-paneling-bug/&text=I files raw dei dorsi digitali Phase One non sono pienamente supportati da Adobe Camera Raw (7.0 e precedenti), che non interpreta i dati...&hashtags=Adobe Camera Raw @it,Capture One @it,Dorso Digitale,IIQ,IQ180 @it,Oggetto Avanzato,P65+ @it,Phase One @it,raw," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Adobe Camera Raw @it">Adobe Camera Raw @it</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Capture One @it">Capture One @it</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Dorso Digitale">Dorso Digitale</a></li>
+                
+                <li><a href="http://localhost:4000/tag/IIQ">IIQ</a></li>
+                
+                <li><a href="http://localhost:4000/tag/IQ180 @it">IQ180 @it</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Oggetto Avanzato">Oggetto Avanzato</a></li>
+                
+                <li><a href="http://localhost:4000/tag/P65+ @it">P65+ @it</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Phase One @it">Phase One @it</a></li>
+                
+                <li><a href="http://localhost:4000/tag/raw">raw</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-04-26T11:07:01+02:00" itemprop="datePublished">26 Apr, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/04/phase-one-digital-back-adobe-camera-raw-7-cs6-paneling-bug/">Phase One digital backs and Adobe Camera Raw &#8211; Paneling &#8220;bug&#8221;</a></h2>
+    </header>
+
+    <div class="post-content">
+        Phase One digital back raw files are not fully supported by Adobe Camera Raw (all versions) because the sensor calibration data embedded in the .IIQ files is not interpreted. This leads to a so-called paneling "bug", affecting the sensor's response uniformity - I came up with a workaround.
+
+
+        
+            <p><a href="http://localhost:4000/2012/04/phase-one-digital-back-adobe-camera-raw-7-cs6-paneling-bug/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Phase One digital backs and Adobe Camera Raw &#8211; Paneling &#8220;bug&#8221;&p[summary]=Phase One digital back raw files are not fully supported by Adobe Camera Raw (all versions) because the sensor calibration data embedded ...&p[url]=http://localhost:4000/2012/04/phase-one-digital-back-adobe-camera-raw-7-cs6-paneling-bug/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/04/phase-one-digital-back-adobe-camera-raw-7-cs6-paneling-bug/&text=Phase One digital back raw files are not fully supported by Adobe Camera Raw (all versions) because the sensor calibration data embedded ...&hashtags=Adobe Camera Raw,bug,Capture One,IQ180,P65+,Phase One,Photoshop CS6," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Adobe Camera Raw">Adobe Camera Raw</a></li>
+                
+                <li><a href="http://localhost:4000/tag/bug">bug</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Capture One">Capture One</a></li>
+                
+                <li><a href="http://localhost:4000/tag/IQ180">IQ180</a></li>
+                
+                <li><a href="http://localhost:4000/tag/P65+">P65+</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Phase One">Phase One</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Photoshop CS6">Photoshop CS6</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-04-07T00:07:15+02:00" itemprop="datePublished">7 Apr, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/04/ibooks-author-compressione-jpg-conversione-colore-ridimensionamento-delle-immagini/">iBooks Author &#8211; Compressione delle immagini</a></h2>
+    </header>
+
+    <div class="post-content">
+        iBooks Author ridimensiona, converte e comprime automaticamente tutte le immagini contenute in un iBook. Non ci possiamo fare quasi niente, eppure è meglio avere un'idea di cosa accade dietro le quinte del software Apple
+
+        
+            <p><a href="http://localhost:4000/2012/04/ibooks-author-compressione-jpg-conversione-colore-ridimensionamento-delle-immagini/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=iBooks Author &#8211; Compressione delle immagini&p[summary]=iBooks Author ridimensiona, converte e comprime automaticamente tutte le immagini contenute in un iBook. Non ci possiamo fare quasi nient...&p[url]=http://localhost:4000/2012/04/ibooks-author-compressione-jpg-conversione-colore-ridimensionamento-delle-immagini/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/04/ibooks-author-compressione-jpg-conversione-colore-ridimensionamento-delle-immagini/&text=iBooks Author ridimensiona, converte e comprime automaticamente tutte le immagini contenute in un iBook. Non ci possiamo fare quasi nient...&hashtags=" rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-04-06T21:47:27+02:00" itemprop="datePublished">6 Apr, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/">iBooks Author &#8211; Immagini a pieno schermo</a></h2>
+    </header>
+
+    <div class="post-content">
+        Ci sono almeno tre modi diversi in iBooks Author di ottenere immagini a pieno schermo esportando un iBook per iPad, ognuno dei quali ha vantaggi e svantaggi.
+
+        
+            <p><a href="http://localhost:4000/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=iBooks Author &#8211; Immagini a pieno schermo&p[summary]=Ci sono almeno tre modi diversi in iBooks Author di ottenere immagini a pieno schermo esportando un iBook per iPad, ognuno dei quali ha v...&p[url]=http://localhost:4000/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/&text=Ci sono almeno tre modi diversi in iBooks Author di ottenere immagini a pieno schermo esportando un iBook per iPad, ognuno dei quali ha v...&hashtags=" rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+
+
+<div class="pagination" role="navigation" aria-label="pagination">
+    
+        <a href="/page4/" class="previous">&larr; Previous</a>
+    
+
+    <span class="page_number">Page 5 of 8</span>
+
+    
+        <a href="/page6/" class="next">Next &rarr;</a>
+    
+</div>
+
+            </main>
+        </div>
+
+        <script src="http://localhost:4000/assets/js/jquery-1.12.2.min.js"></script>
+<script src="http://localhost:4000/assets/js/backtotop.js"></script>
+<script src="http://localhost:4000/assets/js/lunr.min.js"></script>
+<script src="http://localhost:4000/assets/js/lunr-feed.js"></script>
+<script src="http://localhost:4000/assets/js/jquery.fitvids.js"></script>
+<script src="http://localhost:4000/assets/js/svg4everybody.min.js"></script>
+<script src="http://localhost:4000/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>

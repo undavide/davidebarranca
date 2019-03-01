@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>HTML Panels Tips #15 Asynchronous vs. Synchronous | Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content="HTML Panels Tips #15 Asynchronous vs. Synchronous | Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content="HTML Panels Tips #15 Asynchronous vs. Synchronous | Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!">
+    <meta name="description" property="og:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+    <meta name="twitter:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="http://localhost:4000/2014/12/html-panels-tips-15-asynchronous-vs-synchronous-evalscript/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+    <link rel="canonical" href="http://localhost:4000/2014/12/html-panels-tips-15-asynchronous-vs-synchronous-evalscript/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href="http://localhost:4000"><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="http://localhost:4000" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="http://localhost:4000/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="http://localhost:4000/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                <article class="post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2014-12-02T17:37:31+01:00" itemprop="datePublished">2 Dec, 2014</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline">HTML Panels Tips #15 Asynchronous vs. Synchronous</h2>
+    </header>
+
+    <div class="post-content">
+        <div class="pf-content">
+  <p>
+    Today&#8217;s tip focuses on the Asynchronous nature of <code>CSInterface.evalScript()</code> calls, and on ways to make it work in a synchronous fashion.<!--more-->
+  </p>
+  
+  <h2>
+    Synchronous vs. Asynchronous
+  </h2>
+  
+  <p>
+    Quoting <a title="Synchronous vs Asynchronous" href="http://stackoverflow.com/questions/748175/asynchronous-vs-synchronous-execution-what-does-it-really-mean" target="_blank">StackOverflow</a>:
+  </p>
+  
+  <blockquote>
+    <p>
+      When you execute something synchronously, you wait for it to finish before moving on to another task.<br /> When you execute something asynchronously, you can move on to another task before it finishes.
+    </p>
+  </blockquote>
+  
+  <p>
+    Or visually:
+  </p>
+  
+  <p>
+    <img class="aligncenter size-full wp-image-2751" src="http://localhost:8888/wp-content/uploads/2014/12/sync.png" alt="Synchronous" width="584" height="125" srcset="http://localhost:8888/wp-content/uploads/2014/12/sync.png 584w, http://localhost:8888/wp-content/uploads/2014/12/sync-150x32.png 150w, http://localhost:8888/wp-content/uploads/2014/12/sync-300x64.png 300w" sizes="(max-width: 584px) 100vw, 584px" />
+  </p>
+  
+  <p>
+    <img class="aligncenter size-full wp-image-2749" src="http://localhost:8888/wp-content/uploads/2014/12/async.png" alt="Asynchronous" width="584" height="125" srcset="http://localhost:8888/wp-content/uploads/2014/12/async.png 584w, http://localhost:8888/wp-content/uploads/2014/12/async-150x32.png 150w, http://localhost:8888/wp-content/uploads/2014/12/async-300x64.png 300w" sizes="(max-width: 584px) 100vw, 584px" />
+  </p>
+  
+  <p>
+    Back in Flash days <code>evalScript</code> was synchronous, now in HTML land is asynchronous:
+  </p>
+  
+  <pre class="lang:js decode:true ">CSXSInterface.instance.evalScript('jsxFunction'); // Sync
+csInterface().evalScript('jsxFunction'); // Async</pre>
+  
+  <h2>
+    Async example
+  </h2>
+  
+  <p>
+    Remember that evalScript function takes two params:
+  </p>
+  
+  <ul>
+    <li>
+      The ExtendScript code to run.
+    </li>
+    <li>
+      A callback function, which in turn takes as a param the returned value from the ExtendScript call.
+    </li>
+  </ul>
+  
+  <p>
+    The default behavior is as follows.
+  </p>
+  
+  <pre class="nums:true lang:js mark:4,8 decode:true">var csInterface = new CSInterface();
+var numberOfDocuments = undefined;
+
+csInterface.evalScript('app.documents.length', function(result) {
+  numberOfDocuments = result;
+});
+
+alert(numberOfDocuments); // undefined</pre>
+  
+  <p>
+    In the above example the <code>app.documents.length</code> statement is executed and directly returned &#8211; the number of currently opened documents in Photoshop is passed to the callback, which assignes it to the <code>numberOfDocuments</code> variable.
+  </p>
+  
+  <p>
+    The alert says &#8220;undefined&#8221; because of the <strong>asynchronous</strong> nature of evalScript: line #4 executes, then the interpreter goes ahead to line #8 not waiting for the ExtendScript to return (in this example, a single line of code, but in real world a long chain of functions that trigger usually time consuming Photoshop operations) so when <code>alert(numberOfDocuments)</code> is called, <code>numberOfDocuments</code> is still <em>undefined</em>.
+  </p>
+  
+  <p>
+    So to speak, it is like asking your partner to do the shopping then, as soon as (s)he goes out, open the fridge and say &#8220;rats, it&#8217;s empty!&#8221;
+  </p>
+  
+  <h2>
+    Sync workarounds
+  </h2>
+  
+  <p>
+    There are few different ways to mimic a synchronous behavior
+  </p>
+  
+  <h3>
+    1. Set a Timeout
+  </h3>
+  
+  <p>
+    The easiest way is to just wait for your partner to get back from the store:
+  </p>
+  
+  <pre class="lang:js decode:true">var csInterface = new CSInterface();
+var numberOfDocuments = undefined;
+
+csInterface.evalScript('app.documents.length', function (result) {
+    numberOfDocuments = result;
+});
+setTimeout( alert(numberOfDocuments), 500);</pre>
+  
+  <p>
+    Although, it&#8217;s not ideal. You might not know in advance how long to wait &#8211; it depends of the kind of ExtendScript task you&#8217;re executing.
+  </p>
+  
+  <h3>
+    2. Nest code in Callbacks
+  </h3>
+  
+  <p>
+    If the alert is moved within the callback it works properly:
+  </p>
+  
+  <pre class="lang:js decode:true ">var csInterface = new CSInterface();
+var numberOfDocuments = undefined;
+
+csInterface.evalScript('app.documents.length', function (result) {
+    numberOfDocuments = result;
+    alert(numberOfDocuments);
+});
+
+</pre>
+  
+  <p>
+    Of course this can lead to the so-called <em>callback hell</em> &#8211; nesting evalScript calls one inside another, like:
+  </p>
+  
+  <pre class="lang:js decode:true ">csInterface.evalScript('/* some code */', function(result) {
+    csInterface.evalScript('/* some other code */', function (result) {
+        // etc...
+    })
+});
+
+</pre>
+  
+  <p>
+    Yet if you&#8217;ve not fancy needs, it works.
+  </p>
+  
+  <h3>
+    3. Event driven callbacks
+  </h3>
+  
+  <p>
+    This method is supported only from CEP 5.2 onwards.<br /> You can implement custom Events via <em>PlugPlugExternalObject</em>, that are dispatched by ExtendScript and listened from JS.<br /> I&#8217;ve put the ExtendScript code in its own JSX file:
+  </p>
+  
+  <pre class="lang:js decode:true">function getNumberOfDocuments () {
+    try {
+        var xLib = new ExternalObject("lib:\PlugPlugExternalObject");
+    } catch(e) {
+    alert(e.message);
+    return false;
+    }
+
+    var eventObj = new CSXSEvent();
+    eventObj.type = "alertDocumentsNumber";
+
+    // data must be a string otherwise PS (at least CC 2014.1.2) crashes
+    eventObj.data = app.documents.length.toString();
+
+    eventObj.dispatch();
+    xLib.unload();
+    return true;
+}</pre>
+  
+  <p>
+    Then in the JS you set up a listener, which is the one who fires the alert();
+  </p>
+  
+  <pre class="lang:js decode:true ">var csInterface = new CSInterface();
+
+csInterface.addEventListener("alertDocumentsNumber", function(event) {
+    alert("The number of open documents is: " + event.data);
+});
+
+csInterface.evalScript('getNumberOfDocuments()', function(result) {
+    if (result == false) { alert ("There's been a problem."); }
+});
+</pre>
+  
+  <p>
+    Mind you, as far as other devs such as <a title="Kris Coppieters" href="http://www.rorohiko.com" target="_blank">Kris Coppieters</a> have supposed, &#8220;<em>even if you manage to make multiple JSX calls from different parts of your JS, probably you can&#8217;t run multiple ExtendScripts concurrently</em>&#8220;.
+  </p>
+  
+  <h2>
+    Acknowledgements
+  </h2>
+  
+  <p>
+    I&#8217;d like to thank Zihong Chen and Ten from Adobe and the others who&#8217;ve helped shedding some light upon this topic in the <a title="Updating a variable from JSX" href="https://forums.adobe.com/thread/1360552" target="_blank">forums</a>.
+  </p>
+</div>
+
+<!-- Share-Widget Button BEGIN -->
+<p>&lt;a href=”javascript:void(0);” myshare_id=”mys_shareit” myshare_url=”http://localhost:8888/2014/12/html-panels-tips-15-asynchronous-vs-synchronous-evalscript/” myshare_title=”HTML Panels Tips #15 Asynchronous vs. Synchronous” rel=”nofollow” onclick=” return false;” style=”text-decoration:none; color:#000000; font-size:11px; line-height:20px;”&gt;</p>
+
+<p><img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> &lt;/a&gt; <!-- Share-Widget Button END --></p>
+
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panels Tips #15 Asynchronous vs. Synchronous&p[summary]=
+  
+    Today&#8217;s tip focuses on the Asynchronous nature of CSInterface.evalScript() calls, and on ways to make it work in a synchron...&p[url]=http://localhost:4000/2014/12/html-panels-tips-15-asynchronous-vs-synchronous-evalscript/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2014/12/html-panels-tips-15-asynchronous-vs-synchronous-evalscript/&text=
+  
+    Today&#8217;s tip focuses on the Asynchronous nature of CSInterface.evalScript() calls, and on ways to make it work in a synchron...&hashtags=asynchronous,CEP 5.2,synchronous," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/asynchronous">asynchronous</a></li>
+                
+                <li><a href="http://localhost:4000/tag/CEP 5.2">CEP 5.2</a></li>
+                
+                <li><a href="http://localhost:4000/tag/synchronous">synchronous</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+<aside class="comments" role="complementary">
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'http://localhost:4000/2014/12/html-panels-tips-15-asynchronous-vs-synchronous-evalscript/';
+            this.page.identifier = '12/2/2014';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//your_disqus_site.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</aside>
+
+            </main>
+        </div>
+
+        <script src="http://localhost:4000/assets/js/jquery-1.12.2.min.js"></script>
+<script src="http://localhost:4000/assets/js/backtotop.js"></script>
+<script src="http://localhost:4000/assets/js/lunr.min.js"></script>
+<script src="http://localhost:4000/assets/js/lunr-feed.js"></script>
+<script src="http://localhost:4000/assets/js/jquery.fitvids.js"></script>
+<script src="http://localhost:4000/assets/js/svg4everybody.min.js"></script>
+<script src="http://localhost:4000/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>

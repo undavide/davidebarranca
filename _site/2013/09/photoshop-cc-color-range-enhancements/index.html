@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Photoshop CC Color Range Enhancements | Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content="Photoshop CC Color Range Enhancements | Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content="Photoshop CC Color Range Enhancements | Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!">
+    <meta name="description" property="og:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+    <meta name="twitter:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="http://localhost:4000/2013/09/photoshop-cc-color-range-enhancements/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+    <link rel="canonical" href="http://localhost:4000/2013/09/photoshop-cc-color-range-enhancements/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href="http://localhost:4000"><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="http://localhost:4000" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="http://localhost:4000/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="http://localhost:4000/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                <article class="post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2013-09-10T12:27:10+02:00" itemprop="datePublished">10 Sep, 2013</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline">Photoshop CC Color Range Enhancements</h2>
+    </header>
+
+    <div class="post-content">
+        <div class="pf-content">
+  <p>
+    <span itemprop="description">Latest Photoshop CC update (version 14.1) has introduced a good deal of new features. One of them is the refined Color Range Selection for Highlights, Midtones and Shadows, which now includes a proper Threshold called Range</span>: let&#8217;s see what is that all about.
+  </p>
+  
+  <h2>
+    Threshold
+  </h2>
+  
+  <p>
+    As an Adjustment that is in Photoshop since early versions, Threshold hasn&#8217;t gained much popularity so far, unless you&#8217;re into Color Correction or forensic image processing. Have a look at what it does to a test image (click to enlarge).
+  </p>
+  
+  <p style="text-align: center;">
+    <img class="aligncenter size-full wp-image-2196" alt="Threshold" src="http://localhost:8888/wp-content/uploads/2013/09/Threshold.jpg" width="1176" height="680" srcset="http://localhost:8888/wp-content/uploads/2013/09/Threshold.jpg 1176w, http://localhost:8888/wp-content/uploads/2013/09/Threshold-150x86.jpg 150w, http://localhost:8888/wp-content/uploads/2013/09/Threshold-300x173.jpg 300w, http://localhost:8888/wp-content/uploads/2013/09/Threshold-1024x592.jpg 1024w" sizes="(max-width: 1176px) 100vw, 1176px" />
+  </p>
+  
+  <p>
+    Basically it blows to White every pixel in the image which value that exceeds (but not include) the Threshold, and clips to Black everything else. You see it clearly in the third example (value: 128) where the image is split in two halves: from mid-grays to shadows they get to black, from mid-grays to highlights they get to white, so to speak. Another way to put it: Threshold makes your images 1bit (i.e. just Black or White, no grays allowed).
+  </p>
+  
+  <p>
+    Engineers have now built in the <span itemprop="about" itempscope="" itemtype="http://schema.org/SoftwareApplication"><span itemprop="name">Photoshop CC</span> <span itemprop="about">Color Range Selection</span> tool</span> a Threshold in disguise &#8211; whose name has become <strong itemprop="mentions">Range</strong>.
+  </p>
+  
+  <h2>
+    Range and Fuzziness
+  </h2>
+  
+  <p>
+    <img class="alignleft size-full wp-image-2197" alt="Presets" src="http://localhost:8888/wp-content/uploads/2013/09/Presets.png" width="223" height="312" srcset="http://localhost:8888/wp-content/uploads/2013/09/Presets.png 223w, http://localhost:8888/wp-content/uploads/2013/09/Presets-150x209.png 150w, http://localhost:8888/wp-content/uploads/2013/09/Presets-214x300.png 214w" sizes="(max-width: 223px) 100vw, 223px" />The Color Range Enhancement can be found if you pick from the drop down menu either the <strong itemprop="mentions">Highlights</strong>, <strong itemprop="mentions">Midtones</strong> or <strong itemprop="mentions">Shadows</strong> (see the screenshot), otherwise you won&#8217;t see any new feature (if you&#8217;re wondering, Skin Tones has been introduced in PS CS6).
+  </p>
+  
+  <p>
+    Mind you: we&#8217;ll be dealing with B/W images because that&#8217;s how Photoshop &#8220;thinks&#8221; about selections: what is going to get <strong>white means selected</strong>, what is going to get <strong>black means not selected</strong>. All the grays in the middle are, depending on their value, <strong>halfway between selected and not selected</strong> &#8211; that is: the level of gray is tied with the opacity of the selection. So an Alpha Channel is just a way to visualize complex selections.
+  </p>
+  
+  <p>
+    The two sliders we&#8217;ll be playing with are the <strong>Fuzziness</strong> and <strong>Range</strong>; the latter as I said is just a Threshold (plenty of screenshot below don&#8217;t worry) while the former controls how much the actual selection adhere to the numbers you set in the Range. So to speak, zero Fuzziness means harsh, Threshold like, just-black-or-white selections; higher Fuzziness means smooth selections, that include more grays. Let&#8217;s see.
+  </p>
+  
+  <h3>
+    Highlights
+  </h3>
+  
+  <p>
+    I&#8217;ve run Select &#8211; Color Range, then chosen Highlights. I&#8217;ve set Fuzziness to zero: restricting to one variable at the time helps understanding what happens more clearly &#8211; playing with the Range only you get:
+  </p>
+  
+  <p style="text-align: center;">
+    <a href="http://localhost:8888/wp-content/uploads/2013/09/Highlights.png" target="_blank"><img class="size-full wp-image-2205 aligncenter" alt="Highlights" src="http://localhost:8888/wp-content/uploads/2013/09/Highlights.png" width="1263" height="419" itemprop="image" srcset="http://localhost:8888/wp-content/uploads/2013/09/Highlights.png 1263w, http://localhost:8888/wp-content/uploads/2013/09/Highlights-150x49.png 150w, http://localhost:8888/wp-content/uploads/2013/09/Highlights-300x99.png 300w, http://localhost:8888/wp-content/uploads/2013/09/Highlights-1024x339.png 1024w" sizes="(max-width: 1263px) 100vw, 1263px" /></a>
+  </p>
+  
+  <p>
+    As you see, it&#8217;s very much like Threshold! With the apparent difference that Range at 255 still selects the pure whites (the pixels which value is 255), while actual Threshold doesn&#8217;t include it.
+  </p>
+  
+  <p>
+    What happens if you raise the Fuzziness to, say, 50%?
+  </p>
+  
+  <p style="text-align: center;">
+    <a href="http://localhost:8888/wp-content/uploads/2013/09/Highlights_Fuzzy.png" target="_blank"><img class="aligncenter size-full wp-image-2204" alt="Highlights_Fuzzy" src="http://localhost:8888/wp-content/uploads/2013/09/Highlights_Fuzzy.png" width="1263" height="419" itemprop="image" srcset="http://localhost:8888/wp-content/uploads/2013/09/Highlights_Fuzzy.png 1263w, http://localhost:8888/wp-content/uploads/2013/09/Highlights_Fuzzy-150x49.png 150w, http://localhost:8888/wp-content/uploads/2013/09/Highlights_Fuzzy-300x99.png 300w, http://localhost:8888/wp-content/uploads/2013/09/Highlights_Fuzzy-1024x339.png 1024w" sizes="(max-width: 1263px) 100vw, 1263px" /></a>
+  </p>
+  
+  <p>
+    As you see the selection &#8220;grows&#8221; through the blacks and gains more gray levels there &#8211; that is to say, you have a smoother selection that includes partially selected pixels.
+  </p>
+  
+  <h3>
+    Shadows
+  </h3>
+  
+  <p>
+    Similarly, if you pick the Shadows from the drop-down menu and keep the Fuzziness at zero:
+  </p>
+  
+  <p style="text-align: center;">
+    <a href="http://localhost:8888/wp-content/uploads/2013/09/Shadows.png" target="_blank"><img class="aligncenter size-full wp-image-2203" alt="Shadows" src="http://localhost:8888/wp-content/uploads/2013/09/Shadows.png" width="1263" height="419" itemprop="image" srcset="http://localhost:8888/wp-content/uploads/2013/09/Shadows.png 1263w, http://localhost:8888/wp-content/uploads/2013/09/Shadows-150x49.png 150w, http://localhost:8888/wp-content/uploads/2013/09/Shadows-300x99.png 300w, http://localhost:8888/wp-content/uploads/2013/09/Shadows-1024x339.png 1024w" sizes="(max-width: 1263px) 100vw, 1263px" /></a>
+  </p>
+  
+  <p>
+    Again you see the Range as a Threshold in disguise &#8211; with the difference that (compared to the actual Threshold) the resulting image is inverted, and you&#8217;re allowed to input 0 as a value (while Threshold sticks with 1). Basically selecting Shadows is just the same as inverting the image first, then selecting the Highlights &#8211; hopefully this makes sense to you.
+  </p>
+  
+  <p>
+    Fuzziness does what you would expect:
+  </p>
+  
+  <p style="text-align: center;">
+    <a href="http://localhost:8888/wp-content/uploads/2013/09/Shadows_Fuzzy.png" target="_blank"><img class="aligncenter size-full wp-image-2202" alt="Shadows_Fuzzy" src="http://localhost:8888/wp-content/uploads/2013/09/Shadows_Fuzzy.png" width="1263" height="419" itemprop="image" srcset="http://localhost:8888/wp-content/uploads/2013/09/Shadows_Fuzzy.png 1263w, http://localhost:8888/wp-content/uploads/2013/09/Shadows_Fuzzy-150x49.png 150w, http://localhost:8888/wp-content/uploads/2013/09/Shadows_Fuzzy-300x99.png 300w, http://localhost:8888/wp-content/uploads/2013/09/Shadows_Fuzzy-1024x339.png 1024w" sizes="(max-width: 1263px) 100vw, 1263px" /></a>
+  </p>
+  
+  <h3>
+    Midtones
+  </h3>
+  
+  <p>
+    Things get more interesting when it comes to the Midtones. There, you can simultaneously play with two Range sliders, and combine (so to speak) two Threshold at the same time, that restrict the <em>concept</em> of &#8220;midtone&#8221; that you need:
+  </p>
+  
+  <p style="text-align: center;">
+    <a href="http://localhost:8888/wp-content/uploads/2013/09/Midtones.png" target="_blank"><img class="aligncenter size-full wp-image-2201" alt="Midtones" src="http://localhost:8888/wp-content/uploads/2013/09/Midtones.png" width="1263" height="419" itemprop="image" srcset="http://localhost:8888/wp-content/uploads/2013/09/Midtones.png 1263w, http://localhost:8888/wp-content/uploads/2013/09/Midtones-150x49.png 150w, http://localhost:8888/wp-content/uploads/2013/09/Midtones-300x99.png 300w, http://localhost:8888/wp-content/uploads/2013/09/Midtones-1024x339.png 1024w" sizes="(max-width: 1263px) 100vw, 1263px" /></a>
+  </p>
+  
+  <p>
+    You can move the two sliders, shifting them to the left (the shadows) or to the right (the highlights), or make them more apart in order to select a bigger part of the grays. Fuzziness is handy here too:
+  </p>
+  
+  <p style="text-align: center;">
+    <a href="http://localhost:8888/wp-content/uploads/2013/09/Midtones_Fuzzy.png" target="_blank"><img class="aligncenter size-full wp-image-2200" alt="Midtones_Fuzzy" src="http://localhost:8888/wp-content/uploads/2013/09/Midtones_Fuzzy.png" width="1263" height="419" itemprop="image" srcset="http://localhost:8888/wp-content/uploads/2013/09/Midtones_Fuzzy.png 1263w, http://localhost:8888/wp-content/uploads/2013/09/Midtones_Fuzzy-150x49.png 150w, http://localhost:8888/wp-content/uploads/2013/09/Midtones_Fuzzy-300x99.png 300w, http://localhost:8888/wp-content/uploads/2013/09/Midtones_Fuzzy-1024x339.png 1024w" sizes="(max-width: 1263px) 100vw, 1263px" /></a>
+  </p>
+  
+  <p>
+    As it happened before, you can refine the selection combining Fuzziness and Range, to get exactly where you want to. The higher the Fuzziness, the more the selection dilates and includes gray levels.
+  </p>
+  
+  <h2>
+    Curves
+  </h2>
+  
+  <p>
+    Mind you, the idea of Midtone selection isn&#8217;t new &#8211; Photoshop engineers have been doing a nice enhancement to the Color Range dialog, which surely helps those unwilling to do it the old way. That is to say using Curves:
+  </p>
+  
+  <p style="text-align: center;">
+    <a href="http://localhost:8888/wp-content/uploads/2013/09/Curves.png" target="_blank"><img class="aligncenter size-full wp-image-2199" alt="Curves" src="http://localhost:8888/wp-content/uploads/2013/09/Curves.png" width="850" height="364" srcset="http://localhost:8888/wp-content/uploads/2013/09/Curves.png 850w, http://localhost:8888/wp-content/uploads/2013/09/Curves-150x64.png 150w, http://localhost:8888/wp-content/uploads/2013/09/Curves-300x128.png 300w" sizes="(max-width: 850px) 100vw, 850px" /></a>
+  </p>
+  
+  <p>
+    <a href="https://plus.google.com/111682277377408685163?rel=author">Davide Barranca</a><br /> 
+    
+    <meta itemprop="datePublished" content="2013-09-10" />
+    
+    <br /> 
+    
+    <meta itemprop="timeRequired" content="P15M" />
+    
+    <br /> 
+    
+    <meta itemprop="learningResourceType" content="tutorial" />
+    
+    <br /> 
+    
+    <meta itemprop="thumbnailUrl" content="http://localhost:8888/wp-content/uploads/2013/09/Photoshop_CC_Color_Range.png" />
+  </p>
+</div>
+
+<!-- Share-Widget Button BEGIN -->
+<p>&lt;a href=”javascript:void(0);” myshare_id=”mys_shareit” myshare_url=”http://localhost:8888/2013/09/photoshop-cc-color-range-enhancements/” myshare_title=”Photoshop CC Color Range Enhancements” rel=”nofollow” onclick=” return false;” style=”text-decoration:none; color:#000000; font-size:11px; line-height:20px;”&gt;</p>
+
+<p><img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> &lt;/a&gt; <!-- Share-Widget Button END --></p>
+
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Photoshop CC Color Range Enhancements&p[summary]=
+  
+    Latest Photoshop CC update (version 14.1) has introduced a good deal of new features. One of them is the refined Color Range Sele...&p[url]=http://localhost:4000/2013/09/photoshop-cc-color-range-enhancements/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2013/09/photoshop-cc-color-range-enhancements/&text=
+  
+    Latest Photoshop CC update (version 14.1) has introduced a good deal of new features. One of them is the refined Color Range Sele...&hashtags=14.1,Color Range,Fuzziness,Photoshop CC,Range," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/14.1">14.1</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Color Range">Color Range</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Fuzziness">Fuzziness</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Photoshop CC">Photoshop CC</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Range">Range</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+<aside class="comments" role="complementary">
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'http://localhost:4000/2013/09/photoshop-cc-color-range-enhancements/';
+            this.page.identifier = '9/10/2013';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//your_disqus_site.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</aside>
+
+            </main>
+        </div>
+
+        <script src="http://localhost:4000/assets/js/jquery-1.12.2.min.js"></script>
+<script src="http://localhost:4000/assets/js/backtotop.js"></script>
+<script src="http://localhost:4000/assets/js/lunr.min.js"></script>
+<script src="http://localhost:4000/assets/js/lunr-feed.js"></script>
+<script src="http://localhost:4000/assets/js/jquery.fitvids.js"></script>
+<script src="http://localhost:4000/assets/js/svg4everybody.min.js"></script>
+<script src="http://localhost:4000/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>

@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content=" Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content=" Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!">
+    <meta name="description" property="og:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+    <meta name="twitter:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="http://localhost:4000/page2/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+    <link rel="canonical" href="http://localhost:4000/page2/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href="http://localhost:4000"><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="http://localhost:4000" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="http://localhost:4000/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="http://localhost:4000/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2016-06-22T01:53:14+02:00" itemprop="datePublished">22 Jun, 2016</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2016/06/html-panel-tips-21-photoshop-cc2015-5-2016-survival-guide/">HTML Panel Tips #21: Photoshop CC 2015.5 survival guide</a></h2>
+    </header>
+
+    <div class="post-content">
+        Today Photoshop CC2015.5 has been released even if everybody wanted CC2016. This will cause you some headaches: let me hand you a painkiller
+
+        
+            <p><a href="http://localhost:4000/2016/06/html-panel-tips-21-photoshop-cc2015-5-2016-survival-guide/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panel Tips #21: Photoshop CC 2015.5 survival guide&p[summary]=Today Photoshop CC2015.5 has been released even if everybody wanted CC2016. This will cause you some headaches: let me hand you a painkiller&p[url]=http://localhost:4000/2016/06/html-panel-tips-21-photoshop-cc2015-5-2016-survival-guide/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2016/06/html-panel-tips-21-photoshop-cc2015-5-2016-survival-guide/&text=Today Photoshop CC2015.5 has been released even if everybody wanted CC2016. This will cause you some headaches: let me hand you a painkiller&hashtags=CC 2015.5,HTML Panels Tips," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/CC 2015.5">CC 2015.5</a></li>
+                
+                <li><a href="http://localhost:4000/tag/HTML Panels Tips">HTML Panels Tips</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2016-06-10T01:07:42+02:00" itemprop="datePublished">10 Jun, 2016</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2016/06/html-panel-tips-20-javascript-frameworks-angularjs-vuejs/">HTML Panel Tips #20: Javascript Frameworks</a></h2>
+    </header>
+
+    <div class="post-content">
+        I've tackled the issue of JS frameworks in a dedicated chapter of my Photoshop HTML Panels Development course, but I'd like to add some new thoughts here as well.
+
+        
+            <p><a href="http://localhost:4000/2016/06/html-panel-tips-20-javascript-frameworks-angularjs-vuejs/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panel Tips #20: Javascript Frameworks&p[summary]=I've tackled the issue of JS frameworks in a dedicated chapter of my Photoshop HTML Panels Development course, but I'd like to add some n...&p[url]=http://localhost:4000/2016/06/html-panel-tips-20-javascript-frameworks-angularjs-vuejs/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2016/06/html-panel-tips-20-javascript-frameworks-angularjs-vuejs/&text=I've tackled the issue of JS frameworks in a dedicated chapter of my Photoshop HTML Panels Development course, but I'd like to add some n...&hashtags=HTML Panels Tips,Angular,Vue.js," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/HTML Panels Tips">HTML Panels Tips</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Angular">Angular</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Vue.js">Vue.js</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2016-03-28T17:12:16+02:00" itemprop="datePublished">28 Mar, 2016</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2016/03/adobe-photoshop-html-panels-development-course-released/">The Adobe Photoshop HTML Panels Development Course is available!</a></h2>
+    </header>
+
+    <div class="post-content">
+        I'm happy to officially announce that the 'Adobe Photoshop HTML Panels Development course - Build and Market Adobe Creative Cloud extensions' is finally available! Visit the Course website for all the information and the special launch price offer
+
+        
+            <p><a href="http://localhost:4000/2016/03/adobe-photoshop-html-panels-development-course-released/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=The Adobe Photoshop HTML Panels Development Course is available!&p[summary]=I'm happy to officially announce that the 'Adobe Photoshop HTML Panels Development course - Build and Market Adobe Creative Cloud extensi...&p[url]=http://localhost:4000/2016/03/adobe-photoshop-html-panels-development-course-released/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2016/03/adobe-photoshop-html-panels-development-course-released/&text=I'm happy to officially announce that the 'Adobe Photoshop HTML Panels Development course - Build and Market Adobe Creative Cloud extensi...&hashtags=Adobe Photoshop HTML Panels Development," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Adobe Photoshop HTML Panels Development">Adobe Photoshop HTML Panels Development</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2016-02-11T21:37:53+01:00" itemprop="datePublished">11 Feb, 2016</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2016/02/html-panels-book-website-launched/">HTML Panels book: Website launched!</a></h2>
+    </header>
+
+    <div class="post-content">
+        The Adobe Photoshop HTML Panels Development book's website has been launched - early subscribers to the newsletter will get a Discount code!
+
+        
+            <p><a href="http://localhost:4000/2016/02/html-panels-book-website-launched/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panels book: Website launched!&p[summary]=The Adobe Photoshop HTML Panels Development book's website has been launched - early subscribers to the newsletter will get a Discount code!&p[url]=http://localhost:4000/2016/02/html-panels-book-website-launched/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2016/02/html-panels-book-website-launched/&text=The Adobe Photoshop HTML Panels Development book's website has been launched - early subscribers to the newsletter will get a Discount code!&hashtags=Adobe Photoshop HTML Panels Development," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Adobe Photoshop HTML Panels Development">Adobe Photoshop HTML Panels Development</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2015-12-20T18:31:37+01:00" itemprop="datePublished">20 Dec, 2015</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2015/12/update-on-html-panels-book-december-2015/">HTML Panels book Update (Dec 2015)</a></h2>
+    </header>
+
+    <div class="post-content">
+        Latest updates (December 2015) on my book 'Adobe Photoshop HTML Panels Development', to be published in Q1/2016
+
+        
+            <p><a href="http://localhost:4000/2015/12/update-on-html-panels-book-december-2015/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panels book Update (Dec 2015)&p[summary]=Latest updates (December 2015) on my book 'Adobe Photoshop HTML Panels Development', to be published in Q1/2016&p[url]=http://localhost:4000/2015/12/update-on-html-panels-book-december-2015/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2015/12/update-on-html-panels-book-december-2015/&text=Latest updates (December 2015) on my book 'Adobe Photoshop HTML Panels Development', to be published in Q1/2016&hashtags=Adobe Photoshop HTML Panels Development," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Adobe Photoshop HTML Panels Development">Adobe Photoshop HTML Panels Development</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2015-12-01T11:11:41+01:00" itemprop="datePublished">1 Dec, 2015</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2015/12/html-panel-tips-19-cc2015-1-cep6-1-node-js-fixes/">HTML Panel Tips #19: CC2015.1 (CEP6.1) Node.js Fixes</a></h2>
+    </header>
+
+    <div class="post-content">
+        The new update to Adobe Photoshop CC2015.1 breaks Panels using Node.js due to new 'features' in CEP6.1 - workarounds provided here
+
+        
+            <p><a href="http://localhost:4000/2015/12/html-panel-tips-19-cc2015-1-cep6-1-node-js-fixes/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panel Tips #19: CC2015.1 (CEP6.1) Node.js Fixes&p[summary]=The new update to Adobe Photoshop CC2015.1 breaks Panels using Node.js due to new 'features' in CEP6.1 - workarounds provided here&p[url]=http://localhost:4000/2015/12/html-panel-tips-19-cc2015-1-cep6-1-node-js-fixes/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2015/12/html-panel-tips-19-cc2015-1-cep6-1-node-js-fixes/&text=The new update to Adobe Photoshop CC2015.1 breaks Panels using Node.js due to new 'features' in CEP6.1 - workarounds provided here&hashtags=HTML Panels Tips,Node.js," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/HTML Panels Tips">HTML Panels Tips</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Node.js">Node.js</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2015-10-18T19:24:15+02:00" itemprop="datePublished">18 Oct, 2015</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2015/10/announcing-photoshop-html-panels-development-book-project/">Im writing the book 'Photoshop HTML Panels development'!</a></h2>
+    </header>
+
+    <div class="post-content">
+        I'm writing a book titled: 'Photoshop HTML Panels development - Build and Market Adobe Creative Cloud extensions'.
+
+        
+            <p><a href="http://localhost:4000/2015/10/announcing-photoshop-html-panels-development-book-project/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Im writing the book 'Photoshop HTML Panels development'!&p[summary]=I'm writing a book titled: 'Photoshop HTML Panels development - Build and Market Adobe Creative Cloud extensions'.&p[url]=http://localhost:4000/2015/10/announcing-photoshop-html-panels-development-book-project/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2015/10/announcing-photoshop-html-panels-development-book-project/&text=I'm writing a book titled: 'Photoshop HTML Panels development - Build and Market Adobe Creative Cloud extensions'.&hashtags=Adobe Photoshop HTML Panels Development," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Adobe Photoshop HTML Panels Development">Adobe Photoshop HTML Panels Development</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2015-09-20T23:06:47+02:00" itemprop="datePublished">20 Sep, 2015</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2015/09/de-uglify-extendscript-toolkit-on-retina-displays/">De-uglify ExtendScript Toolkit on Retina Displays</a></h2>
+    </header>
+
+    <div class="post-content">
+        Quick hack to get rid of pixelated text and finally get crisp fonts in Adobe ExtendScript Toolkit on Retina displays.
+
+        
+            <p><a href="http://localhost:4000/2015/09/de-uglify-extendscript-toolkit-on-retina-displays/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=De-uglify ExtendScript Toolkit on Retina Displays&p[summary]=Quick hack to get rid of pixelated text and finally get crisp fonts in Adobe ExtendScript Toolkit on Retina displays.&p[url]=http://localhost:4000/2015/09/de-uglify-extendscript-toolkit-on-retina-displays/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2015/09/de-uglify-extendscript-toolkit-on-retina-displays/&text=Quick hack to get rid of pixelated text and finally get crisp fonts in Adobe ExtendScript Toolkit on Retina displays.&hashtags=ESTK," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/ESTK">ESTK</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2015-09-03T20:37:22+02:00" itemprop="datePublished">3 Sep, 2015</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2015/09/html-panel-tips-18-photoshop-json-callback/">HTML Panel Tips #18: Photoshop JSON Callback</a></h2>
+    </header>
+
+    <div class="post-content">
+        CC2015 previews a new Photoshop Event listening system and deprecates the "com.adobe.PhotoshopCallback", due to a bug that makes all the extension receiving the event - that is: if two panels are registered for the event "make", then each panel sees the other panel's "make" event, and must ignore it.
+
+The solution implemented marks a break in retro-compatibility and is going to be the only one accepted from Photoshop CC2016 (version 17.x) onwards. Let's have a look at what is that all about.
+
+
+        
+            <p><a href="http://localhost:4000/2015/09/html-panel-tips-18-photoshop-json-callback/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panel Tips #18: Photoshop JSON Callback&p[summary]=CC2015 previews a new Photoshop Event listening system and deprecates the "com.adobe.PhotoshopCallback", due to a bug that makes all the ...&p[url]=http://localhost:4000/2015/09/html-panel-tips-18-photoshop-json-callback/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2015/09/html-panel-tips-18-photoshop-json-callback/&text=CC2015 previews a new Photoshop Event listening system and deprecates the "com.adobe.PhotoshopCallback", due to a bug that makes all the ...&hashtags=Events,PhotoshopCallback,PhotoshopJSONCallback," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Events">Events</a></li>
+                
+                <li><a href="http://localhost:4000/tag/PhotoshopCallback">PhotoshopCallback</a></li>
+                
+                <li><a href="http://localhost:4000/tag/PhotoshopJSONCallback">PhotoshopJSONCallback</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2015-08-11T18:04:54+02:00" itemprop="datePublished">11 Aug, 2015</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2015/08/in-memory-of-mike-hale-and-ps-scripts-com/">In memory of Mike Hale and PS-Scripts.com</a></h2>
+    </header>
+
+    <div class="post-content">
+        As you might have noticed, PS-Scripts - the independent forum devoted to Photoshop scripting - is offline since May 2015 due to the passing of the domain owner and maintainer, the very missed Mike Hale.
+
+        
+            <p><a href="http://localhost:4000/2015/08/in-memory-of-mike-hale-and-ps-scripts-com/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=In memory of Mike Hale and PS-Scripts.com&p[summary]=As you might have noticed, PS-Scripts - the independent forum devoted to Photoshop scripting - is offline since May 2015 due to the passi...&p[url]=http://localhost:4000/2015/08/in-memory-of-mike-hale-and-ps-scripts-com/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2015/08/in-memory-of-mike-hale-and-ps-scripts-com/&text=As you might have noticed, PS-Scripts - the independent forum devoted to Photoshop scripting - is offline since May 2015 due to the passi...&hashtags=Mike Hale,ps-scripts.com," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Mike Hale">Mike Hale</a></li>
+                
+                <li><a href="http://localhost:4000/tag/ps-scripts.com">ps-scripts.com</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2015-07-05T00:59:25+02:00" itemprop="datePublished">5 Jul, 2015</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2015/07/partial-serial-number-verification-system-in-javascript/">Partial Serial Number Verification System in Javascript</a></h2>
+    </header>
+
+    <div class="post-content">
+        Back in 2007, developer Brandon Staggs wrote a brilliant article about software licensing, showing how to implement what he calls a Partial Serial Number Verification System using the Delphi language.
+Apparently the remarkable technique first appeared around 2003 in a set of slides by Chris Thornton, developer of the ClipMate software.
+
+Years have passed, cryptography is more affordable, yet I would say that this approach to the Software Licensing problem is still valid in some businesses - besides the fact it's fascinatingly clever.
+
+In a nutshell, Brandon shows how to build a serial number (seed, keys, checksum), which verification in the final product is partial - so that a cracker will never be able to build a long lasting keygen.
+
+I've ported the original code (written in Delphi) to Javascript.
+
+
+        
+            <p><a href="http://localhost:4000/2015/07/partial-serial-number-verification-system-in-javascript/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Partial Serial Number Verification System in Javascript&p[summary]=Back in 2007, developer Brandon Staggs wrote a brilliant article about software licensing, showing how to implement what he calls a Parti...&p[url]=http://localhost:4000/2015/07/partial-serial-number-verification-system-in-javascript/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2015/07/partial-serial-number-verification-system-in-javascript/&text=Back in 2007, developer Brandon Staggs wrote a brilliant article about software licensing, showing how to implement what he calls a Parti...&hashtags=Javascript,Licensing,Partial Serial Number Verification," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Javascript">Javascript</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Licensing">Licensing</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Partial Serial Number Verification">Partial Serial Number Verification</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2015-06-16T23:05:54+02:00" itemprop="datePublished">16 Jun, 2015</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2015/06/html-panel-tips-17-cc2015-survival-guide/">HTML Panel Tips #17: CC2015 Survival Guide</a></h2>
+    </header>
+
+    <div class="post-content">
+        Superstitious people in Italy think that seventeen is a bad luck number - yet I'm not gullible and I think it must be by chance that this Tip #17 is about the apparently, ehm, troublesome update to Creative Cloud 2015.
+
+As follows is a checklist of common problems (both from the developer's and user's point of view - I've been in touch with quite a number of them both) and my own suggestions to stop worrying and love the bomb.
+
+
+        
+            <p><a href="http://localhost:4000/2015/06/html-panel-tips-17-cc2015-survival-guide/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panel Tips #17: CC2015 Survival Guide&p[summary]=Superstitious people in Italy think that seventeen is a bad luck number - yet I'm not gullible and I think it must be by chance that this...&p[url]=http://localhost:4000/2015/06/html-panel-tips-17-cc2015-survival-guide/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2015/06/html-panel-tips-17-cc2015-survival-guide/&text=Superstitious people in Italy think that seventeen is a bad luck number - yet I'm not gullible and I think it must be by chance that this...&hashtags=Adobe Extension Manager,CC2015,Creative Cloud,PlayerDebugMode," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Adobe Extension Manager">Adobe Extension Manager</a></li>
+                
+                <li><a href="http://localhost:4000/tag/CC2015">CC2015</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Creative Cloud">Creative Cloud</a></li>
+                
+                <li><a href="http://localhost:4000/tag/PlayerDebugMode">PlayerDebugMode</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2014-12-05T16:13:36+01:00" itemprop="datePublished">5 Dec, 2014</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2014/12/html-panels-tips-16-angularjs-input-binding-bug-patch/">HTML Panels Tips #16 AngularJS Binding bug patch</a></h2>
+    </header>
+
+    <div class="post-content">
+        CEP 5.2 has a bug (affecting Macs with non US keyboards) that prevents AngularJS to realize binding in HTML Panels when input fields are involved. New Zealand developer Kris Coppieters has been able to find a successful way to patch Angular and make it work - with his kind permission I'm going to share the instruction.
+
+        
+            <p><a href="http://localhost:4000/2014/12/html-panels-tips-16-angularjs-input-binding-bug-patch/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panels Tips #16 AngularJS Binding bug patch&p[summary]=CEP 5.2 has a bug (affecting Macs with non US keyboards) that prevents AngularJS to realize binding in HTML Panels when input fields are ...&p[url]=http://localhost:4000/2014/12/html-panels-tips-16-angularjs-input-binding-bug-patch/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2014/12/html-panels-tips-16-angularjs-input-binding-bug-patch/&text=CEP 5.2 has a bug (affecting Macs with non US keyboards) that prevents AngularJS to realize binding in HTML Panels when input fields are ...&hashtags=AngularJS,binding,CEP 5.2,html panels,tip," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/AngularJS">AngularJS</a></li>
+                
+                <li><a href="http://localhost:4000/tag/binding">binding</a></li>
+                
+                <li><a href="http://localhost:4000/tag/CEP 5.2">CEP 5.2</a></li>
+                
+                <li><a href="http://localhost:4000/tag/html panels">html panels</a></li>
+                
+                <li><a href="http://localhost:4000/tag/tip">tip</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2014-12-02T17:37:31+01:00" itemprop="datePublished">2 Dec, 2014</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2014/12/html-panels-tips-15-asynchronous-vs-synchronous-evalscript/">HTML Panels Tips #15 Asynchronous vs. Synchronous</a></h2>
+    </header>
+
+    <div class="post-content">
+        Today's tip focuses on the Asynchronous nature of CSInterface.evalScript() calls, and on ways to make it work in a synchronous fashion.
+
+        
+            <p><a href="http://localhost:4000/2014/12/html-panels-tips-15-asynchronous-vs-synchronous-evalscript/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panels Tips #15 Asynchronous vs. Synchronous&p[summary]=Today's tip focuses on the Asynchronous nature of CSInterface.evalScript() calls, and on ways to make it work in a synchronous fashion.&p[url]=http://localhost:4000/2014/12/html-panels-tips-15-asynchronous-vs-synchronous-evalscript/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2014/12/html-panels-tips-15-asynchronous-vs-synchronous-evalscript/&text=Today's tip focuses on the Asynchronous nature of CSInterface.evalScript() calls, and on ways to make it work in a synchronous fashion.&hashtags=asynchronous,CEP 5.2,synchronous," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/asynchronous">asynchronous</a></li>
+                
+                <li><a href="http://localhost:4000/tag/CEP 5.2">CEP 5.2</a></li>
+                
+                <li><a href="http://localhost:4000/tag/synchronous">synchronous</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2014-10-17T02:11:27+02:00" itemprop="datePublished">17 Oct, 2014</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2014/10/html-panels-tips-14-flyout-menu/">HTML Panels Tips: #14 Flyout Menu</a></h2>
+    </header>
+
+    <div class="post-content">
+        With Photoshop CC 2014.2 (implementing CEP 5.2) it's finally possible to have flyout menus in HTML Panels too - as we had back in Flash land. This Tip shows you how to set them and deal with their click handler.
+
+        
+            <p><a href="http://localhost:4000/2014/10/html-panels-tips-14-flyout-menu/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panels Tips: #14 Flyout Menu&p[summary]=With Photoshop CC 2014.2 (implementing CEP 5.2) it's finally possible to have flyout menus in HTML Panels too - as we had back in Flash l...&p[url]=http://localhost:4000/2014/10/html-panels-tips-14-flyout-menu/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2014/10/html-panels-tips-14-flyout-menu/&text=With Photoshop CC 2014.2 (implementing CEP 5.2) it's finally possible to have flyout menus in HTML Panels too - as we had back in Flash l...&hashtags=CEP 5.2,flyout,menu," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/CEP 5.2">CEP 5.2</a></li>
+                
+                <li><a href="http://localhost:4000/tag/flyout">flyout</a></li>
+                
+                <li><a href="http://localhost:4000/tag/menu">menu</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2014-08-13T00:33:57+02:00" itemprop="datePublished">13 Aug, 2014</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2014/08/html-panels-tips-13-automate-zxp-packaging-with-gulp-js/">HTML Panels Tips: #13 Automate ZXP Packaging with Gulp.js</a></h2>
+    </header>
+
+    <div class="post-content">
+        As a HTML Panels Tips: #10 Packaging / ZXP Installers follow-up, in this tip I will show you how to automate (i.e. make less error prone) the utterly annoying job of building ZXP installers: i.e. with the help of Gulp.js, a task runner based on Node.js.
+
+        
+            <p><a href="http://localhost:4000/2014/08/html-panels-tips-13-automate-zxp-packaging-with-gulp-js/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panels Tips: #13 Automate ZXP Packaging with Gulp.js&p[summary]=As a HTML Panels Tips: #10 Packaging / ZXP Installers follow-up, in this tip I will show you how to automate (i.e. make less error prone)...&p[url]=http://localhost:4000/2014/08/html-panels-tips-13-automate-zxp-packaging-with-gulp-js/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2014/08/html-panels-tips-13-automate-zxp-packaging-with-gulp-js/&text=As a HTML Panels Tips: #10 Packaging / ZXP Installers follow-up, in this tip I will show you how to automate (i.e. make less error prone)...&hashtags=build tool,CC Extension,gulp,task runner,ZXP," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/build tool">build tool</a></li>
+                
+                <li><a href="http://localhost:4000/tag/CC Extension">CC Extension</a></li>
+                
+                <li><a href="http://localhost:4000/tag/gulp">gulp</a></li>
+                
+                <li><a href="http://localhost:4000/tag/task runner">task runner</a></li>
+                
+                <li><a href="http://localhost:4000/tag/ZXP">ZXP</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2014-07-26T00:09:51+02:00" itemprop="datePublished">26 Jul, 2014</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2014/07/introducing-fixel-detailizer/">Introducing Fixel Detailizer 2 PS</a></h2>
+    </header>
+
+    <div class="post-content">
+        I'm glad to announce the release on Adobe Add-ons of a powerful contrast booster for Photoshop: Fixel Detailizer 2 PS. Let's see what is that all about!
+
+        
+            <p><a href="http://localhost:4000/2014/07/introducing-fixel-detailizer/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Introducing Fixel Detailizer 2 PS&p[summary]=I'm glad to announce the release on Adobe Add-ons of a powerful contrast booster for Photoshop: Fixel Detailizer 2 PS. Let's see what is ...&p[url]=http://localhost:4000/2014/07/introducing-fixel-detailizer/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2014/07/introducing-fixel-detailizer/&text=I'm glad to announce the release on Adobe Add-ons of a powerful contrast booster for Photoshop: Fixel Detailizer 2 PS. Let's see what is ...&hashtags=filter,Fixel Algorithms,frequency," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/filter">filter</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Fixel Algorithms">Fixel Algorithms</a></li>
+                
+                <li><a href="http://localhost:4000/tag/frequency">frequency</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2014-07-10T16:49:32+02:00" itemprop="datePublished">10 Jul, 2014</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2014/07/html-panels-tips-12-cep-application-events/">HTML Panels Tips: #12 CEP Application Events</a></h2>
+    </header>
+
+    <div class="post-content">
+        HTML Panels can listen to CEP Application Events - that is to say, Events dispatched by the Host (Photoshop, InDesign...) when something related to the app itself, or its documents, happens.
+
+        
+            <p><a href="http://localhost:4000/2014/07/html-panels-tips-12-cep-application-events/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panels Tips: #12 CEP Application Events&p[summary]=HTML Panels can listen to CEP Application Events - that is to say, Events dispatched by the Host (Photoshop, InDesign...) when something ...&p[url]=http://localhost:4000/2014/07/html-panels-tips-12-cep-application-events/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2014/07/html-panels-tips-12-cep-application-events/&text=HTML Panels can listen to CEP Application Events - that is to say, Events dispatched by the Host (Photoshop, InDesign...) when something ...&hashtags=CEP,Events,Host," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/CEP">CEP</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Events">Events</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Host">Host</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2014-07-10T11:03:47+02:00" itemprop="datePublished">10 Jul, 2014</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2014/07/html-panels-tips-11-externalobject-cep-events/">HTML Panels Tips: #11 CEP Events (ExternalObject)</a></h2>
+    </header>
+
+    <div class="post-content">
+        The new CEP5 (from Photoshop CC 2014 onwards) has introduced the possibility to dispatch Custom Events from JSX and listen to them in the HTML Panel - this Tip shows you how to implement this communication.
+
+        
+            <p><a href="http://localhost:4000/2014/07/html-panels-tips-11-externalobject-cep-events/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=HTML Panels Tips: #11 CEP Events (ExternalObject)&p[summary]=The new CEP5 (from Photoshop CC 2014 onwards) has introduced the possibility to dispatch Custom Events from JSX and listen to them in the...&p[url]=http://localhost:4000/2014/07/html-panels-tips-11-externalobject-cep-events/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2014/07/html-panels-tips-11-externalobject-cep-events/&text=The new CEP5 (from Photoshop CC 2014 onwards) has introduced the possibility to dispatch Custom Events from JSX and listen to them in the...&hashtags=CEP5,Events,ExternalObject," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/CEP5">CEP5</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Events">Events</a></li>
+                
+                <li><a href="http://localhost:4000/tag/ExternalObject">ExternalObject</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2014-06-22T17:23:19+02:00" itemprop="datePublished">22 Jun, 2014</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2014/06/photoshop-cc-2014-v15-ready-extensions/">Photoshop CC 2014 (v15.0) ready!</a></h2>
+    </header>
+
+    <div class="post-content">
+        The support of Flash panels has been officially dropped with the release or Photoshop CC 2014 (internal version: 15.0) - meaning that in order to be compatible with it, Extensions must have been ported to HTML.
+Which I did for all my panels! They are now CC 2014 compatible
+
+
+        
+            <p><a href="http://localhost:4000/2014/06/photoshop-cc-2014-v15-ready-extensions/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Photoshop CC 2014 (v15.0) ready!&p[summary]=The support of Flash panels has been officially dropped with the release or Photoshop CC 2014 (internal version: 15.0) - meaning that in ...&p[url]=http://localhost:4000/2014/06/photoshop-cc-2014-v15-ready-extensions/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2014/06/photoshop-cc-2014-v15-ready-extensions/&text=The support of Flash panels has been officially dropped with the release or Photoshop CC 2014 (internal version: 15.0) - meaning that in ...&hashtags=extensions,Photoshop CC 2014," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/extensions">extensions</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Photoshop CC 2014">Photoshop CC 2014</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+
+
+<div class="pagination" role="navigation" aria-label="pagination">
+    
+        <a href="/" class="previous">&larr; Previous</a>
+    
+
+    <span class="page_number">Page 2 of 8</span>
+
+    
+        <a href="/page3/" class="next">Next &rarr;</a>
+    
+</div>
+
+            </main>
+        </div>
+
+        <script src="http://localhost:4000/assets/js/jquery-1.12.2.min.js"></script>
+<script src="http://localhost:4000/assets/js/backtotop.js"></script>
+<script src="http://localhost:4000/assets/js/lunr.min.js"></script>
+<script src="http://localhost:4000/assets/js/lunr-feed.js"></script>
+<script src="http://localhost:4000/assets/js/jquery.fitvids.js"></script>
+<script src="http://localhost:4000/assets/js/svg4everybody.min.js"></script>
+<script src="http://localhost:4000/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>

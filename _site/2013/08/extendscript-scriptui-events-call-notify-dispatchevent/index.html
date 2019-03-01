@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ScriptUI Events: call(), dispatchEvent(), notify() | Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content="ScriptUI Events: call(), dispatchEvent(), notify() | Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content="ScriptUI Events: call(), dispatchEvent(), notify() | Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!">
+    <meta name="description" property="og:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+    <meta name="twitter:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="http://localhost:4000/2013/08/extendscript-scriptui-events-call-notify-dispatchevent/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+    <link rel="canonical" href="http://localhost:4000/2013/08/extendscript-scriptui-events-call-notify-dispatchevent/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href="http://localhost:4000"><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="http://localhost:4000" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="http://localhost:4000/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="http://localhost:4000/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                <article class="post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2013-08-04T20:20:33+02:00" itemprop="datePublished">4 Aug, 2013</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline">ScriptUI Events: call(), dispatchEvent(), notify()</h2>
+    </header>
+
+    <div class="post-content">
+        <div class="pf-content">
+  <p>
+    <span itemprop="headline">In your code you may need to run a ScriptUI component&#8217;s callback, or simulate a user interaction, maybe as a part of a subroutine. There are few ways to do this, with slight differences in the behavior: directly, using <span itemprop="about">Javascript methods <code>call()</code>, <code>notify()</code> or <code>dispatchEvent()</code></span> &#8211; I&#8217;ve set up a commented demo Dialog that shows them all.</span><!--more-->
+  </p>
+  
+  <h2>
+    The Dialog
+  </h2>
+  
+  <p>
+    I&#8217;ve used a resource string to build the initial dialog (please scroll down to the post&#8217;s end to find the example completed with listeners, callbacks and button functions):
+  </p>
+  
+  <pre class="theme:classic font-size:13 line-height:16 toolbar:1 nums:false whitespace-before:1 whitespace-after:1 lang:js decode:true" title="GUI">var windowRef = "dialog { \
+	text: 'ScriptUI Events - www.davidebarranca.com', \
+	orientation: 'column', \
+	alignChildren: 'fill', \
+	cbGroup: Group { \
+		cbPanel: Panel { \
+        preferredSize: ['155',''], \
+			alignChildren: 'left', \
+			cb1: Checkbox { text: 'CheckBox #1'}, \
+			cb2: Checkbox { text: 'CheckBox #2'}, \
+			cb3: Checkbox { text: 'CheckBox #3'}, \
+			cb4: Checkbox { text: 'CheckBox #4'}, \
+		}, \
+		btGroup: Group { \
+             preferredSize: ['170',''], \
+			alignChildren: ['fill','center'], \
+			orientation: 'column', \
+			testCb1: Button { text: '#1 - onClick ()' }, \
+			testCb2: Button { text: '#2 - notify ()' }, \
+			testCb3: Button { text: '#2 - dispatchEvent ()' }, \
+			testCb4: Button { text: '#1 - call (CB #3)' }, \
+		}, \
+	}, \
+    spacer: Panel { size: [100,0]}, \
+	rbGroup: Group { \
+		rbPanel: Panel { \
+        preferredSize: ['155',''], \
+        alignChildren: 'left', \
+			rb1: RadioButton { text: 'RadioButton #1', value: 'true'}, \
+			rb2: RadioButton { text: 'RadioButton #2'}, \
+		}, \
+        btGroup: Group { \
+             preferredSize: ['170',''], \
+			alignChildren: ['fill','center'], \
+			orientation: 'column', \
+			testRb1: Button { text: 'Panel - dispatchEvent ()' }, \
+			testRb2: Button { text: 'RB #2 - notify ()' }, \
+		}, \
+	}, \
+    spacer: Panel { size: [100,0]}, \
+    closeBtn: Button { text: 'Close' }\
+}";
+
+// Build the Window
+var w = new Window(windowRef);
+w.closeBtn.onClick = function() { w.close() };
+w.show();</pre>
+  
+  <h2>
+    Regular Listeners and Callbacks
+  </h2>
+  
+  <p>
+    Let&#8217;s code for the CheckBoxes a response to the <code>'click'</code> event in two different ways:
+  </p>
+  
+  <pre class="theme:classic font-size:13 line-height:16 toolbar:1 nums:false whitespace-before:1 whitespace-after:1 lang:js decode:true" title="CheckBox Listeners">// Shortcuts for cb
+var cb1 = w.cbGroup.cbPanel.cb1;
+var cb2 = w.cbGroup.cbPanel.cb2;
+var cb3 = w.cbGroup.cbPanel.cb3;
+
+// CheckBox #1 onClick listener: no event is passed.
+cb1.onClick = function(event) { 
+	alert("Clicked checkbox: " + this.text + "\nValue: " + this.value);
+	// uncomment the following alert to test that no event is passed:
+	// alert("Using event.target.value: " + event.target.value); // Error: event is undefined
+};
+
+// CheckBox #2 'click' listener: an event is passed, 
+// and the alert correctly shows the event.target.value
+cb2.addEventListener('click', function(event) { 
+	alert("Clicked checkbox: " + this.text + "\nValue: " + event.target.value);
+});</pre>
+  
+  <p>
+    The <strong>first CheckBox</strong> registers an <code>onClick</code> event: mind you, there&#8217;s no Event actually passed to the callback. If you uncomment the second alert, you see that <code>event.target.value</code> is undefined.
+  </p>
+  
+  <p>
+    The <strong>second CheckBox</strong> uses <code>addEventListener</code>, listening for the <code>'click'</code> event with an anonymous callback. Here, an actual Event is passed.
+  </p>
+  
+  <p>
+    For the <strong>RadioButtons</strong>, I&#8217;ve set up a callback triggered by clicks on the container (i.e. the Panel) level:
+  </p>
+  
+  <pre class="theme:classic font-size:13 line-height:16 toolbar:1 nums:false whitespace-before:1 whitespace-after:1 lang:js decode:true" title="RadioButtons listener">// Shortcut for the RB panel
+var rbPanel = w.rbGroup.rbPanel;
+
+// RadioButton 'click' listener
+// alerts the active RB text (works differently on PS and ESTK)
+rbPanel.addEventListener('click', function(event) {
+    for (var i = 0; i &lt; rbPanel.children.length; i++) {
+        if (rbPanel.children[i].value == true) {
+            alert("Active: " + rbPanel.children[i].text);
+            return;
+         }
+     }
+});</pre>
+  
+  <p>
+    The loop finds the selected RadioButton and alerts its name: mind you, this works differently on <span itemprop="mentions" itemscope="" itemtype="http://schema.org/SoftwareApplication"><span itemprop="name">Photoshop</span></span> and ESTK because of the way they deal with event propagation.
+  </p>
+  
+  <ul>
+    <li>
+      <strong>Photoshop</strong> gets the <code>'click'</code> on the Panel, lets it go through it, down to the RadioButton, then fires the callback &#8211; which evaluates the RadioButtons status and returns the name of the selected one: that is, the one you&#8217;ve clicked.
+    </li>
+    <li>
+      <strong>ESTK</strong> gets the <code>'click'</code> on the Panel and immediately fires the callback, before allowing the <code>'click'</code> to reach the RadioButton: this way the alerted name isn&#8217;t the one of RadioButton you&#8217;ve clicked on, but the one that was selected before. When the callback is done, the <code>'click'</code> is allowed to propagate to the RadioButton, that is finally selected.
+    </li>
+  </ul>
+  
+  <h2>
+    Simulated events: CheckBox
+  </h2>
+  
+  <p>
+    This is the code for the four checkbox&#8217;s buttons, which duty is to trigger the callbacks and sometimes simulate user interaction:
+  </p>
+  
+  <pre class="theme:classic font-size:13 line-height:16 toolbar:1 nums:false whitespace-before:1 whitespace-after:1 lang:js decode:true" title="CheckBox Buttons">// Button: test the CB#1 callback via direct cb1.onClick() call.
+// Result: the callback's alert shows, but the checkbox isn't toggled
+w.cbGroup.btGroup.testCb1.onClick = function() { cb1.onClick() };
+
+// Button: test the CB#1 callback via cb1.notify() call.
+// Result: the callback's alert shows, and the checkbox is toggled
+w.cbGroup.btGroup.testCb2.onClick = function() { cb2.notify('onClick') };
+//w.cbGroup.btGroup.testCb2.onClick = function() { cb1.notify("onClick") }; // works as well
+
+// Button: test the CB#2 callback via dispatchEvent() call.
+// Result: the callback's alert shows, but the checkbox isn't toggled
+w.cbGroup.btGroup.testCb3.onClick = function() { cb2.dispatchEvent(new UIEvent ('click')) };
+
+// Button: uses the onClick.call() method of CB#1 passing the CB#2 as parameter
+// Result: the CB#2 'borrows' the callback from the CB#1
+// (i.e. the CB#2 becomes the callback's 'this')
+w.cbGroup.btGroup.testCb4.onClick = function() { cb1.onClick.call(cb3) };</pre>
+  
+  <p>
+    The <strong>first button</strong> directly calls the CheckBox #1 callback via <code>cb1.onClick()</code>. Mind you, <code>onClick()</code> is a regular method of the <code>cb1</code> component, so it can be called anytime like any other method of any other object. The callback is fired but the CheckBox is not toggled.
+  </p>
+  
+  <p>
+    Conversely, the <strong>second button</strong> uses <code>.notify()</code> to simulate the user interaction, as if the CheckBox #1 was actually clicked. As a result, its value (checked/unchecked, i.e. true/false) is toggled and the callback is fired. Mind you, the <code>notify()</code> parameter in this case is optional &#8211; not in other cases when you might want to simulate, say, a <code>Window.notify('onMove')</code> event.
+  </p>
+  
+  <p>
+    The <strong>third button</strong> acts on CheckBox #2, which registers the listener and the callback via <code>.addEventListener()</code>. To trigger its callback (since <code>.onClick()</code> doesn&#8217;t exist) you&#8217;ve to make the component dispatch a new Event via <code>.dispatchEvent()</code>: as a result the callback is fired but the CheckBox is not toggled. If you want to simulate user interaction, you can always rely on <code>.notify()</code>.
+  </p>
+  
+  <p>
+    The <strong>fourth button</strong> uses <code>.call()</code> to borrow from the CheckBox #1 the callback, and temporarily apply it to the CheckBox #3 (that hasn&#8217;t any <code>.onClick()</code> method). The <code>.call()</code> parameter <code>cb3</code> is used as a &#8220;<code>this</code>&#8221; reference: so when the function needs to evaluate this.value, it doesn&#8217;t refer anymore to <code>cb1</code> (the actual &#8220;owner&#8221; of the callback) but to <code>cb3</code>.<br /> As a result the alert is fired but the CheckBox isn&#8217;t toggled.
+  </p>
+  
+  <h2>
+    Simulated events: RadioButton
+  </h2>
+  
+  <p>
+    Things are similar when it comes to the RadioButtons:
+  </p>
+  
+  <pre class="theme:classic font-size:13 line-height:16 toolbar:1 nums:false whitespace-before:1 whitespace-after:1 lang:js decode:true" title="RadioButton Buttons">// Button: test the RadioButton Panel via dispatchEvent()
+// Result: triggers the Panel's callback and fires the alert
+w.rbGroup.btGroup.testRb1.onClick = function() { rbPanel.dispatchEvent(new UIEvent ('click')) };
+
+// Button: test the RadioButton #2 via notify()
+// Result: selects the second RadioButton and fires the Panel's callback
+w.rbGroup.btGroup.testRb2.onClick = function() { w.rbGroup.rbPanel.rb2.notify('onClick') };</pre>
+  
+  <p>
+    The <strong>first button</strong> uses <code>.dispatchEvent()</code> on the container level (i.e. it&#8217;s the Panel that fires the <code>UIEvent</code>), so that the callback is triggered and the alert shown.
+  </p>
+  
+  <p>
+    The <strong>second button</strong> instead uses <code>.notify()</code> directly on the RadioButton simulating a user click. As a result, the RadioButton #2 is selected and the callback is fired (at least it is fired in Photoshop: ESTK ignores the callback for some reason).<br /> Mind you, <code>.addEventListener()</code> and <code>dispatchEvent()</code> uses <code>'click'</code> as the Event, while what you <code>notify()</code> is an <code>'onClick'</code>.
+  </p>
+  
+  <h2>
+    Conclusion and full script
+  </h2>
+  
+  <p>
+    Hopefully this has shed some light on the different possibilities you&#8217;ve to run or trigger callbacks and simulate user interaction with ScriptUI components. This appears to be a field where the <span itemprop="mentions">ExtendScript</span> implementation differs a lot among the host apps (ESTK, Photoshop, InDesign, etc…). I&#8217;ve tried out the above on ESTK and PS only, so please test your portings!
+  </p>
+  
+  <p>
+    <img class="aligncenter size-full wp-image-2150" alt="ScriptUI Events" src="http://localhost:8888/wp-content/uploads/2013/08/ScriptUI_Events.png" width="361" height="348" itemprop="image" srcset="http://localhost:8888/wp-content/uploads/2013/08/ScriptUI_Events.png 361w, http://localhost:8888/wp-content/uploads/2013/08/ScriptUI_Events-150x144.png 150w, http://localhost:8888/wp-content/uploads/2013/08/ScriptUI_Events-300x289.png 300w" sizes="(max-width: 361px) 100vw, 361px" />
+  </p>
+  
+  <pre class="theme:classic font-size:13 line-height:16 toolbar:1 nums:false whitespace-before:1 whitespace-after:1 lang:js decode:true" title="ScriptUI Events - full script">// Davide Barranca - www.davidebarranca.com
+// V1.0 - 2014.08.04
+
+var windowRef = "dialog { \
+    text: 'ScriptUI Events - www.davidebarranca.com', \
+	orientation: 'column', \
+	alignChildren: 'fill', \
+	cbGroup: Group { \
+		cbPanel: Panel { \
+        preferredSize: ['155',''], \
+			alignChildren: 'left', \
+			cb1: Checkbox { text: 'CheckBox #1'}, \
+			cb2: Checkbox { text: 'CheckBox #2'}, \
+			cb3: Checkbox { text: 'CheckBox #3'}, \
+			cb4: Checkbox { text: 'CheckBox #4'}, \
+		}, \
+		btGroup: Group { \
+             preferredSize: ['170',''], \
+			alignChildren: ['fill','center'], \
+			orientation: 'column', \
+			testCb1: Button { text: '#1 - onClick ()' }, \
+			testCb2: Button { text: '#2 - notify ()' }, \
+			testCb3: Button { text: '#2 - dispatchEvent ()' }, \
+			testCb4: Button { text: '#1 - call (CB #3)' }, \
+		}, \
+	}, \
+    spacer: Panel { size: [100,0]}, \
+	rbGroup: Group { \
+		rbPanel: Panel { \
+        preferredSize: ['155',''], \
+        alignChildren: 'left', \
+			rb1: RadioButton { text: 'RadioButton #1', value: 'true'}, \
+			rb2: RadioButton { text: 'RadioButton #2'}, \
+		}, \
+        btGroup: Group { \
+             preferredSize: ['170',''], \
+			alignChildren: ['fill','center'], \
+			orientation: 'column', \
+			testRb1: Button { text: 'Panel - dispatchEvent ()' }, \
+			testRb2: Button { text: 'RB #2 - notify ()' }, \
+		}, \
+	}, \
+    spacer: Panel { size: [100,0]}, \
+    closeBtn: Button { text: 'Close' }\
+}";
+
+// Build the Window
+var w = new Window(windowRef);
+
+/* =======================================
+   CheckBox listeners and callbacks
+   ======================================= */
+
+// Shortcuts for cb
+var cb1 = w.cbGroup.cbPanel.cb1;
+var cb2 = w.cbGroup.cbPanel.cb2;
+var cb3 = w.cbGroup.cbPanel.cb3;
+
+// CheckBox #1 onClick listener: no event is passed.
+cb1.onClick = function(event) { 
+	alert("Clicked checkbox: " + this.text + "\nValue: " + this.value);
+	// uncomment the following alert to test that no event is passed:
+	// alert("Using event.target.value: " + event.target.value); // Error: event is undefined
+};
+
+// CheckBox #2 'click' listener: an event is passed, 
+// and the alert correctly shows the event.target.value
+cb2.addEventListener('click', function(event) { 
+	alert("Clicked checkbox: " + this.text + "\nValue: " + event.target.value);
+});
+
+// Button: test the CB#1 callback via direct cb1.onClick() call.
+// Result: the callback's alert shows, but the checkbox isn't toggled
+w.cbGroup.btGroup.testCb1.onClick = function() { cb1.onClick() };
+
+// Button: test the CB#1 callback via cb1.notify() call.
+// Result: the callback's alert shows, and the checkbox is toggled
+w.cbGroup.btGroup.testCb2.onClick = function() { cb2.notify('onClick') };
+//w.cbGroup.btGroup.testCb2.onClick = function() { cb1.notify("onClick") }; // works as well
+
+// Button: test the CB#2 callback via dispatchEvent() call.
+// Result: the callback's alert shows, but the checkbox isn't toggled
+w.cbGroup.btGroup.testCb3.onClick = function() { cb2.dispatchEvent(new UIEvent ('click')) };
+
+// Button: uses the onClick.call() method of CB#1 passing the CB#2 as parameter
+// Result: the CB#2 'borrows' the callback from the CB#1
+// (i.e. the CB#2 becomes the callback's 'this')
+w.cbGroup.btGroup.testCb4.onClick = function() { cb1.onClick.call(cb3) };
+
+/* =======================================
+   RadioButton listeners and callback
+   ======================================= */
+
+// Shortcut for the RB panel
+var rbPanel = w.rbGroup.rbPanel;
+
+// RadioButton 'click' listener
+// alerts the active RB text (works differently on PS and ESTK)
+rbPanel.addEventListener('click', function(event) {
+    for (var i = 0; i &lt; rbPanel.children.length; i++) {
+        if (rbPanel.children[i].value == true) {
+            alert("Active: " + rbPanel.children[i].text);
+            return;
+         }
+     }
+});
+
+// Button: test the RadioButton Panel via dispatchEvent()
+// Result: triggers the Panel's callback and fires the alert
+w.rbGroup.btGroup.testRb1.onClick = function() { rbPanel.dispatchEvent(new UIEvent ('click')) }; 
+
+// Button: test the RadioButton #2 via notify()
+// Result: selects the second RadioButton and fires the Panel's callback
+w.rbGroup.btGroup.testRb2.onClick = function() { w.rbGroup.rbPanel.rb2.notify() }; 
+
+/* Close Button */
+w.closeBtn.onClick = function() { w.close() };
+
+w.show();</pre>
+  
+  <p>
+    &nbsp;
+  </p>
+</div>
+
+<!-- Share-Widget Button BEGIN -->
+<p>&lt;a href=”javascript:void(0);” myshare_id=”mys_shareit” myshare_url=”http://localhost:8888/2013/08/extendscript-scriptui-events-call-notify-dispatchevent/” myshare_title=”ScriptUI Events: call(), dispatchEvent(), notify()” rel=”nofollow” onclick=” return false;” style=”text-decoration:none; color:#000000; font-size:11px; line-height:20px;”&gt;</p>
+
+<p><img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> &lt;/a&gt; <!-- Share-Widget Button END --></p>
+
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=ScriptUI Events: call(), dispatchEvent(), notify()&p[summary]=
+  
+    In your code you may need to run a ScriptUI component&#8217;s callback, or simulate a user interaction, maybe as a part of a subr...&p[url]=http://localhost:4000/2013/08/extendscript-scriptui-events-call-notify-dispatchevent/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2013/08/extendscript-scriptui-events-call-notify-dispatchevent/&text=
+  
+    In your code you may need to run a ScriptUI component&#8217;s callback, or simulate a user interaction, maybe as a part of a subr...&hashtags=call(),callback,dispatchEvent(),Event,notify(),ScriptUI," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/call()">call()</a></li>
+                
+                <li><a href="http://localhost:4000/tag/callback">callback</a></li>
+                
+                <li><a href="http://localhost:4000/tag/dispatchEvent()">dispatchEvent()</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Event">Event</a></li>
+                
+                <li><a href="http://localhost:4000/tag/notify()">notify()</a></li>
+                
+                <li><a href="http://localhost:4000/tag/ScriptUI">ScriptUI</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+<aside class="comments" role="complementary">
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'http://localhost:4000/2013/08/extendscript-scriptui-events-call-notify-dispatchevent/';
+            this.page.identifier = '8/4/2013';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//your_disqus_site.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</aside>
+
+            </main>
+        </div>
+
+        <script src="http://localhost:4000/assets/js/jquery-1.12.2.min.js"></script>
+<script src="http://localhost:4000/assets/js/backtotop.js"></script>
+<script src="http://localhost:4000/assets/js/lunr.min.js"></script>
+<script src="http://localhost:4000/assets/js/lunr-feed.js"></script>
+<script src="http://localhost:4000/assets/js/jquery.fitvids.js"></script>
+<script src="http://localhost:4000/assets/js/svg4everybody.min.js"></script>
+<script src="http://localhost:4000/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>

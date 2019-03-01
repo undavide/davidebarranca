@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vue.js – Binding a Component in a v-for loop to the Parent model | Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content="Vue.js – Binding a Component in a v-for loop to the Parent model | Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content="Vue.js – Binding a Component in a v-for loop to the Parent model | Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="Vue.js tutorial: how to implement a two-ways binding of components generated in a v-for loop to the parent's model.">
+    <meta name="description" property="og:description" content="Vue.js tutorial: how to implement a two-ways binding of components generated in a v-for loop to the parent's model." />
+    <meta name="twitter:description" content="Vue.js tutorial: how to implement a two-ways binding of components generated in a v-for loop to the parent's model." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="http://localhost:4000/2016/08/vue-js-binding-a-component-in-a-v-for-loop-to-the-parent-model/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+    <link rel="canonical" href="http://localhost:4000/2016/08/vue-js-binding-a-component-in-a-v-for-loop-to-the-parent-model/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href="http://localhost:4000"><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="http://localhost:4000" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="http://localhost:4000/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="http://localhost:4000/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                <article class="post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2016-08-02T00:21:10+02:00" itemprop="datePublished">2 Aug, 2016</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline">Vue.js – Binding a Component in a v-for loop to the Parent model</h2>
+    </header>
+
+    <div class="post-content">
+        <p>Learning Vue.js is fun – if I run into a problem that has taken me some head scratching time to solve and/or and no easy Stack Overflow answer, why not writing a blog post for you and my future self? 🙂 Today’s stumbling block is bi-directionally binding of a Component (v-model), to the root data object – being the Components generated in a v-for loop.</p>
+
+<p>Sounds unclear? Think about a lot of instances of a Component containing, say, checkboxes or radiobuttons, automatically generated from an array. It’s a quite frequent scenario, at least in my projects, so let’s have a look.<br />
+<strong>UPDATE</strong> [October 2017]: The article refers to Vue 1.x – with version 2, things have slightly changed – I’ve updated the Checkbox section with code working with Vue 2.5.2.</p>
+
+<h2 id="checkboxes">Checkboxes</h2>
+
+<p><strong>[See the Vue 2.5.2 update at the end of this section]</strong> I’m going to show you a couple of different setups and solutions. First initial arrangement is as follows:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;</span> <span class="nt">body</span> <span class="na">id=</span><span class="s">"main-container"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;</span> <span class="nt">input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"0"</span>
+          <span class="na">id=</span><span class="s">"boxes[0].name"</span>
+          <span class="na">v-model=</span><span class="s">"boxes[0].status"</span>
+          <span class="nt">/&gt;</span> zero
+
+  <span class="nt">&lt;</span> <span class="nt">input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"1"</span>
+          <span class="na">id=</span><span class="s">"boxes[1].name"</span>
+          <span class="na">v-model=</span><span class="s">"boxes[1].status"</span>
+          <span class="nt">/&gt;</span> one
+
+  <span class="nt">&lt;</span> <span class="nt">input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">"boxes[2].name"</span>
+          <span class="na">id=</span><span class="s">"two"</span>
+          <span class="na">v-model=</span><span class="s">"boxes[2].status"</span>
+          <span class="nt">/&gt;</span> two
+  <span class="c">&lt;!-- etc --&gt;</span>
+<span class="nt">&lt;/body&gt;</span></code></pre></figure>
+
+<p>While the Javascript and the Vue code is:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="na">el</span><span class="p">:</span> <span class="s1">'#main-container'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">boxes</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'zero'</span><span class="p">,</span>  <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'one'</span><span class="p">,</span>   <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'two'</span><span class="p">,</span>   <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'three'</span><span class="p">,</span> <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'four'</span><span class="p">,</span>  <span class="s1">'status'</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'five'</span><span class="p">,</span>  <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'six'</span><span class="p">,</span>   <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'seven'</span><span class="p">,</span> <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'eight'</span><span class="p">,</span> <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'nine'</span><span class="p">,</span>  <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>In this scenario it is particularly important for me that the <code class="highlighter-rouge">v-model</code> of each checkbox is bound to the <code class="highlighter-rouge">boxes</code> array of objects, so that other functions are able to refer to them (say, passing their values down to the Photoshop JSX layer). But clearly the checkboxes cry to be implemented as Vue Components! So let’s do that – first in the HTML as a template – that, by now, is mostly an empty placeholder:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">"boxes-template"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span>
+         <span class="na">value=</span><span class="s">""</span>
+         <span class="na">id=</span><span class="s">""</span>
+  <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span></code></pre></figure>
+
+<p>We need to register the Component in the JS, so:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">BoxesChecks</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="na">props</span><span class="p">:</span> <span class="p">[</span><span class="s1">'boxIndex'</span><span class="p">,</span> <span class="s1">'boxName'</span><span class="p">,</span> <span class="s1">'boxStatus'</span><span class="p">],</span>
+  <span class="na">template</span><span class="p">:</span> <span class="s1">'#boxes-template'</span>
+<span class="p">});</span>
+
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">'boxes-checks'</span><span class="p">,</span> <span class="nx">BoxesChecks</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+<span class="c1">// etc. etc.</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Please note that I’m using both camelCase and kebab-case, as the Vue.js doc suggests. I’ve declared three props:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">boxIndex</code>: will be 0, 1, 2, 3… 9.</li>
+  <li><code class="highlighter-rouge">boxName</code>: the checkbox string label, like <code class="highlighter-rouge">"one"</code>, <code class="highlighter-rouge">"two"</code>, etc.</li>
+  <li><code class="highlighter-rouge">boxStatus</code>: will be the Checkbox checked status (either true or false), and will be bound to the <code class="highlighter-rouge">data.boxes</code> Object.</li>
+</ul>
+
+<p>OK, how do we implement the <code class="highlighter-rouge">v-for loop</code>, so that all the ten Components instances are rendered on the page? A good starting point is:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;boxes-checks</span> <span class="na">v-for=</span><span class="s">"box in boxes"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/boxes-checks&gt;</span></code></pre></figure>
+
+<p>So far so good, nothing that you can’t figure by yourself. Here comes the tricky part, have a look.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">"boxes-template"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span>
+           <span class="na">value=</span><span class="s">"{ { boxIndex} }"</span>
+           <span class="na">id=</span><span class="s">"{ { boxName } }"</span>
+           <span class="na">checked=</span><span class="s">"{ { boxStatus } }"</span>
+    <span class="nt">/&gt;</span>
+    [{ { boxIndex } }] { { boxName } } is: { { boxStatus }}
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+
+<span class="nt">&lt;boxes-checks</span>
+    <span class="na">v-for=</span><span class="s">"box in boxes"</span>
+    <span class="na">:box-index=</span><span class="s">"$index"</span>
+    <span class="na">:box-name=</span><span class="s">"box.name"</span>
+    <span class="na">:box-status=</span><span class="s">"box.status"</span>
+    <span class="nt">&gt;</span>
+<span class="nt">&lt;/boxes-checks&gt;</span>
+
+{ { boxes | json } }</code></pre></figure>
+
+<p>The checkbox <code class="highlighter-rouge">value</code> is <code class="highlighter-rouge">{ { boxIndex } }</code>, that is passed as a prop using the shorthand syntax <code class="highlighter-rouge">:box-index</code> (which stands for <code class="highlighter-rouge">v-bind:box-index</code>) and assigned to the special property provided by the <code class="highlighter-rouge">v-for</code> loop <code class="highlighter-rouge">$index</code>. Note here camelCase and kebab-case. Similarly, <code class="highlighter-rouge">{ {boxName} }</code> and <code class="highlighter-rouge">{ {boxStatus} }</code> are passed in the loop using <code class="highlighter-rouge">:box-name</code> and <code class="highlighter-rouge">:box-status</code>, and the latter is used to fill the <code class="highlighter-rouge">checked</code> property of the input tag.</p>
+
+<p>This way, the component “knows” whether to be initialized as checked / unchecked depending on the <code class="highlighter-rouge">status</code> property of the respective object in the <code class="highlighter-rouge">boxes</code> array. I’ve also added as a label for each box component a string containing them all, and at the bottom the JSON version of the boxes object to check if binding works properly.</p>
+
+<figure class="aligncenter">
+	<img width="400" src="/wp-content/uploads/2016/08/DB-2016-08-01-at-22.40.52.png" />
+</figure>
+
+<p>We’re slowly getting there: each checkbox shows its index, name and status, and the one labelled “four” correctly initializes itself as “checked”. But if you try clicking them, neither their <code class="highlighter-rouge">status</code>, (true/false in the label) nor the root <code class="highlighter-rouge">boxes</code> object updates. This binding requires a couple of new lines of code, one in the Component’s template – i.e. a click handler:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span>
+       <span class="na">value=</span><span class="s">"{ { boxIndex } }"</span>
+       <span class="na">id=</span><span class="s">"{ { boxName } }"</span>
+       <span class="na">checked=</span><span class="s">"{ { boxStatus } }"</span>
+       <span class="err">@</span><span class="na">click=</span><span class="s">"changeStatus"</span><span class="nt">/&gt;</span></code></pre></figure>
+
+<p>and the corresponding function in the Components declaration in the JS:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">BoxesChecks</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="na">props</span><span class="p">:</span> <span class="p">[</span><span class="s1">'boxIndex'</span><span class="p">,</span> <span class="s1">'boxName'</span><span class="p">,</span> <span class="s1">'boxStatus'</span><span class="p">],</span>
+  <span class="na">template</span><span class="p">:</span> <span class="s1">'#boxes-template'</span><span class="p">,</span>
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">changeStatus</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">boxStatus</span> <span class="o">=</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">boxStatus</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<figure class="aligncenter">
+	<img width="400" src="/wp-content/uploads/2016/08/DB-2016-08-01-at-22.51.30.png" />
+</figure>
+
+<p>This triggers a change in the Component’s <code class="highlighter-rouge">boxStatus</code> property, so that when you click each checkbox, you see that its own <code class="highlighter-rouge">status</code> (logged in the label) changes accordingly. Which is cool, but there’s just one piece of the puzzle missing – can you find it? The Component’s <code class="highlighter-rouge">boxStatus</code> is updated, but the Component (or better: each Component) has an <strong>isolated scope of its own</strong>! In fact, the boxes object, logged as JSON is not changed (every status is false but one). In order to make a two way binding, you need to add the binding type modifier .sync to the prop, like:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;boxes-checks</span>
+  <span class="na">v-for=</span><span class="s">"box in boxes"</span>
+  <span class="na">:box-index=</span><span class="s">"$index"</span>
+  <span class="na">:box-name=</span><span class="s">"box.name"</span>
+  <span class="na">:box-status</span><span class="err">.</span><span class="na">sync=</span><span class="s">"box.status"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/boxes-checks&gt;</span></code></pre></figure>
+
+<p>This correctly set everything: each Component is initialized with the boxes object, and two-ways bound to it – the same way it was just before refactoring with Components. See the full code in <a href="http://jsbin.com/simuzi/13/edit?html,js,output">this JSBin here</a></p>
+
+<hr />
+
+<p><strong>Vue 2.x October 2017 UPDATE</strong> With the new version, <code class="highlighter-rouge">.sync</code> has been first deprecated, then re-introduced (see <a href="https://vuejs.org/v2/guide/components.html#sync-Modifier">here</a>). Yet, letting a child component modify parent data is considered an anti pattern in Vue: in this case, you should emit events and use a new Vue instance as a hub. See the <a href="http://jsbin.com/niloxid/2/edit?html,js,output">following JSBin</a> as an example.</p>
+
+<hr />
+
+<h2 id="radiobuttons">RadioButtons</h2>
+
+<p>Following the same idea, let me show a different solution for RadioButtons, using events. The component looks like that:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">"channel-radio"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"topcoat-radio-button"</span> <span class="na">style=</span><span class="s">"display:block"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"topcoat"</span>
+               <span class="na">checked=</span><span class="s">{</span> <span class="err">{</span> <span class="na">channelChecked</span> <span class="err">}</span> <span class="err">}</span>
+               <span class="err">@</span><span class="na">click=</span><span class="s">"changeRadio"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"topcoat-radio-button__checkmark"</span> <span class="na">style=</span><span class="s">"margin-bottom:4px"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      { {channelName} } [{ { channelIndex } }]
+    <span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/template&gt;</span>
+
+<span class="nt">&lt;channel-radio</span>
+  <span class="na">v-for=</span><span class="s">"channel in channels"</span>
+  <span class="na">:channel-name=</span><span class="s">"channel.name"</span>
+  <span class="na">:channel-index=</span><span class="s">"channel.index"</span>
+  <span class="na">:channel-checked=</span><span class="s">"channel.checked"</span>
+  <span class="nt">&gt;</span>
+<span class="nt">&lt;/channel-radio&gt;</span></code></pre></figure>
+
+<p>You see that there are <code class="highlighter-rouge">channelName</code>, <code class="highlighter-rouge">channelIndex</code> and <code class="highlighter-rouge">channelChecked</code> props, with a similar <code class="highlighter-rouge">changeRadio</code> function for the click handler. The loop is based upon a <code class="highlighter-rouge">channels</code> array, see the JS side:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">ChannelRadio</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="na">props</span><span class="p">:</span> <span class="p">[</span><span class="s1">'channelName'</span><span class="p">,</span> <span class="s1">'channelIndex'</span><span class="p">,</span> <span class="s1">'channelChecked'</span><span class="p">],</span>
+  <span class="na">template</span><span class="p">:</span> <span class="s1">'#channel-radio'</span><span class="p">,</span>
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">changeRadio</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">$dispatch</span><span class="p">(</span><span class="s1">'radioClick'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">channelName</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">'channel-radio'</span><span class="p">,</span> <span class="nx">ChannelRadio</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="na">el</span><span class="p">:</span> <span class="s1">'#main-container'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">channels</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Luminosity'</span><span class="p">,</span>
+        <span class="s1">'index'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s1">'checked'</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Red'</span><span class="p">,</span>
+        <span class="s1">'index'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">'checked'</span><span class="p">:</span> <span class="kc">true</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Green'</span><span class="p">,</span>
+        <span class="s1">'index'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">'checked'</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Blue'</span><span class="p">,</span>
+        <span class="s1">'index'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">'checked'</span><span class="p">:</span> <span class="kc">false</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="na">events</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">radioClick</span><span class="p">:</span> <span class="s1">'handleRadioClick'</span>
+  <span class="p">},</span>
+  <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">handleRadioClick</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">radioName</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">channels</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">channels</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">radioName</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">channels</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">channels</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">checked</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Clicking on each radiobutton component now dispatches a <code class="highlighter-rouge">'radioClick'</code> message (defined in the component’s <code class="highlighter-rouge">methods</code> object, and carrying the <code class="highlighter-rouge">channelName</code> as the payload), handled by the root Vue instance (see both <code class="highlighter-rouge">events</code> and <code class="highlighter-rouge">methods</code> objects).</p>
+
+<p>The handleRadioClick then adjust the <code class="highlighter-rouge">checked</code> properties on each object within the <code class="highlighter-rouge">channels</code> array, that the radiobuttons are bound to – please note that because of this, there’s no need to add <code class="highlighter-rouge">.sync</code> in the template now.</p>
+
+<p>See it in action in <a href="http://jsbin.com/belele/edit?html,js,output">this JSBin here</a>.</p>
+
+<p>That’s it! It took me a while to figure this out. Possibly the second example – where the parent (root, here) Vue instance is in charge of updating the data object, to which the Component is bound – is “more proper” than the first one – where the Component did it by itself.</p>
+
+<p>Hope this helps! 👐🏻</p>
+
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Vue.js – Binding a Component in a v-for loop to the Parent model&p[summary]=Learning Vue.js is fun – if I run into a problem that has taken me some head scratching time to solve and/or and no easy Stack Overflow a...&p[url]=http://localhost:4000/2016/08/vue-js-binding-a-component-in-a-v-for-loop-to-the-parent-model/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2016/08/vue-js-binding-a-component-in-a-v-for-loop-to-the-parent-model/&text=Learning Vue.js is fun – if I run into a problem that has taken me some head scratching time to solve and/or and no easy Stack Overflow a...&hashtags=Vue.js," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Vue.js">Vue.js</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+<aside class="comments" role="complementary">
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'http://localhost:4000/2016/08/vue-js-binding-a-component-in-a-v-for-loop-to-the-parent-model/';
+            this.page.identifier = '8/2/2016';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//your_disqus_site.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</aside>
+
+            </main>
+        </div>
+
+        <script src="http://localhost:4000/assets/js/jquery-1.12.2.min.js"></script>
+<script src="http://localhost:4000/assets/js/backtotop.js"></script>
+<script src="http://localhost:4000/assets/js/lunr.min.js"></script>
+<script src="http://localhost:4000/assets/js/lunr-feed.js"></script>
+<script src="http://localhost:4000/assets/js/jquery.fitvids.js"></script>
+<script src="http://localhost:4000/assets/js/svg4everybody.min.js"></script>
+<script src="http://localhost:4000/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>

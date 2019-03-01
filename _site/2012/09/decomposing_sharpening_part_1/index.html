@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Decomposing Sharpening #1 Introduction | Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content="Decomposing Sharpening #1 Introduction | Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content="Decomposing Sharpening #1 Introduction | Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!">
+    <meta name="description" property="og:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+    <meta name="twitter:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="http://localhost:4000/2012/09/decomposing_sharpening_part_1/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+    <link rel="canonical" href="http://localhost:4000/2012/09/decomposing_sharpening_part_1/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href="http://localhost:4000"><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="http://localhost:4000" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="http://localhost:4000/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="http://localhost:4000/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                <article class="post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-09-08T00:01:46+02:00" itemprop="datePublished">8 Sep, 2012</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline">Decomposing Sharpening #1 Introduction</h2>
+    </header>
+
+    <div class="post-content">
+        <div class="pf-content">
+  <p>
+    I&#8217;m currently working on a project of mine (Photoshop script) that involves sharpening. This has been giving me the opportunity to err (quite a bit) and discover some interesting combinations that may lead to new tools. In this first post of a small multipart series, I&#8217;ll review basic concepts like Halo Maps, Subtractions and Blending Modes applied to sharpening.<!--more-->
+  </p>
+  
+  <p>
+    I&#8217;ve always been a great fan of Dan Margulis&#8217; PPW (<a title="Dan Margulis PPW panel" href="http://www.ledet.com/margulis/ppw" target="_blank">Picture Postcard Workflow</a>) panel, coded by my dear friend and talented scripter <a title="Giuly Abbiati" href="http://www.cromaline.net" target="_blank">Giuly Abbiati</a>. If you don&#8217;t know it, I&#8217;m talking about a Photoshop extension filled up with great tools that make Dan&#8217;s color correction workflow really speedy and automated &#8211; provided that you know the theory behind it. Over the years Margulis has freely distributed updated actions that target very specific topics &#8211; of course sharpening is one of them and this is what I&#8217;d like to go into.
+  </p>
+  
+  <p>
+    <img class="alignleft size-medium wp-image-1039" title="PPW Layers" src="http://localhost:8888/wp-content/uploads/2012/09/PPW-Layers-154x300.png" alt="PPW Layers" width="154" height="300" srcset="http://localhost:8888/wp-content/uploads/2012/09/PPW-Layers-154x300.png 154w, http://localhost:8888/wp-content/uploads/2012/09/PPW-Layers-150x291.png 150w, http://localhost:8888/wp-content/uploads/2012/09/PPW-Layers.png 274w" sizes="(max-width: 154px) 100vw, 154px" />The last evolution stage of such action (at the time of this post in September 2012, but new versions may appear for this is a very active project) provides you with several layers &#8211; each one aiming to a peculiar target: among the rest there are two separate high-frequency sharpening layers, one for Light Halos and one for Dark Halos. If you&#8217;re interested in the exact way they&#8217;re produced, applied and masked within the context of the PPW workflow, please refer to Dan&#8217;s original action and follow each step.
+  </p>
+  
+  <p>
+    Let&#8217;s first approach the idea of creating a <em>Halo Map</em> &#8211; that is, a single layer that contains just what is needed in order to sharpen and is applied on top of the original image with an appropriate blending mode. The purpose of such layer is to separate the effect (a detail enhancing filter) from its substrate (the original image).
+  </p>
+  
+  <p>
+    A trivial and well known Halo Map is easily built with the <strong>High Pass</strong> filter:
+  </p>
+  
+  <div id="attachment_1036" style="width: 1034px" class="wp-caption aligncenter">
+    <a href="http://localhost:8888/wp-content/uploads/2012/09/HighPass.jpg" target="_blank"><img aria-describedby="caption-attachment-1036" class="size-large wp-image-1036 " title="High Pass sample" src="http://localhost:8888/wp-content/uploads/2012/09/HighPass-1024x768.jpg" alt="High Pass Filter" width="1024" height="768" srcset="http://localhost:8888/wp-content/uploads/2012/09/HighPass-1024x768.jpg 1024w, http://localhost:8888/wp-content/uploads/2012/09/HighPass-150x112.jpg 150w, http://localhost:8888/wp-content/uploads/2012/09/HighPass-300x225.jpg 300w, http://localhost:8888/wp-content/uploads/2012/09/HighPass.jpg 1066w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>
+    
+    <p id="caption-attachment-1036" class="wp-caption-text">
+      Please welcome my friend Santo &#8211; here showing his trekking outfit and the result of the High Pass filter
+    </p>
+  </div>
+  
+  <p>
+    Switching the blending mode to some contrast enhancing one (such Overlay, Soft Light, Hard Light, etc.).
+  </p>
+  
+  <p>
+    Strangely enough, at least in my personal opinion, High Pass is mainly used for <em>HiRaLoAm</em> (High-Radius-Low-Amount) sharpening &#8211; that is, not targeting high frequency detail but as a local contrast enhancer (speaking of which, let me remind you <a title="ALCE - Advanced Local Contrast Enhancer" href="http://www.bigano.com/ALCE" target="_blank">ALCE</a> as my favorite tool ;-)) Bizarre, because there is nothing to prevent you using High Pass to create a traditional sharpening layer.
+  </p>
+  
+  <p>
+    In a nutshell, the High Pass filter is a quick way to cut every image frequency up to the radius you&#8217;ve set: that is, radius 10px replaces with a nice 50% gray everything in the image but frequencies higher than 10px &#8211; if this sounds mysterious, dig the topic <a title="Notes on Sharpening - Image Decomposition" href="http://bigano.com/index.php/en/consulting/40-davide-barranca/90-davide-barranca-notes-on-sharpening.html?start=5" target="_blank">here</a>. I&#8217;m sure you&#8217;re willing to know that the result of High Pass Filter is exactly equal to a <strong>Subtraction</strong>: between the original image and a Gaussian Blurred one (with the same radius).
+  </p>
+  
+  <p style="text-align: center;">
+    <a href="http://localhost:8888/wp-content/uploads/2012/09/SubtractionHighPass128.png" target="_blank"><img class="aligncenter size-full wp-image-1103" title="Subtraction - HighPass" src="http://localhost:8888/wp-content/uploads/2012/09/SubtractionHighPass128.png" alt="Subtraction - HighPass" width="613" height="489" srcset="http://localhost:8888/wp-content/uploads/2012/09/SubtractionHighPass128.png 613w, http://localhost:8888/wp-content/uploads/2012/09/SubtractionHighPass128-150x119.png 150w, http://localhost:8888/wp-content/uploads/2012/09/SubtractionHighPass128-300x239.png 300w" sizes="(max-width: 613px) 100vw, 613px" /></a>
+  </p>
+  
+  <p>
+    The only extra detail that you should keep in mind is that <strong>Offset is 128</strong>. The actual operation performed is then (speaking of values of each pixel, ranging from 0 to 255 alias black to white):
+  </p>
+  
+  <blockquote>
+    <p>
+      High Pass = 128 + ( Original &#8211; Blurred )
+    </p>
+  </blockquote>
+  
+  <p>
+    Incidentally, 128 is 50% gray, which is the <strong>neutral color</strong> of contrast enhancing blending modes (i.e. it does not affect the image below)
+  </p>
+  
+  <p>
+    <em>Be aware that if you like to test this yourself using RGB images, you must set the Photoshop Grayscale Default (Color Settings, Command + Shift + K for Mac or use Ctrl instead of Command for PC &#8211; I&#8217;ll be using Mac shortcuts throughout the post) to an ICC with a gamma that matches the one of the RGB file you&#8217;re working on. If you&#8217;re about to ask why, the reason is in the way Photoshop displays channels; as a rule of thumb if your file is ProPhoto RGB, set the Grayscale ICC to Gray Gamma 1.8, if you&#8217;re using Adobe RGB or sRGB set it to Gray Gamma 2.2 (more on colorspaces gamma in <a title="Bruce Lindbloom - RGB Working Space Information" href="http://brucelindbloom.com/WorkingSpaceInfo.html" target="_blank">Bruce Lindbloom&#8217;s website</a>)</em>
+  </p>
+  
+  <p>
+    Let&#8217;s move towards more interesting Halo Maps:
+  </p>
+  
+  <p>
+    <a href="http://localhost:8888/wp-content/uploads/2012/09/PPW_Halos.jpg" target="_blank"><img class="aligncenter size-large wp-image-1047" title="PPW Halo Maps" src="http://localhost:8888/wp-content/uploads/2012/09/PPW_Halos-1024x767.jpg" alt="PPW Halo Maps" width="1024" height="767" srcset="http://localhost:8888/wp-content/uploads/2012/09/PPW_Halos-1024x767.jpg 1024w, http://localhost:8888/wp-content/uploads/2012/09/PPW_Halos-150x112.jpg 150w, http://localhost:8888/wp-content/uploads/2012/09/PPW_Halos-300x224.jpg 300w, http://localhost:8888/wp-content/uploads/2012/09/PPW_Halos.jpg 1062w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>
+  </p>
+  
+  <p>
+    The screenshot above shows the actual high frequency Dark Halos (left) and Light Halos (right) layers from Dan&#8217;s PPW sharpening action, without masks. The former is mostly white because its blending mode is set to <strong>Multiply</strong> &#8211; that is, any value is multiplied with the one from below, resulting in darker pixels. How come? Because for the operation the values used are defined in the range 0 to 1 and not 0 to 255 (either way, black to white): this way, if you multiply two 50% grays you end up with 0.5 * 0.5 = 0.25 which is 75% gray (definitely darker). White, which is what Dark Halos map layer is mainly made of, is the neutral color of Multiply.
+  </p>
+  
+  <p>
+    Not surprisingly, the Light Halos layer looks mostly black, being in <strong>Screen</strong> blending mode (the inverse of Multiply) &#8211; where black is the neutral color.
+  </p>
+  
+  <p>
+    To sum up, Multiply darkens (neutral: White), Screen lightens (neutral: Black), <strong>Overlay</strong> is a combination of Screen and Multiply (Gray 50% is the neutral color). It&#8217;s contrast enhancing just because it darkens and lightens at the same time, depending on the layer content: darker gray darkens, lighter gray lightens, pivoting on middle gray. Citing Paul Dunn, who has a <a title="Paul Dunn - Photoshop Blending modes" href="http://dunnbypaul.net/blends/" target="_blank">very informative page</a> about blending modes:
+  </p>
+  
+  <blockquote>
+    <p>
+      [Multiply] = Base * Blend<br /> [Screen] = 1 &#8211; (1-Base) × (1-Blend)<br /> [Overlay, if (Base &gt; ½)] = 1 &#8211; (1-2×(Base-½)) × (1-Blend).<br /> [Overlay, If (Base &lt;= ½)] = (2×Base) × Blend
+    </p>
+  </blockquote>
+  
+  <p>
+    This is what you need to know in order to replicate halo maps such as the ones found in the PPW action. Yet Dan applies them in a peculiar way (I&#8217;ll let you the pleasure to decipher the action in order to get the details) &#8211; I&#8217;ll be describing a more orthodox path, leading to halo maps that emulate the Unsharp Mask filter (USM)
+  </p>
+  
+  <ol>
+    <li>
+      On a duplicate layer, apply USM, the settings you like the most
+    </li>
+    <li>
+      [for Light Halos] <a title="Fade to Lighten" href="http://localhost:8888/wp-content/uploads/2012/09/FadeToLighten.png" target="_blank">Fade to Lighten</a> (Command + Shift + F)
+    </li>
+    <li>
+      Use Calculation and Subtract the original to the USM version
+    </li>
+  </ol>
+  
+  <div>
+    <a href="http://localhost:8888/wp-content/uploads/2012/09/Calculations.png"><img class="aligncenter size-full wp-image-1051" title="Calculations" src="http://localhost:8888/wp-content/uploads/2012/09/Calculations.png" alt="Calculations" width="613" height="489" srcset="http://localhost:8888/wp-content/uploads/2012/09/Calculations.png 613w, http://localhost:8888/wp-content/uploads/2012/09/Calculations-150x119.png 150w, http://localhost:8888/wp-content/uploads/2012/09/Calculations-300x239.png 300w" sizes="(max-width: 613px) 100vw, 613px" /></a>
+  </div>
+  
+  <p>
+    That&#8217;s it. To get the Dark Halos map instead, just Fade to Darken, subtract the USM faded Darken from the Original and <strong>invert</strong> the result of the Calculation. A useful shortcut is to use <strong>Subtraction blending mode</strong> on the USM layer to skip the Calculation step.
+  </p>
+  
+  <p>
+    Now that you&#8217;ve built dark and light layers, set them to the appropriate blending mode. Which one? Dan&#8217;s been choosing Multiply and Screen because his workflow involves masks and a slightly different process, yet if you want to get the exact result of the USM filter with the layers we&#8217;ve built together you should use <strong>Linear Burn</strong> and <strong>Linear Dodge</strong>.
+  </p>
+  
+  <blockquote>
+    <p>
+      [Linear Burn] = Base + Blend<br /> [Linear Dodge] = Base + Blend &#8211; 1
+    </p>
+  </blockquote>
+  
+  <p>
+    If you look at the math, we&#8217;ve first performed a subtraction between Original and Sharpened, to extract the Difference (Halos); then we&#8217;re adding back that Difference (Halos) to the Original in order to get back the Sharpened. That is to say:
+  </p>
+  
+  <blockquote>
+    <p>
+      Sharpened &#8211; Original = Halos<br /> Original + Halos = Sharpened
+    </p>
+  </blockquote>
+  
+  <p>
+    Trivial. But… What for?! Many interesting little things, for instance driving separately the Amount and Radius of Dark and Light Halos in Sharpening &#8211; a common feature in Drum Scanners&#8217; softwares in the past, missing in Photoshop today &#8211; as you&#8217;ll see in the next post of the series.
+  </p>
+  
+  <hr />
+  
+  <p>
+    The <a title="Decomposing Sharpening" href="http://localhost:8888/category/photoshop/decomposing-sharpening/">Decomposing Sharpening</a> series has been written as a research project for my script <a title="DoubleUSM: multi-radius Sharpening" href="http://www.cs-extensions.com/products/doubleusm/" target="_blank">DoubleUSM: multi-radius sharpening</a>. You might be interested also in <a title="Fixel Detailizer 2 PS" href="http://www.cs-extensions.com/products/detailizer/" target="_blank">Fixel Detailizer 2PS: multi-frequency contrast booster</a>.
+  </p>
+</div>
+
+<!-- Share-Widget Button BEGIN -->
+<p>&lt;a href=”javascript:void(0);” myshare_id=”mys_shareit” myshare_url=”http://localhost:8888/2012/09/decomposing_sharpening_part_1/” myshare_title=”Decomposing Sharpening #1 Introduction” rel=”nofollow” onclick=” return false;” style=”text-decoration:none; color:#000000; font-size:11px; line-height:20px;”&gt;</p>
+
+<p><img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> &lt;/a&gt; <!-- Share-Widget Button END --></p>
+
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Decomposing Sharpening #1 Introduction&p[summary]=
+  
+    I&#8217;m currently working on a project of mine (Photoshop script) that involves sharpening. This has been giving me the opportu...&p[url]=http://localhost:4000/2012/09/decomposing_sharpening_part_1/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/09/decomposing_sharpening_part_1/&text=
+  
+    I&#8217;m currently working on a project of mine (Photoshop script) that involves sharpening. This has been giving me the opportu...&hashtags=blending modes,Calculations,high pass,sharpening," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/blending modes">blending modes</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Calculations">Calculations</a></li>
+                
+                <li><a href="http://localhost:4000/tag/high pass">high pass</a></li>
+                
+                <li><a href="http://localhost:4000/tag/sharpening">sharpening</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+<aside class="comments" role="complementary">
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'http://localhost:4000/2012/09/decomposing_sharpening_part_1/';
+            this.page.identifier = '9/8/2012';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//your_disqus_site.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</aside>
+
+            </main>
+        </div>
+
+        <script src="http://localhost:4000/assets/js/jquery-1.12.2.min.js"></script>
+<script src="http://localhost:4000/assets/js/backtotop.js"></script>
+<script src="http://localhost:4000/assets/js/lunr.min.js"></script>
+<script src="http://localhost:4000/assets/js/lunr-feed.js"></script>
+<script src="http://localhost:4000/assets/js/jquery.fitvids.js"></script>
+<script src="http://localhost:4000/assets/js/svg4everybody.min.js"></script>
+<script src="http://localhost:4000/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>

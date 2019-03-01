@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Vue.js – Nonlinear Sliders with Computed Properties | Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content="Vue.js – Nonlinear Sliders with Computed Properties | Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content="Vue.js – Nonlinear Sliders with Computed Properties | Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="How to use Vue.js Computed Properties to build nonlinear Sliders (range input) combining multiple linear equations to compress/expand ranges">
+    <meta name="description" property="og:description" content="How to use Vue.js Computed Properties to build nonlinear Sliders (range input) combining multiple linear equations to compress/expand ranges" />
+    <meta name="twitter:description" content="How to use Vue.js Computed Properties to build nonlinear Sliders (range input) combining multiple linear equations to compress/expand ranges" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="http://localhost:4000/2017/01/vue-js-nonlinear-sliders-with-computed-properties/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+    <link rel="canonical" href="http://localhost:4000/2017/01/vue-js-nonlinear-sliders-with-computed-properties/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href="http://localhost:4000"><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="http://localhost:4000" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="http://localhost:4000/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="http://localhost:4000/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                <article class="post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2017-01-14T11:31:43+01:00" itemprop="datePublished">14 Jan, 2017</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline">Vue.js – Nonlinear Sliders with Computed Properties</h2>
+    </header>
+
+    <div class="post-content">
+        <dl>
+  <dt>term</dt>
+  <dd>definition</dd>
+  <dd>another definition</dd>
+</dl>
+
+<p>While working on the forthcoming version of my <a href="http://cc-extensions.com/products/doubleusm/">DoubleUSM</a> script, which I’m porting to HTML Panels, I’ve run into the following problem: how do you fit a large range – say, (1..500) with floating point precision – into a Slider which has, at best, less than 200 possible, real slots? Nonlinear sliders and Vue.js Computed Properties are the answer, read along.</p>
+
+<figure class="alignleft">
+	<img width="250" src="/wp-content/uploads/2017/01/usm.jpg" />
+</figure>
+
+<p>If you play with the Photoshop UnSharp Mask dialog, which looks like what you see here, you’ll notice that the three sliders work in a very different fashion.</p>
+
+<p>And I’m not only talking about the sheer range: <strong>Amount is 1..500</strong> (integer), <strong>Radius 0.1..1000</strong> (floating point, 10.000 possible values!), <strong>Threshold 1..255</strong> (integer).</p>
+
+<p>Perhaps more importantly, the sweetest range of each parameter – i.e. the most probable, or used – is different. As a consequence Adobe engineers have expanded it, to the detriment of other, less probable values. An example: the Radius, in a so-called traditional USM, rarely goes beyond 3px, depending on the image size. Let’s say 5px, or even 10px to be on the ultra-safe side. When it comes to inverse USM (or as my color correction maestro <a href="http://www.moderncolorworkflow.com/">Dan Margulis</a> would call it, HiRaLoAm: High Radius, Low Amount) Radius can go up to 50px, or even more. Not more than 100px, I’d bet, in 98.98% of every HiRaLoAm run in the civilized world. Let’s forget Adobe’s crazy ceiling of 1000px: I’ll stick to a maximum value of 500px. You’re facing a couple of issues:</p>
+
+<ol>
+  <li>Fitting 5000 values into a Slider that, at best, is 200px wide.</li>
+  <li>Expanding and compressing parts of the [0.1..500] slider span so that the more used/probable ranges have more coverage.</li>
+</ol>
+
+<p>I’m going to use the following very simple setup as a starting point:</p>
+
+<figure>
+	<a href="https://jsbin.com/xenelej/edit?js,output"><img src="/wp-content/uploads/2017/01/jsbin1.jpg" /></a>
+  <figcaption>Click the image to open the <a href="https://jsbin.com/xenelej/edit?js,output">JSBin</a></figcaption>
+</figure>
+
+<p>As you see, I’ve bound the slider (aka input of type range, width of 175 pixels) and the number box (input of type number: I’ve hidden the spin boxes because I think they’re ugly) to the same radius property using <code class="highlighter-rouge">v-model</code>. It kinda works, but functionally, as a Radius slider, it’s unusable. I can’t precisely target any small value (say 0.4), because the whole slider is just too tiny to keep track of them: the first available value is 2.3! How did Adobe solve that issue? The only way to find it is experimentally: I’ve grabbed screenshots of the USM dialog at different Radius values, and measured the pixel span of the slider thumb aka handler. Annoying, and perhaps not ideal, but it worked. I’ve used a spreadsheet to graph the range pixels span (first column), against the radius value (last column)</p>
+
+<p><img src="/wp-content/uploads/2017/01/graph01.png" alt="" /></p>
+
+<p>As you see, the original Adobe’s slider spans about 500 actual pixels to cover 500 integer values: problem is that the Radius is expressed as floating point, and the behaviour is highly nonlinear, as the graph shows. Move the handler about halfway through (242px) and the Radius is only 20px (and not 250px), a twenty-fifth of the entire range has been very much expanded. In the spreadsheet I’ve added two column, with normalized values (0..100) of the measured pixels, then mapped to my original slider actual values of the Slider, that will be of some use later on.</p>
+
+<blockquote>
+  <p>You’ll forgive me if I’m a bit imprecise with these calculations. Fact is that I have no idea whether a 175px width slider has room, for its thumb/handler, for 175 actual different positions when you drag it. I’ve set in the HTML its min=0 and max=175, roughly matching its current width in pixels. BTW 0..175 is a range of 176 values.</p>
+</blockquote>
+
+<p>Looking at the graph, you can see four separate, linear segments: [0..10], [10..50], [50..200], [200..500], which is bearable: this is what they do, and I could perhaps replicate them. I’m afraid it doesn’t suit my own taste so I’ll change the mapping to fit my own idea of the <em>proper</em> slider behaviour for USM Radius. And the way to do that is via VueJS Computed Properties. The idea is that we’ll bind (via <code class="highlighter-rouge">v-model</code>) the spinner (number field) to the same <code class="highlighter-rouge">radius</code> property of the initial example, while the slider to another prop called  <code class="highlighter-rouge">sliderRadius</code>, calculated on the fly from <code class="highlighter-rouge">radius</code>. This goes in the <code class="highlighter-rouge">computed</code> section of the Vue instance, see below (please note that I’m returning the same, unprocessed value for now).</p>
+
+<figure>
+	<a href="https://jsbin.com/lahupu/edit?js,output"><img src="/wp-content/uploads/2017/01/jsbin2.jpg" /></a>
+  <figcaption>Click the image to open the <a href="https://jsbin.com/lahupu/edit?js,output">JSBin</a></figcaption>
+</figure>
+
+<p>The getter here is the function that computes <code class="highlighter-rouge">sliderRadius</code> from <code class="highlighter-rouge">radius</code>, while the setter does the reverse (sets the <code class="highlighter-rouge">radius</code> from <code class="highlighter-rouge">sliderRadius</code>). In practice, the getter is involved when you type number values in the spinner; the setter when you drag the slider. With this in place, it’s time to compute the two functions. I’ve decided that four linear ranges like <strong>[0..5], [5..30], [30..100], [100..500]</strong> are a better fit for me – see the following graph.</p>
+
+<p><img src="/wp-content/uploads/2017/01/graph04.png" alt="" /></p>
+
+<p>In case you’re dubious, I’m plotting now Radius in the  $ x $, Slider in the  $ y, $  whereas the in previous graph I did the reverse (Slider  $ x $, Radius  $ y $). I’ve set the points so that there is a (theoretical) match for the important ranges. For instance, the Radius range [0..5] is mapped to [0..50] in the slider, so that (theoretically) each point value (0, 0.1, 0.2, 0.3…) has a perfect match with the slider (0, 1, 2, 3, and so on). At least this is what I hope is the case, because – as I’ve written – there’s no guarantee that a 175px slider has 175 available positions for the thumb. Now it’s only a matter of finding the $ a $ and $ b $ coefficient for a linear equation $ y = ax + b $. Solving that for $ a, b $ is easy: $ a $ is rise over run e.g. for the getter in the second range [5..30]:</p>
+
+<script type="math/tex; mode=display">a = (100-50)/(30-5) = 2</script>
+
+<p>We know all the Radius/Slider pairs, so <em>b</em> is got substituting the <em>x,y</em> and recently found <em>a</em> values in the linear equation, eg.</p>
+
+<script type="math/tex; mode=display">b = 100 - ( 2*30) = 40</script>
+
+<p>As a result, the linear equation for the second range [5..30] getter is:</p>
+
+<script type="math/tex; mode=display">Slider = 2 * Radius + 40</script>
+
+<p>That’s for the <strong>getter</strong>. You have to invert Slider and Radius to obtain <strong>setter</strong> coefficients, so for instance (setter, second range):</p>
+
+<script type="math/tex; mode=display">a = (30-5)/(100-50) = 0.5</script>
+
+<script type="math/tex; mode=display">b = 30 - (0.5 * 100) = -20</script>
+
+<script type="math/tex; mode=display">Radius = 0.5 * Slider - 20</script>
+
+<p>Which translates into the following code:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+  <span class="na">el</span><span class="p">:</span> <span class="s1">'#app'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">radius</span><span class="p">:</span> <span class="mi">100</span>
+  <span class="p">},</span>
+  <span class="na">computed</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">sliderRadius</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">get</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">radius</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">val</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nx">val</span> <span class="o">*</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">val</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nx">val</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">40</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">val</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nx">val</span> <span class="o">*</span> <span class="mf">0.714285714285714</span> <span class="o">+</span> <span class="mf">78.5714285714286</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nx">val</span> <span class="o">*</span> <span class="mf">0.0625</span> <span class="o">+</span> <span class="mf">143.75</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="na">set</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">val</span> <span class="o">=</span> <span class="o">+</span><span class="nx">val</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">val</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">radius</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round10</span><span class="p">(</span><span class="nx">val</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">val</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">radius</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round10</span><span class="p">(</span><span class="nx">val</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">-</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">val</span> <span class="o">&lt;=</span> <span class="mi">150</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">radius</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round10</span><span class="p">(</span><span class="nx">val</span> <span class="o">*</span> <span class="mf">1.4</span> <span class="o">-</span> <span class="mi">110</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">radius</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round10</span><span class="p">(</span><span class="nx">val</span> <span class="o">*</span> <span class="mi">16</span> <span class="o">-</span> <span class="mi">2300</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>I’ve added a <code class="highlighter-rouge">Math.round10</code> function borrowed from <a href="https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Math/round">MDN</a>, which allows me to send to the spinner properly formatted numbers. Also note that I’ve changed accordingly the HTML, limiting the slider to <code class="highlighter-rouge">max=175</code> and, importantly, setting the step to <code class="highlighter-rouge">0.1</code>: otherwise, when you change numbers in the steppers, the slider would jump. The final, working JSBin is this one:</p>
+
+<figure>
+	<a href="http://jsbin.com/lahupu/6/edit?js,output"><img src="/wp-content/uploads/2017/01/jsbin3.jpg" /></a>
+  <figcaption>Click the image to open the <a href="https://jsbin.com/lahupu/6/edit?js,output">JSBin</a></figcaption>
+</figure>
+
+<p>As you see, it maps correctly small floating point values, then ramps up nicely and compresses high, less used Radii. Which doesn’t mean that you can’t set them, because you can always type, say, 489.3px in the spinner, and bind that value to your actual Photoshop JSX function call. It’s not rocket science at all, but it took me some time to put this together for my own panels – that’s why I’m sharing here, both for you and my future, senior self 😉</p>
+
+<p>If you’re into Vue.js, you might want to check also: <a href="/2016/08/vue-js-binding-a-component-in-a-v-for-loop-to-the-parent-model/">Vue.js – Binding a Component in a v-for loop to the Parent model</a>.</p>
+
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Vue.js – Nonlinear Sliders with Computed Properties&p[summary]=
+  term
+  definition
+  another definition
+
+
+While working on the forthcoming version of my DoubleUSM script, which I’m porting to HTML Pa...&p[url]=http://localhost:4000/2017/01/vue-js-nonlinear-sliders-with-computed-properties/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2017/01/vue-js-nonlinear-sliders-with-computed-properties/&text=
+  term
+  definition
+  another definition
+
+
+While working on the forthcoming version of my DoubleUSM script, which I’m porting to HTML Pa...&hashtags=Vue.js," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Vue.js">Vue.js</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+<aside class="comments" role="complementary">
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'http://localhost:4000/2017/01/vue-js-nonlinear-sliders-with-computed-properties/';
+            this.page.identifier = '1/14/2017';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//your_disqus_site.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</aside>
+
+            </main>
+        </div>
+
+        <script src="http://localhost:4000/assets/js/jquery-1.12.2.min.js"></script>
+<script src="http://localhost:4000/assets/js/backtotop.js"></script>
+<script src="http://localhost:4000/assets/js/lunr.min.js"></script>
+<script src="http://localhost:4000/assets/js/lunr-feed.js"></script>
+<script src="http://localhost:4000/assets/js/jquery.fitvids.js"></script>
+<script src="http://localhost:4000/assets/js/svg4everybody.min.js"></script>
+<script src="http://localhost:4000/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>

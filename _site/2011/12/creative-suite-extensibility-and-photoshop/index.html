@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Creative Suite extensibility and Photoshop | Davide Barranca &mdash; Photoshop, etc. </title>
+    <meta property="og:title" content="Creative Suite extensibility and Photoshop | Davide Barranca &mdash; Photoshop, etc. " />
+    <meta name="twitter:title" content="Creative Suite extensibility and Photoshop | Davide Barranca &mdash; Photoshop, etc. " />
+
+    <meta name="description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!">
+    <meta name="description" property="og:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+    <meta name="twitter:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:site" content="@undavide" />
+    
+    <meta property="og:url" content="http://localhost:4000/2011/12/creative-suite-extensibility-and-photoshop/" />
+
+    <meta property="og:image" content="" />
+    <meta name="twitter:image" content="" />
+
+    <meta name="author" content="Davide Barranca" />
+
+    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIltXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByfesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC44P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+        @font-face {
+            font-family: 'Roboto';
+            font-style: italic;
+            font-weight: 900;
+            src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+    </style>
+    
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+
+    <link rel="canonical" href="http://localhost:4000/2011/12/creative-suite-extensibility-and-photoshop/">
+
+    <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    
+</head>
+
+
+    <body>
+        <div class="wrapper">
+            <aside class="user-profile fixed" role="complementary">
+    <div class="burger">
+        <input class="trigger hidden" id="toggleBurger" type="checkbox" />
+        <label for="toggleBurger">
+            <span>Navigation</span>
+        </label>
+    </div>
+
+    <div class="compact-header">
+        <a class="avatar" href="http://localhost:4000"><img alt="Avatar" src="/assets/img/io.jpg" /></a>
+        <div class="my-info">
+            <strong class="my-name">Davide Barranca</strong>
+            <span class="my-job-title">Photoshop, etc.</span>
+        </div>
+    </div>
+
+    
+        
+        <div class="mainmenu">
+            <a href="http://localhost:4000" >Home</a>
+            
+                
+            
+                
+            
+                
+            
+                
+                    <a href="http://localhost:4000/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+        
+    
+
+    <p class="about-me">Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</p>
+
+    <ul class="socials">
+        <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
+
+        
+            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        
+
+        
+         <li><a href="http://localhost:4000/feed.xml"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        
+    </ul>
+</aside>
+
+            <main class="the-content" role="main">
+                <div class="search" role="search">
+    <div>
+        <div class="show-results-count">0 Results</div>
+        <div class="search-holder">
+            <input type="text" id="search-input" placeholder="search for..." />
+        </div>
+    </div>
+    <ul id="results-container" class="results-container"></ul>
+</div>
+
+
+                <article class="post single" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2011-12-11T21:52:01+01:00" itemprop="datePublished">11 Dec, 2011</time></li>
+            
+        </ul>
+        <h2 itemprop="name headline">Creative Suite extensibility and Photoshop</h2>
+    </header>
+
+    <div class="post-content">
+        <div class="pf-content">
+  <p>
+    Having read the (InDesign developer) <a title="Thoughts on Extending the Creative Suite" href="http://in-tools.com/article/thoughts-on-extending-the-creative-suite/" target="_blank">Gabe Harbs&#8217; post on the subject</a>, I&#8217;d like to add here a couple of personal points focusing on Photoshop.
+  </p>
+  
+  <h2>
+    CS extensions basics
+  </h2>
+  
+  <p>
+    Few lines to frame the topic: Creative Suite extensibility as we know it today is far better than we could even dream few years ago.<br /> This happens because Macromedia technology has plugged into Creative Suite and mixed with Flex SDK, to finally mature and end up in a product called Extension Builder (a Flash Builder / Eclipse plugin) based on the new CS SDK.
+  </p>
+  
+  <p>
+    We&#8217;re able to build panels that:
+  </p>
+  
+  <ol>
+    <li>
+      <p>
+        (almost seamlessy) integrate with the host application UI;
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        can drive Photoshop &amp; C. just like scripting did;
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        are based upon an OOP language such as ActionScript 3, and Flex services, to manage data;
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        use Flash components for UI design;
+      </p>
+    </li>
+  </ol>
+  
+  <p>
+    Incredibly powerful tools.
+  </p>
+  
+  <p>
+    <!--more--> Moreover, the 
+    
+    <a title="Adobe CS SDK official blog" href="http://blogs.adobe.com/cssdk/" target="_blank">CS SDK team</a> led by PM <a title="Gabriel Tavridis on Twitter" href="http://twitter.com/#!/gtavridis" target="_blank">Gabriel Tavridis</a> seems to be really motivated making the extensibility platform to evolve at a high rate, and they&#8217;ve a strong attitude to listen to developers suggestions: not only in terms of technical matters, but strategic ones too. Even though I&#8217;ve already mentioned all <a title="Is Adobe at a crossroads?" href="http://localhost:8888/2011/11/adobe-crossroads/" target="_blank">my doubts about Adobe as a company</a> elsewhere, I&#8217;d say: what not to like.
+  </p>
+  
+  <p>
+    Of course the path it&#8217;s not entirely lined with roses &#8211; ever since CS4 the flash support for panels got better (possibly because it couldn&#8217;t be worse 😉 ), but debugging customer&#8217;s troubles on a remote machine is still a ruthless job.
+  </p>
+  
+  <ul>
+    <li>
+      <p>
+        On a Mac, apparently unrelated issues like system Fonts may lead to a blank panel, as corrupted preferences frequently do.
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        On a PC (from now on I&#8217;ll be referring to Photoshop as the host application for CS extensions), depending whether a script is embedded within a panel or called as a script tout-court, <a title="PS-Scripts forum" href="http://www.ps-scripts.com/bb/viewtopic.php?f=9&amp;t=4489&amp;sid=a77983ed5a8f6f8aebe91ed7790229c4" target="_blank">the behavior may be different</a>.
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        Adobe Extension Manager seems to be particularly hostile to unexperienced users &#8211; my topmost support request subject is related to installation via AEM. Recent <a title="Adobe Extension Manager and OSX Lion issue" href="http://localhost:8888/2011/10/adobe-extension-manager-and-lion-issue/" target="_blank">troubles with OSX Lion</a>, finally solved with an official update, may confirm that there&#8217;s plenty of room for improvement.
+      </p>
+    </li>
+  </ul>
+  
+  <p>
+    That said, I know that the CS SDK team is working to address these technical issues and keep the CS extensibility a pleasing platform to work in.
+  </p>
+  
+  <h2>
+    Three ways
+  </h2>
+  
+  <p>
+    A developer willing to code for Creative Suite applications can follow three paths (that may also cross):
+  </p>
+  
+  <ol>
+    <li>
+      <p>
+        C++ (the old, steep way)
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        Scripting (cross-platform JavaScript, mainly)
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        CS SDK
+      </p>
+    </li>
+  </ol>
+  
+  <p>
+    The first one is for hardcore programmers (which I&#8217;m not). Since my friend <a title="Marco Olivotto" href="http://www.marcoolivotto.com" target="_blank">Marco Olivotto</a> is on his way to coding a Photoshop plugin, I&#8217;ve heard from him one of the largest collection of <del>cursing</del> complaints ever, mostly focused on the documentation: obscure, missing, misleading, out of date, etc.<br /> While JS scripting may be used either as a quick, procedural way to drive the application or as a tool to build more complex systems, I&#8217;ve found that CS SDK and a true OOP language such as ActionScript better fit the needs of a coder (like me) just averagely skilled in both the programming and the DOM side of the job.
+  </p>
+  
+  <p>
+    Take a course on Java, like the great introductory <a title="Stanford University - Programming methodology" href="http://see.stanford.edu/see/courseinfo.aspx?coll=824a47e1-135f-4508-a5aa-866adcae1111" target="_blank">Stanford&#8217;s &#8220;Programming Methodology&#8221;</a> (lectures by the volcanic professor Mehram Sahami) and you&#8217;re ready to start with AS and extension development.
+  </p>
+  
+  <h2>
+    Extending Photoshop
+  </h2>
+  
+  <p>
+    Personally, I see at least a couple of areas where CS (and especially Photoshop) extensibility may evolve in an interesting way.
+  </p>
+  
+  <h3>
+    Integration
+  </h3>
+  
+  <p>
+    Generally speaking the CS SDK provides, amongst other things, the access to Photoshop DOM from ActionScript (plus a way to embed Javascript code too); there are a couple of problems IMHO:
+  </p>
+  
+  <ol>
+    <li>
+      <p>
+        A minor one: Some functions simply don&#8217;t traslate in AS successfully. For instance, PS .suspendHistory() exists as an AS method (like in JS) but doesn&#8217;t work at all. <em>Yet</em>
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        A crucial one: The CD SDK development is <em>unlinked</em> to the actual application&#8217;s scripting evolution.
+      </p>
+    </li>
+  </ol>
+  
+  <p>
+    The PS scripting community is constantly <a title="PS-Scripts features wishlist" href="http://www.ps-scripts.com/bb/viewtopic.php?f=36&amp;t=3518&amp;sid=986a4d430efdc3de891785c10bbd01a5" target="_blank">gathering feature requests</a> for Photoshop-next, even though scripting support doesn&#8217;t look like one of the highest priority for the PS development team: a good amount of tools are not within the reach of the DOM, and can be accessed only via unfriendly Action Manager code. Whereas for instance cursor position or eyedropper sample size (see my open project <a title="Power Info Palette" href="http://blog.rbg.bigano.com/2011/05/22/work-in-progress-power-info-palette/" target="_blank">Power Info Palette</a>), just to mention a couple of items, are out of the reach of any code at all, i.e. you can&#8217;t get that piece of information, period.
+  </p>
+  
+  <blockquote>
+    <p>
+      I know it&#8217;s not easy, but in my opinion it would be <em>far more productive</em> if the CS SDK team could somehow collaborate with the application teams (PS, ID, etc) to develop and tightly integrate within the Actionscript layer new (and old) features that users are requesting. A bolder statement: if Adobe&#8217;s promoting the CS SDK as the preferred way to extend Creative Suite applications, it should give to the team the possibility <em>to drive</em> the evolution of each application&#8217;s scripting development, not only the license to embed current features into the CS SDK, which we could take for granted.
+    </p>
+  </blockquote>
+  
+  <p>
+    I know that CS extensions are a huge leap forward themselves &#8211; however I believe that a mixed approach (with a personal bias to make the Tavridis&#8217; team the reference point for developers) would be the best way to exploit their power on the long run.<br /> <a name="low-level" id="low-level"></a>
+  </p>
+  
+  <h3>
+    Low level access
+  </h3>
+  
+  <p>
+    This is one of my ancient hobby horses.<br /> With InDesign scripting, which BTW I&#8217;m totally unexperienced of, a scripter can manipulate documents and all kind of objects (like frames) within the documents. And, as far as I know, any text that belongs to those frames. So, being InDesign (roughly speaking) a software about text management, you have a direct access to the smallest building block &#8211; i.e. characters.
+  </p>
+  
+  <p>
+    Translating to Photoshop, it&#8217;s like if we could access the image&#8217;s smallest building block, i.e. pixels.<br /> Which, sadly, we can&#8217;t.<br /> We&#8217;re allowed to duplicate documents, layers, apply PS filters to selections and channels &#8211; it&#8217;s fine &#8211; but the active bitmap layer in PS can&#8217;t (as far as I know) be directly grabbed and used by ActionScript as a BitmapImage. The only workaround, to the best of my knowledge is:
+  </p>
+  
+  <ol>
+    <li>
+      <p>
+        save a temporary copy on the disk as an image;
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        make the panel load and elaborate it;
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        save a copy back on the disk;
+      </p>
+    </li>
+    
+    <li>
+      <p>
+        tell PS to load and paste it in the current document.
+      </p>
+    </li>
+  </ol>
+  
+  <p>
+    A pain. I knew that a direct sharing between Photoshop and an &#8220;extension&#8221; (back and forth, as a JPG flattened image) is allowed &#8211; within the Photoshop Touch SDK, <em>suddenly disappeared from the Adobe Devnet?!</em> That is: mobile applications, those Touch apps Adobe is proud of. I also knew that <a title="Daniel Koestler Adobe blog" href="http://blogs.adobe.com/koestler/2011/05/using-the-photoshop-touch-sdk-creating-a-project.html" target="_blank">Daniel Koestler</a> and <a title="Renaun Erickson blog" href="http://renaun.com/blog/2011/04/photoshop-touch-sdk-contains-an-actionscript-3-library-too/" target="_blank">Renaun Erickson</a> wrote the Actionscript API (which were in the Touch SDK that I downloaded in May 2011) &#8211; I&#8217;m just wondering and desperately hoping if we&#8217;ll eventually see this little extra step in CS SDK as well.
+  </p>
+  
+  <blockquote>
+    <p>
+      To let an extension have <em>direct access to a Photoshop layer as a BitmapImage</em> would be terrific: it would mean the possibility to write actual PS plugins with Flash UI without the headache of dealing with C code (and memory management). It would imply the use of (binary, that is: protected) Pixel Bender kernels, plus a whole bunch of ready made ActionScript shaders. It would possibly result in lower performances compared to C++ plugins but frankly&#8230; who cares.
+    </p>
+  </blockquote>
+  
+  <p>
+    I thought to be the only one requesting this feature around, but a couple of emails from other developers pushed me to write this plea: Adobe, please, pretty please&#8230; 🙂
+  </p>
+  
+  <h2>
+    The future of CS Extensibility
+  </h2>
+  
+  <p>
+    While I was in the middle of this post&#8217;s writing, I mailed to Gabriel Tavridis some doubts that came to my mind &#8211; expecially after reading about the <a title="Adobe Flex blog" href="http://blogs.adobe.com/flex/2011/11/your-questions-about-flex.html" target="_blank">Flash/Flex affaire</a>. It&#8217;s clear that, even if Flex cannot be replaced by HTML5 in the short run, Adobe&#8217;s commitment to this newer technology is quite strongly advertised. So what&#8217;s the company&#8217;s roadmap for CS extensions, I was asking. Gabriel kindly wrote back that he was going to post detailed answers to this (and similar) questions in the CS SDK official blog &#8211; which is <a title="CS SDK future" href="http://blogs.adobe.com/cssdk/2011/12/cs_extensibility_and_flex_next.html" target="_blank">now online</a> and&#8230; I suggest you to read it!
+  </p>
+  
+  <p>
+    As a conclusion, no matter what technology we&#8217;ll be using in the years to come, it&#8217;s important that Adobe embraces a transparent attitude toward its users &#8211; as a developer, I&#8217;m happy to notice that the CS SDK group in this respect seems to be <em>avant-garde</em>.
+  </p>
+</div>
+
+<!-- Share-Widget Button BEGIN -->
+<p>&lt;a href=”javascript:void(0);” myshare_id=”mys_shareit” myshare_url=”http://localhost:8888/2011/12/creative-suite-extensibility-and-photoshop/” myshare_title=”Creative Suite extensibility and Photoshop” rel=”nofollow” onclick=” return false;” style=”text-decoration:none; color:#000000; font-size:11px; line-height:20px;”&gt;</p>
+
+<p><img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> &lt;/a&gt; <!-- Share-Widget Button END --></p>
+
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Creative Suite extensibility and Photoshop&p[summary]=
+  
+    Having read the (InDesign developer) Gabe Harbs&#8217; post on the subject, I&#8217;d like to add here a couple of personal point...&p[url]=http://localhost:4000/2011/12/creative-suite-extensibility-and-photoshop/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2011/12/creative-suite-extensibility-and-photoshop/&text=
+  
+    Having read the (InDesign developer) Gabe Harbs&#8217; post on the subject, I&#8217;d like to add here a couple of personal point...&hashtags=Creative Suite,CS Extension Builder,CS SDK,scripting," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Creative Suite">Creative Suite</a></li>
+                
+                <li><a href="http://localhost:4000/tag/CS Extension Builder">CS Extension Builder</a></li>
+                
+                <li><a href="http://localhost:4000/tag/CS SDK">CS SDK</a></li>
+                
+                <li><a href="http://localhost:4000/tag/scripting">scripting</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
+
+<aside class="comments" role="complementary">
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = 'http://localhost:4000/2011/12/creative-suite-extensibility-and-photoshop/';
+            this.page.identifier = '12/11/2011';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//your_disqus_site.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</aside>
+
+            </main>
+        </div>
+
+        <script src="http://localhost:4000/assets/js/jquery-1.12.2.min.js"></script>
+<script src="http://localhost:4000/assets/js/backtotop.js"></script>
+<script src="http://localhost:4000/assets/js/lunr.min.js"></script>
+<script src="http://localhost:4000/assets/js/lunr-feed.js"></script>
+<script src="http://localhost:4000/assets/js/jquery.fitvids.js"></script>
+<script src="http://localhost:4000/assets/js/svg4everybody.min.js"></script>
+<script src="http://localhost:4000/assets/js/scripts.js"></script>
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    </body>
+</html>
