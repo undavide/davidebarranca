@@ -29,67 +29,67 @@ tags:
   <h2>
     An open letter to fellow devs
   </h2>
-  
+
   <p>
     If you&#8217;re involved building third party solution for Adobe applications (mainly Scripts/Extensions) and you care about it, please invest 10 minutes of your time, read along and chime in.
   </p>
-  
+
   <h2>
     Hi, I&#8217;m Davide
   </h2>
-  
+
   <p>
     I&#8217;ve started scripting Adobe apps (mainly PS) back in 2008, with no prior programming experience whatsoever. I work full time as a post-production freelance since the year 2000, so my main focus can&#8217;t be on coding; yet over the years I&#8217;ve learned, mostly from others in public forums, enough to start a small paid scripts/extensions business that so far has been contributing for about 1:5 on average to my total incomes.
   </p>
-  
+
   <p>
     <strong>As a senior PS professional I can&#8217;t consider myself but as an amateur coder</strong>, yet I&#8217;m very passionate (isn&#8217;t passion what amateurs are about, after all?!)
   </p>
-  
+
   <p>
     What follows are <strong>my own and personal thoughts</strong>, that I&#8217;ve shared privately with some folks in the industry: nobody put me down (on the contrary, they strangely seemed to sustain my point of view!) so I&#8217;ve decided to eventually write this one publicly.
   </p>
-  
+
   <h2>
     The Scripting communities
   </h2>
-  
+
   <p>
     I can&#8217;t speak but about PS people; yet I&#8217;ve been in touch with many InDesign coders lately &#8211; from whom I got the personal, possibly incorrect impression that their community is <em>stronger</em>: in terms of available resources produced (forum threads, free and paid products, documentation), vitality, and, well, collaboration and <em>sense of community</em>. As a result I got the personal, possibly incorrect impression that they have <strong>more influence on Adobe</strong> as a software company.
   </p>
-  
+
   <p>
     Mind you, <strong>developers</strong> (no matter whether PS-ID-IL-AE-centric)<strong> understand they are just a tiny fraction of the company&#8217;s users base</strong> and it&#8217;s not from them the cash flow comes &#8211; hence their needs aren&#8217;t top priority, so to speak. We know.
   </p>
-  
+
   <p>
     The Photoshop scripting community, and by scripting I mean basically everything in the extensibility layer but C/C++ plugins (<strong>ExtendScript</strong> and <strong>Flash/HTML Panels</strong>,<strong> Generator/Node.js</strong>) do have some essential and well known keystones: preferences may vary, but I confidently list first the independent <a title="PS Scripts forum" href="http://www.ps-scripts.com" target="_blank">ps-scripts.com</a> forum moderated by <strong>Mike Hall</strong>, which is where <strong>Ross Huitt</strong> (aka XBytor) has been sharing his great <em>XTools</em> and many skilled and very talented people constantly keep contributing. The official <a title="Adobe PS Scripting" href="http://forums.adobe.com/community/photoshop/photoshop_scripting" target="_blank">PS Scripting forum by Adobe</a> (where in my opinion the signal/noise ratio is a bit lower). And lots of other personal websites devoted to PS scripting: Adobe&#8217;s <a title="Jeffrey Tranberry" href="http://www.tranberry.com/photoshop/photoshop_scripting/index.html" target="_blank">Jeffrey Tranberry</a>, <a title="Dr. Brown Scripts" href="http://russellbrown.com/scripts.html" target="_blank">Russell Preston Brown</a> (aka. Dr. Brown), <a title="Tom Krcha blog" href="http://tomkrcha.com" target="_blank">Tom Krcha</a>, <a title="David Deraedt blog" href="http://www.dehats.com" target="_blank">David Deraedt</a>; <a title="Paul Riggott" href="http://www.ps-bridge-scripts.talktalk.net" target="_blank">Paul Riggott</a>, <a title="Michel Mariani (aka Mikaeru) " href="http://www.tonton-pixel.com/blog/" target="_blank">Michel Mariani</a>, <a title="Trevor Morris Scripts" href="http://morris-photographics.com/photoshop/scripts/" target="_blank">Trevor Morris</a>, <a title="John J. McAssey" href="http://www.mouseprints.net/Photoshop.html" target="_blank">John J. McAssey</a> and many others  &#8211; I try to do my little part too.
   </p>
-  
+
   <h2>
     Bad times?
   </h2>
-  
+
   <p>
     Undoubtedly the PS Scripting community is undergoing <em>some change</em>. <strong>Paul Riggott</strong>, among the most skilled and helpful contributors, <a title="Adobe Photoshop Forums" href="http://forums.adobe.com/message/5394706" target="_blank">left forums altogether</a> in protest with Adobe. <strong>XBytor</strong> declared <a title="PS-Scripts" href="http://www.ps-scripts.com/bb/viewtopic.php?f=2&t=4466&p=26717#p26623" target="_blank">to be burned out</a> and not willing to start any major new project. In an official forum&#8217;s thread called &#8220;<a title="Will scripting be supported in future?" href="http://forums.adobe.com/message/5707211" target="_blank">Will scripting be supported in future?</a>&#8221; (worth reading too) <strong>John McAssey</strong> collected bits of different posts showing (some influent) community members&#8217; <em>bad mood</em> &#8211; so to speak.
   </p>
-  
+
   <p>
     Private conversations I&#8217;ve had with people in this business confirmed that, generally speaking, there&#8217;s <strong>a lot of disaffection</strong> going on among developers: recent technologies Adobe rolls out of its hat are promising (<a title="HTML Extensions" href="http://blogs.adobe.com/cssdk/2013/09/introducing-html5-extensions.html" target="_blank">HTML Extensions</a>, <a title="Adobe Generator on GitHub" href="https://github.com/adobe-photoshop/" target="_blank">Generator/Node.js</a>) yet the past has taught us not to embrace them too enthusiastically nor too soon, because they might end unsupported in the mid-term. In a dog-chasing-its-tail loop that could even accelerate the process: take as an example <a title="Kevin Goldsmith blog" href="http://blogs.adobe.com/kevin-goldsmith" target="_blank">Kevin Goldsmith</a>&#8216;s <a title="Pixel Bender" href="http://blogs.adobe.com/pixel-bender/" target="_blank">PixelBender</a>, which never left the Labs and drop discontinued. Was that because Adobe judged the coders&#8217; involvement too low to justify the development cost (as it&#8217;s been declared) or are the developers, who weren&#8217;t embracing the technology because Adobe didn&#8217;t put enough resources on it in order to make it really profitable? That was well before the <a title="Adobe donates Flex to Apache foundations" href="http://arstechnica.com/business/2011/11/adobe-donates-flex-to-foundation-in-community-friendly-exit-strategy/" target="_blank">Flash thing</a>, which is by the way going to put an end to Flex Panels and Configurator very soon.
   </p>
-  
+
   <p>
     True, IT world is constantly moving on, but as someone who&#8217;s learned ActionScript from scratch &#8220;just&#8221; to code Flex panels back in CS4, I now approach HTML Panels in CC (three generations afterwards) and Generator with a tad of cold blood &#8211; I&#8217;m working full-time, married, in my late thirties and time is not exactly what I&#8217;m plenty of.
   </p>
-  
+
   <h2>
     Cahiers de doléances
   </h2>
-  
+
   <p>
     Bear with me and let me express some <strong>personal criticism</strong> before getting into some more pro-active, constructive comments. Here are my own <a title="Cahiers de doléances" href="http://en.wikipedia.org/wiki/Cahiers_de_doléances" target="_blank">Cahiers de doléances</a>, provided that I assume engineers don&#8217;t like not to fix bugs, nor avoid implementing new features just to liven up the otherwise boring life of the third party developer &#8211; it&#8217;s management that decides where to put (or not to put) development resources.
   </p>
-  
+
   <ol>
     <li>
       Scripting as we know it (i.e. <strong style="font-style: normal;">ExtendScript</strong>) needs some love. It&#8217;s a language with its own true gems &#8211; as pointed out by the ID developer <a title="Marc Autret's Indiscripts" href="http://www.indiscripts.com" target="_blank">Marc Autret</a> (who proved to be among the finest scripting connoisseurs): the JSXBIN compiler, File/Folder management, Reflection and Dictionary interfaces, Debugging/tracking services, preprocessor directives, native XML support, etc. &#8211; and some nightmares.<br /> Now that scripters are supposed to <em style="line-height: normal;">interbreed</em> with web-devs for HTML panels (running on a <a title="Google Chromium" href="http://www.chromium.org" target="_blank">Google Chromium</a> implementation / V8 engine) at least in the long run the way data is passed/evaluated by the two engines should be unified &#8211; and ExtendScript upgraded to latest ECMAScript standards without losing its peculiarities.
@@ -107,46 +107,46 @@ tags:
       <strong style="font-style: normal;">ActionManager code</strong> and the ScriptingListener plugin are a godsend, but first: there are many useful things beyond the AM reach, second: AM isn&#8217;t an excuse not to extend the DOM support anymore.
     </li>
     <li>
-      <strong style="font-style: normal;">HTML Panels</strong> are a wise move in the long run for sure &#8211; provided their implementation will overcome several teething problems and lack of documentation (I&#8217;m among the ones who remember the amazing <a title="Olav Kvern on CS SDK topics" href="http://blogs.adobe.com/cssdk/author/okvern" target="_blank">series of articles</a> written by the great Olav Kvern on CS SDK). Which is OK to deal with, unless the deadline for the Flex panels support in PS is <a title="Photoshop Flex panel support stops in mid 2014" href="http://forums.adobe.com/thread/1298733" target="_blank">Mid 2014</a> (that is: tomorrow morning, so to speak).<br /> Extensions cannot replace scripted windows (that are <a title="Action recordable scripts in Photoshop" href="http://localhost:8888/2012/11/action-recordable-scripts-in-photoshop/" target="_blank">action recordable</a> for instance), but are <em>interfaces</em> to, and evaluates, &#8220;traditional&#8221; scripting.
+      <strong style="font-style: normal;">HTML Panels</strong> are a wise move in the long run for sure &#8211; provided their implementation will overcome several teething problems and lack of documentation (I&#8217;m among the ones who remember the amazing <a title="Olav Kvern on CS SDK topics" href="http://blogs.adobe.com/cssdk/author/okvern" target="_blank">series of articles</a> written by the great Olav Kvern on CS SDK). Which is OK to deal with, unless the deadline for the Flex panels support in PS is <a title="Photoshop Flex panel support stops in mid 2014" href="http://forums.adobe.com/thread/1298733" target="_blank">Mid 2014</a> (that is: tomorrow morning, so to speak).<br /> Extensions cannot replace scripted windows (that are <a title="Action recordable scripts in Photoshop" href="/2012/11/action-recordable-scripts-in-photoshop/" target="_blank">action recordable</a> for instance), but are <em>interfaces</em> to, and evaluates, &#8220;traditional&#8221; scripting.
     </li>
   </ol>
-  
+
   <p>
     Others might have a different list of doléances, the above ones are just my favorite refrain.
   </p>
-  
+
   <h2>
     Call for (some) action!
   </h2>
-  
+
   <p>
     Notwithstanding, the PS scripting community is doing some interesting stuff and is spread over the internet under many forms. Yet <strong>all the available resources I&#8217;ve mentioned earlier, while undoubtedly valuable, appears very sparse</strong>. They&#8217;re able to answer to the question: &#8220;<em>How do I&#8230;?</em>&#8221; with snippets and explanation or just exposing source code, but mostly it&#8217;s <em>just</em> a matter of personal efforts. Disconnected from other personal efforts &#8211; by someone else &#8211; and for that reason less effective from the educational point of view.
   </p>
-  
+
   <p>
     Forums somehow fill the gap: it&#8217;s where you go asking questions and interacting with people, who are either likely to have run into your problem, or just more experienced to suggest a solution. Forums are an excellent <em>archive</em>, collecting the community&#8217;s accumulated knowledge, providing historically sorted references and discussions.
   </p>
-  
+
   <p>
     Yet, as a code repository, Forums cannot beat other tools that have been specifically designed to be exactly that: <strong>code repositories</strong>.
   </p>
-  
+
   <p>
     I have nothing revolutionary to propose: I&#8217;ve noticed how people involved in PS coding are sometimes very talented but either isolated, or interacting in ways that could be more profitable for the whole community &#8211; <strong>specifically for those who are <em>not yet in the number</em>, but will enter the community in the future</strong>: willing to learn and to make use of our accumulated knowledge.
   </p>
-  
+
   <h2>
     Open Source Code Repositories
   </h2>
-  
+
   <p>
     Over the years I&#8217;ve collected tons of Scripting related material, and you&#8217;re likely to have done the very same thing yourself.
   </p>
-  
+
   <p>
     Why don&#8217;t we create a set of <strong>collaboratively maintained, open sourced GitHub repositories</strong>, to store:
   </p>
-  
+
   <ul>
     <li>
       Snippets (functions, AM code, etc).
@@ -173,11 +173,11 @@ tags:
       You name it.
     </li>
   </ul>
-  
+
   <p>
     <strong>I have no intention to create the umpteenth PS-website, nor to substitute Forums </strong>(which keep being the best place for discussion to happen and ideas to be shared): I&#8217;d like to have a place to go to when I&#8217;m in need to borrow or learn code from (a-ehm, what <a title="Adobe Photoshop Scripting DevNet" href="http://adobe.com/devnet/photoshop/scripting.html" target="_blank">Adobe&#8217;s DevNet</a> should have been). I&#8217;m not exactly the smartest <a title="Git" href="http://git-scm.com" target="_blank">Git</a> user in town, but I know that <a title="GitHub" href="http://www.github.com" target="_blank">GitHub</a> repos:
   </p>
-  
+
   <ol>
     <li>
       Are <strong>forkable</strong> (you can clone it locally).
@@ -204,36 +204,32 @@ tags:
       Because they have been designed as a repositories, code there is <strong>version tracked</strong> and can be maintained more effectively (compared to Forums, where not very often old threads get revamped).
     </li>
   </ol>
-  
+
   <h2>
     Chime in!
   </h2>
-  
+
   <p>
     When I&#8217;ve happened to code commercial scripts I&#8217;ve tried to build tools that I would have liked to use myself &#8211; and this is the spirit I&#8217;m asking you for support with.
   </p>
-  
+
   <p>
     Looks like a complex thing to build from the ground up, yet it would help not only ourselves but those approaching scripting in the future too (and it doesn&#8217;t need to be built overnight); not to mention the fact that there could be a tiny chance this <strong>might strengthen the Devs Community to Adobe&#8217;s eyes</strong> &#8211; I don&#8217;t want to create a lobby, nor find a place to fill with narcissism: I&#8217;m a happy sociopath who lives in the countryside. I would like to consider Adobe Scripting a nice and profitable platform to develop for in the next, say, 5 years. To date, I&#8217;m not sure I would, frankly.
   </p>
-  
+
   <p>
     I&#8217;m still in a phase where I&#8217;m evaluating whether this project can arouse other people&#8217;s interest &#8211; <strong>it can&#8217;t be but a collaborative effort</strong> &#8211; or not (in case I&#8217;ll easily turn it into a personal hobby). I&#8217;m skating over the next big problem on the list, i.e. the design of such repository.
   </p>
-  
+
   <p>
     <strong>Would you like to chime in?</strong> Do you have <em>any</em> idea, feedback, suggestion along these lines? Can you provide GitHub/social coding experience and skills? Just want to high five and disappear? The comment section below is for you.
   </p>
-  
+
   <p>
     Thank you for your time,
   </p>
-  
+
   <p>
     Davide
   </p>
 </div>
-
-<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="http://localhost:8888/2013/12/adobe-scripting-collaborative-code-sharing-github/" myshare\_title="Adobe Scripting: collaborative code sharing" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
-
-<img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->

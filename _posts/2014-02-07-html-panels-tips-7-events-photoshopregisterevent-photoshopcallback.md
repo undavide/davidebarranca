@@ -1,45 +1,22 @@
 ---
-id: 2499
 title: 'HTML Panels Tips: #7 Photoshop Events, Take 1'
 date: 2014-02-07T16:22:18+01:00
 author: Davide Barranca
-excerpt: 'This tip shows you the first way to make an HTML Panel listen and react to Photoshop Events: via PhotoshopRegisterEvent.'
+excerpt: "The first way for an HTML Panel to listen for Photoshop Events: PhotoshopRegisterEvent and PhotoshopCallback"
 layout: post
-guid: http://www.davidebarranca.com/?p=2499
 permalink: /2014/02/html-panels-tips-7-events-photoshopregisterevent-photoshopcallback/
-standard_seo_post_level_layout:
-  - ""
-standard_link_url_field:
-  - ""
-standard_seo_post_meta_description:
-  - 'The first way for an HTML Panel to listen for Photoshop Events: PhotoshopRegisterEvent and PhotoshopCallback'
+description: "The first way for an HTML Panel to listen for Photoshop Events: PhotoshopRegisterEvent and PhotoshopCallback"
 image: /wp-content/uploads/2014/02/PSEvents1.png
 categories:
-  - Coding
-  - HTML Panels
-tags:
-  - Event
-  - PhotoshopCallback
-  - tip
+  - CEP
+tags:  
+  - HTML Panels Tips
 ---
-<div class="pf-content">
-  <p>
-    This tip shows you the first way to make an HTML Panel listen and react to Photoshop Events: via <code>PhotoshopRegisterEvent</code>.
-  </p>
-  
-  <p>
-    <!--more-->
-  </p>
-  
-  <p>
-    Back in the Flash land, there were <strong>two ways</strong> to register callbacks for Photoshop Events: using either a <strong>PSHosttAdapter</strong> library, or an <strong>ExternalInterface</strong> object and PhotoshopCallback. Today&#8217;s tip is about the latter (see <a title="HTML Panels Tips: #8 Photoshop Events, Take 2" href="http://localhost:8888/2014/02/html-panels-tips-8-photoshop-events-pshostadapter-libraries/" target="_blank">Tip #8</a> for the PSHostAdapter libraries).
-  </p>
-  
-  <p>
-    What we used to write in <strong>ActionScript</strong> was something like:
-  </p>
-  
-  <pre class="lang:as decode:true">// Set TypeID for desired events
+
+This tip shows you the first way to make an HTML Panel listen and react to Photoshop Events: via `PhotoshopRegisterEvent`. Back in the Flash land, there were **two ways** to register callbacks for Photoshop Events: using either a **PSHosttAdapter** library, or an **ExternalInterface** object and PhotoshopCallback. Today's tip is about the latter (see [Tip #8](/2014/02/html-panels-tips-8-photoshop-events-pshostadapter-libraries/ "HTML Panels Tips: #8 Photoshop Events, Take 2") for the PSHostAdapter libraries). What we used to write in **ActionScript** was something like:
+
+{% highlight as %}
+// Set TypeID for desired events
 private const COPY_INT:int = Photoshop.app.charIDToTypeID(’copy’);
 private const PASTE_INT:int = Photoshop.app.charIDToTypeID(’past’);
 
@@ -50,13 +27,13 @@ ExternalInterface.addCallback("PhotoshopCallback" + CSInterface.getExtensionId()
 // Define the callback
 private function myPhotoshopCallback(eventID:Number, descID:Number):void {
 //
-}</pre>
-  
-  <p>
-    Things are slightly different now in <strong>Javascript</strong>. and are based on <code>CSInterface</code> and the dispatching of a custom Event. As follows the mechanism in a nutshell, then I&#8217;ll show you an actual example:
-  </p>
-  
-  <pre class="lang:js decode:true">var csInterface = new CSInterface(); 
+}
+{% endhighlight %}
+
+Things are slightly different now in **Javascript**. and are based on `CSInterface` and the dispatching of a custom Event. As follows the mechanism in a nutshell, then I'll show you an actual example:
+
+{% highlight js %}
+var csInterface = new CSInterface();
 
 // Create a new Event
 var event = new CSEvent("com.adobe.PhotoshopRegisterEvent", "APPLICATION");
@@ -77,132 +54,111 @@ csInterface.dispatchEvent(event);
 csInterface.addEventListener("PhotoshopCallback", PSCallback);
 
 // Define the callback
-function PSCallback(csEvent) { /* ... */ }</pre>
-  
-  <h2>
-    Example
-  </h2>
-  
-  <p>
-    <img class="alignleft size-full wp-image-2500" alt="PSEvents" src="http://localhost:8888/wp-content/uploads/2014/02/PSEvents1.png" width="270" height="159" srcset="http://localhost:8888/wp-content/uploads/2014/02/PSEvents1.png 270w, http://localhost:8888/wp-content/uploads/2014/02/PSEvents1-150x88.png 150w" sizes="(max-width: 270px) 100vw, 270px" />This Panel has a switch to turn ON/OFF the listener for few PS Events (cut, copy, paste). When the listener is active and the user cuts, copies or pastes, the Event&#8217;s StringID is written in the text area. In case you need a refresh of HTML Panels related topics to go through this one, here&#8217;s the <a title="HTML Panels Tips" href="http://localhost:8888/category/code/html-panels/" target="_blank">whole list</a>.
-  </p>
-  
-  <p>
-    You might need a refresh because this example uses Topcoat CSS (see <a title="HTML Panels Tips: #6 integrating Topcoat CSS" href="http://localhost:8888/2014/02/html-panels-tips-6-integrating-topcoat-css/" target="_blank">HTML Panels Tip #6</a>) and communication between HTML and JSX (<a title="HTML Panels Tips: #4 passing Objects from HTML to JSX" href="http://localhost:8888/2014/01/html-panels-tips-4-passing-objects-from-html-to-jsx/" target="_blank">Tip #4</a>).
-  </p>
-  
-  <h3>
-    HTML
-  </h3>
-  
-  <p>
-    The Panel uses <a title="CC Extensibility Helpers" href="http://davidderaedt.github.io/ccext-website/" target="_blank">boilerplate code</a> by <a title="David Deraedt on Twitter" href="https://twitter.com/davidderaedt" target="_blank">David Deraedt</a> with the addition of Topcoat CSS (refer to <a title="HTML Panels Tips: #6 integrating Topcoat CSS" href="http://localhost:8888/2014/02/html-panels-tips-6-integrating-topcoat-css/" target="_blank">HTML Panels Tip #6</a> for the details). I&#8217;ve set up a Topcoat Switch and a Text Area:
-  </p>
-  
-  <pre class="lang:xhtml decode:true">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset="utf-8"&gt;
-&lt;link id="hostStyle" rel="stylesheet" href="css/theme.css"/&gt;
-&lt;link id="theme" rel="stylesheet" href="css/light.css"/&gt;
-&lt;title&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div style="width: 80%; margin:0 auto"&gt;
-        &lt;h3 class="center"&gt;PS Events&lt;/h3&gt;    
-        &lt;label class="topcoat-switch"&gt;
-            &lt;input id="registerEvent" type="checkbox" class="topcoat-switch__input"&gt;
-            &lt;div class="topcoat-switch__toggle"&gt;&lt;/div&gt;
-        &lt;/label&gt;
-        &lt;input type="text" id ="result" class="topcoat-text-input" style="margin-left:10px" placeholder="Listen for Events" value=""&gt;
-    &lt;/div&gt;
+function PSCallback(csEvent) {
+  // ...
+}
+{% endhighlight %}
 
-    &lt;script src="js/libs/CSInterface-4.0.0.js"&gt;&lt;/script&gt;
-    &lt;script src="js/libs/jquery-2.0.2.min.js"&gt;&lt;/script&gt;
-    &lt;script src="js/themeManager.js"&gt;&lt;/script&gt;
-    &lt;script src="js/main.js"&gt;&lt;/script&gt;
+## Example
 
-&lt;/body&gt;
-&lt;/html&gt;</pre>
-  
-  <h3>
-    Javascript
-  </h3>
-  
-  <p>
-    In <code>main.js</code> it&#8217;s defined the Register() function that attaches (or remove) the listener, dispatching a CSEvent as you&#8217;ve already seen.
-  </p>
-  
-  <p>
-    A jQuery function binds the switch to <code>Register()</code> and finally a <code>PSCallback</code> function is defined: there, the Event data String is split and passed for evaluation to JSX (see <a title="HTML Panels Tips: #4 passing Objects from HTML to JSX" href="http://localhost:8888/2014/01/html-panels-tips-4-passing-objects-from-html-to-jsx/" target="_blank">Tip #4</a> for details about HTML to JSX data exchange). The <code>evalScript</code> callback (that is, the JSX return value) is displayed in the Text Area.
-  </p>
-  
-  <pre class="lang:js decode:true">(function () {
-    'use strict';
+![PSEvents](/wp-content/uploads/2014/02/PSEvents1.png)
 
-    var csInterface = new CSInterface();   
+This Panel has a switch to turn ON/OFF the listener for few PS Events (cut, copy, paste). When the listener is active and the user cuts, copies or pastes, the Event's StringID is written in the text area. In case you need a refresh of HTML Panels related topics to go through this one, here's the [whole list](/category/code/html-panels/ "HTML Panels Tips"). You might need a refresh because this example uses Topcoat CSS (see [HTML Panels Tip #6](/2014/02/html-panels-tips-6-integrating-topcoat-css/ "HTML Panels Tips: #6 integrating Topcoat CSS")) and communication between HTML and JSX ([Tip #4](/2014/01/html-panels-tips-4-passing-objects-from-html-to-jsx/ "HTML Panels Tips: #4 passing Objects from HTML to JSX")).
 
-    function Register(inOn) {
+### HTML
 
-        if (inOn) {
-            var event = new CSEvent("com.adobe.PhotoshopRegisterEvent", "APPLICATION");
-        } else {
-            var event = new CSEvent("com.adobe.PhotoshopUnRegisterEvent", "APPLICATION");
-        }
-        event.extensionId = "com.example.psevents";
+The Panel uses [boilerplate code](http://davidderaedt.github.io/ccext-website/ "CC Extensibility Helpers") by [David Deraedt](https://twitter.com/davidderaedt "David Deraedt on Twitter") with the addition of Topcoat CSS (refer to [HTML Panels Tip #6](/2014/02/html-panels-tips-6-integrating-topcoat-css/ "HTML Panels Tips: #6 integrating Topcoat CSS") for the details). I've set up a Topcoat Switch and a Text Area:
 
-        // some events:
-        // 1668247673 = charIDToTypeID( "copy" ) = copy
-        // 1885434740 = charIDToTypeID( "past" ) = paste
-        // 1668641824 = charIDToTypeID( "cut " ) = cut
-        event.data = "1668247673, 1885434740, 1668641824";
-        csInterface.dispatchEvent(event);
+{% highlight js %}
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link id="hostStyle" rel="stylesheet" href="css/theme.css" />
+  <link id="theme" rel="stylesheet" href="css/light.css" />
+  <title></title>
+</head>
+
+<body>
+  <div style="width: 80%; margin:0 auto">
+    <h3 class="center">PS Events</h3>
+    <label class="topcoat-switch">
+      <input id="registerEvent" type="checkbox" class="topcoat-switch__input">
+      <div class="topcoat-switch__toggle"></div>
+    </label>
+    <input type="text" id="result" class="topcoat-text-input" style="margin-left:10px" placeholder="Listen for Events" value="">
+  </div>
+
+  <script src="js/libs/CSInterface-4.0.0.js"></script>
+  <script src="js/libs/jquery-2.0.2.min.js"></script>
+  <script src="js/themeManager.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
+{% endhighlight %}
+
+### Javascript
+
+In `main.js` it's defined the Register() function that attaches (or remove) the listener, dispatching a CSEvent as you've already seen. A jQuery function binds the switch to `Register()` and finally a `PSCallback` function is defined: there, the Event data String is split and passed for evaluation to JSX (see [Tip #4](/2014/01/html-panels-tips-4-passing-objects-from-html-to-jsx/ "HTML Panels Tips: #4 passing Objects from HTML to JSX") for details about HTML to JSX data exchange). The `evalScript` callback (that is, the JSX return value) is displayed in the Text Area.
+
+{% highlight js %}
+(function() {
+  'use strict';
+
+  var csInterface = new CSInterface();
+
+  function Register(inOn) {
+
+    if (inOn) {
+      var event = new CSEvent("com.adobe.PhotoshopRegisterEvent", "APPLICATION");
+    } else {
+      var event = new CSEvent("com.adobe.PhotoshopUnRegisterEvent", "APPLICATION");
     }
+    event.extensionId = "com.example.psevents";
 
-    function init() {
+    // some events:
+    // 1668247673 = charIDToTypeID( "copy" ) = copy
+    // 1885434740 = charIDToTypeID( "past" ) = paste
+    // 1668641824 = charIDToTypeID( "cut " ) = cut
+    event.data = "1668247673, 1885434740, 1668641824";
+    csInterface.dispatchEvent(event);
+  }
 
-        themeManager.init();
+  function init() {
 
-        // Switch onChange callback
-        $('#registerEvent').change(function() {
-            Register( $(this).is(':checked') ); // true or false
-        });
-    }
+    themeManager.init();
 
-    function PSCallback(csEvent) {
-        var dataArray = csEvent.data.split(",");
-        // send to JSX to convert typeIDs to stringIDs
-        csInterface.evalScript('convertTypeID(' + JSON.stringify(dataArray[0]) + ')', function(res) {
-            $('#result').val(res.toString());
-        });
-    }
+    // Switch onChange callback
+    $('#registerEvent').change(function() {
+      Register($(this).is(':checked')); // true or false
+    });
+  }
 
-    init();
-    csInterface.addEventListener("PhotoshopCallback", PSCallback);
+  function PSCallback(csEvent) {
+    var dataArray = csEvent.data.split(",");
+    // send to JSX to convert typeIDs to stringIDs
+    csInterface.evalScript('convertTypeID(' + JSON.stringify(dataArray\[0\]) + ')', function(res) {
+      $('#result').val(res.toString());
+    });
+  }
 
-}());</pre>
-  
-  <h3>
-    JSX
-  </h3>
-  
-  <p>
-    In the JSX file there&#8217;s just a function, that converts the TypeID to StringID and returns it.
-  </p>
-  
-  <pre class="lang:js decode:true">function convertTypeID (typeArray) {
+  init();
+  csInterface.addEventListener("PhotoshopCallback", PSCallback);
+
+}());
+{% endhighlight %}
+
+### JSX
+
+In the JSX file there's just a function, that converts the TypeID to StringID and returns it.
+
+{% highlight js %}
+function convertTypeID (typeArray) {
   return typeIDToStringID(Number(typeArray));
-}</pre>
-  
-  <p>
-    &nbsp;
-  </p>
-  
-  <p>
-    &nbsp;
-  </p>
-</div>
+}
+{% endhighlight %}
 
-<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="http://localhost:8888/2014/02/html-panels-tips-7-events-photoshopregisterevent-photoshopcallback/" myshare\_title="HTML Panels Tips: #7 Photoshop Events, Take 1" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
-
-<img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->
+{% include_relative cepBook.md %}

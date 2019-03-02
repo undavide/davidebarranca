@@ -23,53 +23,53 @@ tags:
 ---
 <div class="pf-content">
   <p>
-    As a last example of my <a title="Sharpening session at CCC" href="http://localhost:8888/2011/09/sharpening-session-at-ccc/" target="_blank">CCC Sharpening lecture</a> in October, I did a correction of an underwater image. Later, I&#8217;ve been solicited with a very gentle email to show once again all the steps, and I asked my dear friend the photographer <a title="Davide D'Angelo Photographer" href="http://www.davidedangelo.com/" target="_blank">Davide D&#8217;Angelo</a>: he kindly got me in touch with his colleague the <a title="Paolo Fossati underwater photographer" href="http://www.paolo-fossati.com/" target="_blank">underwater photographer Paolo Fossati</a>, author of the picture I&#8217;ll show throughout this post. Thanks so much to both of you! So here it is, a little sharpening case study.
+    As a last example of my <a title="Sharpening session at CCC" href="/2011/09/sharpening-session-at-ccc/" target="_blank">CCC Sharpening lecture</a> in October, I did a correction of an underwater image. Later, I&#8217;ve been solicited with a very gentle email to show once again all the steps, and I asked my dear friend the photographer <a title="Davide D'Angelo Photographer" href="http://www.davidedangelo.com/" target="_blank">Davide D&#8217;Angelo</a>: he kindly got me in touch with his colleague the <a title="Paolo Fossati underwater photographer" href="http://www.paolo-fossati.com/" target="_blank">underwater photographer Paolo Fossati</a>, author of the picture I&#8217;ll show throughout this post. Thanks so much to both of you! So here it is, a little sharpening case study.
   </p>
-  
+
   <div id="attachment_335" style="width: 580px" class="wp-caption aligncenter">
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/03-Final_H.jpg" target="_blank"><img aria-describedby="caption-attachment-335" class="size-full wp-image-335 " title="Actinia and Anemonefish" alt="Actinia and Anemonefish" src="http://localhost:8888/wp-content/uploads/2011/11/03-Final_L.jpg" width="570" height="382" srcset="http://localhost:8888/wp-content/uploads/2011/11/03-Final_L.jpg 570w, http://localhost:8888/wp-content/uploads/2011/11/03-Final_L-150x100.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/03-Final_L-300x201.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
-    
+    <a href="/wp-content/uploads/2011/11/03-Final_H.jpg" target="_blank"><img aria-describedby="caption-attachment-335" class="size-full wp-image-335 " title="Actinia and Anemonefish" alt="Actinia and Anemonefish" src="/wp-content/uploads/2011/11/03-Final_L.jpg" width="570" height="382" srcset="/wp-content/uploads/2011/11/03-Final_L.jpg 570w, /wp-content/uploads/2011/11/03-Final_L-150x100.jpg 150w, /wp-content/uploads/2011/11/03-Final_L-300x201.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
+
     <p id="caption-attachment-335" class="wp-caption-text">
       Final, processed version (click for a larger image) &#8211; © Paolo Fossati
     </p>
   </div>
-  
+
   <p>
     <!--more-->
   </p>
-  
+
   <p>
     The original file comes as a RAW file from Nikon D80 (3872 x 2592 px just to keep in context the sharpening radii that I&#8217;ll be using), and as far as I&#8217;ve been able to understand from my Google quest, it depicts an actinia (the red thing with tentacles) in good company of an anemonefish (the yellow Nemo). The picture comes from Paolo Fossati&#8217;s trip in the <a title="Arabian Seven Reef - images by Paolo Fossati photographer" href="http://www.paolo-fossati.com/Galleria%20Arabia/Galleria%20Arabia.html" target="_blank">Arabian Seven Reef (full gallery page)</a>. Even though, compared to the CCC, I&#8217;ve some more room here to explain what I&#8217;m doing, I will take for granted some basic color correction terms and tools for the brevity&#8217;s sake.
   </p>
-  
+
   <div id="attachment_336" style="width: 580px" class="wp-caption aligncenter">
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/raw_H.jpg" target="_blank"><img aria-describedby="caption-attachment-336" class="size-full wp-image-336 " title="Raw conversion" alt="Raw conversion" src="http://localhost:8888/wp-content/uploads/2011/11/raw_L.jpg" width="570" height="381" srcset="http://localhost:8888/wp-content/uploads/2011/11/raw_L.jpg 570w, http://localhost:8888/wp-content/uploads/2011/11/raw_L-150x100.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/raw_L-300x200.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
-    
+    <a href="/wp-content/uploads/2011/11/raw_H.jpg" target="_blank"><img aria-describedby="caption-attachment-336" class="size-full wp-image-336 " title="Raw conversion" alt="Raw conversion" src="/wp-content/uploads/2011/11/raw_L.jpg" width="570" height="381" srcset="/wp-content/uploads/2011/11/raw_L.jpg 570w, /wp-content/uploads/2011/11/raw_L-150x100.jpg 150w, /wp-content/uploads/2011/11/raw_L-300x200.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
+
     <p id="caption-attachment-336" class="wp-caption-text">
       Start version, zeroed in Adobe Camera Raw &#8211; click for a larger image
     </p>
   </div>
-  
+
   <h2>
     Part 1 &#8211; Color and tone
   </h2>
-  
+
   <p>
     I&#8217;ve to admit that I&#8217;ve zero experience with this kind of naturalistic images, while Davide D&#8217;Angelo knows certainly better than me their (many) pitfalls: besides his works <a title="Davide D'Angelo - on stage photography" href="http://www.davidedangelo.com/Danza.html" target="_blank">on stage</a> in theaters and as an <a title="Davide D'Angelo - Infrared Landscape photography" href="http://www.davidedangelo.com/Infrared_gallery/infrared_gallery.html" target="_blank">IR landscape</a> photographer, he&#8217;s used to scuba diving as well, so he&#8217;s acquired peculiar skills for underwater photography retouching.
   </p>
-  
+
   <div id="attachment_339" style="width: 310px" class="wp-caption alignleft">
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/ACR_Default_H.jpg" target="_blank"><img aria-describedby="caption-attachment-339" class="size-full wp-image-339 " title="ACR Default" alt="ACR Default" src="http://localhost:8888/wp-content/uploads/2011/11/ACR-Default.jpg" width="300" height="201" srcset="http://localhost:8888/wp-content/uploads/2011/11/ACR-Default.jpg 300w, http://localhost:8888/wp-content/uploads/2011/11/ACR-Default-150x100.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" /></a>
-    
+    <a href="/wp-content/uploads/2011/11/ACR_Default_H.jpg" target="_blank"><img aria-describedby="caption-attachment-339" class="size-full wp-image-339 " title="ACR Default" alt="ACR Default" src="/wp-content/uploads/2011/11/ACR-Default.jpg" width="300" height="201" srcset="/wp-content/uploads/2011/11/ACR-Default.jpg 300w, /wp-content/uploads/2011/11/ACR-Default-150x100.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" /></a>
+
     <p id="caption-attachment-339" class="wp-caption-text">
       Adobe Camera Raw default &#8211; click for a larger image&#8221; margin-bottom=&#8221;5
     </p>
   </div>
-  
+
   <p>
     On my CCC lecture I worked on a different (and a lot easier) image, so I could show the steps for the color correction part too. Here the original is trickier and, believe me I don&#8217;t tell this to hide any secret sauce at all, I can&#8217;t exactly replicate (nor I exactly remember) how on earth I got to the intermediate version &#8211; the one that will be my base for the sharpening moves. Although, you may agree that the default ACR conversion is utterly different both from the zeroed version above (which was my actual starting point) and my intermediate result. Basically, the correction steps involved:
   </p>
-  
+
   <ol>
     <li>
       Exporting the raw to ProPhoto RGB (a workspace that I usually keep away from me, but is needed to avoid Red channel&#8217;s clipping, critical here in order to have more room for further processing).
@@ -84,39 +84,39 @@ tags:
       If RGB is needed again, I&#8217;ll use sRGB (which, by the way, obliterated almost entirely the ugly banding in the <del>sky</del> waters up above, that has been a pain in the neck ever since the Camera Raw export).
     </li>
   </ol>
-  
+
   <p>
     One of the color correction basic rules (neutral shadows) is less mandatory here perhaps &#8211; everything is drowned in deep blue, except for the area hit by the flash light in the foreground. Moreover, I&#8217;ve never been undersea (nor I will) so I haven&#8217;t the faintest idea of what these creatures would look like to a scuba diver approaching them.
   </p>
-  
+
   <div id="attachment_342" style="width: 580px" class="wp-caption aligncenter">
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/01-intermediate_H.jpg" target="_blank"><img aria-describedby="caption-attachment-342" class="size-full wp-image-342  " title="Intermediate version - color corrected" alt="Intermediate version - color corrected" src="http://localhost:8888/wp-content/uploads/2011/11/01-Intermediate_L.jpg" width="570" height="381" srcset="http://localhost:8888/wp-content/uploads/2011/11/01-Intermediate_L.jpg 570w, http://localhost:8888/wp-content/uploads/2011/11/01-Intermediate_L-150x100.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/01-Intermediate_L-300x200.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
-    
+    <a href="/wp-content/uploads/2011/11/01-intermediate_H.jpg" target="_blank"><img aria-describedby="caption-attachment-342" class="size-full wp-image-342  " title="Intermediate version - color corrected" alt="Intermediate version - color corrected" src="/wp-content/uploads/2011/11/01-Intermediate_L.jpg" width="570" height="381" srcset="/wp-content/uploads/2011/11/01-Intermediate_L.jpg 570w, /wp-content/uploads/2011/11/01-Intermediate_L-150x100.jpg 150w, /wp-content/uploads/2011/11/01-Intermediate_L-300x200.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
+
     <p id="caption-attachment-342" class="wp-caption-text">
       Intermediate version &#8211; click for a larger image
     </p>
   </div>
-  
+
   <div id="attachment_374" style="width: 580px" class="wp-caption aligncenter">
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/Details_BASE.jpg" target="_blank"><img aria-describedby="caption-attachment-374" class="size-full wp-image-374 " title="Details - Base version" alt="Details - Base version" src="http://localhost:8888/wp-content/uploads/2011/11/Details_BASE.jpg" width="570" height="286" srcset="http://localhost:8888/wp-content/uploads/2011/11/Details_BASE.jpg 826w, http://localhost:8888/wp-content/uploads/2011/11/Details_BASE-150x75.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/Details_BASE-300x150.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
-    
+    <a href="/wp-content/uploads/2011/11/Details_BASE.jpg" target="_blank"><img aria-describedby="caption-attachment-374" class="size-full wp-image-374 " title="Details - Base version" alt="Details - Base version" src="/wp-content/uploads/2011/11/Details_BASE.jpg" width="570" height="286" srcset="/wp-content/uploads/2011/11/Details_BASE.jpg 826w, /wp-content/uploads/2011/11/Details_BASE-150x75.jpg 150w, /wp-content/uploads/2011/11/Details_BASE-300x150.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
+
     <p id="caption-attachment-374" class="wp-caption-text">
       Details &#8211; click for a high-resolution preview on a new window
     </p>
   </div>
-  
+
   <p>
     That said, my intermediate version is maybe a little bit&#8230; too colorful, but it&#8217;s not that bad anyway, at least in my opinion. If you&#8217;re interested in comparing retoucher&#8217;s styles, have a look to the <a title="Paolo Fossati / Davide D'Angelo version" href="http://www.paolo-fossati.com/Galleria%20Arabia/slides/Ayla-22.jpg" target="_blank">Paolo Fossati / Davide D&#8217;Angelo version</a> &#8211; more &#8220;dramatic&#8221; and 3D, if you will. I&#8217;ve been less &#8220;photographic&#8221; and more &#8220;descriptive&#8221; perhaps &#8211; it may remind you the esthetic of some New Guinea paradise bird watercolors from the 18th century, if that wouldn&#8217;t sound totally crazy.
   </p>
-  
+
   <h2>
     Part 2 &#8211; HiRaLoAm
   </h2>
-  
+
   <p>
     Now the time to plan our sharpening strategy has come. Generally speaking I&#8217;d like to affect less the blue water than the animals to keep the focus on them, so while we&#8217;re in Lab the <em>b</em> channel (blue/yellow opposites) may work as a good mask. An HiRaLoAm (High Radius Low Amount) pass can&#8217;t hurt, so you may:
   </p>
-  
+
   <ol start="5">
     <li>
       Duplicate the background layer, call it HiRaLoAm.
@@ -125,19 +125,19 @@ tags:
       Activate the <em>L</em> channel only, and apply the filter <em>Unsharp Mask</em> with Amount: 500 &#8211; Radius: 12px &#8211; Threshold: 0px.
     </li>
   </ol>
-  
+
   <div id="attachment_356" style="width: 580px" class="wp-caption aligncenter">
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/HiRaLoAm_FULL1.jpg" target="_blank"><img aria-describedby="caption-attachment-356" class="size-full wp-image-356  " title="HiRaLoAm Full Blast - crop" alt="HiRaLoAm Full Blast - crop" src="http://localhost:8888/wp-content/uploads/2011/11/HiRaLoAm_FULL_crop.jpg" width="570" height="155" srcset="http://localhost:8888/wp-content/uploads/2011/11/HiRaLoAm_FULL_crop.jpg 570w, http://localhost:8888/wp-content/uploads/2011/11/HiRaLoAm_FULL_crop-150x40.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/HiRaLoAm_FULL_crop-300x81.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
-    
+    <a href="/wp-content/uploads/2011/11/HiRaLoAm_FULL1.jpg" target="_blank"><img aria-describedby="caption-attachment-356" class="size-full wp-image-356  " title="HiRaLoAm Full Blast - crop" alt="HiRaLoAm Full Blast - crop" src="/wp-content/uploads/2011/11/HiRaLoAm_FULL_crop.jpg" width="570" height="155" srcset="/wp-content/uploads/2011/11/HiRaLoAm_FULL_crop.jpg 570w, /wp-content/uploads/2011/11/HiRaLoAm_FULL_crop-150x40.jpg 150w, /wp-content/uploads/2011/11/HiRaLoAm_FULL_crop-300x81.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
+
     <p id="caption-attachment-356" class="wp-caption-text">
       HiRaLoAm full blast &#8211; click for a larger image
     </p>
   </div>
-  
+
   <p>
     Yes! It looks like crap! Just don&#8217;t worry, because:
   </p>
-  
+
   <ol start="7">
     <li>
       Create a blank layer mask to the HiRaLoAm, and apply the <em>L</em> channel from the background layer to it. Almost back on track.
@@ -146,59 +146,59 @@ tags:
       Lower the HiRaLoAm layer opacity to something around 40%.
     </li>
   </ol>
-  
+
   <p>
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/Apply_l.png" target="_blank"><img class="alignleft size-thumbnail wp-image-221" alt="Apply L to the layer mask" src="http://localhost:8888/wp-content/uploads/2011/11/Apply_l-150x89.png" width="150" height="89" srcset="http://localhost:8888/wp-content/uploads/2011/11/Apply_l-150x89.png 150w, http://localhost:8888/wp-content/uploads/2011/11/Apply_l-300x179.png 300w, http://localhost:8888/wp-content/uploads/2011/11/Apply_l.png 470w" sizes="(max-width: 150px) 100vw, 150px" /></a>Since a layer mask is involved, I prefer to beat hard with the filter &#8211; then, afterwards, lower the opacity to taste. You&#8217;ve more flexibility this way, in my opinion.<br /> The sharpening went to the <em>L</em> channel alone, to avoid any bad, bad color shift.<br /> There&#8217;s still a problem &#8211; the water has gained too contrast and it&#8217;s distracting, not to mention the lighter halos around small fishes. So as we said before:
+    <a href="/wp-content/uploads/2011/11/Apply_l.png" target="_blank"><img class="alignleft size-thumbnail wp-image-221" alt="Apply L to the layer mask" src="/wp-content/uploads/2011/11/Apply_l-150x89.png" width="150" height="89" srcset="/wp-content/uploads/2011/11/Apply_l-150x89.png 150w, /wp-content/uploads/2011/11/Apply_l-300x179.png 300w, /wp-content/uploads/2011/11/Apply_l.png 470w" sizes="(max-width: 150px) 100vw, 150px" /></a>Since a layer mask is involved, I prefer to beat hard with the filter &#8211; then, afterwards, lower the opacity to taste. You&#8217;ve more flexibility this way, in my opinion.<br /> The sharpening went to the <em>L</em> channel alone, to avoid any bad, bad color shift.<br /> There&#8217;s still a problem &#8211; the water has gained too contrast and it&#8217;s distracting, not to mention the lighter halos around small fishes. So as we said before:
   </p>
-  
+
   <ol start="9">
     <li>
       Double click to the HiRaLoAm icon in the Layer palette to open the <em>Layer Style &#8211; Blending Options</em> window, and move this way the <em>Blend If</em> sliders in order to restrict the effect to the &#8220;hot&#8221; parts of the <em>b</em> channel, cutting the &#8220;cold&#8221; ones &#8211; i.e. the blue water.
     </li>
   </ol>
-  
+
   <p>
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/BlendIf.png" target="_blank"><img class="alignleft size-thumbnail wp-image-219" alt="Blending Options - Blend If" src="http://localhost:8888/wp-content/uploads/2011/11/BlendIf-150x118.png" width="150" height="118" srcset="http://localhost:8888/wp-content/uploads/2011/11/BlendIf-150x118.png 150w, http://localhost:8888/wp-content/uploads/2011/11/BlendIf-300x237.png 300w, http://localhost:8888/wp-content/uploads/2011/11/BlendIf.png 598w" sizes="(max-width: 150px) 100vw, 150px" /></a>The Blending Options are a way to restrict the effect of a layer (no matter which kind of layer), depending on its content or the content of the layer beneath it. The <em>Blend If</em> acts as a threshold: first you select which channel to use as a base, then click and drag the slider (or ALT+click to separate the slider creating a smooth transition) to define if and where the upper layer visibility will be cut, depending on the channels range the sliders don&#8217;t encompass.
+    <a href="/wp-content/uploads/2011/11/BlendIf.png" target="_blank"><img class="alignleft size-thumbnail wp-image-219" alt="Blending Options - Blend If" src="/wp-content/uploads/2011/11/BlendIf-150x118.png" width="150" height="118" srcset="/wp-content/uploads/2011/11/BlendIf-150x118.png 150w, /wp-content/uploads/2011/11/BlendIf-300x237.png 300w, /wp-content/uploads/2011/11/BlendIf.png 598w" sizes="(max-width: 150px) 100vw, 150px" /></a>The Blending Options are a way to restrict the effect of a layer (no matter which kind of layer), depending on its content or the content of the layer beneath it. The <em>Blend If</em> acts as a threshold: first you select which channel to use as a base, then click and drag the slider (or ALT+click to separate the slider creating a smooth transition) to define if and where the upper layer visibility will be cut, depending on the channels range the sliders don&#8217;t encompass.
   </p>
-  
+
   <ol start="10">
     <li>
       Type at the same time (<em>Command + Option + Shift + E</em>) if you&#8217;re on a Mac, (<em>CTRL + ALT + Shift + E</em>) if you&#8217;re on a PC. A new top layer is created and filled with the &#8220;merged visible&#8221; content. Trash the HiRaLoAm layer below it, and rename as HiRaLoAm the newly created one.
     </li>
   </ol>
-  
+
   <div id="attachment_359" style="width: 580px" class="wp-caption aligncenter">
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/02-HiRaLoAm_H.jpg" target="_blank"><img aria-describedby="caption-attachment-359" class="size-full wp-image-359 " title="HiRaLoAm intermediate version" alt="HiRaLoAm intermediate version" src="http://localhost:8888/wp-content/uploads/2011/11/02-HiRaLoAm_L.jpg" width="570" height="382" srcset="http://localhost:8888/wp-content/uploads/2011/11/02-HiRaLoAm_L.jpg 570w, http://localhost:8888/wp-content/uploads/2011/11/02-HiRaLoAm_L-150x100.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/02-HiRaLoAm_L-300x201.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
-    
+    <a href="/wp-content/uploads/2011/11/02-HiRaLoAm_H.jpg" target="_blank"><img aria-describedby="caption-attachment-359" class="size-full wp-image-359 " title="HiRaLoAm intermediate version" alt="HiRaLoAm intermediate version" src="/wp-content/uploads/2011/11/02-HiRaLoAm_L.jpg" width="570" height="382" srcset="/wp-content/uploads/2011/11/02-HiRaLoAm_L.jpg 570w, /wp-content/uploads/2011/11/02-HiRaLoAm_L-150x100.jpg 150w, /wp-content/uploads/2011/11/02-HiRaLoAm_L-300x201.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
+
     <p id="caption-attachment-359" class="wp-caption-text">
       After High Radius Low Amount sharpening application &#8211; click for a larger image
     </p>
   </div>
-  
+
   <div id="attachment_379" style="width: 580px" class="wp-caption aligncenter">
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/Details_HIRALOAM.jpg" target="_blank"><img aria-describedby="caption-attachment-379" class="size-full wp-image-379 " title="Details - HiRaLoAm" alt="Details - HiRaLoAm" src="http://localhost:8888/wp-content/uploads/2011/11/Details_HIRALOAM.jpg" width="570" height="286" srcset="http://localhost:8888/wp-content/uploads/2011/11/Details_HIRALOAM.jpg 826w, http://localhost:8888/wp-content/uploads/2011/11/Details_HIRALOAM-150x75.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/Details_HIRALOAM-300x150.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
-    
+    <a href="/wp-content/uploads/2011/11/Details_HIRALOAM.jpg" target="_blank"><img aria-describedby="caption-attachment-379" class="size-full wp-image-379 " title="Details - HiRaLoAm" alt="Details - HiRaLoAm" src="/wp-content/uploads/2011/11/Details_HIRALOAM.jpg" width="570" height="286" srcset="/wp-content/uploads/2011/11/Details_HIRALOAM.jpg 826w, /wp-content/uploads/2011/11/Details_HIRALOAM-150x75.jpg 150w, /wp-content/uploads/2011/11/Details_HIRALOAM-300x150.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
+
     <p id="caption-attachment-379" class="wp-caption-text">
       Details &#8211; click for a high-resolution preview on a new window
     </p>
   </div>
-  
+
   <h2>
     Part 3 &#8211; Where are we at?
   </h2>
-  
+
   <p>
     Ok, pause. So far I&#8217;ve corrected the color with some unrepeatable moves, and the result of this is our friend the background layer, a safety net if any of the subsequent sharpening move will mess everything. Then I&#8217;ve got a second layer on top called HiRaLoAm, which used to be a masked layer with <em>BlendIf</em> options, that has been merged so you can now deal with it as a normal, standard and boring layer. HiRaLoAm is used to add kind of local contrast (while it&#8217;s not a <em>true</em> local contrast enhancer like my beloved <a title="ALCE - Advanced Local Contrast Enhancer for Photoshop" href="http://www.bigano.com/ALCE" target="_blank">ALCE (don&#8217;t you know ALCE?</a>). I need just one more thing and I&#8217;ll be done.
   </p>
-  
+
   <h2>
     Part 4 &#8211; Traditional sharpening
   </h2>
-  
+
   <p>
     Without any further ado, please:
   </p>
-  
+
   <ol start="11">
     <li>
       Duplicate the HiRaLoAm layer and call it &#8220;USM&#8221; (which stands for Unsharp Mask).
@@ -207,21 +207,21 @@ tags:
       Activate the <em>L</em> channel only of the USM layer and apply, guess what, the Unsharp Mask filter with Amount: 500 &#8211; Radius: 1.4px &#8211; Threshold: 0px.
     </li>
   </ol>
-  
+
   <p>
     Pretty harsh, maybe? No problem, since as the great maestro Dan Margulis teaches, the light halos are the most disturbing ones: you just need a way to halve them:
   </p>
-  
+
   <ol start="13">
     <li>
       While keeping the USM layer&#8217;s <em>L</em> channel as the only one active, Apply the <em>L</em> channel from the HiRaLoAm layer, Darken blending mode, 50% opacity.
     </li>
   </ol>
-  
+
   <p>
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/Apply_ll.png" target="_blank"><img class="alignleft size-thumbnail wp-image-222" alt="Apply L channel from HiRaLoAm darken 50% opacity" src="http://localhost:8888/wp-content/uploads/2011/11/Apply_ll-150x89.png" width="150" height="89" srcset="http://localhost:8888/wp-content/uploads/2011/11/Apply_ll-150x89.png 150w, http://localhost:8888/wp-content/uploads/2011/11/Apply_ll-300x179.png 300w, http://localhost:8888/wp-content/uploads/2011/11/Apply_ll.png 470w" sizes="(max-width: 150px) 100vw, 150px" /></a>This way, the USM darkening halos are still there, while the lightening ones have been lowered by 50% &#8211; does it make sense to you?<br /> The very last step is to apply a mask that cuts the effect in the background water &#8211; we may use the b channel as we did before, but there&#8217;s an alternative that may better fit our needs &#8211; or just show that there&#8217;s more than a single solution to any problem. Can you guess which alternative?
+    <a href="/wp-content/uploads/2011/11/Apply_ll.png" target="_blank"><img class="alignleft size-thumbnail wp-image-222" alt="Apply L channel from HiRaLoAm darken 50% opacity" src="/wp-content/uploads/2011/11/Apply_ll-150x89.png" width="150" height="89" srcset="/wp-content/uploads/2011/11/Apply_ll-150x89.png 150w, /wp-content/uploads/2011/11/Apply_ll-300x179.png 300w, /wp-content/uploads/2011/11/Apply_ll.png 470w" sizes="(max-width: 150px) 100vw, 150px" /></a>This way, the USM darkening halos are still there, while the lightening ones have been lowered by 50% &#8211; does it make sense to you?<br /> The very last step is to apply a mask that cuts the effect in the background water &#8211; we may use the b channel as we did before, but there&#8217;s an alternative that may better fit our needs &#8211; or just show that there&#8217;s more than a single solution to any problem. Can you guess which alternative?
   </p>
-  
+
   <ol start="14">
     <li>
       Duplicate your entire document without flattening, call it RGB. Keep only its background layer, happily trash everything else. Convert to our good old friend the sRGB space.
@@ -233,60 +233,56 @@ tags:
       Curve the Layer Mask to lighten it a bit (so it lets pass more of the sharpening effect &#8211; masks work this way).
     </li>
   </ol>
-  
+
   <p>
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/RGB.png" target="_blank"><img class="alignleft size-thumbnail wp-image-253" alt="Apply R from RGB duplicate" src="http://localhost:8888/wp-content/uploads/2011/11/RGB-150x89.png" width="150" height="89" srcset="http://localhost:8888/wp-content/uploads/2011/11/RGB-150x89.png 150w, http://localhost:8888/wp-content/uploads/2011/11/RGB-300x179.png 300w, http://localhost:8888/wp-content/uploads/2011/11/RGB.png 470w" sizes="(max-width: 150px) 100vw, 150px" /></a>In this particular situation, we want a mask that&#8217;s pitch black in the water, so the R channel is <em>a priori</em> a good choice. Moreover, if you pick the <em>R</em> channel from a small RGB workspace, it will come already and nicely clipped in its shadows, so here: the smaller, the better.
+    <a href="/wp-content/uploads/2011/11/RGB.png" target="_blank"><img class="alignleft size-thumbnail wp-image-253" alt="Apply R from RGB duplicate" src="/wp-content/uploads/2011/11/RGB-150x89.png" width="150" height="89" srcset="/wp-content/uploads/2011/11/RGB-150x89.png 150w, /wp-content/uploads/2011/11/RGB-300x179.png 300w, /wp-content/uploads/2011/11/RGB.png 470w" sizes="(max-width: 150px) 100vw, 150px" /></a>In this particular situation, we want a mask that&#8217;s pitch black in the water, so the R channel is <em>a priori</em> a good choice. Moreover, if you pick the <em>R</em> channel from a small RGB workspace, it will come already and nicely clipped in its shadows, so here: the smaller, the better.
   </p>
-  
+
   <div id="attachment_364" style="width: 310px" class="wp-caption alignleft">
-    <img aria-describedby="caption-attachment-364" class="size-full wp-image-364" title="Red channel as a mask" alt="Red channel as a mask" src="http://localhost:8888/wp-content/uploads/2011/11/R-mask2.jpg" width="300" height="201" srcset="http://localhost:8888/wp-content/uploads/2011/11/R-mask2.jpg 300w, http://localhost:8888/wp-content/uploads/2011/11/R-mask2-150x100.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" />
-    
+    <img aria-describedby="caption-attachment-364" class="size-full wp-image-364" title="Red channel as a mask" alt="Red channel as a mask" src="/wp-content/uploads/2011/11/R-mask2.jpg" width="300" height="201" srcset="/wp-content/uploads/2011/11/R-mask2.jpg 300w, /wp-content/uploads/2011/11/R-mask2-150x100.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" />
+
     <p id="caption-attachment-364" class="wp-caption-text">
       Red channel as a mask
     </p>
   </div>
-  
+
   <div id="attachment_365" style="width: 225px" class="wp-caption alignleft">
-    <img aria-describedby="caption-attachment-365" class="size-full wp-image-365" title="Layers palette" alt="Layers palette" src="http://localhost:8888/wp-content/uploads/2011/11/Layers_small2.png" width="215" height="201" srcset="http://localhost:8888/wp-content/uploads/2011/11/Layers_small2.png 215w, http://localhost:8888/wp-content/uploads/2011/11/Layers_small2-150x140.png 150w" sizes="(max-width: 215px) 100vw, 215px" />
-    
+    <img aria-describedby="caption-attachment-365" class="size-full wp-image-365" title="Layers palette" alt="Layers palette" src="/wp-content/uploads/2011/11/Layers_small2.png" width="215" height="201" srcset="/wp-content/uploads/2011/11/Layers_small2.png 215w, /wp-content/uploads/2011/11/Layers_small2-150x140.png 150w" sizes="(max-width: 215px) 100vw, 215px" />
+
     <p id="caption-attachment-365" class="wp-caption-text">
       Layers palette
     </p>
   </div>
-  
+
   <p>
     We&#8217;re happily done now! You&#8217;ve ended up with a three layers document with a color corrected background, a middle layer with HiRaLoAm targeted to the foreground, and a top layer with traditional USM, halved in its light halos, and masked appropriately. It&#8217;s been longer to describe it than to actually perform all the steps, believe me. Do you feel I went too far? You&#8217;re in good company but: No Problem, lower the opacity of the HiRaLoAm and/or USM layers to your taste &#8211; it&#8217;s always better to overdo, being able to step back.
   </p>
-  
+
   <p>
     Anyway, if you feel lost somewhere, add your question as a comment to this post and I&#8217;ll do my best to let you swim in shallow waters.
   </p>
-  
+
   <div id="attachment_335" style="width: 580px" class="wp-caption aligncenter">
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/03-Final_H.jpg" target="_blank"><img aria-describedby="caption-attachment-335" class="size-full wp-image-335 " title="Actinia and Anemonefish" alt="Actinia and Anemonefish" src="http://localhost:8888/wp-content/uploads/2011/11/03-Final_L.jpg" width="570" height="382" srcset="http://localhost:8888/wp-content/uploads/2011/11/03-Final_L.jpg 570w, http://localhost:8888/wp-content/uploads/2011/11/03-Final_L-150x100.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/03-Final_L-300x201.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
-    
+    <a href="/wp-content/uploads/2011/11/03-Final_H.jpg" target="_blank"><img aria-describedby="caption-attachment-335" class="size-full wp-image-335 " title="Actinia and Anemonefish" alt="Actinia and Anemonefish" src="/wp-content/uploads/2011/11/03-Final_L.jpg" width="570" height="382" srcset="/wp-content/uploads/2011/11/03-Final_L.jpg 570w, /wp-content/uploads/2011/11/03-Final_L-150x100.jpg 150w, /wp-content/uploads/2011/11/03-Final_L-300x201.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
+
     <p id="caption-attachment-335" class="wp-caption-text">
       Final, processed version (click for a larger image) &#8211; © Paolo Fossati
     </p>
   </div>
-  
+
   <div id="attachment_380" style="width: 580px" class="wp-caption aligncenter">
-    <a href="http://localhost:8888/wp-content/uploads/2011/11/Details_FINAL.jpg" target="_blank"><img aria-describedby="caption-attachment-380" class="size-full wp-image-380 " title="Details - Final version" alt="Details - Final version" src="http://localhost:8888/wp-content/uploads/2011/11/Details_FINAL.jpg" width="570" height="286" srcset="http://localhost:8888/wp-content/uploads/2011/11/Details_FINAL.jpg 826w, http://localhost:8888/wp-content/uploads/2011/11/Details_FINAL-150x75.jpg 150w, http://localhost:8888/wp-content/uploads/2011/11/Details_FINAL-300x150.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
-    
+    <a href="/wp-content/uploads/2011/11/Details_FINAL.jpg" target="_blank"><img aria-describedby="caption-attachment-380" class="size-full wp-image-380 " title="Details - Final version" alt="Details - Final version" src="/wp-content/uploads/2011/11/Details_FINAL.jpg" width="570" height="286" srcset="/wp-content/uploads/2011/11/Details_FINAL.jpg 826w, /wp-content/uploads/2011/11/Details_FINAL-150x75.jpg 150w, /wp-content/uploads/2011/11/Details_FINAL-300x150.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
+
     <p id="caption-attachment-380" class="wp-caption-text">
       Details &#8211; click for a high-resolution preview on a new window
     </p>
   </div>
-  
+
   <p>
     &nbsp;
   </p>
-  
+
   <p>
     <em><strong>Credits</strong></em><br /> <em>I wish to thank sooo much <a title="Davide D'Angelo Photographer" href="http://www.davidedangelo.com" target="_blank">Davide D&#8217;Angelo</a> for his help, and <a title="Paolo Fossati Photographer" href="http://www.paolo-fossati.com" target="_blank">Paolo Fossati</a> for the kind permission to show his picture. Please, do yourself a favor and visit their websites &#8211; wonderful images are there, waiting for you.</em>
   </p>
 </div>
-
-<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="http://localhost:8888/2011/11/sharpening-case-study/" myshare\_title="Sharpening case study" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
-
-<img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->

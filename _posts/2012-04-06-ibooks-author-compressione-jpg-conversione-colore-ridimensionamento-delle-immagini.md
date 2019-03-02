@@ -14,71 +14,71 @@ categories:
 ---
 <div class="pf-content">
   <p>
-    <img style="margin-left: auto; margin-right: auto; border-width: 0px;" src="http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-opening1.jpg" alt="IBooksAuthor opening" width="570" height="450" border="0" />
+    <img style="margin-left: auto; margin-right: auto; border-width: 0px;" src="/wp-content/uploads/2012/04/iBooksAuthor-opening1.jpg" alt="IBooksAuthor opening" width="570" height="450" border="0" />
   </p>
-  
+
   <p>
     Se sei seriamente interessato alla qualità delle immagini per l&#8217;editoria elettronica, vuoi sapere quello che accade loro quando iBooks Author esporta un file .ibooks: non solo quale profilo ICC è meglio usare, che tipo di file (JPG e PNG), ma anche che genere di conversione, compressione JPG e ridimensionamento viene automaticamente applicato dal software alle immagini che finiscono su iPad. Ho condotto test specifici e alcuni risultati sono piuttosto sorprendenti.<br /> <!--more-->
-    
-    <br /> Il formato degli iBook è proprietario, codificato da Apple. Non è uno standard (lamentano i sostenitori degli standard), ma è eccezionalmente versatile e semplice da realizzare, pur producendo risultati tutt&#8217;altro che amatoriali. Eppure iBooks Author, l&#8217;applicazione gratuita di Apple per comporre iBooks, non è priva di bug: alcuni effetti sono poco intuitivi (vedi il mio post precedente sulle <a title="iBooks Author – Immagini a pieno schermo" href="http://localhost:8888/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/?lang=it" target="_blank">immagini a pieno schermo e senza bordi</a>), ma siamo solamente alla versione 1.1 e possiamo aspettarci numerosi ed interessanti aggiornamenti.
+
+    <br /> Il formato degli iBook è proprietario, codificato da Apple. Non è uno standard (lamentano i sostenitori degli standard), ma è eccezionalmente versatile e semplice da realizzare, pur producendo risultati tutt&#8217;altro che amatoriali. Eppure iBooks Author, l&#8217;applicazione gratuita di Apple per comporre iBooks, non è priva di bug: alcuni effetti sono poco intuitivi (vedi il mio post precedente sulle <a title="iBooks Author – Immagini a pieno schermo" href="/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/?lang=it" target="_blank">immagini a pieno schermo e senza bordi</a>), ma siamo solamente alla versione 1.1 e possiamo aspettarci numerosi ed interessanti aggiornamenti.
   </p>
-  
+
   <h3>
     Formati di file, profili ICC e dimensioni
   </h3>
-  
+
   <p>
     Per farla breve: usa JPG o PNG (che permette di usare la trasparenza), converti tutti in sRGB e tieni conto che praticamente tutte le immagini (salvo alcune eccezioni di cui ti dirò a breve) verranno ridimensionate a 2048 x 1536 pixel, la dimensione del nuovo iPad con retina display. Questo è quello che <a href="http://support.apple.com/kb/PH2838" target="_blank">Apple raccomanda</a>.
   </p>
-  
+
   <h3>
     Come ispezionare file .iba e .ibook
   </h3>
-  
+
   <p>
-    <a href="http://localhost:8888/wp-content/uploads/2012/04/iBookAssets.png" target="_blank"><img class="alignright size-medium wp-image-849" title="iBook Assets" src="http://localhost:8888/wp-content/uploads/2012/04/iBookAssets-132x300.png" alt="iBook Assets" width="132" height="300" srcset="http://localhost:8888/wp-content/uploads/2012/04/iBookAssets-132x300.png 132w, http://localhost:8888/wp-content/uploads/2012/04/iBookAssets.png 341w" sizes="(max-width: 132px) 100vw, 132px" /></a>iBooks Author salva i tuoi progetti come file .iba &#8211; mentre quando esporti per iPad viene prodotto un file .ibooks. Il pacchetto .iba contiene una copia di tutti gli elementi originali che hai importato, mentre nel pacchetto .ibooks le cose sono trasformate: ridimensionate, convertite, compresse. Entrambi possono essere ispezionati in questo modo:
+    <a href="/wp-content/uploads/2012/04/iBookAssets.png" target="_blank"><img class="alignright size-medium wp-image-849" title="iBook Assets" src="/wp-content/uploads/2012/04/iBookAssets-132x300.png" alt="iBook Assets" width="132" height="300" srcset="/wp-content/uploads/2012/04/iBookAssets-132x300.png 132w, /wp-content/uploads/2012/04/iBookAssets.png 341w" sizes="(max-width: 132px) 100vw, 132px" /></a>iBooks Author salva i tuoi progetti come file .iba &#8211; mentre quando esporti per iPad viene prodotto un file .ibooks. Il pacchetto .iba contiene una copia di tutti gli elementi originali che hai importato, mentre nel pacchetto .ibooks le cose sono trasformate: ridimensionate, convertite, compresse. Entrambi possono essere ispezionati in questo modo:
   </p>
-  
+
   <ol>
     <li>
       <p>
         Duplica il file .iba oppure .ibooks (giusto per sicurezza)
       </p>
     </li>
-    
+
     <li>
       <p>
         Rinominali in .zip
       </p>
     </li>
-    
+
     <li>
       <p>
         Scompattali in una cartella (attenzione: OSX non porta a termine questa operazione con un doppio click, io ho dovuto usare Stuffit Expander)
       </p>
     </li>
   </ol>
-  
+
   <p>
     Ecco fatto. Come vedi, ottieni una struttura di cartelle che contengono file xhtml, css e tutti gli elementi necessari, comprese le immagini.
   </p>
-  
+
   <h3>
     Comparazione: dimensione delle immagini
   </h3>
-  
+
   <p>
-    Per tutti i test che seguono, ho usato un&#8217;immagine di 2048 x 1536 pixel, salvati come JPG massima qualità, in sRGB. Quando importi un&#8217;immagine in iBooks Author puoi ridimensionarla e spostarla per costruire il design della pagina che hai in mente, e decidere se permetterne la visione a pieno schermo (per i dettagli vedi <a title="iBooks Author – Immagini a pieno schermo" href="http://localhost:8888/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/?lang=it" target="_blank">il mio post precedente</a>).
+    Per tutti i test che seguono, ho usato un&#8217;immagine di 2048 x 1536 pixel, salvati come JPG massima qualità, in sRGB. Quando importi un&#8217;immagine in iBooks Author puoi ridimensionarla e spostarla per costruire il design della pagina che hai in mente, e decidere se permetterne la visione a pieno schermo (per i dettagli vedi <a title="iBooks Author – Immagini a pieno schermo" href="/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/?lang=it" target="_blank">il mio post precedente</a>).
   </p>
-  
+
   <p>
     Se l&#8217;immagine non è impostata per andare a pieno schermo, il pacchetto .ibooks conterrà una versione ridimensionata dell&#8217;immagine originale, corrispondente all&#8217;effettiva dimensione sulla pagina. Ovvero, se nel libro su iPad l&#8217;immagine (che originariamente è 2048 x 1536 px) occupa uno spazio di 300 x 400 px, verrà salvata nel file .ibooks come un JPG di 300 x 400 px.
   </p>
-  
+
   <p>
     Diversamente, se l&#8217;immagine è parte di un widget (<em>Immagine</em> oppure <em>Galleria</em>) le cose si complicano:
   </p>
-  
+
   <ul>
     <li>
       Se hanno un contorno (il default è una linea continua di 1 pt) verranno ridimensionate a <strong>2040 x 1530</strong> px.
@@ -87,35 +87,35 @@ categories:
       Se sono prive di contorno, la dimensione è di <strong>2048 x 1536</strong> px.
     </li>
   </ul>
-  
+
   <p>
-    <img class="alignleft size-full wp-image-832" title="InspectorFullscreen.png" src="http://localhost:8888/wp-content/uploads/2012/04/InspectorFullscreen1.png" alt="" width="230" height="110" srcset="http://localhost:8888/wp-content/uploads/2012/04/InspectorFullscreen1.png 230w, http://localhost:8888/wp-content/uploads/2012/04/InspectorFullscreen1-150x71.png 150w" sizes="(max-width: 230px) 100vw, 230px" />Per cui applicare un contorno diminuisce l&#8217;effettiva dimensione delle immagini nel file .ibooks. Nota bene: <strong>l&#8217;opzione <em>Full-screen only</em> non ha nessun effetto</strong>, sull&#8217;iPad un widget immagine andrà comunque a pieno schermo quindi ti consiglio di tenerla disattivata. Inoltre un widget <em>Immagine</em> andrà al massimo ad una dimensione di <strong>2008 x 1319</strong> pixel (<a title="iBooks Author – Immagini a pieno schermo" href="http://localhost:8888/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/?lang=it" target="_blank">vedi qui i dettagli</a>), mentre  per le <em>Gallerie</em> è consentita la visualizzazione a pieno schermo e<em> senza bordi</em> (2048 x 1536).
+    <img class="alignleft size-full wp-image-832" title="InspectorFullscreen.png" src="/wp-content/uploads/2012/04/InspectorFullscreen1.png" alt="" width="230" height="110" srcset="/wp-content/uploads/2012/04/InspectorFullscreen1.png 230w, /wp-content/uploads/2012/04/InspectorFullscreen1-150x71.png 150w" sizes="(max-width: 230px) 100vw, 230px" />Per cui applicare un contorno diminuisce l&#8217;effettiva dimensione delle immagini nel file .ibooks. Nota bene: <strong>l&#8217;opzione <em>Full-screen only</em> non ha nessun effetto</strong>, sull&#8217;iPad un widget immagine andrà comunque a pieno schermo quindi ti consiglio di tenerla disattivata. Inoltre un widget <em>Immagine</em> andrà al massimo ad una dimensione di <strong>2008 x 1319</strong> pixel (<a title="iBooks Author – Immagini a pieno schermo" href="/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/?lang=it" target="_blank">vedi qui i dettagli</a>), mentre  per le <em>Gallerie</em> è consentita la visualizzazione a pieno schermo e<em> senza bordi</em> (2048 x 1536).
   </p>
-  
+
   <p>
     Come ultima opzione, se è parte di un widget <em>Immagine Interattiva</em> (ovvero non solo a pieno schermo, ma anche ingrandibile ed esplorabile), la dimensione finale dipenderà dalla percentuale di zoom &#8211; cioè puoi dare in pasto ad iBooks Author un file 5000 x 5000 px ed aspettarti di trovarlo negli assets del file .ibooks..
   </p>
-  
+
   <h3>
     Comparazione: profili
   </h3>
-  
+
   <div id="attachment_866" style="width: 190px" class="wp-caption alignleft">
-    <a href="http://cdtobie.wordpress.com/2012/03/21/more-answers-about-the-new-ipad-and-color/" target="_blank"><img aria-describedby="caption-attachment-866" class=" wp-image-866 " title="iPad1/iPad2 over iPad3" src="http://localhost:8888/wp-content/uploads/2012/04/ipad1-2overiPad3-300x290.jpg" alt="iPad1/iPad2 over iPad3" width="180" height="174" srcset="http://localhost:8888/wp-content/uploads/2012/04/ipad1-2overiPad3-300x290.jpg 300w, http://localhost:8888/wp-content/uploads/2012/04/ipad1-2overiPad3-150x145.jpg 150w, http://localhost:8888/wp-content/uploads/2012/04/ipad1-2overiPad3.jpg 476w" sizes="(max-width: 180px) 100vw, 180px" /></a>
-    
+    <a href="http://cdtobie.wordpress.com/2012/03/21/more-answers-about-the-new-ipad-and-color/" target="_blank"><img aria-describedby="caption-attachment-866" class=" wp-image-866 " title="iPad1/iPad2 over iPad3" src="/wp-content/uploads/2012/04/ipad1-2overiPad3-300x290.jpg" alt="iPad1/iPad2 over iPad3" width="180" height="174" srcset="/wp-content/uploads/2012/04/ipad1-2overiPad3-300x290.jpg 300w, /wp-content/uploads/2012/04/ipad1-2overiPad3-150x145.jpg 150w, /wp-content/uploads/2012/04/ipad1-2overiPad3.jpg 476w" sizes="(max-width: 180px) 100vw, 180px" /></a>
+
     <p id="caption-attachment-866" class="wp-caption-text">
       Comparazione del gamut di iPad1/iPad2 ed il nuovo iPad © C. David Tobie
     </p>
   </div>
-  
+
   <p>
     Se ti interessi di Gestione Colore e non conosci ancora il blog di <a href="http://cdtobie.wordpress.com/">C. David Tobie</a> (è <em>Global Product Technology Manager &#8211; Imaging Color Solutions, <a href="http://www.datacolor.com/">Datacolor inc.</a></em>) ti suggerisco di leggere almeno la sua serie di post sull&#8217;iPad (<a href="http://cdtobie.wordpress.com/2012/03/21/more-answers-about-the-new-ipad-and-color/">More answers about the new iPad and Color</a> contiene i link a tutti gli articoli). E&#8217; molto competente, e puoi leggere contenuti originali che non troverai altrove.
   </p>
-  
+
   <p>
     I miei test hanno confermato che, sebbene entrambi i pacchetti .iba e .ibooks contengano immagini col medesimo tag sRGB (come l&#8217;originale), il file proveniente dall&#8217;esportazione in .ibooks appare visibilmente più chiaro. Segno che qualche tipo di conversione dietro le quinte viene effettuata dal software Apple. Ho misurato un <a href="http://www.babelcolor.com/main_level/ColorChecker.htm#ColorChecker_images">ColorChecker sintetico</a>, con questi risultati:
   </p>
-  
+
   <ul>
     <li>
       circa 4 punti nella<em> b</em> di <em>Lab</em> nei blu e ciano (l&#8217;originale è più satura)
@@ -127,56 +127,52 @@ categories:
       uno spostamento verso il verde nella base (per il JPG del file .ibooks)
     </li>
   </ul>
-  
+
   <p>
-    <img class="alignleft size-full wp-image-870" style="border-style: initial; border-color: initial; border-width: 0px; margin-bottom: 10px;" title="ColorChecker sRGB Comparison" src="http://localhost:8888/wp-content/uploads/2012/04/ColorChecker_sRGB_COMPARISON.jpg" alt="ColorChecker sRGB Comparison" width="570" height="201" srcset="http://localhost:8888/wp-content/uploads/2012/04/ColorChecker_sRGB_COMPARISON.jpg 570w, http://localhost:8888/wp-content/uploads/2012/04/ColorChecker_sRGB_COMPARISON-150x52.jpg 150w, http://localhost:8888/wp-content/uploads/2012/04/ColorChecker_sRGB_COMPARISON-300x105.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" />A sinistra l&#8217;originale, a destra il file processato nel .ibooks &#8211; la differenza è visivamente trascurabile. Niente da cui farsi ossessionare, anche se il ColorChecker di per sé non è molto significativo: con fotografie <em>vere</em> la versione .ibooks appare costantemente più chiara.
+    <img class="alignleft size-full wp-image-870" style="border-style: initial; border-color: initial; border-width: 0px; margin-bottom: 10px;" title="ColorChecker sRGB Comparison" src="/wp-content/uploads/2012/04/ColorChecker_sRGB_COMPARISON.jpg" alt="ColorChecker sRGB Comparison" width="570" height="201" srcset="/wp-content/uploads/2012/04/ColorChecker_sRGB_COMPARISON.jpg 570w, /wp-content/uploads/2012/04/ColorChecker_sRGB_COMPARISON-150x52.jpg 150w, /wp-content/uploads/2012/04/ColorChecker_sRGB_COMPARISON-300x105.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" />A sinistra l&#8217;originale, a destra il file processato nel .ibooks &#8211; la differenza è visivamente trascurabile. Niente da cui farsi ossessionare, anche se il ColorChecker di per sé non è molto significativo: con fotografie <em>vere</em> la versione .ibooks appare costantemente più chiara.
   </p>
-  
+
   <p style="text-align: center;">
-    <img class="aligncenter size-full wp-image-872" style="border-style: initial; border-color: initial; border-width: 0px; margin-bottom: 10px;" title="iBooksAuthor Profile Comparison" src="http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-ProfileComparison.jpg" alt="iBooksAuthor Profile Comparison" width="570" height="211" srcset="http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-ProfileComparison.jpg 570w, http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-ProfileComparison-150x55.jpg 150w, http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-ProfileComparison-300x111.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" />
+    <img class="aligncenter size-full wp-image-872" style="border-style: initial; border-color: initial; border-width: 0px; margin-bottom: 10px;" title="iBooksAuthor Profile Comparison" src="/wp-content/uploads/2012/04/iBooksAuthor-ProfileComparison.jpg" alt="iBooksAuthor Profile Comparison" width="570" height="211" srcset="/wp-content/uploads/2012/04/iBooksAuthor-ProfileComparison.jpg 570w, /wp-content/uploads/2012/04/iBooksAuthor-ProfileComparison-150x55.jpg 150w, /wp-content/uploads/2012/04/iBooksAuthor-ProfileComparison-300x111.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" />
   </p>
-  
+
   <p>
     Ancora: a sinistra l&#8217;originale, a destra il file proveniente dal pacchetto .ibooks &#8211; ora si vede la differenza! Per simulare l&#8217;effetto, aggiungi un livello di regolazione Curve all&#8217;originale ed alza il punto centrale della curva composita di circa +20 punti (input: 127, output: 147), questo è quello che vedresti più o meno nel file .ibooks.
   </p>
-  
+
   <h3>
     Comparazione: compressione JPG
   </h3>
-  
+
   <p>
     Ho importato in iBooks Author un JPG salvato per il wed in Photoshop CS6, massima qualità: quindi ho confrontato il JPG proveniente dagli assets del file .iba (identico all&#8217;originale) con quello proveniente dal file .ibooks. Come puoi vedere, gli artefatti di compressione sono molto evidenti nel file finale .ibooks: e non è strano, perché se il JPG del .iba pesa 1.2MB, quello del .ibooks è nemmeno la metà, 560KB.
   </p>
-  
+
   <p>
     Che tipo di compressione JPG è stata usata? Per scoprirlo, ho scritto un piccolo Javascript per Photoshop che salva per il web 101 JPG dallo stesso originale, con <em>Qualità</em> da 0 a 100. Credo di poter identificare la compressione .ibooks all&#8217;incirca poco sotto il livello 50: non è identica &#8211; ad esempio nella versione da .ibook c&#8217;è molto più dithering attorno ai bordi, il che mi fa pensare che sia stato usato qualche tipo di maschera per variare dinamicamente il livello di compressione &#8211; come si può anche fare in Photoshop con un canale alfa costruito appositamente, determinando il range massimo/minimo.
   </p>
-  
+
   <div id="attachment_876" style="width: 580px" class="wp-caption aligncenter">
-    <a href="http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-CompressionComparison.jpg" target="_blank"><img aria-describedby="caption-attachment-876" class=" wp-image-876 " title="iBooksAuthor - JPG Compression Comparison" src="http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-CompressionComparison.jpg" alt="iBooksAuthor - JPG Compression Comparison" width="570" height="333" srcset="http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-CompressionComparison.jpg 907w, http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-CompressionComparison-150x87.jpg 150w, http://localhost:8888/wp-content/uploads/2012/04/iBooksAuthor-CompressionComparison-300x175.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
-    
+    <a href="/wp-content/uploads/2012/04/iBooksAuthor-CompressionComparison.jpg" target="_blank"><img aria-describedby="caption-attachment-876" class=" wp-image-876 " title="iBooksAuthor - JPG Compression Comparison" src="/wp-content/uploads/2012/04/iBooksAuthor-CompressionComparison.jpg" alt="iBooksAuthor - JPG Compression Comparison" width="570" height="333" srcset="/wp-content/uploads/2012/04/iBooksAuthor-CompressionComparison.jpg 907w, /wp-content/uploads/2012/04/iBooksAuthor-CompressionComparison-150x87.jpg 150w, /wp-content/uploads/2012/04/iBooksAuthor-CompressionComparison-300x175.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></a>
+
     <p id="caption-attachment-876" class="wp-caption-text">
       Sinistra, JPG importato originariamente (qualità 100); centro, JPG qualità 48; destra, il JPG contenuto nel file .ibooks (compressione JPG sconosciuta). Luminosità normalizzata. Clicca sull'immagine per ingrandire.
     </p>
   </div>
-  
+
   <p>
     Certo che, ingrandendo, il JPG del .ibooks sembra Frankenstein comparato all&#8217;immacolata bellezza dell&#8217;originale a massima qualità.
   </p>
-  
+
   <h3>
     Conclusioni
   </h3>
-  
+
   <p>
     Sii felice e produci i tuoi iBooks. Non usare niente di più di JPG a massima qualità, sRGB,  2048 x 1536 px (a meno che tu non preveda di usare il widget <em>Immagine Interattiva</em>, che può richiedere risoluzioni più alte). Non ti preoccupare delle conversioni occulte, non ci puoi fare niente &#8211; verifica le immagini su iPad ed eventualmente ricorreggile in Photoshop di conseguenza, se non ti piacciono. Si, certo: verranno ignobilmente compresse, e se le ispezioni al 400% vedrai un mare di orribili artefatti JPG, ma sai una cosa? Su un iPad con retina display non sono così evidenti (tantomeno su iPad di vecchie generazioni), possiamo vivere tranquilli.
   </p>
-  
+
   <p>
     E se per caso ti va di scompattare il file .ibooks, sostituire gli assets JPG con file di maggiore qualità, ricomprimere il pachetto e spedirlo ad Apple per l&#8217;approvazione sullo store online, be&#8217;, fammi sapere come va a finire! Non voglio essere il primo a fare un <em>hack</em> degli iBooks, rischiando di far arrabbiare la grande A 🙂
   </p>
 </div>
-
-<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="http://localhost:8888/2012/04/ibooks-author-compressione-jpg-conversione-colore-ridimensionamento-delle-immagini/" myshare\_title="iBooks Author &#8211; Compressione delle immagini" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
-
-<img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->

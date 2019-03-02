@@ -27,19 +27,19 @@ tags:
   <p>
     <span itemprop="description">ScriptUI windows can contain several controls (checkboxes, sliders, etc), and to setup a Preset system is a very handy way to allow users save and retrieve their own preferred configurations easily. In this tutorial I&#8217;ll show you <span itemprop="name">how to implement <span itemprop="about">Presets</span> with a DropDownList menu based upon XML data</span>.</span><!--more-->
   </p>
-  
+
   <p>
-    <img class="aligncenter size-full wp-image-1772" alt="XML DropDownList Preset demo" src="http://localhost:8888/wp-content/uploads/2013/03/XML_DropDownList_Preset_demo.jpg" width="524" height="346" itemprop="image" srcset="http://localhost:8888/wp-content/uploads/2013/03/XML_DropDownList_Preset_demo.jpg 524w, http://localhost:8888/wp-content/uploads/2013/03/XML_DropDownList_Preset_demo-150x99.jpg 150w, http://localhost:8888/wp-content/uploads/2013/03/XML_DropDownList_Preset_demo-300x198.jpg 300w" sizes="(max-width: 524px) 100vw, 524px" />
+    <img class="aligncenter size-full wp-image-1772" alt="XML DropDownList Preset demo" src="/wp-content/uploads/2013/03/XML_DropDownList_Preset_demo.jpg" width="524" height="346" itemprop="image" srcset="/wp-content/uploads/2013/03/XML_DropDownList_Preset_demo.jpg 524w, /wp-content/uploads/2013/03/XML_DropDownList_Preset_demo-150x99.jpg 150w, /wp-content/uploads/2013/03/XML_DropDownList_Preset_demo-300x198.jpg 300w" sizes="(max-width: 524px) 100vw, 524px" />
   </p>
-  
+
   <h2>
     Starting point
   </h2>
-  
+
   <p>
     I&#8217;ve set up a simple demo dialog using a resource string &#8211; you can use it either in <span itemprop="mentions" itemscope itemtype="http://schema.org/SoftwareApplication">InDesign</span> or <span itemprop="mentions" itemscope itemtype="http://schema.org/SoftwareApplication">Photoshop</span> for instance: this is the <strong>base</strong> which I&#8217;ll be using throughout the post <strong>adding functional bits of code</strong>. (I&#8217;ve used <a title="CoffeeScript" href="http://www.coffeescript.org" target="_blank">CoffeeScript</a>, a nice language that compiles to JavaScript, to write the whole script; in this tutorial I&#8217;m going to show the JS only, but you can find the entire <span itemprop="mentions" itemscope itemtype="http://schema.org/SoftwareApplication">CoffeScript</span> code at the bottom of the page if you&#8217;re curious).
   </p>
-  
+
   <pre class="toolbar:1 lang:js decode:true" title="XML_DropDownList_preset.jsx - Starting point">#target photoshop;
 
 var win, windowResource;
@@ -86,13 +86,13 @@ win = new Window(windowResource);
 win.controlsPanel.controlsGroup.myText.onChange = function() {
   this.parent.mySlider.value = Number(this.text);
 };
-win.controlsPanel.controlsGroup.mySlider.onChange = function() { 
+win.controlsPanel.controlsGroup.mySlider.onChange = function() {
   this.parent.myText.text = Math.ceil(this.value); }; win.show();&nbsp;</pre>
-  
+
   <p>
     This scheme lets you:
   </p>
-  
+
   <ul>
     <li>
       <strong>Save</strong> new custom presets.
@@ -104,11 +104,11 @@ win.controlsPanel.controlsGroup.mySlider.onChange = function() {
       <strong>Reset</strong> to the default group of presets (which are <em>protected</em> and cannot be deleted).
     </li>
   </ul>
-  
+
   <p>
     The presets are stored as <strong>XML data</strong> in a file (in the example there&#8217;s a single value only, but they can be as many as you need)
   </p>
-  
+
   <pre class="toolbar:1 lang:xhtml decode:true" title="preset.xml">&lt;presets&gt;
   &lt;preset default="true"&gt;
     &lt;name&gt;select...&lt;/name&gt;
@@ -127,43 +127,43 @@ win.controlsPanel.controlsGroup.mySlider.onChange = function() {
     &lt;value&gt;400&lt;/value&gt;
   &lt;/preset&gt;
 &lt;/presets&gt;</pre>
-  
+
   <p>
     The <code>default="true"</code> attribute marks this presets as read-only (i.e. the user can&#8217;t delete them)
   </p>
-  
+
   <h2>
     Logic
   </h2>
-  
+
   <p>
     This is how I&#8217;ve decomposed the problem (click to open a bigger version)
   </p>
-  
+
   <p style="text-align: center;">
-    <a href="http://localhost:8888/wp-content/uploads/2013/03/PresetsDemoWorkflow.png" target="_blank"><img class="aligncenter size-full wp-image-1767" alt="Presets Demo Workflow" src="http://localhost:8888/wp-content/uploads/2013/03/PresetsDemoWorkflow.png" width="1430" height="654" itemprop="image" srcset="http://localhost:8888/wp-content/uploads/2013/03/PresetsDemoWorkflow.png 1430w, http://localhost:8888/wp-content/uploads/2013/03/PresetsDemoWorkflow-150x68.png 150w, http://localhost:8888/wp-content/uploads/2013/03/PresetsDemoWorkflow-300x137.png 300w, http://localhost:8888/wp-content/uploads/2013/03/PresetsDemoWorkflow-1024x468.png 1024w" sizes="(max-width: 1430px) 100vw, 1430px" /></a>
+    <a href="/wp-content/uploads/2013/03/PresetsDemoWorkflow.png" target="_blank"><img class="aligncenter size-full wp-image-1767" alt="Presets Demo Workflow" src="/wp-content/uploads/2013/03/PresetsDemoWorkflow.png" width="1430" height="654" itemprop="image" srcset="/wp-content/uploads/2013/03/PresetsDemoWorkflow.png 1430w, /wp-content/uploads/2013/03/PresetsDemoWorkflow-150x68.png 150w, /wp-content/uploads/2013/03/PresetsDemoWorkflow-300x137.png 300w, /wp-content/uploads/2013/03/PresetsDemoWorkflow-1024x468.png 1024w" sizes="(max-width: 1430px) 100vw, 1430px" /></a>
   </p>
-  
+
   <h2>
     Building the Presets system
   </h2>
-  
+
   <p>
     Basically the core is an <strong>initialization routine</strong> that reads <span itemprop="about">XML</span> data from an XML file (or creates a default one if it&#8217;s missing) and fills the <span itemprop="about">DropDownList</span> (DDL from now on) with labels, so let&#8217;s start with it.
   </p>
-  
+
   <h3>
     1. Initialization routine
   </h3>
-  
+
   <p>
     I&#8217;ve set few globals that will be useful for other functions too &#8211; the code is commented so it should be quite self-explanatory.
   </p>
-  
+
   <pre class="toolbar:1 lang:js decode:true" title="1.1 Initialization routine">// the XML object holding the XML data
 var xmlData = null;
 
-// the array holding the preset labels, used later on 
+// the array holding the preset labels, used later on
 // to check for label duplicates when adding a new preset
 var presetNamesArray = [];
 
@@ -178,7 +178,7 @@ var initDDL = function() {
   if (!presetFile.exists) {
     createDefaultXML();
     // recursive call, needed to read and fill the DDL
-    initDDL(); 
+    initDDL();
   }
 
   // retrieves XML Data
@@ -206,12 +206,12 @@ var initDDL = function() {
   win.presetsPanel.presetList.selection = win.presetsPanel.presetList.items[0];
   return true;
 };</pre>
-  
+
   <p>
     As you&#8217;ve seen I&#8217;ve mentioned some utility functions like <code>readXML()</code> and <code>writeXML()</code>, alongside <code>createDefaultXML()</code>, here they are:
   </p>
-  
-  <pre class="toolbar:1 lang:default decode:true" title="1.2 Utility functions">// holds the XML object containing the 
+
+  <pre class="toolbar:1 lang:default decode:true" title="1.2 Utility functions">// holds the XML object containing the
 // Default set of Presets
 var defaultXML = &lt;presets&gt;
 		   &lt;preset default="true"&gt;
@@ -280,23 +280,23 @@ createDefaultXML = function() {
   }
   return true;
 };</pre>
-  
+
   <p>
     So far the script detects whether a <code>preset.xml</code> file exists: if it doesn&#8217;t, it creates a default one &#8211; otherwise it reads it and use it to fill the DDL.
   </p>
-  
+
   <h3>
     2. Save a new preset
   </h3>
-  
+
   <p>
     I&#8217;ve setup the following <code>onClick()</code> function which makes use of <code>createPresetChild()</code>, another utility that grabs values from the GUI and creates a <code></code> node from them. Which node, in turn, will be appended to the existing XML data.
   </p>
-  
+
   <pre class="toolbar:1 lang:js decode:true" title="2.1 Save new preset">// used to workaround the lack of indexOf in ExtendScript
 var __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i &lt; l; i++) { if (i in this && this[i] === item) return i; } return -1; };
 
-// creates a XML &lt;preset&gt; node 
+// creates a XML &lt;preset&gt; node
 var createPresetChild = function(name, value) {
   var child;
   // mind you, each custom node has the default attribute
@@ -324,7 +324,7 @@ win.presetsPanel.saveNewPreset.onClick = function() {
     win.presetsPanel.saveNewPreset.onClick.call();
   }
 
-  // creates a &lt;preset&gt; node with values grabbed 
+  // creates a &lt;preset&gt; node with values grabbed
   // from the window controls
   child = createPresetChild(presetName, win.controlsPanel.controlsGroup.myText.text);
 
@@ -334,26 +334,26 @@ win.presetsPanel.saveNewPreset.onClick = function() {
   // writes the XML object to the preset.xml file
   writeXML(xmlData);
 
-  // you need to initialize again, in order to populate 
+  // you need to initialize again, in order to populate
   // the DDL with new values
   initDDL();
 
   // selects the last preset in the DDL
   win.presetsPanel.presetList.selection = win.presetsPanel.presetList.items[win.presetsPanel.presetList.items.length - 1];
 };</pre>
-  
+
   <p>
     Please notice the lack of <code>indexOf</code> in ExtendScript (the used <code>__indexOf</code> is courtesy of CoffeeScript)
   </p>
-  
+
   <h3>
      3. Delete preset
   </h3>
-  
+
   <p>
     That&#8217;s pretty straightforward, you just need to check whether the <code>default</code> attribute of the preset is false (which means that the preset is not protected and can be deleted). Again, each preset&#8217;s modification needs to write the changes to disk in the <code>presets.xml</code> file and re-initialize the DDL in order to populate the menu properly.
   </p>
-  
+
   <pre class="toolbar:1 lang:js decode:true" title="3.1 Delete preset">// onClick handler for the Delete preset button
 win.presetsPanel.deletePreset.onClick = function() {
 
@@ -373,15 +373,15 @@ win.presetsPanel.deletePreset.onClick = function() {
   writeXML(xmlData);
   return initDDL();
 };</pre>
-  
+
   <h3>
      4. Reset presets
   </h3>
-  
+
   <p>
     Another easy task, just replace <code>presets.xml</code> with a default one (which is hardcoded inside the script).
   </p>
-  
+
   <pre class="toolbar:1 lang:default decode:true" title="4.1 Reset presets">// onClick handler for the Reset presets button
 win.presetsPanel.resetPresets.onClick = function() {
   if (confirm("Warning\nAre you sure you want to reset the Preset list?", true)) {
@@ -389,15 +389,15 @@ win.presetsPanel.resetPresets.onClick = function() {
     initDDL();
   }
 };</pre>
-  
+
   <h3>
      5. Apply preset
   </h3>
-  
+
   <p>
     The last thing we&#8217;ve to add is a handler for the DDL <code>onChange</code> event &#8211; that is, the user selects the preset and window controls must be updated with values coming from it.
   </p>
-  
+
   <pre class="toolbar:1 lang:js decode:true " title="5.1 Apply preset">// DDL onChange handler
 win.presetsPanel.presetList.onChange = function() {
   if (this.selection !== null && this.selection.index !== 0) {
@@ -406,19 +406,19 @@ win.presetsPanel.presetList.onChange = function() {
     win.controlsPanel.controlsGroup.mySlider.value = Number(xmlData.preset[this.selection.index].value);
   }
 };</pre>
-  
+
   <h2>
     Completed script
   </h2>
-  
+
   <p>
     Let&#8217;s put everything together! As follows both versions (JS and CoffeeScript). Speaking of the latter, XML management in ExtendScript made me use more than I wanted the backticks (which embed regular JS code), but that&#8217;s fine &#8211; I&#8217;m a big fan of CoffeeScript anyway 🙂
   </p>
-  
+
   <h3>
     Javascript
   </h3>
-  
+
   <pre class="toolbar:1 lang:js decode:true" title="Completed script - Javascript version">#target photoshop;
 var createDefaultXML, createPresetChild, defaultXML, initDDL, presetFile, presetNamesArray, readXML, resPath, win, windowResource, writeXML, xmlData,
   __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i &lt; l; i++) { if (i in this && this[i] === item) return i; } return -1; };
@@ -610,11 +610,11 @@ win.presetsPanel.deletePreset.onClick = function() {
 initDDL();
 
 win.show();</pre>
-  
+
   <h3>
      CoffeeScript
   </h3>
-  
+
   <pre class="toolbar:1 lang:coffee decode:true " title="Completed Script - CoffeeScript version">`#target photoshop`
 
 windowResource = "dialog {  \
@@ -705,7 +705,7 @@ readXML = (file=presetFile) -&gt;
 # creates a Default XML file
 createDefaultXML = () -&gt;
 	# if file doesn't exist
-	if !presetFile.exists 
+	if !presetFile.exists
 		writeXML defaultXML
 		undefined
 	else
@@ -728,7 +728,7 @@ initDDL = () -&gt;
 		initDDL()
 
 	# file exists
-	xmlData = readXML() 
+	xmlData = readXML()
 	# clean DropDownList
 	win.presetsPanel.presetList.removeAll() if win.presetsPanel.presetList.items.length isnt 0
 	# how many presets?	 
@@ -800,7 +800,3 @@ initDDL()
 # Show the window
 win.show()</pre>
 </div>
-
-<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="http://localhost:8888/2013/03/presets-management-with-dropdownlist-and-xml-in-extendscript/" myshare\_title="Presets management with DropDownList and XML in ExtendScript" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
-
-<img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->

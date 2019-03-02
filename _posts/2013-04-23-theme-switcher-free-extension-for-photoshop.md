@@ -29,16 +29,12 @@ tags:
   <p>
     <span itemprop="about" itemscope="" itemtype="http://schema.org/SoftwareApplication">It&#8217;s now available through <a itemprop="url" title="Adobe Exchange" href="www.adobeexchange.com" target="_blank">Adobe Exchange</a> my latest, and most minimal so far, <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer"><span itemprop="price">free</span></span> <span itemprop="applicationCategory">extension</span> for <span itemprop="applicationSuite">Photoshop</span> called <span itemprop="name">Theme Switcher</span>. It simply lets you pick up the <span itemprop="mentions">GUI</span> Theme (that is: the Photoshop <em><span itemprop="mentions">interface color</span></em>, which since CS6 goes from Original to Light Gray, Medium Gray and Dark Gray) with one click &#8211; handy little panel that eliminates the need to dig into the Preferences.<!--more--></span>
   </p>
-  
+
   <p>
-    <span itemprop="about" itemscope="" itemtype="http://schema.org/SoftwareApplication">Please find the <a itemprop="url" title="Theme Switcher on Adobe Exchange" href="http://adobeexchange.com/store/products/919#.UXZ3eyuG3pg" target="_blank">Exchange page here</a> and the product page on my commercial website <a title="Theme Switcher on cs-extensions.com" href="http://www.cs-extensions.com/theme-switcher/ ‎" target="_blank">CS-Extensions</a>. If you happen to like it, please leave a review or some stars along your way!<br /> 
-    
-    <meta itemprop="thumbnailUrl" content="http://localhost:8888/wp-content/uploads/2013/04/Featured-150x123.png" />
-    
-    <br /> <img class="aligncenter size-full wp-image-1961" itemprop="screenshot" alt="Theme Switcher PS" src="http://localhost:8888/wp-content/uploads/2013/04/ThemeSwitcher_PS.jpg" width="570" height="567" srcset="http://localhost:8888/wp-content/uploads/2013/04/ThemeSwitcher_PS.jpg 570w, http://localhost:8888/wp-content/uploads/2013/04/ThemeSwitcher_PS-150x149.jpg 150w, http://localhost:8888/wp-content/uploads/2013/04/ThemeSwitcher_PS-300x298.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></span>
+    <span itemprop="about" itemscope="" itemtype="http://schema.org/SoftwareApplication">Please find the <a itemprop="url" title="Theme Switcher on Adobe Exchange" href="http://adobeexchange.com/store/products/919#.UXZ3eyuG3pg" target="_blank">Exchange page here</a> and the product page on my commercial website <a title="Theme Switcher on cs-extensions.com" href="http://www.cs-extensions.com/theme-switcher/ ‎" target="_blank">CS-Extensions</a>. If you happen to like it, please leave a review or some stars along your way!<br />
+
+    <meta itemprop="thumbnailUrl" content="/wp-content/uploads/2013/04/Featured-150x123.png" />
+
+    <br /> <img class="aligncenter size-full wp-image-1961" itemprop="screenshot" alt="Theme Switcher PS" src="/wp-content/uploads/2013/04/ThemeSwitcher_PS.jpg" width="570" height="567" srcset="/wp-content/uploads/2013/04/ThemeSwitcher_PS.jpg 570w, /wp-content/uploads/2013/04/ThemeSwitcher_PS-150x149.jpg 150w, /wp-content/uploads/2013/04/ThemeSwitcher_PS-300x298.jpg 300w" sizes="(max-width: 570px) 100vw, 570px" /></span>
   </p>
 </div>
-
-<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="http://localhost:8888/2013/04/theme-switcher-free-extension-for-photoshop/" myshare\_title="Theme Switcher &#8211; free extension for Photoshop" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
-
-<img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->

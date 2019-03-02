@@ -18,7 +18,7 @@ tags:
 ---
 <div class="pf-content">
   <p>
-    <img class="size-full wp-image-293 alignright" style="border-width: 0px;" title="Adobe Extension Manager" src="http://localhost:8888/wp-content/uploads/2011/10/ExtensionManager.jpg" alt="Adobe Extension Manager" width="128" height="128" />
+    <img class="size-full wp-image-293 alignright" style="border-width: 0px;" title="Adobe Extension Manager" src="/wp-content/uploads/2011/10/ExtensionManager.jpg" alt="Adobe Extension Manager" width="128" height="128" />
   </p>
 
   <p>
@@ -43,7 +43,3 @@ tags:
     By the way, an interesting MAX 2011 archive video called <a title="MAX 2011 video on CS SDK" href="https://max.adobe.com/schedule/by-session/how-to-develop-and-monetize-your-creative-suite-extensions/S3560" target="_blank">How to Develop and Monetize your Creative Suite Extensions</a> has been published, with sneak peeks of the CS SDKs future by product manager Gabriel Tavridis &#8211; get a look at it!
   </p>
 </div>
-
-<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="http://localhost:8888/2011/10/adobe-extension-manager-and-lion-issue/" myshare\_title="Adobe Extension Manager and OSX Lion issue" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;">
-
-<img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->

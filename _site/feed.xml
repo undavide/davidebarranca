@@ -3,10 +3,10 @@
   <channel>
     <title></title>
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 01 Mar 2019 17:18:05 +0100</pubDate>
-    <lastBuildDate>Fri, 01 Mar 2019 17:18:05 +0100</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 02 Mar 2019 12:04:55 +0100</pubDate>
+    <lastBuildDate>Sat, 02 Mar 2019 12:04:55 +0100</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -137,8 +137,8 @@ EXMAN_FAILED_GET_USER_HOME_FOLDER = -904&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 </description>
         <pubDate>Thu, 21 Feb 2019 11:04:05 +0100</pubDate>
-        <link>/2019/02/adobe-extension-manager-error-codes/</link>
-        <guid isPermaLink="true">/2019/02/adobe-extension-manager-error-codes/</guid>
+        <link>http://localhost:4000/2019/02/adobe-extension-manager-error-codes/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/adobe-extension-manager-error-codes/</guid>
         
         <category>Adobe Extension Manager</category>
         
@@ -179,8 +179,8 @@ Thank you all!&lt;/p&gt;
 &lt;p&gt;👉 &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;Book Website&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 13 Feb 2019 01:43:32 +0100</pubDate>
-        <link>/2019/02/professional-photoshop-scripting-v1/</link>
-        <guid isPermaLink="true">/2019/02/professional-photoshop-scripting-v1/</guid>
+        <link>http://localhost:4000/2019/02/professional-photoshop-scripting-v1/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/professional-photoshop-scripting-v1/</guid>
         
         <category>Professional Photoshop Scripting</category>
         
@@ -240,8 +240,8 @@ Thank you all!&lt;/p&gt;
 &lt;p&gt;If you’re up for the same thing, or you know how to make my code better, please let me know in the comments. Bye!&lt;/p&gt;
 </description>
         <pubDate>Sun, 16 Dec 2018 11:19:58 +0100</pubDate>
-        <link>/2018/12/spectrum-css-vue-js-component-dropdown/</link>
-        <guid isPermaLink="true">/2018/12/spectrum-css-vue-js-component-dropdown/</guid>
+        <link>http://localhost:4000/2018/12/spectrum-css-vue-js-component-dropdown/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/spectrum-css-vue-js-component-dropdown/</guid>
         
         <category>CEP</category>
         
@@ -265,8 +265,8 @@ Thank you all!&lt;/p&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Wq7zF9yyd0I&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 </description>
         <pubDate>Wed, 12 Dec 2018 23:28:31 +0100</pubDate>
-        <link>/2018/12/estk-to-be-replaced-by-a-visual-studio-code-plug-in/</link>
-        <guid isPermaLink="true">/2018/12/estk-to-be-replaced-by-a-visual-studio-code-plug-in/</guid>
+        <link>http://localhost:4000/2018/12/estk-to-be-replaced-by-a-visual-studio-code-plug-in/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/estk-to-be-replaced-by-a-visual-studio-code-plug-in/</guid>
         
         <category>VSCode</category>
         
@@ -302,8 +302,8 @@ Thank you all!&lt;/p&gt;
 &lt;p&gt;There is no ETA yet – I will be able to tell you more as soon as I get the estimate for the roofing works, which will be followed by the insulation works, then the stairs, etc. Hopefully, before my hair gets completely gray 😉 Thanks for reading and for your support!&lt;/p&gt;
 </description>
         <pubDate>Sun, 18 Nov 2018 11:37:18 +0100</pubDate>
-        <link>/2018/11/adobe-spectrum-css-open-sourced/</link>
-        <guid isPermaLink="true">/2018/11/adobe-spectrum-css-open-sourced/</guid>
+        <link>http://localhost:4000/2018/11/adobe-spectrum-css-open-sourced/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/11/adobe-spectrum-css-open-sourced/</guid>
         
         <category>CSS</category>
         
@@ -351,8 +351,8 @@ Thank you all!&lt;/p&gt;
 &lt;p&gt;Visit &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;ps-scripting.com&lt;/a&gt; for details. Cheers!&lt;/p&gt;
 </description>
         <pubDate>Mon, 11 Jun 2018 17:21:58 +0200</pubDate>
-        <link>/2018/06/professional-photoshop-scripting-eap-update/</link>
-        <guid isPermaLink="true">/2018/06/professional-photoshop-scripting-eap-update/</guid>
+        <link>http://localhost:4000/2018/06/professional-photoshop-scripting-eap-update/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/06/professional-photoshop-scripting-eap-update/</guid>
         
         <category>EAP</category>
         
@@ -516,8 +516,8 @@ Python 3.6.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;If you know how to do any of this, please share your knowledge in the comments! Thank you!&lt;/p&gt;
 </description>
         <pubDate>Tue, 08 May 2018 02:20:19 +0200</pubDate>
-        <link>/2018/05/automated-check-for-corrupted-image-files-with-python-and-imagemagick/</link>
-        <guid isPermaLink="true">/2018/05/automated-check-for-corrupted-image-files-with-python-and-imagemagick/</guid>
+        <link>http://localhost:4000/2018/05/automated-check-for-corrupted-image-files-with-python-and-imagemagick/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/automated-check-for-corrupted-image-files-with-python-and-imagemagick/</guid>
         
         <category>Python</category>
         
@@ -574,8 +574,8 @@ Python 3.6.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;The course is for sale since April 23rd 2018, please head to the dedicated website &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;www.ps-scripting.com&lt;/a&gt;! And help me to spread the world. 🙏🏻&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 Apr 2018 16:05:04 +0200</pubDate>
-        <link>/2018/04/professional-photoshop-scripting-course-early-access-program/</link>
-        <guid isPermaLink="true">/2018/04/professional-photoshop-scripting-course-early-access-program/</guid>
+        <link>http://localhost:4000/2018/04/professional-photoshop-scripting-course-early-access-program/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/professional-photoshop-scripting-course-early-access-program/</guid>
         
         <category>Professional Photoshop Scripting</category>
         
@@ -751,8 +751,8 @@ Python 3.6.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;strong&gt;Author of this guest post&lt;/strong&gt;: &lt;a href=&quot;https://cc-extensions.com/&quot;&gt;Scott Murdock&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sat, 10 Mar 2018 14:56:13 +0100</pubDate>
-        <link>/2018/03/luminosity-masks-how-does-it-really-work/</link>
-        <guid isPermaLink="true">/2018/03/luminosity-masks-how-does-it-really-work/</guid>
+        <link>http://localhost:4000/2018/03/luminosity-masks-how-does-it-really-work/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/luminosity-masks-how-does-it-really-work/</guid>
         
         <category>Luminosity Mask</category>
         
@@ -854,8 +854,8 @@ Python 3.6.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Thank you in advance for your support! 🙏🏻 It is really appreciated.&lt;/p&gt;
 </description>
         <pubDate>Tue, 23 Jan 2018 14:37:47 +0100</pubDate>
-        <link>/2018/01/ultimate-guide-native-installers-automated-build-system/</link>
-        <guid isPermaLink="true">/2018/01/ultimate-guide-native-installers-automated-build-system/</guid>
+        <link>http://localhost:4000/2018/01/ultimate-guide-native-installers-automated-build-system/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/01/ultimate-guide-native-installers-automated-build-system/</guid>
         
         <category>Automation</category>
         

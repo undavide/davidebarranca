@@ -59,7 +59,7 @@ defaults:
       comments: "true"
 
 # Serving
-url: ""
+url: "https://elegant-davinci-7a1889.netlify.com"
 baseurl: ""
 
 # Includes

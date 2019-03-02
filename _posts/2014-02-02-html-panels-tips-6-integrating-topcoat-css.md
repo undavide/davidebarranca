@@ -1,58 +1,28 @@
 ---
-id: 2474
-title: 'HTML Panels Tips: #6 integrating Topcoat CSS'
+title: "HTML Panels Tips: #6 integrating Topcoat CSS"
 date: 2014-02-02T16:27:01+01:00
 author: Davide Barranca
-excerpt: "Today's tip is about integration of the Topcoat CSS library with Theme management (the Photoshop GUI shade) for HTML Panels."
+excerpt: "How to integrate the Adobe Topcoat CSS library with Theme management for HTML Panels in Photoshop CC"
 layout: post
-guid: http://www.davidebarranca.com/?p=2474
 permalink: /2014/02/html-panels-tips-6-integrating-topcoat-css/
-standard_seo_post_level_layout:
-  - ""
-standard_link_url_field:
-  - ""
-standard_seo_post_meta_description:
-  - How to integrate the Adobe Topcoat CSS library with Theme management for HTML Panels in Photoshop CC
+description: "How to integrate the Adobe Topcoat CSS library with Theme management for HTML Panels in Photoshop CC"
 image: /wp-content/uploads/2014/02/Topcoat.png
 categories:
-  - Coding
-  - HTML Panels
+  - CEP
 tags:
-  - html panels
-  - theme
-  - tip
-  - Topcoat
----
-<div class="pf-content">
-  <p>
-    Today&#8217;s tip is about integration of the Topcoat CSS library with themeManager.js in Photoshop HTML Panels.
-  </p>
-  
-  <p>
-    <!--more-->
-  </p>
-  
-  <p>
-    Adobe&#8217;s <a title="Topcoat" href="http://topcoat.io" target="_blank">Topcoat</a> is:
-  </p>
-  
-  <blockquote>
-    <p>
-      a brand new open source CSS library designed to help developers build web apps with an emphasis on speed. It evolved from the Adobe design language developed for Brackets, Edge Reflow, and feedback from the PhoneGap app developer community.
-    </p>
-  </blockquote>
-  
-  <p>
-    It comes with <a title="Topcoat Desktop theme" href="http://topcoat.io/topcoat/index.html" target="_blank">Desktop</a> and <a title="Topcoat Mobile theme" href="http://topcoat.io/topcoat/topcoat-mobile-dark.html" target="_blank">Mobile</a> themes, both in Light of Dark shades &#8211; a really neat design.
-  </p>
-  
-  <p>
-    HTML Panels have <em>sort of</em> a built-in system to keep in sync with Photoshop interface (four shades, from light gray to black). I&#8217;ve said &#8220;sort of&#8221; because you need to explicitly set the functions, but they&#8217;re provided by default by both Extension Builder and <a title="CC Extensibility Helpers" href="http://davidderaedt.github.io/ccext-website/" target="_blank">boilerplate code</a> by <a title="David Deraedt on Twitter" href="https://twitter.com/davidderaedt" target="_blank">David Deraedt</a>. Basically it&#8217;s a matter of triggering some styling when the PS Interface changes &#8211; you do this listening for the <code>CSInterface.THEME_COLOR_CHANGED_EVENT</code>:
-  </p>
-  
-  <pre class="lang:js decode:true">/* themeManager.js */
+- HTML Panels Tips
 
-function updateThemeWithAppSkinInfo(appSkinInfo) { 
+---
+Today's tip is about integration of the Topcoat CSS library with `themeManager.js` in Photoshop HTML Panels. Adobe's [Topcoat](http://topcoat.io "Topcoat") is:
+
+> a brand new open source CSS library designed to help developers build web apps with an emphasis on speed. It evolved from the Adobe design language developed for Brackets, Edge Reflow, and feedback from the PhoneGap app developer community.
+
+It comes with [Desktop](http://topcoat.io/topcoat/index.html "Topcoat Desktop theme") and [Mobile](http://topcoat.io/topcoat/topcoat-mobile-dark.html "Topcoat Mobile theme") themes, both in Light of Dark shades - a really neat design. HTML Panels have _sort of_ a built-in system to keep in sync with Photoshop interface (four shades, from light gray to black). I've said "sort of" because you need to explicitly set the functions, but they're provided by default by both Extension Builder and [boilerplate code](http://davidderaedt.github.io/ccext-website/ "CC Extensibility Helpers") by [David Deraedt](https://twitter.com/davidderaedt "David Deraedt on Twitter"). Basically it's a matter of triggering some styling when the PS Interface changes - you do this listening for the `CSInterface.THEME_COLOR_CHANGED_EVENT`:
+
+{% highlight js %}
+// themeManager.js
+
+function updateThemeWithAppSkinInfo(appSkinInfo) {
   // ... All styling stuff here
 }
 
@@ -65,102 +35,76 @@ function init() {
   var csInterface = new CSInterface();
   updateThemeWithAppSkinInfo(csInterface.hostEnvironment.appSkinInfo);
   csInterface.addEventListener(CSInterface.THEME_COLOR_CHANGED_EVENT, onAppThemeColorChanged);
-}</pre>
-  
-  <div id="attachment_2475" style="width: 287px" class="wp-caption alignright">
-    <img aria-describedby="caption-attachment-2475" class="size-full wp-image-2475 " alt="hostObject" src="http://localhost:8888/wp-content/uploads/2014/02/hostObject.png" width="277" height="396" srcset="http://localhost:8888/wp-content/uploads/2014/02/hostObject.png 277w, http://localhost:8888/wp-content/uploads/2014/02/hostObject-150x214.png 150w, http://localhost:8888/wp-content/uploads/2014/02/hostObject-209x300.png 209w" sizes="(max-width: 277px) 100vw, 277px" />
-    
-    <p id="caption-attachment-2475" class="wp-caption-text">
-      AppSkinInfo Object
-    </p>
-  </div>
-  
-  <p>
-    The above code first runs <code>updateThemeWithAppSkinInfo()</code>, (the function that performs the actual styling &#8211; changes CSS rules, etc)  passing as a parameter an <code>appSkinInfo</code> object. It contains various host environment (i.e. Photoshop) information, as the screenshot from the Chrome Developer Tools console shows on the right. Depending on these values, you might decide for instance to change the background of your HTML Panel to match the Photoshop own <code>panelBackgroundColor</code> (or font size, color, whatever).
-  </p>
-  
-  <p>
-    Mind you: Topcoat already comes in two flavors (Light and Dark) so you can always decide to switch to the corresponding CSS depending on the Photoshop&#8217;s interface color. You&#8217;d pick Topcoat&#8217;s Light for the PS LigthGray and MidGray, and Topcoat&#8217;s Dark for the PS DarkGray and Black interface.
-  </p>
-  
-  <p>
-    I personally don&#8217;t like this option. Topcoat&#8217;s background color doesn&#8217;t match with Photoshop (I admit I&#8217;m a bit picky on this &#8211; after all we&#8217;re adapting a library that&#8217;s not been built for this very purpose). Let&#8217;s call 1, 2, 3, 4 the PS interface shades: Topcoat Dark is too light for 1 and too dark for 2, while Topcoat Light is too light for 3 and too dark for 4.
-  </p>
-  
-  <p>
-    I&#8217;ll show you in the following example how to better integrate the two systems.
-  </p>
-  
-  <h2>
-    Example
-  </h2>
-  
-  <p>
-    As I&#8217;m compiling these tips while I discover new things working on actual projects, so I&#8217;ll show you as the example a simple panel I&#8217;m currently porting to HTML (called <a title="‘PS Projects’ for Photoshop CC/CS6" href="http://localhost:8888/2013/10/introducing-ps-projects-for-photoshop-cc-cs6/" target="_blank">PS Projects</a>).
-  </p>
-  
-  <h3>
-    HTML
-  </h3>
-  
-  <p>
-    The code here is really basic &#8211; I don&#8217;t need anything fancy but three buttons: I&#8217;ve set a <strong>Large Button Bar</strong> using a snippet from Topcoat examples. As you can see, I&#8217;ve set IDs for the stylesheets &#8211; the reason is going to be clear soon.
-  </p>
-  
-  <pre class="lang:xhtml mark:5,6 decode:true">&lt;!doctype html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset="utf-8"&gt;
-&lt;link id="hostStyle" rel="stylesheet" href="css/theme.css"/&gt;
-&lt;link id="theme" rel="stylesheet" href="css/light.css"/&gt;
-&lt;title&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-	&lt;h3 class="center"&gt;PS Projects 2.0&lt;/h3&gt;
-	&lt;div class="topcoat-button-bar" style="margin-left:20px"&gt;
-		&lt;div class="topcoat-button-bar__item"&gt;
-			&lt;button id="create" class="topcoat-button-bar__button--large"&gt;Create New&lt;/button&gt;
-		&lt;/div&gt;
-		&lt;div class="topcoat-button-bar__item"&gt;
-			&lt;button id="load" class="topcoat-button-bar__button--large"&gt;Load...&lt;/button&gt;
-		&lt;/div&gt;
-		&lt;div class="topcoat-button-bar__item"&gt;
-			&lt;button id="modify" class="topcoat-button-bar__button--large"&gt;Modify...&lt;/button&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;          
+}
+{% endhighlight %}
 
-	&lt;script src="js/libs/CSInterface-4.0.0.js"&gt;&lt;/script&gt;
-	&lt;script src="js/libs/jquery-2.0.2.min.js"&gt;&lt;/script&gt;
-	&lt;script src="js/themeManager.js"&gt;&lt;/script&gt;
-	&lt;script src="js/main.js"&gt;&lt;/script&gt;
+![hostObject](/wp-content/uploads/2014/02/hostObject.png)
 
-&lt;/body&gt;
-&lt;/html&gt;</pre>
-  
-  <h3>
-    Javascript
-  </h3>
-  
-  <p>
-    The main.js contains (besides stuff I need for JSX operations &#8211; the actual routines of my panel) a call to <code>themeManager.init()</code>. The <code>themeManager.js</code> is as follows:
-  </p>
-  
-  <pre class="lang:js decode:true">var themeManager = (function () {
-  'use strict'; 
+The above code first runs `updateThemeWithAppSkinInfo()`, (the function that performs the actual styling - changes CSS rules, etc)  passing as a parameter an `appSkinInfo` object. It contains various host environment (i.e. Photoshop) information, as the screenshot from the Chrome Developer Tools console shows on the right. Depending on these values, you might decide for instance to change the background of your HTML Panel to match the Photoshop own `panelBackgroundColor` (or font size, color, whatever).
 
-  /* Convert the Color object to string in hexadecimal format; */
+Please note: Topcoat already comes in two flavors (Light and Dark) so you can always decide to switch to the corresponding CSS depending on the Photoshop's interface color. You'd pick Topcoat's Light for the PS LigthGray and MidGray, and Topcoat's Dark for the PS DarkGray and Black interface. I personally don't like this option. Topcoat's background color doesn't match with Photoshop (I admit I'm a bit picky on this - after all we're adapting a library that's not been built for this very purpose). Let's call 1, 2, 3, 4 the PS interface shades: Topcoat Dark is too light for 1 and too dark for 2, while Topcoat Light is too light for 3 and too dark for 4. I'll show you in the following example how to better integrate the two systems.
+
+## Example
+
+As I'm compiling these tips while I discover new things working on actual projects, so I'll show you as the example a simple panel I'm currently porting to HTML (called [PS Projects](/2013/10/introducing-ps-projects-for-photoshop-cc-cs6/)).
+
+### HTML
+
+The code here is really basic - I don't need anything fancy but three buttons: I've set a **Large Button Bar** using a snippet from Topcoat examples. As you can see, I've set IDs for the stylesheets - the reason is going to be clear soon.
+
+{% highlight html %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link id="hostStyle" rel="stylesheet" href="css/theme.css"/>
+<link id="theme" rel="stylesheet" href="css/light.css"/>
+<title></title>
+</head>
+<body>
+  <h3 class="center">PS Projects 2.0</h3>
+  <div class="topcoat-button-bar" style="margin-left:20px">
+    <div class="topcoat-button-bar__item">
+      <button id="create" class="topcoat-button-bar__button--large">Create New</button>
+    </div>
+    <div class="topcoat-button-bar__item">
+      <button id="load" class="topcoat-button-bar__button--large">Load...</button>
+    </div>
+    <div class="topcoat-button-bar__item">
+      <button id="modify" class="topcoat-button-bar__button--large">Modify...</button>
+    </div>
+  </div>          
+
+  <script src="js/libs/CSInterface-4.0.0.js"></script>
+  <script src="js/libs/jquery-2.0.2.min.js"></script>
+  <script src="js/themeManager.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
+{% endhighlight %}
+
+### Javascript
+
+The main.js contains (besides stuff I need for JSX operations - the actual routines of my panel) a call to `themeManager.init()`. The `themeManager.js` is as follows:
+
+{% highlight js %}
+var themeManager = (function () {
+  'use strict';
+
+  //Convert the Color object to string in hexadecimal format;
   function toHex(color, delta) {
     function computeValue(value, delta) {
       var computedValue = !isNaN(delta) ? value + delta : value;
-      if (computedValue &lt; 0) {
+      if (computedValue < 0) {
         computedValue = 0;
-      } else if (computedValue &gt; 255) {
+      } else if (computedValue > 255) {
         computedValue = 255;
       }            
       computedValue = Math.floor(computedValue);
       computedValue = computedValue.toString(16);
       return computedValue.length === 1 ? "0" + computedValue : computedValue;
-    } 
+    }
     var hex = "";
     if (color) {
       hex = computeValue(color.red, delta) + computeValue(color.green, delta) + computeValue(color.blue, delta);
@@ -180,13 +124,13 @@ function init() {
     }
   }
 
-  /* Update the theme with the AppSkinInfo retrieved from the host product. */
+  //Update the theme with the AppSkinInfo retrieved from the host product.
   function updateThemeWithAppSkinInfo(appSkinInfo) {
     // console.log(appSkinInfo)
     var panelBgColor = appSkinInfo.panelBackgroundColor.color;
     var bgdColor = toHex(panelBgColor);
     var fontColor = "F0F0F0";
-    if (panelBgColor.red &gt; 122) {
+    if (panelBgColor.red > 122) {
       fontColor = "000000";
     }
 
@@ -194,7 +138,7 @@ function init() {
     addRule(styleId, "body", "background-color:" + "#" + bgdColor);
     addRule(styleId, "body", "color:" + "#" + fontColor);
 
-    var isLight = appSkinInfo.panelBackgroundColor.color.red &gt;= 127;
+    var isLight = appSkinInfo.panelBackgroundColor.color.red >= 127;
     if (isLight) {
       $("#theme").attr("href", "css/light.css");
     } else {
@@ -217,34 +161,17 @@ function init() {
     init: init
   };
 
-}());</pre>
-  
-  <p>
-    The <code>toHex()</code> and <code>addRule()</code> are utility functions, while <code>init()</code> (orders the styling update and adds a theme change event listener) and <code>onAppThemeColorChanged()</code> (retrieves the AppSkinInfo object and pass it forwards) are the same as in the first code chunk, up in the page.
-  </p>
-  
-  <p>
-    <code>updateThemeWithAppSkinInfo()</code> extracts from the <code>AppSkinInfo</code> object the panels background color and set new <code>background-color</code> and <code>color</code> rules in the stylesheet with <code>id="hostStyle"</code>.
-  </p>
-  
-  <p>
-    Then, depending on the Red component of the background color (an arbitrary choice) it determines whether the interface <code>isLight</code> or not, and load a dark or light Topcoat CSS using jQuery.
-  </p>
-  
-  <h3>
-    CSS
-  </h3>
-  
-  <p>
-    The HTML loads two CSS files, even if the panel deals with a total of three. The one with <code>id="hostStyle"</code> is <strong>theme.css</strong> and contains  minor tweaks &#8211; it&#8217;s the target of the <code>addRule()</code> function, which will add there <code>background-color</code> and <code>color</code> rules depending on the PS interface theme (lightGray, darkGray, etc).
-  </p>
-  
-  <p>
-    Then there&#8217;s <code>dark.css</code> and <code>light.css</code> &#8211; which are the original <code>topcoat-desktop-dark.css</code> and <code>topcoat-desktop-light.css</code> renamed. In order not to conflict with styles set via <code>themeManager.js</code> I&#8217;ve commented out some bits in the body section of both of them:
-  </p>
-  
-  <pre class="lang:css decode:true">/* dark.css and light.css */
-// ...
+}());
+{% endhighlight %}
+
+The `toHex()` and `addRule()` are utility functions, while `init()` (orders the styling update and adds a theme change event listener) and `onAppThemeColorChanged()` (retrieves the AppSkinInfo object and pass it forwards) are the same as in the first code chunk, up in the page. `updateThemeWithAppSkinInfo()` extracts from the `AppSkinInfo` object the panels background color and set new `background-color` and `color` rules in the stylesheet with `id="hostStyle"`. Then, depending on the Red component of the background color (an arbitrary choice) it determines whether the interface `isLight` or not, and load a dark or light Topcoat CSS using jQuery.
+
+### CSS
+
+The HTML loads two CSS files, even if the panel deals with a total of three. The one with `id="hostStyle"` is **theme.css** and contains  minor tweaks - it's the target of the `addRule()` function, which will add there `background-color` and `color` rules depending on the PS interface theme (lightGray, darkGray, etc). Then there's `dark.css` and `light.css` - which are the original `topcoat-desktop-dark.css` and `topcoat-desktop-light.css` renamed. In order not to conflict with styles set via `themeManager.js` I've commented out some bits in the body section of both of them:
+
+{% highlight css %}
+/* dark.css and light.css */
 body {
   margin: 0;
   padding: 0;
@@ -253,21 +180,11 @@ body {
   font: 16px "Source Sans", helvetica, arial, sans-serif;
   font-weight: 400;
 }
-// ...</pre>
-  
-  <p>
-    As a result I&#8217;ve made the two Topcoat Dark and Light versions synchronize with the exact background-color and color.
-  </p>
-  
-  <p>
-    <img class="aligncenter size-full wp-image-2482" alt="Topcoat" src="http://localhost:8888/wp-content/uploads/2014/02/Topcoat.png" width="570" height="294" srcset="http://localhost:8888/wp-content/uploads/2014/02/Topcoat.png 570w, http://localhost:8888/wp-content/uploads/2014/02/Topcoat-150x77.png 150w, http://localhost:8888/wp-content/uploads/2014/02/Topcoat-300x154.png 300w" sizes="(max-width: 570px) 100vw, 570px" />
-  </p>
-  
-  <p>
-    &nbsp;
-  </p>
-</div>
+// ...
+{% endhighlight %}
 
-<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="http://localhost:8888/2014/02/html-panels-tips-6-integrating-topcoat-css/" myshare\_title="HTML Panels Tips: #6 integrating Topcoat CSS" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
+As a result I've made the two Topcoat Dark and Light versions synchronize with the exact background-color and color.
 
-<img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->
+![Topcoat](/wp-content/uploads/2014/02/Topcoat.png)
+
+{% include_relative cepBook.md %}

@@ -25,26 +25,22 @@ tags:
 ---
 <div class="pf-content">
   <p>
-    <img class="alignleft size-full wp-image-1371" title="PhaseOne LensCorrection" src="http://localhost:8888/wp-content/uploads/2012/11/PhaseOneLensCorrection.png" alt="PhaseOne LensCorrection" width="339" height="202" srcset="http://localhost:8888/wp-content/uploads/2012/11/PhaseOneLensCorrection.png 339w, http://localhost:8888/wp-content/uploads/2012/11/PhaseOneLensCorrection-150x89.png 150w, http://localhost:8888/wp-content/uploads/2012/11/PhaseOneLensCorrection-300x178.png 300w" sizes="(max-width: 339px) 100vw, 339px" />The recently released Capture One Pro 7.0 software (from PhaseOne) shows a bug when dealing with Lens Correction &#8211; particularly when you couple<strong> Sharpness Falloff</strong> with <strong>Distortion Correction</strong> only when the Process engine is the latest, version 7 (at least with raws coming from P1 digital backs &#8211; I&#8217;ve tested this on IQ180).
+    <img class="alignleft size-full wp-image-1371" title="PhaseOne LensCorrection" src="/wp-content/uploads/2012/11/PhaseOneLensCorrection.png" alt="PhaseOne LensCorrection" width="339" height="202" srcset="/wp-content/uploads/2012/11/PhaseOneLensCorrection.png 339w, /wp-content/uploads/2012/11/PhaseOneLensCorrection-150x89.png 150w, /wp-content/uploads/2012/11/PhaseOneLensCorrection-300x178.png 300w" sizes="(max-width: 339px) 100vw, 339px" />The recently released Capture One Pro 7.0 software (from PhaseOne) shows a bug when dealing with Lens Correction &#8211; particularly when you couple<strong> Sharpness Falloff</strong> with <strong>Distortion Correction</strong> only when the Process engine is the latest, version 7 (at least with raws coming from P1 digital backs &#8211; I&#8217;ve tested this on IQ180).
   </p>
-  
+
   <p>
     This has been confirmed by the (incredibly fast, kudos to them!) Phase One tech support, so be aware of it. You need to inspect your images (the exported TIFF) looking for artifacts such as the following white stripes that appear near the corners, up to a third of the image&#8217;s width.
   </p>
-  
+
   <p>
     The issue may or may not shows even in the Capture One preview, depending on the OpenCL settings and your video card (but who cares, the important thing is that the exported files are affected).
   </p>
-  
+
   <p>
     Waiting for a bugfix update!
   </p>
-  
+
   <p style="text-align: center;">
-    <a href="http://localhost:8888/wp-content/uploads/2012/11/CaptureOne7_Issue.jpg" target="_blank"><img class="aligncenter size-full wp-image-1372" title="CaptureOne7 Lens Correction Issue" src="http://localhost:8888/wp-content/uploads/2012/11/CaptureOne7_Issue.jpg" alt="CaptureOne7 Lens Correction Issue" width="584" height="748" srcset="http://localhost:8888/wp-content/uploads/2012/11/CaptureOne7_Issue.jpg 584w, http://localhost:8888/wp-content/uploads/2012/11/CaptureOne7_Issue-150x192.jpg 150w, http://localhost:8888/wp-content/uploads/2012/11/CaptureOne7_Issue-234x300.jpg 234w" sizes="(max-width: 584px) 100vw, 584px" /></a>
+    <a href="/wp-content/uploads/2012/11/CaptureOne7_Issue.jpg" target="_blank"><img class="aligncenter size-full wp-image-1372" title="CaptureOne7 Lens Correction Issue" src="/wp-content/uploads/2012/11/CaptureOne7_Issue.jpg" alt="CaptureOne7 Lens Correction Issue" width="584" height="748" srcset="/wp-content/uploads/2012/11/CaptureOne7_Issue.jpg 584w, /wp-content/uploads/2012/11/CaptureOne7_Issue-150x192.jpg 150w, /wp-content/uploads/2012/11/CaptureOne7_Issue-234x300.jpg 234w" sizes="(max-width: 584px) 100vw, 584px" /></a>
   </p>
 </div>
-
-<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="http://localhost:8888/2012/11/capture-one-7-db-lens-correction-bug/" myshare\_title="Capture One 7 DB &#8211; Lens Correction bug" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
-
-<img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->

@@ -1,161 +1,95 @@
 ---
-id: 2695
 title: 'HTML Panels Tips: #13 Automate ZXP Packaging with Gulp.js'
 date: 2014-08-12T23:33:57+01:00
 author: Davide Barranca
-excerpt: 'As a HTML Panels Tips: #10 Packaging / ZXP Installers follow-up, in this tip I will show you how to automate (i.e. make less error prone) the utterly annoying job of building ZXP installers: i.e. with the help of Gulp.js, a task runner based on Node.js.'
+excerpt: "Automate the creation of ZXP installers for Adobe Creative Cloud Extensions with Gulp.js, the javascript task runner based on Node.js"
 layout: post
-guid: http://www.davidebarranca.com/?p=2695
 permalink: /2014/08/html-panels-tips-13-automate-zxp-packaging-with-gulp-js/
-seo_post_level_layout:
-  - ""
-link_url_field:
-  - ""
-seo_post_meta_description:
-  - Automate the creation of ZXP installers for Adobe Creative Cloud Extensions with Gulp.js, the javascript task runner based on Node.js
+description: "Automate the creation of ZXP installers for Adobe Creative Cloud Extensions with Gulp.js, the javascript task runner based on Node.js"
 image: /wp-content/uploads/2014/08/gulp.png
 categories:
-  - Coding
-  - HTML Panels
+  - CEP
 tags:
-  - build tool
-  - CC Extension
-  - gulp
-  - task runner
-  - ZXP
+  - HTML Panels Tips
+  - automation
 ---
-<div class="pf-content">
-  <p>
-    As a <a title="HTML Panels Tips: #10 Packaging / ZXP Installers" href="http://localhost:8888/2014/05/html-panels-tips-10-packaging-zxp-installers/" rel="bookmark">HTML Panels Tips: #10 Packaging / ZXP Installers</a> follow-up, in this tip I will show you how to automate (i.e. make less error prone) the utterly annoying job of building ZXP installers: i.e. with the help of <a title="Gulp.js" href="http://gulpjs.com" target="_blank">Gulp.js</a>, a task runner based on Node.js.
-  </p>
-  
-  <h2>
-    Gulp.js
-  </h2>
-  
-  <p>
-    If you come from Photoshop scripting like me, you might be pretty green when it comes to the plethora of tools that web developers are used to. Since they often need to perform repetitive tasks (such as compile LESS/SASS stylesheets, minify CSS, lint, uglify and concatenate JS, rename and move files, etc.) some tools known as build tools or <strong>task runners</strong> appeared &#8211; a couple of remarkable ones being <a title="Grunt.js" href="http://gruntjs.com" target="_blank">Grunt</a> and <a title="Gulp.js" href="http://gulpjs.com" target="_blank">Gulp</a>.
-  </p>
-  
-  <p>
-    They do basically the same thing: Grunt is based on configuration, Gulp is (newer, and) code based. If the previous sentence makes no sense to you it doesn&#8217;t matter too much &#8211; if you want to learn more about task runners I strongly suggest you to watch <a title="Gulp on Build Podcast" href="http://build-podcast.com/gulp/" target="_blank">this screencast</a> made by the great and prolific <a title="Sayanee on Twitter" href="https://twitter.com/sayanee_" target="_blank">@sayanee_</a> from the <a title="Build Podcasts" href="http://build-podcast.com" target="_blank">Build Podcast</a> series (<strong>60 free videos</strong> about all kind of tech tools). Amazing resource, really.
-  </p>
-  
-  <p>
-    I won&#8217;t dig deeper on Gulp here (also because I&#8217;m not a task runner expert myself), I will just share the particular code I&#8217;m using and that proved to work, explaining what each part does and trying to show a glimpse of the big picture. Hopefully, my workflow is simple enough for you to tweak it to fit your own needs.
-  </p>
-  
-  <h2>
-    Requisites
-  </h2>
-  
-  <p>
-    Gulp &#8211; like tons of useful stuff &#8211; is based on <strong>Node.js</strong> (a platform based on Google Chrome runtimes), so you&#8217;d better install it first downloading from the <a title="Node.js" href="http://nodejs.org" target="_blank">Node website</a> if you haven&#8217;t already done that.
-  </p>
-  
-  <p>
-    Then, you need to know that there are about <em>88 thousands</em> packages extending Node &#8211; which are managed by <a title="Node Package Manager" href="http://npmjs.org" target="_blank">npm</a>, the <strong>Node Package Manager.</strong> Npm is automatically installed alongside Node.js.
-  </p>
-  
-  <p>
-    You must have Gulp installed <em>globally</em> (i.e. not only in your project directory but available everywhere), so fire the Terminal and:
-  </p>
-  
-  <pre class="lang:js highlight:0 decode:true">sudo npm install -g gulp</pre>
-  
-  <p>
-    Enter your user password when requested (<code>sudo</code> is a mandatory step on OSX as far as I know &#8211; I can&#8217;t say if it&#8217;s needed on Windows shell too).
-  </p>
-  
-  <h2>
-    Folders&#8217; structure
-  </h2>
-  
-  <p>
-    <img class="alignleft size-full wp-image-2697" src="http://localhost:8888/wp-content/uploads/2014/08/gulp-dirs.png" alt="Folder structure" width="290" height="488" srcset="http://localhost:8888/wp-content/uploads/2014/08/gulp-dirs.png 290w, http://localhost:8888/wp-content/uploads/2014/08/gulp-dirs-150x252.png 150w, http://localhost:8888/wp-content/uploads/2014/08/gulp-dirs-178x300.png 178w" sizes="(max-width: 290px) 100vw, 290px" />
-  </p>
-  
-  <p>
-    I will package a hybrid extension &#8211; the very same I showed in <a title="HTML Panels Tips: #10 Packaging / ZXP Installers" href="http://localhost:8888/2014/05/html-panels-tips-10-packaging-zxp-installers/" rel="bookmark">HTML Panels Tips: #10 Packaging / ZXP Installers</a>. That is, an installer that deploys an HTML Panel, a Mac and Windows specific plugin files and a shared Photoshop script. Please refer to the original post for information about the manual process &#8211; here I&#8217;ll just automate it.
-  </p>
-  
-  <p>
-    The folder hierarchy is as follows:
-  </p>
-  
-  <ul>
-    <li>
-      <code>src/</code> contains all the source code; <code>build/</code> is empty and will contain just the final installer.
-    </li>
-    <li>
-      The source for the HTML panel is the <code>src/com.example.myExtension</code> folder.
-    </li>
-    <li>
-      The <code>src/MXI</code> folder gathers all the assets needed to pack the hybrid extension: <ul>
-        <li>
-          <code>src/MXI/com.example.myExtension.mxi</code> is the configuration file (<a title="HTML Panels Tips: #10 Packaging / ZXP Installers" href="http://localhost:8888/2014/05/html-panels-tips-10-packaging-zxp-installers/" rel="bookmark">info here</a>).
-        </li>
-        <li>
-          <code>src/MXI/HTML</code> is empty but will contain the ZXP of the HTML panel.
-        </li>
-        <li>
-          <span style="color: rgba(0, 0, 0, 0.74902);"><code>src/MXI/MAC</code>, <code>src/MXI/WIN</code> and <code>src/MXI/SCRIPT</code> are the plugins and scripts needed by the extension.</span>
-        </li>
-      </ul>
-    </li>
-    
-    <li>
-      Finally, <code>ucf.jar</code>, <code>ZXPSignCmd</code> and <code>myCertificate.p12</code> are the command line tools and the signing certificate that you should well know about.
-    </li>
-  </ul>
-  
-  <p>
-    I&#8217;ve left alone the <code>package.json</code> and <code>gulpfile.js</code> files, which I will disclose in a moment.
-  </p>
-  
-  <h2>
-    Setting up the project
-  </h2>
-  
-  <p>
-    You can either create yourself the <code>package.json</code> file with the following content:
-  </p>
-  
-  <pre class="lang:js decode:true">{
+
+As a [HTML Panels Tips: #10 Packaging / ZXP Installers](/2014/05/html-panels-tips-10-packaging-zxp-installers/ "HTML Panels Tips: #10 Packaging / ZXP Installers") follow-up, in this tip I will show you how to automate (i.e. make less error prone) the utterly annoying job of building ZXP installers: i.e. with the help of [Gulp.js](http://gulpjs.com "Gulp.js"), a task runner based on Node.js.
+
+## Gulp.js
+
+If you come from Photoshop scripting like me, you might be pretty green when it comes to the plethora of tools that web developers are used to. Since they often need to perform repetitive tasks (such as compile LESS/SASS stylesheets, minify CSS, lint, uglify and concatenate JS, rename and move files, etc.) some tools known as build tools or **task runners** appeared - a couple of remarkable ones being [Grunt](http://gruntjs.com "Grunt.js") and [Gulp](http://gulpjs.com "Gulp.js").
+
+They do basically the same thing: Grunt is based on configuration, Gulp is (newer, and) code based. If the previous sentence makes no sense to you it doesn't matter too much - if you want to learn more about task runners I strongly suggest you to watch [this screencast](http://build-podcast.com/gulp/ "Gulp on Build Podcast") made by the great and prolific [@sayanee_](https://twitter.com/sayanee_ "Sayanee on Twitter") from the [Build Podcast](http://build-podcast.com "Build Podcasts") series (**60 free videos** about all kind of tech tools). Amazing resource, really.
+
+I won't dig deeper on Gulp here (also because I'm not a task runner expert myself), I will just share the particular code I'm using and that proved to work, explaining what each part does and trying to show a glimpse of the big picture. Hopefully, my workflow is simple enough for you to tweak it to fit your own needs.
+
+## Requisites
+
+Gulp - like tons of useful stuff - is based on **Node.js** (a platform based on Google Chrome runtimes), so you'd better install it first downloading from the [Node website](http://nodejs.org "Node.js") if you haven't already done that. Then, you need to know that there are about _88 thousands_ packages extending Node - which are managed by [npm](http://npmjs.org "Node Package Manager"), the **Node Package Manager.** Npm is automatically installed alongside Node.js. You must have Gulp installed _globally_ (i.e. not only in your project directory but available everywhere), so fire the Terminal and:
+
+{% highlight sh %}
+sudo npm install -g gulp
+{% endhighlight %}
+
+Enter your user password when requested (`sudo` is a mandatory step on OSX as far as I know - I can't say if it's needed on Windows shell too).
+
+## Folders' structure
+
+![Folder structure](/wp-content/uploads/2014/08/gulp-dirs.png)
+
+I will package a hybrid extension - the very same I showed in [HTML Panels Tips: #10 Packaging / ZXP Installers](/2014/05/html-panels-tips-10-packaging-zxp-installers/ "HTML Panels Tips: #10 Packaging / ZXP Installers"). That is, an installer that deploys an HTML Panel, a Mac and Windows specific plugin files and a shared Photoshop script. Please refer to the original post for information about the manual process - here I'll just automate it. The folder hierarchy is as follows:
+
+*   `src/` contains all the source code; `build/` is empty and will contain just the final installer.
+*   The source for the HTML panel is the `src/com.example.myExtension` folder.
+*   The `src/MXI` folder gathers all the assets needed to pack the hybrid extension:
+    *   `src/MXI/com.example.myExtension.mxi` is the configuration file ([info here](/2014/05/html-panels-tips-10-packaging-zxp-installers/ "HTML Panels Tips: #10 Packaging / ZXP Installers")).
+    *   `src/MXI/HTML` is empty but will contain the ZXP of the HTML panel.
+    *   `src/MXI/MAC`, `src/MXI/WIN` and `src/MXI/SCRIPT` are the plugins and scripts needed by the extension.
+*   Finally, `ucf.jar`, `ZXPSignCmd` and `myCertificate.p12` are the command line tools and the signing certificate that you should well know about.
+
+I've left alone the `package.json` and `gulpfile.js` files, which I will disclose in a moment.
+
+## Setting up the project
+
+You can either create yourself the `package.json` file with the following content:
+
+{% highlight js %}
+{
   "name": "Gulp-package-demo",
   "version": "0.1.0",
   "description": "CC Extension packaging with Gulp - DEMO",
   "author": "Davide Barranca",
   "license": "MIT"
-}</pre>
-  
-  <p>
-    Or let npm do it for you: <code style="line-height: 18px;">cd</code> into the project directory (the root), and
-  </p>
-  
-  <pre class="lang:js highlight:0 decode:true ">npm init</pre>
-  
-  <p>
-    The Node Package Manager will initialise a project asking you few questions; as follows my answers (when there&#8217;s none, I just hit enter to confirm the suggested defaults):
-  </p>
-  
-  <pre class="height-set:true height:200 lang:js highlight:0 decode:true">This utility will walk you through creating a package.json file.
+}
+{% endhighlight %}
+
+Or let npm do it for you: `cd` into the project directory (the root), and
+
+{% highlight sh %}
+npm init
+{% endhighlight %}
+
+The Node Package Manager will initialise a project asking you few questions; as follows my answers (when there's none, I just hit enter to confirm the suggested defaults):
+
+{% highlight sh %}
+This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sane defaults.
 
 See `npm help json` for definitive documentation on these fields
 and exactly what they do.
 
-Use `npm install &lt;pkg&gt; --save` afterwards to install a package and
+Use `npm install <pkg> --save` afterwards to install a package and
 save it as a dependency in the package.json file.
 
 Press ^C at any time to quit.
 name: (Gulp) Gulp-package-demo
 version: (0.0.0) 0.1.0
 description: CC Extension packaging with Gulp - DEMO
-entry point: (index.js) 
-test command: 
-git repository: 
-keywords: 
+entry point: (index.js)
+test command:
+git repository:
+keywords:
 author: Davide Barranca
 license: (BSD-2-Clause) MIT
 About to write to /Users/Davide/Google Drive/PACK/Gulp/package.json:
@@ -173,31 +107,31 @@ About to write to /Users/Davide/Google Drive/PACK/Gulp/package.json:
 }
 
 
-Is this ok? (yes)</pre>
-  
-  <p>
-    One way or the other, a <code>package.json</code> file should be there. Now let&#8217;s install (<em>locally</em> &#8211; i.e. in this very folder) gulp:
-  </p>
-  
-  <pre class="lang:js highlight:0 decode:true">npm install --save-dev gulp</pre>
-  
-  <p>
-    We need two gulp plugins: <a title="gulp-clean" href="https://www.npmjs.org/package/gulp-clean" target="_blank">gulp-clean</a> is for deleting files:
-  </p>
-  
-  <pre class="lang:js highlight:0 decode:true">npm install --save-dev gulp-clean</pre>
-  
-  <p>
-    while <a title="gulp-shell" href="https://www.npmjs.org/package/gulp-shell" target="_blank">gulp-shell</a> is a command line interface:
-  </p>
-  
-  <pre class="lang:js highlight:0 decode:true">npm install --save-dev gulp-shell</pre>
-  
-  <p>
-    The <code>--save-dev</code> flag instructs npm to add these ones as project&#8217;s dependencies, automatically modifying the json file for you:
-  </p>
-  
-  <pre class="lang:js decode:true">{
+Is this ok? (yes)
+{% endhighlight %}
+
+One way or the other, a `package.json` file should be there. Now let's install (_locally_ – i.e. in this very folder) gulp:
+
+{% highlight sh %}
+npm install --save-dev gulp
+{% endhighlight %}
+
+We need two gulp plugins: [gulp-clean](https://www.npmjs.org/package/gulp-clean "gulp-clean") is for deleting files:
+
+{% highlight sh %}
+npm install --save-dev gulp-clean
+{% endhighlight %}
+
+while [gulp-shell](https://www.npmjs.org/package/gulp-shell "gulp-shell") is a command line interface:
+
+{% highlight sh %}
+npm install --save-dev gulp-shell
+{% endhighlight %}
+
+The `--save-dev` flag instructs npm to add these ones as project's dependencies, automatically modifying the json file for you:
+
+{% highlight js %}
+{
   "name": "Gulp-package-demo",
   "version": "0.1.0",
   "description": "CC Extension packaging with Gulp - DEMO",
@@ -208,205 +142,95 @@ Is this ok? (yes)</pre>
     "gulp-shell": "~0.2.9",
     "gulp-clean": "~0.3.1"
   }
-}</pre>
-  
-  <p>
-    You&#8217;ll see that npm has installed these dependencies in a <code>node_modules</code> folder.
-  </p>
-  
-  <h2>
-    gulpfile.js
-  </h2>
-  
-  <p>
-    Here comes the fun: the <code>gulpfile.js</code> is where you start defining tasks, that you&#8217;ll be calling from the Terminal. Before digging into the actual, entire workflow, let&#8217;s familiarize with <strong>tasks</strong> &#8211; here&#8217;s a simple one:
-  </p>
-  
-  <pre class="lang:js decode:true">var gulp = require('gulp'); 
+}
+{% endhighlight %}
+
+You'll see that npm has installed these dependencies in a `node_modules` folder.
+
+## gulpfile.js
+
+Here comes the fun: the `gulpfile.js` is where you start defining tasks, that you'll be calling from the Terminal. Before digging into the actual, entire workflow, let's familiarize with **tasks** - here's a simple one:
+
+{% highlight js %}
+var gulp = require('gulp');
 var clean = require('gulp-clean');
 
 // clean all ZXP files found everywhere
 gulp.task('clean-all', function () {
 	return gulp.src('./**/*.zxp', { read: false })
 	.pipe(clean());
-});</pre>
-  
-  <p>
-    You first <code>require</code> gulp, then call the <code>gulp.task</code> function. The first parameter is the task name as a string (here <code>'clean-all'</code>), the second is the function that will return a <em>Stream</em> (if you feel inclined, find <a title="Node.js Stream handbook" href="https://github.com/substack/stream-handbook" target="_blank">here</a> info about Streams).
-  </p>
-  
-  <p>
-    Don&#8217;t worry too much about that: what you need to know is just that you usually define a gulp source (here every zxp file from any subdirectory) and you pipe that to the <code>clean</code> function &#8211; which deletes files. The <code>{ read: false }</code> is a configuration object that instructs gulp not to read them, to speed up the process.
-  </p>
-  
-  <p>
-    How do you call that task? In the Terminal (root folder):
-  </p>
-  
-  <pre class="lang:js highlight:0 decode:true">gulp clean-all</pre>
-  
-  <p>
-    And presto! all the ZXPs that might have been around are gone.
-  </p>
-  
-  <p>
-    Here is another useful task &#8211; it uses the <code>gulp-shell</code> plugin to call the <span style="color: rgba(0, 0, 0, 0.74902);"><code>ZXPSignCmd</code> </span>command line and actually pack files:
-  </p>
-  
-  <pre class="lang:js decode:true">var shell = require('gulp-shell');
+});
+{% endhighlight %}
+
+You first `require` gulp, then call the `gulp.task` function. The first parameter is the task name as a string (here `'clean-all'`), the second is the function that will return a _Stream_ (if you feel inclined, find [here](https://github.com/substack/stream-handbook "Node.js Stream handbook") info about Streams). Don't worry too much about that: what you need to know is just that you usually define a gulp source (here every zxp file from any subdirectory) and you pipe that to the `clean` function - which deletes files. The `{ read: false }` is a configuration object that instructs gulp not to read them, to speed up the process. How do you call that task? In the Terminal (root folder):
+
+{% highlight sh %}
+gulp clean-all
+{% endhighlight %}
+
+And presto! all the ZXPs that might have been around are gone. Here is another useful task - it uses the `gulp-shell` plugin to call the `ZXPSignCmd` command line and actually pack files:
+
+{% highlight js %}
+var shell = require('gulp-shell');
 
 // pack the HTML panel using ZXPSignCmd
 gulp.task('pack-html',  
 	shell.task('./ZXPSignCmd -sign src/com.example.myExtension src/com.example.myExtension.zxp myCertificate.p12 myPassword -tsa https://timestamp.geotrust.com/tsa') // don't put the semicolon here or it will break!
-);</pre>
-  
-  <p>
-    If you run in the Terminal:
-  </p>
-  
-  <pre class="lang:js highlight:0 decode:true ">gulp pack-html</pre>
-  
-  <p>
-    it is like if you had typed the whole, long ZXPSignCmd string yourself. Hopefully you start appreciating the power of task runners now.
-  </p>
-  
-  <h2>
-    Combining tasks&#8230;
-  </h2>
-  
-  <p>
-    A task can rely on other tasks &#8211; <strong>dependencies</strong> are defined into an array of tasks:
-  </p>
-  
-  <pre class="lang:js decode:true ">gulp.task('pack-html', ['clean-all']. function () {
+);
+{% endhighlight %}
+
+If you run in the Terminal:
+
+{% highlight sh %}
+gulp pack-html
+{% endhighlight %}
+
+it is like if you had typed the whole, long ZXPSignCmd string yourself. Hopefully you start appreciating the power of task runners now.
+
+Combining tasks...
+------------------
+
+A task can rely on other tasks - **dependencies** are defined into an array of tasks:
+
+{% highlight js %}
+gulp.task('pack-html', \['clean-all'\]. function () {
 	shell.task('./ZXPSignCmd -sign src/com.example.myExtension src/com.example.myExtension.zxp myCertificate.p12 myPassword -tsa https://timestamp.geotrust.com/tsa')
-}</pre>
-  
-  <p>
-    In the above example, the <code>'clean-all'</code> task is performed <em>first</em>, then the <code>'pack-html'</code> task runs.
-  </p>
-  
-  <p>
-    If you have multiple dependencies (that is: your task needs to run after <em>several</em> other tasks) you can define them this way:
-  </p>
-  
-  <pre class="lang:js decode:true">gulp.task('test-task', ['first-dep', 'second-dep'], function () {
+}
+{% endhighlight %}
+
+In the above example, the `'clean-all'` task is performed _first_, then the `'pack-html'` task runs. If you have multiple dependencies (that is: your task needs to run after _several_ other tasks) you can define them this way:
+
+{% highlight js %}
+gulp.task('test-task', ['first-dep', 'second-dep'], function () {
     //...
-}</pre>
-  
-  <p>
-    Mind you: while the <code>'test-task'</code> actually runs after <code>'first-dep'</code> and <code>'second-dep'</code>, you cannot be sure that <code>'first-dep'</code> and <code>'second-dep'</code> are executed in this very order! Dependencies are processed <strong>asynchronously</strong>: <span style="color: rgba(0, 0, 0, 0.74902);"><code>'second-dep'</code> may finish before <code>'first-dep'</code>.</span>
-  </p>
-  
-  <h2>
-    &#8230; synchronously!
-  </h2>
-  
-  <p>
-    But in the ZXP automation we need to be sure that a task is done <em>before</em> the next one starts &#8211; i.e. the whole thing must be <strong>synchronous</strong>. There are few ways to trick gulp into this behaviour: returning a stream, defining a callback, using promises and &#8211; the easiest one and therefore my preferred &#8211; <strong>chaining dependencies</strong>:
-  </p>
-  
-  <ul>
-    <li>
-      Task #4 depends on Task #3
-    </li>
-    <li>
-      Task #3 depends on Task #2
-    </li>
-    <li>
-      Task #2 depends on Task #1
-    </li>
-  </ul>
-  
-  <p>
-    You run Task #4 and in fact the whole sequence is #1 > #2 > #3 > #4.
-  </p>
-  
-  <p>
-    There might be more elegant ways to get there, but this approach has the advantage of being easily testable: if the result isn&#8217;t what you&#8217;d expect, just run Task #3 to test the gulpfile up to that point; if it&#8217;s still broken, try Task #2, and so on, until you find the bugged task.
-  </p>
-  
-  <h2>
-    Complete gulpfile.js
-  </h2>
-  
-  <p>
-    Given the folder structure I&#8217;ve outlined, the entire gulpfile is as follows:
-  </p>
-  
-  <pre class="lang:js decode:true">var gulp = require('gulp'); 
-var clean = require('gulp-clean');
-var shell = require('gulp-shell');
+}
+{% endhighlight %}
 
-// 0. Clean all ZXPs found everywhere
-gulp.task('clean-all', function () {
-	return gulp.src('./**/*.zxp', { read: false })
-	.pipe(clean());
-});
+Mind you: while the `'test-task'` actually runs after `'first-dep'` and `'second-dep'`, you cannot be sure that `'first-dep'` and `'second-dep'` are executed in this very order! Dependencies are processed **asynchronously**: `'second-dep'` may finish before `'first-dep'`.
 
-// 1. Build the HTML Panel ZXP in src/
-gulp.task('pack-html',  
-	shell.task('./ZXPSignCmd -sign src/com.example.myExtension src/com.example.myExtension.zxp myCertificate.p12 myPassword -tsa https://timestamp.geotrust.com/tsa')
-);
+## ... synchronously!
 
-// 2. Copy the ZXP in src/ to src/MXI/HTML/
-gulp.task('move-html-zxp', ['pack-html'], function (){
-	return gulp.src('./src/*.zxp', { base: './src/' })
-	.pipe(gulp.dest('./src/MXI/HTML'));
-});
+But in the ZXP automation we need to be sure that a task is done _before_ the next one starts - i.e. the whole thing must be **synchronous**. There are few ways to trick gulp into this behaviour: returning a stream, defining a callback, using promises and - the easiest one and therefore my preferred - **chaining dependencies**:
 
-// 3. Delete the HTML Panel ZXP in src/
-gulp.task('clean-html-zxp', ['move-html-zxp'], function () {
-	return gulp.src('./src/*.zxp', { read: false })
-	.pipe(clean());
-});
+*   Task #4 depends on Task #3
+*   Task #3 depends on Task #2
+*   Task #2 depends on Task #1
 
-// 4. Build the hybrid ZXP in src/
-gulp.task('pack-hybrid-zxp', ['clean-html-zxp'], 
-	shell.task('java -jar ucf.jar -package -storetype PKCS12 -keystore ./myCertificate.p12 -storepass myPassword -tsa http://timestamp.entrust.net/TSS/JavaHttpTS com.example.myExtension.zxp -C "./src/MXI/" .')
-);
+You run Task #4 and in fact the whole sequence is #1 > #2 > #3 > #4. There might be more elegant ways to get there, but this approach has the advantage of being easily testable: if the result isn't what you'd expect, just run Task #3 to test the gulpfile up to that point; if it's still broken, try Task #2, and so on, until you find the bugged task.
 
-// 5. Copy the hybrid ZXP to build/
-gulp.task('move-zxp-to-build', ['pack-hybrid-zxp'], function () {
-	return gulp.src('./*.zxp', { base: './' })
-	.pipe(gulp.dest('build'));
-});
+## Complete gulpfile.js
 
-// 6. Delete the hybrid ZXP in src/
-gulp.task('clean-hybrid-zxp', ['move-zxp-to-build'], function () {
-	return gulp.src('./*.zxp', { read: false })
-	.pipe(clean());
-});
+Given the folder structure I've outlined, the entire gulpfile is as follows:
 
-// 7. Define the default task
-gulp.task('default', ['clean-all'], function () {
-	gulp.start('clean-hybrid-zxp');
-});</pre>
-  
-  <p>
-    Hopefully the code and the comments are self-explanatory. Few caveats that might save you some search time on Google:
-  </p>
-  
-  <ul>
-    <li>
-      <code>'./**/*.zxp'</code> is a way to mean: every zxp file in every subfolder of the root (being the root <code>'./'</code>).
-    </li>
-    <li>
-      For a reason that I don&#8217;t know, a semicolon after the <code>shell.task()</code> breaks gulp.
-    </li>
-    <li>
-      <code>{ read: false }</code> speeds up the process when you don&#8217;t need gulp to read files.
-    </li>
-    <li>
-      <code>{ base: './src/' }</code> (as used in task #2) tells gulp to use <code>./src/</code> as a base for the relative paths. If you omit it or set it to the root <code>'./'</code>, you&#8217;ll end up with <code>/src/MXI/HTML/src/com.example.myExtension.zxp</code> (and extra <code>/src/</code>) and not <code>/src/MXI/HTML/com.example.myExtension.zxp</code> which is what you actually want.
-    </li>
-  </ul>
-  
-  <p>
-    This tip just scratches the surface of gulp.js as a task runner for CC Extensions &#8211; I hope to have time to dig deeper and share my findings again &#8211; feel free to add yours in the comments!
-  </p>
-</div>
+{% gist 84f231d7b47a7772cceef0923dd15718%}
 
-<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="http://localhost:8888/2014/08/html-panels-tips-13-automate-zxp-packaging-with-gulp-js/" myshare\_title="HTML Panels Tips: #13 Automate ZXP Packaging with Gulp.js" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
+Hopefully the code and the comments are self-explanatory. Few caveats that might save you some search time on Google:
 
-<img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->
+*   `'./**/*.zxp'` is a way to mean: every zxp file in every subfolder of the root (being the root `'./'`).
+*   For a reason that I don't know, a semicolon after the `shell.task()` breaks gulp.
+*   `{ read: false }` speeds up the process when you don't need gulp to read files.
+*   `{ base: './src/' }` (as used in task #2) tells gulp to use `./src/` as a base for the relative paths. If you omit it or set it to the root `'./'`, you'll end up with `/src/MXI/HTML/src/com.example.myExtension.zxp` (and extra `/src/`) and not `/src/MXI/HTML/com.example.myExtension.zxp` which is what you actually want.
+
+This tip just scratches the surface of gulp.js as a task runner for CC Extensions - I hope to have time to dig deeper and share my findings again - feel free to add yours in the comments!
+
+{% include_relative cepBook.md %}

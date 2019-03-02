@@ -1,296 +1,126 @@
 ---
-id: 2831
 title: 'HTML Panel Tips #17: CC2015 Survival Guide'
 date: 2015-06-16T22:05:54+01:00
 author: Davide Barranca
-excerpt: |
-  Superstitious people in Italy think that seventeen is a bad luck number - yet I'm not gullible and I think it must be by chance that this Tip #17 is about the apparently, ehm, troublesome update to Creative Cloud 2015.
-  
-  As follows is a checklist of common problems (both from the developer's and user's point of view - I've been in touch with quite a number of them both) and my own suggestions to stop worrying and love the bomb.
+excerpt: How to smooth the transition from the CC2014 to CC2015 version of Adobe Photoshop from the point of view of CEP Panels
 layout: post
-guid: http://www.davidebarranca.com/?p=2831
 permalink: /2015/06/html-panel-tips-17-cc2015-survival-guide/
-seo_post_level_layout:
-  - ""
-link_url_field:
-  - ""
-seo_post_meta_description:
-  - How to smooth the transition from the CC2014 to CC2015 version of Adobe Photoshop (HTML Panels, Plug-ins, Scripts and Add-ons products)
+description: How to smooth the transition from the CC2014 to CC2015 version of Adobe Photoshop from the point of view of CEP Panels
 image: /wp-content/uploads/2015/06/CC2015.png
 categories:
-  - Coding
-  - HTML Panels
+  - CEP
 tags:
-  - Adobe Extension Manager
-  - CC2015
-  - Creative Cloud
-  - PlayerDebugMode
+  - HTML Panels Tips
+  - CC 2015
 ---
-<div class="pf-content">
-  <p>
-    Superstitious people in Italy think that seventeen is a bad luck number &#8211; yet I&#8217;m not gullible and I think it must be <em>by chance</em> that this Tip #17 is about the apparently, ehm, <em>troublesome</em> update to Creative Cloud 2015.
-  </p>
-  
-  <p>
-    As follows is a <strong>checklist of common problems</strong> (both from the developer&#8217;s and user&#8217;s point of view &#8211; I&#8217;ve been in touch with quite a number of them both) and my own suggestions to <a title="Dr. Strangelove" href="https://en.wikipedia.org/wiki/Dr._Strangelove" target="_blank">stop worrying and love the bomb</a>.
-  </p>
-  
-  <p>
-    <strong>(UPDATED Jul 5th, 2015)</strong>
-  </p>
-  
-  <h2>
-    1. My [insert name here] Product doesn&#8217;t work anymore!
-  </h2>
-  
-  <p>
-    Why should it? I tell you why, it&#8217;s a matter of mismatching expectations.
-  </p>
-  
-  <p>
-    The Creative Cloud app tells you it will port your Preferences: you would expect that this means Scripts-Plugins too but alas it&#8217;s not the case.
-  </p>
-  
-  <p>
-    Moreover, by default (what a tumble!) the CC app <strong>removes old versions</strong> of Photoshop CC, so that you can&#8217;t just copy Scripts and Plugins from CC2014 on CC2015.
-  </p>
-  
-  <p>
-    <strong>Developer</strong>: advise your customers to look in the Advanced properties of the CC update application and uncheck &#8220;Remove previous versions&#8221; so that they have access to stuff installed within the Photoshop CC2014 folder.
-  </p>
-  
-  <p>
-    <strong>User</strong>: look in the <code>Photoshop CC2014/Presets/Scripts/</code> for Script products, and/or<code> Photoshop CC2014/Plug-ins/</code> and manually copy sensible stuff from there into the corresponding Photoshop CC2015/ paths &#8211; ask your developer for help.
-  </p>
-  
-  <h2>
-    2. Adobe Extension Manager says the product is installed but it isn&#8217;t!
-  </h2>
-  
-  <p>
-    You might have not heard about this, but <strong>Adobe Extension Manager</strong> (AEM) has reached his <a title="Adobe Extension Manager funeral party" href="https://www.adobeexchange.com/resources/27" target="_blank">EOL</a> (End Of Life) &#8211; that is, it&#8217;s not going to be supported by Adobe anymore.<br /> AEM doesn&#8217;t know about CC2015, <strong>it&#8217;s of no use to install CC2015 products</strong> &#8211; more about it below.
-  </p>
-  
-  <p>
-    <strong>Developer</strong>: it&#8217;s somehow <em>by chance</em> (or by design, depending on your POV) that your Panel shows up in CC2015, because the path for CC2014 and CC2015 is shared:
-  </p>
-  
-  <p>
-    Mac: <code>~/Library/Application Support/Adobe/CEP/extensions&lt;br />
-</code>Win: <code>C:\&lt;username&gt;\AppData\Roaming\Adobe\CEP\extensions</code>
-  </p>
-  
-  <p>
-    Mind you: if your panel is self-contained (doesn&#8217;t require files such as scripts installed within the Photoshop folder, like JSXs in <code>Presets/Scripts/</code> or plugins in <code>Plug-ins/</code>) it will work on CC2015. Otherwise, you need to move the required files manually in order for the panel to be functional.
-  </p>
-  
-  <p>
-    The same applies for Plug-ins and Scripts.
-  </p>
-  
-  <p>
-    <strong>User</strong>: ask your developer if you think the Panel is not working properly even if it shows up, and ask for CC2015 installers (yes, you need to install them on the new version.
-  </p>
-  
-  <h2>
-    3. The [insert name here] Panel says it&#8217;s not properly signed and/or timestamped!
-  </h2>
-  
-  <p>
-    My friend, have you signed and timestamped your panel? Chances are you&#8217;ve not &#8211; or possibly you are used to keep the debug flag on (CC2014) on your machine and your users don&#8217;t &#8211; and you don&#8217;t have it either on CC2015.
-  </p>
-  
-  <p>
-    CEP panels need to be signed/timestamped &#8211; I personally do this via <code>ZXPSignCmd</code> commandline tool, you&#8217;ll find all the excruciating details <a title="HTML Panels Tips: #10 Packaging / ZXP Installers" href="http://localhost:8888/2014/05/html-panels-tips-10-packaging-zxp-installers/" target="_blank">here</a>).
-  </p>
-  
-  <p>
-    <strong>Developer</strong>: Build a signed/timestamped ZXP, rename it as ZIP, unZip it (OSX won&#8217;t let you do this because his inner soul is mean, download any third party free app such as <a title="The Unarchiver (OSX)" href="https://itunes.apple.com/it/app/the-unarchiver/id425424353?mt=12" target="_blank">The Unarchiver</a>) and now distribute the folder for manual installation in the usual paths (see #2 above).
-  </p>
-  
-  <p>
-    You&#8217;ll notice that a signed/timestamped panel contains a <code>META-INF</code> folder and a <code>mimetype</code> file: take care of these guys.
-  </p>
-  
-  <p>
-    Please notice that:
-  </p>
-  
-  <ul>
-    <li>
-      You modify a single file in a signed/timestamped panel (such as the manifest.xml to add compatibility to CC2015) and the signing/timestamping is screwed, error will follow and the panel won&#8217;t show up anymore.
-    </li>
-    <li>
-      You let the uncompressed panel lie in a Google Drive folder shared with somebody else, and the signing/timestamping is screwed as well (true! It took me forever to get this one, still I don&#8217;t know why it happens).
-    </li>
-    <li>
-      Perhaps if you stare at a panel long enough, the signing and timestamping will break into tears.
-    </li>
-  </ul>
-  
-  <p>
-    <strong>User</strong>: ask the developer for a manual installation Panel (see #2 for the installation paths).
-  </p>
-  
-  <h2>
-    4. Do I have to modify the Panel&#8217;s manifest.xml?
-  </h2>
-  
-  <p>
-    It depends. I never explicitly set an upper limit, so my panels will hopefully load in CC2015 as well:
-  </p>
-  
-  <pre class="lang:xhtml decode:true ">&lt;HostList&gt;
-    &lt;Host Name="PHXS" Version="14.0" /&gt;
-    &lt;Host Name="PHSP" Version="14.0" /&gt;
-&lt;/HostList&gt;</pre>
-  
-  <p>
-    The above means: from 14 upwards. Same story if you use a MXI file for hybrid panels:
-  </p>
-  
-  <pre class="lang:xhtml decode:true">&lt;products&gt;
-    &lt;product familyname="Photoshop" version="14.0"/&gt;
-&lt;/products&gt;</pre>
-  
-  <h2>
-    5. How do I debug on CC2015?
-  </h2>
-  
-  <p>
-    Set the <strong>PlayerDebugMode</strong> as a String with value &#8220;1&#8221; in:
-  </p>
-  
-  <p>
-    Win: <code>regedit &gt; HKEY_CURRENT_USER/Software/Adobe/CSXS.6</code><br /> Mac: <code>/Users/&lt;username&gt;/Library/Preferences/com.adobe.CSXS.6.plist</code>
-  </p>
-  
-  <p>
-    Let me read your mind: <code>com.adobe.CSXS.6</code> doesn&#8217;t exist. Brave developer, clone it from CSXS.5 and rename it, you&#8217;ll be forgiven.
-  </p>
-  
-  <p>
-    Mind you: Starting with Mac 10.9, Apple introduced a caching mechanism for plist files. Your modifications to plist files do not take effect until the cache gets updated (on a periodic basis, you cannot know exactly when the update will happen). To make sure your modifications take effect, kill all <code>cfprefsd</code> processes. They will restart automatically.
-  </p>
-  
-  <h2>
-    6. How do I let users install [insert name here] if Adobe Extension Manager is gone?
-  </h2>
-  
-  <p>
-    I&#8217;ve had this thought myself too, right after the eleventh glass of wine at the AEM Funeral Party. The developer community is facing this problem and to date several possibilities are on the table:
-  </p>
-  
-  <ul>
-    <li>
-      Manual installation: you let users move files around &#8211; it&#8217;s not needed that I list pros and cons.
-    </li>
-    <li>
-      Native installers: you&#8217;re braver than me. If you have reliable info on this process, please let me know in the comments
-    </li>
-    <li>
-      Scripted installers: I&#8217;ve built one (free and opensource, please find it <a title="PS Installer" href="http://github.com/undavide/PS-Installer" target="_blank">here</a>). The idea is simple: ExtendScript knows File Management, so Photoshop itself can deploy the needed files. You let users download a ZIP, which contains an Assets folder and an Installer.jsx file &#8211; they drag and drop it into Photoshop and it&#8217;ll do the magic.
-    </li>
-    <li>
-      Extension Manager CommandLine utility: not ready for public download when I&#8217; writing this but it will in a short while. It&#8217;s basically the operational core of AEM in all the beauty and appeal of a CLI. You&#8217;re allowed to send users a ZIP packed with your usual product&#8217;s ZXP, the Adobe CLI plus a Installer.sh (OSX) or a Installer.bat (Windows) which runs the CLI with the right params.
-    </li>
-    <li>
-      Other opensource projects still under development, like <a title="UnHurdle Creative Installer" href="http://unhurdle/creative-installer" target="_blank">this one</a>.
-    </li>
-  </ul>
-  
-  <p>
-    My own preference goes (for obvious reasons) to Scripted installer, then Manual installation, then AEM CLI, then horse shoeing.
-  </p>
-  
-  <h2>
-    7. How do I sell through Adobe Add-ons if Extension Manager is gone?
-  </h2>
-  
-  <p>
-    Adobe Add-ons relies on the Creative Cloud app to deploy files, via the File Synch feature (let users check it&#8217;s enabled) &#8211; they&#8217;ve somehow transplanted the AEM core into the CC app.<br /> So keep building your ZXP files and life will be good.
-  </p>
-  
-  <h2>
-    8. My [insert name here] Script behaves badly
-  </h2>
-  
-  <p>
-    From Photoshop CC2015 onwards, Adobe&#8217;s engineers have introduced the new <strong>Mondo</strong> rendering engine for ScriptUI dialogs. Previously it was Flash, and&#8230; you know.<br /> Mondo is the same framework used in Photoshop actual Filters and Plug-ins, so we&#8217;re allowed to guess that engineers will take care of it.
-  </p>
-  
-  <p>
-    I&#8217;ve to tell you that, while theoretically Mondo implements the same set of features that the one before it, actually it isn&#8217;t completely so (I&#8217;ll be blogposting in the near future about this). So:
-  </p>
-  
-  <ul>
-    <li>
-      The appearance of your Scripted Dialogs will be different
-    </li>
-    <li>
-      The functionality of your Scripted Dialogs might be different
-    </li>
-  </ul>
-  
-  <p>
-    And by functionality I mean: ScriptUI can&#8217;t load JPG images now, only PNGs &#8211; so if your dialog relies on JPGs, it will fail on CC2015. (This is going to be fixed in the future).
-  </p>
-  
-  <h2>
-    9. Some of my users say that their Adobe Extension Manager lists CC2015 as well!
-  </h2>
-  
-  <p>
-    Cool down the enthusiasm, it&#8217;s a false positive &#8211; Adobe said that:
-  </p>
-  
-  <blockquote>
-    <p>
-      The fact that it still seems to work for CC 2015 in some cases but not others, is because the Exchange Plugin, the component in the Creative Cloud desktop app that contains the ”brains” of Extension Manager and allows extensions to be automatically installed via Add-ons, automatically updates the Extension Manager Database. In some cases this ”just works” as if Extension Manager fully supported CC 2015. It should work more often on Windows than Mac. Having said that, <strong>it’s not a supported workflow</strong>.
-    </p>
-  </blockquote>
-  
-  <p>
-    (Bold is mine)
-  </p>
-  
-  <h2>
-    10. Timestamp failure when building the ZXP
-  </h2>
-  
-  <p>
-    You run into &#8220;Error &#8211; the timestamp returned from the chosen TSA could not be verified, so the ZXP created is likely to be rejected by other tools. Please create your ZXP with a different trusted TSA.&#8221;, right?<br /> Please make sure you&#8217;re using CC2015 version of the ZXPSignCmd, grab the updated version from the CEP Github Repo (<a href="https://github.com/Adobe-CEP/CEP-Resources/blob/master/ZXPSignCMD/ZXPSignCmd.dmg?raw=true">MAC</a> and <a href="https://github.com/Adobe-CEP/CEP-Resources/blob/master/ZXPSignCMD/ZXPSignCmd.exe?raw=true">PC</a>).
-  </p>
-  
-  <h2>
-    11. Extension Manager Opensource replacement
-  </h2>
-  
-  <p>
-    Developer Max Penson has come up with the free <a href="http://zxpinstaller.com">ZXP Installer</a>, a native app (Mac/PC) which runs under the hood the new ExManCmd commandline utility. Drag and Drop your ZXP and voilà!<br /> It still under development, but it works and you can point your customers to it.
-  </p>
-  
-  <p>
-    (if, for some reason out of your control, you happen to have problems with your Extension Manager *and* Creative Cloud database files, it&#8217;s going to be bad times. Been there, seen things, wasted an awful amount of time).
-  </p>
-  
-  <h2>
-    12. After installing CC2015, my [insert name here] doesn&#8217;t work anymore on CC2014
-  </h2>
-  
-  <p>
-    I don&#8217;t know how on earth this can happen, but I&#8217;ve seen it myself (in my own case, an entire folder in the Presets/Script disappeared causing an HTML Panel failure).
-  </p>
-  
-  <h2>
-    13. More to come
-  </h2>
-  
-  <p>
-    I&#8217;m adding stuff to the list (already 4 extra topic since the original draft). Take care and have fun keeping up to date 🙂
-  </p>
-</div>
 
-<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="http://localhost:8888/2015/06/html-panel-tips-17-cc2015-survival-guide/" myshare\_title="HTML Panel Tips #17: CC2015 Survival Guide" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
+Superstitious people in Italy think that seventeen is a bad luck number - yet I'm not gullible and I think it must be _by chance_ that this Tip #17 is about the apparently, ehm, _troublesome_ update to Creative Cloud 2015. As follows is a **checklist of common problems** (both from the developer's and user's point of view - I've been in touch with quite a number of them both) and my own suggestions to [stop worrying and love the bomb](https://en.wikipedia.org/wiki/Dr._Strangelove "Dr. Strangelove").  
+**(UPDATED Jul 5th, 2015)**
 
-<img src="http://localhost:8888/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->
+## 1. My [insert name here] Product doesn't work anymore!
+
+Why should it? I tell you why, it's a matter of mismatching expectations. The Creative Cloud app tells you it will port your Preferences: you would expect that this means Scripts-Plugins too but alas it's not the case. Moreover, by default (what a tumble!) the CC app **removes old versions** of Photoshop CC, so that you can't just copy Scripts and Plugins from CC2014 on CC2015.
+
+**Developer**: advise your customers to look in the Advanced properties of the CC update application and uncheck "Remove previous versions" so that they have access to stuff installed within the Photoshop CC2014 folder. **User**: look in the `Photoshop CC2014/Presets/Scripts/` for Script products, and/or `Photoshop CC2014/Plug-ins/` and manually copy sensible stuff from there into the corresponding Photoshop CC2015/ paths - ask your developer for help.
+
+## 2. Adobe Extension Manager says the product is installed but it isn't!
+
+You might have not heard about this, but **Adobe Extension Manager** (AEM) has reached his [EOL](https://www.adobeexchange.com/resources/27 "Adobe Extension Manager funeral party") (End Of Life) - that is, it's not going to be supported by Adobe anymore. AEM doesn't know about CC2015, **it's of no use to install CC2015 products** \- more about it below.
+
+**Developer**: it's somehow _by chance_ (or by design, depending on your POV) that your Panel shows up in CC2015, because the path for CC2014 and CC2015 is shared:
+
+Mac: `~/Library/Application Support/Adobe/CEP/extensions`  
+Win: `C:\<username>\AppData\Roaming\Adobe\CEP\extensions`
+
+Mind you: if your panel is self-contained (doesn't require files such as scripts installed within the Photoshop folder, like JSXs in `Presets/Scripts/` or plugins in `Plug-ins/`) it will work on CC2015. Otherwise, you need to move the required files manually in order for the panel to be functional. The same applies for Plug-ins and Scripts.
+
+**User**: ask your developer if you think the Panel is not working properly even if it shows up, and ask for CC2015 installers (yes, you need to install them on the new version.
+
+## 3. The [insert name here] Panel says it's not properly signed and/or timestamped!
+
+My friend, have you signed and timestamped your panel? Chances are you've not - or possibly you are used to keep the debug flag on (CC2014) on your machine and your users don't - and you don't have it either on CC2015. CEP panels need to be signed/timestamped - I personally do this via `ZXPSignCmd` commandline tool, you'll find all the excruciating details [here](/2014/05/html-panels-tips-10-packaging-zxp-installers/ "HTML Panels Tips: #10 Packaging / ZXP Installers")).
+
+**Developer**: Build a signed/timestamped ZXP, rename it as ZIP, unZip it (OSX won't let you do this because his inner soul is mean, download any third party free app such as [The Unarchiver](https://itunes.apple.com/it/app/the-unarchiver/id425424353?mt=12 "The Unarchiver (OSX)")) and now distribute the folder for manual installation in the usual paths (see #2 above). You'll notice that a signed/timestamped panel contains a `META-INF` folder and a `mimetype` file: take care of these guys. Please notice that:
+
+*   You modify a single file in a signed/timestamped panel (such as the `manifest.xml` to add compatibility to CC2015) and the signing/timestamping is screwed, error will follow and the panel won't show up anymore.
+*   You let the uncompressed panel lie in a Google Drive folder shared with somebody else, and the signing/timestamping is screwed as well (true! It took me forever to get this one, still I don't know why it happens).
+*   Perhaps if you stare at a panel long enough, the signing and timestamping will break into tears.
+
+**User**: ask the developer for a manual installation Panel (see #2 for the installation paths).
+
+## 4. Do I have to modify the Panel's manifest.xml?
+
+It depends. I never explicitly set an upper limit, so my panels will hopefully load in CC2015 as well:
+
+{% highlight xml %}
+<HostList>
+    <Host Name="PHXS" Version="14.0" />
+    <Host Name="PHSP" Version="14.0" />
+</HostList>
+{% endhighlight %}
+
+The above means: from 14 upwards. Same story if you use a MXI file for hybrid panels:
+
+{% highlight xml %}
+<products>
+    <product familyname="Photoshop" version="14.0"/>
+</products>
+{% endhighlight %}
+
+## 5. How do I debug on CC2015?
+
+Set the **PlayerDebugMode** as a String with value "1" in:
+
+Win: `regedit > HKEY_CURRENT_USER/Software/Adobe/CSXS.6`  
+Mac: `/Users/<username>/Library/Preferences/com.adobe.CSXS.6.plist`
+
+Let me read your mind: `com.adobe.CSXS.6` doesn't exist. Brave developer, clone it from CSXS.5 and rename it, you'll be forgiven. Mind you: Starting with Mac 10.9, Apple introduced a caching mechanism for plist files. Your modifications to plist files do not take effect until the cache gets updated (on a periodic basis, you cannot know exactly when the update will happen). To make sure your modifications take effect, kill all `cfprefsd` processes. They will restart automatically.
+
+## 6. How do I let users install [insert name here] if Adobe Extension Manager is gone?
+
+I've had this thought myself too, right after the eleventh glass of wine at the AEM Funeral Party. The developer community is facing this problem and to date several possibilities are on the table:
+
+*   Manual installation: you let users move files around - it's not needed that I list pros and cons.
+*   Native installers: you're braver than me. If you have reliable info on this process, please let me know in the comments
+*   Scripted installers: I've built one (free and opensource, please find it [here](http://github.com/undavide/PS-Installer "PS Installer")). The idea is simple: ExtendScript knows File Management, so Photoshop itself can deploy the needed files. You let users download a ZIP, which contains an Assets folder and an Installer.jsx file - they drag and drop it into Photoshop and it'll do the magic.
+*   Extension Manager CommandLine utility: not ready for public download when I' writing this but it will in a short while. It's basically the operational core of AEM in all the beauty and appeal of a CLI. You're allowed to send users a ZIP packed with your usual product's ZXP, the Adobe CLI plus a Installer.sh (OSX) or a Installer.bat (Windows) which runs the CLI with the right params.
+*   Other opensource projects still under development, like [this one](http://unhurdle/creative-installer "UnHurdle Creative Installer").
+
+My own preference goes (for obvious reasons) to Scripted installer, then Manual installation, then AEM CLI, then horse shoeing.
+
+## 7. How do I sell through Adobe Add-ons if Extension Manager is gone?
+
+Adobe Add-ons relies on the Creative Cloud app to deploy files, via the File Synch feature (let users check it's enabled) - they've somehow transplanted the AEM core into the CC app. So keep building your ZXP files and life will be good.
+
+## 8. My [insert name here] Script behaves badly
+
+From Photoshop CC2015 onwards, Adobe's engineers have introduced the new **Mondo** rendering engine for ScriptUI dialogs. Previously it was Flash, and... you know. Mondo is the same framework used in Photoshop actual Filters and Plug-ins, so we're allowed to guess that engineers will take care of it. I've to tell you that, while theoretically Mondo implements the same set of features that the one before it, actually it isn't completely so (I'll be blogposting in the near future about this). So:
+
+*   The appearance of your Scripted Dialogs will be different
+*   The functionality of your Scripted Dialogs might be different
+
+And by functionality I mean: ScriptUI can't load JPG images now, only PNGs - so if your dialog relies on JPGs, it will fail on CC2015. (This is going to be fixed in the future).
+
+## 9. Some of my users say that their Adobe Extension Manager lists CC 2015 as well!
+
+Cool down the enthusiasm, it's a false positive - Adobe said that:
+
+> The fact that it still seems to work for CC 2015 in some cases but not others, is because the Exchange Plugin, the component in the Creative Cloud desktop app that contains the ”brains” of Extension Manager and allows extensions to be automatically installed via Add-ons, automatically updates the Extension Manager Database. In some cases this ”just works” as if Extension Manager fully supported CC 2015. It should work more often on Windows than Mac. Having said that, **it’s not a supported workflow**.
+
+## 10. Timestamp failure when building the ZXP
+
+You run into "Error - the timestamp returned from the chosen TSA could not be verified, so the ZXP created is likely to be rejected by other tools. Please create your ZXP with a different trusted TSA.", right? Please make sure you're using CC2015 version of the ZXPSignCmd, grab the updated version from the CEP Github Repo ([MAC](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ZXPSignCMD/ZXPSignCmd.dmg?raw=true) and [PC](https://github.com/Adobe-CEP/CEP-Resources/blob/master/ZXPSignCMD/ZXPSignCmd.exe?raw=true)).
+
+## 11. Extension Manager Opensource replacement
+
+Developer Max Penson has come up with the free [ZXP Installer](http://zxpinstaller.com), a native app (Mac/PC) which runs under the hood the new ExManCmd commandline utility. Drag and Drop your ZXP and voilà! It still under development, but it works and you can point your customers to it. (if, for some reason out of your control, you happen to have problems with your Extension Manager \*and\* Creative Cloud database files, it's going to be bad times. Been there, seen things, wasted an awful amount of time).
+
+## 12. After installing CC2015, my \[insert name here\] doesn't work anymore on CC2014
+
+I don't know how on earth this can happen, but I've seen it myself (in my own case, an entire folder in the Presets/Script disappeared causing an HTML Panel failure).
+
+## 13. More to come
+
+I'm adding stuff to the list (already 4 extra topic since the original draft). Take care and have fun keeping up to date :-)
+
+{% include_relative cepBook.md %}
