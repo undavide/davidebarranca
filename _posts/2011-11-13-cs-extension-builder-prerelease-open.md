@@ -7,7 +7,7 @@ excerpt: The prerelease program for Adobe CS Extension Builder (a Flash Builder/
 layout: post
 guid: http://www.davidebarranca.com/?p=263
 permalink: /2011/11/cs-extension-builder-prerelease-open/
-categories:
+category:
   - Coding
 tags:
   - Adobe Prerelease Programs

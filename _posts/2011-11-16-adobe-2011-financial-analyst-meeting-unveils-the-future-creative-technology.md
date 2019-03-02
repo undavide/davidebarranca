@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - Financial Analyst Meeting is a powerful source of information about technology and strategies that Adobe will push in the future
 image: /wp-content/uploads/2011/11/Adobe-Financial-Analyst-Meeting.jpg
-categories:
+category:
   - Coding
   - Photoshop
 tags:

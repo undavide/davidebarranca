@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - The specialized source of Photoshop CS6 Extensions and Scripts for Photographers and Retouchers linked to the new Adobe Exchange marketplace
 image: /wp-content/uploads/2013/01/home_next.jpg
-categories:
+category:
   - Coding
   - Extensions and Scripts
   - Photoshop

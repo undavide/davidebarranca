@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/01/html-panels-tips-4-passing-objects-from-html-to-jsx/
 description: "How to pass complex Objects from an HTML Panel to an ExtendScript function in a JSX file"
 image: /wp-content/uploads/2014/01/Object.png
-categories:
+category:
   - CEP
 tags:
   - HTML Panels Tips

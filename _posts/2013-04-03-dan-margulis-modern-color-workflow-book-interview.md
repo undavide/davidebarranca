@@ -16,7 +16,7 @@ standard_seo_post_meta_description:
   - |
     Interview with the italian professionals involved in the beta reading of the latest Dan Margulis' book, "Modern Photoshop Color Workflow".
 image: /wp-content/uploads/2013/04/ModernPhotoshopColorWorkflow_cover.jpg
-categories:
+category:
   - Photoshop
 tags:
   - beta-reader

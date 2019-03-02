@@ -7,7 +7,7 @@ excerpt: Hahnemuhle backs off its recent decision to drop the production of 64 i
 layout: post
 guid: http://www.davidebarranca.com/?p=124
 permalink: /2011/11/hahnemuhle-changes-its-mind-about-64/
-categories:
+category:
   - Printing
 tags:
   - Hahnemuhle @en

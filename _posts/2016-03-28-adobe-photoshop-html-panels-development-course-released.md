@@ -7,7 +7,7 @@ layout: post
 permalink: /2016/03/adobe-photoshop-html-panels-development-course-released/
 description: 'Photoshop HTML Panels Development Course - Build and Market Adobe Creative Cloud extensions - available for sale at a special launch price.'
 image: /wp-content/uploads/2016/03/BookVideo.jpg
-categories:
+category:
   - CEP
 tags:
   - Adobe Photoshop HTML Panels Development

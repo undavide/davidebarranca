@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - There are three ways to make a fullscreen image in iBooks (made with iBooksAuthor), read along to find pros and cons of each one.
 image: /wp-content/uploads/2012/04/iBooksAuthor-fullscreen.jpg
-categories:
+category:
   - Digital Publishing
   - iBooksAuthor
 tags:

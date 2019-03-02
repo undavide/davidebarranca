@@ -8,7 +8,7 @@ layout: post
 guid: http://www.davidebarranca.com/?p=905
 permalink: /2012/04/ibooks-author-compressione-jpg-conversione-colore-ridimensionamento-delle-immagini/
 image: /wp-content/uploads/2012/04/iBooksAuthor-opening1.jpg
-categories:
+category:
   - Digital Publishing @it
   - iBooksAuthor @it
 ---

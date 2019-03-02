@@ -16,7 +16,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - "An open letter to fellow developers involved in Adobe Scripting and Extensions - let's roll up the sleeves and embrace the open source model"
 image: /wp-content/uploads/2013/12/ExtendScriptToolkit.png
-categories:
+category:
   - Coding
 tags:
   - Adobe

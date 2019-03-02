@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/01/html-panels-tips-2-including-multiple-jsx/
 description: "A simple way to dynamically evaluate multiple JSX files in the Scripting context of Photoshop within HTML Panels."
 image: /wp-content/uploads/2014/01/jsx.jpg
-categories:
+category:
   - CEP
 tags:
   - HTML Panels Tips

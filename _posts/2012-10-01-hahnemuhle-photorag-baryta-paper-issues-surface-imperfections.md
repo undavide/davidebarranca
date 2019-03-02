@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - Hahnemühle PhotoRag Baryta paper keeps showing unacceptable surface imperfections such as bumps, dots, hairs, stains.
 image: /wp-content/uploads/2012/10/hahnemuhle.jpg
-categories:
+category:
   - Printing
 tags:
   - archival

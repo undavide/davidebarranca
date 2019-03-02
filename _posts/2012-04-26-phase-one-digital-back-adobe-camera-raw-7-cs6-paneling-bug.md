@@ -15,7 +15,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - Phase One digital back .IIQ raw are not fully supported by ACR because some sensor calibration data embedded in the files is not interpreted
 image: /wp-content/uploads/2012/04/PhaseOne_IQ180_paneling_bug3.jpg
-categories:
+category:
   - Photography Post-Production
 tags:
   - Adobe Camera Raw

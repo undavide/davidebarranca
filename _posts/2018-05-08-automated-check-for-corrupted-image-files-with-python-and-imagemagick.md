@@ -7,7 +7,7 @@ layout: post
 permalink: /2018/05/automated-check-for-corrupted-image-files-with-python-and-imagemagick/
 description: How to automatically batch a file corruption and integrity check for psd, psb, tiff and jpg image files with Python and ImageMagick.
 image: /wp-content/uploads/2018/05/corrupted.png
-categories:
+category:
   - Coding
 tags:
   - Python

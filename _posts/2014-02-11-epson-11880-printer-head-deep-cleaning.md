@@ -8,7 +8,7 @@ guid: http://www.davidebarranca.com/?p=2519
 permalink: /2014/02/epson-11880-printer-head-deep-cleaning/
 description: "How to clean the Epson 11880 printer head manually to solve ink stains problems due to dirt stuck in the head's surface"
 image: /wp-content/uploads/2014/02/Parking.jpg
-categories:
+category:
   - Photoshop
 tags:
   - Epson

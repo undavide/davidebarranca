@@ -6,7 +6,7 @@ excerpt: "One year ago I started writing my Photoshop HTML Panels Development co
 layout: post
 permalink: /2016/10/new-course-photoshop-scripting/
 description: "After Photoshop HTML Panels Development, I'm working on a new Course on Photoshop Scripting. Stay tuned, and subscribe!"
-categories:
+category:
   - Scripting
 tags:
   - Professional Photoshop Scripting

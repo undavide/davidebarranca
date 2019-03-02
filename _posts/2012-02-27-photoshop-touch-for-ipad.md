@@ -8,7 +8,7 @@ layout: post
 guid: http://www.davidebarranca.com/?p=746
 permalink: /2012/02/photoshop-touch-for-ipad/
 image: /wp-content/uploads/2012/02/Photoshop_V1.jpg
-categories:
+category:
   - Photoshop
 tags:
   - Adobe

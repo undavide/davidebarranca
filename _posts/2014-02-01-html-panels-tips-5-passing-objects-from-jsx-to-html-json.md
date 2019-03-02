@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/02/html-panels-tips-5-passing-objects-from-jsx-to-html-json/
 description: "How to pass an Object from Photoshop JSX ExtendScript code back to the HTML panel via JSON"
 image: /wp-content/uploads/2014/02/Console.png
-categories:
+category:
   - CEP
 tags:
 - HTML Panels Tips

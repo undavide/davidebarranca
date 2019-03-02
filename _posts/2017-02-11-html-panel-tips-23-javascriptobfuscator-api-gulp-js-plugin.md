@@ -7,7 +7,7 @@ layout: post
 permalink: /2017/02/html-panel-tips-23-javascriptobfuscator-api-gulp-js-plugin/
 description: 'A Gulp.js Plugin consuming the JavascriptObfuscator HTTP API'
 image: /wp-content/uploads/2017/02/lock1.png
-categories:
+category:
   - CEP
 tags:
   - Gulp

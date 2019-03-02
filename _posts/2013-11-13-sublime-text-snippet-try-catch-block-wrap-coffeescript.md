@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - A Sublime Text snippet that wraps selected CoffeeScript code in a properly indented try/catch block, with instruction on shortcut binding.
 image: /wp-content/uploads/2013/11/wrap_try_catch_coffeescript.png
-categories:
+category:
   - Coding
   - CoffeeScript
 tags:

@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - How to setup a local Git repository, sync it with a private DropBox repository for backup, and use the Sublime Text Git plugin to manage it.
 image: /wp-content/uploads/2013/05/Git_DropBox_SublimeText.jpg
-categories:
+category:
   - Coding
 tags:
   - DropBox

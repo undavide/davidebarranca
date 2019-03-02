@@ -7,7 +7,7 @@ excerpt: "Scattare panoramiche con dorsi e sistemi digitali medio formato √® pi√
 layout: post
 guid: http://www.davidebarranca.com/?p=803
 permalink: /2012/03/phaseone-iq180-schneider-kreuznach-reallyrightstuff-panorama-stitching/
-categories:
+category:
   - Post-produzione
 ---
 <div class="pf-content">

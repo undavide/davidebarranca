@@ -7,7 +7,7 @@ layout: post
 permalink: /2015/07/partial-serial-number-verification-system-in-javascript/
 description: "Implementing a Partial Serial Number Verification System in Javascript - a port of Brandon Staggs' original code in Delphi"
 image: /wp-content/uploads/2015/07/rsa_encrypt_decrypt.png
-categories:
+category:
   - Scripting
 tags:
   - Licensing

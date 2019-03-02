@@ -7,7 +7,7 @@ layout: post
 permalink: /2018/11/adobe-spectrum-css-open-sourced/
 description: "Adobe has open-sourced the Spectrum CSS, the stylesheets they're using for Photoshop's own CEP Panels"
 image: /wp-content/uploads/2018/11/DB-2018-11-18-at-11.10.38.png
-categories:
+category:
   - CEP
   - Scripting
 tags:

@@ -7,7 +7,7 @@ excerpt: 'Media di più livelli in Photoshop: la scala delle opacità o lo stack
 layout: post
 guid: http://www.davidebarranca.com/?p=768
 permalink: /2012/03/media-di-piu-livelli-in-photoshop-opacita-oggetto-avanzato/
-categories:
+category:
   - Photoshop @it
 ---
 <div class="pf-content">

@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - 'How to code a script that requires user input from a GUI and can be recorded into an Action - an example is provided and commented.'
 image: /wp-content/uploads/2012/11/DB_-2012-11-04-at-17.24.34.png
-categories:
+category:
   - Coding
   - ExtendScript / Javascript
 tags:
@@ -747,7 +747,3 @@ AiX4ge0AiAiW4gf0AiAjG4hA0AiAiZ4hB0AiAiF4hD0AiAie4hC0AiAAhEARByB");</pre>
     &nbsp;
   </p>
 </div>
-
-<!-- Share-Widget Button BEGIN --><a href="javascript:void(0);" myshare\_id="mys\_shareit" myshare\_url="/2012/11/action-recordable-scripts-in-photoshop/" myshare\_title="Action recordable scripts in Photoshop" rel="nofollow" onclick=" return false;" style="text-decoration:none; color:#000000; font-size:11px; line-height:20px;"> 
-
-<img src="/wp-content/plugins/share-widget/img/share-button-white-small.png" height="20" alt="Share" style="border:0" /> </a> <!-- Share-Widget Button END -->

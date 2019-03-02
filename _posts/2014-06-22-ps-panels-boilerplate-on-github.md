@@ -8,7 +8,7 @@ permalink: /2014/06/ps-panels-boilerplate-on-github/
 description:
   - "A GitHub repository where I will gather Boilerplate and Template code for Adobe Photoshop CEP Panels."
 image: /wp-content/uploads/2014/06/Octocat.jpg
-categories:
+category:
   - CEP
 tags:
   - GitHub

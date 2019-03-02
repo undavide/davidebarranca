@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/06/photoshop-cc-2014-v15-ready-extensions/
 description: "All my extensions and scripts lineup has been updated and officially supports Photoshop CC 2014 (15.0)"
 image: /wp-content/uploads/2011/11/HTML5.png
-categories:
+category:
   - Photoshop
 ---
 

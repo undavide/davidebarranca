@@ -7,7 +7,7 @@ layout: post
 permalink: /2017/04/html-panel-tips-24-fixing-zxp-timestamping-errors/
 description: Fix the recent ZXPSignCmd error when building ZXP packages using a different timestamp authority
 image: /wp-content/uploads/2017/04/bug.png
-categories:
+category:
   - CEP
 tags:
   - timestamp

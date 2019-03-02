@@ -7,7 +7,7 @@ permalink: /2017/02/double-usm-v2-for-photoshop-has-been-released/
 excerpt: A major reworking of my Sharpening extension for Photoshop has been released.
 description: Double USM v2 for Photoshop. Sharpening plugin to independently control Amount, Radius and Threshold of Dark and Light halos.
 image: /wp-content/uploads/2017/02/Dark-Theme_2.png
-categories:
+category:
   - Photoshop
 tags:
   - Double USM

@@ -8,7 +8,7 @@ layout: post
 guid: http://www.davidebarranca.com/?p=429
 permalink: /2011/11/adobe-al-bivio-quali-cambiamenti-ci-aspettano/
 image: /wp-content/uploads/2011/11/Crossroad.jpg
-categories:
+category:
   - Photoshop @it
 ---
 <div class="pf-content">

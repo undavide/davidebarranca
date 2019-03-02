@@ -7,7 +7,7 @@ layout: post
 permalink: /2015/10/announcing-photoshop-html-panels-development-book-project/
 description: "I'm writing a book titled: 'Photoshop HTML Panels development - Build and Market Adobe Creative Cloud extensions'."
 image: /wp-content/uploads/2015/10/Copertina-small.png
-categories:
+category:
   - CEP
 tags:
 - Adobe Photoshop HTML Panels Development

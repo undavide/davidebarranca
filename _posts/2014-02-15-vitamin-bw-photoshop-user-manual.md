@@ -8,7 +8,7 @@ permalink: /2014/02/vitamin-bw-photoshop-user-manual/
 description: "User Manual for VitaminBW, a Photoshop CC/CS6 script that spices up your black and white conversions!"
 description: "User Manual for VitaminBW, a Photoshop CC/CS6 script that spices up your black and white conversions!"
 image: /wp-content/uploads/2014/02/VitaminBW.jpg
-categories:
+category:
   - Photoshop
 tags:
   - VitaminBW

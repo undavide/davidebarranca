@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/07/html-panels-tips-11-externalobject-cep-events/
 description: "The new CEP5 (PS CC 2014) lets you dispatch ExtendScript Custom Events with payloads, using the integrated plugplugExternalObject library."
 image: /wp-content/uploads/2014/07/JSX2CEP-panel.png
-categories:
+category:
   – CEP
 tags:
   - HTML Panels Tips

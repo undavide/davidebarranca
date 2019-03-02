@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/02/html-panels-tips-8-photoshop-events-pshostadapter-libraries/
 description: "There's a second way to listen to Photoshop Events from an HTML Panel, i.e. using the PSHostAdapters libraries"
 image: /wp-content/uploads/2014/02/PSEvents.png
-categories:
+category:
   - CEP
 tags:
   - HTML Panels Tips

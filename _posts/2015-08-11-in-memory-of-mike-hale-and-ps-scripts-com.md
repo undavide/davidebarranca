@@ -7,7 +7,7 @@ layout: post
 permalink: /2015/08/in-memory-of-mike-hale-and-ps-scripts-com/
 description: "PS-Scripts, the independent forum devoted to Photoshop scripting, is offline since May 2015 due to the passing of the domain owner and maintainer, the very missed Mike Hale."
 image: /wp-content/uploads/2015/08/1398164_profile_pic.jpg
-categories:
+category:
   - Scripting
 tags:
   - Mike Hale

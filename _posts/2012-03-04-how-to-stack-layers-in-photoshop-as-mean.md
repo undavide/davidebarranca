@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - 'How to stack layers in Photoshop as a Mean: correct opacities to assign, and the smart objects workaround.'
 image: /wp-content/uploads/2012/03/Layered-Stonehenge.jpg
-categories:
+category:
   - Photoshop
 tags:
   - layers

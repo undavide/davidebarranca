@@ -13,7 +13,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - Marco Olivotto ha registrato un ottimo corso sullo Sharpening per Teacher in a Box, per la prima volta disponibile come App per iPad.
 image: /wp-content/uploads/2013/07/TIAB.jpg
-categories:
+category:
   - Photoshop @it
 tags:
   - Marco Olivotto

@@ -8,7 +8,7 @@ layout: post
 guid: http://www.davidebarranca.com/?p=277
 permalink: /2011/11/adobe-2011-financial-analyst-meeting-svela-futuro-tecnologia-creativi/
 image: /wp-content/uploads/2011/11/Adobe-Financial-Analyst-Meeting.jpg
-categories:
+category:
   - Coding @it
   - Photoshop @it
 ---

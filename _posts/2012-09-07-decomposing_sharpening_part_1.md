@@ -18,7 +18,7 @@ link_url_field:
 seo_post_meta_description:
   - ""
 image: /wp-content/uploads/2012/09/HighPass.jpg
-categories:
+category:
   - Decomposing Sharpening
   - Photoshop
 tags:

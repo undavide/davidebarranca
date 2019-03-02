@@ -7,7 +7,7 @@ excerpt: Hahnemuhle in 2012 will discontinue the production of 64" papers in the
 layout: post
 guid: http://www.davidebarranca.com/?p=109
 permalink: /2011/11/hahnemuhle-64-inch-inkjet-paper/
-categories:
+category:
   - Printing
 tags:
   - Hahnemuhle @en

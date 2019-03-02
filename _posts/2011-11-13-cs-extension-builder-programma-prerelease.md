@@ -7,7 +7,7 @@ excerpt: "Il programma di prerelease dell'Adobe CS Extension Builder (un plugin 
 layout: post
 guid: http://www.davidebarranca.com/?p=265
 permalink: /2011/11/cs-extension-builder-programma-prerelease/
-categories:
+category:
   - Coding @it
 ---
 <div class="pf-content">

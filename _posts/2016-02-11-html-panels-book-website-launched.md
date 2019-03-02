@@ -8,7 +8,7 @@ permalink: /2016/02/html-panels-book-website-launched/
 description:
   - "The Adobe Photoshop HTML Panels Development book's website has been launched - early subscribers to the newsletter will get a Discount code!"
 image: /wp-content/uploads/2016/02/wpbook-1.png
-categories:
+category:
   - CEP
 tags:
 - Adobe Photoshop HTML Panels Development

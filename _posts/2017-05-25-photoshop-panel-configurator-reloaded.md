@@ -7,7 +7,7 @@ layout: post
 permalink: /2017/05/photoshop-panel-configurator-reloaded/
 description: 'A review of the third-party Photoshop panel "Configurator Reloaded": it winks at the original Adobe Configurator, but it delivers.'
 image: /wp-content/uploads/2017/05/configurator-reloaded.png
-categories:
+category:
   - CEP
 tags:
   - Panels

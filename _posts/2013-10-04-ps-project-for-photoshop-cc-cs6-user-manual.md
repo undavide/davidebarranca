@@ -1,27 +1,16 @@
 ---
 id: 2257
-title: '&#8216;PS Project&#8217; for Photoshop CC / CS6 User Manual'
+title: "PS Projects for Photoshop CC / CS6 User Manual"
 date: 2013-10-04T11:05:10+01:00
 author: Davide Barranca
-excerpt: PS Project is a Photoshop CC / CS6 script that implements the idea of Project Files (a lightweight container of links to images on your disk, that you need to open frequently). This User Manual post will go into every detail of it.
+excerpt: "PS Project is a Photoshop CC / CS6 script that implements the idea of Project Files (a lightweight container of links to images on your disk, that you need to open frequently). This User Manual post will go into every detail of it."
 layout: post
-guid: http://www.davidebarranca.com/?p=2257
 permalink: /2013/10/ps-project-for-photoshop-cc-cs6-user-manual/
-standard_seo_post_level_layout:
-  - ""
-standard_link_url_field:
-  - ""
-standard_seo_post_meta_description:
-  - User Manual for PS Projects, a Photoshop CC / CS6 script that implements the idea of Project File (lightweight images links repository)
+description: "PS Project is a Photoshop CC / CS6 script that implements the idea of Project Files (a lightweight container of links to images on your disk, that you need to open frequently). This User Manual post will go into every detail of it."
 image: /wp-content/uploads/2013/09/PSProjects_UserManualThumb.png
-categories:
-  - Extensions and Scripts
-  - Photoshop
-  - PS Projects
+category:
+  - Scripting
 tags:
-  - Photoshop CC
-  - Photoshop CS6
-  - PS Projects
   - User Manual
 ---
 <div class="pf-content">
@@ -155,4 +144,3 @@ tags:
     <p>
       PS Projects runs on Photoshop CC and CS6, on both Mac and Windows.
     </p></div>
-    

@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/02/html-panels-tips-9-persistence/
 description: "How to make the HTML Panel's session persist even if the panel is closed in Photoshop."
 image: /wp-content/uploads/2014/02/persistent.png
-categories:
+category:
   - CEP
 tags:
 - HTML Panels Tips

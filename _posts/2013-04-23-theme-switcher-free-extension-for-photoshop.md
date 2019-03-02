@@ -15,7 +15,7 @@ standard_seo_post_meta_description:
   - |
     t's now available through Adobe Exchange my latest free extension "Theme Switcher", that lets you cycle through Photoshop themes in a click!
 image: /wp-content/uploads/2013/04/Featured.png
-categories:
+category:
   - Extensions and Scripts
   - Theme Switcher
 tags:

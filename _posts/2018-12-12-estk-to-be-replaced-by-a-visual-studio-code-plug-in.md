@@ -7,7 +7,7 @@ description: The Adobe ExtendScript ToolKit will be replaced by a Visual Studio 
 layout: post
 permalink: /2018/12/estk-to-be-replaced-by-a-visual-studio-code-plug-in/
 image: /wp-content/uploads/2018/12/vsc.jpg
-categories:
+category:
   - Scripting
 tags:
   - VSCode

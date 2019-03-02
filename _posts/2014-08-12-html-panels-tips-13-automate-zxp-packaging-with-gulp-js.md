@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/08/html-panels-tips-13-automate-zxp-packaging-with-gulp-js/
 description: "Automate the creation of ZXP installers for Adobe Creative Cloud Extensions with Gulp.js, the javascript task runner based on Node.js"
 image: /wp-content/uploads/2014/08/gulp.png
-categories:
+category:
   - CEP
 tags:
   - HTML Panels Tips

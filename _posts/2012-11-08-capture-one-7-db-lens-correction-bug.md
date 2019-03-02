@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - Capture One 7 DB shows a bug when you couple Sharpness Falloff with Distortion Correction in the Lens Correction tab (IIQ raw from P1 back)
 image: /wp-content/uploads/2012/11/PhaseOneLensCorrection.png
-categories:
+category:
   - Photography Post-Production
 tags:
   - bug

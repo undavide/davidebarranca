@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/12/html-panels-tips-16-angularjs-input-binding-bug-patch/
 description: "CEP5.2 has a bug affecting MacOS and non-US keyboards that may prevent AngularJS binding to work. Here's how to apply a patch to angular.js"
 image: /wp-content/uploads/2014/12/AngularJS.png
-categories:
+category:
   - CEP
 tags:
   - HTML Panels Tips

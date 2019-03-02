@@ -13,7 +13,7 @@ standard_link_url_field:
   - ""
 standard_seo_post_meta_description:
   - "Subclipse plugin adds the Subversion support to Flash Builder 4.6. I'll show you how to install it and create a repository on a local disc."
-categories:
+category:
   - Coding
 tags:
   - Flash Builder

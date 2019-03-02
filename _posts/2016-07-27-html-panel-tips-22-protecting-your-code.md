@@ -7,7 +7,7 @@ layout: post
 permalink: /2016/07/html-panel-tips-22-protecting-your-code/
 description: "How to protect your code (especially, but not only, ExtendScript) in the context of HTML Panels, and keep it away from prying eyes."
 image: /wp-content/uploads/2016/07/obfuscation.jpg
-categories:
+category:
   - CEP
 tags:
   - obfuscation

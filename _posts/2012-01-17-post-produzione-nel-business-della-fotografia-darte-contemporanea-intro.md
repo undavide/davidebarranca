@@ -7,7 +7,7 @@ excerpt: "Il lavoro di Post-Produzione nella Fotografia d'Arte Contemporanea - i
 layout: post
 guid: http://www.davidebarranca.com/?p=659
 permalink: /2012/01/post-produzione-nel-business-della-fotografia-darte-contemporanea-intro/
-categories:
+category:
   - Post-produzione
 ---
 <div class="pf-content">

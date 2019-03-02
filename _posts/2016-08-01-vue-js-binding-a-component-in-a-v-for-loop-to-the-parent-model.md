@@ -7,7 +7,7 @@ layout: post
 permalink: /2016/08/vue-js-binding-a-component-in-a-v-for-loop-to-the-parent-model/
 description: "Vue.js tutorial: how to implement a two-ways binding of components generated in a v-for loop to the parent's model."
 image: /wp-content/uploads/2016/06/logo.png
-categories:
+category:
   - CEP
 tags:
   - "Vue.js"

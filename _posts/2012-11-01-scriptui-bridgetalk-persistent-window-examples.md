@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - "BridgeTalk provides Photoshop with persistent, idle, non-modal ScriptUI 'palette' Windows that are truly platform independent (Mac/PC)."
 image: /wp-content/uploads/2012/10/ESTK_palette.png
-categories:
+category:
   - Coding
   - ExtendScript / Javascript
 tags:

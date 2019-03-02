@@ -8,7 +8,7 @@ permalink: /2014/10/html-panels-tips-14-flyout-menu/
 description:
   - "How to implement a Flyout Menu in Photoshop HTML Panels using Adobe's CEP 5.2."
 image: /wp-content/uploads/2014/10/screenshot.png
-categories:
+category:
   - CEP
   - HTML Panels
 tags:

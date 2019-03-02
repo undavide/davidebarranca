@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - 'Minified JS libraries used in Web development can fail in the ExtendScript engine: proper testing shows the risks, and suggests right tools.'
 image: /wp-content/uploads/2013/08/TestingJSMinify.png
-categories:
+category:
   - Coding
   - ExtendScript / Javascript
 tags:

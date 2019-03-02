@@ -7,7 +7,7 @@ excerpt: The extension does not contain valid signature. The extension will not 
 layout: post
 guid: http://www.davidebarranca.com/?p=83
 permalink: /2011/10/adobe-extension-manager-and-lion-issue/
-categories:
+category:
   - Coding
   - Photoshop
 tags:

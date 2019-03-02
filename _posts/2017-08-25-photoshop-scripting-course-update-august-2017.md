@@ -8,7 +8,7 @@ permalink: /2017/08/photoshop-scripting-course-update-august-2017/
 excerpt: "In October 2016 I've announced to be working on a course about Photoshop Scripting. Is it ready for release?"
 description: "Updates on my Professional Photoshop Scripting announced in October 2016"
 image: /wp-content/uploads/2017/08/Risultati-immagini-per-bob-the-builder.png
-categories:
+category:
   - Scripting
 tags:
   - Professional Photoshop Scripting

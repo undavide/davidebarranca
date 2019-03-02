@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/07/html-panels-tips-12-cep-application-events/
 description: "HTML Panels can listen to CEP Application Events, dispatched by the Host (Photoshop) when something related to the app itself happens"
 image: /wp-content/uploads/2014/07/Log.png
-categories:
+category:
   - CEP
 tags:
   - HTML Panels Tips

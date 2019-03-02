@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/12/html-panels-tips-15-asynchronous-vs-synchronous-evalscript/
 description: "In HTML Panels, CSInterface.evalScript calls are asynchronous - there are few ways to mimic synchronous behaviours, which I will be showing."
 image: /wp-content/uploads/2014/12/featured.png
-categories:
+category:
   - CEP
 tags:
   - HTML Panels Tips

@@ -9,7 +9,7 @@ layout: post
 guid: http://www.davidebarranca.com/?p=972
 permalink: /2012/04/dorsi-digitali-phase-one-iiq-adobe-camera-raw-paneling-bug/
 image: /wp-content/uploads/2012/04/PhaseOne_IQ180_paneling_bug3.jpg
-categories:
+category:
   - Post-produzione
 tags:
   - Adobe Camera Raw @it

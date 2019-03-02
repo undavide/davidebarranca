@@ -7,7 +7,7 @@ layout: post
 permalink: /2016/06/html-panel-tips-21-photoshop-cc2015-5-2016-survival-guide/
 description: 'Today Photoshop CC2015.5 has been released even if everybody wanted CC2016. This will cause you some headaches: let me hand you a painkiller'
 image: /wp-content/uploads/2016/06/CC2015.png
-categories:
+category:
   - CEP
 tags:
   - CC 2015.5

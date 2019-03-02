@@ -20,7 +20,7 @@ link_url_field:
 seo_post_meta_description:
   - 'Sublime Text 2/3 Build Package: runs ExtendScript code in Photoshop without the need to copy/paste code in ExtendScript ToolKit (ESTK)'
 image: /wp-content/uploads/2013/05/logo.jpg
-categories:
+category:
   - Coding
   - ExtendScript / Javascript
 tags:

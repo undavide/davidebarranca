@@ -7,7 +7,7 @@ layout: post
 permalink: /2018/12/spectrum-css-vue-js-component-dropdown/
 description: How to use the open-sourced Spectrum CSS to build a simple VueJS DropDown component
 image: /wp-content/uploads/2018/12/vuespectrum.png
-categories:
+category:
   - CEP
 tags:
   - CEP

@@ -8,7 +8,7 @@ permalink: /2017/01/vue-js-nonlinear-sliders-with-computed-properties/
 description: "How to use Vue.js Computed Properties to build nonlinear Sliders (range input) combining multiple linear equations to compress/expand ranges"
 image: /wp-content/uploads/2016/06/logo.png
 mathjax: true
-categories:
+category:
   - CEP
 tags:
   - "Vue.js"

@@ -15,7 +15,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - 'Channel Power Tools - CPT, the Swiss Army knife of channel operations (channel chops), reaches version 1.1.3 and supports Photoshop CC.'
 image: /wp-content/uploads/2013/06/icona-Installer_CPT.png
-categories:
+category:
   - Extensions and Scripts
   - Photoshop
 tags:

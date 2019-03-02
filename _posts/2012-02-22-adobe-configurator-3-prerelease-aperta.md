@@ -7,7 +7,7 @@ excerpt: La prerelease di Adobe Configurator 3 è aperta
 layout: post
 guid: http://www.davidebarranca.com/?p=742
 permalink: /2012/02/adobe-configurator-3-prerelease-aperta/
-categories:
+category:
   - Photoshop @it
 tags:
   - Adobe Prerelease Programs

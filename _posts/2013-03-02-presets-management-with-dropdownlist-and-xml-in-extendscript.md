@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - 'Tutorial: how to build a Photoshop / InDesign ExtendScript using a Presets system based upon XML Data and a DropDownList.'
 image: /wp-content/uploads/2013/03/XML_DropDownList_Preset_demo.jpg
-categories:
+category:
   - Coding
 tags:
   - CoffeeScript

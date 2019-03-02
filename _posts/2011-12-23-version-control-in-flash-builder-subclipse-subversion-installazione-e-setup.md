@@ -7,7 +7,7 @@ excerpt: 'Come installare e impostare un repository locale con Subclipse (plugin
 layout: post
 guid: http://www.davidebarranca.com/?p=639
 permalink: /2011/12/version-control-in-flash-builder-subclipse-subversion-installazione-e-setup/
-categories:
+category:
   - Coding @it
 ---
 <div class="pf-content">

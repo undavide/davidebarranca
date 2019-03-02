@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - 'How to invoke a ScriptUI component’s callback with or without simulating user interaction: directly, using call(), notify(), dispatchEvent()'
 image: /wp-content/uploads/2013/08/ScriptUI_Events.png
-categories:
+category:
   - Coding
   - ExtendScript / Javascript
 tags:

@@ -20,7 +20,7 @@ link_url_field:
 seo_post_meta_description:
   - ""
 image: /wp-content/uploads/2013/06/cc_app.png
-categories:
+category:
   - Extensions and Scripts
   - Photoshop
 tags:

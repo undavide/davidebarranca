@@ -7,7 +7,7 @@ excerpt: 'Le mie slides sullo Sharpening del CCC - Color Correction Campus, Bolo
 layout: post
 guid: http://www.davidebarranca.com/?p=158
 permalink: /2011/11/ccc-bologna-slides-sullo-sharpening/
-categories:
+category:
   - Photoshop @it
 ---
 <div class="pf-content">

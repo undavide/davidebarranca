@@ -7,7 +7,7 @@ layout: post
 permalink: /2018/04/professional-photoshop-scripting-course-early-access-program/
 description: Professional Photoshop Scripting, the only complete course available on PS Scripting, is for sale as Early Access Program
 image: /wp-content/uploads/2018/04/PSScriptingCover.png
-categories:
+category:
   - Scripting
 tags:
   - Professional Photoshop Scripting

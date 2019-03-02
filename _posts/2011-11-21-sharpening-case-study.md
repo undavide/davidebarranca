@@ -1,26 +1,19 @@
 ---
-id: 184
 title: Sharpening case study
 date: 2011-11-21T22:00:18+01:00
 author: Davide Barranca
-excerpt: A sharpening case study that involves traditional Unsharp Mask, HiRaLoAm (High Radius Low Amount) and various masking methods.
+excerpt: "A sharpening case study that involves traditional Unsharp Mask, HiRaLoAm (High Radius Low Amount) and various masking methods."
 layout: post
 guid: http://www.davidebarranca.com/?p=184
 permalink: /2011/11/sharpening-case-study/
-standard_seo_post_level_layout:
-  - ""
-standard_link_url_field:
-  - ""
-standard_seo_post_meta_description:
-  - 'Underwater photography case study - involving traditional Unsharp Mask, HiRaLoAm (High Radius Low Amount) and various masking methods. '
+description: "A sharpening case study that involves traditional Unsharp Mask, HiRaLoAm (High Radius Low Amount) and various masking methods."
 image: /wp-content/uploads/2011/11/03-Final_L.jpg
-categories:
+category:
   - Photoshop
 tags:
-  - case study
-  - sharpening
-  - underwater photography
+  - Sharpening
 ---
+
 <div class="pf-content">
   <p>
     As a last example of my <a title="Sharpening session at CCC" href="/2011/09/sharpening-session-at-ccc/" target="_blank">CCC Sharpening lecture</a> in October, I did a correction of an underwater image. Later, I&#8217;ve been solicited with a very gentle email to show once again all the steps, and I asked my dear friend the photographer <a title="Davide D'Angelo Photographer" href="http://www.davidedangelo.com/" target="_blank">Davide D&#8217;Angelo</a>: he kindly got me in touch with his colleague the <a title="Paolo Fossati underwater photographer" href="http://www.paolo-fossati.com/" target="_blank">underwater photographer Paolo Fossati</a>, author of the picture I&#8217;ll show throughout this post. Thanks so much to both of you! So here it is, a little sharpening case study.

@@ -7,7 +7,7 @@ layout: post
 permalink: /2017/10/html-panel-tips-25-cc-2018-survival-guide/
 description: "What's new in CEP 8 for Photoshop HTML Panels developers. Information you'd better know to successfully migrate your extensions to CC 2018"
 image: /wp-content/uploads/2015/06/CC2015.png
-categories:
+category:
   - CEP
 tags:
   - CC 2018

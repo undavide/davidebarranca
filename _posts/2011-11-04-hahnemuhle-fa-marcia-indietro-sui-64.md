@@ -8,7 +8,7 @@ excerpt: |
 layout: post
 guid: http://www.davidebarranca.com/?p=128
 permalink: /2011/11/hahnemuhle-fa-marcia-indietro-sui-64/
-categories:
+category:
   - Stampa
 ---
 <div class="pf-content">

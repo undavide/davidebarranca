@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/02/vitamin-bw-script-extension-for-photoshop-cc-cs6/
 description: "VitaminBW Photoshop CC /CS6 script that spices up Black & White conversion featuring Smart Contrast Enhancement, Toning and BW Color Filters"
 image: /wp-content/uploads/2013/11/VitaminBW_icon_120.png
-categories:
+category:
   - Photoshop
 tags:
   - Vitamin BW

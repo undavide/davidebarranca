@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/01/html-panels-tips-3-get-data-from-jsx-send-it-to-html/
 description: "How to pass data from Photoshop CC (ExtendScript code in JSX) back to the HTML Panel."
 image: /wp-content/uploads/2014/01/JSX_2_HTML.png
-categories:
+category:
   - CEP
 tags:
   - HTML Panels Tips

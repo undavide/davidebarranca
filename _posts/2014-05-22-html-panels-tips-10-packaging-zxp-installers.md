@@ -7,7 +7,7 @@ permalink: /2014/05/html-panels-tips-10-packaging-zxp-installers/
 excerpt: "How to build customized ZXP installers for CC HTML Extensions (standard, flash-compatible, hybrid) using ZXPSignCmd, ucf.jar and MXI files."
 description: "How to build customized ZXP installers for CC HTML Extensions (standard, flash-compatible, hybrid) using ZXPSignCmd, ucf.jar and MXI files."
 image: /wp-content/uploads/2014/05/mxi.png
-categories:
+category:
   - CEP
 tags:
 - HTML Panels Tips

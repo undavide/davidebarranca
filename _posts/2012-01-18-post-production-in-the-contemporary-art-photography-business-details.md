@@ -9,7 +9,7 @@ layout: post
 guid: http://www.davidebarranca.com/?p=664
 permalink: /2012/01/post-production-in-the-contemporary-art-photography-business-details/
 image: /wp-content/uploads/2012/01/Friends.jpg
-categories:
+category:
   - Photography Post-Production
 tags:
   - Contemporary Art

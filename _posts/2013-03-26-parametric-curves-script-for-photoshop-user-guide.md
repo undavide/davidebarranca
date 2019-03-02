@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - Parametric Curves is a free Photoshop CS6 script that lets you plot mathematically defined (Javascript) Curves Adjustment layers.
 image: /wp-content/uploads/2013/03/ParametricCurves_Featured.jpg
-categories:
+category:
   - Coding
   - Extensions and Scripts
   - Parametric Curves

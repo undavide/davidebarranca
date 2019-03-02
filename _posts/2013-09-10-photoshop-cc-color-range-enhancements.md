@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - 'Photoshop CC (version 14.1) introduces Color Range Selection enhancements: Highlights, Midtones and Shadows Range. A Threshold in disguise.'
 image: /wp-content/uploads/2013/09/Photoshop_CC_Color_Range.png
-categories:
+category:
   - Photoshop
 tags:
   - "14.1"

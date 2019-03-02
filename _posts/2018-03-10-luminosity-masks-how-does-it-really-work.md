@@ -8,7 +8,7 @@ permalink: /2018/03/luminosity-masks-how-does-it-really-work/
 description: Everywhere you go you read about Luminosity Masks, but what really happens behind the scenes? How to generate Luminosity Mask?
 image: /wp-content/uploads/2018/03/BlogPostIcon-1.png
 mathjax: true
-categories:
+category:
   - Photoshop
 tags:
   - Luminosity Mask

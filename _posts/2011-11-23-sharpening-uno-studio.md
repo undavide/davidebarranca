@@ -7,7 +7,7 @@ excerpt: 'Uno studio sullo Sharpening (Maschera di Contrasto) tratto dalla mia l
 layout: post
 guid: http://www.davidebarranca.com/?p=251
 permalink: /2011/11/sharpening-uno-studio/
-categories:
+category:
   - Photoshop @it
 ---
 <div class="pf-content">

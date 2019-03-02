@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - 'Adobe is facing a crossroads: stocks are stagnating, and a radical transformation is coming. How will it change our job as creatives pros?'
 image: /wp-content/uploads/2011/11/Crossroad.jpg
-categories:
+category:
   - Photoshop
 tags:
   - Adobe

@@ -13,7 +13,7 @@ enclosure:
     11172939
     video/mp4
 
-categories:
+category:
   - Stampa
 ---
 <div class="pf-content">

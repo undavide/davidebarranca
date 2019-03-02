@@ -7,7 +7,7 @@ layout: post
 permalink: /2015/09/de-uglify-extendscript-toolkit-on-retina-displays/
 description: Quick hack to get rid of pixelated text and finally get crisp fonts in Adobe ExtendScript Toolkit on Retina displays.
 image: /wp-content/uploads/2015/09/ESTK_retina.png
-categories:
+category:
   - Scripting
 tags:
   - ESTK

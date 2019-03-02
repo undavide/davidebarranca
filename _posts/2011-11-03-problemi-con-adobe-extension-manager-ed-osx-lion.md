@@ -8,7 +8,7 @@ excerpt: |
 layout: post
 guid: http://www.davidebarranca.com/?p=90
 permalink: /2011/11/problemi-con-adobe-extension-manager-ed-osx-lion/
-categories:
+category:
   - Coding @it
   - Photoshop @it
 ---

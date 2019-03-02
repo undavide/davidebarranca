@@ -13,7 +13,7 @@ standard_link_url_field:
   - ""
 standard_seo_post_meta_description:
   - 'A tutorial about ALCE on 360 degrees panoramic images - the suggested workflow to deal with edges on equirectangular pictures.'
-categories:
+category:
   - Photography Post-Production
   - Photoshop
 tags:

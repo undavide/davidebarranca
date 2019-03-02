@@ -8,7 +8,7 @@ layout: post
 guid: http://www.davidebarranca.com/?p=771
 permalink: /2012/03/phaseone-iq180-schneider-kreuznach-reallyrightstuff-panorama-stitching/
 image: /wp-content/uploads/2012/03/PhaseOne.png
-categories:
+category:
   - Photography Post-Production
 tags:
   - Arca Swiss

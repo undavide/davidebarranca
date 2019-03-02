@@ -7,7 +7,7 @@ layout: post
 permalink: /2018/01/ultimate-guide-native-installers-automated-build-system/
 description: The Ultimate Guide to Native Installers and Automated Build Systems, my new course on Adobe CEP Panels Development, is available for sale
 image: /wp-content/uploads/2018/01/UG_thumb.png
-categories:
+category:
   - CEP
 tags:
   - Automation

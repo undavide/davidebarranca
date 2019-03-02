@@ -13,7 +13,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - "Photoshop CC version 14.2 features up to 10 Color Samplers in the Info Palette (previous limit: 4), big deal if you're into Color Correction"
 image: /wp-content/uploads/2014/01/PS_CC_10ColorSamplers.jpg
-categories:
+category:
   - Photoshop
 tags:
   - Codeathon

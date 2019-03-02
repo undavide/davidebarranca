@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/01/html-panels-tips-1-debugging/
 description: "Since latest updates, Photoshop CC (and possibly other Adobe apps too) need remote connecting for debugging"
 image: /wp-content/uploads/2014/01/ChromeDebuggingTool.jpg
-categories:
+category:
   - CEP
 tags:
   - HTML Panels Tips

@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - What kind of JPG compression does iBooksAuthor apply to iBooks images? What happens to color, tone and detail of iBooks embedded pictures?
 image: /wp-content/uploads/2012/04/iBooksAuthor-opening1.jpg
-categories:
+category:
   - Digital Publishing
   - iBooksAuthor
 tags:

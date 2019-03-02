@@ -8,7 +8,7 @@ layout: post
 guid: http://www.davidebarranca.com/?p=1022
 permalink: /2012/07/adobe-exchange-cs-extensions-featuring-alce/
 image: /wp-content/uploads/2012/07/ALCE.png
-categories:
+category:
   - Photoshop
 tags:
   - Adobe Exchange

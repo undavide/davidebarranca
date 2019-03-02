@@ -7,7 +7,7 @@ layout: post
 permalink: /2015/06/html-panel-tips-17-cc2015-survival-guide/
 description: How to smooth the transition from the CC2014 to CC2015 version of Adobe Photoshop from the point of view of CEP Panels
 image: /wp-content/uploads/2015/06/CC2015.png
-categories:
+category:
   - CEP
 tags:
   - HTML Panels Tips

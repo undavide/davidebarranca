@@ -7,7 +7,7 @@ layout: post
 permalink: /2016/06/html-panel-tips-20-javascript-frameworks-angularjs-vuejs/
 description: "What is the 'best' Javascript framework for Adobe Photoshop HTML Panels? I review AngularJS and Vue.js as two of the options that I've used."
 image: /wp-content/uploads/2016/06/logo.png
-categories:
+category:
   - CEP
 tags:
   - HTML Panels Tips

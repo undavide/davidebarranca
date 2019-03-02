@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/02/html-panels-tips-6-integrating-topcoat-css/
 description: "How to integrate the Adobe Topcoat CSS library with Theme management for HTML Panels in Photoshop CC"
 image: /wp-content/uploads/2014/02/Topcoat.png
-categories:
+category:
   - CEP
 tags:
 - HTML Panels Tips

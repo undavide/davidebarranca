@@ -7,7 +7,7 @@ layout: post
 permalink: /2014/02/html-panels-tips-7-events-photoshopregisterevent-photoshopcallback/
 description: "The first way for an HTML Panel to listen for Photoshop Events: PhotoshopRegisterEvent and PhotoshopCallback"
 image: /wp-content/uploads/2014/02/PSEvents1.png
-categories:
+category:
   - CEP
 tags:  
   - HTML Panels Tips

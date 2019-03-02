@@ -7,7 +7,7 @@ layout: post
 permalink: /2015/09/html-panel-tips-18-photoshop-json-callback/
 description: "From Photoshop CC2015, com.adobe.PhotoshopCallback event is deprecated, replaced by com.adobe.PhotoshopJSONCallback. An example is provided."
 image: /wp-content/uploads/2015/09/PhotoshopJSONCallback.png
-categories:
+category:
   - CEP
 tags:
   - HTML Panels Tips

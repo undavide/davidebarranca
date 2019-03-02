@@ -7,7 +7,7 @@ excerpt: 'Un tutorial su ALCE (Advanced Local Contrast Enhancer) su panoramiche 
 layout: post
 guid: http://www.davidebarranca.com/?p=701
 permalink: /2012/01/alce-panorama-360-equirettangolare-tutorial/
-categories:
+category:
   - Photoshop @it
   - Post-produzione
 ---

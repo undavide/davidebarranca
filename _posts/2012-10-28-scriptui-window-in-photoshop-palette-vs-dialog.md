@@ -1,242 +1,163 @@
 ---
-id: 1290
-title: 'ScriptUI Window in Photoshop &#8211; Palette vs. Dialog'
+
+title: "ScriptUI Window in Photoshop – Palette vs. Dialog"
 date: 2012-10-28T01:50:22+01:00
 author: Davide Barranca
-excerpt: "Photoshop is a bit picky when it comes to ScriptUI Window elements - compared to other Creative Suite applications, 'palette' and 'dialog' work in a peculiar way and their behavior is platform / version dependent - alas."
+excerpt: "Photoshop implementation of ScriptUI windows of type 'dialog' and 'palette'"
 layout: post
-guid: http://www.davidebarranca.com/?p=1290
 permalink: /2012/10/scriptui-window-in-photoshop-palette-vs-dialog/
-standard_seo_post_level_layout:
-  - ""
-standard_link_url_field:
-  - ""
-standard_seo_post_meta_description:
-  - "ExtendScript lets you build GUI in CS Applications yet Photoshop implementation's tricky and requires different platform/version workarounds"
+description: "Photoshop implementation of ScriptUI windows of type 'dialog' and 'palette'"
 image: /wp-content/uploads/2012/10/PS_palettes.png
-categories:
-  - Coding
-  - ExtendScript / Javascript
+category:
+  - Scripting
 tags:
-  - dialog
-  - Extendscript
-  - Javascript
-  - palette
-  - Photoshop @en
   - ScriptUI
-  - waitForRedraw()
-  - Window
 ---
-<div class="pf-content">
-  <p>
-    ExtendScript &#8211; one of the scripting languages supported by Creative Suite applications, and the only one cross-platform &#8211; has several extra features compared to Javascript. Besides Filesystem access (a notable addition), there&#8217;s the ScriptUI component: which allows you to add graphic user interfaces (GUI) to scripts.
-  </p>
 
-  <p>
-    Photoshop support is dated to CS2, according to the <em>unofficial</em> (yet essential) <a title="ScriptUI for Dummies" href="http://www.kahrel.plus.com/indesign/scriptui.html" target="_blank">ScriptUI for Dummies</a> guide made by Peter Kahrel. As it happens often in scripting CS applications, the implementation of some feature is <em>version and platform dependent</em> &#8211; i.e. PS CS5 on PC is different from PS CS6 on Mac. In this post I&#8217;m going to focus on one particular aspect of ScriptUI, namely the Window object.
-  </p>
+ExtendScript - one of the scripting languages supported by Creative Suite applications, and the only one cross-platform - has several extra features compared to Javascript. Besides Filesystem access (a notable addition), there's the ScriptUI component: which allows you to add graphic user interfaces (GUI) to scripts. Photoshop support is dated to CS2, according to the _unofficial_ (yet essential) [ScriptUI for Dummies](http://www.kahrel.plus.com/indesign/scriptui.html "ScriptUI for Dummies") guide made by Peter Kahrel. As it happens often in scripting CS applications, the implementation of some feature is _version and platform dependent_ - i.e. PS CS5 on PC is different from PS CS6 on Mac. In this post I'm going to focus on one particular aspect of ScriptUI, namely the Window object.
 
-  <h2>
-    Two of a kind
-  </h2>
+## Two of a kind
 
-  <p>
-    Windows can be either <strong>dialogs</strong> or <strong>palettes</strong> (at least in Photoshop). They look and are substantially different.
-  </p>
+Windows can be either **dialogs** or **palettes** (at least in Photoshop). They look and are substantially different.
 
-  <h3>
-    Palettes
-  </h3>
+### Palettes
 
-  <p>
-    Open the ExtendScript ToolKit (ESTK) and run the following code:
-  </p>
+Open the ExtendScript ToolKit (ESTK) and run the following code:
 
-  <pre class="lang:js decode:true">#target estoolkit
-var win, windowResource;
+{% highlight js %}
+#target estoolkit
+var windowResource = "palette {  \
+orientation: 'column', \
+alignChildren: ['fill', 'top'],  \
+preferredSize:[300, 130], \
+text: 'ScriptUI Window - palette',  \
+margins:15, \
+\
+sliderPanel: Panel { \
+  orientation: 'row', \
+  alignChildren: 'right', \
+  margins:15, \
+  text: ' PANEL ', \
+  st: StaticText { text: 'Value:' }, \
+  sl: Slider { minvalue: 1, maxvalue: 100, value: 30, size:[220,20] }, \
+  te: EditText { text: '30', characters: 5, justify: 'left'} \
+}, \
+\
+bottomGroup: Group{ \
+  cd: Checkbox { text:'Checkbox value', value: true }, \
+  cancelButton: Button { text: 'Cancel', properties:{name:'cancel'}, size: [120,24], alignment:['right', 'center'] }, \
+  applyButton: Button { text: 'Apply', properties:{name:'ok'}, size: [120,24], alignment:['right', 'center'] }, \
+}\
+}";
 
-windowResource = "palette {  \
-    orientation: 'column', \
-    alignChildren: ['fill', 'top'],  \
-    preferredSize:[300, 130], \
-    text: 'ScriptUI Window - palette',  \
-    margins:15, \
-    \
-    sliderPanel: Panel { \
-        orientation: 'row', \
-        alignChildren: 'right', \
-        margins:15, \
-        text: ' PANEL ', \
-        st: StaticText { text: 'Value:' }, \
-        sl: Slider { minvalue: 1, maxvalue: 100, value: 30, size:[220,20] }, \
-        te: EditText { text: '30', characters: 5, justify: 'left'} \
-        } \
-    \
-    bottomGroup: Group{ \
-        cd: Checkbox { text:'Checkbox value', value: true }, \
-        cancelButton: Button { text: 'Cancel', properties:{name:'cancel'}, size: [120,24], alignment:['right', 'center'] }, \
-        applyButton: Button { text: 'Apply', properties:{name:'ok'}, size: [120,24], alignment:['right', 'center'] }, \
-    }\
-}"
-
-win = new Window(windowResource);
-
+var win = new Window(windowResource);
 win.bottomGroup.cancelButton.onClick = function() {
   return win.close();
 };
 win.bottomGroup.applyButton.onClick = function() {
   return win.close();
 };
+win.show();
+{% endhighlight %}
 
-win.show();</pre>
+The result (it runs in ESTK, since the first line is the preprocessing directive `#target estoolkit`) is as follows:
 
-  <p>
-    The result (it runs in ESTK, since the first line is the preprocessing directive <code>#target estoolkit</code>) is as follows:
-  </p>
+![ESTK palette](/wp-content/uploads/2012/10/ESTK_palette.png "ESTK palette")
 
-  <p>
-    <img class="aligncenter size-full wp-image-1293" title="ESTK palette" src="/wp-content/uploads/2012/10/ESTK_palette.png" alt="ESTK palette" width="409" height="160" srcset="/wp-content/uploads/2012/10/ESTK_palette.png 409w, /wp-content/uploads/2012/10/ESTK_palette-150x58.png 150w, /wp-content/uploads/2012/10/ESTK_palette-300x117.png 300w" sizes="(max-width: 409px) 100vw, 409px" />
-  </p>
+The above is a **palette**, a **non-modal** window. Something that lets you interact _either with the window itself_ (clicking buttons, dragging sliders, etc) _and with the host program_ - here the ESTK (so you can select, say, menu items, other panels, etc.). It's the Javascript equivalent of Panels and third party Extensions - they show up and wait there, letting you work with Photoshop.
 
-  <p>
-    The above is a <strong>palette</strong>, a <strong>non-modal</strong> window. Something that lets you interact <em>either with the window itself</em> (clicking buttons, dragging sliders, etc) <em>and with the host program</em> &#8211; here the ESTK (so you can select, say, menu items, other panels, etc.). It&#8217;s the Javascript equivalent of Panels and third party Extensions &#8211; they show up and wait there, letting you work with Photoshop.
-  </p>
+### Dialogs
 
-  <h3>
-    Dialogs
-  </h3>
+In ESTK run the following code:
 
-  <p>
-    In ESTK run the following code:
-  </p>
-
-  <pre class="height-set:true height:300 lang:default mark:4 decode:true">#target estoolkit
-var win, windowResource;
-
-windowResource = "dialog {  \
-    orientation: 'column', \
-    alignChildren: ['fill', 'top'],  \
-    preferredSize:[300, 130], \
-    text: 'ScriptUI Window - dialog',  \
-    margins:15, \
-    \
-    sliderPanel: Panel { \
-        orientation: 'row', \
-        alignChildren: 'right', \
-        margins:15, \
-        text: ' PANEL ', \
-        st: StaticText { text: 'Value:' }, \
-        sl: Slider { minvalue: 1, maxvalue: 100, value: 30, size:[220,20] }, \
-        te: EditText { text: '30', characters: 5, justify: 'left'} \
-        } \
-    \
-    bottomGroup: Group{ \
-        cd: Checkbox { text:'Checkbox value', value: true }, \
-        cancelButton: Button { text: 'Cancel', properties:{name:'cancel'}, size: [120,24], alignment:['right', 'center'] }, \
-        applyButton: Button { text: 'Apply', properties:{name:'ok'}, size: [120,24], alignment:['right', 'center'] }, \
-    }\
+{% highlight js %}
+#target estoolkit
+var windowResource = "dialog {  \
+orientation: 'column', \
+alignChildren: ['fill', 'top'],  \
+preferredSize:[300, 130], \
+text: 'ScriptUI Window - dialog',  \
+margins:15, \
+\
+sliderPanel: Panel { \
+  orientation: 'row', \
+  alignChildren: 'right', \
+  margins:15, \
+  text: ' PANEL ', \
+  st: StaticText { text: 'Value:' }, \
+  sl: Slider { minvalue: 1, maxvalue: 100, value: 30, size:[220,20] }, \
+  te: EditText { text: '30', characters: 5, justify: 'left'} \
+}, \
+\
+bottomGroup: Group{ \
+  cd: Checkbox { text:'Checkbox value', value: true }, \
+  cancelButton: Button { text: 'Cancel', properties:{name:'cancel'}, size: [120,24], alignment:['right', 'center'] }, \
+  applyButton: Button { text: 'Apply', properties:{name:'ok'}, size: [120,24], alignment:['right', 'center'] }, \
+}\
 }"
 
 win = new Window(windowResource);
 
-win.bottomGroup.cancelButton.onClick = function() {
+var win.bottomGroup.cancelButton.onClick = function() {
   return win.close();
 };
 win.bottomGroup.applyButton.onClick = function() {
   return win.close();
 };
 
-win.show();</pre>
+win.show();
+{% endhighlight %}
 
-  <p>
-    Compared to the first script, there&#8217;s little difference (the windowResource string contains <code>dialog</code> instead of <code>palette</code>) and the Window looks like this:
-  </p>
+Compared to the first script, there's little difference (the windowResource string contains `dialog` instead of `palette`) and the Window looks like this:
 
-  <p>
-    <img class="aligncenter size-full wp-image-1294" title="ESTK dialog" src="/wp-content/uploads/2012/10/ESTK_dialog.png" alt="ESTK dialog" width="509" height="266" srcset="/wp-content/uploads/2012/10/ESTK_dialog.png 509w, /wp-content/uploads/2012/10/ESTK_dialog-150x78.png 150w, /wp-content/uploads/2012/10/ESTK_dialog-300x156.png 300w" sizes="(max-width: 509px) 100vw, 509px" />
-  </p>
+![ESTK dialog](/wp-content/uploads/2012/10/ESTK_dialog.png "ESTK dialog")
 
-  <p>
-    We&#8217;re still within ESTK: the red, closing button is disappeared, the titlebar is bigger, but the main difference is that <strong>dialogs</strong> are <strong>modal</strong>: that is, the focus is on them and you <em>can not interact with the host application</em>. If you try to select, say, a menu item the program complains with a beep.
-  </p>
+We're still within ESTK: the red, closing button is disappeared, the titlebar is bigger, but the main difference is that **dialogs** are **modal**: that is, the focus is on them and you _can not interact with the host application_. If you try to select, say, a menu item the program complains with a beep.
 
-  <h2>
-    Photoshop support
-  </h2>
+## Photoshop support
 
-  <p>
-    In the ScriptUI for Dummies guide it&#8217;s asserted that Photoshop doesn&#8217;t support palette windows. While the more hours I spend debugging unwanted behaviors the more I tend to agree with Peter Kahrel, I would personally express the statement as follows:
-  </p>
+In the ScriptUI for Dummies guide it's asserted that Photoshop doesn't support palette windows. While the more hours I spend debugging unwanted behaviors the more I tend to agree with Peter Kahrel, I would personally express the statement as follows:
 
-  <blockquote>
-    <p>
-      Photoshop supports both dialog and palette Windows; while the former kind&#8217;s behavior is consistent with other CS applications, palette implementation in PS is peculiar and version/platform dependent.
-    </p>
-  </blockquote>
+> Photoshop supports both dialog and palette Windows; while the former kind's behavior is consistent with other CS applications, palette implementation in PS is peculiar and version/platform dependent.
 
-  <h3>
-    PS dialogs implementation
-  </h3>
+### PS dialogs implementation
 
-  <p>
-    It&#8217;s basically what you&#8217;d expect &#8211; a modal window (which aspect depends on the PS version and platform). Yet the behavior is exactly the same no matter what is the combination, PC/Mac &#8211; CS5/CS6. In order to test it, just change the first line of the two scripts above:
-  </p>
+It's basically what you'd expect - a modal window (which aspect depends on the PS version and platform). Yet the behavior is exactly the same no matter what is the combination, PC/Mac - CS5/CS6. In order to test it, just change the first line of the two scripts above:
 
-  <pre class="lang:js decode:true">#target photoshop
+{% highlight js %}
+#target photoshop
+{% endhighlight %}
 
-// etc.</pre>
+<figure>
+	<img src="/wp-content/uploads/2012/10/PS_dialogs.png" />
+	<figcaption>First row: Mac CS5, Mac CS6. Second row: PC CS5, PC CS6.</figcaption>
+</figure>
 
-  <p>
-    &nbsp;
-  </p>
+One thing to notice is that PC versions have a red X closing button, while Mac versions do not (for some reason, CS5 rendering of the slider bar is thicker compared to CS6).
 
-  <div id="attachment_1295" style="width: 1016px" class="wp-caption aligncenter">
-    <a href="/wp-content/uploads/2012/10/PS_dialogs.png" target="_blank"><img aria-describedby="caption-attachment-1295" class="size-full wp-image-1295 " title="PS dialogs" src="/wp-content/uploads/2012/10/PS_dialogs.png" alt="PS dialogs" width="1006" height="435" srcset="/wp-content/uploads/2012/10/PS_dialogs.png 1006w, /wp-content/uploads/2012/10/PS_dialogs-150x64.png 150w, /wp-content/uploads/2012/10/PS_dialogs-300x129.png 300w" sizes="(max-width: 1006px) 100vw, 1006px" /></a>
+### PS palettes implementation
 
-    <p id="caption-attachment-1295" class="wp-caption-text">
-      First row: Mac CS5, Mac CS6.<br />Second row: PC CS5, PC CS6.
-    </p>
-  </div>
+Here things get "interesting". First, if you run the palette example with  `#target photoshop` you're not going to see very much. The Window that you expect to see just flashes briefly and disappear. This is what will happen to every Snp*.jsx examples provided alongside with the ESTK application, not just my code. The answer lies in the fact that palettes keep showing **only** if there's something going on in the script, **they can not stay idle** waiting for the user to do something like modal dialogs do.
 
-  <p>
-    One thing to notice is that PC versions have a red X closing button, while Mac versions do not (for some reason, CS5 rendering of the slider bar is thicker compared to CS6).
-  </p>
-
-  <h3>
-    PS palettes implementation
-  </h3>
-
-  <p>
-    Here things get &#8220;interesting&#8221;. First, if you run the palette example with  <code>#target photoshop</code> you&#8217;re not going to see very much. The Window that you expect to see just flashes briefly and disappear. This is what will happen to every Snp*.jsx examples provided alongside with the ESTK application, not just my code.
-  </p>
-
-  <p>
-    The answer lies in the fact that palettes keep showing <strong>only</strong> if there&#8217;s something going on in the script, <strong>they can not stay idle</strong> waiting for the user to do something like modal dialogs do.
-  </p>
-
-  <pre class="lang:js decode:true">var win, windowResource, i;
-
-windowResource = "palette {  \    orientation: 'column', \    alignChildren: ['fill', 'top'],  \    preferredSize:[300, 130], \    text: 'ScriptUI Window - dialog',  \    margins:15, \    \    sliderPanel: Panel { \        orientation: 'row', \        alignChildren: 'right', \        margins:15, \        text: ' PANEL ', \        st: StaticText { text: 'Value:' }, \        sl: Slider { minvalue: 1, maxvalue: 100, value: 30, size:[220,20] }, \        te: EditText { text: '30', characters: 5, justify: 'left'} \        } \    \    bottomGroup: Group{ \        cd: Checkbox { text:'Checkbox value', value: true }, \        cancelButton: Button { text: 'Cancel', properties:{name:'cancel'}, size: [120,24], alignment:['right', 'center'] }, \        applyButton: Button { text: 'Apply', properties:{name:'ok'}, size: [120,24], alignment:['right', 'center'] }, \    }\}";
-win = new Window(windowResource);
+{% highlight js %}
+// palette same as before
+var windowResource = "palette { /* etc... */}";
+var win = new Window(windowResource);
 win.show();
 
 app.documents.add(); // adds a new document
-app.activeDocument.activeLayer.applyAddNoise (400, NoiseDistribution.GAUSSIAN, true) // applies Noise
-for (i = 0; i &lt; 3; i++) { // Blurs it 3 times
+app.activeDocument.activeLayer.applyAddNoise (400, NoiseDistribution.GAUSSIAN, true)
+for (i = 0; i < 3; i++) { // Blurs it 3 times
     app.activeDocument.activeLayer.applyGaussianBlur(1);
     $.sleep (2000); // waits 2 seconds
     app.refresh(); // refreshes PS
-}</pre>
+}
+{% endhighlight %}
 
-  <p>
-    In the above example, after the <code>win.show()</code> the script is busy creating a new document, applying and blurring some noise just to kill some time. In the meantime, the palette window shows and keep showing; when the script is done with the task, the palette is automatically closed with no need of user interaction whatsoever, nor explicit <code>win.close()</code>.
-  </p>
+In the above example, after the `win.show()` the script is busy creating a new document, applying and blurring some noise just to kill some time. In the meantime, the palette window shows and keep showing; when the script is done with the task, the palette is automatically closed with no need of user interaction whatsoever, nor explicit `win.close()`. In order to keep Photoshop busy, I've found two working alternatives (because a straight `$.sleep()` loop makes PS quite non-responsive) involving the following functions:
 
-  <p>
-    In order to keep Photoshop busy, I&#8217;ve found two working alternatives (because a straight <code>$.sleep()</code> loop makes PS quite non-responsive) involving the following functions:
-  </p>
-
-  <pre class="lang:js decode:true">// According to the PS Javascript Reference:
+{% highlight js %}
+// According to the PS Javascript Reference:
 // "Pauses the script while the application refreshes.
 // Use to slow down execution and show the results to
 // the user as the script runs.
@@ -251,23 +172,21 @@ app.refresh();
 var waitForRedraw = function() {
   var d;
   d = new ActionDescriptor();
-  d.putEnumerated(app.stringIDtoTypeID('state'), app.stringIDtoTypeID('state'), app.stringIDtoTypeID('redrawComplete'));
+  d.putEnumerated(app.stringIDtoTypeID('state'),
+  app.stringIDtoTypeID('state'),
+  app.stringIDtoTypeID('redrawComplete'));
   return executeAction(app.stringIDtoTypeID('wait'), d, DialogModes.NO);
-};</pre>
+};
+{% endhighlight %}
 
-  <p>
-    The comments in the code should be self-explanatory. As far as I know, waitForRedraw() should work also in earlier PS versions &#8211; it&#8217;s not documented, it&#8217;s just used in one Reference&#8217;s demo scripts.
-  </p>
+The comments in the code should be self-explanatory. As far as I know, `waitForRedraw()` should work also in earlier PS versions - it's not documented, it's just used in one Reference's demo scripts.
 
-  <h3>
-    PS palette working example
-  </h3>
+### PS palette working example
 
-  <p>
-    One possible way to implement working palette Windows in Photoshop has the following logic:
-  </p>
+One possible way to implement working palette Windows in Photoshop has the following logic:
 
-  <pre class="lang:js decode:true">var isDone, s2t, waitForRedraw, win, windowResource;
+{% highlight js %}
+var isDone, s2t, waitForRedraw, win, windowResource;
 
 // Shortcut function
 s2t = function(stringID) {
@@ -284,7 +203,8 @@ waitForRedraw = function() {
 //sentinel variable
 isDone = false;
 
-windowResource = "palette {  \    orientation: 'column', \    alignChildren: ['fill', 'top'],  \    preferredSize:[300, 130], \    text: 'ScriptUI Window - palette',  \    margins:15, \    \    sliderPanel: Panel { \        orientation: 'row', \        alignChildren: 'right', \        margins:15, \        text: ' PANEL ', \        st: StaticText { text: 'Value:' }, \        sl: Slider { minvalue: 1, maxvalue: 100, value: 30, size:[220,20] }, \        te: EditText { text: '30', characters: 5, justify: 'left'} \        } \    \    bottomGroup: Group{ \        cd: Checkbox { text:'Checkbox value', value: true }, \        cancelButton: Button { text: 'Cancel', properties:{name:'cancel'}, size: [120,24], alignment:['right', 'center'] }, \        applyButton: Button { text: 'Apply', properties:{name:'ok'}, size: [120,24], alignment:['right', 'center'] }, \    }\}";
+// palette same as before
+windowResource = "palette { /* etc... */}";
 
 win = new Window(windowResource);
 
@@ -305,83 +225,35 @@ win.show();
 
 while (isDone === false) {
   app.refresh(); // or, alternatively, waitForRedraw();
-}</pre>
+}
+{% endhighlight %}
 
-  <p>
-    The key point is the <code>isDone</code> variable, which is set false at the beginning. After the Window is shown, a while loop keeps checking for this sentinel value and call <code>app.refresh()</code>, or alternatively <code>waitForRedraw()</code> in order to keep the palette showing.
-  </p>
+The key point is the `isDone` variable, which is set false at the beginning. After the Window is shown, a while loop keeps checking for this sentinel value and call `app.refresh()`, or alternatively `waitForRedraw()` in order to keep the palette showing. Instead of an explicit call to `win.close()`, it's a better option to attach to the buttons' `onClick()` functions a sentinel value's switch to true. This way the while loop breaks and the Window automatically closes.
+Mind you, it's crucial to set `isDone = true` even in the `win.onClose()` function, otherwise Photoshop will keep evaluating the variable even after the Window has been closed clicking the red dismiss button (see following screenshot) - resulting in some degree of non-responsiveness.
 
-  <p>
-    Instead of an explicit call to <code>win.close()</code>, it&#8217;s a better option to attach to the buttons&#8217; <code>onClick()</code> functions a sentinel value&#8217;s switch to true. This way the while loop breaks and the Window automatically closes. Mind you, it&#8217;s crucial to set <code>isDone = true</code> even in the <code>win.onClose()</code> function, otherwise Photoshop will keep evaluating the variable even after the Window has been closed clicking the red dismiss button (see following screenshot) &#8211; resulting in some degree of non-responsiveness.
-  </p>
+<figure>
+	<img src="/wp-content/uploads/2012/10/PS_palettes.png" />
+	<figcaption>First row: Mac CS5, Mac CS6. Second row: PC CS5, PC CS6.</figcaption>
+</figure>
 
-  <div id="attachment_1307" style="width: 933px" class="wp-caption aligncenter">
-    <a href="/wp-content/uploads/2012/10/PS_palettes.png" target="_blank"><img aria-describedby="caption-attachment-1307" class="size-full wp-image-1307 " title="PS palettes" src="/wp-content/uploads/2012/10/PS_palettes.png" alt="PS palettes" width="923" height="393" srcset="/wp-content/uploads/2012/10/PS_palettes.png 923w, /wp-content/uploads/2012/10/PS_palettes-150x63.png 150w, /wp-content/uploads/2012/10/PS_palettes-300x127.png 300w" sizes="(max-width: 923px) 100vw, 923px" /></a>
+Few cosmetic differences are present this time too, including the position of the dismiss button (top-left for Mac, top-right for PC). This button is taken into account with the `onClose()` function as shown in the code example.
 
-    <p id="caption-attachment-1307" class="wp-caption-text">
-      First row: Mac CS5, Mac CS6.<br />Second row: PC CS5, PC CS6.
-    </p>
-  </div>
+## Platform specific behaviors (aka bugs)
 
-  <p>
-    Few cosmetic differences are present this time too, including the position of the dismiss button (top-left for Mac, top-right for PC). This button is taken into account with the <code>onClose()</code> function as shown in the code example.
-  </p>
+Things are getting weird if you start to compare Mac and PC implementations of ScriptUI windows in Photoshop CS5 and CS6 (the tests on the PC side have been made on a virtualized Window7 system running in Parallels Desktop). It happens that, depending on how you mix platform, version and Window type, you end up with different behaviors (_modal_ and _non-modal_), as follows:
 
-  <h2>
-    Platform specific behaviors (aka bugs)
-  </h2>
+![Behavior Table](/wp-content/uploads/2012/10/BehaviorTable.png )
 
-  <p>
-    Things are getting weird if you start to compare Mac and PC implementations of ScriptUI windows in Photoshop CS5 and CS6 (the tests on the PC side have been made on a virtualized Window7 system running in Parallels Desktop).
-  </p>
+While **dialog**'s behavior is nicely uniform between Mac and PC, CS5 and CS6; **palettes** are a fiasco. Mac behavior is always _non-modal_ (as it should be - palettes are non-modal by definition), while PC's one depends on the Photoshop version and function used. Basically, only CS5 with app.refresh() works as it's supposed to do, while in CS6 both functions fail. From my personal standpoint, this is a **bug** - and I haven't found any workaround yet.
 
-  <p>
-    It happens that, depending on how you mix platform, version and Window type, you end up with different behaviors (<em>modal</em> and <em>non-modal</em>), as follows:
-  </p>
+## Conclusions
 
-  <div id="attachment_1308" style="width: 700px" class="wp-caption aligncenter">
-    <a href="/wp-content/uploads/2012/10/BehaviorTable.png" target="_blank"><img aria-describedby="caption-attachment-1308" class="size-full wp-image-1308 " title="Behavior Table" src="/wp-content/uploads/2012/10/BehaviorTable.png" alt="Behavior Table" width="690" height="471" srcset="/wp-content/uploads/2012/10/BehaviorTable.png 690w, /wp-content/uploads/2012/10/BehaviorTable-150x102.png 150w, /wp-content/uploads/2012/10/BehaviorTable-300x204.png 300w" sizes="(max-width: 690px) 100vw, 690px" /></a>
+To sum up:
 
-    <p id="caption-attachment-1308" class="wp-caption-text">
-      Comparison of the ScriptUI Window type&#8217;s behavior (<em>modal</em> or <em>non-modal</em>) against Photoshop version and platform.
-    </p>
-  </div>
+*   Palettes are defined within Creative Suite applications as _non-modal_ Windows that can wait idle.
+*   The Photoshop implementation misses entirely the "can wait idle" part - palettes keep showing only if there's some code running in background.
+*   There's a workaround to make palettes behave as they're supposed to do, involving either `app.refresh()` or `waitForRedraw()` loops and a sentinel variable.
+*   On Mac the workaround, no matter on CS5 and CS6 or what function is used, makes the palettes _non-modal_ (as they're supposed to be by definition)
+*   On PC, only app.refresh() in CS5 returns a _non-modal_ Window - CS6 ones are always _modal_.
 
-  <p>
-    While <strong>dialog</strong>&#8216;s behavior is nicely uniform between Mac and PC, CS5 and CS6; <strong>palettes</strong> are a fiasco. Mac behavior is always <em>non-modal</em> (as it should be &#8211; palettes are non-modal by definition), while PC&#8217;s one depends on the Photoshop version and function used. Basically, only CS5 with app.refresh() works as it&#8217;s supposed to do, while in CS6 both functions fail.
-  </p>
-
-  <p>
-    From my personal standpoint, this is a <strong>bug</strong> &#8211; and I haven&#8217;t found any workaround yet.
-  </p>
-
-  <h2>
-    Conclusion
-  </h2>
-
-  <p>
-    To sum up:
-  </p>
-
-  <ul>
-    <li>
-      Palettes are defined within Creative Suite applications as <em>non-modal</em> Windows that can wait idle.
-    </li>
-    <li>
-      The Photoshop implementation misses entirely the &#8220;can wait idle&#8221; part &#8211; palettes keep showing only if there&#8217;s some code running in background.
-    </li>
-    <li>
-      There&#8217;s a workaround to make palettes behave as they&#8217;re supposed to do, involving either <code>app.refresh()</code> or <code>waitForRedraw()</code> loops and a sentinel variable.
-    </li>
-    <li>
-      On Mac the workaround, no matter on CS5 and CS6 or what function is used, makes the palettes <em>non-modal</em> (as they&#8217;re supposed to be by definition)
-    </li>
-    <li>
-      On PC, only app.refresh() in CS5 returns a <em>non-modal</em> Window &#8211; CS6 ones are always <em>modal</em>.
-    </li>
-  </ul>
-
-  <p>
-    Which is quite a pain in the neck, especially if you need your palettes to work as they&#8217;re supposed to do in a platform and version independent way.
-  </p>
-</div>
+Which is quite a pain in the neck, especially if you need your palettes to work as they're supposed to do in a platform and version independent way.

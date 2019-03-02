@@ -1,0 +1,75 @@
+---
+title: " Dorsi digitali Phase One e Adobe Camera Raw - Paneling \"bug\"\t\t"
+tags:
+  - Adobe Camera Raw @it
+  - Capture One @it
+  - Dorso Digitale
+  - IIQ
+  - IQ180 @it
+  - Oggetto Avanzato
+  - P65+ @it
+  - Phase One @it
+  - raw
+url: 972.html
+id: 972
+category:
+  - Post-produzione
+date: 2012-04-28 23:31:32
+---
+
+![PhaseOne IQ180 paneling bug](http://localhost:8888/wp-content/uploads/2012/04/PhaseOne_IQ180_paneling_bug.jpg "PhaseOne IQ180 paneling bug") Se usi un dorso digitale Phase One (serie IQ oppure P/P+) ti è stato detto di adoperare esclusivamente Capture One Pro per lo sviluppo dei raw. Qualità insuperabile, e dopo tutto se un'azienda produce sia hardware che software, sarà in grado di ottimizzare entrambi per lavorare in coppia come nessun altro. Personalmente, temo di non condividere lo stesso entusiasmo dei sostenitori di Capture One: da quando Adobe ha distribuito il nuovo Camera Raw 7.0 (con Photoshop CS6, la cui tecnologia è incorporata anche in Lightroom 4) finalmente esiste un'eccellente alternativa - direi superiore sotto molti aspetti chiave. Purtroppo, devi tenere conto di **un problema fastidioso e nascosto** \- amichevolmente chiamato _il Paneling "bug"._ 
+
+### Qual è la parte di _"non ufficialmente supportato"_ che ti sfugge?
+
+![IIQ icon](http://localhost:8888/wp-content/uploads/2012/04/IIQ_icon.png "IIQ icon")... Mi è stato detto una volta, ed avevano ragione in qualche modo. Aprire un file raw Phase One con estensione .IIQ in Adobe Camera Raw (ACR d'ora in poi) era teoricamente sconsigliato, perché mancava il _"supporto ufficiale"._ Cosa volesse dire era lecito domandarselo, perché ACR sembrava leggere ed aprire senza problemi gli IIQ proprio come qualsiasi altro file CR2, NEF, DNG. Errore: ** ogni file .IIQ contiene (meta)dati di calibrazione del sensore che ACR non è in grado di interpretare**. Queste informazioni, da quel che vedo, sono usate per **bilanciare la risposta del sensore**, che è geometricamente diviso in otto sezioni (due righe per quattro colonne). Che siano otto elettroniche separate oppure otto sensori più piccoli messi assieme non ne ho idea, e obbiettivamente non mi interessa granché. \[caption id="attachment_929" align="aligncenter" width="550" caption="PhaseOne P65+ Sinistra: versione RGB. Destra: il canale "a" di Lab equalizzato, evidenzia Paneling (griglia)."\]![PhaseOne P65+ paneling bug](http://localhost:8888/wp-content/uploads/2012/04/PhaseOne_P65_paneling_bug.jpg "PhaseOne P65+ paneling bug")\[/caption\] \[caption id="attachment_932" align="aligncenter" width="550" caption="PhaseOne IQ180. Sopra: versione RGB, debole dominante incrociata verde/magenta sull'asfalto. Sotto: il canale "a" di Lab equalizzato evidenzia il problema più chiaramente."\]![PhaseOne IQ180 paneling bug](http://localhost:8888/wp-content/uploads/2012/04/PhaseOne_IQ180_paneling_bug21.jpg "PhaseOne IQ180 paneling bug")\[/caption\] Il punto è che se questa calibrazione, diversa per ogni sensore, si perde (e ACR 7.0 e le versioni precedenti la perdono per strada di sicuro), la demosaicizzazione produce un'immagine _non corretta_. Le differenze tra ogni rettangolo della griglia possono venire accentuate piuttosto facilmente dalla color correction successiva: e credimi, tu non vuoi trovarti per le mani un file che ha **dominanti verdi e magenta disposte a scacchiera nell'immagine**.
+
+> N.B. questo problema non si manifesta usando Capture One, che legge ed interpreta correttamente i tag proprietari dei file .IIQ.
+
+Ad oggi, sia Photoshop CS6 che Lightroom 4 [supportano ufficialmente l'intera gamma di dorsi Phase One](http://www.adobe.com/products/photoshop/extend.html "Supported cameras for the Camera Raw plug-in and Lightroom"), eppure il problema persiste. Puoi facilmente controllare se i tuoi raw sono gestiti senza errori da ACR, senza essere affetti dal cosiddetto **Paneling "bug"**. Ti consiglio di provare almeno una volta su alcuni files (uno scatto test di un muro bianco ed un paio di immagini "vere"):
+
+1.  Apri il file .IIQ in Adobe Camera Raw, azzerando tutto eccetto il bilanciamento del bianco. Profondità di bit (8/16) e profilo RGB non contano, i tuoi valori di default andranno bene.
+    
+2.  In Photoshop, converti il file in Lab (_Immagine - Metodo - Colore Lab_ oppure _Modifica - Converti in Profilo - Colore Lab_).
+    
+3.  Nella palette dei _Canali_ rendi attivo il canale "a" (Command + 4 su Mac, CTRL + 4 su PC, Photoshop CS5 e CS6)
+    
+4.  _Immagine - Regolazioni - Equalizza_.
+    
+5.  Rendi attivo il canale "b" (Command + 5 su Mac, CTRL + 5 su PCs) e ripeti il passaggio #4.
+    
+
+Se nel canale "a" e/o "b" intravedi una griglia più o meno evidente, i tuoi files sono _(non ufficialmente) non supportati_ in ACR! A volte la griglia non è così ovvia, e puoi trovare stranezze come quella nell'immagine qui sotto - brutta notizia comunque. \[caption id="attachment_936" align="aligncenter" width="550" caption="Phase One IQ180. Sopra: cielo con evidente Paneling (dominante magenta nella metà sinistra). Sotto: il canale "a" di Lab equalizzato evidenzia un pattern decisamente bizzarro."\]![PhaseOne IQ180 paneling bug](http://localhost:8888/wp-content/uploads/2012/04/PhaseOne_IQ180_paneling_bug3.jpg "PhaseOne IQ180 paneling bug")\[/caption\] \[caption id="attachment_938" align="alignleft" width="107" caption="Clicca per ingrandire."\][![PhaseOne IQ180 paneling bug - particular](http://localhost:8888/wp-content/uploads/2012/04/PhaseOne_IQ180_paneling_bug3_PART-107x300.jpg "PhaseOne IQ180 paneling bug - particular")](http://localhost:8888/wp-content/uploads/2012/04/PhaseOne_IQ180_paneling_bug3_PART.jpg)\[/caption\] Tra parentesi: so bene che i passaggi sopra descritti sono un modo estremo per brutalizzare un'immagine a fini di test - eppure l'aumento di contrasto nei canali "a" e "b" di Lab è piuttosto comune tra ritoccatori, ed il comando _Equalizza_ è effettivamente usato nel cosiddetto _Modern Man from Mars_, una tecnica codificata da Dan Margulis, elemento fondamentale del suo [Picture Postcard Workflow](http://www.ledet.com/margulis/ppw "The Picture Postcard Workflow Panel"), aka PPW. Mi è stato riferito da un utente Phase One che lo stesso tipo di Paneling "bug" potrebbe mostrarsi anche usando Capture One come raw processor. Nel qual caso la calibrazione interna del dorso digitale non corrisponde più alla vera risposta del sensore: che tradotto in termini pratici significa spedire tutto a revisionare in Danimarca (lui ha fatto così, ed ha risolto i suoi guai).
+
+### Usa Adobe Camera Raw lo stesso!
+
+Personalmente, Capture One Pro (C1 Pro) non mi piace per nulla. Non è gentile scriverlo in certi forum (le persone sono piuttosto suscettibili quando si tratta di religione, cibo e raw processor), ma siccome ora non mi sente nessuno posso confessarlo: è un gran brutto software, macchinoso, lento, involuto, inutilmente complesso, la UI (interfaccia utente) e i controlli sono progettati male (prova a muovere un punto su una curva dei canali senza perdere la pazienza), anche dal mero punto di vista degli algoritmi ACR 7.0 è superiore. Questo è il mio personale, opinabile punto di vista - e non sono un fan di Adobe, di solito. \[caption id="attachment_947" align="alignright" width="220" caption="Capture One, pannello Curve."\]![CaptureOne Curves](http://localhost:8888/wp-content/uploads/2012/04/CaptureOne_Curves.png "CaptureOne Curves")\[/caption\] Nota bene: la qualità delle immagini di C1 è molto buona (per quanto più spesso io preferisca ACR nel confronto diretto) ma il prezzo in termini di usabilità è troppo alto. Se non avessi alternative, mi adatterei mestamente a C1. Ma ACR 7.0 restituisce una qualità eccezionalmente competitiva: la riduzione del rumore è senz'altro migliore, l'usabilità generale è di svariati ordini di grandezza superiore, il [Local Laplacian filtering](http://people.csail.mit.edu/sparis/publi/2011/siggraph/ "Local Laplacian Filters: Edge-aware Image Processing with a Laplacian Pyramid") (l'algoritmo, rivisto, che sta dietro a Clarity) è davvero molto efficace, adesso che Adobe ha implementato le curve sui singoli canali R, G, B (era ora!) non ci sono ragioni per non usarla. Quindi io apro i files .IIQ in ACR (perché sono un ritoccatore, i fotografi in genere adoperano Lightroom: che, tecnicamente parlando, è lo stesso motore in una macchina diversa). Come?
+
+### Evita la conversione in DNG
+
+![DNG icon](http://localhost:8888/wp-content/uploads/2012/04/DNG.png "DNG icon")**Non provare ad esportare gli .IIQ in DNG con Capture One** (un processo stranamente veloce per gli standard di C1, peraltro). E' stato segnalato che precedenti versioni di C1 commettono piccoli errori sui metadati e pasticci sulla dimensione dei files (gonfiati nel DNG fino al doppio rispetto agli IIQ). Che questi problemi siano stati risolti o meno (non mi risulta, almeno per quel che riguarda il peso), anche usando una versione aggiornata di Capture One **i DNG non sono calibrati**, per cui quando vai ad aprirli in ACR si presenta lo stesso Paneling "bug"! Questo dal mio punto di vista è un problema non da poco, che dovrebbe essere preso in considerazione da Phase One: quando un utente converte in un formato standard come il DNG, si aspetta di ottenere dati corretti. Posso capire che alcune informazioni proprietarie di secondaria importanza, incorporate nei raw, possano non trovare spazio nelle specifiche DNG (penso ai punti usati dall'autofocus, che se la memoria non mi inganna sono recuperabili nei CR2 solo usando il Canon DPP). Qui però stiamo parlando dei canali dell'immagine, che sono intenzionalmente lasciati senza correzione! Nel caso ti venisse l'idea: lascia pure stare l'Adobe DNG Converter - al quale dei dati di calibrazione del sensore non interessa un fico secco. L'unico stratagemma che ho trovato non è particolarmente elegante, ma funziona - se sei disposto a perdere qualcosa per strada.
+
+### Livelli e Modalità di Fusione
+
+Negli ultimi tre anni ho avuto l'opportunità di lavorare con due dorsi Phase One P65+ ed un IQ180 (60MP ed 80MP rispettivamente), per cui sono questi i modelli dei quali ho esperienza diretta - lo stesso concetto si può applicare su ogni modello P1 che soffra del Paneling "bug" (ti faccio notare che scrivo: "bug". Perché so che _non è ufficialmente_ un bug - per quanto il fatto che C1 esporti un DNG non corretto a me pare un dettaglio non da poco; usare le virgolette mi sembra un equo compromesso). Siccome il problema viene evidenziato nei canali "a" e "b" di Lab (più il primo, a cui corrisponde l'asse verde-magenta, che il secondo, blu-giallo: ovvero le componenti cromatiche dell'immagine) e non la "L", è abbastanza facile trovare un escamotage processando il raw due volte e unendo i risultati come livelli in modalità di fusione Luminosità / Colore - nel modo seguente:
+
+1.  Apri il file .IIQ in ACR 7.0 (o qualunque altra versione di ACR che hai legalmente a disposizione).
+    
+2.  Aggiusta tutti i parametri come credi - senza perdere tempo sul rumore cromatico (che andrà perso) - e aprilo in Photoshop come Oggetto Avanzato (shift-click sul pulsante _Apri Immagine_).
+    
+
+[![ACR - open as SmartObject](http://localhost:8888/wp-content/uploads/2012/04/ACR_open_as_SmartObject.png "ACR - open as SmartObject")](http://localhost:8888/wp-content/uploads/2012/04/ACR_open_as_SmartObject.png)
+
+3.  Apri lo stesso .IIQ in Capture One.
+    
+4.  In Capture One, cerca di ottenere un risultato cromaticamente simile (mimando le stesse curve, bilanciamento del bianco, ecc. impostate in ACR, fatta eccezione per la rimozione del rumore di luminosità e lo sharpening). Incrocia le dita e salva un TIFF con la stessa profondità di bit e profilo ICC di output usati in ACR.
+    
+5.  Apri il TIFF in Photoshop, trascinagli sopra l'Oggetto Avanzato proveniente da ACR ed imposta la sua modalità di fusione in _Luminosità_. Se tieni premuto il tasto Shift durante il trascinamento, il livello si allineerà automaticamente al sottostante.
+    
+6.  \[Opzionale\] Seleziona entrambi i livelli e convertili in un singolo Oggetto Avanzato (una buona idea se hai intenzione di correggere la prospettiva dello scatto).
+    
+
+![Layers](http://localhost:8888/wp-content/uploads/2012/04/Layers.png "Layers")In questo modo ti ritrovi con un documento a due livelli: il sottostante è l'interpretazione di Capture One, il superiore è la versione ACR in _Luminosità_. Ovvero: mantieni il colore di Capture One (profilo ICC di input, curve, correzione delle aberrazioni e riduzione del rumore cromatici, ecc.) e la luminosità di Adobe Camera Raw (con la sua riduzione del rumore, Clarity, recupero delle luci ed ombre, ecc.). Puoi invertire l'ordine dei livelli (ACR sotto e C1 sopra, ma in modalità di fusione _Colore_), il risultato è il medesimo. Se ti preme il color management, puoi essere molto soddisfatto di poter scegliere tra i profili ICC di input di Capture One; o molto insoddisfatto, perché è più complicato usare il ColorChecker Passport per profilare uno scatto in C1. In entrambi i casi, non preoccuparti troppo; non mi sono mai sembrate soluzioni particolarmente accurate. Del resto, come ha detto una volta Dan Margulis: "se un'immagine ha un problema, correggilo - è il tuo mestiere, che problema c'è".
+
+### Conclusioni
+
+Adobe Camera Raw 7.0 è un sostanziale passo avanti rispetto alle versioni 6.x. La sua usabilità è molto, molto superiore rispetto a Capture One, restituisce immagini di qualità eccezionale ed algoritmi decisamente più avanzati (sono in fremente attesa di vedere nella prossima release ufficiale l'applicazione della [nuova correzione sulle aberrazioni cromatiche assiali](http://blogs.adobe.com/lightroomjournal/2012/04/new-color-fringe-correction-controls.html "Lightroom Journal - New Color Fringe Correction Controls")). Eppure i raw provenienti dai dorsi digitali Phase One sono _(non ufficialmente) non supportati_ a causa della mancata interpretazione dei dati di calibrazione del sensore incorporati negli .IIQ da parte di ACR (in qualsiasi sua versione fino alla corrente, la 7.0). Né i DNG esportati da Capture One vengono sottoposti ad alcuna normalizzazione (bug!). Quindi aprire un file raw Phase One in Adobe Camera Raw porta ad un'immagine che contiene una griglia, una scacchiera di dominanti incrociate - perlopiù sull'asse verde/magenta: in alcuni casi a prima vista invisibile (in altri molto ben presente da subito), che comunque è destinata a diventare molto evidente ed invasiva appena con la color correction vengono enfatizzati i colori. Un espediente (in pia attesa che Capture One corregga l'esportazione dei DNG e/o Adobe supporti _veramente_ i raw Phase One) che suggerisco è di **processare il raw due volte** (una con C1, una con ACR) **unendo i due files in Photoshop come livelli in Colore e Luminosità**. Non è una soluzione particolarmente elegante, ma non ho trovato alternative e funziona. Forse in questo modo si unisce il meglio dei due mondi. Forse! ;-)

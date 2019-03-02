@@ -1,20 +1,13 @@
 ---
-id: 979
 title: Earthquake down time
 date: 2012-06-23T16:25:02+01:00
 author: Davide Barranca
 excerpt: "Due to the Italy's earthquake in the Emilia-Romagna region (May 2012) I've added no new content recently - because I live(d) exactly there!"
+description: "Due to the Italy's earthquake in the Emilia-Romagna region (May 2012) I've added no new content recently - because I live(d) exactly there!"
 layout: post
-guid: http://www.davidebarranca.com/?p=979
 permalink: /2012/06/earthquake-italy-emilia-romagna/
-standard_seo_post_level_layout:
-  - ""
-standard_link_url_field:
-  - ""
-standard_seo_post_meta_description:
-  - "Due to the Italy's earthquake in the Emilia-Romagna region (May 2012) I've added no new content recently - because I live(d) exactly there!"
 image: /wp-content/uploads/2012/06/ChiesaCamposanto.jpg
-categories:
+category:
   - Personal
 tags:
   - Earthquake

@@ -7,7 +7,7 @@ excerpt: Hahnemuhle ha cessato la produzione di carta Digital Fineart a 64 polli
 layout: post
 guid: http://www.davidebarranca.com/?p=117
 permalink: /2011/11/hahnemuhle-cessa-la-produzione-di-carta-64/
-categories:
+category:
   - Stampa
 ---
 <div class="pf-content">

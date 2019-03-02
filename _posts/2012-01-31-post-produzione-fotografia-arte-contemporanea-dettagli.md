@@ -8,7 +8,7 @@ layout: post
 guid: http://www.davidebarranca.com/?p=715
 permalink: /2012/01/post-produzione-fotografia-arte-contemporanea-dettagli/
 image: /wp-content/uploads/2012/01/RetouchMap.png
-categories:
+category:
   - Post-produzione
 ---
 <div class="pf-content">

@@ -7,7 +7,7 @@ layout: post
 permalink: /2018/06/professional-photoshop-scripting-eap-update/
 description: "I've updated the Early Access Program version of my Professional Photoshop Scripting book with 60 new pages on Adobe Generator!"
 image: /wp-content/uploads/2018/06/RkFdg4PI_400x400.png
-categories:
+category:
   - Scripting
 tags:
   - EAP

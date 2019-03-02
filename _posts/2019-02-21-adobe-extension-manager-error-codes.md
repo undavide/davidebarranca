@@ -7,7 +7,7 @@ layout: post
 permalink: /2019/02/adobe-extension-manager-error-codes/
 description: A list of all Adobe Extension Manager (ExManCmd) error codes.
 image: /wp-content/uploads/2019/02/AEM.png
-categories:
+category:
   - CEP
 tags:
   - Adobe Extension Manager

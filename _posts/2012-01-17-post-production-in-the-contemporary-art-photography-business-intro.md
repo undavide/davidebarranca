@@ -7,7 +7,7 @@ excerpt: "I'm starting a post series on the Post-Production job in the Contempor
 layout: post
 guid: http://www.davidebarranca.com/?p=655
 permalink: /2012/01/post-production-in-the-contemporary-art-photography-business-intro/
-categories:
+category:
   - Photography Post-Production
 tags:
   - Contemporary Art

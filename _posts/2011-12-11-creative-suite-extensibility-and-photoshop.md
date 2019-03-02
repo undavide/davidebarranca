@@ -7,7 +7,7 @@ excerpt: Personal thoughts about Adobe Creative Suite extensibility, focusing on
 layout: post
 guid: http://www.davidebarranca.com/?p=514
 permalink: /2011/12/creative-suite-extensibility-and-photoshop/
-categories:
+category:
   - Coding
   - Photoshop
 tags:

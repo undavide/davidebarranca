@@ -7,7 +7,7 @@ layout: post
 permalink: /2012/10/crypto-js-tutorial-cryptography-for-dummies/
 description: "CryptoJS basic tutorial and practical tips. How to implement in your Extendscript / Javascript code this great free Cryptography library."
 image: /wp-content/uploads/2012/10/DB_-2012-10-13-at-11.05.08.png
-categories:
+category:
   - Scripting
 tags:
   - Crypto-JS

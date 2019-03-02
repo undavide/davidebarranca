@@ -7,7 +7,7 @@ layout: post
 permalink: /2019/02/professional-photoshop-scripting-v1/
 description: The Professional Photoshop Scripting book is for sale
 image: /wp-content/uploads/2019/02/cover300.jpg
-categories:
+category:
   - Scripting
 tags:
   - Professional Photoshop Scripting

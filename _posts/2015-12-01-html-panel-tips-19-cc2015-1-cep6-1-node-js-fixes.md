@@ -7,7 +7,7 @@ layout: post
 permalink: /2015/12/html-panel-tips-19-cc2015-1-cep6-1-node-js-fixes/
 description: "The new update to Adobe Photoshop CC2015.1 breaks Panels using Node.js due to new 'features' in CEP6.1 - workarounds provided here"
 image: /wp-content/uploads/2015/12/1.0.0.png
-categories:
+category:
   - CEP
 tags:
   - HTML Panels Tips

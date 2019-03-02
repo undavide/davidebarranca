@@ -8,7 +8,7 @@ guid: http://www.davidebarranca.com/?p=2614
 permalink: /2014/07/introducing-fixel-detailizer/
 description: "Fixel Detailizer 2 PS - a Photoshop CC filter that boosts the contrast of 5 spatial ranges separated using a proprietary wavelets algorithm."
 image: /wp-content/uploads/2014/06/Detailizer-GUI.jpg
-categories:
+category:
   - Photoshop
 tags:
   - Fixel Algorithms

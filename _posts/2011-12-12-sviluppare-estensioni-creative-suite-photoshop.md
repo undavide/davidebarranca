@@ -7,7 +7,7 @@ excerpt: 'Considerazioni personali sullo sviluppo di estensioni per Creative Sui
 layout: post
 guid: http://www.davidebarranca.com/?p=531
 permalink: /2011/12/sviluppare-estensioni-creative-suite-photoshop/
-categories:
+category:
   - Coding @it
   - Photoshop @it
 ---

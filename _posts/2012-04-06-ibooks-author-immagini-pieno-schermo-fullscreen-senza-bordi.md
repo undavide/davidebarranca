@@ -8,7 +8,7 @@ layout: post
 guid: http://www.davidebarranca.com/?p=883
 permalink: /2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/
 image: /wp-content/uploads/2012/04/iBooksAuthor-fullscreen.jpg
-categories:
+category:
   - Digital Publishing @it
   - iBooksAuthor @it
 ---

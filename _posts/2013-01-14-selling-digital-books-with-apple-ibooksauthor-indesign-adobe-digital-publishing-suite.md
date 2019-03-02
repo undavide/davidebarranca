@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - "What platform (softwares and format) does fit your digital book project the best - if you're willing to sell it via Apple iBookStore?"
 image: /wp-content/uploads/2013/01/iBookStore.jpg
-categories:
+category:
   - Adobe DPS
   - Digital Publishing
   - iBooksAuthor

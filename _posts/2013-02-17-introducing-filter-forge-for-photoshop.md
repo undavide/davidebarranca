@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - Filter Forge is an amazingly powerful Photoshop plugin that acts both as a filters host (more than 9.000) and as a filter creation engine.
 image: /wp-content/uploads/2013/02/FilterForge_SixtiesSwirl.jpg
-categories:
+category:
   - Filter Forge
   - Photoshop
 tags:

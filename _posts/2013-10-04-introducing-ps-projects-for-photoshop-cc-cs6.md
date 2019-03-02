@@ -13,7 +13,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - PS Projects is a script that implements the concept of Projects in Photoshop CC / CS6, letting you Create, Load and Modify project files.
 image: /wp-content/uploads/2013/09/PSProjects_MainDialog.png
-categories:
+category:
   - Extensions and Scripts
   - Photoshop
   - PS Projects

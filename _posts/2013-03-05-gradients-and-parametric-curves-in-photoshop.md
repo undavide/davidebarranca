@@ -20,7 +20,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - You can get Bump, Depth or Displacement Maps, Textures, abstract shapes just mixing Gradients and scripting parametric Curves in Photoshop.
 image: /wp-content/uploads/2013/03/CurvesGradients.jpg
-categories:
+category:
   - Extensions and Scripts
   - Parametric Curves
   - Photoshop

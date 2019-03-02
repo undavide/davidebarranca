@@ -7,7 +7,7 @@ layout: post
 permalink: /2015/12/update-on-html-panels-book-december-2015/
 description: "Latest updates (December 2015) on my book 'Adobe Photoshop HTML Panels Development', to be published in Q1/2016"
 image: /wp-content/uploads/2015/10/Copertina-small.png
-categories:
+category:
   - CEP
 tags:
 - Adobe Photoshop HTML Panels Development

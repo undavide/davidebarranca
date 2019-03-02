@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - "How to use the addEventListener() capturePhase argument to control Event propagation and decouple chained components' handling."
 image: /wp-content/uploads/2013/09/ScriptUI_Event_propagation.png
-categories:
+category:
   - Coding
   - ExtendScript / Javascript
 tags:

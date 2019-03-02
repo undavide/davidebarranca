@@ -18,7 +18,7 @@ link_url_field:
 seo_post_meta_description:
   - ""
 image: /wp-content/uploads/2012/09/FinalResult.jpg
-categories:
+category:
   - Decomposing Sharpening
   - Photoshop
 tags:

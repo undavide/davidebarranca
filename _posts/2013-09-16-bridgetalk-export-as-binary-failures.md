@@ -14,7 +14,7 @@ standard_link_url_field:
 standard_seo_post_meta_description:
   - BridgeTalk, the messaging system between Adobe apps, is prone to failure when evaluating functions via toSource(). Stringify them in advance
 image: /wp-content/uploads/2013/09/Export_as_Binary.png
-categories:
+category:
   - Coding
   - ExtendScript / Javascript
 tags:

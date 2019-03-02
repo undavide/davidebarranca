@@ -7,7 +7,7 @@ excerpt: "There's a legal way to download Photoshop CS6 beta: the Adobe Prerelea
 layout: post
 guid: http://www.davidebarranca.com/?p=132
 permalink: /2011/11/how-to-download-photoshop-cs6-beta-from-adobe/
-categories:
+category:
   - Photoshop
 tags:
   - Adobe Prerelease Programs

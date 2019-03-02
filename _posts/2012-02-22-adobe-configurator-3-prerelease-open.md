@@ -8,7 +8,7 @@ layout: post
 guid: http://www.davidebarranca.com/?p=733
 permalink: /2012/02/adobe-configurator-3-prerelease-open/
 image: /wp-content/uploads/2012/02/AdobeConfigurator3.png
-categories:
+category:
   - Photoshop
 tags:
   - Adobe Configurator
