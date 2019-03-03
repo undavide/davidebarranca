@@ -101,6 +101,27 @@
     <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
     
+
+    
+    <script>
+      function UnCryptMailto(s) {
+        var n = 0;
+        var r = "";
+        for (var i = 0; i < s.length; i++) {
+          n = s.charCodeAt(i);
+          if (n >= 8364) {
+            n = 128;
+          }
+          r += String.fromCharCode(n - 1);
+        }
+        return r;
+      }
+
+      function linkTo_UnCryptMailto(s) {
+        location.href = UnCryptMailto(s);
+      }
+    </script>
+    
 </head>
 
 
@@ -125,7 +146,7 @@
     
         
         <div class="mainmenu">
-            <a href="http://localhost:4000" >Home</a>
+            <a href="http://localhost:4000" >Blog</a>
             
                 
             
@@ -135,6 +156,184 @@
             
                 
                     <a href="http://localhost:4000/books/" >Books</a>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
                 
             
                 
@@ -495,7 +694,8 @@
         <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
 
         
-            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+            <!-- WAS: <a href="mailto:davide.barranca@gmail.com">  -->
+            <li><a href="javascript:linkTo_UnCryptMailto('nbjmup;ebwjef/cbssbodbAhnbjm/dpn');"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
         
 
         
@@ -503,6 +703,7 @@
         
     </ul>
 </aside>
+
 
             <main class="the-content" role="main">
                 <div class="search" role="search">
@@ -643,8 +844,6 @@
 
     
         
-    
-
     
 
     

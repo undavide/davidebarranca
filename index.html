@@ -19,6 +19,13 @@ layout: default
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        {% if post.image %}
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="{{ site.baseurl }}{{ post.image }}" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        {% endif %}
+        <!-- END INSERT -->
         {{ post.excerpt }}
 
         {% if post.excerpt != post.content %}
@@ -50,13 +57,15 @@ layout: default
 
 <div class="pagination{% if paginator.next_page == 2 %} next{% endif %}" role="navigation" aria-label="pagination">
     {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="previous">&larr; Previous</a>
+        <!-- Newer was Previous -->
+        <a href="{{ paginator.previous_page_path }}" class="previous">&larr; Newer</a>
     {% endif %}
 
     <span class="page_number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
 
     {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="next">Next &rarr;</a>
+    <!-- Older was Next -->
+        <a href="{{ paginator.next_page_path }}" class="next">Older &rarr;</a>
     {% endif %}
 </div>
 {% endif %}

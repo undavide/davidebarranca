@@ -101,6 +101,27 @@
     <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
     
+
+    
+    <script>
+      function UnCryptMailto(s) {
+        var n = 0;
+        var r = "";
+        for (var i = 0; i < s.length; i++) {
+          n = s.charCodeAt(i);
+          if (n >= 8364) {
+            n = 128;
+          }
+          r += String.fromCharCode(n - 1);
+        }
+        return r;
+      }
+
+      function linkTo_UnCryptMailto(s) {
+        location.href = UnCryptMailto(s);
+      }
+    </script>
+    
 </head>
 
 
@@ -125,7 +146,7 @@
     
         
         <div class="mainmenu">
-            <a href="http://localhost:4000" >Home</a>
+            <a href="http://localhost:4000" >Blog</a>
             
                 
             
@@ -135,8 +156,6 @@
             
                 
                     <a href="http://localhost:4000/books/" >Books</a>
-                
-            
                 
             
                 
@@ -675,7 +694,8 @@
         <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
 
         
-            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+            <!-- WAS: <a href="mailto:davide.barranca@gmail.com">  -->
+            <li><a href="javascript:linkTo_UnCryptMailto('nbjmup;ebwjef/cbssbodbAhnbjm/dpn');"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
         
 
         
@@ -683,6 +703,7 @@
         
     </ul>
 </aside>
+
 
             <main class="the-content" role="main">
                 <div class="search" role="search">
@@ -697,48 +718,6 @@
 
 
                 
-<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="post-header">
-        <ul>
-            <li><time datetime="2012-04-06T21:47:27+02:00" itemprop="datePublished">6 Apr, 2012</time></li>
-            
-                <li class="cats">
-                    
-                        <a href="/categories/Digital Publishing @it/">Digital Publishing @it</a>
-                    
-                        <a href="/categories/iBooksAuthor @it/">iBooksAuthor @it</a>
-                    
-                </li>
-            
-        </ul>
-        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/">iBooks Author &#8211; Immagini a pieno schermo</a></h2>
-    </header>
-
-    <div class="post-content">
-        Ci sono almeno tre modi diversi in iBooks Author di ottenere immagini a pieno schermo esportando un iBook per iPad, ognuno dei quali ha vantaggi e svantaggi.
-
-        
-            <p><a href="http://localhost:4000/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/" role="button">Read More</a></p>
-        
-    </div>
-
-    <footer class="post-footer">
-        <div class="share">Share
-            <ul class="social-networks">
-                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=iBooks Author &#8211; Immagini a pieno schermo&p[summary]=Ci sono almeno tre modi diversi in iBooks Author di ottenere immagini a pieno schermo esportando un iBook per iPad, ognuno dei quali ha v...&p[url]=http://localhost:4000/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
-                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/&text=Ci sono almeno tre modi diversi in iBooks Author di ottenere immagini a pieno schermo esportando un iBook per iPad, ognuno dei quali ha v...&hashtags=" rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
-            </ul>
-        </div>
-        
-        <div class="tags">
-            <ul>
-                
-            </ul>
-        </div>
-        
-    </footer>
-</article>
-
 <article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
         <ul>
@@ -757,6 +736,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/04/iBooksAuthor-opening1.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         iBooks Author outputs .ibooks files, a zipped package of assets: there, images undergo resizing, a strong JPG compression and some kind of color conversion.
 
         
@@ -805,6 +791,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/04/iBooksAuthor-fullscreen.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         To make a picture zoom fullscreen in iBooks Author v1.1 isn't as easy as it could be - there are at least three ways to do it, each one with its own drawbacks.
 
         
@@ -857,6 +850,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Scattare panoramiche con dorsi e sistemi digitali medio formato è più difficile di quello che sembra: lo stato dell'arte della tecnologia forse non è... stato dell'arte abbastanza?!
 
         
@@ -897,6 +893,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/03/PhaseOne.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Medium format photography and panorama stitching: many pitfalls, a lot of patience. Because state of the art gears isn't state of the art enough!
 
         
@@ -953,6 +956,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Media di più livelli in Photoshop: la scala delle opacità o lo stack di Oggetti Avanzati.
 
         
@@ -993,6 +999,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/03/Layered-Stonehenge.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         How to stack layers in Photoshop as a Mean: correct opacities to assign, and the smart objects workaround
 
         
@@ -1043,6 +1056,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/02/Photoshop_V1.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         ... E ora Adobe, cortesemente, potresti far evolvere Photoshop per Mac/Win in un software leggermente più contemporaneo?
 
         
@@ -1089,6 +1109,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/02/Photoshop_V1.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         ... And now please Adobe, could you gently make Photoshop for Mac/Win to evolve in a software just a little bit more contemporary?
 
         
@@ -1133,6 +1160,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         La prerelease di Adobe Configurator 3 è aperta
 
         
@@ -1179,6 +1209,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/02/AdobeConfigurator3.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Adobe Configurator 3.0 prerelease program is now open!
 
         
@@ -1225,6 +1262,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/01/RetouchMap.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Il mantra per la Post Produzione nella Fotografia d'Arte Contemporanea: il diavolo è nei particolari!
 
         
@@ -1267,6 +1311,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Un tutorial su ALCE (Advanced Local Contrast Enhancer) su panoramiche 360° - suggerimenti per evitare problemi ai bordi in immagini equirettangolari
 
         
@@ -1309,6 +1356,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         A tutorial about ALCE on 360 degrees panoramic images - the suggested workflow to deal with edges on equirectangular pictures
 
         
@@ -1361,6 +1411,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/01/Friends.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Post-Production for Contemporary Art Photography mantra: "the Devil's in the Details".
 
 
@@ -1412,6 +1469,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Il lavoro di Post-Produzione nella Fotografia d'Arte Contemporanea - il mio personale punto di vista raccolto in una serie di post.
 
         
@@ -1452,6 +1512,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         I'm starting a post series on the Post-Production job in the Contemporary Art Photography business - my own point of view on this fascinating and crazy world.
 
         
@@ -1498,6 +1561,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Come installare e impostare un repository locale con Subclipse (plugin per Eclipse / Flash Builder che gestisce il supporto a Subversion, un sistema di controllo versione - VCS). 
 
         
@@ -1538,6 +1604,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Subclipse plugin adds the Subversion support (a Version Control System) to the Flash Builder 4.6 IDE. I'll show you how to install it and create a repository on a local disc.
 
         
@@ -1590,6 +1659,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Considerazioni personali sullo sviluppo di estensioni per Creative Suite - Photoshop in particolare.
 
         
@@ -1614,20 +1686,76 @@
     </footer>
 </article>
 
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2011-12-11T21:52:01+01:00" itemprop="datePublished">11 Dec, 2011</time></li>
+            
+                <li class="cats">
+                    
+                        <a href="/categories/Coding/">Coding</a>
+                    
+                        <a href="/categories/Photoshop/">Photoshop</a>
+                    
+                </li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2011/12/creative-suite-extensibility-and-photoshop/">Creative Suite extensibility and Photoshop</a></h2>
+    </header>
+
+    <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
+        Personal thoughts about Adobe Creative Suite extensibility, focusing on Photoshop.
+
+        
+            <p><a href="http://localhost:4000/2011/12/creative-suite-extensibility-and-photoshop/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Creative Suite extensibility and Photoshop&p[summary]=Personal thoughts about Adobe Creative Suite extensibility, focusing on Photoshop.&p[url]=http://localhost:4000/2011/12/creative-suite-extensibility-and-photoshop/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2011/12/creative-suite-extensibility-and-photoshop/&text=Personal thoughts about Adobe Creative Suite extensibility, focusing on Photoshop.&hashtags=Creative Suite,CS Extension Builder,CS SDK,scripting," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Creative Suite">Creative Suite</a></li>
+                
+                <li><a href="http://localhost:4000/tag/CS Extension Builder">CS Extension Builder</a></li>
+                
+                <li><a href="http://localhost:4000/tag/CS SDK">CS SDK</a></li>
+                
+                <li><a href="http://localhost:4000/tag/scripting">scripting</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
 
 
 
 <div class="pagination" role="navigation" aria-label="pagination">
     
-        <a href="/page5/" class="previous">&larr; Previous</a>
+        <!-- Newer was Previous -->
+        <a href="/page5/" class="previous">&larr; Newer</a>
     
 
     <span class="page_number">Page 6 of 8</span>
 
     
-        <a href="/page7/" class="next">Next &rarr;</a>
+    <!-- Older was Next -->
+        <a href="/page7/" class="next">Older &rarr;</a>
     
 </div>
+
 
             </main>
         </div>

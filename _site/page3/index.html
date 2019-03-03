@@ -101,6 +101,27 @@
     <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
     
+
+    
+    <script>
+      function UnCryptMailto(s) {
+        var n = 0;
+        var r = "";
+        for (var i = 0; i < s.length; i++) {
+          n = s.charCodeAt(i);
+          if (n >= 8364) {
+            n = 128;
+          }
+          r += String.fromCharCode(n - 1);
+        }
+        return r;
+      }
+
+      function linkTo_UnCryptMailto(s) {
+        location.href = UnCryptMailto(s);
+      }
+    </script>
+    
 </head>
 
 
@@ -125,7 +146,7 @@
     
         
         <div class="mainmenu">
-            <a href="http://localhost:4000" >Home</a>
+            <a href="http://localhost:4000" >Blog</a>
             
                 
             
@@ -135,8 +156,6 @@
             
                 
                     <a href="http://localhost:4000/books/" >Books</a>
-                
-            
                 
             
                 
@@ -675,7 +694,8 @@
         <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
 
         
-            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+            <!-- WAS: <a href="mailto:davide.barranca@gmail.com">  -->
+            <li><a href="javascript:linkTo_UnCryptMailto('nbjmup;ebwjef/cbssbodbAhnbjm/dpn');"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
         
 
         
@@ -683,6 +703,7 @@
         
     </ul>
 </aside>
+
 
             <main class="the-content" role="main">
                 <div class="search" role="search">
@@ -700,46 +721,6 @@
 <article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
         <ul>
-            <li><time datetime="2014-06-22T17:23:19+02:00" itemprop="datePublished">22 Jun, 2014</time></li>
-            
-                <li class="cats">
-                    
-                        <a href="/categories/Photoshop/">Photoshop</a>
-                    
-                </li>
-            
-        </ul>
-        <h2 itemprop="name headline"><a href="http://localhost:4000/2014/06/photoshop-cc-2014-v15-ready-extensions/">Photoshop CC 2014 (v15.0) ready!</a></h2>
-    </header>
-
-    <div class="post-content">
-        All my extensions and scripts lineup has been updated and officially supports Photoshop CC 2014 (15.0)
-
-        
-            <p><a href="http://localhost:4000/2014/06/photoshop-cc-2014-v15-ready-extensions/" role="button">Read More</a></p>
-        
-    </div>
-
-    <footer class="post-footer">
-        <div class="share">Share
-            <ul class="social-networks">
-                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Photoshop CC 2014 (v15.0) ready!&p[summary]=All my extensions and scripts lineup has been updated and officially supports Photoshop CC 2014 (15.0)&p[url]=http://localhost:4000/2014/06/photoshop-cc-2014-v15-ready-extensions/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
-                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2014/06/photoshop-cc-2014-v15-ready-extensions/&text=All my extensions and scripts lineup has been updated and officially supports Photoshop CC 2014 (15.0)&hashtags=" rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
-            </ul>
-        </div>
-        
-        <div class="tags">
-            <ul>
-                
-            </ul>
-        </div>
-        
-    </footer>
-</article>
-
-<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="post-header">
-        <ul>
             <li><time datetime="2014-06-22T01:09:28+02:00" itemprop="datePublished">22 Jun, 2014</time></li>
             
                 <li class="cats">
@@ -753,6 +734,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/06/Octocat.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         A GitHub repository where I will gather Boilerplate and Template code for Adobe Photoshop CEP Panels.
 
         
@@ -795,6 +783,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/05/mxi.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         How to build customized ZXP installers for CC HTML Extensions (standard, flash-compatible, hybrid) using ZXPSignCmd, ucf.jar and MXI files.
 
         
@@ -837,6 +832,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/02/VitaminBW.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         User Manual for VitaminBW, a Photoshop CC/CS6 script that spices up your black and white conversions!
 
         
@@ -879,6 +881,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/11/VitaminBW_icon_120.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         VitaminBW Photoshop CC /CS6 script that spices up Black & White conversion featuring Smart Contrast Enhancement, Toning and BW Color Filters
 
         
@@ -921,6 +930,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/02/Parking.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         How to clean the Epson 11880 printer head manually to solve ink stains problems due to dirt stuck in the head's surface
 
         
@@ -963,6 +979,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/02/persistent.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         How to make the HTML Panel's session persist even if the panel is closed in Photoshop.
 
         
@@ -1005,6 +1028,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/02/PSEvents.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         There's a second way to listen to Photoshop Events from an HTML Panel, i.e. using the PSHostAdapters libraries
 
         
@@ -1047,6 +1077,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/02/PSEvents1.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         The first way for an HTML Panel to listen for Photoshop Events: PhotoshopRegisterEvent and PhotoshopCallback
 
         
@@ -1089,6 +1126,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/02/Topcoat.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         How to integrate the Adobe Topcoat CSS library with Theme management for HTML Panels in Photoshop CC
 
         
@@ -1131,6 +1175,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/02/Console.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         How to pass an Object from Photoshop JSX ExtendScript code back to the HTML panel via JSON
 
         
@@ -1173,6 +1224,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/01/Object.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         How to pass complex Objects from an HTML Panel to an ExtendScript function in a JSX file
 
         
@@ -1215,6 +1273,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/01/JSX_2_HTML.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         This is how Photoshop (i.e. the JSX) sends back data to the HTML Panel.
 
         
@@ -1257,6 +1322,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/01/jsx.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         A simple way to dynamically evaluate multiple JSX files in the Scripting context of Photoshop within HTML Panels.
 
         
@@ -1299,6 +1371,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/01/ChromeDebuggingTool.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Since latest updates, Photoshop CC (and possibly other Adobe apps too) need remote connecting for debugging
 
         
@@ -1343,6 +1422,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/01/2014.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         I've thought that "New Year Resolutions" sounds bad compared to "Wishlist" - doesn't it? Just an excuse to post a bunch of links and inventory topics I'd like to spend time on in 2014.
 
 
@@ -1392,6 +1478,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2014/01/PS_CC_10ColorSamplers.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         <div class="pf-content">
   <p>
     Thanks to last Photoshop World <a title="Photoshop Codeathon)" href="http://blogs.adobe.com/photoshopdotcom/2013/10/engineers-live-code-customer-requested-features-at-photoshop-world.html" target="_blank">Codeathon</a> in Las Vegas, we&#8217;ve finally broken the 4 Color Samplers limit in the Info Palette &#8211; we&#8217;re allowed to scatter up to 10 of them like a machine gun (provided we&#8217;ve Photoshop CC updated to the 14.2 dot release, available from Jan 16, 2014 onwards). If you&#8217;re in the color correction business, that is a big deal.<br /> [Fireworks popping, people getting naked, etc]
@@ -1457,6 +1550,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/12/ExtendScriptToolkit.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         An open letter to fellow developers!
 If you're involved building third party solution for Adobe applications (mainly Scripts/Extensions) and you care about it, please invest 10 minutes of your time, read along and chime in.
 
@@ -1517,6 +1617,13 @@ If you're involved building third party solution for Adobe applications (mainly 
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/11/GitHub-Mark-120px-plus.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Back when I started writing Scripts for Photoshop, I'd have loved having Boilerplate code to borrow and learn from. I've put a repository on GitHub with my take on that - still in early, alpha stage but some CoffeeScript stuff is there, ready to be forked: feel free to contribute!
 
         
@@ -1567,6 +1674,13 @@ If you're involved building third party solution for Adobe applications (mainly 
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/11/wrap_try_catch_coffeescript.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Ever wanted a shortcut-bound, Sublime Text snippet that wraps a selected portion of CoffeeScript code in a properly indented try/catch block? Me too, so I wrote it, here it is!
 
         
@@ -1601,20 +1715,109 @@ If you're involved building third party solution for Adobe applications (mainly 
     </footer>
 </article>
 
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2013-10-04T12:06:20+02:00" itemprop="datePublished">4 Oct, 2013</time></li>
+            
+                <li class="cats">
+                    
+                        <a href="/categories/Extensions and Scripts/">Extensions and Scripts</a>
+                    
+                        <a href="/categories/Photoshop/">Photoshop</a>
+                    
+                        <a href="/categories/PS Projects/">PS Projects</a>
+                    
+                </li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2013/10/introducing-ps-projects-for-photoshop-cc-cs6/">&#8216;PS Projects&#8217; for Photoshop CC/CS6</a></h2>
+    </header>
+
+    <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/09/PSProjects_MainDialog.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
+        <div class="pf-content">
+  <p>
+    <br /> I&#8217;m glad to announce my latest script for Photoshop CC / CS6, called <strong>PS Projects</strong>.
+  </p>
+
+  <p>
+    
+
+</p></div>
+
+
+        
+            <p><a href="http://localhost:4000/2013/10/introducing-ps-projects-for-photoshop-cc-cs6/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=&#8216;PS Projects&#8217; for Photoshop CC/CS6&p[summary]=
+  
+     I&#8217;m glad to announce my latest script for Photoshop CC / CS6, called PS Projects.
+  
+
+  
+    
+
+
+&p[url]=http://localhost:4000/2013/10/introducing-ps-projects-for-photoshop-cc-cs6/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2013/10/introducing-ps-projects-for-photoshop-cc-cs6/&text=
+  
+     I&#8217;m glad to announce my latest script for Photoshop CC / CS6, called PS Projects.
+  
+
+  
+    
+
+
+&hashtags=Photoshop CC,Photoshop CS6,PS Projects,script," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Photoshop CC">Photoshop CC</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Photoshop CS6">Photoshop CS6</a></li>
+                
+                <li><a href="http://localhost:4000/tag/PS Projects">PS Projects</a></li>
+                
+                <li><a href="http://localhost:4000/tag/script">script</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
 
 
 
 <div class="pagination" role="navigation" aria-label="pagination">
     
-        <a href="/page2/" class="previous">&larr; Previous</a>
+        <!-- Newer was Previous -->
+        <a href="/page2/" class="previous">&larr; Newer</a>
     
 
     <span class="page_number">Page 3 of 8</span>
 
     
-        <a href="/page4/" class="next">Next &rarr;</a>
+    <!-- Older was Next -->
+        <a href="/page4/" class="next">Older &rarr;</a>
     
 </div>
+
 
             </main>
         </div>

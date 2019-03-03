@@ -101,6 +101,27 @@
     <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
     
+
+    
+    <script>
+      function UnCryptMailto(s) {
+        var n = 0;
+        var r = "";
+        for (var i = 0; i < s.length; i++) {
+          n = s.charCodeAt(i);
+          if (n >= 8364) {
+            n = 128;
+          }
+          r += String.fromCharCode(n - 1);
+        }
+        return r;
+      }
+
+      function linkTo_UnCryptMailto(s) {
+        location.href = UnCryptMailto(s);
+      }
+    </script>
+    
 </head>
 
 
@@ -125,7 +146,7 @@
     
         
         <div class="mainmenu">
-            <a href="http://localhost:4000" >Home</a>
+            <a href="http://localhost:4000" >Blog</a>
             
                 
             
@@ -135,8 +156,6 @@
             
                 
                     <a href="http://localhost:4000/books/" >Books</a>
-                
-            
                 
             
                 
@@ -675,7 +694,8 @@
         <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
 
         
-            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+            <!-- WAS: <a href="mailto:davide.barranca@gmail.com">  -->
+            <li><a href="javascript:linkTo_UnCryptMailto('nbjmup;ebwjef/cbssbodbAhnbjm/dpn');"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
         
 
         
@@ -683,6 +703,7 @@
         
     </ul>
 </aside>
+
 
             <main class="the-content" role="main">
                 <div class="search" role="search">
@@ -700,85 +721,6 @@
 <article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
         <ul>
-            <li><time datetime="2013-10-04T12:06:20+02:00" itemprop="datePublished">4 Oct, 2013</time></li>
-            
-                <li class="cats">
-                    
-                        <a href="/categories/Extensions and Scripts/">Extensions and Scripts</a>
-                    
-                        <a href="/categories/Photoshop/">Photoshop</a>
-                    
-                        <a href="/categories/PS Projects/">PS Projects</a>
-                    
-                </li>
-            
-        </ul>
-        <h2 itemprop="name headline"><a href="http://localhost:4000/2013/10/introducing-ps-projects-for-photoshop-cc-cs6/">&#8216;PS Projects&#8217; for Photoshop CC/CS6</a></h2>
-    </header>
-
-    <div class="post-content">
-        <div class="pf-content">
-  <p>
-    <br /> I&#8217;m glad to announce my latest script for Photoshop CC / CS6, called <strong>PS Projects</strong>.
-  </p>
-
-  <p>
-    
-
-</p></div>
-
-
-        
-            <p><a href="http://localhost:4000/2013/10/introducing-ps-projects-for-photoshop-cc-cs6/" role="button">Read More</a></p>
-        
-    </div>
-
-    <footer class="post-footer">
-        <div class="share">Share
-            <ul class="social-networks">
-                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=&#8216;PS Projects&#8217; for Photoshop CC/CS6&p[summary]=
-  
-     I&#8217;m glad to announce my latest script for Photoshop CC / CS6, called PS Projects.
-  
-
-  
-    
-
-
-&p[url]=http://localhost:4000/2013/10/introducing-ps-projects-for-photoshop-cc-cs6/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
-                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2013/10/introducing-ps-projects-for-photoshop-cc-cs6/&text=
-  
-     I&#8217;m glad to announce my latest script for Photoshop CC / CS6, called PS Projects.
-  
-
-  
-    
-
-
-&hashtags=Photoshop CC,Photoshop CS6,PS Projects,script," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
-            </ul>
-        </div>
-        
-        <div class="tags">
-            <ul>
-                
-                <li><a href="http://localhost:4000/tag/Photoshop CC">Photoshop CC</a></li>
-                
-                <li><a href="http://localhost:4000/tag/Photoshop CS6">Photoshop CS6</a></li>
-                
-                <li><a href="http://localhost:4000/tag/PS Projects">PS Projects</a></li>
-                
-                <li><a href="http://localhost:4000/tag/script">script</a></li>
-                
-            </ul>
-        </div>
-        
-    </footer>
-</article>
-
-<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="post-header">
-        <ul>
             <li><time datetime="2013-10-04T12:05:10+02:00" itemprop="datePublished">4 Oct, 2013</time></li>
             
                 <li class="cats">
@@ -792,6 +734,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/09/PSProjects_UserManualThumb.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         PS Project is a Photoshop CC / CS6 script that implements the idea of Project Files (a lightweight container of links to images on your disk, that you need to open frequently). This User Manual post will go into every detail of it.
 
         
@@ -836,6 +785,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/09/Export_as_Binary.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         BridgeTalk, the system that enables messaging between applications in the Adobe scripting ecosystem, is prone to failure when evaluating functions via .toSource() - be aware and stringify them in advance!
 
         
@@ -886,6 +842,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/09/Photoshop_CC_Color_Range.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Latest Photoshop CC update (version 14.1) has introduced a good deal of new features. One of them is the refined Color Range Selection for Highlights, Midtones and Shadows which now includes Threshold: let's see what is that all about.
 
         
@@ -938,6 +901,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/09/ScriptUI_Event_propagation.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         In a ScriptUI Window different components are usually registered for Events, and fire their own Handlers. You can build some interconnection, so for instance a Button's 'click' handler triggers a change in a ListBox, which in turn reacts to its own 'onChange' Event. It's quite easy to decouple this interaction, provided that you set up your code properly.
 
         
@@ -988,6 +958,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/08/TestingJSMinify.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         It's not uncommon, when scripting for Adobe applications, to borrow JS libraries that have been originally written for web development. While the new generation of Adobe HTML Extensions will run on the Chromium Embedded Framework, traditional ExtendScript code is based upon a different, older engine. Besides ECMAScript unsupported features (i.e. ES 5) I've noticed that using minified JS code is a risky business - scripts can break or fail silently. I've set up a proper testing environment to inspect them.
 
         
@@ -1040,6 +1017,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/08/ScriptUI_Events.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         In your code you may need to run a ScriptUI component's callback, or simulate a user interaction, maybe as a part of a subroutine. There are few ways to do this, with slight differences in the behavior: directly, using call(), notify() or dispatchEvent() - I've set up a commented demo Dialog that shows them all.
 
         
@@ -1092,6 +1076,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/07/TIAB.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         <div class="pf-content">
   <div itemscope="" itemtype="http://schema.org/SoftwareApplication">
     <p>
@@ -1152,6 +1143,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/06/icona-Installer_CPT.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         I'm happy to report that my dear friend and talented coder Giuliana Abbiati aka Cromaline has just updated to version 1.1.3 her amazing Photoshop extension "CPT - Channel Power Tools", in order to support Photoshop CC.
 
 
@@ -1203,6 +1201,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/06/cc_app.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Soon after the public launch of Adobe Creative Cloud apps, some users reported to have run into troubles installing extensions from the Adobe Exchange panel. Here are the most common issues and the suggested workarounds, waiting for official patches.
 
         
@@ -1257,6 +1262,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/05/logo.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         If you aren't in love with Adobe's ExtendScript Toolkit, welcome to the club. I've come up with a Sublime Text 2 build system package that lets you run JSX scripts directly from Sublime Text targeting Photoshop, Command+B or CTRL+B and voilà!
 
         
@@ -1305,6 +1317,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/05/Git_DropBox_SublimeText.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         As a freelance developer I've been using my DropBox account as the projects cloud backup - yet if you're willing to setup it as a private GitHub repository for version control, possibly in conjunction with a SublimeText Git plugin... chances are that you'll spend some time looking for issue workarounds. Why bother, I've gathered them here for you!
 
         
@@ -1355,6 +1374,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/04/Featured.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Theme Switcher is a free Photoshop panel that gives you a handy way to switch Theme (i.e. the user interface color: Original, Light Gray, Medium Gray and Dark Gray) in a click - no need to bother with Preferences anymore!
 
         
@@ -1405,6 +1431,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/04/ModernPhotoshopColorWorkflow_cover.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Color Correction Maestro Dan Margulis has just published a new book about his latest research, appropriately called "Modern Photoshop Color Workflow - The Quartertone Quandary, the PPW, and Other Ideas for Speedy Image Enhancement". I've asked to three beta-readers, who happens to be among my best friends and experienced colleagues, few questions about the book's topics. Read along, I've a special guest too!
 
 
@@ -1462,6 +1495,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/03/ParametricCurves_Featured.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Parametric Curves is a free Photoshop script that lets you plot mathematically defined (Javascript) Curves Adjustment layers. Here I'll show you the script interface and I'll walk you through the creation of some interesting Curves, that will be the building blocks of advanced creative manipulations.
 
         
@@ -1514,6 +1554,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/03/CurvesGradients.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         It's fascinating the complexity of designs you can get just mixing Gradients with parametric Curves built via scripting in Photoshop - that can be used for textures, bump maps or displacement maps, abstract designs or animations.
 
         
@@ -1566,6 +1613,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/03/XML_DropDownList_Preset_demo.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         When scripting for the Creative Suite it may be handy to setup a Preset system, in order to allow users save and retrieve their own preferred configurations easily. In this tutorial I'll show you how to implement Presets with a DropDownList menu based upon XML data.
 
         
@@ -1616,6 +1670,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/02/FCIconApp.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         How to open and retouch Hasselblad 3F scanner files in Photoshop
 
         
@@ -1666,6 +1727,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/02/FilterForge_SixtiesSwirl.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Filter Forge is a PS plugin; actually it's more than a PS plugin, Filter Forge is a PS plugins' container (some 9000 of them, freely available); no really, that's not as exciting as the fact that Filter Forge lets you build your own PS filters. Visually. Oh listen: follow me, I'm gonna show it to you - it's easier than you think and a lot fun.
 
         
@@ -1720,6 +1788,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/01/Sharpening_example_03_DoubleUSM.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Double USM is the brand new Sharpening script for Photoshop coded by Davide Barranca; in this third post of the series I'll show you examples for traditional sharpening, HiRaLoAm (High Radius Low Amount) and mixed sharpening.
 
         
@@ -1752,20 +1827,84 @@
     </footer>
 </article>
 
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2013-01-28T19:08:06+01:00" itemprop="datePublished">28 Jan, 2013</time></li>
+            
+                <li class="cats">
+                    
+                        <a href="/categories/Double USM/">Double USM</a>
+                    
+                        <a href="/categories/Extensions and Scripts/">Extensions and Scripts</a>
+                    
+                        <a href="/categories/Photoshop/">Photoshop</a>
+                    
+                </li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2013/01/double-usm-photoshop-sharpening-script-2-features/">Double USM #2: Features</a></h2>
+    </header>
+
+    <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/01/DoubleUSM_interface.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
+        Double USM is the brand new Sharpening script for Photoshop that I've coded; in this second post of the series I'll cover the user interface, functionality and how to record it into an Action for batch processing.
+
+        
+            <p><a href="http://localhost:4000/2013/01/double-usm-photoshop-sharpening-script-2-features/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Double USM #2: Features&p[summary]=Double USM is the brand new Sharpening script for Photoshop that I've coded; in this second post of the series I'll cover the user interf...&p[url]=http://localhost:4000/2013/01/double-usm-photoshop-sharpening-script-2-features/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2013/01/double-usm-photoshop-sharpening-script-2-features/&text=Double USM is the brand new Sharpening script for Photoshop that I've coded; in this second post of the series I'll cover the user interf...&hashtags=batch,Double USM,halos,sharpening,unsharp mask," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/batch">batch</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Double USM">Double USM</a></li>
+                
+                <li><a href="http://localhost:4000/tag/halos">halos</a></li>
+                
+                <li><a href="http://localhost:4000/tag/sharpening">sharpening</a></li>
+                
+                <li><a href="http://localhost:4000/tag/unsharp mask">unsharp mask</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
 
 
 
 <div class="pagination" role="navigation" aria-label="pagination">
     
-        <a href="/page3/" class="previous">&larr; Previous</a>
+        <!-- Newer was Previous -->
+        <a href="/page3/" class="previous">&larr; Newer</a>
     
 
     <span class="page_number">Page 4 of 8</span>
 
     
-        <a href="/page5/" class="next">Next &rarr;</a>
+    <!-- Older was Next -->
+        <a href="/page5/" class="next">Older &rarr;</a>
     
 </div>
+
 
             </main>
         </div>

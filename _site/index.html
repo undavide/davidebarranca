@@ -101,6 +101,27 @@
     <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
     
+
+    
+    <script>
+      function UnCryptMailto(s) {
+        var n = 0;
+        var r = "";
+        for (var i = 0; i < s.length; i++) {
+          n = s.charCodeAt(i);
+          if (n >= 8364) {
+            n = 128;
+          }
+          r += String.fromCharCode(n - 1);
+        }
+        return r;
+      }
+
+      function linkTo_UnCryptMailto(s) {
+        location.href = UnCryptMailto(s);
+      }
+    </script>
+    
 </head>
 
 
@@ -125,7 +146,7 @@
     
         
         <div class="mainmenu">
-            <a href="http://localhost:4000" class="active">Home</a>
+            <a href="http://localhost:4000" class="active">Blog</a>
             
                 
             
@@ -135,8 +156,6 @@
             
                 
                     <a href="http://localhost:4000/books/" >Books</a>
-                
-            
                 
             
                 
@@ -675,7 +694,8 @@
         <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
 
         
-            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+            <!-- WAS: <a href="mailto:davide.barranca@gmail.com">  -->
+            <li><a href="javascript:linkTo_UnCryptMailto('nbjmup;ebwjef/cbssbodbAhnbjm/dpn');"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
         
 
         
@@ -683,6 +703,7 @@
         
     </ul>
 </aside>
+
 
             <main class="the-content" role="main">
                 <div class="search" role="search">
@@ -713,6 +734,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2019/02/AEM.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Here is a comprehensive list of all Adobe Extension Manager (ExManCmd) error codes.
 
         
@@ -755,6 +783,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2019/02/cover300.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         After 10 months since the launch of the Early Access Program, I am incredibly happy to announce that my book is now complete!
 
         
@@ -797,6 +832,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2018/12/vuespectrum.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         In a previous post I have introduced the recently open-sourced Spectrum CSS. Here, I'll be demonstrating how to use them to build a simple VueJS DropDown component
 
         
@@ -841,6 +883,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2018/12/vsc.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Please do yourself a favour and read this Medium post by Lead Technical Evangelist Ash Ryan Arnwine about the future of the ExtendScript ToolKit.
 
         
@@ -885,6 +934,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2018/11/DB-2018-11-18-at-11.10.38.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         In case you've missed the news, Adobe has open-sourced the Spectrum CSS: the stylesheets they're using for Photoshop's own CEP Panels
 
         
@@ -927,6 +983,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2018/06/RkFdg4PI.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         I've added 60 pages to accommodate an amazing new chapter on Adobe Generator! The book is now 388 pages strong and packed with exclusive content found nowhere else.
 
         
@@ -971,6 +1034,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2018/05/corrupted.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         How do you check if an image file (tiff, psd, psb) is corrupted, other than looking at its thumbnail with Bridge, or opening it on Photoshop? With a small Python script and ImageMagick!
 
         
@@ -1015,6 +1085,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2018/04/PSScriptingCover.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         I'm glad to announce that I have opened the Early Access Program to my new and very much awaited Professional Photoshop Scripting course!
 
         
@@ -1059,6 +1136,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2018/03/BlogPostIcon-1.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         In this guest post, the Photoshop developer Scott Murdock tackles the apparently familiar topic of Luminosity Masks – with very interesting findings for anybody using them. Enjoy!
 
         
@@ -1101,6 +1185,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2018/01/UG_thumb.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         After Adobe Photoshop HTML Panels Development, I've now published a new Course, titled "The Ultimate Guide to Native Installers and Automated Build Systems"
 
         
@@ -1147,6 +1238,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2015/06/CC2015.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         That time of the year has come, and Photoshop CC 2018 is here. Read along to find out Everything You Always Wanted to Know About CEP 8* (*But Were Afraid to Ask).
 
         
@@ -1191,6 +1289,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2017/08/Risultati-immagini-per-bob-the-builder.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         In October 2016 I've announced to be working on a course about Photoshop Scripting. Is it ready for release?
 
         
@@ -1235,6 +1340,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2017/05/configurator-reloaded.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         I'm not used to talking about commercial products I've not personally developed on my blog, but I've decided it might be interesting to cover the work of other developers here, from time to time or when something catches my eye.
 
         
@@ -1277,6 +1389,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2017/04/bug.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Recently, running the ZXPSignCmd command line utility to sign and timestamp HTML Panels has proved to cause errors – also for users of Adobe Configurator 4, which relies on it behind the scenes to export the (Flash) panel as ZXP. Quick fix as follows.
 
         
@@ -1323,6 +1442,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2017/02/Dark-Theme_2.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         A major reworking of my Sharpening extension for Photoshop has been released.
 
         
@@ -1367,6 +1493,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2017/02/lock1.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Keep your code away from prying eyes with javascriptobfuscator.com
 
         
@@ -1413,6 +1546,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2016/06/logo.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         How do you fit a large range (say, 1..500, with floating point precision) into a Slider which has, at best, less than 200 possible, real slots? Nonlinear sliders and VueJS Computed Properties are the answer
 
         
@@ -1455,6 +1595,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         One year ago I started writing my Photoshop HTML Panels Development course, which I've successfully published in late March 2016. I'm now back at my desk, working on a very similar project, and targeting no less than... Photoshop Scripting.
 
         
@@ -1497,6 +1640,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2016/06/logo.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Today's stumbling block is bi-directionally binding of a Component (v-model), to the root data object – being the Components generated in a v-for loop.
 
         
@@ -1539,6 +1689,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2016/07/obfuscation.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         How to protect your code (especially, but not only, ExtendScript) in the context of HTML Panels, and keep it away from prying eyes.
 
         
@@ -1576,9 +1733,11 @@
     <span class="page_number">Page 1 of 8</span>
 
     
-        <a href="/page2/" class="next">Next &rarr;</a>
+    <!-- Older was Next -->
+        <a href="/page2/" class="next">Older &rarr;</a>
     
 </div>
+
 
             </main>
         </div>

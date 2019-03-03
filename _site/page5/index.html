@@ -101,6 +101,27 @@
     <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
     
+
+    
+    <script>
+      function UnCryptMailto(s) {
+        var n = 0;
+        var r = "";
+        for (var i = 0; i < s.length; i++) {
+          n = s.charCodeAt(i);
+          if (n >= 8364) {
+            n = 128;
+          }
+          r += String.fromCharCode(n - 1);
+        }
+        return r;
+      }
+
+      function linkTo_UnCryptMailto(s) {
+        location.href = UnCryptMailto(s);
+      }
+    </script>
+    
 </head>
 
 
@@ -125,7 +146,7 @@
     
         
         <div class="mainmenu">
-            <a href="http://localhost:4000" >Home</a>
+            <a href="http://localhost:4000" >Blog</a>
             
                 
             
@@ -135,8 +156,6 @@
             
                 
                     <a href="http://localhost:4000/books/" >Books</a>
-                
-            
                 
             
                 
@@ -675,7 +694,8 @@
         <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
 
         
-            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+            <!-- WAS: <a href="mailto:davide.barranca@gmail.com">  -->
+            <li><a href="javascript:linkTo_UnCryptMailto('nbjmup;ebwjef/cbssbodbAhnbjm/dpn');"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
         
 
         
@@ -683,6 +703,7 @@
         
     </ul>
 </aside>
+
 
             <main class="the-content" role="main">
                 <div class="search" role="search">
@@ -697,60 +718,6 @@
 
 
                 
-<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="post-header">
-        <ul>
-            <li><time datetime="2013-01-28T19:08:06+01:00" itemprop="datePublished">28 Jan, 2013</time></li>
-            
-                <li class="cats">
-                    
-                        <a href="/categories/Double USM/">Double USM</a>
-                    
-                        <a href="/categories/Extensions and Scripts/">Extensions and Scripts</a>
-                    
-                        <a href="/categories/Photoshop/">Photoshop</a>
-                    
-                </li>
-            
-        </ul>
-        <h2 itemprop="name headline"><a href="http://localhost:4000/2013/01/double-usm-photoshop-sharpening-script-2-features/">Double USM #2: Features</a></h2>
-    </header>
-
-    <div class="post-content">
-        Double USM is the brand new Sharpening script for Photoshop that I've coded; in this second post of the series I'll cover the user interface, functionality and how to record it into an Action for batch processing.
-
-        
-            <p><a href="http://localhost:4000/2013/01/double-usm-photoshop-sharpening-script-2-features/" role="button">Read More</a></p>
-        
-    </div>
-
-    <footer class="post-footer">
-        <div class="share">Share
-            <ul class="social-networks">
-                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Double USM #2: Features&p[summary]=Double USM is the brand new Sharpening script for Photoshop that I've coded; in this second post of the series I'll cover the user interf...&p[url]=http://localhost:4000/2013/01/double-usm-photoshop-sharpening-script-2-features/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
-                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2013/01/double-usm-photoshop-sharpening-script-2-features/&text=Double USM is the brand new Sharpening script for Photoshop that I've coded; in this second post of the series I'll cover the user interf...&hashtags=batch,Double USM,halos,sharpening,unsharp mask," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
-            </ul>
-        </div>
-        
-        <div class="tags">
-            <ul>
-                
-                <li><a href="http://localhost:4000/tag/batch">batch</a></li>
-                
-                <li><a href="http://localhost:4000/tag/Double USM">Double USM</a></li>
-                
-                <li><a href="http://localhost:4000/tag/halos">halos</a></li>
-                
-                <li><a href="http://localhost:4000/tag/sharpening">sharpening</a></li>
-                
-                <li><a href="http://localhost:4000/tag/unsharp mask">unsharp mask</a></li>
-                
-            </ul>
-        </div>
-        
-    </footer>
-</article>
-
 <article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
         <ul>
@@ -771,6 +738,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/01/HighFrequencyDetail.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Double USM is the brand new Sharpening Photoshop's script I've coded! Let me introduce it to you in a three posts series: in this first one I'll be discussing why it's useful and how it works. Post #2 will be about the interface and how it works. In Post #3 I'll show you examples and we'll try to find a place for it in your own image processing workflow.
 
         
@@ -823,6 +797,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/01/iBookStore.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         If you're willing to produce digital books to be sold by Apple, be aware that each one of the available tools will shape your content and how it is going to be delivered in a very peculiar way. This post will cover InDesign, iBooksAuthor and the Adobe Digital Publishing Suite targeting Apple iBookStore and AppStore with ePub, iBooks and Apps. Which one does fit your needs the best?
 
         
@@ -887,6 +868,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2013/01/home_next.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Are you looking for Photoshop Extensions? I'm pleased to announce that CS Extensions, a brand new website entirely dedicated to Creative Suite products targeted to Photographers and Retouchers, is finally online (a project that kept me quite busy in the last two months).
 
         
@@ -939,6 +927,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/11/PhaseOneLensCorrection.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Capture One 7 looks like a good improvement over the previous version, but shows a nasty bug when you use a particular combination of lens corrections (with raw files coming from P1 digital back at least). Be aware!
 
         
@@ -991,6 +986,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/11/DB_-2012-11-04-at-17.24.34.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         In order to build a script that requires user input (from a GUI) and can be recorded into an Action, you must code a particular set of features - I'll be providing a commented example, to be used as a template.
 
         
@@ -1043,6 +1045,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/10/ESTK_palette.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         ScriptUI Windows can be tricky in Photoshop, especially if you want to create a non-modal, persistent and idle palette. While a couple of workarounds are possible, as I've shown in a previous post, there's a better alternative involving BridgeTalk.
 
         
@@ -1095,6 +1104,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/10/PS_palettes.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Photoshop implementation of ScriptUI windows of type 'dialog' and 'palette'
 
         
@@ -1137,6 +1153,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/10/DB_-2012-10-13-at-11.05.08.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         CryptoJS basic tutorial and practical tips. How to implement in your Extendscript / Javascript code this great free Cryptography library.
 
         
@@ -1179,6 +1202,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/10/hahnemuhle.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         The expensive Hahnemühle PhotoRag Baryta paper keeps showing unacceptable surface imperfections such as bumps, dots, hairs, stains. Avoid it if you can!
 
         
@@ -1237,6 +1267,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/09/Arithmetic.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         When you miss the obvious, bumping into it makes you hyper and lose heart at the same time. I've found a better way to deal with Lab split Dark/Light halos Unsharp Mask and I'm ready to show it to you! 
 
         
@@ -1289,6 +1326,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/09/FinalResult1.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Lab colorspace is picky and doesn't allow many useful Blending Modes: a different routine (compared to the RGB one) is needed in order to split Dark and Light Halos in the Unsharp Mask Photoshop filter.
 
         
@@ -1341,6 +1385,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/09/FinalResult.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         How to replicate Unsharp Mask with Smart Filters, allowing the separate control of Dark and Light halos? Read along one viable workaround.
 
         
@@ -1391,6 +1442,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/09/Original.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Easy, intuitive solutions may not survive accurate tests, proving to be… simply wrong. That's true in coding, Photoshop and life in general!
 
         
@@ -1441,6 +1499,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/09/HighPass.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         First part of a series about the Photoshop sharpening algorithm and ways to decompose it in order to create new detail enhancing tools.
 
         
@@ -1489,6 +1554,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/07/ALCE.png" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Adobe Exchange is now live in the Adobe Labs, and ALCE is a featured product for the launch!
 
         
@@ -1535,6 +1607,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/06/ChiesaCamposanto.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Due to the Italy's earthquake in the Emilia-Romagna region (May 2012) I've added no new content recently - because I live(d) exactly there!
 
         
@@ -1577,6 +1656,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/04/PhaseOne_IQ180_paneling_bug3.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         I files raw dei dorsi digitali Phase One non sono pienamente supportati da Adobe Camera Raw (7.0 e precedenti), che non interpreta i dati di calibrazione del sensore incorporati nei .IIQ. Questo paneling "bug" incide sull'uniformità dell'immagine - in questo post ti propongo una soluzione.
 
 
@@ -1636,6 +1722,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/04/PhaseOne_IQ180_paneling_bug3.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Phase One digital back raw files are not fully supported by Adobe Camera Raw (all versions) because the sensor calibration data embedded in the .IIQ files is not interpreted. This leads to a so-called paneling "bug", affecting the sensor's response uniformity - I came up with a workaround.
 
 
@@ -1693,6 +1786,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/04/iBooksAuthor-opening1.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         iBooks Author ridimensiona, converte e comprime automaticamente tutte le immagini contenute in un iBook. Non ci possiamo fare quasi niente, eppure è meglio avere un'idea di cosa accade dietro le quinte del software Apple
 
         
@@ -1717,20 +1817,72 @@
     </footer>
 </article>
 
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2012-04-06T21:47:27+02:00" itemprop="datePublished">6 Apr, 2012</time></li>
+            
+                <li class="cats">
+                    
+                        <a href="/categories/Digital Publishing @it/">Digital Publishing @it</a>
+                    
+                        <a href="/categories/iBooksAuthor @it/">iBooksAuthor @it</a>
+                    
+                </li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/">iBooks Author &#8211; Immagini a pieno schermo</a></h2>
+    </header>
+
+    <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2012/04/iBooksAuthor-fullscreen.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
+        Ci sono almeno tre modi diversi in iBooks Author di ottenere immagini a pieno schermo esportando un iBook per iPad, ognuno dei quali ha vantaggi e svantaggi.
+
+        
+            <p><a href="http://localhost:4000/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=iBooks Author &#8211; Immagini a pieno schermo&p[summary]=Ci sono almeno tre modi diversi in iBooks Author di ottenere immagini a pieno schermo esportando un iBook per iPad, ognuno dei quali ha v...&p[url]=http://localhost:4000/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2012/04/ibooks-author-immagini-pieno-schermo-fullscreen-senza-bordi/&text=Ci sono almeno tre modi diversi in iBooks Author di ottenere immagini a pieno schermo esportando un iBook per iPad, ognuno dei quali ha v...&hashtags=" rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
 
 
 
 <div class="pagination" role="navigation" aria-label="pagination">
     
-        <a href="/page4/" class="previous">&larr; Previous</a>
+        <!-- Newer was Previous -->
+        <a href="/page4/" class="previous">&larr; Newer</a>
     
 
     <span class="page_number">Page 5 of 8</span>
 
     
-        <a href="/page6/" class="next">Next &rarr;</a>
+    <!-- Older was Next -->
+        <a href="/page6/" class="next">Older &rarr;</a>
     
 </div>
+
 
             </main>
         </div>

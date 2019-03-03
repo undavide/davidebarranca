@@ -101,6 +101,27 @@
     <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
     
+
+    
+    <script>
+      function UnCryptMailto(s) {
+        var n = 0;
+        var r = "";
+        for (var i = 0; i < s.length; i++) {
+          n = s.charCodeAt(i);
+          if (n >= 8364) {
+            n = 128;
+          }
+          r += String.fromCharCode(n - 1);
+        }
+        return r;
+      }
+
+      function linkTo_UnCryptMailto(s) {
+        location.href = UnCryptMailto(s);
+      }
+    </script>
+    
 </head>
 
 
@@ -125,7 +146,7 @@
     
         
         <div class="mainmenu">
-            <a href="http://localhost:4000" >Home</a>
+            <a href="http://localhost:4000" >Blog</a>
             
                 
             
@@ -135,8 +156,6 @@
             
                 
                     <a href="http://localhost:4000/books/" >Books</a>
-                
-            
                 
             
                 
@@ -675,7 +694,8 @@
         <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
 
         
-            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+            <!-- WAS: <a href="mailto:davide.barranca@gmail.com">  -->
+            <li><a href="javascript:linkTo_UnCryptMailto('nbjmup;ebwjef/cbssbodbAhnbjm/dpn');"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
         
 
         
@@ -683,6 +703,7 @@
         
     </ul>
 </aside>
+
 
             <main class="the-content" role="main">
                 <div class="search" role="search">
@@ -700,56 +721,6 @@
 <article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
         <ul>
-            <li><time datetime="2011-12-11T21:52:01+01:00" itemprop="datePublished">11 Dec, 2011</time></li>
-            
-                <li class="cats">
-                    
-                        <a href="/categories/Coding/">Coding</a>
-                    
-                        <a href="/categories/Photoshop/">Photoshop</a>
-                    
-                </li>
-            
-        </ul>
-        <h2 itemprop="name headline"><a href="http://localhost:4000/2011/12/creative-suite-extensibility-and-photoshop/">Creative Suite extensibility and Photoshop</a></h2>
-    </header>
-
-    <div class="post-content">
-        Personal thoughts about Adobe Creative Suite extensibility, focusing on Photoshop.
-
-        
-            <p><a href="http://localhost:4000/2011/12/creative-suite-extensibility-and-photoshop/" role="button">Read More</a></p>
-        
-    </div>
-
-    <footer class="post-footer">
-        <div class="share">Share
-            <ul class="social-networks">
-                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Creative Suite extensibility and Photoshop&p[summary]=Personal thoughts about Adobe Creative Suite extensibility, focusing on Photoshop.&p[url]=http://localhost:4000/2011/12/creative-suite-extensibility-and-photoshop/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
-                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2011/12/creative-suite-extensibility-and-photoshop/&text=Personal thoughts about Adobe Creative Suite extensibility, focusing on Photoshop.&hashtags=Creative Suite,CS Extension Builder,CS SDK,scripting," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
-            </ul>
-        </div>
-        
-        <div class="tags">
-            <ul>
-                
-                <li><a href="http://localhost:4000/tag/Creative Suite">Creative Suite</a></li>
-                
-                <li><a href="http://localhost:4000/tag/CS Extension Builder">CS Extension Builder</a></li>
-                
-                <li><a href="http://localhost:4000/tag/CS SDK">CS SDK</a></li>
-                
-                <li><a href="http://localhost:4000/tag/scripting">scripting</a></li>
-                
-            </ul>
-        </div>
-        
-    </footer>
-</article>
-
-<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="post-header">
-        <ul>
             <li><time datetime="2011-11-28T14:43:01+01:00" itemprop="datePublished">28 Nov, 2011</time></li>
             
                 <li class="cats">
@@ -763,6 +734,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2011/11/Crossroad.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Adobe is facing a crossroads: its stocks are stagnating, and a radical transformation is coming. How will it change our job as creatives professionals?
 
         
@@ -809,6 +787,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2011/11/Crossroad.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Adobe Systems è ad un bivio, la sua situazione finanziaria impone una svolta radicale. Cosa sta per accadere? Come cambierà, di conseguenza, il nostro lavoro?
 
         
@@ -849,6 +834,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Uno studio sullo Sharpening (Maschera di Contrasto) tratto dalla mia lezione al CCC - Color Correction Campus di Bologna.
 
         
@@ -889,6 +877,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2011/11/03-Final_L.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         A sharpening case study that involves traditional Unsharp Mask, HiRaLoAm (High Radius Low Amount) and various masking methods.
 
         
@@ -931,6 +926,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Come non comportarsi quando si ha a che fare con una stampa inkjet su carta particolarmente curva.
 
         
@@ -971,6 +969,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Paper curl is a problem when you print on rolls - this is how I would personally not de-curl paper ;-)
 
         
@@ -1017,6 +1018,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2011/11/Adobe-Financial-Analyst-Meeting.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         I video dell'Adobe Financial Analyst Meeting 2011 sono una enorme fonte di informazioni e anteprime sul software e sul futuro delle tecnologie di produzione/distribuzione di contenuti creativi.
 
         
@@ -1059,6 +1067,13 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <div style="width:100px; height: 100px; float:left; margin-right:20px">
+          <img src="/wp-content/uploads/2011/11/Adobe-Financial-Analyst-Meeting.jpg" style="display:block; max-width:100px; height: auto; max-height:100px">
+        </div>
+        
+        <!-- END INSERT -->
         Adobe 2011 Financial Analyst Meeting is a powerful source of information about technology and strategies that Adobe will push in the future, and that will shape the world of creatives and developers.
 
         
@@ -1107,6 +1122,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Il programma di prerelease dell'Adobe CS Extension Builder (un plugin per Flash Builder / Eclipse per sviluppare estensioni per la Creative Suite) è aperto!
 
         
@@ -1147,6 +1165,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         The prerelease program for Adobe CS Extension Builder (a Flash Builder/Eclipse plugin to code Creative Suite extensions) is open!
 
         
@@ -1191,6 +1212,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         The slides about Sharpening I've shown in my lecture at the Color Correction Campus 2011 are free to download.
 
         
@@ -1233,6 +1257,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Le mie slides sullo Sharpening del CCC - Color Correction Campus, Bologna 2011 scaricabili gratuitamente in pdf.
 
         
@@ -1273,6 +1300,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         C'è un modo legale di scaricare Photoshop CS6 beta - direttamente da Adobe, tramite i Prerelease Programs.
 
         
@@ -1317,6 +1347,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         There's a legal way to download Photoshop CS6 beta: the Adobe Prerelease Programs!
 
         
@@ -1361,6 +1394,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Hahnemuhle ha fatto marcia indietro sull'interruzione delle forniture di carta DFA a 64" nel 2012
 
 
@@ -1404,6 +1440,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Hahnemuhle backs off its recent decision to drop the production of 64 inches Digital FineArt papers in 2012
 
         
@@ -1448,6 +1487,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Hahnemuhle ha cessato la produzione di carta Digital Fineart a 64 pollici (162 cm).
 
         
@@ -1488,6 +1530,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Hahnemuhle in 2012 will discontinue the production of 64" papers in the Digital FineArt range.
 
         
@@ -1534,6 +1579,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         "L'estensione non contiene una firma valida. L'estensione non sarà installata" è il messaggio di errore di Adobe Extension Manager CS5 / CS5.5 sotto Mac OSX Lion, che ora ha finalmente un fix temporaneo di Adobe.
 
 
@@ -1559,20 +1607,76 @@
     </footer>
 </article>
 
+<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+        <ul>
+            <li><time datetime="2011-10-31T16:41:08+01:00" itemprop="datePublished">31 Oct, 2011</time></li>
+            
+                <li class="cats">
+                    
+                        <a href="/categories/Coding/">Coding</a>
+                    
+                        <a href="/categories/Photoshop/">Photoshop</a>
+                    
+                </li>
+            
+        </ul>
+        <h2 itemprop="name headline"><a href="http://localhost:4000/2011/10/adobe-extension-manager-and-lion-issue/">Adobe Extension Manager and OSX Lion issue</a></h2>
+    </header>
+
+    <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
+        The extension does not contain valid signature. The extension will not be installed. This Adobe Extension Manager CS5 / CS5.5 on Mac OSX Lion issue finally has a temporary fix.
+
+        
+            <p><a href="http://localhost:4000/2011/10/adobe-extension-manager-and-lion-issue/" role="button">Read More</a></p>
+        
+    </div>
+
+    <footer class="post-footer">
+        <div class="share">Share
+            <ul class="social-networks">
+                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Adobe Extension Manager and OSX Lion issue&p[summary]=The extension does not contain valid signature. The extension will not be installed. This Adobe Extension Manager CS5 / CS5.5 on Mac OSX ...&p[url]=http://localhost:4000/2011/10/adobe-extension-manager-and-lion-issue/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
+                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2011/10/adobe-extension-manager-and-lion-issue/&text=The extension does not contain valid signature. The extension will not be installed. This Adobe Extension Manager CS5 / CS5.5 on Mac OSX ...&hashtags=Adobe Extension Manager,Creative Suite,CS SDK,extension," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
+            </ul>
+        </div>
+        
+        <div class="tags">
+            <ul>
+                
+                <li><a href="http://localhost:4000/tag/Adobe Extension Manager">Adobe Extension Manager</a></li>
+                
+                <li><a href="http://localhost:4000/tag/Creative Suite">Creative Suite</a></li>
+                
+                <li><a href="http://localhost:4000/tag/CS SDK">CS SDK</a></li>
+                
+                <li><a href="http://localhost:4000/tag/extension">extension</a></li>
+                
+            </ul>
+        </div>
+        
+    </footer>
+</article>
+
 
 
 
 <div class="pagination" role="navigation" aria-label="pagination">
     
-        <a href="/page6/" class="previous">&larr; Previous</a>
+        <!-- Newer was Previous -->
+        <a href="/page6/" class="previous">&larr; Newer</a>
     
 
     <span class="page_number">Page 7 of 8</span>
 
     
-        <a href="/page8/" class="next">Next &rarr;</a>
+    <!-- Older was Next -->
+        <a href="/page8/" class="next">Older &rarr;</a>
     
 </div>
+
 
             </main>
         </div>

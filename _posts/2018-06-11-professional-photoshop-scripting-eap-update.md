@@ -6,7 +6,7 @@ excerpt: "I've added 60 pages to accommodate an amazing new chapter on Adobe Gen
 layout: post
 permalink: /2018/06/professional-photoshop-scripting-eap-update/
 description: "I've updated the Early Access Program version of my Professional Photoshop Scripting book with 60 new pages on Adobe Generator!"
-image: /wp-content/uploads/2018/06/RkFdg4PI_400x400.png
+image: /wp-content/uploads/2018/06/RkFdg4PI.png
 category:
   - Scripting
 tags:

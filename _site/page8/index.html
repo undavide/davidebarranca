@@ -101,6 +101,27 @@
     <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
     
+
+    
+    <script>
+      function UnCryptMailto(s) {
+        var n = 0;
+        var r = "";
+        for (var i = 0; i < s.length; i++) {
+          n = s.charCodeAt(i);
+          if (n >= 8364) {
+            n = 128;
+          }
+          r += String.fromCharCode(n - 1);
+        }
+        return r;
+      }
+
+      function linkTo_UnCryptMailto(s) {
+        location.href = UnCryptMailto(s);
+      }
+    </script>
+    
 </head>
 
 
@@ -125,7 +146,7 @@
     
         
         <div class="mainmenu">
-            <a href="http://localhost:4000" >Home</a>
+            <a href="http://localhost:4000" >Blog</a>
             
                 
             
@@ -135,8 +156,6 @@
             
                 
                     <a href="http://localhost:4000/books/" >Books</a>
-                
-            
                 
             
                 
@@ -675,7 +694,8 @@
         <li><a href="https://www.facebook.com/undavide"><svg title="facebook" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></li><li><a href="https://twitter.com/undavide"><svg title="twitter" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li><li><a href="https://github.com/undavide"><svg title="github" width="16" height="16" ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#github-icon"></use></svg></a></li>
 
         
-            <li><a href="mailto:davide.barranca@gmail.com"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+            <!-- WAS: <a href="mailto:davide.barranca@gmail.com">  -->
+            <li><a href="javascript:linkTo_UnCryptMailto('nbjmup;ebwjef/cbssbodbAhnbjm/dpn');"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
         
 
         
@@ -683,6 +703,7 @@
         
     </ul>
 </aside>
+
 
             <main class="the-content" role="main">
                 <div class="search" role="search">
@@ -700,56 +721,6 @@
 <article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
         <ul>
-            <li><time datetime="2011-10-31T16:41:08+01:00" itemprop="datePublished">31 Oct, 2011</time></li>
-            
-                <li class="cats">
-                    
-                        <a href="/categories/Coding/">Coding</a>
-                    
-                        <a href="/categories/Photoshop/">Photoshop</a>
-                    
-                </li>
-            
-        </ul>
-        <h2 itemprop="name headline"><a href="http://localhost:4000/2011/10/adobe-extension-manager-and-lion-issue/">Adobe Extension Manager and OSX Lion issue</a></h2>
-    </header>
-
-    <div class="post-content">
-        The extension does not contain valid signature. The extension will not be installed. This Adobe Extension Manager CS5 / CS5.5 on Mac OSX Lion issue finally has a temporary fix.
-
-        
-            <p><a href="http://localhost:4000/2011/10/adobe-extension-manager-and-lion-issue/" role="button">Read More</a></p>
-        
-    </div>
-
-    <footer class="post-footer">
-        <div class="share">Share
-            <ul class="social-networks">
-                <li class="share-facebook"><a href="https://www.facebook.com/sharer.php?s=100&p[title]=Adobe Extension Manager and OSX Lion issue&p[summary]=The extension does not contain valid signature. The extension will not be installed. This Adobe Extension Manager CS5 / CS5.5 on Mac OSX ...&p[url]=http://localhost:4000/2011/10/adobe-extension-manager-and-lion-issue/" class="s_facebook" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#facebook-icon"></use></svg></a></a></li>
-                <li class="share-twitter"><a href="http://twitter.com/share?url=http://localhost:4000/2011/10/adobe-extension-manager-and-lion-issue/&text=The extension does not contain valid signature. The extension will not be installed. This Adobe Extension Manager CS5 / CS5.5 on Mac OSX ...&hashtags=Adobe Extension Manager,Creative Suite,CS SDK,extension," rel="noreferrer" target="_blank" onclick="window.open(this.href, '','width=700,height=300');return false;"><svg title="" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://localhost:4000/assets/svg/social-icons.svg#twitter-icon"></use></svg></a></li>
-            </ul>
-        </div>
-        
-        <div class="tags">
-            <ul>
-                
-                <li><a href="http://localhost:4000/tag/Adobe Extension Manager">Adobe Extension Manager</a></li>
-                
-                <li><a href="http://localhost:4000/tag/Creative Suite">Creative Suite</a></li>
-                
-                <li><a href="http://localhost:4000/tag/CS SDK">CS SDK</a></li>
-                
-                <li><a href="http://localhost:4000/tag/extension">extension</a></li>
-                
-            </ul>
-        </div>
-        
-    </footer>
-</article>
-
-<article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="post-header">
-        <ul>
             <li><time datetime="2011-10-11T10:32:32+02:00" itemprop="datePublished">11 Oct, 2011</time></li>
             
                 <li class="cats">
@@ -763,6 +734,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         I'm currently involved in a particularly challenging prepress job for a particularly prestigious publishing house, facing an astonishingly close deadline
 
         
@@ -805,6 +779,9 @@
     </header>
 
     <div class="post-content">
+        <!-- INSERT -->
+        
+        <!-- END INSERT -->
         Next weekend I'll be teaching at the CCC - Color Correction Campus, a two day long, intense, Dan Margulis' style, hands on color correction class, a short session about Sharpening
 
         
@@ -836,13 +813,15 @@
 
 <div class="pagination" role="navigation" aria-label="pagination">
     
-        <a href="/page7/" class="previous">&larr; Previous</a>
+        <!-- Newer was Previous -->
+        <a href="/page7/" class="previous">&larr; Newer</a>
     
 
     <span class="page_number">Page 8 of 8</span>
 
     
 </div>
+
 
             </main>
         </div>
