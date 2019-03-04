@@ -1,4 +1,4 @@
-var hostname = "https://elegant-davinci-7a1889.netlify.com";
+var hostname = "http://localhost:4000";
 var index = lunr(function () {
     this.field('title')
     this.field('content', {boost: 10})

@@ -2,7 +2,7 @@
 name: Davide Barranca
 job_title: Photoshop, etc.
 email: davide.barranca@gmail.com
-description: Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!
+description: Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!
 avatar: /assets/img/io.jpg
 favicon: /favicon.ico
 twitter_handler: undavide
@@ -59,7 +59,8 @@ defaults:
       comments: "true"
 
 # Serving
-url: "https://elegant-davinci-7a1889.netlify.com"
+# url: "https://elegant-davinci-7a1889.netlify.com"
+url: "https://www.davidebarranca.com"
 baseurl: ""
 
 # Includes
