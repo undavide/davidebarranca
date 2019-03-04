@@ -6,8 +6,8 @@ description: Digital Caveman. Photoshop retoucher and script/panels developer. I
 avatar: /assets/img/io.jpg
 favicon: /favicon.ico
 twitter_handler: undavide
-analytics_code: UA-XXXXXXX-2
-disqus: your_disqus_site
+analytics_code: UA-25716894-1
+disqus: davidebarranca
 
 exclude:
   - .jekyll-cache

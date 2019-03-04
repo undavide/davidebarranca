@@ -824,7 +824,7 @@
 
 <p>Debugging tips: Google Chrome 62.0.3202.62 (Official Build) (64-bit) at least on macOS Sierra 10.12.6 can’t connect anymore a debug session. It seems it can: you successfully load localhost:8088 (or whatever port you’re using) and the usual textual link appears. Click it, and you’re staring at a blank Chrome Developer Tools page. Out of curiosity I opened the Console and got a “Uncaught Error: No setting registered: showAdvancedHeapSnapshotProperties” referring to <code class="highlighter-rouge">inspector.js</code>.</p>
 
-<p><img src="http://localhost:8888/wp-content/uploads/2017/10/console-700x226.png" alt="" /></p>
+<p><img src="/wp-content/uploads/2017/10/console-700x226.png" alt="" /></p>
 
 <p>Workaround: download <a href="https://chromium.woolyss.com/download/en/#mac">Google Chromium</a>. The theory is that you should test your panel with the exact Chromium version implemented in the host application: yet, finding it is a majestic pain in the butt if you try to follow the <a href="https://www.chromium.org/getting-involved/download-chromium">official instruction</a> for old builds. The closest one I’ve been able to get is 57.0.2987.0 and you can get it too <a href="https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/444967/">here</a>. For debugging in a working DevTool, Chromium-latest should work too.</p>
 
@@ -995,7 +995,7 @@
         (function() {
             var d = document, s = d.createElement('script');
 
-            s.src = '//your_disqus_site.disqus.com/embed.js';
+            s.src = '//davidebarranca.disqus.com/embed.js';
 
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
@@ -1022,7 +1022,7 @@
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-XXXXXXX-2', 'auto');
+        ga('create', 'UA-25716894-1', 'auto');
         ga('send', 'pageview');
     </script>
 

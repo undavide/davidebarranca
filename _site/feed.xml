@@ -5,8 +5,8 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</description>
     <link>https://elegant-davinci-7a1889.netlify.com/</link>
     <atom:link href="https://elegant-davinci-7a1889.netlify.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Mar 2019 19:28:09 +0100</pubDate>
-    <lastBuildDate>Sun, 03 Mar 2019 19:28:09 +0100</lastBuildDate>
+    <pubDate>Mon, 04 Mar 2019 22:11:22 +0100</pubDate>
+    <lastBuildDate>Mon, 04 Mar 2019 22:11:22 +0100</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -151,19 +151,19 @@ EXMAN_FAILED_GET_USER_HOME_FOLDER = -904&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         <title>Professional Photoshop Scripting is published!</title>
         <description>&lt;p&gt;After 10 months since the launch of the Early Access Program, I am incredibly happy to announce that my book is now complete! Read the full report below.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://ps-scripting.com/&quot;&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2019/02/cover-700x700.jpg&quot; alt=&quot;Professional Photoshop Scripting book cover&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://ps-scripting.com/&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2019/02/cover-700x700.jpg&quot; alt=&quot;Professional Photoshop Scripting book cover&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;the-final-version-10&quot;&gt;The Final Version 1.0!&lt;/h3&gt;
 
 &lt;p&gt;The book is now &lt;strong&gt;12 Chapters/409 pages&lt;/strong&gt;, fully CC 2019 compliant: compared to the last EAP version 0.2, I’ve added one Chapter, an Appendix, a proper Acknowledgement section, some extra-content on ActionManager, and given it a final round of proofreading and fixes.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2019/02/open-book-5@2x-700x484.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2019/02/open-book-5@2x-700x484.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I’ve also finally credited my dear friend and colleague &lt;a href=&quot;http://zettagraphics.com/&quot;&gt;Sandra Voelker&lt;/a&gt; for her work as the &lt;strong&gt;Technical Editor&lt;/strong&gt; – she’s been providing suggestions and corrections of remarkably high value.&lt;/p&gt;
 
 &lt;p&gt;I am also especially honored to tell you that the book contains an awesome &lt;strong&gt;Foreword by Jeffrey Tranberry&lt;/strong&gt;, Sr. Product Manager, Digital Imaging at Adobe Systems, and author with Geoff Scott of the book “&lt;a href=&quot;https://www.amazon.com/Power-Speed-Automation-Adobe-Photoshop-ebook/dp/B0083JCBZ2/&quot;&gt;Power, Speed &amp;amp; Automation with Adobe Photoshop&lt;/a&gt;” (2012).&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2019/02/open-book-2@2x-700x484.jpg&quot; alt=&quot;Professional Photoshop Scripting book sample content&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2019/02/open-book-2@2x-700x484.jpg&quot; alt=&quot;Professional Photoshop Scripting book sample content&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;All in all, I am quite happy about how it has turned out: it took me &lt;em&gt;just&lt;/em&gt; two years and a half! Dare I to say, you won’t find anywhere else such a comprehensive learning path that goes from the basics of the ExtendScript language, up to advanced topics such as ActionManager (~70 pages) and Adobe Generator (~60 pages).&lt;/p&gt;
 
@@ -171,7 +171,7 @@ EXMAN_FAILED_GET_USER_HOME_FOLDER = -904&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;I really hope you’ll enjoy it! As I wrote in an earlier post, my intention is to match the &lt;a href=&quot;https://www.htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development&lt;/a&gt; course and add a series of video tutorials: I tested the equipment but stopped for the final rush needed to publish the book.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2018/11/DB-2018-11-18-at-11.23.40-700x426.jpg&quot; alt=&quot;Professional Photoshop Scripting course video recording&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2018/11/DB-2018-11-18-at-11.23.40-700x426.jpg&quot; alt=&quot;Professional Photoshop Scripting course video recording&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Many thanks to all who have contributed, helped, and supported the project buying the EAP 🙏🏻 Your support has been truly appreciated.
 Thank you all!&lt;/p&gt;
@@ -598,7 +598,7 @@ Python 3.6.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;You can have images with all the colors in the world, but the first step in creating a Luminosity Mask is getting a Grayscale image (a Single Channel Image). In most cases, it means to calculate the Luminosity Channel of the given image. Each one has his own recipe: most actions/panels based solutions use Photoshop Luminosity selection (&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl + Left Mouse Click&lt;/code&gt; on the RGB Channel in the Channels Palette).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2018/03/GrayScaleImageGeneration-700x216.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/03/GrayScaleImageGeneration-700x216.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;By the way, any “Single Channel” image can do here. The best choice (i.e. Channel, or processed grayscale layer) is the one where the image features you want to select are more evident and easily separable from the rest – in the above example the trees are well distinct from the sky for instance, and the lake’s gradient below helps as well. The Channel of choice could be the Blue from RGB, the Magenta from CMYK, or a combination of all the 10 Channels an image provides (R, G, B, C, M ,Y, K, L, a, b): whatever, be creative. In case of a grayscale image, life is easier, just move over to Step 2.&lt;/p&gt;
 
@@ -606,7 +606,7 @@ Python 3.6.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Now, this is where the magic happens. The idea is very simple: given the Gray Scale image as input, the output per pixel is a function of its value only. Well, this sentence might take some of us back to horrible school days but it is really simple when you think about it. Pixel comes in, states its value, and gets an output value based only on its value alone, and voilà! We have a Luminosity Mask. The name says it all, the Mask depends solely on the Luminosity (Tonal Range value) of the pixels. It has nothing to do with their location, not their surrounding pixels. Just using the Luminosity value. Nothing more, nothing less – power by simplicity.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2018/03/MaskGenerator-700x351.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/03/MaskGenerator-700x351.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The above Figure represents a &lt;strong&gt;Mask Generator&lt;/strong&gt;. The input pixels values are in the upper section. They get processed by this &lt;em&gt;black box&lt;/em&gt;, which operates based on a function &lt;script type=&quot;math/tex&quot;&gt;f \left( x \right)&lt;/script&gt; and the pixel output that is generated is found in the bottom section. At the output, everything is black (Low Values) with the exception of pixels around 128, that are mapped to white (High Values). This suggests that a “Midtones Mask” has been generated. Simple fact: images are &lt;em&gt;discrete&lt;/em&gt; in their values. For instance, in the case of an 8bit image, the discrete values are in the range {0, 1, …, 254, 255}, occupying 256 available slots, i.e. &lt;script type=&quot;math/tex&quot;&gt;{2}^{8}&lt;/script&gt;&lt;/p&gt;
 
@@ -632,7 +632,7 @@ Python 3.6.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Here, to low input values (shadows) correspond high output values, and to high input values correspond high output values (light pixes). The result is a mask where shadows are light (selected) and highlights are dark (not selected). Using those 2 building blocks one could generate many other masks targeting different Tonal Ranges – something we will get to later.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2018/03/LuminosityMaskShowCaseAnimated-700x266.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/03/LuminosityMaskShowCaseAnimated-700x266.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As can be seen above, the Midtones Mask is generated by scaled multiplication of the Highlights Mask and the Shadows Mask. This is one way to achieve this, not necessarily what’s used usually (we’ll talk about that). Moreover, as can be seen by the Harmonic Function, one could do any mapping one wish.&lt;/p&gt;
 
@@ -646,7 +646,7 @@ Python 3.6.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The &lt;a href=&quot;https://helpx.adobe.com/photoshop/using/curves-adjustment.html&quot;&gt;Curve Tool&lt;/a&gt; is a LUT table visualized by a Curve. It practically lets the user draw the LUT using a &lt;em&gt;flexible curve&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2018/03/PhotoshopCurveTool.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/03/PhotoshopCurveTool.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;On the figure above, one could see Photoshop’s Curve tool. On its bottom, horizontally, you can see the input values. On the left, vertically, you can see the output value. You match between each value just by altering the curve according to your wish. Basically, school days function, that’s what it is, drawing a function. &lt;strong&gt;Luminosity Mask Recipe by Curve Tool&lt;/strong&gt;&lt;/p&gt;
 
@@ -713,7 +713,7 @@ Python 3.6.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;In this part we will show how most of the masks out there are built using the Lego bricks we created.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:8888/wp-content/uploads/2018/03/LuminosityMaskRecipesAnimated-700x266.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/03/LuminosityMaskRecipesAnimated-700x266.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;As one could see above, using Addition, Subtraction and Multiplication (Intersection), all operations available on Layers / Channels / Masks in Photoshop, one could easily generate all those “Classic” Luminosity Masks one could find in the wild (wild world of the Luminosity Masks Panels). Those with &lt;em&gt;sharp eye&lt;/em&gt; would pay attention to something strange: Midtones Mask 001 is all black, see the function below:&lt;/p&gt;
 
