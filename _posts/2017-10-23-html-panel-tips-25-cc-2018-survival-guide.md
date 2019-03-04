@@ -66,7 +66,7 @@ I've inspected the diffs between CSInterface.js (CEP 7 vs. CEP 8) and it's just 
 
 Debugging tips: Google Chrome 62.0.3202.62 (Official Build) (64-bit) at least on macOS Sierra 10.12.6 can't connect anymore a debug session. It seems it can: you successfully load localhost:8088 (or whatever port you're using) and the usual textual link appears. Click it, and you're staring at a blank Chrome Developer Tools page. Out of curiosity I opened the Console and got a "Uncaught Error: No setting registered: showAdvancedHeapSnapshotProperties" referring to `inspector.js`.
 
-![](http://localhost:8888/wp-content/uploads/2017/10/console-700x226.png)
+![](/wp-content/uploads/2017/10/console-700x226.png)
 
 Workaround: download [Google Chromium](https://chromium.woolyss.com/download/en/#mac). The theory is that you should test your panel with the exact Chromium version implemented in the host application: yet, finding it is a majestic pain in the butt if you try to follow the [official instruction](https://www.chromium.org/getting-involved/download-chromium) for old builds. The closest one I've been able to get is 57.0.2987.0 and you can get it too [here](https://commondatastorage.googleapis.com/chromium-browser-snapshots/index.html?prefix=Mac/444967/). For debugging in a working DevTool, Chromium-latest should work too.
 

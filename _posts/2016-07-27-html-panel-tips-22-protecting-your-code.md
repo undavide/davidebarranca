@@ -14,7 +14,7 @@ tags:
   - HTML Panels Tips
 ---
 
-About one year ago I had a so-called _aha moment_ and decided to write a book. I had two or three subjects in mind, first choice was _HTML Panels' Licensing Solutions_ – i.e. how to build trial versions, anti-piracy systems, and the like. Luckily, and I really mean: luckily, I changed my mind and tackled a topic appealing to a slightly broader audience: the [HTML Panels Development course](http://htmlpanelsbook.com) was born.
+About one year ago I had a so-called _aha moment_ and decided to write a book. I had two or three subjects in mind, first choice was _HTML Panels' Licensing Solutions_ – i.e. how to build trial versions, anti-piracy systems, and the like. Luckily, and I really mean: luckily, I changed my mind and tackled a topic appealing to a slightly broader audience: the [HTML Panels Development course](https://htmlpanelsbook.com) was born.
 
 Still, licensing systems in the context of HTML Panels are a soft spot of mine (see my old post about [partial serial number verification](/2015/07/partial-serial-number-verification-system-in-javascript/)), and I wish I had time to write that book! I did build, from my biased point of view, very good prototypes back then: for instance implementing RSA encryption, or server-side automatic licensing files delivery to be used in conjunction with e-commerce providers. Whatever you choose to do, you're protection system must rely on **secured code that nobody can look at** – which is what this article is all about.
 
@@ -119,7 +119,7 @@ This one offers lot of interesting features, such as Domain Lock and Expiration 
 
 ### JsxBlind
 
-Made by the very talented InDesign developer Marc Autret, [JsxBlind](http://www.indiscripts.com/post/2015/12/jsxblind-first-jsxbin-obfuscator-for-extendscript) tackles the issue of code protection from a different perspective. It presupposes JsxBin as the source and outputs JsxBin as well, so you need to:
+Made by the very talented InDesign developer Marc Autret, [JsxBlind](https://www.indiscripts.com/post/2015/12/jsxblind-first-jsxbin-obfuscator-for-extendscript) tackles the issue of code protection from a different perspective. It presupposes JsxBin as the source and outputs JsxBin as well, so you need to:
 
 1.  Export to binary the original, plain Jsx using ESTK. You get a JsxBin file (nothing different from what we're used to).
 2.  Process the above JsxBin through JsxBlind. You get another JsxBin file.
@@ -127,7 +127,7 @@ Made by the very talented InDesign developer Marc Autret, [JsxBlind](http://www.
 According to Marc, _if_ somebody decoded the JsxBlind-ed JsxBin, it would get scrambled variables and function names:
 
 <figure >
-	<img src="http://www.indiscripts.com/blog/public/data/jsxblind-first-jsxbin-obfuscator-for-extendscript/en02.png" />
+	<img src="https://www.indiscripts.com/blog/public/data/jsxblind-first-jsxbin-obfuscator-for-extendscript/en02.png" />
 	<figcaption>Image (c) Marc Autret</figcaption>
 </figure>
 

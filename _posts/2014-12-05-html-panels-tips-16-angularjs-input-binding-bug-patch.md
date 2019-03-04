@@ -20,7 +20,7 @@ CEP 5.2 has a bug (affecting Macs with non US keyboards) that prevents AngularJS
 
 First, what am I talking about? See it yourself with this code:
 
-<iframe width="100%" height="160" src="http://jsfiddle.net/01k8u5fw/4/embedded/result,js,html" frameborder="0"></iframe>
+<iframe width="100%" height="160" src="https://jsfiddle.net/01k8u5fw/4/embedded/result,js,html" frameborder="0"></iframe>
 
 In the browser, the text input and the h2 are bound to the same ng-model, so what you type in the input area is immediately reflected in the h2, as you'd expect. First thing that you learn in Angular tutorials: binding.
 
@@ -114,7 +114,7 @@ A little bit further find the lines where `msie` is assigned and add the follow
 {% highlight js %}
 /**
  * IE 11 changed the format of the UserAgent string.
- * See http://msdn.microsoft.com/en-us/library/ms537503.aspx
+ * See https://msdn.microsoft.com/en-us/library/ms537503.aspx
  */
 msie = int((/msie (\d+)/.exec(lowercase(navigator.userAgent)) || [])[1]);
 if (isNaN(msie)) {
@@ -131,7 +131,7 @@ For Angular **1.3.x** (around line 184):
 {% highlight js %}
 /**
  * documentMode is an IE-only property
- * http://msdn.microsoft.com/en-us/library/ie/cc196988(v=vs.85).aspx
+ * https://msdn.microsoft.com/en-us/library/ie/cc196988(v=vs.85).aspx
  */
 msie = document.documentMode;
 
@@ -204,7 +204,7 @@ Let's thank again Kris Coppieters for the instruction so far - I will add a brie
 
 Quoting from Angular website:
 
-> Before you can build AngularJS, you must install and configure the following dependencies on your machine: [Git](http://git-scm.com/): The [Github Guide to Installing Git](https://help.github.com/articles/set-up-git) is a good source of information. [Node.js](http://nodejs.org/): We use Node to generate the documentation, run a development web server, run tests, and generate distributable files. Depending on your system, you can install Node either from source or as a pre-packaged bundle. [Java](http://www.java.com/): We minify JavaScript using our [Closure Tools](https://developers.google.com/closure/) jar. Make sure you have Java (version 7 or higher) installed and included in your [PATH](http://docs.oracle.com/javase/tutorial/essential/environment/paths.html) variable. [Grunt](http://gruntjs.com/): We use Grunt as our build system. Install the grunt command-line tool globally with: `npm install -g grunt-cli` [Bower](http://bower.io/): We use Bower to manage client-side packages for the docs. Install the bower command-line tool globally with: `npm install -g bower` **Note**: You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to install Grunt & Bower globally.
+> Before you can build AngularJS, you must install and configure the following dependencies on your machine: [Git](https://git-scm.com/): The [Github Guide to Installing Git](https://help.github.com/articles/set-up-git) is a good source of information. [Node.js](https://nodejs.org/): We use Node to generate the documentation, run a development web server, run tests, and generate distributable files. Depending on your system, you can install Node either from source or as a pre-packaged bundle. [Java](https://www.java.com/): We minify JavaScript using our [Closure Tools](https://developers.google.com/closure/) jar. Make sure you have Java (version 7 or higher) installed and included in your [PATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html) variable. [Grunt](https://gruntjs.com/): We use Grunt as our build system. Install the grunt command-line tool globally with: `npm install -g grunt-cli` [Bower](https://bower.io/): We use Bower to manage client-side packages for the docs. Install the bower command-line tool globally with: `npm install -g bower` **Note**: You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to install Grunt & Bower globally.
 
 This has been easy, no problem to me - by the way I already had everything needed, chances are you too already rely on those tools. Things get slightly worse when:
 
