@@ -5,6 +5,9 @@ layout: default
 {% for post in paginator.posts %}
 <article class="post" role="article" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
+        <!-- COMMENT COUNT -->
+        <a style ="padding: 0.15em 0.5em 0.2em; border-radius: 2px; background-color: #673ab7; color: #fff; opacity:0.5; float:right; font-size:12px" class="disqus-comment-count" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}#disqus_thread">0</a>
+        <!-- COMMENT COUNT END -->
         <ul>
             <li><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%-d %b, %Y" }}</time></li>
             {% if site.show_categories == 1 and post.category %}
@@ -15,6 +18,7 @@ layout: default
                 </li>
             {% endif %}
         </ul>
+
         <h2 itemprop="name headline"><a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></h2>
     </header>
 
