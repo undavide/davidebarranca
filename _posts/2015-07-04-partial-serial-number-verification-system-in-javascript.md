@@ -49,7 +49,7 @@ As follows, Brandon Staggs introduction quoted with his permission from the [or
 *   Dan Vanderkam: [Arbitrary precision Hex <-> Dec converter](http://www.danvk.org/hex2dec.html).
 *   MDN: [Bitwise Operators](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators).
 *   [Delphi Basics](http://www.delphibasics.co.uk/index.html) Reference Language.
-*   [JS Minifier](http://fmarcia.info/jsmin/test.html) (use "Conservative" then strip newlines - _aggressive_ minifiers will break ExtendScript code, see [this article](http://localhost:8888/2013/08/testing-minified-js-libraries-in-extendscript/))
+*   [JS Minifier](http://fmarcia.info/jsmin/test.html) (use "Conservative" then strip newlines - _aggressive_ minifiers will break ExtendScript code, see [this article](/2013/08/testing-minified-js-libraries-in-extendscript/))
 
 Hope this helps! Thanks for reading and if you feel dandy there's always that yellow "Donate" button in the top-left corner :-)
 

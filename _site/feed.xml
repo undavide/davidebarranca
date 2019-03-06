@@ -2,12 +2,148 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <description>Digital Caveman. Photoshop retoucher and script/panels developer. I also publish courses, check the Books page!</description>
+    <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 05 Mar 2019 00:13:05 +0100</pubDate>
-    <lastBuildDate>Tue, 05 Mar 2019 00:13:05 +0100</lastBuildDate>
+    <pubDate>Wed, 06 Mar 2019 01:26:47 +0100</pubDate>
+    <lastBuildDate>Wed, 06 Mar 2019 01:26:47 +0100</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Migrating from WordPress to Jekyll on Netlify</title>
+        <description>&lt;p&gt;After years, I’ve been able to kiss WordPress bye-bye and migrate to a fully static site build with Jekyll and deployed to Netlify. In this post I’ll tell you why, and show you how.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-not-wordpress&quot;&gt;Why not WordPress?&lt;/h2&gt;
+
+&lt;p&gt;I’ve nothing against WP in principle, it’s not the right tool for me. I blogpost on average once a month, it makes no sense for me to be bound to a Linux hosting with mySQL access, a BackupBuddy subscription plan and a dozen of other WP plugins to run this site. Have you seen my posts? A couple of images, few snippets of code, some text. Really, WP is plain overkill; plus, I don’t want to worry about WP updates, PhpMyAdmin, DB access errors, log-ins, plugin incompatibility and fancy dashboards anymore.&lt;/p&gt;
+
+&lt;p&gt;Now I have a simpler, static site which I update writing text files on my disk, committing to a free git repository, which Jekyll files are automatically built, hosted and served over https for free by Netlify.&lt;/p&gt;
+
+&lt;h2 id=&quot;static-vs-dynamic&quot;&gt;Static vs. Dynamic&lt;/h2&gt;
+
+&lt;p&gt;As opposed to WP, where each PHP &lt;em&gt;template&lt;/em&gt;&lt;sup id=&quot;fnref:template&quot;&gt;&lt;a href=&quot;#fn:template&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; is filled on-demand – i.e. when a user requests a page, fetching the content from a database and returning the processed data as html – a Static site is &lt;em&gt;pre-compiled&lt;/em&gt; so to speak, and simply made available online all at once.&lt;/p&gt;
+
+&lt;p&gt;As a consequence, a WP site needs a machine running some server-side scripting language such as PHP, a database like mySQL, and some processing resources; a static site is happy when it is hosted on a server that is (a) turned on, and (b) connected to the net.&lt;/p&gt;
+
+&lt;h2 id=&quot;ssgs&quot;&gt;SSGs&lt;/h2&gt;
+
+&lt;p&gt;If you’re not familiar with the concept of Static Site Generators, they’re command-line tools that get a bunch of HTML/JS/CSS with template code and markdown files as input, and output a full static website. Your job is then to move the files on the server.&lt;/p&gt;
+
+&lt;p&gt;There are several SSGs available: to the best of my knowledge, the most popular ones are &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; (written in Ruby), &lt;a href=&quot;https://gohugo.io&quot;&gt;Hugo&lt;/a&gt; (written in Go) and &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt; (Javascript). Each one of them has its peculiar templating system and folders structure.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;a href=&quot;https://www.staticgen.com/&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2019/03/staticGen.jpg&quot; /&gt;&lt;/a&gt;
+&lt;figcaption&gt;If you feel inclined, a way too big list of SSGs is found &lt;a href=&quot;https://www.staticgen.com/&quot;&gt;here&lt;/a&gt;.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;All of them share the sublime idea that you compose your writing (both pages and blog-posts) in MarkDown: a text file with a basic set of formatting rules, such as **&lt;strong&gt;bold&lt;/strong&gt;**, _&lt;em&gt;italic&lt;/em&gt;_ etc. Hence, all your website content is not hidden into some resources-hungry DataBase, but exposed to you as plain text files with a &lt;code class=&quot;highlighter-rouge&quot;&gt;.md&lt;/code&gt; extension.&lt;/p&gt;
+
+&lt;h3 id=&quot;which-ssg-to-pick&quot;&gt;Which SSG to pick&lt;/h3&gt;
+
+&lt;p&gt;If you start fresh (i.e., you don’t run a SSG already) or you don’t have plenty of time on your hands, I suggest you to look at the available templates for Jekyll (&lt;a href=&quot;https://jekyllthemes.io&quot;&gt;free&lt;/a&gt; or &lt;a href=&quot;https://jekyllthemes.io/premium&quot;&gt;paid&lt;/a&gt;), for &lt;a href=&quot;https://themes.gohugo.io/&quot;&gt;Hugo&lt;/a&gt; and for &lt;a href=&quot;https://hexo.io/themes/&quot;&gt;Hexo&lt;/a&gt;. Beware high expectations: they’re all quite &lt;em&gt;bare&lt;/em&gt;. Pick the one you like the most, and then learn that templating language to customize it.&lt;/p&gt;
+
+&lt;p&gt;On a superficial level, that’s all you need. To me – and I’m not really into SSGs enough to get all the nuances – besides the templating language, the only other difference is compilation speed. Being written in Go, &lt;strong&gt;Hugo goes like a rocket&lt;/strong&gt;. My website is compiled by Hugo in 1.5 seconds, whereas Jekyll takes ~14 seconds, and Hexo is not that much better.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/03/hugo.png&quot; alt=&quot;Hugo vs. Jekyll&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Keep in mind that each time you modify a thing and save, the process re-generates (if you want, incrementally) the whole website, so 14 seconds to see whether a CSS rule or a template tweak really do what you originally meant them to do, may be a long time to wait – the fifth time in a row that you hit save.&lt;/p&gt;
+
+&lt;p&gt;I am on Jekyll, using a mildly customized version of the &lt;a href=&quot;https://themeforest.net/item/steve-a-minimal-blog-theme-for-jekyll/15601096&quot;&gt;Steve theme&lt;/a&gt;, which costed me like $15. I already run &lt;a href=&quot;https://cc-extensions.com/&quot;&gt;CC-Extensions&lt;/a&gt; on Jekyll, I’m mildly familiar with it, so I’ll keep being patient if it takes seconds to compile.&lt;/p&gt;
+
+&lt;h2 id=&quot;wordpress-migration&quot;&gt;WordPress migration&lt;/h2&gt;
+
+&lt;p&gt;I’ve followed this very checklist myself. Perhaps things can be made simpler, but this has worked fine for me – feel free to google stuff if you need more detailed information.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Migrate all your comments to &lt;a href=&quot;https://disqus.com&quot;&gt;Disqus&lt;/a&gt;: sign up and follow the instruction to install Disqus on WordPress (you’ll need to get &lt;a href=&quot;https://wordpress.org/plugins/disqus-comment-system/&quot;&gt;this WP Plugin&lt;/a&gt;).&lt;/li&gt;
+  &lt;li&gt;Do a full backup: I’ve always used &lt;a href=&quot;https://ithemes.com/purchase/backupbuddy/&quot;&gt;BackupBuddy&lt;/a&gt;, which isn’t cheap but works like a charm – perhaps also the built-in WP Export is OK. You need to backup both the WP assets and the DB.&lt;/li&gt;
+  &lt;li&gt;Install &lt;a href=&quot;https://www.mamp.info/&quot;&gt;MAMP&lt;/a&gt; or a similar software and restore your WordPress installation on a local server (e.g. on your laptop). This will make the following step faster.&lt;/li&gt;
+  &lt;li&gt;On your local WP, install both &lt;a href=&quot;https://github.com/SchumacherFM/wordpress-to-hugo-exporter&quot;&gt;WP to Hugo&lt;/a&gt; and &lt;a href=&quot;https://wordpress.org/plugins/jekyll-exporter/&quot;&gt;Jekyll Exporter&lt;/a&gt; migration tools, and perform both Exports. You’ll get two &lt;code class=&quot;highlighter-rouge&quot;&gt;.zip&lt;/code&gt; files with a bunch of MarkDown in them. I’ve found that the Hugo version of the posts returns a better MarkDown conversion – but the files aren’t named as they should (i.e., prefixed with the date, like &lt;code class=&quot;highlighter-rouge&quot;&gt;2018-11-29-something.md&lt;/code&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;jekyll-import&quot;&gt;Jekyll import&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;I have then manually reviewed the markdown files of the majority of my posts (~150) coming from the export, deleting items in the YAML FrontMatter&lt;sup id=&quot;fnref:frontmatter&quot;&gt;&lt;a href=&quot;#fn:frontmatter&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; that aren’t meaningful, and fixing the markdown.&lt;/li&gt;
+  &lt;li&gt;Make sure you keep the original &lt;code class=&quot;highlighter-rouge&quot;&gt;permalink&lt;/code&gt; (the post URL): this way each post will have the same URL of your old WP site. This way people who get to you from other sites’ links don’t get 404’ed, and you keep analytics intact.&lt;/li&gt;
+  &lt;li&gt;Remove in the MarkDown all the links to &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:8888/&lt;/code&gt;. For instance, my Hugo export (the one with nicer markup) has all the posts’ assets with urls like &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:8888/wp-content/uploads/2018/03/logo.png&lt;/code&gt;. Do a batch search and replace and turn them to &lt;code class=&quot;highlighter-rouge&quot;&gt;/wp-content/uploads/2018/03/logo.png&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Move the markdown posts in Jekyll’s &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; folder, and also move in the website root the exported &lt;code class=&quot;highlighter-rouge&quot;&gt;/wp-content&lt;/code&gt; folder, which contains all the images coming from WP&lt;sup id=&quot;fnref:redundant&quot;&gt;&lt;a href=&quot;#fn:redundant&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;An example of the YAML FrontMatter for this very post:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Migrating from WordPress to Jekyll on Netlify&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2019-03-05T11&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Davide Barranca&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;excerpt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Bye-bye Wordpress.&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;post&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/2019/03/migrating-from-wordpress-to-jekyll-on-netlify/&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;How to migrate from WordPress to Jekyll on Netlify&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/wp-content/uploads/2019/03/jekyll.png&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;draft&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Personal&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Jekyll&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Netlify&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
+
+&lt;p&gt;The whole idea around this SSG thing is that both the site build and the site updates must be easy. I’ve created a git repository on &lt;a href=&quot;https://www.github.com&quot;&gt;GitHub&lt;/a&gt; and pushed my Jekyll website there. Be aware that GitHub itself provides you for free with &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;, a service based on Jekyll that automatically builds your site each time you push a commit to a &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch, and hosts the result on https for free.&lt;/p&gt;
+
+&lt;p&gt;There are some limitations in terms of Jekyll plugins (see the &lt;a href=&quot;https://help.github.com/en/articles/configuring-jekyll-plugins#default-plugins&quot;&gt;whitelist here&lt;/a&gt;), so I’ve decided to try a different approach.&lt;/p&gt;
+
+&lt;h2 id=&quot;netlify&quot;&gt;Netlify&lt;/h2&gt;
+
+&lt;p&gt;Go create a free account on &lt;a href=&quot;https://www.netlify.com/&quot;&gt;Netlify&lt;/a&gt;, which provides an amazing service similar to GitHub pages. Then link your GitHub/Bitbucket repository, define a build command (mine is simply &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt;), and they will serve the Jekyll output on a dedicated, public subdomain – that you can use to check the site or point collaborators/clients to.&lt;/p&gt;
+
+&lt;p&gt;At this point, you can link your existing domain (the process is quite easy): Netlify will give you few domain name servers to set e.g. on GoDaddy, or wherever your domain is hosted. You’ll be asked also to add to Netlify all the existing CNAME and MX records from your host (copy them from GoDaddy – they are for email, FTP and such).&lt;/p&gt;
+
+&lt;p&gt;Then you’ll have to wait some hours for the DNS propagation, during which your website won’be served through https – the free &lt;a href=&quot;https://letsencrypt.org/&quot;&gt;Let’s Encrypt&lt;/a&gt; certificate will be issued shortly, and your static site will finally be on SSL.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/03/netlify.png&quot; alt=&quot;Hugo vs. Jekyll&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;I am genuinely happy to have streamlined my blogging workflow. There’s lot of room for improvement – e.g. on the theme, SEO, social cards etc. – but given the little time it took:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I have gotten rid of WordPress and related expenses (pricey hosting and plugins).&lt;/li&gt;
+  &lt;li&gt;Posts are easier to access, create and edit.&lt;/li&gt;
+  &lt;li&gt;I generally feel more in control, and less subject to random, time consuming issues.&lt;/li&gt;
+  &lt;li&gt;I haven’t lost anything relevant in terms of functionality.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If I had more time I’d explore Jekyll and Netlify features more in depth, or even consider adapting my theme to Hugo to save some building time in the future. Luckily, I haven’t got any spare time left 😅 So I’ll just call quit and feel good.&lt;br /&gt;
+Thanks for reading!&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:template&quot;&gt;
+      &lt;p&gt;For a lack of better word. &lt;a href=&quot;#fnref:template&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:frontmatter&quot;&gt;
+      &lt;p&gt;It’s the &lt;em&gt;header&lt;/em&gt; content of each &lt;code class=&quot;highlighter-rouge&quot;&gt;.md&lt;/code&gt; file, which is wrapped with three dashes &lt;code class=&quot;highlighter-rouge&quot;&gt;---&lt;/code&gt;. It contains the post’s metadata (e.g. the title, the excerpt), that is used by Jekyll to display it. &lt;a href=&quot;#fnref:frontmatter&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:redundant&quot;&gt;
+      &lt;p&gt;There is a lot of redundant stuff in there, for WP creates several versions of all images you’ve imported at different resolutions. &lt;a href=&quot;#fnref:redundant&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 05 Mar 2019 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2019/03/migrating-from-wordpress-to-jekyll-on-netlify/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/03/migrating-from-wordpress-to-jekyll-on-netlify/</guid>
+        
+        <category>Jekyll</category>
+        
+        <category>Netlify</category>
+        
+        
+        <category>Personal</category>
+        
+      </item>
     
       <item>
         <title>Adobe Extension Manager Error Codes</title>
@@ -758,113 +894,6 @@ Python 3.6.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         
         
         <category>Photoshop</category>
-        
-      </item>
-    
-      <item>
-        <title>A New Course on Adobe CEP Panels: Native Installers and Automation!</title>
-        <description>&lt;p&gt;After &lt;a href=&quot;http://htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development&lt;/a&gt;, I’ve now published a new Course, titled “The Ultimate Guide to Native Installers and Automated Build Systems”!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/01/Book_Cover_Blog.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;For which title the gods of software development and copywriting will forgive me. Curious?&lt;/p&gt;
-
-&lt;p&gt;In the business of Adobe HTML Panels, sooner or later you’ll ask yourself: “how the heck do I do… &lt;em&gt;whatever it must be done&lt;/em&gt; to let my customers run my software on their Computers?” The typical stream of consciousness is as follows.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;I know I know: it’s just a matter of moving a folder to the right place, isn’t it? And perhaps few extra assets here and there… of course, I don’t want other developers to reverse engineer my own code, so it must be protected somehow. OK, I forgot signing and timestamping. And Code Certificates: should I buy one? Which one? Do they all work the same? I’ve heard that some classy people build Native Installers, like Apple and Windows programs with nice graphic interfaces, that defeat Gatekeeper and SmartScreen security warnings like a pro! Gee, do I have to go through all this, by hand, all the time? Each time I change my code, on each product? For real?&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Stream of consciousness ends on a sad note. Hey, look at that! (Spring from Vivaldi’s The Four Seasons plays in background)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/01/UG.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This is what the cool guys are doing. Type a command, and look at things that build themselves. What is looping above is a sample project, including:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;HTML Panel&lt;/li&gt;
-  &lt;li&gt;Multiplatform Photoshop Plugin as &lt;code class=&quot;highlighter-rouge&quot;&gt;.plugin&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;.8bf&lt;/code&gt; files (optional).&lt;/li&gt;
-  &lt;li&gt;Readme documentation as a &lt;code class=&quot;highlighter-rouge&quot;&gt;.pdf&lt;/code&gt; file (optional).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Output&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Signed and Timestamped Panel folder with:
-    *   &lt;code class=&quot;highlighter-rouge&quot;&gt;.js&lt;/code&gt; files protected with advanced obfuscation algorithms.
-    *   &lt;code class=&quot;highlighter-rouge&quot;&gt;.jsx&lt;/code&gt; files exported as &lt;code class=&quot;highlighter-rouge&quot;&gt;.jsxbin&lt;/code&gt; with different advanced obfuscation algorithms.&lt;/li&gt;
-  &lt;li&gt;Zipped version for convenience.&lt;/li&gt;
-  &lt;li&gt;Hybrid Extension as a &lt;code class=&quot;highlighter-rouge&quot;&gt;.zxp&lt;/code&gt; file, ready for submission on Adobe Add-ons.&lt;/li&gt;
-  &lt;li&gt;Mac &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; package, that in turn contains:
-    *   a &lt;code class=&quot;highlighter-rouge&quot;&gt;.pkg&lt;/code&gt; native installer,
-    *   an uninstaller application,
-    *   the &lt;code class=&quot;highlighter-rouge&quot;&gt;.pdf&lt;/code&gt; documentation.&lt;/li&gt;
-  &lt;li&gt;Windows &lt;code class=&quot;highlighter-rouge&quot;&gt;.exe&lt;/code&gt; native installer that deploys Panel, Photoshop Plugin and Documentation
-    *   Uninstaller provided in Windows’ Control Panel.&lt;/li&gt;
-  &lt;li&gt;Both platforms’ native installers are signed with paid Code Certificates to comply with Windows and macOS security policies.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;After many years of trial and errors, I’ve finally settled to the above setup for my own commercial products, which takes 20 seconds of computer work to automatically build all the above. The final result looks like that, first on Mac:&lt;/p&gt;
-
-&lt;video width=&quot;100%&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;
-    &lt;source src=&quot;/wp-content/uploads/2018/01/UGMac.mp4&quot; type=&quot;video/mp4&quot; /&gt;
-&lt;/video&gt;
-
-&lt;p&gt;Then on Windows:&lt;/p&gt;
-
-&lt;video width=&quot;100%&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot;&gt;
-    &lt;source src=&quot;/wp-content/uploads/2018/01/Windows.mp4&quot; type=&quot;video/mp4&quot; /&gt;
-&lt;/video&gt;
-
-&lt;h2 id=&quot;the-course&quot;&gt;The Course&lt;/h2&gt;
-
-&lt;p&gt;How to get there? I’ve explained it all, step by step, in &lt;strong&gt;The Ultimate Guide to Native Installers and Automated Build Systems&lt;/strong&gt;, my new Course!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/01/shot.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It comes as a &lt;strong&gt;PDF ebook, bundled with the entire Sample Project code&lt;/strong&gt; – both the dummy Panel and assets, plus the automation. The course draws the &lt;em&gt;big picture&lt;/em&gt; first, aka what needs to be done; then shows you how to manually perform each step, why, suggesting best practice and which software to use; finally, it teaches you how to write and customize the code to build the entire automation pipeline.&lt;/p&gt;
-
-&lt;script src=&quot;https://gumroad.com/js/gumroad-embed.js&quot;&gt;&lt;/script&gt;
-
-&lt;div class=&quot;gumroad-product-embed&quot; data-gumroad-product-id=&quot;swCoT&quot;&gt;&lt;a href=&quot;https://gumroad.com/l/swCoT&quot;&gt;Loading...&lt;/a&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;faq&quot;&gt;FAQ&lt;/h3&gt;
-
-&lt;dl&gt;
-    &lt;dt&gt;Does the Course apply to Photoshop only?&lt;/dt&gt;
-    &lt;dd&gt;I've used PS as my Adobe app of choice, but no, the course applies to &lt;em&gt;every&lt;/em&gt; CEP-enabled app you're developing extensions for.&lt;/dd&gt;
-
-    &lt;dt&gt;Mac, Windows or both?&lt;/dt&gt;
-    &lt;dd&gt;I'm on Mac: it's the only platform that allows you to build both Mac &lt;em&gt;and&lt;/em&gt; Windows installers; yet the automation code can run on Windows as well, with the exception of the Mac installers part.&lt;/dd&gt;
-
-    &lt;dt&gt;Does the bundle include Code Certificates?&lt;/dt&gt;
-    &lt;dd&gt;No. On the one side, paid Code Certificates are strongly suggested but optional. On the other side, I could not buy them in your place! In fact, it took me quite some time and effort to acquire them just for myself.&lt;/dd&gt;
-
-    &lt;dt&gt;Does the Course cover Panels development?&lt;/dt&gt;
-    &lt;dd&gt;This one is about installers and automation only. If you want the Big One (300 pages, 3 hours of videotutorials, 28 sample Panels code), head to the &lt;a href=&quot;http://htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development Course&lt;/a&gt;.&lt;/dd&gt;
-
-    &lt;dt&gt;Why there's a 1 in the cover?&lt;/dt&gt;
-    &lt;dd&gt;You have a sharp eye! I plan to expand the collection with more specific and smaller Courses like this one, in the future. Feel free to suggest topics you'd like to see covered in the comments! And yes, I have a 🦊 as the Terminal prompt, isn't it cute?&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;h2 id=&quot;thank-you&quot;&gt;Thank you!&lt;/h2&gt;
-
-&lt;p&gt;Over the years, I’ve always posted articles on this blog as a way to give back to the developers’ community what I’ve picked up myself in the first place – from Forums, chats, etc. Alas, we live in a (very) material and a (very) demanding world: projects like this one are fundamental for me to sustain my business and my family – and as a consequence maintain and update this blog too.&lt;/p&gt;
-
-&lt;p&gt;Thank you in advance for your support! 🙏🏻 It is really appreciated.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 23 Jan 2018 14:37:47 +0100</pubDate>
-        <link>http://localhost:4000/2018/01/ultimate-guide-native-installers-automated-build-system/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/01/ultimate-guide-native-installers-automated-build-system/</guid>
-        
-        <category>Automation</category>
-        
-        <category>Installer</category>
-        
-        <category>Native Installer</category>
-        
-        
-        <category>CEP</category>
         
       </item>
     
