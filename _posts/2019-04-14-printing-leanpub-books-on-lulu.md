@@ -1,5 +1,5 @@
 ---
-title: Printing on demand a Leanpub book with Lulu
+title: Printing on demand a Leanpub book with Lulu.com
 date: 2019-04-13T11
 author: Davide Barranca
 excerpt: "I have run a small batch of prints for my Professional PS Scripting course: I'm going to describe the process of turning a Leanpub generated eBook into a Lulu.com printed book."
