@@ -81,7 +81,7 @@ My starting point was an ebook that I self published with [Leanpub](https://lean
 
 I took some R&D time to evaluate alternative options within my reach: I could use InDesign, iBooks Author, write in MarkDown and convert to PDF with Softcover or Pandoc[^Pandoc]. After some pondering, I decided that they all required too much efforts on my side to customize the result compared to Leanpub design, which was excellent out-of-the-box; and so I went with it. The book in itself was already a tough enterprise to undertake, I'd be better off spending my time on content creation.
 
-[^Pandoc]: [Pandoc](https://pandoc.org/) is an open-source conversion tool that is also able to export to PDF from MarkDown, but the styling part is time consuming and you got to have quite some LaTeX knowledge. [Softcover](https://www.softcover.io/) is a free alternative to Leanpub, but it requires more customization efforts, a bit of LaTeX skills and the resulting book style isn't as good as Leanpub's. Both have the notable upside that the entire process is local, whereas Leanpub creates the PDF server-side.
+[^Pandoc]: [Pandoc](https://pandoc.org/) is an open-source conversion tool that is also able to export to PDF from MarkDown, but the styling part is time consuming and you got to have quite some LaTeX knowledge. [Softcover](https://www.softcover.io/) is a free alternative to Leanpub for the MarkDown to PDF part, but it requires more customization efforts, a bit of LaTeX skills and the resulting book style isn't as good as Leanpub's. Both have the notable upside that the entire process is local, whereas Leanpub creates the PDF server-side.
 
 ### Writing in MarkDown
 
