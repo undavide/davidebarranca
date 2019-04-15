@@ -293,7 +293,7 @@ All in all, I am really pleased with the result. It took me some time to figure 
 
 But I didn't tell you the entire story...
 
-Jeff offered me the possibility to send him two copies of my book: one as a well deserved gift to him, the other... would be sent me back with signatures by the Photoshop teams from both the Minnesota and California offices! Accidentally, somebody let also some tattoos, stickers, a pin and a shirt slip into the package, so I've now some Photoshop branded swag in the house, for my daughter to steal me[^wand].
+Jeff offered me the possibility to send him two copies of my book: one as a well deserved gift to him, the other... would be sent me back with signatures by the Photoshop teams from both the Minnesota and California offices! Accidentally, _"somebody"_ 🙏🏻 let also some tattoos, stickers, a pin and a shirt slip into the package, so I've now some Photoshop branded swag in the house, for my daughter to steal me[^wand].
 
 <figure>
 <img src="/wp-content/uploads/2019/04/Signatures.jpg" srcset="/wp-content/uploads/2019/04/Signatures.jpg 1x, /wp-content/uploads/2019/04/Signatures@2x.jpg 2x" alt="Signatures">
