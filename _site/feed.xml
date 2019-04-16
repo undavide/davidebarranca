@@ -5,12 +5,12 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Apr 2019 12:21:01 +0200</pubDate>
-    <lastBuildDate>Mon, 15 Apr 2019 12:21:01 +0200</lastBuildDate>
+    <pubDate>Tue, 16 Apr 2019 22:04:31 +0200</pubDate>
+    <lastBuildDate>Tue, 16 Apr 2019 22:04:31 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
-        <title>Printing on demand a Leanpub book with Lulu</title>
+        <title>Printing on demand a Leanpub book with Lulu.com</title>
         <description>&lt;style type=&quot;text/css&quot;&gt;
 table { padding: 0; border-collapse: collapse; margin: auto auto }
 table tr {
@@ -49,10 +49,10 @@ table tr th :last-child, table tr td :last-child {
 &lt;p&gt;Authoring a book is awesome – especially when you’re done with it – but holding an actual object in your hands still gives a special kind of thrill. I’ve just run an ultra-small print batch of my &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;Professional Photoshop Scripting&lt;/a&gt; book, that I have self-published with Leanpub and printed-on-demand with Lulu: in this post I’m going to describe the whole process, what I’ve learned from it, and what I’d do differently to make the result even better.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;&lt;br /&gt;
-There is some room for improvement, but all considered I am pleased!&lt;/p&gt;
+There is some room for improvement but all considered I am pleased!&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Disclaimer&lt;/strong&gt;&lt;br /&gt;
-In my daytime job I also do some books designing for my client, when asked; I have a decent understanding of printing process’ technical aspects in general, and I am familiar with the related software. In a previous life of mine I’ve been a color-management consultant for press/pre-press too. Nonetheless, this whole “Get the book printed” business took me by surprise, and I wanted to go through it as swiftly as possible; as a consequence, I admit to have taken, sometimes, the quickest (i.e., not the best) path.&lt;/p&gt;
+In my daytime job I also do some books designing for my client, when asked; I have a decent understanding of printing process’ technical aspects in general, and I am familiar with the related software. In a previous life of mine I’ve been a color-management consultant for press/pre-press too. Nonetheless, this whole “get the book printed!” business took me by surprise, and I wanted to go through it as swiftly as possible; as a consequence, I admit to have taken, sometimes, the quickest path (i.e., not the best one).&lt;/p&gt;
 
 &lt;h2 id=&quot;why-have-i-got-a-printed-version-of-my-book-in-the-first-place&quot;&gt;Why have I got a printed version of my book in the first place?&lt;/h2&gt;
 
@@ -62,7 +62,7 @@ In my daytime job I also do some books designing for my client, when asked; I ha
 
 &lt;h2 id=&quot;creating-an-ebook-with-leanpub&quot;&gt;Creating an ebook with Leanpub&lt;/h2&gt;
 
-&lt;p&gt;My starting point was an ebook that I self published with &lt;a href=&quot;https://leanpub.com/&quot;&gt;Leanpub&lt;/a&gt;. If you’ve not familiar with them, you are allowed to:&lt;/p&gt;
+&lt;p&gt;My starting point was an ebook that I self published with &lt;a href=&quot;https://leanpub.com/&quot;&gt;Leanpub&lt;/a&gt;. If you’re not familiar with them, you are allowed to:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;[…] write books in Markdown (our dialect is called Markua), Google Docs or our visual editor, and publish an ebook (in PDF, EPUB and MOBI) with one click. The Leanpub store helps you sell your book while it’s in-progress, getting reader feedback and earning 80% royalties. Or, upload a completed ebook to sell in our store.&lt;/p&gt;
@@ -73,9 +73,9 @@ In my daytime job I also do some books designing for my client, when asked; I ha
 &lt;figcaption&gt;The Leanpub book's author backend page&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;&lt;strong&gt;I couldn’t recommend Leanpub more&lt;/strong&gt;, seriously: as a company, they offer extra services that I don’t really need (book landing page, e-commerce, in-progress publishing, etc), but their writing platform alone is superb. I’ve already used Leanpub for my previous book &lt;a href=&quot;https://www.htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development&lt;/a&gt;, so I was no stranger to the whole process.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;I couldn’t recommend Leanpub more&lt;/strong&gt;, seriously: as a company, they offer extra services that I don’t really need (book landing page, e-commerce, in-progress publishing, etc), but their writing platform alone is superb. I’ve already used Leanpub for my previous book &lt;a href=&quot;https://www.htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development&lt;/a&gt;, hence I was no stranger to the whole process.&lt;/p&gt;
 
-&lt;p&gt;I took some R&amp;amp;D time to evaluate alternative options within my reach: I could use InDesign, iBooks Author, write in MarkDown and convert to PDF with Pandoc or Softcover&lt;sup id=&quot;fnref:Softcover&quot;&gt;&lt;a href=&quot;#fn:Softcover&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. After some pondering, I decided that they all required too much efforts on my side to customize the result compared to Leanpub design, which was excellent out-of-the-box; and so I went with it. The book in itself was already a tough enterprise to undertake, I’d be better off spending my time on content creation.&lt;/p&gt;
+&lt;p&gt;I took some R&amp;amp;D time to evaluate alternative options within my reach: I could use InDesign, iBooks Author, write in MarkDown and convert to PDF with Softcover or Pandoc&lt;sup id=&quot;fnref:Pandoc&quot;&gt;&lt;a href=&quot;#fn:Pandoc&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. After some pondering, I decided that they all required too much efforts on my side to customize the result compared to Leanpub design, which was excellent out-of-the-box; and so I went with it. The book in itself was already a tough enterprise to undertake, I’d be better off spending my time on content creation.&lt;/p&gt;
 
 &lt;h3 id=&quot;writing-in-markdown&quot;&gt;Writing in MarkDown&lt;/h3&gt;
 
@@ -86,7 +86,7 @@ In my daytime job I also do some books designing for my client, when asked; I ha
 &lt;figcaption&gt;Using the MWeb app to write and preview MarkDown.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;I’ve used either &lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt;, &lt;a href=&quot;https://macdown.uranusjr.com/&quot;&gt;MacDown&lt;/a&gt; and &lt;a href=&quot;https://www.mweb.im/&quot;&gt;MWeb&lt;/a&gt; to write MarkDown, there’s plenty of apps (free or paid) available, even if to the best of my knowledge none of them supports the Leanpub’s flavour.  In the last years they have been working on the specs of &lt;a href=&quot;http://markua.com/&quot;&gt;Markua&lt;/a&gt;, a MarkDown superset that specifically targets eBooks creation, and is already available as an option to authors.&lt;/p&gt;
+&lt;p&gt;I’ve used &lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt;, &lt;a href=&quot;https://macdown.uranusjr.com/&quot;&gt;MacDown&lt;/a&gt; and &lt;a href=&quot;https://www.mweb.im/&quot;&gt;MWeb&lt;/a&gt; to write MarkDown, yet there’s plenty of apps (free or paid) available, even if to the best of my knowledge none of them supports the Leanpub’s &lt;em&gt;flavour&lt;/em&gt;.  In the last years they have been working on the specs of &lt;a href=&quot;http://markua.com/&quot;&gt;Markua&lt;/a&gt;, a MarkDown superset that specifically targets eBooks creation; it is already available as an option to authors, but besides Leanpub’s Markua online editor I don’t think there are apps for it.&lt;/p&gt;
 
 &lt;p&gt;You can trigger the book compilation on-demand, either the entire content or just an excerpt to make the task quicker; the compilation itself is performed &lt;em&gt;on their servers&lt;/em&gt; and the results (PDF, ePub and MOBI files) uploaded to a shared Dropbox folder automatically. This is the main Leanpub’s downside, in my opinion: depending on the amount of content you’ve written, &lt;strong&gt;the PDF generation process can take few minutes&lt;/strong&gt; to complete: besides the transformation from MarkDown to PDF&lt;sup id=&quot;fnref:md2pdf&quot;&gt;&lt;a href=&quot;#fn:md2pdf&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;, you have to wait for the files to get uploaded to Dropbox, and downloaded locally. Alas, we’re not used to waiting anymore.&lt;/p&gt;
 
@@ -351,19 +351,19 @@ Lulu’s &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Producs 
 
 &lt;p&gt;But I didn’t tell you the entire story…&lt;/p&gt;
 
-&lt;p&gt;Jeff offered me the possibility to send him two copies of my book: one as a well deserved gift to him, the other… would be sent me back with signatures by the Photoshop teams from both the Minnesota and California offices! Accidentally, somebody let also some tattoos, stickers, a pin and a shirt slip into the package, so I’ve now some Photoshop branded swag in the house, for my daughter to steal me&lt;sup id=&quot;fnref:wand&quot;&gt;&lt;a href=&quot;#fn:wand&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Jeff offered me the possibility to send him two copies of my book: one as a well deserved gift to him, the other… would be sent me back with signatures by the Photoshop teams from both the Minnesota and California offices! Accidentally, &lt;em&gt;“somebody”&lt;/em&gt; 🙏🏻 let also some tattoos, stickers, a pin and a shirt slip into the package, so I’ve now some Photoshop branded swag in the house, for my daughter to steal me&lt;sup id=&quot;fnref:wand&quot;&gt;&lt;a href=&quot;#fn:wand&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;figure&gt;
 &lt;img src=&quot;/wp-content/uploads/2019/04/Signatures.jpg&quot; srcset=&quot;/wp-content/uploads/2019/04/Signatures.jpg 1x, /wp-content/uploads/2019/04/Signatures@2x.jpg 2x&quot; alt=&quot;Signatures&quot; /&gt;
-&lt;figcaption&gt;Adobe Photoshop team signatures from Minnesota and California offices 🙏🏻&lt;/figcaption&gt;
+&lt;figcaption&gt;Adobe Photoshop team signatures from Minnesota and California offices&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;Isn’t that &lt;strong&gt;awesome&lt;/strong&gt;?!&lt;/p&gt;
+&lt;p&gt;Isn’t that &lt;strong&gt;awesome&lt;/strong&gt;?! ❤️&lt;/p&gt;
 
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:Softcover&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://www.softcover.io/&quot;&gt;Softcover&lt;/a&gt; is a free alternative to Leanpub, but it requires more customization efforts and the resulting book style isn’t as good as Leanpub’s. &lt;a href=&quot;https://pandoc.org/&quot;&gt;Pandoc&lt;/a&gt; is a conversion tool that is also able to export to PDF but, again, the styling part is time consuming. Both have the notable upside that the entire process is local, whereas Leanpub creates the PDF server-side. &lt;a href=&quot;#fnref:Softcover&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:Pandoc&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://pandoc.org/&quot;&gt;Pandoc&lt;/a&gt; is an open-source conversion tool that is also able to export to PDF from MarkDown, but the styling part is time consuming and you got to have quite some LaTeX knowledge. &lt;a href=&quot;https://www.softcover.io/&quot;&gt;Softcover&lt;/a&gt; is a free alternative to Leanpub for the MarkDown to PDF part, but it requires more customization efforts, a bit of LaTeX skills and the resulting book style isn’t as good as Leanpub’s. Both have the notable upside that the entire process is local, whereas Leanpub creates the PDF server-side. &lt;a href=&quot;#fnref:Pandoc&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
     &lt;li id=&quot;fn:hook&quot;&gt;
       &lt;p&gt;The whole book was within a &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; repository, with an optional hook so that each push triggered the book compilation. &lt;a href=&quot;#fnref:hook&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;

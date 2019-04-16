@@ -12,6 +12,7 @@ ruby RUBY_VERSION
 # gem "jekyll", github: "jekyll/jekyll"
 gem "jekyll"
 gem "liquid-c"
+gem "jekyll-sitemap"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.

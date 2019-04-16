@@ -86,6 +86,7 @@ default_lang: js
 # Plugins
 plugins:
   - jekyll-gist
+  - jekyll-sitemap
 
 # Assets Settings
 sass:
