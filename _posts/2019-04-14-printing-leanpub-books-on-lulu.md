@@ -239,7 +239,7 @@ It's hard to be judgmental the very moment you hold for the first time a printed
 
 That said, you can read below a frank bullet-points list of what I liked, what I didn't really like, what was my fault and what I'd do differently next time to get a better result.
 
-<video width="680" height="382" controls="controls">
+<video width="680" height="382" controls="controls" style="max-width: 100%; margin: 0 auto; height: auto; display: block; border: 0;">
 <source src="/wp-content/uploads/2019/04/FlippingPages.mp4" type="video/mp4">
 </video>
 
