@@ -17,13 +17,13 @@ tags:
 
 According to Apple (read [here](https://developer.apple.com/documentation/security/notarizing_your_app_before_distribution) the whole article):
 
-> The Apple notary service is an automated system that scans your software for malicious content, checks for code-signing issues, and returns the results to you quickly. Notarization gives users more confidence that the Developer ID-signed software you distribute has been checked by Apple for malicious components. Notarization is not App Review. 
+> The Apple notary service is an automated system that scans your software for malicious content, checks for code-signing issues, and returns the results to you quickly. Notarization gives users more confidence that the Developer ID-signed software you distribute has been checked by Apple for malicious components. Notarization is not App Review.
 
-Basically, it is some kind of whitelisting. From macOS Catalina on (late September 2019), **notarization is mandatory**: your installers won't work if you don't do your homeworks. 
+Basically, it is some kind of whitelisting. From macOS Catalina on (late September 2019), **notarization is mandatory**: your installers won't work if you don't do your homeworks.
 
 ## Gatekeeper
 
-When your customers run your product's `installer.pkg`, macOS Gatekeeper connects with Apple, checking whether the file you're executing has been vetted and thus can be run safely. If this is the case, Gatekeeper pops up the usual warning anyway: 
+When your customers run your product's `installer.pkg`, macOS Gatekeeper connects with Apple, checking whether the file you're executing has been vetted and thus can be run safely. If this is the case, Gatekeeper pops up the usual warning anyway:
 
 <figure>
 <img src="/wp-content/uploads/2019/05/gatekeeper.gif" srcset="/wp-content/uploads/2019/05/gatekeeper.gif 1x, /wp-content/uploads/2019/05/gatekeeper@2x.gif 2x" alt="Book Design">
@@ -178,8 +178,8 @@ xcrun altool --notarization-history 0 --username "YourAppleID@mail.com" --passwo
 Notarization History - page 0
 
 Date                      RequestUUID                          Status  Status Code Status Message   
-------------------------- ------------------------------------ ------- ----------- ---------------- 
-2019-09-18 14:30:36 +0000 181638fb-a618-2298-bff0-47fa79f01326 success 0           Package Approved 
+------------------------- ------------------------------------ ------- ----------- ----------------
+2019-09-18 14:30:36 +0000 181638fb-a618-2298-bff0-47fa79f01326 success 0           Package Approved
 
 Next page value: 1768817026000
 
@@ -196,7 +196,7 @@ Processing: /full/path/to/the/installer_signed.pkg
 The staple and validate action worked!
 ```
 
-The command here is much simpler: you don't need to pass any `RequestUUID` string yourself, for `stapler` will do the call home at Apple's on its own. 
+The command here is much simpler: you don't need to pass any `RequestUUID` string yourself, for `stapler` will do the call home at Apple's on its own.
 
 You can check stapling details with:
 
@@ -221,12 +221,22 @@ Please note that in order to sign a `.dmg` you need a "Developer ID Application"
 
 Lastly, things may get a bit convoluted when it comes to extra libraries/bundles that may be called by your panel – if you feel like it's your case, please read [this thread](https://forums.developer.apple.com/message/383180).
 
+### DMG Canvas update
+
+The software that I use, and recommend, to build `.dmg` files is [Araelium DMG Canvas](https://www.araelium.com/dmgcanvas), which has recently bumped to version 3.x (a paid upgrade, around $10). One of the new features is the possibility to automate the notarization process while building the `.dmg` itself.
+
+<figure>
+<img src="/wp-content/uploads/2019/05/DMGCanvas.jpg" srcset="/wp-content/uploads/2019/05/DMGCanvas.jpg 1x, /wp-content/uploads/2019/05/DMGCanvas@2x.jpg 2x" alt="DMG Canvas">
+</figure>
+
+To tell you the truth, the first product I've used that for went flawlessly, and in a snap; the second product failed due to a timeout, which sounds very much an Apple issue rather than Araelium's. Please note that DMG Canvas does the stapling too, which is quite handy, and can be automatized to fit your build system.
+
 ## Support this site!
 
 Please consider supporting my work with the purchase of these books and courses. You can find them all [here](https://www.davidebarranca.com/courses/), bundles available. Thanks! 🙏🏻
 
 <figure>
 <a href="https://www.davidebarranca.com/courses/" ><img src="/wp-content/uploads/2019/05/courses.jpg" srcset="/wp-content/uploads/2019/05/courses.jpg 1x, /wp-content/uploads/2019/05/courses@2x.jpg 2x" alt="Courses"></a>
-</figure> 
+</figure>
 
 PS. I will update the Ultimate Guide to Native Installers and Automated Build Systems as well, I just wanted you to get informed asap.
