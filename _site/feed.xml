@@ -5,9 +5,233 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 20 Sep 2019 21:57:41 +0200</pubDate>
-    <lastBuildDate>Fri, 20 Sep 2019 21:57:41 +0200</lastBuildDate>
+    <pubDate>Wed, 16 Oct 2019 00:58:18 +0200</pubDate>
+    <lastBuildDate>Wed, 16 Oct 2019 00:58:18 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Leanpub alternatives, IMHO</title>
+        <description>&lt;p&gt;If you’re into technical writing, read along. I’ve used Leanpub’s services for two books of mine out of three, and I am still 100% sure that I couldn’t make a better choice. But when you’re more experienced, there might be reasons to look for alternatives: I’ll tell you mine, how I’ve sorted my doubts out, and what I’ve eventually chosen.&lt;/p&gt;
+
+&lt;h2 id=&quot;tldr&quot;&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;Notable options among others are &lt;a href=&quot;https://pandoc.org/&quot;&gt;Pandoc&lt;/a&gt;, &lt;a href=&quot;https://www.softcover.io/&quot;&gt;SoftCover&lt;/a&gt;, &lt;a href=&quot;https://www.latex-project.org/&quot;&gt;LaTeX&lt;/a&gt;, &lt;a href=&quot;https://affinity.serif.com/en-gb/publisher/&quot;&gt;Affinity Publisher&lt;/a&gt;. Read along to see the piece of technology that I’ve embraced, and why.&lt;/p&gt;
+
+&lt;h2 id=&quot;my-own-needs-which-may-differ-from-yours&quot;&gt;My own needs (which may differ from yours)&lt;/h2&gt;
+
+&lt;p&gt;I am into technical publishing/programming books: I’ve written three of them, that I refer to as &lt;em&gt;“the two big ones”&lt;/em&gt; (more than 350 pages, &lt;a href=&quot;https://www.htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development&lt;/a&gt; and &lt;a href=&quot;https://www.ps-scripting.com&quot;&gt;Professional Photoshop Scripting&lt;/a&gt;), and &lt;em&gt;“the short one”&lt;/em&gt; (less than 100 pages, &lt;a href=&quot;https://www.davidebarranca.com/2018/01/ultimate-guide-native-installers-automated-build-system/&quot;&gt;The Ultimate Guide to Native Installers and Automated Build Systems&lt;/a&gt;).&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;a href=&quot;https://www.ps-scripting.com/bundles.html&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2019/10/books.jpg&quot; srcset=&quot;/wp-content/uploads/2019/10/books.jpg 1x, /wp-content/uploads/2019/10/books@2x.jpg 2x&quot; alt=&quot;My Books&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I do sell them on my own via &lt;a href=&quot;https://gumroad.com/&quot;&gt;Gumroad&lt;/a&gt;; I do the marketing/newsletter on my own; I find beta readers/tech editors on my own; I do design the book on my own. Basically, I’m ever such a grumpy, control-freak guy with some tech background who needs to produce the best looking &lt;code class=&quot;highlighter-rouge&quot;&gt;.pdf&lt;/code&gt; that he can.&lt;/p&gt;
+
+&lt;p&gt;Stuff &lt;strong&gt;I very much like&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Being able to customize the page design&lt;/li&gt;
+  &lt;li&gt;Relying on a repeatable, robust process&lt;/li&gt;
+  &lt;li&gt;Open source / offline tools&lt;/li&gt;
+  &lt;li&gt;Automated typesetting&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Stuff &lt;strong&gt;I don’t particularly need/like&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Anything that goes beyond the PDF creation&lt;/li&gt;
+  &lt;li&gt;Online tools&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To some extent, I can trade easiness for customizability because I do not write regularly: I embarque on big projects about once every couple of years, I am not willing to reinvent the wheel each time.&lt;/p&gt;
+
+&lt;p&gt;What follows is my personal quest for viable Leanpub alternatives: it is 100% based on my needs, skillset and amount of time I can currently devote on this.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-am-i-looking-for-alternatives-in-the-first-place&quot;&gt;Why am I looking for alternatives in the first place?&lt;/h2&gt;
+
+&lt;p&gt;In my opinion, &lt;strong&gt;Leanpub is by far the most usable, well crafted service on the market for ebook authors, and I couldn’t recommend them more&lt;/strong&gt;. My &lt;em&gt;two big books&lt;/em&gt; have been produced by Leanpub, and could I go back in time I’d choose them again.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2019/10/PSScripting.png&quot; srcset=&quot;/wp-content/uploads/2019/10/PSScripting.png 1x, /wp-content/uploads/2019/10/PSScripting@2x.png 2x&quot; alt=&quot;Professional Photoshop Scripting, a Leanpub book&quot; /&gt;
+&lt;figcaption&gt;Professional Photoshop Scripting, a Leanpub book&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Not only they provide you with great tools for creating e-books, connecting authors with readers, managing sales, landing pages and the like, they are also heavily involved into advancing the industry with new standards such as &lt;a href=&quot;https://leanpub.com/markua/read&quot;&gt;Markua&lt;/a&gt; (a book-targeted, enhanced flavour of MarkDown). Lately, they have broaden their offer developing courses creation tools as well.&lt;/p&gt;
+
+&lt;p&gt;If you’re tackling your first book, then Leanpub is a no brainer. Stop reading this and go creating a new Author account on their website.&lt;/p&gt;
+
+&lt;p&gt;That said, the show stopper for me is that the PDF creation is a &lt;strong&gt;remote process&lt;/strong&gt; – well managed, sync’d with Dropbox, hooked with GitHub/Bitbuckets, yet remote nonetheless.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2019/10/generation.jpg&quot; srcset=&quot;/wp-content/uploads/2019/10/generation.jpg 1x, /wp-content/uploads/2019/10/generation@2x.jpg 2x&quot; alt=&quot;Leanpub remote PDF generation&quot; /&gt;
+&lt;figcaption&gt;Leanpub remote PDF generation&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I don’t necessarily would like WYSIWYG, but synch’ing, waiting some minutes for the generation, and downloading is adding a friction that over time I’ve found unbearable. Especially when something doesn’t go the way you expect, i.e. if the layout requires many small tweaks, or worse the PDF generation crashes due to errors that aren’t easy to debug. When needed, Leanpub support never fails you; still, you need them to look at the log and find out what went wrong. Interrupting the creative flow is never a jolly business.&lt;/p&gt;
+
+&lt;p&gt;Features wise, I have little to complain: some of the limitations I had when I wrote my &lt;em&gt;two big books&lt;/em&gt; with Leanpub may have been overcome with the introduction of Markua, which wasn’t ready back then. Extra customization is always welcome, but the built-in set is comprehensive enough.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-leanpub-pdf-generation&quot;&gt;The Leanpub PDF generation&lt;/h3&gt;
+
+&lt;p&gt;Technically speaking, at least with the MarkDown-in, PDF-out process, Leanpub relies on an intermediate LaTeX step; so it actually is MD to LaTeX to PDF (I suppose it is the same with Markua, but I can’t be sure). If you’re not familiar with it, LaTeX is a &lt;em&gt;“document preparation system for high-quality typesetting”&lt;/em&gt; – or in layman terms, an horribly complex markup language.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;MarkDown is a markup language too, but much simpler. It lets you write &lt;em&gt;plain text&lt;/em&gt; with a very light and minimal markup so that titles are made with &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; symbols, the asterisks in &lt;code class=&quot;highlighter-rouge&quot;&gt;**that**&lt;/code&gt; turn &lt;strong&gt;that&lt;/strong&gt; bold, etc.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2019/10/markdown.png&quot; srcset=&quot;/wp-content/uploads/2019/10/markdown.png 1x, /wp-content/uploads/2019/10/markdown@2x.png 2x&quot; alt=&quot;MarkDown Example&quot; /&gt;
+&lt;figcaption&gt;A MarkDown example (this blogpost)&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In a way, you might simplify matters saying that, among the rest, Leanpub has put together a very well designed set of &lt;em&gt;LaTeX styles&lt;/em&gt; on top of a well-crafted MD conversion, so that the resulting PDF is remarkably good (setting aside &lt;code class=&quot;highlighter-rouge&quot;&gt;.epub&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;.mobi&lt;/code&gt; versions, that are not a strict requirement for me).&lt;/p&gt;
+
+&lt;h3 id=&quot;leanpubs-pros-and-cons&quot;&gt;Leanpub’s Pros and Cons&lt;/h3&gt;
+
+&lt;p&gt;IMHO, on the plus side: writing in MarkDown is almost frictionless, the MD to PDF workflow frees your mind and lets you concentrate on producing the actual content, Markua is a promising evolution, they offer a ton of marketing features.&lt;/p&gt;
+
+&lt;p&gt;IMHO, the cons: there is a limited set of available customizations, it’s a paid service (as it should be!), above all the PDF generation doesn’t happen locally but on their servers – which is the real obstacle for me.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-i-have-evaluated-alternatives&quot;&gt;How I have evaluated alternatives&lt;/h2&gt;
+
+&lt;p&gt;I am not the kind of guy who would write a book using Libre Office, and exporting it to PDF right away. It may be super handy for articles, yet I don’t think it is up to the task for books. Or possibly it is, but either I am not familiar enough with it to deal with named cross-references, etc. or it is not a good fit for &lt;em&gt;programming&lt;/em&gt; books: e.g., my stuff involves a good deal of listings (programming code, mostly but not exclusively written in JavaScript) that require to be numbered and colored with proper syntax-highlighting, etc.&lt;/p&gt;
+
+&lt;p&gt;A tradeoff that I can bear: giving up some of the easiness that comes with writing-in-MarkDown-and-forget-about-everything-else. I.e., I am ready to decouple the writing from the typesetting processes.&lt;/p&gt;
+
+&lt;h2 id=&quot;pandoc&quot;&gt;Pandoc&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pandoc.org/&quot;&gt;Pandoc&lt;/a&gt; is an open source set of tools that let you convert between formats - a lot of them, including MarkDown,  ePub, Microsoft Word, InDesign &lt;code class=&quot;highlighter-rouge&quot;&gt;.idml&lt;/code&gt;, PDF (via LaTeX). If you need it, you can get get a &lt;code class=&quot;highlighter-rouge&quot;&gt;.mobi&lt;/code&gt; from an &lt;code class=&quot;highlighter-rouge&quot;&gt;.epub&lt;/code&gt; with the help of &lt;a href=&quot;https://calibre-ebook.com/&quot;&gt;Calibre&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pandoc is super-awesome, it is free, it runs as a command-line utility from the Terminal for Mac, Win and Linux, it provides the same sort of MD to LaTeX to PDF workflow that Leanpub sports. There’s an elephant in the room, though: you must rely on a set of custom &lt;em&gt;LaTeX styles&lt;/em&gt; to tweak the PDF appearance. In other words, the default conversion is elegant as almost any LaTeX document is by default, but rather dull: if you want to use some of the fancier stuff and you don’t know your LaTeX… you’re &lt;em&gt;totally&lt;/em&gt; out of luck.&lt;/p&gt;
+
+&lt;p&gt;Of course there is plenty of &lt;a href=&quot;https://github.com/jgm/pandoc/wiki/User-contributed-templates&quot;&gt;templates&lt;/a&gt;. I did play a little bit with one called &lt;a href=&quot;https://github.com/Wandmalfarbe/pandoc-latex-template&quot;&gt;Eisvogel&lt;/a&gt;, but I couldn’t really figure out how to bend it to my needs, nor I did know how to “teach Pandoc” to interpret the MarkDown that I would like to be linked, say, to a custom LaTeX &lt;code class=&quot;highlighter-rouge&quot;&gt;\newcommand&lt;/code&gt;.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2019/10/eisvogel.png&quot; srcset=&quot;/wp-content/uploads/2019/10/eisvogel.png 1x, /wp-content/uploads/2019/10/eisvogel@2x.png 2x&quot; alt=&quot;The Eisvogel LaTeX template for Pandoc&quot; /&gt;
+&lt;figcaption&gt;The Eisvogel LaTeX template for Pandoc&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;In the end, I was facing two distinct and quite steep learning curves: getting the hang of LaTeX and Pandoc &lt;em&gt;at the same time&lt;/em&gt;, I got frightened and called quit.&lt;/p&gt;
+
+&lt;h2 id=&quot;softcover&quot;&gt;Softcover&lt;/h2&gt;
+
+&lt;p&gt;I did use &lt;a href=&quot;https://www.softcover.io/&quot;&gt;SoftCover&lt;/a&gt; for my &lt;em&gt;short book&lt;/em&gt; a while ago, and I was quite pleased. Keeping it to the book generation process alone (Softcover offer sales services too), it is based on an open-source Ruby command-line set of tools to process MarkDown in, and output PDF, plus &lt;code class=&quot;highlighter-rouge&quot;&gt;.epub&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;.mobi&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;.html&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Softcover is more explicit in terms of intermediate steps, for it advocates the use of PolyTeX: &lt;em&gt;“a strict subset of the LaTeX typesetting language”&lt;/em&gt;. Quite interestingly, you’re allowed to mix-in some LaTeX in the MarkDown, that works in combination with the Softcover provided styles. The more LaTeX you know, the better you can customize them.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2019/10/softcover.jpg&quot; srcset=&quot;/wp-content/uploads/2019/10/softcover.jpg 1x, /wp-content/uploads/2019/10/softcover@2x.jpg 2x&quot; alt=&quot;The Softcover Manual&quot; /&gt;
+&lt;figcaption&gt;The Softcover Manual&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;All in all, my experience with Softcover on the first book was OK. I had to tweak quite some things in the styles to my taste, and I’ve copied and pasted from &lt;a href=&quot;https://tex.stackexchange.com&quot;&gt;TeX StackExchange&lt;/a&gt; more than a sensible developer would find appropriate – without really knowing what I was doing. Still, I did like more the design that comes with Leanpub out-of-the-box; on the plus side, I enjoyed very much the local PDF generation and PolyTeX features such as named cross-references.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Since I’ve mentioned them a couple of times already, a &lt;em&gt;named cross reference&lt;/em&gt; is a piece of text (could be a title, a listing, a table, etc.) to which you attach a &lt;code class=&quot;highlighter-rouge&quot;&gt;\label&lt;/code&gt;, and to which you can refer to with the same label. Magic happens because you automatically get both the correct numeration and name (here, “figure 1.2”).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2019/10/cref.png&quot; srcset=&quot;/wp-content/uploads/2019/10/cref.png 1x, /wp-content/uploads/2019/10/cref@2x.png 2x&quot; alt=&quot;Named cross references&quot; /&gt;
+&lt;figcaption&gt;Named cross references&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Unfortunately, when I got back to my one year old &lt;em&gt;short book&lt;/em&gt; markdown text to add some new content, the book generation failed. I couldn’t get to the root of the problem in a decent amount of time – a Ruby version issue, some dependencies missing, who knows. That mishap did leave me with a vague “lack of robustness” feeling: had I used Softcover more frequently, I would have been able to steer the wheel and correct any small issue that, inevitably, presented itself over time. But after such a long hiatus, I felt that using a tool on which I wasn’t in full control was too much of a gamble.&lt;/p&gt;
+
+&lt;h2 id=&quot;affinity-publisher&quot;&gt;Affinity Publisher&lt;/h2&gt;
+
+&lt;p&gt;I am a true believer on &lt;a href=&quot;https://affinity.serif.com&quot;&gt;Affinity&lt;/a&gt;’s products lineup, so I’ve listed their Publisher instead of Adobe InDesign – even if I’m more familiar with the latter than the former&lt;sup id=&quot;fnref:publisher&quot;&gt;&lt;a href=&quot;#fn:publisher&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. That is to say that I have evaluated the possibility to build the book “manually”, with a page design application.&lt;/p&gt;
+
+&lt;p&gt;I must confess that, even if I would have enjoyed the possibility to get a live, visual feedback and pixel precision positioning, I tend to keep InDesign and its breed at an arm distance whenever possible (which, thanks to my job, is not always): I’m afraid I just don’t like it. The idea to compose a short book, not to mention a long one, sounds dreadful to me.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2019/10/publisher.jpg&quot; srcset=&quot;/wp-content/uploads/2019/10/publisher.jpg 1x, /wp-content/uploads/2019/10/publisher@2x.jpg 2x&quot; alt=&quot;Affinity Publisher&quot; /&gt;
+&lt;figcaption&gt;Affinity Publisher&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Besides, listings are not so easy to typeset on Publisher: you’d need to copy the code from, say, Visual Studio Code, paste it on Pages/Word, copy it again and eventually paste inside a Text Frame to retain the RTF information – i.e. to keep the Syntax Highlighting. Which is a PITA for code maintenance and it doesn’t really scale up when the book grows. I’ve logged a feature request for automated programming languages syntax highlighting on Affinity’s forums, and I’ve moved on.&lt;/p&gt;
+
+&lt;h2 id=&quot;latex&quot;&gt;LaTeX&lt;/h2&gt;
+
+&lt;p&gt;Frankly, the idea of messing with master pages, character and paragraph styles, references, etc. on a page design application such as Affinity Publisher shedded a new, much brighter light on LaTeX. Which I started exploring. Given that I tend to fall in love with whatever piece of technology that you put in front of my nose, I tried to be unbiased.&lt;/p&gt;
+
+&lt;p&gt;LaTeX is mostly used in academia, almost exclusively sciences and maths. It is known for providing an elegant typesetting out of the box, and equations so &lt;a href=&quot;https://www.nature.com/articles/d41586-019-01796-1&quot;&gt;beautifully drawn&lt;/a&gt; that mathematicians could stare at them for hours on end.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2019/10/math.png&quot; srcset=&quot;/wp-content/uploads/2019/10/math.png 1x, /wp-content/uploads/2019/10/math@2x.png 2x&quot; alt=&quot;LaTeX equations example&quot; /&gt;
+&lt;figcaption&gt;LaTeX equations example&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Actually, it seems to have spread just because academic writers were such bad typesetters that they desperately needed some sort of tool that let them focus on the content only. That said, it strikes me that among the many hundreds of packages (i.e. add-on features) available for LaTeX, their documentation, that is obviously written in LaTeX, kind of stinks. Visually I mean, it’s ugly – which is quite ironic I suppose.&lt;/p&gt;
+
+&lt;p&gt;LaTeX is unfriendly to say the least: the learning curve is undoubtedly &lt;em&gt;steep&lt;/em&gt;. For some reason, it seems like documentation is chiefly reference-based, with rare occasional examples. You can easily find yourself browsing for 7 years old replies on TeX StackExchange thinking: “Sweet, that is probably gonna work” (would it be a JavaScript library, a 7 months old reply has already a good chance to be outdated).&lt;/p&gt;
+
+&lt;p&gt;I subscribe 100% to the author of &lt;a href=&quot;http://www.danielallington.net/2016/09/the-latex-fetish/&quot;&gt;The LaTeX Fetish (Or: Don’t write in LaTeX! It’s just for typesetting)&lt;/a&gt;, which has an interesting series of comments and replies. I could never write on LaTeX: it is too crowded, MarkDown is much less distracting to the eye. But I agree that LaTeX, a fossil from the past, still rocks as a typesetting tool.&lt;/p&gt;
+
+&lt;p&gt;So, I thought: if Pandoc, Softcover, and Leanpub are all LaTeX based; if I seem unable to just hack my way through them; wouldn’t it be better if I started with the real thing from scratch? And so I did.&lt;/p&gt;
+
+&lt;h2 id=&quot;my-latex-journey&quot;&gt;My LaTeX journey&lt;/h2&gt;
+
+&lt;p&gt;First, I’ve set a simple goal: re-typeset the &lt;em&gt;small book&lt;/em&gt;, that you may remember was built with Softcover so I had both the MarkDown and the PolyTeX code available.&lt;/p&gt;
+
+&lt;p&gt;If you want to try LaTeX, head &lt;a href=&quot;https://www.latex-project.org/get/&quot;&gt;here&lt;/a&gt; and download the distribution for Mac, Win or Linux. Speaking of applications (IDEs), there are freewares such as &lt;a href=&quot;https://texstudio.org/&quot;&gt;TeXstudio&lt;/a&gt; or &lt;a href=&quot;https://pages.uoregon.edu/koch/texshop/&quot;&gt;TeXShop&lt;/a&gt;, but I’ve found more user-friendly &lt;a href=&quot;https://www.texpad.com/&quot;&gt;Texpad&lt;/a&gt; (30$), or the free Visual Studio Code extension &lt;a href=&quot;https://github.com/James-Yu/LaTeX-Workshop&quot;&gt;LaTeX Workshop&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2019/10/texpad.png&quot; srcset=&quot;/wp-content/uploads/2019/10/texpad.png 1x, /wp-content/uploads/2019/10/texpad@2x.png 2x&quot; alt=&quot;The TexPad app, with almost-live preview&quot; /&gt;
+&lt;figcaption&gt;The TexPad app, with almost-live preview&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;I’ve started reading documentation and books: there are so many LaTeX Fetishists that manuals are abundant. In my experience, it is far better to start from a blank style (a file with a &lt;code class=&quot;highlighter-rouge&quot;&gt;.sty&lt;/code&gt; extension) and add pieces one by one, learning what they do as you insert them, instead of borrowing a complete style from somebody else and hack it to your taste.&lt;/p&gt;
+
+&lt;p&gt;Line after line, I’ve merged pieces from &lt;code class=&quot;highlighter-rouge&quot;&gt;Softcover.sty&lt;/code&gt;,  &lt;code class=&quot;highlighter-rouge&quot;&gt;Eisvogel.sty&lt;/code&gt; and stuff I’ve found online; apparently there is a package for everything, from footnotes to listings, quotes, colors, bookmarks, you name it&lt;sup id=&quot;fnref:packages&quot;&gt;&lt;a href=&quot;#fn:packages&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. It would be impossible to list them all here – the bottom-line is that creating a decent set of styles for a book that is at least up to Leanpub standards is in fact a doable task for anyone with some inclination to code tinkering. Dare I to say, I’ve even got better listings 😉&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2019/10/listings.png&quot; srcset=&quot;/wp-content/uploads/2019/10/listings.png 1x, /wp-content/uploads/2019/10/listings@2x.png 2x&quot; alt=&quot;Custom styled listings&quot; /&gt;
+&lt;figcaption&gt;Custom styled listings in LaTeX with the `listings` package&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;At this point I cannot call myself a LaTeX expert at all, but for sure a better hacker: at least I am able to understand what is in the realm of my possibilities and what’s better to keep away from. I’ve succeeded in re-typesetting my &lt;em&gt;short book&lt;/em&gt; in two/three night-time weeks, for which I’m quite pleased.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-only-time-will-tell&quot;&gt;What only time will tell&lt;/h2&gt;
+
+&lt;p&gt;It is to be seen whether I will perceive LaTeX as a robust solution, i.e. will the same source, untouched, compile flawlessly one year from now, on a different machine? I have the feeling that such is the case, unless my cat sits on the keyboard when I’m off the desk. LaTeX is just markup after all, and it is so modular that I doubt it will all crash.&lt;/p&gt;
+
+&lt;p&gt;Now that I am slightly more acquainted with it, I may want to approach Pandoc again. No doubts that, as I’ve mentioned before, LaTeX isn’t a tool for writing but typesetting: I still miss the MarkDown to PDF workflow. If I can manage to create a template for Pandoc that takes into account all my listings styles and the like, I’ll be the happiest camper.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;As it has already happened countless times to me, learning is rarely a direct path from point A to point B. I still have to find my dream workflow, but I think the one I’ve used – unless proven otherwise – is viable to say the least, and a good fit to the requirements I’ve set.&lt;/p&gt;
+
+&lt;p&gt;If you’re a technical writer feel free to comment below, I’m eager to listen to your experience. Thanks for reading!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:publisher&quot;&gt;
+      &lt;p&gt;Let’s not forget that, to date, Affinity isn’t Subscription based; and it has never told its users they can get sued for using old versions, &lt;a href=&quot;https://www.vice.com/en_us/article/a3xk3p/adobe-tells-users-they-can-get-sued-for-using-old-versions-of-photoshop&quot;&gt;like Adobe&lt;/a&gt;… &lt;a href=&quot;#fnref:publisher&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:packages&quot;&gt;
+      &lt;p&gt;My understanding is that LaTeX is a macro-language on top of TeX, which is way too complex to be used right away. In addition to what comes built-in with LaTeX itself, you’re usually advised to load &lt;em&gt;packages&lt;/em&gt;: users contributed “macros” that make the process of implementing new features much easier. &lt;a href=&quot;#fnref:packages&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 15 Oct 2019 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2019/10/2019-10-15-leanpub-alternatives-IMHO/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/10/2019-10-15-leanpub-alternatives-IMHO/</guid>
+        
+        <category>Leanpub</category>
+        
+        <category>Softcover</category>
+        
+        <category>Pandoc</category>
+        
+        <category>LaTeX</category>
+        
+        
+        <category>Digital Publishing</category>
+        
+      </item>
     
       <item>
         <title>Notarizing installers for macOS Catalina</title>
@@ -172,8 +396,8 @@ Status Message: Package Approved
 Notarization History - page 0
 
 Date                      RequestUUID                          Status  Status Code Status Message   
-------------------------- ------------------------------------ ------- ----------- ---------------- 
-2019-09-18 14:30:36 +0000 181638fb-a618-2298-bff0-47fa79f01326 success 0           Package Approved 
+------------------------- ------------------------------------ ------- ----------- ----------------
+2019-09-18 14:30:36 +0000 181638fb-a618-2298-bff0-47fa79f01326 success 0           Package Approved
 
 Next page value: 1768817026000
 
@@ -214,6 +438,16 @@ The staple and validate action worked!
 &lt;p&gt;Please note that in order to sign a &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; you need a “Developer ID Application” certificate, instead of the “Developer ID Installer” I’ve used for the &lt;code class=&quot;highlighter-rouge&quot;&gt;.pkg&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Lastly, things may get a bit convoluted when it comes to extra libraries/bundles that may be called by your panel – if you feel like it’s your case, please read &lt;a href=&quot;https://forums.developer.apple.com/message/383180&quot;&gt;this thread&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;dmg-canvas-update&quot;&gt;DMG Canvas update&lt;/h3&gt;
+
+&lt;p&gt;The software that I use, and recommend, to build &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; files is &lt;a href=&quot;https://www.araelium.com/dmgcanvas&quot;&gt;Araelium DMG Canvas&lt;/a&gt;, which has recently bumped to version 3.x (a paid upgrade, around $10). One of the new features is the possibility to automate the notarization process while building the &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; itself.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2019/05/DMGCanvas.jpg&quot; srcset=&quot;/wp-content/uploads/2019/05/DMGCanvas.jpg 1x, /wp-content/uploads/2019/05/DMGCanvas@2x.jpg 2x&quot; alt=&quot;DMG Canvas&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;To tell you the truth, the first product I’ve used that for went flawlessly, and in a snap; the second product failed due to a timeout, which sounds very much an Apple issue rather than Araelium’s. Please note that DMG Canvas does the stapling too, which is quite handy, and can be automatized to fit your build system.&lt;/p&gt;
 
 &lt;h2 id=&quot;support-this-site&quot;&gt;Support this site!&lt;/h2&gt;
 
@@ -1119,171 +1353,6 @@ Thank you all!&lt;/p&gt;
         
         
         <category>Scripting</category>
-        
-      </item>
-    
-      <item>
-        <title>Automated check for corrupted image files with Python and ImageMagick</title>
-        <description>&lt;p&gt;How do you check if an image file (tiff, psd, psb) is corrupted, other than looking at its thumbnail with Bridge, or opening it on Photoshop? With a small Python script and ImageMagick!&lt;/p&gt;
-
-&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
-
-&lt;p&gt;The client of mine I work as a retoucher for had some problems with the so-called &lt;em&gt;Data Migration&lt;/em&gt; (the dull, time consuming, and error prone process of transferring a lifetime backup from old, once very expensive external drives to a set of new, somehow still equally expensive external drives). As a result, he got some corrupted files here and there in the destination drives – that’s the reason why you &lt;em&gt;migrate&lt;/em&gt; data: the source has insufficient capacity, it has become unstable, obsolete, or both combined. Problem is that we’re talking about several TB of data, mostly as .psb files (ranging from about 1 up to 20GB each), and it goes without saying that opening them all in Photoshop is not an option; nor you can trust Adobe Bridge thumbnails – provided that you’ve set the preferences to render previews for big files too – because it’s a manual process anyway. Even if I’m paid by the hour, staring at thumbs is not my preferred way to get blind. After some research, I’ve found no way (other than the one I’m about to describe) to check for psd/psb files corruption in an automated fashion. Which seems to me quite odd – if you have better, i.e. faster and/or simpler, solutions, please do suggest them to me in the comments below.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-you-need&quot;&gt;What you need&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.python.org/download/releases/3.0/&quot;&gt;Python 3&lt;/a&gt;, and &lt;a href=&quot;https://www.imagemagick.org/&quot;&gt;ImageMagick&lt;/a&gt;. Both will work either on Mac or Windows: I’ve no experience of them on the latter platform, so I will just assume that you will be successful in following the installation instruction provided in the official home pages. PC owners: read at least the part relative to ImageMagick. Mac users: read it all.&lt;/p&gt;
-
-&lt;h3 id=&quot;python-3&quot;&gt;Python 3&lt;/h3&gt;
-
-&lt;p&gt;If you’re on a Mac like me, you already have Python installed. Chances are that it is version 2.7, or another one but 3. Open the Terminal and type:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
-Python 2.7.10&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;This is what I still get after having installed Python 3.6 myself, via &lt;a href=&quot;https://brew.sh/index_it&quot;&gt;Homebrew&lt;/a&gt;. I’m no Python expert, so it took me some Google time to understand that on a Mac you can still have the &lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt; command pointing to the System’s old 2.7 version, even if you’ve freshly installed the new one. Solutions involve manually changing symlinks (power users advise against it), or using one of the available packages to create isolate Python environments (e.g. &lt;a href=&quot;https://virtualenv.pypa.io/en/stable/&quot;&gt;virtualenv&lt;/a&gt;, &lt;a href=&quot;https://github.com/pyenv/pyenv&quot;&gt;pyenv&lt;/a&gt;, etc. A list of them is found &lt;a href=&quot;https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe&quot;&gt;here&lt;/a&gt;). I couldn’t make neither of them to work in a reasonable amount of time, so I’ve resorted to simply use the &lt;code class=&quot;highlighter-rouge&quot;&gt;python3&lt;/code&gt; command, e.g.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3 &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
-Python 3.6.2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;imagemagick&quot;&gt;ImageMagick&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.imagemagick.org/&quot;&gt;ImageMagick&lt;/a&gt; is a multiplatform, open source commandline utility that performs a huge amount of tasks on all kinds of image files. I’ve installed via Homebrew, but it turns out that, at least on the Mac, it doesn’t come by default with the proper Delegates (aka Libraries) to deal with .psb files, which is what I needed the most. Finding the proper way to do so proved almost impossible to me: while reading the source code documentation (the last thing I wanted to do was to compile it from the source), I’ve discovered that via Homebrew you can list all the possible installation options for a package:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew options imagemagick
-
-&lt;span class=&quot;nt&quot;&gt;--with-fftw&lt;/span&gt;
-  Compile with FFTW support
-&lt;span class=&quot;nt&quot;&gt;--with-fontconfig&lt;/span&gt;
-  Build with fontconfig support
-&lt;span class=&quot;nt&quot;&gt;--with-ghostscript&lt;/span&gt;
-  Build with ghostscript support
-&lt;span class=&quot;nt&quot;&gt;--with-hdri&lt;/span&gt;
-  Compile with HDRI support
-&lt;span class=&quot;nt&quot;&gt;--with-liblqr&lt;/span&gt;
-  Build with liblqr support
-&lt;span class=&quot;nt&quot;&gt;--with-librsvg&lt;/span&gt;
-  Build with librsvg support
-&lt;span class=&quot;nt&quot;&gt;--with-libwmf&lt;/span&gt;
-  Build with libwmf support
-&lt;span class=&quot;nt&quot;&gt;--with-little-cms&lt;/span&gt;
-  Build with little-cms support
-&lt;span class=&quot;nt&quot;&gt;--with-little-cms2&lt;/span&gt;
-  Build with little-cms2 support
-&lt;span class=&quot;nt&quot;&gt;--with-opencl&lt;/span&gt;
-  Compile with OpenCL support
-&lt;span class=&quot;nt&quot;&gt;--with-openexr&lt;/span&gt;
-  Build with openexr support
-&lt;span class=&quot;nt&quot;&gt;--with-openjpeg&lt;/span&gt;
-  Build with openjpeg support
-&lt;span class=&quot;nt&quot;&gt;--with-openmp&lt;/span&gt;
-  Compile with OpenMP support
-&lt;span class=&quot;nt&quot;&gt;--with-pango&lt;/span&gt;
-  Build with pango support
-&lt;span class=&quot;nt&quot;&gt;--with-perl&lt;/span&gt;
-  Compile with PerlMagick
-&lt;span class=&quot;nt&quot;&gt;--with-webp&lt;/span&gt;
-  Build with webp support
-&lt;span class=&quot;nt&quot;&gt;--with-x11&lt;/span&gt;
-  Build with x11 support
-&lt;span class=&quot;nt&quot;&gt;--with-zero-configuration&lt;/span&gt;
-  Disables depending on XML configuration files
-&lt;span class=&quot;nt&quot;&gt;--without-freetype&lt;/span&gt;
-  Build without freetype support
-&lt;span class=&quot;nt&quot;&gt;--without-jpeg&lt;/span&gt;
-  Build without jpeg support
-&lt;span class=&quot;nt&quot;&gt;--without-libpng&lt;/span&gt;
-  Build without libpng support
-&lt;span class=&quot;nt&quot;&gt;--without-libtiff&lt;/span&gt;
-  Build without libtiff support
-&lt;span class=&quot;nt&quot;&gt;--without-magick-plus-plus&lt;/span&gt;
-  disable build/install of Magick++
-&lt;span class=&quot;nt&quot;&gt;--without-modules&lt;/span&gt;
-  Disable support &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;dynamically loadable modules
-&lt;span class=&quot;nt&quot;&gt;--without-threads&lt;/span&gt;
-  Disable threads support
-&lt;span class=&quot;nt&quot;&gt;--HEAD&lt;/span&gt;
-  Install HEAD version&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;So, after a first installation (without psb support), with no clear hint about the proper option(s) to use in my case, and even less spare time to test, I’ve chained them all – at least the seemingly appropriate ones, with little worries about being redundant. At all events, no one was watching me, nor would have ever known :-) The embarrassing line I’ve used is:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;brew reinstall imagemagick  &lt;span class=&quot;nt&quot;&gt;--with-fftw&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-fontconfig&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-ghostscript&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-hdri&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-libde265&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-liblqr&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-librsvg&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-libwmf&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-little-cms&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-little-cms2&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-opencl&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-openexr&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-openjpeg&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-openmp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-pango&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-perl&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-webp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--with-x11&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;It worked, so I was a happy camper.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-python-script&quot;&gt;The Python Script&lt;/h2&gt;
-
-&lt;p&gt;Which is far from perfect, but it does the job – I’m sure that a proper Python developer can make it much better: it comes from surgical copy&amp;amp;paste from various Google Search result, plus a very light editing on my side.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;os&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;subprocess&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Popen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PIPE&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;folderToCheck&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/Volumes/16TB/whatever/path'&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;fileExtension&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'.psb'&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;checkImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;proc&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Popen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;\&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'identify'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'-verbose'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fn&lt;/span&gt;\&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stdout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PIPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stderr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PIPE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;proc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;communicate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;exitcode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;proc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;returncode&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exitcode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;subdirectories&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;walk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;folderToCheck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endswith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileExtension&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;checkImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ERROR &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;OK &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;-------------- DONE --------------&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;how-it-works&quot;&gt;How it works&lt;/h3&gt;
-
-&lt;p&gt;The basic is the &lt;code class=&quot;highlighter-rouge&quot;&gt;identify&lt;/code&gt; call (that comes from ImageMagick), which is set to &lt;code class=&quot;highlighter-rouge&quot;&gt;-verbose&lt;/code&gt;. This is what performs the check: the rest is just looping through the filesystem, looking for the appropriate file extension, and logging a message.&lt;/p&gt;
-
-&lt;h3 id=&quot;how-to-use-it&quot;&gt;How to use it&lt;/h3&gt;
-
-&lt;p&gt;Save this on a file with a &lt;code class=&quot;highlighter-rouge&quot;&gt;.py&lt;/code&gt; extension, and then run it with the &lt;code class=&quot;highlighter-rouge&quot;&gt;python3&lt;/code&gt; command on a terminal, e.g.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;python3 check.py&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Before doing so, do change the content of the &lt;code class=&quot;highlighter-rouge&quot;&gt;folderToCheck&lt;/code&gt; variable with an actual folder on your disk (with absolute path), and the &lt;code class=&quot;highlighter-rouge&quot;&gt;fileExtension&lt;/code&gt; too: I’ve used &lt;code class=&quot;highlighter-rouge&quot;&gt;.psb&lt;/code&gt;, but you can change it to &lt;code class=&quot;highlighter-rouge&quot;&gt;.psd&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;.tif&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;.jpg&lt;/code&gt;, etc. As a result you’ll get a log in the Terminal; I’ve used a nifty, cheap application called &lt;a href=&quot;https://coderunnerapp.com/&quot;&gt;Code Runner&lt;/a&gt; for such tests, and this is the result:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/05/coderunner-700x426.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As you see, I’m just logging OK/ERROR with the path, very basic. What to do with this newly acquired piece of knowledge is up to you. Please note that:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The script processes nested folders too.&lt;/li&gt;
-  &lt;li&gt;It is &lt;em&gt;awfully slow&lt;/em&gt; and hungry: it eats CPU cycles and RAM. But it’s automatic, so heck!&lt;/li&gt;
-  &lt;li&gt;The file extension is case sensitive, so &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;.JPG&quot;&lt;/code&gt; is different from &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;.jpg&quot;&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;how-to-make-it-better&quot;&gt;How to make it better&lt;/h3&gt;
-
-&lt;p&gt;Few suggestions for the skilled Python developer (which I’m not, alas)&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Write on a log file instead of the console&lt;/li&gt;
-  &lt;li&gt;Keep track of the processing status and resume from there&lt;/li&gt;
-  &lt;li&gt;Display the advancement status (say, “image 34 of 320”)&lt;/li&gt;
-  &lt;li&gt;Make the file extension case insensitive.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If you know how to do any of this, please share your knowledge in the comments! Thank you!&lt;/p&gt;
-</description>
-        <pubDate>Tue, 08 May 2018 02:20:19 +0200</pubDate>
-        <link>http://localhost:4000/2018/05/automated-check-for-corrupted-image-files-with-python-and-imagemagick/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/05/automated-check-for-corrupted-image-files-with-python-and-imagemagick/</guid>
-        
-        <category>Python</category>
-        
-        <category>imagemagick</category>
-        
-        
-        <category>Coding</category>
         
       </item>
     

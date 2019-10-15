@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <title>Steve - A minimal blog theme for Jekyll</title>
-<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow:400,700&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow:400,700&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css' />
 <style type="text/css">
 	* { box-sizing: border-box; -moz-box-sizing: border-box; }
 	body { margin: 0; padding: 0 10px; min-width: 320px; background: #eee; }
@@ -27,7 +27,7 @@
 		<h1>Steve</h1>
 		<p>A minimal blog theme for Jekyll</p>
 		<span>by <a href="http://joro.me">Georgi Kalaydzhiev</a></span>
-		
+
 		<h2>Installation</h2>
 		<p>I assume you have already downloaded and installed Ruby. Here's what you need to do next:</p>
 		<ol>
@@ -41,8 +41,8 @@
 
 		<h2>Configuration &amp; First Steps</h2>
 		<p>All configuration options are in the <code>_config.yml</code> file.</p>
-		
-		
+
+
 		<p><strong>General Settings</strong></p>
 		<ul>
 			<li><strong>name</strong>: Your name.</li>
@@ -55,18 +55,18 @@
 			<li><strong>analytics_code</strong>: Add your Google Analytics Tracking ID. Example ID: *UA-XXXXXXX-2*.</li>
 			<li><strong>disqus</strong>: Add your website shortname from Disqus.</li>
 		</ul>
-		
+
 		<p><strong>Important Note:</strong> Keep in mind that <strong>name</strong>, <strong>job_title</strong>, <strong>twitter_handler</strong> and some of the post specific variables are used as default meta data in some cases.</p>
-		
+
 		<p><strong>Social Accounts</strong></p>
 		<ul>
 			<li><strong>social_networks</strong>: Here you can find the list of all the available social networks that you can currently use. Of course you can always add a new one by yourself or ask for it to be available in the next version of the theme. If you don't want a specific social network to be seen, just leave the url value empty or delete the line.</li>
 		</ul>
-		
+
 		<p><strong>Important:</strong> Do not change the names of the social networks!</p>
-		
+
 		<p><strong>Modules Settings</strong></p>
-		
+
 		<p>One thing to remember - 1 is <strong>on</strong>, 0 is <strong>off</strong>.</p>
 		<ul>
 			<li><strong>show_categories</strong>: If it is on and you've added categories in the post itself the categories will be visible. If it is off and you've added categories in the post they will be hidden. This option is helpful if you want to turn on/off categories for all your posts at once.</li>
@@ -77,15 +77,15 @@
 			<li><strong>show_menu</strong>: If it is on the main menu will be visible.</li>
 			<li><strong>fixed_sidebar</strong>: If it is on the sidebar will be fixed (sticky).</li>
 		</ul>
-		
+
 		<p><strong>Defaults</strong></p>
 		<ul>
 			<li><strong>defaults</strong>: The only available option at the moment is whether to enable the comments automatically in the post or not. The default value is <code>true</code>.</li>
 		</ul>
-		
+
 		<p><strong>Serving</strong></p>
 		<p>These options are pretty important, so take a closer look. If you experience any problems with your paths you should check them here.</p>
-		
+
 		<ul>
 			<li><strong>url</strong>: Enter your domain! Example: <code>https://mysite.com</code></li>
 			<li><strong>baseurl</strong>: The baseurl can remain empty if you're not going to host your site in a subfolder. But if you want your site to be something like <code>htttp://mysite.com/blog</code> you should write down <code>/blog</code> here.</li>
@@ -101,28 +101,28 @@
 			<li><strong>permalink</strong>: By default your links will look like this <code>http://mysite.com/categories/post-name.html</code>. If you want a different permalink check <a href="https://jekyllrb.com/docs/permalinks/" target="_blank">Jekyll documentation</a>.</li>
 			<li><strong>category_dir</strong>: The default directory is <code>categories</code>, so for example if you go to random category index you will see something like this <code>http://mysite.com/categories/category-name/postname.html</code>.</li>
 		</ul>
-		
+
 		<p><strong>Pagination</strong></p>
 		<ul>
 			<li><strong>paginate</strong>: You should enter a number that stands for the number of posts per page.</li>
 			<li><strong>paginate_path</strong>: The default path is <code>/page:num/</code>, so for example if you go to second page you will see something like this <code>http://mysite.com/page2/</code>.</li>
 		</ul>
 		<p><strong>Important Note:</strong> Pagination is currently working only on home page due to Jekyll limitations.</p>
-		
+
 		<p><strong>Conversion</strong></p>
 		<ul>
 			<li><strong>markdown</strong>: Choose your Markdown renderer. Different Markdown renderers supported by Jekyll sometimes have extra options available. I suggest to stick with the default.</li>
 			<li><strong>excerpt_separator</strong> By default when you're writing a post, you should add <code>&lt;!--more--&gt;</code> to define excerpt. You have three options - to leave it as is, to change the tag or to completely remove it but in this case you'll always see the full content.</li>
 		</ul>
-		
+
 		<p><strong>Assets Settings</strong></p>
 		<ul>
 			<li><strong>sass</strong> Choose the path to all of yours SCSS partials and the compression method for the final file.</li>
 		</ul>
 		<p>If you need extra help, just check out the <a href="https://jekyllrb.com/docs/home/" target="_blank">official Jekyll documentation</a>.</p>
-		
+
 		<p><strong>Additional Configuration</strong></p>
-		
+
 		<ul>
 			<li>
 				<p><strong>How to change your default theme color?</strong></p>
@@ -133,13 +133,13 @@
 				<p>By default the script gets the first image in the post so take that in mind when you write a blog post.</p>
 			</li>
 		</ul>
-		
+
 		<p><strong>Adding Post</strong></p>
-		
+
 		<p>The next thing after you are done with the configuration file is to add your first post. You will need to have at least basic knowledge of HTML or Markdown.</p>
 		<p>All you need to do is to create a new file with name <code>YYYY-MM-DD-my-first-post</code> and <code>.markdown</code> or <code>.md</code> extension. Create it in the <code>_posts</code> folder. By default the name of the file is composed by date and title but you can overwrite these in the post's front matter.</p>
 		<p>In the beginning of the every post you have a so called <a href="https://jekyllrb.com/docs/frontmatter/" target="_blank">front matter</a> block which contains some data about the post. Here is the short description of the options.</p>
-		
+
 		<p><strong>layout</strong>: The post layout.</p>
 
 		<p><strong>date</strong>: Exact date when the post is published. The date is actually pretty important and I suggest you never change it. Specific date helps Jekyll to order correctly all the posts. Also, the date is used to generate a unique ID, so Disqus can always get the right comments for the right post, even when you change the title.</p>
