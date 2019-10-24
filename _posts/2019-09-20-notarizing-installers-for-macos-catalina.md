@@ -128,15 +128,19 @@ Keep note of the `RequestUUID` string.
 
 At this point your request for notarizationhas been sent to Apple, and you have to wait for them to process the file.
 
-Mind you: if you get **"Error: You must first sign the relevant contracts online. (1048)"** (as it has happened to me several times) don't panic. After a lot of googling finding only partially similar errors, my understanding is that it is a temporary glitch on Apple's side.
+Mind you: if you get **"Error: You must first sign the relevant contracts online. (1048)"** (as it has happened to me several times) don't panic.
 
-Just in case, you can launch XCode to check whether it asks you to accept its Terms and Conditions, or run:
+You can launch XCode to check whether it asks you to accept its Terms and Conditions, or run the following command to agree from the Terminal:
 
 ```
 sudo xcodebuild -license
 ```
 
-to do it from the Terminal. I doubt it will work, but when it comes to random, not repeatable issues our brain works like the pigeon's – we tend to try random solutions and stick to the ones that may have a chance to have contributed to the desired outcome. Probably if you haven't signed XCode Terms and Conditions the process will fail anyway.
+Then try checking at [iTunesConnect](https://itunesconnect.apple.com/), in the section "Agreements, Tax and Banking". The "Paid Apps" list item may have a Status of "Pending User Information"[^itc], but there shouldn't be any Agreement pending (usually their warnings are listed separately).
+
+[^itc]: If you don't plan to sell through Apple, there's no point in filling the uber-annoying Tax forms, etc.
+
+If, still, nothing works it may be a glitch on Apple's side, so wait a couple of hours and try again.
 
 ### 4. Checking the notarization status
 
@@ -207,6 +211,8 @@ stapler validate --verbose "/full/path/to/the/installer_signed.pkg"
 The result is too long to paste here, and frankly I've no idea what it means: as long as it ends with `"The validate action worked!"` you should be fine.
 
 And... **you're done** 🍾
+
+In my experience the Notarization can take from 60 seconds up to many hours (one time I've had the Terminal waiting and checking the status from 3PM to midnight). In theory it should be fast, in practice you can occasionally run into long delays.
 
 ## Caveats for different scenarios
 
