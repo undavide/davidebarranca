@@ -98,15 +98,14 @@ There is also the tangentially related problem of macOS notarization/digital sig
 
 ## TL;DR
 
-- Hasselblad Flextight X1 and X5 scanners (previously known as Imacon) are discontinued.
+- Hasselblad Flextight X1 and X5 scanners (previously known as Imacon) are discontinued. Scanner servicing will be provided as usual _as long as spare parts will be available_.
 - FlexColor is abandonware: it doesn't run on any macOS > 10.14.
 - 3F files don't open anymore in Photoshop 2020; very likely the CC 2019 installer is not going to be available one year from now, and even if you have one, it's definitely possible that macOS Catalina will prevent `Imacon3F.plugin` from working because it's not signed/notarized.
 
 ## Workarounds (if any)
 
-The following is in partly subjective.
+The following is partly subjective.
 
-- **Scanner servicing** will be provided as usual _as long as spare parts will be available_.
 - **Acquiring new scans**, for the time being, requires FlexColor; so either you keep dedicated hardware running macOS Mojave, or you switch to Windows.
 - **Browsing 3F collections** is, and will keep being, a pain in the butt: FlexColor is the _lesser evil_, Adobe Bridge seems unable to load just the low-res preview that is embedded in `.fff` files and it takes forever to read the file content to create a thumbnail. The same holds true with Finder. I'm not aware of any other viable options for the Mac.
 - Extracting `.tif` files for **3F post-processing** is not a problem, as long as the Photoshop plugin keeps working 🤞🏻.
