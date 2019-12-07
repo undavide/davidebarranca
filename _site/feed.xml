@@ -5,9 +5,148 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 16 Oct 2019 00:58:18 +0200</pubDate>
-    <lastBuildDate>Wed, 16 Oct 2019 00:58:18 +0200</lastBuildDate>
+    <pubDate>Sat, 07 Dec 2019 16:47:04 +0100</pubDate>
+    <lastBuildDate>Sat, 07 Dec 2019 16:47:04 +0100</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>The state of Hasselblad Flextight scanners, FlexColor and the 3F format</title>
+        <description>&lt;p&gt;In case you missed it, Flextight scanners have vanished from the Hasselblad website around May 2019 and macOS Catalina doesn’t run FlexColor anymore. No software updates are planned, plus I’ve run into problems dealing with &lt;code class=&quot;highlighter-rouge&quot;&gt;fff&lt;/code&gt; files in Photoshop 2020. Heavens!&lt;/p&gt;
+
+&lt;h2 id=&quot;flextight-scanners&quot;&gt;Flextight scanners&lt;/h2&gt;
+
+&lt;p&gt;Flextight X1 and X5, the flagship (and only left) models in Hasselblad’s lineup have been discontinued: EOL, kaputt. No official announcement has been published, but a number of users around the world have had the news confirmed either from dealers or servicing shops.&lt;/p&gt;
+
+&lt;p&gt;It’s pointless to ask the reason why, scanners have always been a low priority asset to Hasselblad. Flextight know-how and hardware were acquired in 2014 when the company merged with Imacon: reliable sources told me that the engineering team has always been quite small. My best bet is that the 2017 acquisition of Hasselblad by DJI, a Chinese drone-making company, gave scanners the &lt;em&gt;coup de grace&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The good news is that servicing will be available for the foreseeable future, as customer service wrote me:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The Flextight scanners are full service supported in our factory service in Gothenburg, Sweden and a selected number of regional scanner partners are able to perform local service and preventive maintenance. We will continue to perform service for these scanners as long as we will have spare parts, therefore it is difficult to appreciate for how long.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In fact, this is what you can read when logging in the private area of the Hasselblad website.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/12/servicing.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;flexcolor-software&quot;&gt;FlexColor software&lt;/h2&gt;
+
+&lt;p&gt;Unclear information has been given to users in the past, when many of us pinged Hasselblad about the pressing issue of macOS 10.15 Catalina blocking 32bit applications. Any hope to see a 64bit FlexColor rewrite has been definitely flushed away when customer support eventually started to reply that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;[…] we currently have no plans to release an updated version of Flexcolor.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As expected, the software has been EOLed very much like the hardware. Not that it has ever received much care: the last available versions are 4.8.13 (2011, for Mac) and 4.8.9 (2012, for Windows).&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2019/12/fc-error.jpg&quot; style=&quot;width: 357px; height: 180px&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;To the best of my knowledge, the Windows version still runs on whatever version is Windows at now, but with macOS you’re capped to 10.14 Mojave.&lt;/p&gt;
+
+&lt;p&gt;Neither FlexColor nor the scanners do require a high-performance computer, they’re probably going to work fine with old dedicated hardware for years to come. I think it’s possible to run Catalina and virtualize (with Parallels or VMWare) Mojave so that you can still run 32bit apps. Let’s hope that by the time the whole process becomes impractical or the spare parts are out of stock, the film we want to scan has been eroded away by chemical remains and fungi – checkmate, problem solved&lt;sup id=&quot;fnref:1980&quot;&gt;&lt;a href=&quot;#fn:1980&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finally, due to legal reasons (very likely the use of some internal libraries that prevent it) FlexColor can’t be open-sourced. There are rumors about VueScan willing (or having been asked) to implement a module that would drive the Flextight hardware, but I couldn’t been able to find any official statement.&lt;/p&gt;
+
+&lt;p&gt;So this is the state of affairs for the hardware, what about existing archives?&lt;/p&gt;
+
+&lt;h2 id=&quot;3f-files&quot;&gt;3F files&lt;/h2&gt;
+
+&lt;p&gt;Here things are getting slightly more complex, please bear with me.&lt;/p&gt;
+
+&lt;p&gt;As we all know, FlexColor is used by archivists and photoshoppers alike to browse through, and extract &lt;code class=&quot;highlighter-rouge&quot;&gt;.tif&lt;/code&gt; files from, huge collections of &lt;code class=&quot;highlighter-rouge&quot;&gt;.fff&lt;/code&gt; (aka 3F) files. You may or may not know that the 3F format is nothing but a &lt;code class=&quot;highlighter-rouge&quot;&gt;.tif&lt;/code&gt; file with some proprietary tags: to prove it, try renaming a &lt;code class=&quot;highlighter-rouge&quot;&gt;.fff&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;.tif&lt;/code&gt; and open it in Photoshop. The extra stuff is:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the compressed/low-res bitmap preview that FlexColor uses to &lt;em&gt;temporarily&lt;/em&gt; display the 3F while waiting to read the actual data from the file (only if the 3F isn’t too large, in which case you’re &lt;em&gt;always&lt;/em&gt; only shown the preview)&lt;/li&gt;
+  &lt;li&gt;metadata related to the scan acquisition and FlexColor settings (e.g. curves, FlexTouch, saturation, snapshots, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have grown accustomed to skip FlexColor altogether for anything but driving the scanner (acquiring the 3F), and browsing (i.e. visualizing the files). That is to say: I &lt;strong&gt;do not use FlexColor anymore for any 3F processing&lt;/strong&gt; nor &lt;code class=&quot;highlighter-rouge&quot;&gt;.tif&lt;/code&gt; extraction. I’ve never liked FlexColor rudimental, limited features – they were sort-of OK in the mid-2000s, or for large files batches quick post-processing. My client’s work today is more focused on a smaller selection of scans, to be post-produced very accurately, so I only use Photoshop.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To briefly sum up the way I use to work&lt;/strong&gt; (which I can expand in a separate blogpost – leave a comment below in case it is of any interest):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I open the 3F in Photoshop (thanks to the &lt;code class=&quot;highlighter-rouge&quot;&gt;Imacon3F.plugin&lt;/code&gt; or its &lt;code class=&quot;highlighter-rouge&quot;&gt;.8bf&lt;/code&gt; Windows version), which in my case is going to appear as a color negative.&lt;/li&gt;
+  &lt;li&gt;I apply an Invert adjustment layer and a couple of Curves adjustment layers to make it look more or less &lt;em&gt;correct&lt;/em&gt; to my eyes – no need to be precise here.&lt;/li&gt;
+  &lt;li&gt;I duplicate the background layer and perform all sorts of retouching voodoo (against dust, scratches, chemicals stains, fingerprints, semen, etc.), saving this intermediate layered file as a separate, temporary &lt;code class=&quot;highlighter-rouge&quot;&gt;.psb&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;When I’m happy, I flatten all the bitmap layers and discard all the adjustment layers, so that I’m back with a one-layer, color negative file again.&lt;/li&gt;
+  &lt;li&gt;I re-open the original &lt;code class=&quot;highlighter-rouge&quot;&gt;.fff&lt;/code&gt; file, drag and drop the retouched layer from the &lt;code class=&quot;highlighter-rouge&quot;&gt;.psb&lt;/code&gt;, flatten, and save as &lt;code class=&quot;highlighter-rouge&quot;&gt;.CLEAN.fff&lt;/code&gt; – this because one never knows what the future brings… I then trash the intermediate &lt;code class=&quot;highlighter-rouge&quot;&gt;.psb&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;I keep the &lt;code class=&quot;highlighter-rouge&quot;&gt;.CLEAN.fff&lt;/code&gt; open: assign the &lt;em&gt;FlexColor Input&lt;/em&gt; ICC, convert to Adobe RGB, Invert, and save my working file as a &lt;code class=&quot;highlighter-rouge&quot;&gt;.psb&lt;/code&gt;. This is my starting point, to which I apply the usual Curves, and whatever it takes to make the image work.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Enter another stray bullet in the Hasselblad game: Adobe. It turns out that &lt;strong&gt;Photoshop 2020 doesn’t want to open 3Fs anymore&lt;/strong&gt;, popping up this new errors:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/12/ps-error.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In recent versions, you already had to set the Open dialog’s settings to &lt;em&gt;Enable: All Documents&lt;/em&gt; (and of course the &lt;em&gt;Format: Imacon 3f&lt;/em&gt;) otherwise Adobe Camera Raw kicked in trying to open the file, mistaking it as coming from a digital back.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/12/open.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The last working version (at least on a Mac) is Photoshop CC 2019 – which is a &lt;strong&gt;big concern&lt;/strong&gt;. Why? You may or may not have heard that in the last months Adobe has aggressively restricted the licensed versions range for Photoshop – e.g. you cannot, theoretically, install or run, say, Photoshop CC 2015 anymore. Without entering into yet another rabbit hole, it all boils down to royalties with third-parties, very likely Dolby&lt;sup id=&quot;fnref:dolby&quot;&gt;&lt;a href=&quot;#fn:dolby&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the end, Adobe’s versions policy is (and it is fair to expect that it will be their default from now on) to license N-1 versions – in other words: you’ll be allowed to download and install the latest Photoshop, plus the version before it, period. At the time I’m writing this, it is PS 2020 + PS CC 2019. In one year, CC 2019 will be dropped, and it’ll be PS 2021 + PS 2020.&lt;/p&gt;
+
+&lt;p&gt;Which means: one year from now, the &lt;em&gt;officially available&lt;/em&gt; Photoshop versions won’t open 3F files anymore, and working versions’ installers won’t be available for download either. LMAO.&lt;/p&gt;
+
+&lt;p&gt;There is also the tangentially related problem of macOS notarization/digital signature, from macOS Catalina onwards: &lt;code class=&quot;highlighter-rouge&quot;&gt;.plugin&lt;/code&gt; files are requested to be at least&lt;sup id=&quot;fnref:sign&quot;&gt;&lt;a href=&quot;#fn:sign&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; signed by the developer, otherwise macOS GateKeeper will prevent to run them. This is not too much of a big deal, I have an active Apple Developer membership and I can sign the file myself if needed.&lt;/p&gt;
+
+&lt;h2 id=&quot;tldr&quot;&gt;TL;DR&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Hasselblad Flextight X1 and X5 scanners (previously known as Imacon) are discontinued.&lt;/li&gt;
+  &lt;li&gt;FlexColor is abandonware: it doesn’t run on any macOS &amp;gt; 10.14.&lt;/li&gt;
+  &lt;li&gt;3F files don’t open anymore in Photoshop 2020; very likely the CC 2019 installer is not going to be available one year from now, and even if you have one, it’s definitely possible that macOS Catalina will prevent &lt;code class=&quot;highlighter-rouge&quot;&gt;Imacon3F.plugin&lt;/code&gt; from working because it’s not signed/notarized.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;workarounds-if-any&quot;&gt;Workarounds (if any)&lt;/h2&gt;
+
+&lt;p&gt;The following is in partly subjective.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Scanner servicing&lt;/strong&gt; will be provided as usual &lt;em&gt;as long as spare parts will be available&lt;/em&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Acquiring new scans&lt;/strong&gt;, for the time being, requires FlexColor; so either you keep dedicated hardware running macOS Mojave, or you switch to Windows.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Browsing 3F collections&lt;/strong&gt; is, and will keep being, a pain in the butt: FlexColor is the &lt;em&gt;lesser evil&lt;/em&gt;, Adobe Bridge seems unable to load just the low-res preview that is embedded in &lt;code class=&quot;highlighter-rouge&quot;&gt;.fff&lt;/code&gt; files and it takes forever to read the file content to create a thumbnail. The same holds true with Finder. I’m not aware of any other viable options for the Mac.&lt;/li&gt;
+  &lt;li&gt;Extracting &lt;code class=&quot;highlighter-rouge&quot;&gt;.tif&lt;/code&gt; files for &lt;strong&gt;3F post-processing&lt;/strong&gt; is not a problem, as long as the Photoshop plugin keeps working 🤞🏻.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Feel free to comment below if you have updated news, workflow suggestions, or you just want to share your point of view as a Hasselblad user.
+  Thanks!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1980&quot;&gt;
+      &lt;p&gt;Please bear with me but I’m right in the middle of the postproduction of a batch of large format, color negative scans from the early 1980, and it’s a mess. Are you nostalgic of the old days of analogic photography? Bloody hell, no. &lt;a href=&quot;#fnref:1980&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:dolby&quot;&gt;
+      &lt;p&gt;Read &lt;a href=&quot;https://www.plagiarismtoday.com/2019/05/15/adobe-dolby-and-the-battle-over-your-software/&quot;&gt;here&lt;/a&gt; for more info about the Adobe-Dolby lawsuit. &lt;a href=&quot;#fnref:dolby&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:sign&quot;&gt;
+      &lt;p&gt;It is unclear to me, at the moment, whether a digital signature is enough or I would be required to notarize the &lt;code class=&quot;highlighter-rouge&quot;&gt;.plugin&lt;/code&gt; as well – not a big deal either, but not running Catalina myself I cannot test it. &lt;a href=&quot;#fnref:sign&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 07 Dec 2019 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2019/12/2019-12-07/2019-12-07-hasselblad-flextight-flexcolor-3f/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/12/2019-12-07/2019-12-07-hasselblad-flextight-flexcolor-3f/</guid>
+        
+        <category>Hasselblad</category>
+        
+        <category>Imacon</category>
+        
+        <category>Flextight</category>
+        
+        <category>FlexColor</category>
+        
+        <category>3F</category>
+        
+        
+        <category>Photoshop</category>
+        
+      </item>
     
       <item>
         <title>Leanpub alternatives, IMHO</title>
@@ -351,14 +490,16 @@ RequestUUID = 181638fb-a618-2298-bff0-47fa79f01326
 
 &lt;p&gt;At this point your request for notarizationhas been sent to Apple, and you have to wait for them to process the file.&lt;/p&gt;
 
-&lt;p&gt;Mind you: if you get &lt;strong&gt;“Error: You must first sign the relevant contracts online. (1048)”&lt;/strong&gt; (as it has happened to me several times) don’t panic. After a lot of googling finding only partially similar errors, my understanding is that it is a temporary glitch on Apple’s side.&lt;/p&gt;
+&lt;p&gt;Mind you: if you get &lt;strong&gt;“Error: You must first sign the relevant contracts online. (1048)”&lt;/strong&gt; (as it has happened to me several times) don’t panic.&lt;/p&gt;
 
-&lt;p&gt;Just in case, you can launch XCode to check whether it asks you to accept its Terms and Conditions, or run:&lt;/p&gt;
+&lt;p&gt;You can launch XCode to check whether it asks you to accept its Terms and Conditions, or run the following command to agree from the Terminal:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo xcodebuild -license
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;to do it from the Terminal. I doubt it will work, but when it comes to random, not repeatable issues our brain works like the pigeon’s – we tend to try random solutions and stick to the ones that may have a chance to have contributed to the desired outcome. Probably if you haven’t signed XCode Terms and Conditions the process will fail anyway.&lt;/p&gt;
+&lt;p&gt;Then try checking at &lt;a href=&quot;https://itunesconnect.apple.com/&quot;&gt;iTunesConnect&lt;/a&gt;, in the section “Agreements, Tax and Banking”. The “Paid Apps” list item may have a Status of “Pending User Information”&lt;sup id=&quot;fnref:itc&quot;&gt;&lt;a href=&quot;#fn:itc&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, but there shouldn’t be any Agreement pending (usually their warnings are listed separately).&lt;/p&gt;
+
+&lt;p&gt;If, still, nothing works it may be a glitch on Apple’s side, so wait a couple of hours and try again.&lt;/p&gt;
 
 &lt;h3 id=&quot;4-checking-the-notarization-status&quot;&gt;4. Checking the notarization status&lt;/h3&gt;
 
@@ -424,6 +565,8 @@ The staple and validate action worked!
 
 &lt;p&gt;And… &lt;strong&gt;you’re done&lt;/strong&gt; 🍾&lt;/p&gt;
 
+&lt;p&gt;In my experience the Notarization can take from 60 seconds up to many hours (one time I’ve had the Terminal waiting and checking the status from 3PM to midnight). In theory it should be fast, in practice you can occasionally run into long delays.&lt;/p&gt;
+
 &lt;h2 id=&quot;caveats-for-different-scenarios&quot;&gt;Caveats for different scenarios&lt;/h2&gt;
 
 &lt;p&gt;The example I’ve shown is for one &lt;code class=&quot;highlighter-rouge&quot;&gt;installer.pkg&lt;/code&gt; file. Let’s say that you (as I do) deliver to your customers a &lt;code class=&quot;highlighter-rouge&quot;&gt;product.dmg&lt;/code&gt; file, that wraps the &lt;code class=&quot;highlighter-rouge&quot;&gt;installer.pkg&lt;/code&gt;, an additional &lt;code class=&quot;highlighter-rouge&quot;&gt;uninstaller.app&lt;/code&gt; (say, an &lt;em&gt;app-ified&lt;/em&gt; AppleScript) and some documentation as well.&lt;/p&gt;
@@ -458,6 +601,13 @@ The staple and validate action worked!
 &lt;/figure&gt;
 
 &lt;p&gt;PS. I will update the Ultimate Guide to Native Installers and Automated Build Systems as well, I just wanted you to get informed asap.&lt;/p&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:itc&quot;&gt;
+      &lt;p&gt;If you don’t plan to sell through Apple, there’s no point in filling the uber-annoying Tax forms, etc. &lt;a href=&quot;#fnref:itc&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
 </description>
         <pubDate>Fri, 20 Sep 2019 00:00:00 +0200</pubDate>
         <link>http://localhost:4000/2019/04/notarizing-installers-for-macos-catalina/</link>
@@ -1302,55 +1452,6 @@ Thank you all!&lt;/p&gt;
         
         
         <category>CEP</category>
-        
-        <category>Scripting</category>
-        
-      </item>
-    
-      <item>
-        <title>Professional Photoshop Scripting EAP Update</title>
-        <description>&lt;p&gt;I’ve added 60 pages to accommodate an amazing new chapter on Adobe Generator!&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;book&lt;/a&gt; is now 388 pages strong and packed with exclusive content found &lt;em&gt;nowhere else™&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/06/open-book-5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Adobe Generator is an amazing and very little known technology available in Photoshop since version CC. It features a Node.js instance running in the background that you can use in a variety of interesting ways.&lt;/p&gt;
-
-&lt;figure class=&quot;alignright&quot;&gt;
-	&lt;img width=&quot;150&quot; src=&quot;/wp-content/uploads/2018/06/RkFdg4PI.png&quot; /&gt;
-&lt;/figure&gt;
-
-&lt;!-- [![](/wp-content/uploads/2018/06/RkFdg4PI_400x400-150x150.png)](/wp-content/uploads/2018/06/RkFdg4PI_400x400.png) --&gt;
-
-&lt;p&gt;I’ve built several Generator Plug-ins expressly for this book: Pixmap extraction, Artificial Intelligence via an external service, Photoshop remote control from the Browser, bi-directional Socket communication, just to name a few. I’m sure you’ll enjoy them! Did you know that Adobe Generator has got its own icon? 🙂 This marks Professional Photoshop Scripting &lt;strong&gt;EAP version 0.2&lt;/strong&gt; – I would say that the main content is already in place. I plan to gather minor topics in one or two chapters, then proceed with the publication. &lt;del&gt;You can still &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;buy it at a highly discounted price now&lt;/a&gt;!&lt;/del&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;the-final-product&quot;&gt;The Final Product:&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Final Book + Code, &lt;strong&gt;$149&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Final Book + Videos + Code, &lt;strong&gt;$249&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;Final Book + Videos + Code (Team/Enterprise License), &lt;strong&gt;$499&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;early-access-program&quot;&gt;Early Access Program&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;del&gt;Early Access Book + Code, &lt;strong&gt;$99&lt;/strong&gt;&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;Early Access Book + Code (Team/Enterprise License), &lt;strong&gt;$199&lt;/strong&gt;&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;del&gt;Discount Coupon for the Videos when they will be recorded&lt;/del&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Visit &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;ps-scripting.com&lt;/a&gt; for details. Cheers!&lt;/p&gt;
-</description>
-        <pubDate>Mon, 11 Jun 2018 17:21:58 +0200</pubDate>
-        <link>http://localhost:4000/2018/06/professional-photoshop-scripting-eap-update/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/06/professional-photoshop-scripting-eap-update/</guid>
-        
-        <category>EAP</category>
-        
-        <category>Professional Photoshop Scripting</category>
-        
         
         <category>Scripting</category>
         
