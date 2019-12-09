@@ -47,13 +47,14 @@
   {% if page.media_card %}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="{{ site.url }}{{ page.media_card }}">
-  <meta property="og:image" content="{{ page.media_card }}" />
+  <meta property="og:image" content="{{ page.media_card | prepend: site.baseurl | prepend: site.url }}" />
   {% else %}
   <meta name="twitter:card" content="summary">
   <meta name="twitter:image" content="{{ page.image }}">
-  <meta property="og:image" content="{{ page.image }}" />
+  <meta property="og:image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}" />
   {% endif %}
 
+<!-- media_card recommended size: 1200 x 628 -->
   <!-- MY OWN SOCIAL META  end -->
 
 
