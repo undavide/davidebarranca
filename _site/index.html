@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title> Davide Barranca &mdash; Photoshop, etc. </title>
-    <meta property="og:title" content=" Davide Barranca &mdash; Photoshop, etc. " />
+  <title> Davide Barranca &mdash; Photoshop, etc. </title>
+
+  <!-- ORIGINAL THEME SOCIAL META  start -->
+  <!-- <meta property="og:title" content=" Davide Barranca &mdash; Photoshop, etc. " />
+
     <meta name="twitter:title" content=" Davide Barranca &mdash; Photoshop, etc. " />
 
     <meta name="description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!">
+
     <meta name="description" property="og:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!" />
     <meta name="twitter:description" content="Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!" />
 
@@ -20,13 +24,53 @@
     <meta property="og:url" content="http://localhost:4000/" />
 
     <meta property="og:image" content="" />
-    <meta name="twitter:image" content="" />
+    <meta name="twitter:image" content="" /> -->
 
-    <meta name="author" content="Davide Barranca" />
+  <!-- ORIGINAL THEME SOCIAL META  end -->
 
-    <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+  <!-- MY OWN SOCIAL META  start -->
 
-    <style>
+  <meta name="twitter:site" content="@undavide">
+  <meta name="twitter:creator" content="@undavide">
+  <meta name="twitter:title" content="">
+
+  <meta property="og:url" content="http://localhost:4000/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content=" Davide Barranca" />
+
+  
+  <meta name="twitter:description" content="{% for post in paginator.posts %}
+
+    
+
+        
+            {{ post.date | date: &quot;%-d %b, %Y&quot; }}
+            {% if site.show_categories == 1 and post.category %}
+                ...">
+  <meta name="og:description" content="{% for post in paginator.posts %}
+
+    
+
+        
+            {{ post.date | date: &quot;%-d %b, %Y&quot; }}
+            {% if site.show_categories == 1 and post.category %}
+                ...">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="">
+  <meta property="og:image" content="" />
+  
+
+  <!-- MY OWN SOCIAL META  end -->
+
+
+  <meta name="author" content="Davide Barranca" />
+
+  <meta name="copyright" content="Copyright by Davide Barranca. All Rights Reserved." />
+
+  <style>
         @font-face {
             font-family: 'Roboto';
             font-style: normal;
@@ -91,37 +135,37 @@
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
         }
     </style>
-    
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    
-    <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+  
+  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  
+  <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
 
-    <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/">
 
-    <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
 
-    
+  
 
-    
-    <script>
-      function UnCryptMailto(s) {
-        var n = 0;
-        var r = "";
-        for (var i = 0; i < s.length; i++) {
-          n = s.charCodeAt(i);
-          if (n >= 8364) {
-            n = 128;
-          }
-          r += String.fromCharCode(n - 1);
+  
+  <script>
+    function UnCryptMailto(s) {
+      var n = 0;
+      var r = "";
+      for (var i = 0; i < s.length; i++) {
+        n = s.charCodeAt(i);
+        if (n >= 8364) {
+          n = 128;
         }
-        return r;
+        r += String.fromCharCode(n - 1);
       }
+      return r;
+    }
 
-      function linkTo_UnCryptMailto(s) {
-        location.href = UnCryptMailto(s);
-      }
-    </script>
-    
+    function linkTo_UnCryptMailto(s) {
+      location.href = UnCryptMailto(s);
+    }
+  </script>
+  
 </head>
 
 

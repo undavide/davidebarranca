@@ -7,6 +7,7 @@ layout: post
 permalink: /2019/12/2019-12-07/2019-12-07-hasselblad-flextight-flexcolor-3f/
 description: "In case you missed it, Flextight scanners have vanished from the Hasselblad website around May 2019 and macOS Catalina doesn't run FlexColor anymore. No software updates are planned, plus I've run into problems dealing with 3F files in Photoshop 2020. Heavens!"
 image: /wp-content/uploads/2019/12/flexcolor.png
+media_card: /wp-content/uploads/2019/12/media.jpg
 category:
   - Photoshop
 tags:

@@ -5,8 +5,8 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 07 Dec 2019 16:47:04 +0100</pubDate>
-    <lastBuildDate>Sat, 07 Dec 2019 16:47:04 +0100</lastBuildDate>
+    <pubDate>Mon, 09 Dec 2019 12:34:26 +0100</pubDate>
+    <lastBuildDate>Mon, 09 Dec 2019 12:34:26 +0100</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -94,17 +94,16 @@
 &lt;h2 id=&quot;tldr&quot;&gt;TL;DR&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Hasselblad Flextight X1 and X5 scanners (previously known as Imacon) are discontinued.&lt;/li&gt;
+  &lt;li&gt;Hasselblad Flextight X1 and X5 scanners (previously known as Imacon) are discontinued. Scanner servicing will be provided as usual &lt;em&gt;as long as spare parts will be available&lt;/em&gt;.&lt;/li&gt;
   &lt;li&gt;FlexColor is abandonware: it doesn’t run on any macOS &amp;gt; 10.14.&lt;/li&gt;
   &lt;li&gt;3F files don’t open anymore in Photoshop 2020; very likely the CC 2019 installer is not going to be available one year from now, and even if you have one, it’s definitely possible that macOS Catalina will prevent &lt;code class=&quot;highlighter-rouge&quot;&gt;Imacon3F.plugin&lt;/code&gt; from working because it’s not signed/notarized.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;workarounds-if-any&quot;&gt;Workarounds (if any)&lt;/h2&gt;
 
-&lt;p&gt;The following is in partly subjective.&lt;/p&gt;
+&lt;p&gt;The following is partly subjective.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Scanner servicing&lt;/strong&gt; will be provided as usual &lt;em&gt;as long as spare parts will be available&lt;/em&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Acquiring new scans&lt;/strong&gt;, for the time being, requires FlexColor; so either you keep dedicated hardware running macOS Mojave, or you switch to Windows.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Browsing 3F collections&lt;/strong&gt; is, and will keep being, a pain in the butt: FlexColor is the &lt;em&gt;lesser evil&lt;/em&gt;, Adobe Bridge seems unable to load just the low-res preview that is embedded in &lt;code class=&quot;highlighter-rouge&quot;&gt;.fff&lt;/code&gt; files and it takes forever to read the file content to create a thumbnail. The same holds true with Finder. I’m not aware of any other viable options for the Mac.&lt;/li&gt;
   &lt;li&gt;Extracting &lt;code class=&quot;highlighter-rouge&quot;&gt;.tif&lt;/code&gt; files for &lt;strong&gt;3F post-processing&lt;/strong&gt; is not a problem, as long as the Photoshop plugin keeps working 🤞🏻.&lt;/li&gt;
