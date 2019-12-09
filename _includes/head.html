@@ -38,10 +38,10 @@
 
   {% if page.summary %}
   <meta name="twitter:description" content="{{ page.description }}">
-  <meta name="og:description" content="{{ page.description }}">
+  <meta property="og:description" content="{{ page.description }}">
   {% else %}
   <meta name="twitter:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}">
-  <meta name="og:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}">
+  <meta property="og:description" content="{{ page.content | strip_html | xml_escape | truncate: 200 }}">
   {% endif %}
 
   {% if page.media_card %}
