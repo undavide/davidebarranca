@@ -79,7 +79,7 @@ I have grown accustomed to skip FlexColor altogether for anything but driving th
 
 Enter another stray bullet in the Hasselblad game: Adobe. It turns out that **Photoshop 2020 doesn't want to open 3Fs anymore**, popping up this new errors:
 
-![](/wp-content/uploads/2019/12/ps-error.jpg)
+![image proportion has changed the imacon 3f plugin can't save the file](/wp-content/uploads/2019/12/ps-error.jpg)
 
 In recent versions, you already had to set the Open dialog's settings to _Enable: All Documents_ (and of course the _Format: Imacon 3f_) otherwise Adobe Camera Raw kicked in trying to open the file, mistaking it as coming from a digital back.
 

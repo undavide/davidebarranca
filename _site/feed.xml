@@ -5,8 +5,8 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Dec 2019 12:34:26 +0100</pubDate>
-    <lastBuildDate>Mon, 09 Dec 2019 12:34:26 +0100</lastBuildDate>
+    <pubDate>Sun, 12 Jan 2020 10:20:47 +0100</pubDate>
+    <lastBuildDate>Sun, 12 Jan 2020 10:20:47 +0100</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -77,7 +77,7 @@
 
 &lt;p&gt;Enter another stray bullet in the Hasselblad game: Adobe. It turns out that &lt;strong&gt;Photoshop 2020 doesn’t want to open 3Fs anymore&lt;/strong&gt;, popping up this new errors:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/12/ps-error.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/12/ps-error.jpg&quot; alt=&quot;image proportion has changed the imacon 3f plugin can't save the file&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;In recent versions, you already had to set the Open dialog’s settings to &lt;em&gt;Enable: All Documents&lt;/em&gt; (and of course the &lt;em&gt;Format: Imacon 3f&lt;/em&gt;) otherwise Adobe Camera Raw kicked in trying to open the file, mistaking it as coming from a digital back.&lt;/p&gt;
 
