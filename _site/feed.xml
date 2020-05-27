@@ -5,9 +5,50 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 05 Mar 2020 11:51:33 +0100</pubDate>
-    <lastBuildDate>Thu, 05 Mar 2020 11:51:33 +0100</lastBuildDate>
+    <pubDate>Wed, 27 May 2020 16:05:31 +0200</pubDate>
+    <lastBuildDate>Wed, 27 May 2020 16:05:31 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Photoshop JS Native Applications Course UPDATE</title>
+        <description>&lt;p&gt;As &lt;a href=&quot;/development/Photoshop-native-applications-wip.html&quot;&gt;you have heard&lt;/a&gt;, I’ve spent the last few months working on my next video-course titled &lt;strong&gt;JavaScript Native Applications for Photoshop&lt;/strong&gt;. The good news is that I am finally done with the recordings! They’ve already been edited, I just need to double-check them one last time and the content will be ready.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2020/05/JSPSApp.jpg&quot; srcset=&quot;/wp-content/uploads/2020/05/JSPSApp.jpg 1x, /wp-content/uploads/2020/05/JSPSApp@2x.jpg 2x&quot; alt=&quot;Video Editing&quot; /&gt;
+&lt;figcaption&gt;Bloom (the cat) is not included&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;It’ll take some extra time, because we’re talking about &lt;strong&gt;28 videos&lt;/strong&gt; for a whopping total of &lt;strong&gt;9 hours&lt;/strong&gt; of Full-HD content, where I am building the app from the ground up, i.e. starting with an empty folder.&lt;/p&gt;
+
+&lt;p&gt;I also need to create thumbnails, marketing assets and the like (the part I admittedly enjoy the less). Keep an eye to this blog for the official release announcement!&lt;/p&gt;
+
+&lt;h2 id=&quot;pricing-and-availability&quot;&gt;Pricing and Availability&lt;/h2&gt;
+
+&lt;p&gt;The full price is going to be:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;$149&lt;/strong&gt; for individuals, with lifetime updates and HD videos for streaming.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;$249&lt;/strong&gt; for enterprise licenses up to 10 seats, with lifetime updates and HD videos for download.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Fill the form below if you’re interested in receiving an early bird discounted offer before the course goes public.&lt;/p&gt;
+
+&lt;iframe width=&quot;540&quot; height=&quot;650&quot; src=&quot;https://3dc77a80.sibforms.com/serve/MUIEAHsKpwIq1yNWbj_lxLqna87ra1XJHISVSYzDNKhSsYsYb4rLHME8ojWOr2YC4crxEuI6GRaX1pYUKI5bLh6Knr5sKmIwW1kvScZISpzmqLc1EUaREv-6OVq9ff5bRhJEKnM4Qi-2WIBNuk1Q4IlyEGw5jxOj1iiVa3KqHUw8x2V0NyAwNEZec3NIfkETDoIDPbaN-DPhUG86&quot; frameborder=&quot;0&quot; scrolling=&quot;auto&quot; allowfullscreen=&quot;&quot; style=&quot;display: block;margin-left: auto;margin-right: auto;max-width: 100%;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Wed, 27 May 2020 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/development/Photoshop-native-applications-update.html</link>
+        <guid isPermaLink="true">http://localhost:4000/development/Photoshop-native-applications-update.html</guid>
+        
+        <category>Native App</category>
+        
+        <category>JavaScript</category>
+        
+        <category>Machine Learning</category>
+        
+        
+        <category>Development</category>
+        
+      </item>
     
       <item>
         <title>Photoshop JS Native Applications Course (work-in-progress)</title>
@@ -1459,8 +1500,7 @@ Thank you all!&lt;/p&gt;
 
 &lt;p&gt;… into a proper Vue Component that wraps the Spectrum DropDown original markup. The &lt;code class=&quot;highlighter-rouge&quot;&gt;.vue&lt;/code&gt; file I came up with is as follows:&lt;/p&gt;
 
-&lt;noscript&gt;&lt;pre&gt;400: Invalid request
-&lt;/pre&gt;&lt;/noscript&gt;
+&lt;noscript&gt;&lt;pre&gt;400: Invalid request&lt;/pre&gt;&lt;/noscript&gt;
 &lt;script src=&quot;https://gist.github.com/ec5c7ef0d83b5d14252a963e761896f7.js&quot;&gt; &lt;/script&gt;
 
 &lt;p&gt;I won’t go too much into the details here. If you look at the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;template&amp;gt;&lt;/code&gt; tag and compare it with the original Spectrum html, you can spot the differences: I’ve added a couple of classes that depend on the selected item or the &lt;code class=&quot;highlighter-rouge&quot;&gt;showMenu&lt;/code&gt;boolean, and used a &lt;code class=&quot;highlighter-rouge&quot;&gt;v-for&lt;/code&gt; loop to populate the options.&lt;/p&gt;
@@ -1492,29 +1532,6 @@ Thank you all!&lt;/p&gt;
         
         
         <category>CEP</category>
-        
-      </item>
-    
-      <item>
-        <title>ESTK to be replaced by a Visual Studio Code plug-in</title>
-        <description>&lt;p&gt;Please do yourself a favour and read &lt;a href=&quot;https://medium.com/adobetech/the-future-of-extendscript-development-a-vscode-plugin-2d8d0172a357&quot;&gt;this Medium post&lt;/a&gt; by &lt;em&gt;Lead Technical Evangelist&lt;/em&gt; Ash Ryan Arnwine about the future of the ExtendScript ToolKit.&lt;/p&gt;
-
-&lt;p&gt;I’ll keep it short because I urge you to read the &lt;a href=&quot;https://medium.com/adobetech/the-future-of-extendscript-development-a-vscode-plugin-2d8d0172a357&quot;&gt;original news&lt;/a&gt;. No ETA yet, but ESTK is gonna die soon won’t be re-written to comply with Apple’s 32bit applications ban (macOS-next). Nobody in their right mind would have thought it anyway, but we’ve got an official confirmation.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;[confetti fall from the sky]&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Go download &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Visual Studio Code&lt;/a&gt; and familiarize with it, while waiting for the new Adobe Scripting plugin (Mac/Win compatible) to be released.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Wq7zF9yyd0I&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-</description>
-        <pubDate>Wed, 12 Dec 2018 23:28:31 +0100</pubDate>
-        <link>http://localhost:4000/2018/12/estk-to-be-replaced-by-a-visual-studio-code-plug-in/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/12/estk-to-be-replaced-by-a-visual-studio-code-plug-in/</guid>
-        
-        <category>VSCode</category>
-        
-        
-        <category>Scripting</category>
         
       </item>
     

@@ -874,8 +874,7 @@
 
 <p>I’ve used Topcoat CSS (apparently not anymore maintained, but I love them), nothing too fancy.</p>
 
-<noscript><pre>400: Invalid request
-</pre></noscript>
+<noscript><pre>400: Invalid request</pre></noscript>
 <script src="https://gist.github.com/e28806e47548006a4377e5299494381e.js"> </script>
 
 <h2 id="js">JS</h2>
@@ -884,8 +883,7 @@
 
 <p>On line 26 <code class="highlighter-rouge">PhotoshopCallbackUnique</code> strips the <code class="highlighter-rouge">"ver1"</code> string in the <code class="highlighter-rouge">event.data</code>, then parse the JSON and puts it back as an Object. Line 44, <code class="highlighter-rouge">toggleEventRegistering</code>: this is the unique switches onChange callback, which duty is to dispatch the <code class="highlighter-rouge">com.adobe.PhotoshopRegisterEvent</code> or <code class="highlighter-rouge">com.adobe.PhotoshopUnRegisterEvent</code>, corresponding to the on-the-fly-calculated typeID of the provided stringID.</p>
 
-<noscript><pre>400: Invalid request
-</pre></noscript>
+<noscript><pre>400: Invalid request</pre></noscript>
 <script src="https://gist.github.com/d4cd799c8cc3ebd0244bc7c0ac209c9a.js"> </script>
 
 <p>I hope this help clarifying how things work now. I repeat, both <code class="highlighter-rouge">PhotoshopCallback</code> <strong>and</strong> <code class="highlighter-rouge">PhotoshopJSONCallback</code> are usable in Photoshop CC2015 (the first is “just” deprecated), while from CC2016 onwards only the latter will work. I’d like to thanks Tom Ruark who pointed me to the Adobe’s original code, that I’ve refactored a bit for this blogpost. Also, I take the chance to tell you I’m working at a more comprehensive learning resource about Photoshop HTML Panels (ebook + video series), so stay tuned here.<br />

@@ -878,8 +878,7 @@
 
 <p>I’m passing two files in the source array – the ones I’m interested in deep obfuscating: the main application JS, and the only JSX of the Panel. The processed result is going to be saved in the <code class="highlighter-rouge">dist</code> folder, keeping the same directories structure. As you see, I’m requiring <code class="highlighter-rouge">'./jsobfuscator'</code>: this means that I’ve created in the root folder a <code class="highlighter-rouge">jsobfuscator.js</code> file, which contains my actual Gulp plugin. The entire code is as follows, read along for a walkthrough.</p>
 
-<noscript><pre>400: Invalid request
-</pre></noscript>
+<noscript><pre>400: Invalid request</pre></noscript>
 <script src="https://gist.github.com/53958afcf504a528ebede3b6c5e46845.js"> </script>
 
 <p>Before going any further, check this <a href="https://github.com/gulpjs/gulp/tree/master/docs/writing-a-plugin">Writing a Gulp Plugin</a> documentation page as a way to orient yourself: I’ll point out the main problems I’ve run into as a total Gulp plugins beginner, that I’ve been able to solve after a good deal of head scratching time. First, you need to require some modules: the native <code class="highlighter-rouge">fs</code>, <code class="highlighter-rouge">stream</code>, and <code class="highlighter-rouge">http</code>, plus <code class="highlighter-rouge">through2</code>, <code class="highlighter-rouge">gulp-util</code>, and <code class="highlighter-rouge">vinyl</code> – install them:</p>
