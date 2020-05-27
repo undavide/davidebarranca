@@ -26,6 +26,11 @@ It'll take some extra time, because we're talking about **28 videos** for a whop
 
 I also need to create thumbnails, marketing assets and the like (the part I admittedly enjoy the less). Keep an eye to this blog for the official release announcement!
 
+<figure>
+<img src="/wp-content/uploads/2020/05/list.png" srcset="/wp-content/uploads/2020/05/list.png 1x, /wp-content/uploads/2020/05/list@2x.png 2x" alt="Video thumbnails">
+<figcaption>Video list (wip)</figcaption>
+</figure>  
+
 ## Pricing and Availability
 
 The full price is going to be:

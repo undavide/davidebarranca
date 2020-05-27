@@ -5,8 +5,8 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 May 2020 16:05:31 +0200</pubDate>
-    <lastBuildDate>Wed, 27 May 2020 16:05:31 +0200</lastBuildDate>
+    <pubDate>Wed, 27 May 2020 21:48:06 +0200</pubDate>
+    <lastBuildDate>Wed, 27 May 2020 21:48:06 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -21,6 +21,11 @@
 &lt;p&gt;It’ll take some extra time, because we’re talking about &lt;strong&gt;28 videos&lt;/strong&gt; for a whopping total of &lt;strong&gt;9 hours&lt;/strong&gt; of Full-HD content, where I am building the app from the ground up, i.e. starting with an empty folder.&lt;/p&gt;
 
 &lt;p&gt;I also need to create thumbnails, marketing assets and the like (the part I admittedly enjoy the less). Keep an eye to this blog for the official release announcement!&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2020/05/list.png&quot; srcset=&quot;/wp-content/uploads/2020/05/list.png 1x, /wp-content/uploads/2020/05/list@2x.png 2x&quot; alt=&quot;Video thumbnails&quot; /&gt;
+&lt;figcaption&gt;Video list (wip)&lt;/figcaption&gt;
+&lt;/figure&gt;
 
 &lt;h2 id=&quot;pricing-and-availability&quot;&gt;Pricing and Availability&lt;/h2&gt;
 
