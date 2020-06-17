@@ -5,9 +5,44 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 May 2020 21:48:06 +0200</pubDate>
-    <lastBuildDate>Wed, 27 May 2020 21:48:06 +0200</lastBuildDate>
+    <pubDate>Wed, 17 Jun 2020 11:54:40 +0200</pubDate>
+    <lastBuildDate>Wed, 17 Jun 2020 11:54:40 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>JavaScript Native Applications for Photoshop</title>
+        <description>&lt;p&gt;I’m incredibly happy to announce that my new video-course has been published (confetti falls from the sky). Watch below a 3 minutes short presentation.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/8A4UEx8Gb1A&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;want-to-know-more&quot;&gt;Want to know more?&lt;/h2&gt;
+
+&lt;p&gt;I’ve revamped my &lt;a href=&quot;https://www.ps-scripting.com&quot;&gt;PS-Scripting&lt;/a&gt; website, which is going to be the central hub for all my books and courses, including this new &lt;strong&gt;JavaScript Native Applications for Photoshop&lt;/strong&gt; video-series.&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center; width:100%&quot;&gt;&lt;a href=&quot;https://www.ps-scripting.com/js-native-apps-for-photoshop.html&quot; target=&quot;_blank&quot; style=&quot;box-sizing: border-box; margin: 0; font-family: inherit; overflow: visible; text-transform: none; -webkit-appearance: button; display: inline-block; font-weight: 400; text-align: center; vertical-align: middle; user-select: none; border: 1px solid transparent; transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; color: #fff; background-color: #673ab7; border-color: #673ab7; padding: .5rem 1rem; font-size: 1.25rem; line-height: 1.5; border-radius: .3rem; margin-top: .25rem; margin-bottom: .25rem; cursor: pointer;&quot;&gt;Visit the course website&lt;/a&gt;&lt;/div&gt;
+
+&lt;p&gt;To those of you who did express their interest via the contact form: you should have received a special coupon code – check your email. Everyone else: I’ve set an automatic &lt;em&gt;launch price&lt;/em&gt; discount code that is going to expire in the early days of July. Sample content available.&lt;/p&gt;
+
+&lt;h2 id=&quot;thanks&quot;&gt;Thanks!&lt;/h2&gt;
+
+&lt;p&gt;Thank you all for your support, and for checking this blog from time to time – my friends, 2020 is a tough year! I hope you’re all safe and… reasonably fine? I can’t push that any further giving the crazy times we’re living through. 🖐&lt;/p&gt;
+
+&lt;p&gt;Davide&lt;/p&gt;
+</description>
+        <pubDate>Wed, 17 Jun 2020 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/development/JavaScript-native-applications-for-photoshop.html</link>
+        <guid isPermaLink="true">http://localhost:4000/development/JavaScript-native-applications-for-photoshop.html</guid>
+        
+        <category>Native App</category>
+        
+        <category>JavaScript</category>
+        
+        <category>Machine Learning</category>
+        
+        
+        <category>Development</category>
+        
+      </item>
     
       <item>
         <title>Photoshop JS Native Applications Course UPDATE</title>
@@ -1475,68 +1510,6 @@ Thank you all!&lt;/p&gt;
         
         
         <category>Scripting</category>
-        
-      </item>
-    
-      <item>
-        <title>Spectrum CSS VueJS Component: DropDown</title>
-        <description>&lt;p&gt;In a &lt;a href=&quot;/2018/11/adobe-spectrum-css-open-sourced/&quot;&gt;previous post&lt;/a&gt; I’ve introduced the recently open-sourced Spectrum CSS. Here, I’ll be demonstrating how to use them to build a simple Vue.js component: a DropDown menu.&lt;/p&gt;
-
-&lt;p&gt;Spectrum CSS are really appealing, but as I’ve mentioned &lt;a href=&quot;/2018/11/adobe-spectrum-css-open-sourced/&quot;&gt;earlier&lt;/a&gt;, they’re not bundled with any JavaScript – besides what you may borrow from the &lt;a href=&quot;http://opensource.adobe.com/spectrum-css&quot;&gt;online documentation&lt;/a&gt; page. While elements such as Sliders are &lt;em&gt;plug &amp;amp; play&lt;/em&gt;, for they actually do use a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;input type=&quot;range&quot;&amp;gt;&lt;/code&gt; wrapped in a lot of finely styled &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; tags, others such as the DropDown are not.&lt;/p&gt;
-
-&lt;figure&gt;
-	&lt;img width=&quot;300&quot; src=&quot;/wp-content/uploads/2018/12/dropdown.gif&quot; /&gt;
-	&lt;figcaption&gt;Screenshot from the Spectrum CSS documentation&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;I.e. if you click on a Closed dropdown, it won’t open (the above is just a screenshot so it’s pointless to try, but the result would be the same). The reason being that a Spectrum DropDown is not really a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;select&amp;gt;&lt;/code&gt; element, as you can see in the snippet below:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/12/code.png&quot; alt=&quot;The Spectrum code that renders a DropDown&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;As far as I get, re-creating an element from scratch is a standard practice to avoid rendering differences between browsers (the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;select&amp;gt;&lt;/code&gt; is a good example here).&lt;/p&gt;
-
-&lt;p&gt;Anyways: no &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;select&amp;gt;&lt;/code&gt; means no default behavior on click, change, etc. In other words, you are the one in charge of populating the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements above and adding relevant event handlers so that the DropDown stops being a nice but still and useless object.&lt;/p&gt;
-
-&lt;p&gt;This is a perfect test case for encapsulating everything in a &lt;strong&gt;Vue.js Component&lt;/strong&gt;! The only drawback is that I don’t feel particularly comfortable with the idea of creating Components from scratch. All my CEP Panels use Vue.js now, that’s true, but frankly in a very simple and not over-engineered fashion: I’ve always used one shared &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;, the farther I’ve ventured into fanciness was setting up an Event Hub.&lt;/p&gt;
-
-&lt;p&gt;Thanks god I’ve a PhD in &lt;em&gt;Copy&amp;amp;Paste&lt;/em&gt;, so I’ve been able to adapt &lt;a href=&quot;https://vuejsexamples.com/a-prettier-way-to-display-select-boxes/&quot;&gt;this one&lt;/a&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2018/12/display-select-boxes.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;… into a proper Vue Component that wraps the Spectrum DropDown original markup. The &lt;code class=&quot;highlighter-rouge&quot;&gt;.vue&lt;/code&gt; file I came up with is as follows:&lt;/p&gt;
-
-&lt;noscript&gt;&lt;pre&gt;400: Invalid request&lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/ec5c7ef0d83b5d14252a963e761896f7.js&quot;&gt; &lt;/script&gt;
-
-&lt;p&gt;I won’t go too much into the details here. If you look at the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;template&amp;gt;&lt;/code&gt; tag and compare it with the original Spectrum html, you can spot the differences: I’ve added a couple of classes that depend on the selected item or the &lt;code class=&quot;highlighter-rouge&quot;&gt;showMenu&lt;/code&gt;boolean, and used a &lt;code class=&quot;highlighter-rouge&quot;&gt;v-for&lt;/code&gt; loop to populate the options.&lt;/p&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag is where the actual logic belongs: I’ve added two methods, one to show the opened dropdown and one to emit an event to the parent when something is selected. From the &lt;code class=&quot;highlighter-rouge&quot;&gt;props&lt;/code&gt; you’re able to tell how to consume such element, e.g.:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;drop-down&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:options=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;arrayOfObjects&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;v-on:updateOption=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;methodToRunOnSelect&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Select a thing...&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The result is this one:&lt;/p&gt;
-
-&lt;figure&gt;
-	&lt;img width=&quot;300&quot; src=&quot;/wp-content/uploads/2018/12/WorkingDropDown.gif&quot; /&gt;
-	&lt;figcaption&gt;The working DropDown Vue.js Component! (Wife was unimpressed)&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;It is quite bare, I may want to add transitions and such… but it works!&lt;/p&gt;
-
-&lt;p&gt;To tell you the truth, I thought I couldn’t be able to make it: I had a look at proper Vue.js UI Kits (like &lt;a href=&quot;https://vuikit.js.org/&quot;&gt;this one&lt;/a&gt;) and they exceed, by far, my understanding. Luckily I’ve been able to borrow code and adapt it, so I may be doing it again in the future for other elements that I would need.&lt;/p&gt;
-
-&lt;p&gt;If you’re up for the same thing, or you know how to make my code better, please let me know in the comments. Bye!&lt;/p&gt;
-</description>
-        <pubDate>Sun, 16 Dec 2018 11:19:58 +0100</pubDate>
-        <link>http://localhost:4000/2018/12/spectrum-css-vue-js-component-dropdown/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/12/spectrum-css-vue-js-component-dropdown/</guid>
-        
-        <category>CEP</category>
-        
-        <category>Vue.js</category>
-        
-        
-        <category>CEP</category>
         
       </item>
     
