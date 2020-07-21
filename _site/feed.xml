@@ -5,8 +5,8 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 17 Jun 2020 11:54:40 +0200</pubDate>
-    <lastBuildDate>Wed, 17 Jun 2020 11:54:40 +0200</lastBuildDate>
+    <pubDate>Tue, 21 Jul 2020 12:10:21 +0200</pubDate>
+    <lastBuildDate>Tue, 21 Jul 2020 12:10:21 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -555,7 +555,9 @@
     
       <item>
         <title>Notarizing installers for macOS Catalina</title>
-        <description>&lt;p&gt;According to Apple (read &lt;a href=&quot;https://developer.apple.com/documentation/security/notarizing_your_app_before_distribution&quot;&gt;here&lt;/a&gt; the whole article):&lt;/p&gt;
+        <description>&lt;p&gt;&lt;strong&gt;[See newest updates at the bottom of the article]&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;According to Apple (read &lt;a href=&quot;https://developer.apple.com/documentation/security/notarizing_your_app_before_distribution&quot;&gt;here&lt;/a&gt; the whole article):&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;The Apple notary service is an automated system that scans your software for malicious content, checks for code-signing issues, and returns the results to you quickly. Notarization gives users more confidence that the Developer ID-signed software you distribute has been checked by Apple for malicious components. Notarization is not App Review.&lt;/p&gt;
@@ -763,7 +765,7 @@ The staple and validate action worked!
 
 &lt;p&gt;Lastly, things may get a bit convoluted when it comes to extra libraries/bundles that may be called by your panel – if you feel like it’s your case, please read &lt;a href=&quot;https://forums.developer.apple.com/message/383180&quot;&gt;this thread&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;dmg-canvas-update&quot;&gt;DMG Canvas update&lt;/h3&gt;
+&lt;h3 id=&quot;update-dmg-canvas&quot;&gt;UPDATE: DMG Canvas&lt;/h3&gt;
 
 &lt;p&gt;The software that I use, and recommend, to build &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; files is &lt;a href=&quot;https://www.araelium.com/dmgcanvas&quot;&gt;Araelium DMG Canvas&lt;/a&gt;, which has recently bumped to version 3.x (a paid upgrade, around $10). One of the new features is the possibility to automate the notarization process while building the &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; itself.&lt;/p&gt;
 
@@ -772,6 +774,45 @@ The staple and validate action worked!
 &lt;/figure&gt;
 
 &lt;p&gt;To tell you the truth, the first product I’ve used that for went flawlessly, and in a snap; the second product failed due to a timeout, which sounds very much an Apple issue rather than Araelium’s. Please note that DMG Canvas does the stapling too, which is quite handy, and can be automatized to fit your build system.&lt;/p&gt;
+
+&lt;h3 id=&quot;update-uninstaller-app&quot;&gt;UPDATE: Uninstaller app&lt;/h3&gt;
+
+&lt;p&gt;As I’ve finally upgraded my machine to Catalina, I’m able to experience the entire, happy spectrum of Catalina-related issues. I’ve discovered that with the &lt;code class=&quot;highlighter-rouge&quot;&gt;Uninstall.app&lt;/code&gt; the signature I’ve been doing is not enough: the notarization of the outer &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; fails with the error: &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;The executable does not have the hardened runtime enabled.&quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If this is the case, be aware that you should &lt;strong&gt;not&lt;/strong&gt; export the &lt;code class=&quot;highlighter-rouge&quot;&gt;Uninstall.scpt&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;Uninstall.app&lt;/code&gt; while signing it with the Script Editor (it’s an option in the File &amp;gt; Export dialog). Instead, export it without signature and then use the &lt;code class=&quot;highlighter-rouge&quot;&gt;codesign&lt;/code&gt; utility with the &lt;code class=&quot;highlighter-rouge&quot;&gt;-o runtime&lt;/code&gt; flag:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;codesign -s &quot;Developer ID Application: Davide Barranca&quot; -o runtime /path/to/Uninstall.app
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Also, it might happen that the signing process of the &lt;code class=&quot;highlighter-rouge&quot;&gt;.app&lt;/code&gt; fails because of the error: &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;resource fork, Finder information, or similar detritus not allowed&quot;&lt;/code&gt;. You can spot such digital &lt;em&gt;detritus&lt;/em&gt; running:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xattr -lr /path/to/Uninstall.app
+
+/path/to/Uninstall.app: com.apple.FinderInfo:
+00000000  50 4C 41 50 6C 74 61 70 00 00 00 00 00 00 00 00  |PLAPltap........|
+00000010  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+00000020
+/path/to/Uninstall.app: com.apple.metadata:_kMDItemUserTags:
+00000000  62 70 6C 69 73 74 30 30 A0 08 00 00 00 00 00 00  |bplist00........|
+00000010  01 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00  |................|
+00000020  00 00 00 00 00 00 00 00 00 09                    |..........|
+0000002a
+/path/to/Uninstall.app: com.apple.metadata:kMDLabel_vtos3pl2xookcnywmtbwlcbnry:
+00000000  F2 20 2F 2C 8B D7 B3 8E B9 A9 39 DD 12 79 01 05  |. /,......9..y..|
+00000010  BB 76 D8 72 90 73 F2 E9 B2 A3 2A 79 4F 5C 76 F0  |.v.r.s....*yO.v.|
+00000020  5B 09 C3 8C 53 5D 90 FA 6D 27 2C 00 86 5E 57 7C  |[...S]..m',..^W||
+00000030  DF F9 0B 78 83 19 F9 CA 48 6D 66 21 E9 D9 A8 D4  |...x....Hmf!....|
+00000040  5E D2 52 53 A1 94 97 94 C4 3C ED A1 89 FF D4 5B  |^.RS.....&amp;lt;.....[|
+00000050  AB 17 0F 53 4F 8A 75 85 FD                       |...SO.u..|
+00000059
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To clean that mess (whatever it is), run:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xattr -cr /path/to/Uninstall.app
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;…and the subsequent &lt;code class=&quot;highlighter-rouge&quot;&gt;codesign&lt;/code&gt; should complete with no problems.&lt;/p&gt;
 
 &lt;h2 id=&quot;support-this-site&quot;&gt;Support this site!&lt;/h2&gt;
 

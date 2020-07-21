@@ -14,6 +14,7 @@ tags:
   - Apple
   - macOS Catalina
 ---
+**[See newest updates at the bottom of the article]**
 
 According to Apple (read [here](https://developer.apple.com/documentation/security/notarizing_your_app_before_distribution) the whole article):
 
@@ -227,7 +228,7 @@ Please note that in order to sign a `.dmg` you need a "Developer ID Application"
 
 Lastly, things may get a bit convoluted when it comes to extra libraries/bundles that may be called by your panel – if you feel like it's your case, please read [this thread](https://forums.developer.apple.com/message/383180).
 
-### DMG Canvas update
+### UPDATE: DMG Canvas
 
 The software that I use, and recommend, to build `.dmg` files is [Araelium DMG Canvas](https://www.araelium.com/dmgcanvas), which has recently bumped to version 3.x (a paid upgrade, around $10). One of the new features is the possibility to automate the notarization process while building the `.dmg` itself.
 
@@ -236,6 +237,48 @@ The software that I use, and recommend, to build `.dmg` files is [Araelium DMG C
 </figure>
 
 To tell you the truth, the first product I've used that for went flawlessly, and in a snap; the second product failed due to a timeout, which sounds very much an Apple issue rather than Araelium's. Please note that DMG Canvas does the stapling too, which is quite handy, and can be automatized to fit your build system.
+
+### UPDATE: Uninstaller app
+
+As I've finally upgraded my machine to Catalina, I'm able to experience the entire, happy spectrum of Catalina-related issues. I've discovered that with the `Uninstall.app` the signature I've been doing is not enough: the notarization of the outer `.dmg` fails with the error: `"The executable does not have the hardened runtime enabled."`.
+
+If this is the case, be aware that you should **not** export the `Uninstall.scpt` to `Uninstall.app` while signing it with the Script Editor (it's an option in the File > Export dialog). Instead, export it without signature and then use the `codesign` utility with the `-o runtime` flag:
+
+```
+codesign -s "Developer ID Application: Davide Barranca" -o runtime /path/to/Uninstall.app
+```
+
+Also, it might happen that the signing process of the `.app` fails because of the error: `"resource fork, Finder information, or similar detritus not allowed"`. You can spot such digital _detritus_ running:
+
+```
+xattr -lr /path/to/Uninstall.app
+
+/path/to/Uninstall.app: com.apple.FinderInfo:
+00000000  50 4C 41 50 6C 74 61 70 00 00 00 00 00 00 00 00  |PLAPltap........|
+00000010  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  |................|
+00000020
+/path/to/Uninstall.app: com.apple.metadata:_kMDItemUserTags:
+00000000  62 70 6C 69 73 74 30 30 A0 08 00 00 00 00 00 00  |bplist00........|
+00000010  01 01 00 00 00 00 00 00 00 01 00 00 00 00 00 00  |................|
+00000020  00 00 00 00 00 00 00 00 00 09                    |..........|
+0000002a
+/path/to/Uninstall.app: com.apple.metadata:kMDLabel_vtos3pl2xookcnywmtbwlcbnry:
+00000000  F2 20 2F 2C 8B D7 B3 8E B9 A9 39 DD 12 79 01 05  |. /,......9..y..|
+00000010  BB 76 D8 72 90 73 F2 E9 B2 A3 2A 79 4F 5C 76 F0  |.v.r.s....*yO.v.|
+00000020  5B 09 C3 8C 53 5D 90 FA 6D 27 2C 00 86 5E 57 7C  |[...S]..m',..^W||
+00000030  DF F9 0B 78 83 19 F9 CA 48 6D 66 21 E9 D9 A8 D4  |...x....Hmf!....|
+00000040  5E D2 52 53 A1 94 97 94 C4 3C ED A1 89 FF D4 5B  |^.RS.....<.....[|
+00000050  AB 17 0F 53 4F 8A 75 85 FD                       |...SO.u..|
+00000059
+```
+
+To clean that mess (whatever it is), run:
+
+```
+xattr -cr /path/to/Uninstall.app
+```
+
+...and the subsequent `codesign` should complete with no problems.
 
 ## Support this site!
 
