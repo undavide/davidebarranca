@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -827,25 +831,25 @@
 
 <p>Which means: from 14.0 onwards. Mind you, the installation paths for extensions are thankfully always the same:</p>
 
-<p>(Win User): <code class="highlighter-rouge">C:\Users\&lt;username&gt;\AppData\Roaming\Adobe\CEP\extensions\</code><br />
-(Win System): <code class="highlighter-rouge">C:\Program Files (x86)\Common Files\Adobe\CEP\extensions\</code><br />
-(Mac User): <code class="highlighter-rouge">∼/Library/Application Support/Adobe/CEP/extensions</code><br />
-(Mac System): <code class="highlighter-rouge">/Library/Application Support/Adobe/CEP/extensions/</code></p>
+<p>(Win User): <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;\AppData\Roaming\Adobe\CEP\extensions\</code><br />
+(Win System): <code class="language-plaintext highlighter-rouge">C:\Program Files (x86)\Common Files\Adobe\CEP\extensions\</code><br />
+(Mac User): <code class="language-plaintext highlighter-rouge">∼/Library/Application Support/Adobe/CEP/extensions</code><br />
+(Mac System): <code class="language-plaintext highlighter-rouge">/Library/Application Support/Adobe/CEP/extensions/</code></p>
 
 <p>Second thing to know: in Photoshop at least, <strong>CEP jumped to (major) version 7</strong>. Documentation and new features should be <a href="https://github.com/Adobe-CEP/CEP-Resources/issues/60#issuecomment-227469836">available soon</a>. Please note that CEP7 means that for debugging purposes you need to set a new debug flag! On Mac, open the Terminal and enter:</p>
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">defaults write com.adobe.CSXS.7 PlayerDebugMode 1</code></pre></figure>
 
-<p>On Windows run Regedit, browse to: <code class="highlighter-rouge">HKEY\_CURRENT\_USER/Software/Adobe/CSXS.7</code> then add a new <code class="highlighter-rouge">PlayerDebugMode</code> key of type String with value <code class="highlighter-rouge">1</code>.</p>
+<p>On Windows run Regedit, browse to: <code class="language-plaintext highlighter-rouge">HKEY\_CURRENT\_USER/Software/Adobe/CSXS.7</code> then add a new <code class="language-plaintext highlighter-rouge">PlayerDebugMode</code> key of type String with value <code class="language-plaintext highlighter-rouge">1</code>.</p>
 
 <p>Third thing to know: according to this Adobe’s official <a href="http://blogs.adobe.com/crawlspace/2016/06/faq-photoshop-cc-2015-5-now-available.html#important">blogpost</a>, there is now a suggested <strong>path for shared, third-party plugins</strong> (in case your Panel uses them). What happens when your users migrate to the new CC 2015.5 major version is that, by default and unless they know <a href="http://blogs.adobe.com/crawlspace/files/2015/06/AdvancedView.png">how to avoid it</a>, <strong>old CC 2015 is going to be removed</strong>.</p>
 
-<p>So all your Scripts belonging to <code class="highlighter-rouge">/Presets/Scripts</code> and your plugins in <code class="highlighter-rouge">/Plug-ins</code> are gone too. The paths for versions persistent plugins (from CC up to current, and hopefully newer versions too) <a href="https://helpx.adobe.com/photoshop/kb/plug-ins-photoshop-troubleshooting.html#topic-5">according to Adobe</a> is:</p>
+<p>So all your Scripts belonging to <code class="language-plaintext highlighter-rouge">/Presets/Scripts</code> and your plugins in <code class="language-plaintext highlighter-rouge">/Plug-ins</code> are gone too. The paths for versions persistent plugins (from CC up to current, and hopefully newer versions too) <a href="https://helpx.adobe.com/photoshop/kb/plug-ins-photoshop-troubleshooting.html#topic-5">according to Adobe</a> is:</p>
 
-<p>(Win): <code class="highlighter-rouge">C:\Program Files\Common Files\Adobe\Plug-Ins\CC</code><br />
-(Mac): <code class="highlighter-rouge">/Library/Application Support/Adobe/Plug-Ins/CC</code></p>
+<p>(Win): <code class="language-plaintext highlighter-rouge">C:\Program Files\Common Files\Adobe\Plug-Ins\CC</code><br />
+(Mac): <code class="language-plaintext highlighter-rouge">/Library/Application Support/Adobe/Plug-Ins/CC</code></p>
 
-<p>Fourth thing to know (hey, I can count!): if you rely on <code class="highlighter-rouge">.zxp</code> for installation, you need to download the <strong>new version of ExManCmd command-line tool</strong> from <a href="https://www.adobeexchange.com/resources/28">this link</a>. If/when something new emerges, I will update this post.</p>
+<p>Fourth thing to know (hey, I can count!): if you rely on <code class="language-plaintext highlighter-rouge">.zxp</code> for installation, you need to download the <strong>new version of ExManCmd command-line tool</strong> from <a href="https://www.adobeexchange.com/resources/28">this link</a>. If/when something new emerges, I will update this post.</p>
 
 <hr />
 

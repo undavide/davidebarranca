@@ -755,6 +755,10 @@ $.e...">
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -808,24 +812,24 @@ $.e...">
     <div class="post-content">
         <p>A simple way to dynamically evaluate multiple JSX files in the Scripting context of Photoshop within HTML Panels. Back in the Flash world, I used to dynamically include external JSX files via:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">.</span><span class="nx">evalFile</span><span class="p">(</span><span class="s2">""</span> <span class="o">+</span> <span class="p">(</span><span class="nx">File</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">fileName</span><span class="p">).</span><span class="nx">path</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"/libs/external.jsx"</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">.</span><span class="nx">evalFile</span><span class="p">(</span><span class="dl">""</span> <span class="o">+</span> <span class="p">(</span><span class="nx">File</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">fileName</span><span class="p">).</span><span class="nx">path</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/libs/external.jsx</span><span class="dl">"</span><span class="p">);</span></code></pre></figure>
 
-<p>Being <code class="highlighter-rouge">$.fileName</code> the current JSX file within the above line is written and the <code class="highlighter-rouge">File.path</code> call meaning the actual path. Alas, this doesn’t seem to work anymore when HTML panels are involved - the <code class="highlighter-rouge">File($.fileName).path</code> once resulted to me, don’t ask me why, as “33” -  which is not a bad approximation to the answer to the <a href="http://simple.wikipedia.org/wiki/42_(answer)" title="42">Ultimate Question of Life, the Universe, and Everything</a> after all ;-) Anyway, what I personally use now is the following function (in the <code class="highlighter-rouge">main.js</code> file):</p>
+<p>Being <code class="language-plaintext highlighter-rouge">$.fileName</code> the current JSX file within the above line is written and the <code class="language-plaintext highlighter-rouge">File.path</code> call meaning the actual path. Alas, this doesn’t seem to work anymore when HTML panels are involved - the <code class="language-plaintext highlighter-rouge">File($.fileName).path</code> once resulted to me, don’t ask me why, as “33” -  which is not a bad approximation to the answer to the <a href="http://simple.wikipedia.org/wiki/42_(answer)" title="42">Ultimate Question of Life, the Universe, and Everything</a> after all ;-) Anyway, what I personally use now is the following function (in the <code class="language-plaintext highlighter-rouge">main.js</code> file):</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// fileName is a String (with the .jsx extension included)</span>
 <span class="kd">function</span> <span class="nx">loadJSX</span><span class="p">(</span><span class="nx">fileName</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
-  <span class="kd">var</span> <span class="nx">extensionRoot</span> <span class="o">=</span> <span class="nx">csInterface</span><span class="p">.</span><span class="nx">getSystemPath</span><span class="p">(</span><span class="nx">SystemPath</span><span class="p">.</span><span class="nx">EXTENSION</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"/jsx/"</span><span class="p">;</span>
-  <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'$.evalFile("'</span> <span class="o">+</span> <span class="nx">extensionRoot</span> <span class="o">+</span> <span class="nx">fileName</span> <span class="o">+</span> <span class="s1">'")'</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">extensionRoot</span> <span class="o">=</span> <span class="nx">csInterface</span><span class="p">.</span><span class="nx">getSystemPath</span><span class="p">(</span><span class="nx">SystemPath</span><span class="p">.</span><span class="nx">EXTENSION</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/jsx/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">$.evalFile("</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">extensionRoot</span> <span class="o">+</span> <span class="nx">fileName</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">")</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>The key here is the above highlighted line, which is the JS equivalent of the JSX line I’ve been using. To load a JSX - which must belong to the root/jsx folder since it’s hardwired in the function, you would write:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">loadJSX</span><span class="p">(</span><span class="s2">"myFile.jsx"</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">loadJSX</span><span class="p">(</span><span class="dl">"</span><span class="s2">myFile.jsx</span><span class="dl">"</span><span class="p">);</span></code></pre></figure>
 
-<p>Borrowing code from the Extension Builder 3 boilerplate you can get fancier. The first chunk goes in the main JSX, i.e. the one listed in the <code class="highlighter-rouge">manifest.xml</code>, enclosed in the <code class="highlighter-rouge">ScriptPath</code> tag:</p>
+<p>Borrowing code from the Extension Builder 3 boilerplate you can get fancier. The first chunk goes in the main JSX, i.e. the one listed in the <code class="language-plaintext highlighter-rouge">manifest.xml</code>, enclosed in the <code class="language-plaintext highlighter-rouge">ScriptPath</code> tag:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">if</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="o">==</span> <span class="s1">'undefined'</span><span class="p">)</span> <span class="nx">$</span> <span class="o">=</span> <span class="p">{};</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">if</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">undefined</span><span class="dl">'</span><span class="p">)</span> <span class="nx">$</span> <span class="o">=</span> <span class="p">{};</span>
 
 <span class="nx">$</span><span class="p">.</span><span class="nx">_ext</span> <span class="o">=</span> <span class="p">{</span>
   <span class="c1">//Evaluate a file and catch the exception.</span>
@@ -833,14 +837,14 @@ $.e...">
     <span class="k">try</span> <span class="p">{</span>
       <span class="nx">$</span><span class="p">.</span><span class="nx">evalFile</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">alert</span><span class="p">(</span><span class="s2">"Exception:"</span> <span class="o">+</span> <span class="nx">e</span><span class="p">);</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Exception:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">e</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">},</span>
   <span class="c1">// Evaluate all the files in the given folder</span>
   <span class="na">evalFiles</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">jsxFolderPath</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">folder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Folder</span><span class="p">(</span><span class="nx">jsxFolderPath</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">folder</span><span class="p">.</span><span class="nx">exists</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">jsxFiles</span> <span class="o">=</span> <span class="nx">folder</span><span class="p">.</span><span class="nx">getFiles</span><span class="p">(</span><span class="s2">"*.jsx"</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">jsxFiles</span> <span class="o">=</span> <span class="nx">folder</span><span class="p">.</span><span class="nx">getFiles</span><span class="p">(</span><span class="dl">"</span><span class="s2">*.jsx</span><span class="dl">"</span><span class="p">);</span>
       <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">jsxFiles</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">jsxFile</span> <span class="o">=</span> <span class="nx">jsxFiles</span><span class="err">\</span><span class="p">[</span><span class="nx">i</span><span class="err">\</span><span class="p">];</span>
         <span class="nx">$</span><span class="p">.</span><span class="nx">_ext</span><span class="p">.</span><span class="nx">evalFile</span><span class="p">(</span><span class="nx">jsxFile</span><span class="p">);</span>
@@ -849,7 +853,7 @@ $.e...">
   <span class="p">}</span>
 <span class="p">};</span></code></pre></figure>
 
-<p>This instead is what goes in the <code class="highlighter-rouge">main.js</code></p>
+<p>This instead is what goes in the <code class="language-plaintext highlighter-rouge">main.js</code></p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/**
  * Load JSX file into the scripting context of the product. All the jsx files in
@@ -857,34 +861,34 @@ $.e...">
  */</span>
 <span class="kd">function</span> <span class="nx">loadJSX</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
-  <span class="kd">var</span> <span class="nx">extensionRoot</span> <span class="o">=</span> <span class="nx">csInterface</span><span class="p">.</span><span class="nx">getSystemPath</span><span class="p">(</span><span class="nx">SystemPath</span><span class="p">.</span><span class="nx">EXTENSION</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"/jsx/"</span><span class="p">;</span>
-  <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'$._ext.evalFiles("'</span> <span class="o">+</span> <span class="nx">extensionRoot</span> <span class="o">+</span> <span class="s1">'")'</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">extensionRoot</span> <span class="o">=</span> <span class="nx">csInterface</span><span class="p">.</span><span class="nx">getSystemPath</span><span class="p">(</span><span class="nx">SystemPath</span><span class="p">.</span><span class="nx">EXTENSION</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/jsx/</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">$._ext.evalFiles("</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">extensionRoot</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">")</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
-<p><code class="highlighter-rouge">loadJSX()</code> (for instance called in the <code class="highlighter-rouge">init()</code> function) will evaluate all the JSX files in the predefined folder.</p>
+<p><code class="language-plaintext highlighter-rouge">loadJSX()</code> (for instance called in the <code class="language-plaintext highlighter-rouge">init()</code> function) will evaluate all the JSX files in the predefined folder.</p>
 
 <h3 id="bonus---system-paths">Bonus - System Paths</h3>
 
 <p>You may be interested in these ones too (from CSInterface-4.0.0.js)</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/** Identifies the path to user data.  */</span>
-<span class="nx">SystemPath</span><span class="p">.</span><span class="nx">USER_DATA</span> <span class="o">=</span> <span class="s2">"userData"</span><span class="p">;</span>
+<span class="nx">SystemPath</span><span class="p">.</span><span class="nx">USER_DATA</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">userData</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="cm">/** Identifies the path to common files for Adobe applications.  */</span>
-<span class="nx">SystemPath</span><span class="p">.</span><span class="nx">COMMON_FILES</span> <span class="o">=</span> <span class="s2">"commonFiles"</span><span class="p">;</span>			
+<span class="nx">SystemPath</span><span class="p">.</span><span class="nx">COMMON_FILES</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">commonFiles</span><span class="dl">"</span><span class="p">;</span>			
 
 <span class="cm">/** Identifies the path to the user's default document folder.  */</span>
-<span class="nx">SystemPath</span><span class="p">.</span><span class="nx">MY_DOCUMENTS</span> <span class="o">=</span> <span class="s2">"myDocuments"</span><span class="p">;</span>
+<span class="nx">SystemPath</span><span class="p">.</span><span class="nx">MY_DOCUMENTS</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">myDocuments</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="cm">/** Identifies the path to current extension.  */</span>
 <span class="cm">/** DEPRECATED, PLEASE USE EXTENSION INSTEAD.  */</span>
-<span class="nx">SystemPath</span><span class="p">.</span><span class="nx">APPLICATION</span> <span class="o">=</span> <span class="s2">"application"</span><span class="p">;</span>
+<span class="nx">SystemPath</span><span class="p">.</span><span class="nx">APPLICATION</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">application</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="cm">/** Identifies the path to current extension.  */</span>
-<span class="nx">SystemPath</span><span class="p">.</span><span class="nx">EXTENSION</span> <span class="o">=</span> <span class="s2">"extension"</span><span class="p">;</span>
+<span class="nx">SystemPath</span><span class="p">.</span><span class="nx">EXTENSION</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">extension</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="cm">/** Identifies the path to hosting application's executable.  */</span>
-<span class="nx">SystemPath</span><span class="p">.</span><span class="nx">HOST_APPLICATION</span> <span class="o">=</span> <span class="s2">"hostApplication"</span><span class="p">;</span></code></pre></figure>
+<span class="nx">SystemPath</span><span class="p">.</span><span class="nx">HOST_APPLICATION</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hostApplication</span><span class="dl">"</span><span class="p">;</span></code></pre></figure>
 
 <hr />
 

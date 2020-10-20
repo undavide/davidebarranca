@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -805,9 +809,9 @@
         <p>I’m no big fan of ESTK for a variety of reasons; when I finally replaced my old MacBookPro with a newer model with Retina display I got even more disappointed: pixels everywhere! There’s a quick fix/hack that I’d like to show you (also as a reminder for my future self, just in case ESTK is still going to be around in 2021 when I’ll get a newer Mac). You may want to right-click the app, select Info and uncheck the “Open in Low Resolution” checkbox, alas it is grayed out. Don’t worry.</p>
 
 <ul>
-  <li>Grab the ExtendScript Toolkit.app, right click it and select <code class="highlighter-rouge">Show Package content</code></li>
-  <li>Go to <code class="highlighter-rouge">Content &gt; Info.plist</code> and open it with the text editor of your choice.</li>
-  <li>Go to the line before the closing <code class="highlighter-rouge">&lt;/dict&gt;</code> tag and add the following two highlighted lines:</li>
+  <li>Grab the ExtendScript Toolkit.app, right click it and select <code class="language-plaintext highlighter-rouge">Show Package content</code></li>
+  <li>Go to <code class="language-plaintext highlighter-rouge">Content &gt; Info.plist</code> and open it with the text editor of your choice.</li>
+  <li>Go to the line before the closing <code class="language-plaintext highlighter-rouge">&lt;/dict&gt;</code> tag and add the following two highlighted lines:</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
@@ -826,7 +830,7 @@
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">touch</span> /Applications/Adobe<span class="se">\ </span>ExtendScript<span class="se">\ </span>Toolkit<span class="se">\ </span>CC/ExtendScript<span class="se">\ </span>Toolkit.app</code></pre></figure>
 
-<p>(hint: type <code class="highlighter-rouge">touch</code>  and then drag the <code class="highlighter-rouge">ExtendScript ToolKit.app</code> in the Terminal window to save you typing the rest - we’re all born lazy). Now voilà, you open ESTK: text is crisp and clear and confetti fall from above. Cheers!</p>
+<p>(hint: type <code class="language-plaintext highlighter-rouge">touch</code>  and then drag the <code class="language-plaintext highlighter-rouge">ExtendScript ToolKit.app</code> in the Terminal window to save you typing the rest - we’re all born lazy). Now voilà, you open ESTK: text is crisp and clear and confetti fall from above. Cheers!</p>
 
     </div>
 

@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -802,7 +806,7 @@
     </header>
 
     <div class="post-content">
-        <p>There’s a second way to listen to Photoshop Events from an HTML Panel - i.e. using the PSHostAdapters libraries - and today’s tip will show you how. In <a href="/2014/02/html-panels-tips-7-events-photoshopregisterevent-photoshopcallback/" title="HTML Panels Tips: #7 Photoshop Events, Take 1">Tip #7</a> I’ve demoed how using <code class="highlighter-rouge">PhotoshopRegisterEvent</code> let you listen to events and register callbacks: but that is just one way out of the two available (as it was back in the Flash land) so let’s find the second one.</p>
+        <p>There’s a second way to listen to Photoshop Events from an HTML Panel - i.e. using the PSHostAdapters libraries - and today’s tip will show you how. In <a href="/2014/02/html-panels-tips-7-events-photoshopregisterevent-photoshopcallback/" title="HTML Panels Tips: #7 Photoshop Events, Take 1">Tip #7</a> I’ve demoed how using <code class="language-plaintext highlighter-rouge">PhotoshopRegisterEvent</code> let you listen to events and register callbacks: but that is just one way out of the two available (as it was back in the Flash land) so let’s find the second one.</p>
 
 <p><img src="/wp-content/uploads/2014/02/PSEvents.png" alt="PSEvents" /></p>
 
@@ -812,13 +816,13 @@
 
 <h3 id="libraries">Libraries</h3>
 
-<p>You need two PSHostAdapter libraries, that you can grab from the Extension Builder installation (in the Eclipse application): they are <code class="highlighter-rouge">ps_host_adapter-2.0.js</code> and (depending on your OS) <code class="highlighter-rouge">PSHostAdapter.plugin</code> or <code class="highlighter-rouge">PSHostAdapter.plugin.8li</code>. The following paths come from my OSX installation, for PC users it shouldn’t be any different - just use the Eclipse application as the root:</p>
+<p>You need two PSHostAdapter libraries, that you can grab from the Extension Builder installation (in the Eclipse application): they are <code class="language-plaintext highlighter-rouge">ps_host_adapter-2.0.js</code> and (depending on your OS) <code class="language-plaintext highlighter-rouge">PSHostAdapter.plugin</code> or <code class="language-plaintext highlighter-rouge">PSHostAdapter.plugin.8li</code>. The following paths come from my OSX installation, for PC users it shouldn’t be any different - just use the Eclipse application as the root:</p>
 
-<p><code class="highlighter-rouge">/Applications/eclipse/plugins/com.adobe.cside.html.libsinstaller_1.0.0.201307260955/archive/jsar-1.0/release/ps_host_adapter-2.0.js</code></p>
+<p><code class="language-plaintext highlighter-rouge">/Applications/eclipse/plugins/com.adobe.cside.html.libsinstaller_1.0.0.201307260955/archive/jsar-1.0/release/ps_host_adapter-2.0.js</code></p>
 
-<p><code class="highlighter-rouge">/Applications/eclipse/plugins/com.adobe.cside.html.libsinstaller_1.0.0.201307260955/archive/csadapters-3.0/ps_host_adapter/</code></p>
+<p><code class="language-plaintext highlighter-rouge">/Applications/eclipse/plugins/com.adobe.cside.html.libsinstaller_1.0.0.201307260955/archive/csadapters-3.0/ps_host_adapter/</code></p>
 
-<p>You should copy the <code class="highlighter-rouge">ps_host_adapter-2.0.js</code> somewhere in your project and include it in the index.html. Conversely, <code class="highlighter-rouge">PSHostAdapter.plugin</code> or <code class="highlighter-rouge">PSHostAdapter.plugin.8li</code> file must go in the Photoshop Plug-Ins folder (<code class="highlighter-rouge">Plug-Ins/Automate/</code> works just fine on my OSX installation).</p>
+<p>You should copy the <code class="language-plaintext highlighter-rouge">ps_host_adapter-2.0.js</code> somewhere in your project and include it in the index.html. Conversely, <code class="language-plaintext highlighter-rouge">PSHostAdapter.plugin</code> or <code class="language-plaintext highlighter-rouge">PSHostAdapter.plugin.8li</code> file must go in the Photoshop Plug-Ins folder (<code class="language-plaintext highlighter-rouge">Plug-Ins/Automate/</code> works just fine on my OSX installation).</p>
 
 <h3 id="html">HTML</h3>
 
@@ -857,10 +861,10 @@
 
 <h3 id="javascript"> Javascript</h3>
 
-<p>Compared to <a href="/2014/02/html-panels-tips-7-events-photoshopregisterevent-photoshopcallback/" title="HTML Panels Tips: #7 Photoshop Events, Take 1">Photoshop Events, Take 1</a> the <code class="highlighter-rouge">Register()</code> function is where things are different - the rest of the code is unchanged. It’s a matter of adding an Event Listener to a <code class="highlighter-rouge">PSEventAdapter</code> Instance, passing either a constant (see in <code class="highlighter-rouge">ps_host_adapter-2.0.js</code> for a list of the available ones) or an event TypeID, which you can grab as usual from the Scripting Listener log. The <code class="highlighter-rouge">PSCallback()</code> function communicates then with the JSX the <code class="highlighter-rouge">event.type</code> in order to retrieve the StringID, which is passed to the Text Area.</p>
+<p>Compared to <a href="/2014/02/html-panels-tips-7-events-photoshopregisterevent-photoshopcallback/" title="HTML Panels Tips: #7 Photoshop Events, Take 1">Photoshop Events, Take 1</a> the <code class="language-plaintext highlighter-rouge">Register()</code> function is where things are different - the rest of the code is unchanged. It’s a matter of adding an Event Listener to a <code class="language-plaintext highlighter-rouge">PSEventAdapter</code> Instance, passing either a constant (see in <code class="language-plaintext highlighter-rouge">ps_host_adapter-2.0.js</code> for a list of the available ones) or an event TypeID, which you can grab as usual from the Scripting Listener log. The <code class="language-plaintext highlighter-rouge">PSCallback()</code> function communicates then with the JSX the <code class="language-plaintext highlighter-rouge">event.type</code> in order to retrieve the StringID, which is passed to the Text Area.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
   <span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
 
@@ -885,15 +889,15 @@
 
     <span class="nx">themeManager</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
 
-    <span class="nx">$</span><span class="p">(</span><span class="s1">'#registerEvent'</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">Register</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s1">':checked'</span><span class="p">));</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#registerEvent</span><span class="dl">'</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">Register</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">'</span><span class="s1">:checked</span><span class="dl">'</span><span class="p">));</span>
     <span class="p">});</span>
   <span class="p">}</span>
 
   <span class="kd">function</span> <span class="nx">PSCallback</span><span class="p">(</span><span class="nx">csEvent</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// send to JSX to convert typeIDs to stringIDs</span>
-    <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'convertTypeID('</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">csEvent</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s1">'#result'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+    <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">convertTypeID(</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">csEvent</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">)</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#result</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
     <span class="p">});</span>
   <span class="p">}</span>
 

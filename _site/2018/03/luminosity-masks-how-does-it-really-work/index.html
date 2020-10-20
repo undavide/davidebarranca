@@ -762,6 +762,10 @@ Everywhe...">
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -821,7 +825,7 @@ Everywhe...">
 
 <h3 id="step-1--it-all-starts-with-a-grayscale-image">Step 1 – It all starts with a Grayscale image</h3>
 
-<p>You can have images with all the colors in the world, but the first step in creating a Luminosity Mask is getting a Grayscale image (a Single Channel Image). In most cases, it means to calculate the Luminosity Channel of the given image. Each one has his own recipe: most actions/panels based solutions use Photoshop Luminosity selection (<code class="highlighter-rouge">Ctrl + Left Mouse Click</code> on the RGB Channel in the Channels Palette).</p>
+<p>You can have images with all the colors in the world, but the first step in creating a Luminosity Mask is getting a Grayscale image (a Single Channel Image). In most cases, it means to calculate the Luminosity Channel of the given image. Each one has his own recipe: most actions/panels based solutions use Photoshop Luminosity selection (<code class="language-plaintext highlighter-rouge">Ctrl + Left Mouse Click</code> on the RGB Channel in the Channels Palette).</p>
 
 <p><img src="/wp-content/uploads/2018/03/GrayScaleImageGeneration-700x216.png" alt="" /></p>
 
@@ -833,9 +837,9 @@ Everywhe...">
 
 <p><img src="/wp-content/uploads/2018/03/MaskGenerator-700x351.png" alt="" /></p>
 
-<p>The above Figure represents a <strong>Mask Generator</strong>. The input pixels values are in the upper section. They get processed by this <em>black box</em>, which operates based on a function <script type="math/tex">f \left( x \right)</script> and the pixel output that is generated is found in the bottom section. At the output, everything is black (Low Values) with the exception of pixels around 128, that are mapped to white (High Values). This suggests that a “Midtones Mask” has been generated. Simple fact: images are <em>discrete</em> in their values. For instance, in the case of an 8bit image, the discrete values are in the range {0, 1, …, 254, 255}, occupying 256 available slots, i.e. <script type="math/tex">{2}^{8}</script></p>
+<p>The above Figure represents a <strong>Mask Generator</strong>. The input pixels values are in the upper section. They get processed by this <em>black box</em>, which operates based on a function \(f \left( x \right)\) and the pixel output that is generated is found in the bottom section. At the output, everything is black (Low Values) with the exception of pixels around 128, that are mapped to white (High Values). This suggests that a “Midtones Mask” has been generated. Simple fact: images are <em>discrete</em> in their values. For instance, in the case of an 8bit image, the discrete values are in the range {0, 1, …, 254, 255}, occupying 256 available slots, i.e. \({2}^{8}\)</p>
 
-<p><strong>So a <em>Mask Generator</em> (Luminosity Mask Generator) has to designate an output value for each value in the input discrete <em>domain</em>.</strong> If the output image is also, let’s say 8 Bit, then the output values are also within the range <code class="highlighter-rouge">{0, 1, ..., 254, 255}</code> which means one need to map 256 values into 256 values. In the Computer Science world this process is done using a <a href="https://en.wikipedia.org/wiki/Lookup_table">Look Up Table (LUT)</a>. Over time some masks got their own naming according to the properties of the values assigned:</p>
+<p><strong>So a <em>Mask Generator</em> (Luminosity Mask Generator) has to designate an output value for each value in the input discrete <em>domain</em>.</strong> If the output image is also, let’s say 8 Bit, then the output values are also within the range <code class="language-plaintext highlighter-rouge">{0, 1, ..., 254, 255}</code> which means one need to map 256 values into 256 values. In the Computer Science world this process is done using a <a href="https://en.wikipedia.org/wiki/Lookup_table">Look Up Table (LUT)</a>. Over time some masks got their own naming according to the properties of the values assigned:</p>
 
 <ul>
   <li>If it designates high output values to low input values, and low values to the rest it is called <strong>Shadows Mask Generator</strong>. The output mask is called <strong>Shadows Luminosity Mask</strong> which reveals shadows and blocks everything else.</li>
@@ -847,13 +851,13 @@ Everywhe...">
 
 <h3 id="examples">Examples</h3>
 
-<p>Let’s do some stretching by examining two simple examples of main building blocks in the Luminosity Mask world. We will assume an 8bit image, hence input and output pixel values are given by <code class="highlighter-rouge">{0, 1, 2, ..., 254, 255}</code>. The most basic Mapping / LUT / Function (all are different names to the same idea) is the <em>identity</em> mapping:</p>
+<p>Let’s do some stretching by examining two simple examples of main building blocks in the Luminosity Mask world. We will assume an 8bit image, hence input and output pixel values are given by <code class="language-plaintext highlighter-rouge">{0, 1, 2, ..., 254, 255}</code>. The most basic Mapping / LUT / Function (all are different names to the same idea) is the <em>identity</em> mapping:</p>
 
-<script type="math/tex; mode=display">f \left( x \right) = x</script>
+\[f \left( x \right) = x\]
 
 <p>Namely, the output value – that is $ f \left( x \right) $ – is identical to the input value, which is $ x $. This mask is called <strong>Highlights Luminosity Mask</strong>. Why? Because low input values (Shadows) are mapped to low output values (Dark pixels), and high input values (Highlights) are mapped to high output values (Light pixes). The result is a mask where shadows are dark (not selected) and highlights are light (selected) – hence the name. Another basic mask is given by the negative (inverse) of the Highlights Mask which is the <strong>Shadows Luminosity Mask</strong>:</p>
 
-<script type="math/tex; mode=display">f \left( x \right) = 255 - x</script>
+\[f \left( x \right) = 255 - x\]
 
 <p>Here, to low input values (shadows) correspond high output values, and to high input values correspond high output values (light pixes). The result is a mask where shadows are light (selected) and highlights are dark (not selected). Using those 2 building blocks one could generate many other masks targeting different Tonal Ranges – something we will get to later.</p>
 
@@ -861,7 +865,7 @@ Everywhe...">
 
 <p>As can be seen above, the Midtones Mask is generated by scaled multiplication of the Highlights Mask and the Shadows Mask. This is one way to achieve this, not necessarily what’s used usually (we’ll talk about that). Moreover, as can be seen by the Harmonic Function, one could do any mapping one wish.</p>
 
-<p><strong>Remark:</strong> in practice, data is scaled into <code class="highlighter-rouge">[0, 1]</code> range as operations, such as multiplication, makes more sense in that domain. So the range <code class="highlighter-rouge">{0, 1, 2, ..., 254, 255}</code> becomes <code class="highlighter-rouge">{0 / 255, 1 / 255, 2 /255, ..., 254 / 255, 255 / 255}</code>. This is exactly what’s done in the above figure.</p>
+<p><strong>Remark:</strong> in practice, data is scaled into <code class="language-plaintext highlighter-rouge">[0, 1]</code> range as operations, such as multiplication, makes more sense in that domain. So the range <code class="language-plaintext highlighter-rouge">{0, 1, 2, ..., 254, 255}</code> becomes <code class="language-plaintext highlighter-rouge">{0 / 255, 1 / 255, 2 /255, ..., 254 / 255, 255 / 255}</code>. This is exactly what’s done in the above figure.</p>
 
 <h2 id="in-practice">In Practice</h2>
 
@@ -884,7 +888,7 @@ Everywhe...">
 
 <h3 id="calculations-tool">Calculations Tool</h3>
 
-<p>Using <a href="https://helpx.adobe.com/photoshop/using/channel-calculations.html">Calculations Tool</a> one could apply simple Math operations on Layer / Channel / etc… Namely we can combine Math operations (Add, Subtract, Multiply and even more esoteric functions) by repetitive use of the Calculation tool. For instance, using the Calculation Tool we could easily generate the Midtones Mask from above by multiplying a layer and its inverse and scaling result by 4. So it gives us the option to use <code class="highlighter-rouge">+</code>, <code class="highlighter-rouge">–</code>, <code class="highlighter-rouge">*</code>, <code class="highlighter-rouge">/</code> on images, but not much more than that.</p>
+<p>Using <a href="https://helpx.adobe.com/photoshop/using/channel-calculations.html">Calculations Tool</a> one could apply simple Math operations on Layer / Channel / etc… Namely we can combine Math operations (Add, Subtract, Multiply and even more esoteric functions) by repetitive use of the Calculation tool. For instance, using the Calculation Tool we could easily generate the Midtones Mask from above by multiplying a layer and its inverse and scaling result by 4. So it gives us the option to use <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">–</code>, <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">/</code> on images, but not much more than that.</p>
 
 <h2 id="comparison">Comparison</h2>
 
@@ -942,7 +946,7 @@ Everywhe...">
 
 <p>As one could see above, using Addition, Subtraction and Multiplication (Intersection), all operations available on Layers / Channels / Masks in Photoshop, one could easily generate all those “Classic” Luminosity Masks one could find in the wild (wild world of the Luminosity Masks Panels). Those with <em>sharp eye</em> would pay attention to something strange: Midtones Mask 001 is all black, see the function below:</p>
 
-<script type="math/tex; mode=display">f \left( x \right) = 1 - x - ( 1 - x ) = 1 - 1 + x - x = 0</script>
+\[f \left( x \right) = 1 - x - ( 1 - x ) = 1 - 1 + x - x = 0\]
 
 <p>Yet in practice, in all products out there… It is not?! So what’s going on?  Clearly they all state that the Midtones Mask is created by subtracting the Highlights and Shadows masks from the all white mask. So it is, by all means, should be all black mask while it is not. Well, what you see above is ideal Masks, while <strong>Photoshop can not generate them in this quality</strong>.  The current methods to create them usually use Photoshop’s steps which aren’t doing this exact Math. We’ll talk more on those pitfalls and strange behavior of classic Luminosity Masks (and their generation) in the next writing.</p>
 

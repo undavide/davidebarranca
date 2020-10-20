@@ -757,6 +757,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -808,13 +812,13 @@
     </header>
 
     <div class="post-content">
-        <p>Today’s tip is about integration of the Topcoat CSS library with <code class="highlighter-rouge">themeManager.js</code> in Photoshop HTML Panels. Adobe’s <a href="http://topcoat.io" title="Topcoat">Topcoat</a> is:</p>
+        <p>Today’s tip is about integration of the Topcoat CSS library with <code class="language-plaintext highlighter-rouge">themeManager.js</code> in Photoshop HTML Panels. Adobe’s <a href="http://topcoat.io" title="Topcoat">Topcoat</a> is:</p>
 
 <blockquote>
   <p>a brand new open source CSS library designed to help developers build web apps with an emphasis on speed. It evolved from the Adobe design language developed for Brackets, Edge Reflow, and feedback from the PhoneGap app developer community.</p>
 </blockquote>
 
-<p>It comes with <a href="http://topcoat.io/topcoat/index.html" title="Topcoat Desktop theme">Desktop</a> and <a href="http://topcoat.io/topcoat/topcoat-mobile-dark.html" title="Topcoat Mobile theme">Mobile</a> themes, both in Light of Dark shades - a really neat design. HTML Panels have <em>sort of</em> a built-in system to keep in sync with Photoshop interface (four shades, from light gray to black). I’ve said “sort of” because you need to explicitly set the functions, but they’re provided by default by both Extension Builder and <a href="http://davidderaedt.github.io/ccext-website/" title="CC Extensibility Helpers">boilerplate code</a> by <a href="https://twitter.com/davidderaedt" title="David Deraedt on Twitter">David Deraedt</a>. Basically it’s a matter of triggering some styling when the PS Interface changes - you do this listening for the <code class="highlighter-rouge">CSInterface.THEME_COLOR_CHANGED_EVENT</code>:</p>
+<p>It comes with <a href="http://topcoat.io/topcoat/index.html" title="Topcoat Desktop theme">Desktop</a> and <a href="http://topcoat.io/topcoat/topcoat-mobile-dark.html" title="Topcoat Mobile theme">Mobile</a> themes, both in Light of Dark shades - a really neat design. HTML Panels have <em>sort of</em> a built-in system to keep in sync with Photoshop interface (four shades, from light gray to black). I’ve said “sort of” because you need to explicitly set the functions, but they’re provided by default by both Extension Builder and <a href="http://davidderaedt.github.io/ccext-website/" title="CC Extensibility Helpers">boilerplate code</a> by <a href="https://twitter.com/davidderaedt" title="David Deraedt on Twitter">David Deraedt</a>. Basically it’s a matter of triggering some styling when the PS Interface changes - you do this listening for the <code class="language-plaintext highlighter-rouge">CSInterface.THEME_COLOR_CHANGED_EVENT</code>:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// themeManager.js</span>
 
@@ -835,7 +839,7 @@
 
 <p><img src="/wp-content/uploads/2014/02/hostObject.png" alt="hostObject" /></p>
 
-<p>The above code first runs <code class="highlighter-rouge">updateThemeWithAppSkinInfo()</code>, (the function that performs the actual styling - changes CSS rules, etc)  passing as a parameter an <code class="highlighter-rouge">appSkinInfo</code> object. It contains various host environment (i.e. Photoshop) information, as the screenshot from the Chrome Developer Tools console shows on the right. Depending on these values, you might decide for instance to change the background of your HTML Panel to match the Photoshop own <code class="highlighter-rouge">panelBackgroundColor</code> (or font size, color, whatever).</p>
+<p>The above code first runs <code class="language-plaintext highlighter-rouge">updateThemeWithAppSkinInfo()</code>, (the function that performs the actual styling - changes CSS rules, etc)  passing as a parameter an <code class="language-plaintext highlighter-rouge">appSkinInfo</code> object. It contains various host environment (i.e. Photoshop) information, as the screenshot from the Chrome Developer Tools console shows on the right. Depending on these values, you might decide for instance to change the background of your HTML Panel to match the Photoshop own <code class="language-plaintext highlighter-rouge">panelBackgroundColor</code> (or font size, color, whatever).</p>
 
 <p>Please note: Topcoat already comes in two flavors (Light and Dark) so you can always decide to switch to the corresponding CSS depending on the Photoshop’s interface color. You’d pick Topcoat’s Light for the PS LigthGray and MidGray, and Topcoat’s Dark for the PS DarkGray and Black interface. I personally don’t like this option. Topcoat’s background color doesn’t match with Photoshop (I admit I’m a bit picky on this - after all we’re adapting a library that’s not been built for this very purpose). Let’s call 1, 2, 3, 4 the PS interface shades: Topcoat Dark is too light for 1 and too dark for 2, while Topcoat Light is too light for 3 and too dark for 4. I’ll show you in the following example how to better integrate the two systems.</p>
 
@@ -879,10 +883,10 @@
 
 <h3 id="javascript">Javascript</h3>
 
-<p>The main.js contains (besides stuff I need for JSX operations - the actual routines of my panel) a call to <code class="highlighter-rouge">themeManager.init()</code>. The <code class="highlighter-rouge">themeManager.js</code> is as follows:</p>
+<p>The main.js contains (besides stuff I need for JSX operations - the actual routines of my panel) a call to <code class="language-plaintext highlighter-rouge">themeManager.init()</code>. The <code class="language-plaintext highlighter-rouge">themeManager.js</code> is as follows:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">themeManager</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
   <span class="c1">//Convert the Color object to string in hexadecimal format;</span>
   <span class="kd">function</span> <span class="nx">toHex</span><span class="p">(</span><span class="nx">color</span><span class="p">,</span> <span class="nx">delta</span><span class="p">)</span> <span class="p">{</span>
@@ -895,9 +899,9 @@
       <span class="p">}</span>            
       <span class="nx">computedValue</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">computedValue</span><span class="p">);</span>
       <span class="nx">computedValue</span> <span class="o">=</span> <span class="nx">computedValue</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
-      <span class="k">return</span> <span class="nx">computedValue</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span> <span class="p">?</span> <span class="s2">"0"</span> <span class="o">+</span> <span class="nx">computedValue</span> <span class="p">:</span> <span class="nx">computedValue</span><span class="p">;</span>
+      <span class="k">return</span> <span class="nx">computedValue</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span> <span class="p">?</span> <span class="dl">"</span><span class="s2">0</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">computedValue</span> <span class="p">:</span> <span class="nx">computedValue</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="kd">var</span> <span class="nx">hex</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">hex</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">color</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">hex</span> <span class="o">=</span> <span class="nx">computeValue</span><span class="p">(</span><span class="nx">color</span><span class="p">.</span><span class="nx">red</span><span class="p">,</span> <span class="nx">delta</span><span class="p">)</span> <span class="o">+</span> <span class="nx">computeValue</span><span class="p">(</span><span class="nx">color</span><span class="p">.</span><span class="nx">green</span><span class="p">,</span> <span class="nx">delta</span><span class="p">)</span> <span class="o">+</span> <span class="nx">computeValue</span><span class="p">(</span><span class="nx">color</span><span class="p">.</span><span class="nx">blue</span><span class="p">,</span> <span class="nx">delta</span><span class="p">);</span>
     <span class="p">}</span>
@@ -911,7 +915,7 @@
       <span class="k">if</span> <span class="p">(</span><span class="nx">stylesheet</span><span class="p">.</span><span class="nx">addRule</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">stylesheet</span><span class="p">.</span><span class="nx">addRule</span><span class="p">(</span><span class="nx">selector</span><span class="p">,</span> <span class="nx">rule</span><span class="p">);</span>
       <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">stylesheet</span><span class="p">.</span><span class="nx">insertRule</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">stylesheet</span><span class="p">.</span><span class="nx">insertRule</span><span class="p">(</span><span class="nx">selector</span> <span class="o">+</span> <span class="s1">' { '</span> <span class="o">+</span> <span class="nx">rule</span> <span class="o">+</span> <span class="s1">' }'</span><span class="p">,</span> <span class="nx">stylesheet</span><span class="p">.</span><span class="nx">cssRules</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
+        <span class="nx">stylesheet</span><span class="p">.</span><span class="nx">insertRule</span><span class="p">(</span><span class="nx">selector</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> { </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">rule</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> }</span><span class="dl">'</span><span class="p">,</span> <span class="nx">stylesheet</span><span class="p">.</span><span class="nx">cssRules</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">}</span>
@@ -921,20 +925,20 @@
     <span class="c1">// console.log(appSkinInfo)</span>
     <span class="kd">var</span> <span class="nx">panelBgColor</span> <span class="o">=</span> <span class="nx">appSkinInfo</span><span class="p">.</span><span class="nx">panelBackgroundColor</span><span class="p">.</span><span class="nx">color</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">bgdColor</span> <span class="o">=</span> <span class="nx">toHex</span><span class="p">(</span><span class="nx">panelBgColor</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">fontColor</span> <span class="o">=</span> <span class="s2">"F0F0F0"</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">fontColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">F0F0F0</span><span class="dl">"</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">panelBgColor</span><span class="p">.</span><span class="nx">red</span> <span class="o">&gt;</span> <span class="mi">122</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">fontColor</span> <span class="o">=</span> <span class="s2">"000000"</span><span class="p">;</span>
+      <span class="nx">fontColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">000000</span><span class="dl">"</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kd">var</span> <span class="nx">styleId</span> <span class="o">=</span> <span class="s2">"hostStyle"</span><span class="p">;</span>
-    <span class="nx">addRule</span><span class="p">(</span><span class="nx">styleId</span><span class="p">,</span> <span class="s2">"body"</span><span class="p">,</span> <span class="s2">"background-color:"</span> <span class="o">+</span> <span class="s2">"#"</span> <span class="o">+</span> <span class="nx">bgdColor</span><span class="p">);</span>
-    <span class="nx">addRule</span><span class="p">(</span><span class="nx">styleId</span><span class="p">,</span> <span class="s2">"body"</span><span class="p">,</span> <span class="s2">"color:"</span> <span class="o">+</span> <span class="s2">"#"</span> <span class="o">+</span> <span class="nx">fontColor</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">styleId</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hostStyle</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">addRule</span><span class="p">(</span><span class="nx">styleId</span><span class="p">,</span> <span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">background-color:</span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">#</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">bgdColor</span><span class="p">);</span>
+    <span class="nx">addRule</span><span class="p">(</span><span class="nx">styleId</span><span class="p">,</span> <span class="dl">"</span><span class="s2">body</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">color:</span><span class="dl">"</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">#</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">fontColor</span><span class="p">);</span>
 
     <span class="kd">var</span> <span class="nx">isLight</span> <span class="o">=</span> <span class="nx">appSkinInfo</span><span class="p">.</span><span class="nx">panelBackgroundColor</span><span class="p">.</span><span class="nx">color</span><span class="p">.</span><span class="nx">red</span> <span class="o">&gt;=</span> <span class="mi">127</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">isLight</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s2">"#theme"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"href"</span><span class="p">,</span> <span class="s2">"css/light.css"</span><span class="p">);</span>
+      <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#theme</span><span class="dl">"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">href</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">css/light.css</span><span class="dl">"</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s2">"#theme"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"href"</span><span class="p">,</span> <span class="s2">"css/dark.css"</span><span class="p">);</span>
+      <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#theme</span><span class="dl">"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">href</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">css/dark.css</span><span class="dl">"</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
@@ -955,11 +959,11 @@
 
 <span class="p">}());</span></code></pre></figure>
 
-<p>The <code class="highlighter-rouge">toHex()</code> and <code class="highlighter-rouge">addRule()</code> are utility functions, while <code class="highlighter-rouge">init()</code> (orders the styling update and adds a theme change event listener) and <code class="highlighter-rouge">onAppThemeColorChanged()</code> (retrieves the AppSkinInfo object and pass it forwards) are the same as in the first code chunk, up in the page. <code class="highlighter-rouge">updateThemeWithAppSkinInfo()</code> extracts from the <code class="highlighter-rouge">AppSkinInfo</code> object the panels background color and set new <code class="highlighter-rouge">background-color</code> and <code class="highlighter-rouge">color</code> rules in the stylesheet with <code class="highlighter-rouge">id="hostStyle"</code>. Then, depending on the Red component of the background color (an arbitrary choice) it determines whether the interface <code class="highlighter-rouge">isLight</code> or not, and load a dark or light Topcoat CSS using jQuery.</p>
+<p>The <code class="language-plaintext highlighter-rouge">toHex()</code> and <code class="language-plaintext highlighter-rouge">addRule()</code> are utility functions, while <code class="language-plaintext highlighter-rouge">init()</code> (orders the styling update and adds a theme change event listener) and <code class="language-plaintext highlighter-rouge">onAppThemeColorChanged()</code> (retrieves the AppSkinInfo object and pass it forwards) are the same as in the first code chunk, up in the page. <code class="language-plaintext highlighter-rouge">updateThemeWithAppSkinInfo()</code> extracts from the <code class="language-plaintext highlighter-rouge">AppSkinInfo</code> object the panels background color and set new <code class="language-plaintext highlighter-rouge">background-color</code> and <code class="language-plaintext highlighter-rouge">color</code> rules in the stylesheet with <code class="language-plaintext highlighter-rouge">id="hostStyle"</code>. Then, depending on the Red component of the background color (an arbitrary choice) it determines whether the interface <code class="language-plaintext highlighter-rouge">isLight</code> or not, and load a dark or light Topcoat CSS using jQuery.</p>
 
 <h3 id="css">CSS</h3>
 
-<p>The HTML loads two CSS files, even if the panel deals with a total of three. The one with <code class="highlighter-rouge">id="hostStyle"</code> is <strong>theme.css</strong> and contains  minor tweaks - it’s the target of the <code class="highlighter-rouge">addRule()</code> function, which will add there <code class="highlighter-rouge">background-color</code> and <code class="highlighter-rouge">color</code> rules depending on the PS interface theme (lightGray, darkGray, etc). Then there’s <code class="highlighter-rouge">dark.css</code> and <code class="highlighter-rouge">light.css</code> - which are the original <code class="highlighter-rouge">topcoat-desktop-dark.css</code> and <code class="highlighter-rouge">topcoat-desktop-light.css</code> renamed. In order not to conflict with styles set via <code class="highlighter-rouge">themeManager.js</code> I’ve commented out some bits in the body section of both of them:</p>
+<p>The HTML loads two CSS files, even if the panel deals with a total of three. The one with <code class="language-plaintext highlighter-rouge">id="hostStyle"</code> is <strong>theme.css</strong> and contains  minor tweaks - it’s the target of the <code class="language-plaintext highlighter-rouge">addRule()</code> function, which will add there <code class="language-plaintext highlighter-rouge">background-color</code> and <code class="language-plaintext highlighter-rouge">color</code> rules depending on the PS interface theme (lightGray, darkGray, etc). Then there’s <code class="language-plaintext highlighter-rouge">dark.css</code> and <code class="language-plaintext highlighter-rouge">light.css</code> - which are the original <code class="language-plaintext highlighter-rouge">topcoat-desktop-dark.css</code> and <code class="language-plaintext highlighter-rouge">topcoat-desktop-light.css</code> renamed. In order not to conflict with styles set via <code class="language-plaintext highlighter-rouge">themeManager.js</code> I’ve commented out some bits in the body section of both of them:</p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* dark.css and light.css */</span>
 <span class="nt">body</span> <span class="p">{</span>

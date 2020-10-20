@@ -753,6 +753,10 @@ The Google Code Crypto-JS page titles “JavaScript implementations of standard 
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -822,11 +826,11 @@ The Google Code <a href="http://code.google.com/p/crypto-js" title="Crypto JS ho
 
 <p>Components files have dependencies: you have to link at least core.js, while rollups are quite self contained. In Extendscript, save a test.jsx file alongside (or within) the CryptoJS folder and set the preprocessing directives:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="err">#</span><span class="nx">include</span> <span class="s2">"components/core-min.js"</span>
-<span class="err">#</span><span class="nx">include</span> <span class="s2">"rollups/sha1.js"</span>
-<span class="err">#</span><span class="nx">include</span> <span class="s2">"rollups/aes.js"</span>
-<span class="err">#</span><span class="nx">include</span> <span class="s2">"components/enc-base64-min.js"</span>
-<span class="err">#</span><span class="nx">include</span> <span class="s2">"components/enc-utf16-min.js"</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="err">#</span><span class="nx">include</span> <span class="dl">"</span><span class="s2">components/core-min.js</span><span class="dl">"</span>
+<span class="err">#</span><span class="nx">include</span> <span class="dl">"</span><span class="s2">rollups/sha1.js</span><span class="dl">"</span>
+<span class="err">#</span><span class="nx">include</span> <span class="dl">"</span><span class="s2">rollups/aes.js</span><span class="dl">"</span>
+<span class="err">#</span><span class="nx">include</span> <span class="dl">"</span><span class="s2">components/enc-base64-min.js</span><span class="dl">"</span>
+<span class="err">#</span><span class="nx">include</span> <span class="dl">"</span><span class="s2">components/enc-utf16-min.js</span><span class="dl">"</span></code></pre></figure>
 
 <p>The #include (redundant here) are the equivalent of the following tag in HTML documents:</p>
 
@@ -836,14 +840,14 @@ The Google Code <a href="http://code.google.com/p/crypto-js" title="Crypto JS ho
 
 <h2 id="word-array-and-encodings">Word Array and Encodings</h2>
 
-<p>CryptoJS makes large use of Word Array - that is, arrays of 32-bits words (instances of the <code class="highlighter-rouge">CryptoJS.lib.WordArray</code>); few useful functions:</p>
+<p>CryptoJS makes large use of Word Array - that is, arrays of 32-bits words (instances of the <code class="language-plaintext highlighter-rouge">CryptoJS.lib.WordArray</code>); few useful functions:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Creates a word array filled with random bytes.</span>
 <span class="c1">// @param {number} nBytes The number of random bytes to generate.</span>
 <span class="kd">var</span> <span class="nx">wordArray</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">lib</span><span class="p">.</span><span class="nx">WordArray</span><span class="p">.</span><span class="nx">random</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
 
 <span class="c1">// Converts a String to word array</span>
-<span class="kd">var</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf16</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="s1">'Hello, World!'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf16</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, World!</span><span class="dl">'</span><span class="p">);</span>
 <span class="c1">// 00480065006c006c006f002c00200057006f0072006c00640021</span>
 
 <span class="c1">// Reverses the word array to a readable String</span>
@@ -851,14 +855,14 @@ The Google Code <a href="http://code.google.com/p/crypto-js" title="Crypto JS ho
 
 <p>Mind you, quoting the Guide: “<em>When you use a WordArray object in a string context</em>”, that is, an alert box or the Console, “<em>it’s automatically converted to a <strong>hex string</strong></em>”. CryptoJS can manage different encodings, such as Base64, Hex, Latin1, UTF-8 and UTF-16. If you wonder how data would look like converted to them, paste this script in ESTK (Adobe’s ExtendScriptToolKit):</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="err">#</span><span class="nx">include</span> <span class="s2">"components/enc-base64-min.js"</span>
-<span class="err">#</span><span class="nx">include</span> <span class="s2">"components/enc-utf16-min.js"</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="err">#</span><span class="nx">include</span> <span class="dl">"</span><span class="s2">components/enc-base64-min.js</span><span class="dl">"</span>
+<span class="err">#</span><span class="nx">include</span> <span class="dl">"</span><span class="s2">components/enc-utf16-min.js</span><span class="dl">"</span>
 
 <span class="c1">// Save at least once in the appropriate folder in order to</span>
 <span class="c1">// help the #include to resolve the path</span>
 
 <span class="kd">var</span> <span class="nx">wordArray</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">lib</span><span class="p">.</span><span class="nx">WordArray</span><span class="p">.</span><span class="nx">random</span><span class="p">(</span><span class="mi">32</span><span class="p">);</span>
-<span class="nx">alert</span><span class="p">(</span><span class="s2">"Random WordArray"</span> <span class="o">+</span><span class="s2">"</span><span class="err">\</span><span class="se">\n</span><span class="s2">Hex: "</span><span class="o">+</span> <span class="nx">wordArray</span> <span class="o">+</span> <span class="s2">"</span><span class="err">\</span><span class="se">\n</span><span class="err">\</span><span class="se">\n</span><span class="s2">Base 64: "</span> <span class="o">+</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Base64</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">wordArray</span><span class="p">)</span> <span class="o">+</span><span class="s2">"</span><span class="err">\</span><span class="se">\n</span><span class="err">\</span><span class="se">\n</span><span class="s2">Latin 1: "</span> <span class="o">+</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Latin1</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">wordArray</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="err">\</span><span class="se">\n</span><span class="err">\</span><span class="se">\n</span><span class="s2">UTF-8: "</span> <span class="o">+</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf8</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">wordArray</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="err">\</span><span class="se">\n</span><span class="err">\</span><span class="se">\n</span><span class="s2">UTF-16: "</span> <span class="o">+</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf16</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">wordArray</span><span class="p">))</span></code></pre></figure>
+<span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Random WordArray</span><span class="dl">"</span> <span class="o">+</span><span class="dl">"</span><span class="se">\\</span><span class="s2">nHex: </span><span class="dl">"</span><span class="o">+</span> <span class="nx">wordArray</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\\</span><span class="s2">n</span><span class="se">\\</span><span class="s2">nBase 64: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Base64</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">wordArray</span><span class="p">)</span> <span class="o">+</span><span class="dl">"</span><span class="se">\\</span><span class="s2">n</span><span class="se">\\</span><span class="s2">nLatin 1: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Latin1</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">wordArray</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\\</span><span class="s2">n</span><span class="se">\\</span><span class="s2">nUTF-8: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf8</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">wordArray</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\\</span><span class="s2">n</span><span class="se">\\</span><span class="s2">nUTF-16: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf16</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">wordArray</span><span class="p">))</span></code></pre></figure>
 
 <p>The output is as follows - I’ve used an Alert box because ESTK’s $.writeln() (as I suspect both console.log() and debug(), depending on the tool you use to run your JS code) can’t output but Hex and Base64:</p>
 
@@ -866,7 +870,7 @@ The Google Code <a href="http://code.google.com/p/crypto-js" title="Crypto JS ho
 
 <h3 id="conversion-functions">Conversion Functions</h3>
 
-<p>Include both <code class="highlighter-rouge">enc-base64-min.js</code> and <code class="highlighter-rouge">enc-utf16-min.js</code> in your code. The functions are in the form:</p>
+<p>Include both <code class="language-plaintext highlighter-rouge">enc-base64-min.js</code> and <code class="language-plaintext highlighter-rouge">enc-utf16-min.js</code> in your code. The functions are in the form:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="o">/</span><span class="nx">Encoding</span><span class="o">/</span><span class="p">.</span><span class="nx">parse</span><span class="p">();</span>
 <span class="c1">// interprets the param as /Encoded/												// and converts it to Word Array</span>
@@ -874,35 +878,35 @@ The Google Code <a href="http://code.google.com/p/crypto-js" title="Crypto JS ho
 <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="o">/</span><span class="nx">Encoding</span><span class="o">/</span><span class="p">.</span><span class="nx">stringify</span><span class="p">();</span>
 <span class="c1">// interprets the param as Word Array												// and converts it to the /Encoded/ String</span>
 
-<span class="kd">var</span> <span class="nx">wordArray</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf16</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="s1">'Hello, World!'</span><span class="p">);</span> <span class="c1">// Word Array</span>
+<span class="kd">var</span> <span class="nx">wordArray</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf16</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, World!</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// Word Array</span>
 <span class="kd">var</span> <span class="nx">utf16</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf16</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">wordArray</span><span class="p">);</span> <span class="c1">// String</span></code></pre></figure>
 
 <p>Few examples as follows:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Encodings:</span>
-<span class="kd">var</span> <span class="nx">words</span>  <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Base64</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="s1">'SGVsbG8sIFdvcmxkIQ=='</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">words</span>  <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Base64</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">SGVsbG8sIFdvcmxkIQ==</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">base64</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Base64</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">words</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Latin1</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="s1">'Hello, World!'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Latin1</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, World!</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">latin1</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Latin1</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">words</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Hex</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="s1">'48656c6c6f2c20576f726c6421'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Hex</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">48656c6c6f2c20576f726c6421</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">hex</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Hex</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">words</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf8</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="s1">'♦'</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf8</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">♦</span><span class="dl">'</span><span class="p">)</span>
 <span class="kd">var</span> <span class="nx">utf8</span>  <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf8</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">words</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf16</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="s1">'Hello, World!'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">words</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf16</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello, World!</span><span class="dl">'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">utf16</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf16</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">words</span><span class="p">);</span></code></pre></figure>
 
 <h2 id="hash-functions">Hash Functions</h2>
 
 <p>So to speak, <em>hashers</em> are functions that take an input (no matter how large) and maps it to a fixed size, smaller one (the hash, or checksum). You can’t convert a hash back to the original input, yet you can check if the original data has been corrupted comparing the hashes. CryptoJS implements MD5, SHA-1 (used by Git) and its variant (2, 224, 384, 256 and 512).</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">hash</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">SHA1</span><span class="p">(</span><span class="s2">"Message"</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">hash</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">SHA1</span><span class="p">(</span><span class="dl">"</span><span class="s2">Message</span><span class="dl">"</span><span class="p">);</span>
 <span class="c1">// c4b0858dd7f14b154cac443b659bf9def034e01f</span></code></pre></figure>
 
-<p>The input <code class="highlighter-rouge">"Message"</code> can either be a <em>WordArray</em> or a <em>String</em> (which will automatically be converted to the former, encoded UTF-8). Then you may:</p>
+<p>The input <code class="language-plaintext highlighter-rouge">"Message"</code> can either be a <em>WordArray</em> or a <em>String</em> (which will automatically be converted to the former, encoded UTF-8). Then you may:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// CONVERT WordArray to Latin1 or Base64 - better off using alert()!</span>
 <span class="kd">var</span> <span class="nx">hash_Latin1</span> <span class="o">=</span> <span class="nx">hash</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Latin1</span><span class="p">);</span>
@@ -917,13 +921,13 @@ The Google Code <a href="http://code.google.com/p/crypto-js" title="Crypto JS ho
 
 <p>CryptoJS implements several Cipher Algorithms - in the following example AES:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="err">#</span><span class="nx">include</span> <span class="s2">"rollups/aes.js"</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="err">#</span><span class="nx">include</span> <span class="dl">"</span><span class="s2">rollups/aes.js</span><span class="dl">"</span>
 
-<span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s2">"Message"</span><span class="p">,</span> <span class="s2">"Secret Passphrase"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="dl">"</span><span class="s2">Message</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Secret Passphrase</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">$</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">);</span>
 <span class="c1">// AABsAABkAABiAAAAAAAAAABNAABlAABPAAC0AABHAAA=</span>
 
-<span class="kd">var</span> <span class="nx">decrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">,</span> <span class="s2">"Secret Passphrase"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">decrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Secret Passphrase</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">$</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="nx">decrypted</span><span class="p">);</span>
 <span class="c1">// 4d657373616765</span></code></pre></figure>
 
@@ -934,15 +938,15 @@ The Google Code <a href="http://code.google.com/p/crypto-js" title="Crypto JS ho
 
 <p>If you run the encryption code several times, you’ll notice that the result will change:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s2">"Message"</span><span class="p">,</span> <span class="s2">"Secret Passphrase"</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="dl">"</span><span class="s2">Message</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Secret Passphrase</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">$</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">);</span>
 <span class="c1">// AABsAABkAAA0AAAAAAAAAABfAADSAAC5AABcAACjAAA=</span>
 
-<span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s2">"Message"</span><span class="p">,</span> <span class="s2">"Secret Passphrase"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="dl">"</span><span class="s2">Message</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Secret Passphrase</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">$</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">);</span>
 <span class="c1">// AABsAABkAAA8AAAAAAAAAAA1AACIAAChAAAqAADMAAA=</span>
 
-<span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s2">"Message"</span><span class="p">,</span> <span class="s2">"Secret Passphrase"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="dl">"</span><span class="s2">Message</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Secret Passphrase</span><span class="dl">"</span><span class="p">);</span>
 <span class="nx">$</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">);</span>
 <span class="c1">// AABsAABkAAArAAAAAAAAAAA4AABGAAAkAACpAAB5AAA=</span></code></pre></figure>
 
@@ -950,15 +954,15 @@ The Google Code <a href="http://code.google.com/p/crypto-js" title="Crypto JS ho
 
 <h3 id="key-salt-and-initialization-vector">Key, Salt and Initialization Vector</h3>
 
-<p>I’m not a cryptography expert - my raw understanding of the matter (after digging Wikipedia and StackOverflow) is as follows. Human memorizable passphrase are known to be bad ones. In order to make them more secure you can add a bunch of random bits (the <strong>salt</strong>) so that the actual <code class="highlighter-rouge">key = function(Salt, Passphrase)</code>. An effect of Salt is that the same passphrase doesn’t always produce the same key. IV (initialization vector) is used, similarly, to ensure that the same plaintext (“Message”) doesn’t return the same ciphertext. It appears that Salt is used with passphrase to generate a key for encryption, then the resulting encryption is processed with IV. So to speak, the <code class="highlighter-rouge">encryption = function(plaintext, passphrase, salt, IV)</code>. So when you write:</p>
+<p>I’m not a cryptography expert - my raw understanding of the matter (after digging Wikipedia and StackOverflow) is as follows. Human memorizable passphrase are known to be bad ones. In order to make them more secure you can add a bunch of random bits (the <strong>salt</strong>) so that the actual <code class="language-plaintext highlighter-rouge">key = function(Salt, Passphrase)</code>. An effect of Salt is that the same passphrase doesn’t always produce the same key. IV (initialization vector) is used, similarly, to ensure that the same plaintext (“Message”) doesn’t return the same ciphertext. It appears that Salt is used with passphrase to generate a key for encryption, then the resulting encryption is processed with IV. So to speak, the <code class="language-plaintext highlighter-rouge">encryption = function(plaintext, passphrase, salt, IV)</code>. So when you write:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s2">"Message"</span><span class="p">,</span> <span class="s2">"Secret Passphrase"</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="dl">"</span><span class="s2">Message</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Secret Passphrase</span><span class="dl">"</span><span class="p">);</span></code></pre></figure>
 
 <p>CryptoJS randomly generates for you what it need. [<strong>UPDATED</strong>] Alternatively, you can specify:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">lib</span><span class="p">.</span><span class="nx">WordArray</span><span class="p">.</span><span class="nx">random</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">iv</span>  <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">lib</span><span class="p">.</span><span class="nx">WordArray</span><span class="p">.</span><span class="nx">random</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s2">"Message"</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="p">{</span> <span class="na">iv</span><span class="p">:</span> <span class="nx">iv</span> <span class="p">});</span>
+<span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="dl">"</span><span class="s2">Message</span><span class="dl">"</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="p">{</span> <span class="na">iv</span><span class="p">:</span> <span class="nx">iv</span> <span class="p">});</span>
 <span class="kd">var</span> <span class="nx">decrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="p">{</span> <span class="na">iv</span><span class="p">:</span> <span class="nx">iv</span> <span class="p">});</span></code></pre></figure>
 
 <h3 id="input-and-output">Input and output</h3>
@@ -968,13 +972,13 @@ The Google Code <a href="http://code.google.com/p/crypto-js" title="Crypto JS ho
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Hex</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">lib</span><span class="p">.</span><span class="nx">WordArray</span><span class="p">.</span><span class="nx">random</span><span class="p">(</span><span class="mi">16</span><span class="p">));</span>
 <span class="kd">var</span> <span class="nx">iv</span>  <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Hex</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">lib</span><span class="p">.</span><span class="nx">WordArray</span><span class="p">.</span><span class="nx">random</span><span class="p">(</span><span class="mi">16</span><span class="p">));</span>
 <span class="c1">// WRONG!!</span>
-<span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s2">"Message"</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="p">{</span><span class="na">iv</span><span class="p">:</span> <span class="nx">iv</span><span class="p">});</span></code></pre></figure>
+<span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="dl">"</span><span class="s2">Message</span><span class="dl">"</span><span class="p">,</span> <span class="nx">key</span><span class="p">,</span> <span class="p">{</span><span class="na">iv</span><span class="p">:</span> <span class="nx">iv</span><span class="p">});</span></code></pre></figure>
 
 <p>The code above is <strong>not proper</strong>, for two reasons:</p>
 
 <ol>
   <li>Key and IV are Strings, not Word Arrays!</li>
-  <li>Consequently, the key is used as a String passphrase from which to derive a random <em>actual</em> key + IV pair - so they’re not the <code class="highlighter-rouge">key</code> and <code class="highlighter-rouge">iv</code> variables you’ve declared.</li>
+  <li>Consequently, the key is used as a String passphrase from which to derive a random <em>actual</em> key + IV pair - so they’re not the <code class="language-plaintext highlighter-rouge">key</code> and <code class="language-plaintext highlighter-rouge">iv</code> variables you’ve declared.</li>
 </ol>
 
 <p>When it comes to the output, things are a bit different because if you:</p>
@@ -983,7 +987,7 @@ The Google Code <a href="http://code.google.com/p/crypto-js" title="Crypto JS ho
 
 <p>Actually, the encryption output is an object called <strong>CipherParams</strong>, and you can access its properties:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s2">"Message"</span><span class="p">,</span> <span class="s2">"Secret Passphrase"</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="dl">"</span><span class="s2">Message</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Secret Passphrase</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="nx">alert</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">);</span> <span class="c1">// U2FsdGVkX1+iX5Ey7GqLND5UFUoV0b7rUJ2eEvHkYqA=</span>
 <span class="nx">alert</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">.</span><span class="nx">key</span><span class="p">);</span> <span class="c1">// 74eb593087a982e2a6f5dded54ecd96d1fd0f3d44a58728cdcd40c55227522223</span>
@@ -993,7 +997,7 @@ The Google Code <a href="http://code.google.com/p/crypto-js" title="Crypto JS ho
 
 <p>I’ve had some troubles understanding why they use this object as the vector of encrypted data - the pack of bits you and the other guy oversea securely swap. It looks like you’re putting your treasure map into a casket and ship it with the keys to open it (I would have used the ciphertext only). It puzzled me because you can successfully write:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s2">"Message"</span><span class="p">,</span> <span class="s2">"Secret Passphrase"</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="dl">"</span><span class="s2">Message</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Secret Passphrase</span><span class="dl">"</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">decrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">,</span> <span class="nx">encrypted</span><span class="p">.</span><span class="nx">key</span><span class="p">,</span> <span class="p">{</span> <span class="na">iv</span><span class="p">:</span> <span class="nx">encrypted</span><span class="p">.</span><span class="nx">iv</span><span class="p">});</span></code></pre></figure>
 
 <p>[<strong>UPDATED</strong>] The explanation came directly from CryptoJS author Jeff Moss who wrote me:</p>
@@ -1002,10 +1006,10 @@ The Google Code <a href="http://code.google.com/p/crypto-js" title="Crypto JS ho
   <p>Although the key is a property in the CipherParams object, the key is not included when that CipherParams object is serialized to a string. By default, CipherParams objects are serialized using a format from OpenSSL. Just do encrypted.toString(), and you can safely send that to the other side of the ocean.</p>
 </blockquote>
 
-<p>So the <code class="highlighter-rouge">alert(encrypted);</code> hex string you see in the last but one code block is definitely safe to use and share:</p>
+<p>So the <code class="language-plaintext highlighter-rouge">alert(encrypted);</code> hex string you see in the last but one code block is definitely safe to use and share:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="s2">"Message"</span><span class="p">,</span> <span class="s2">"Secret Passphrase"</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">decrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span><span class="s2">"U2FsdGVkX1+iX5Ey7GqLND5UFUoV0b7rUJ2eEvHkYqA="</span><span class="p">,</span> <span class="s2">"Secret Passphrase"</span><span class="p">)</span> <span class="c1">// or just encrypted.toString()</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">encrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="dl">"</span><span class="s2">Message</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Secret Passphrase</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">decrypted</span> <span class="o">=</span> <span class="nx">CryptoJS</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">decrypt</span><span class="p">(</span><span class="dl">"</span><span class="s2">U2FsdGVkX1+iX5Ey7GqLND5UFUoV0b7rUJ2eEvHkYqA=</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Secret Passphrase</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// or just encrypted.toString()</span></code></pre></figure>
 
 <p>There’s definitely more to dig in this great CryptoJS library, I’m looking forward to explore it! This should be just enough to let you start implementing cryptography in your own projects.</p>
 

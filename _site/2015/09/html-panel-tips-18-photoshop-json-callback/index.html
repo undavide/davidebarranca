@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -802,25 +806,25 @@
     </header>
 
     <div class="post-content">
-        <p>CC 2015 previews a new Photoshop Event listening system and deprecates the <code class="highlighter-rouge">"com.adobe.PhotoshopCallback"</code>, due to a bug that makes all the extension receiving the event - that is: if two panels are registered for the event “make”, then each panel sees the other panel’s “make” event, and must ignore it. The solution implemented marks a break in retro-compatibility and is going to be the only one accepted from Photoshop CC2016 (version 17.x) onwards. Let’s have a look at what is that all about.</p>
+        <p>CC 2015 previews a new Photoshop Event listening system and deprecates the <code class="language-plaintext highlighter-rouge">"com.adobe.PhotoshopCallback"</code>, due to a bug that makes all the extension receiving the event - that is: if two panels are registered for the event “make”, then each panel sees the other panel’s “make” event, and must ignore it. The solution implemented marks a break in retro-compatibility and is going to be the only one accepted from Photoshop CC2016 (version 17.x) onwards. Let’s have a look at what is that all about.</p>
 
 <p>Please refer to <a href="/2014/02/html-panels-tips-7-events-photoshopregisterevent-photoshopcallback/">HTML Panels Tips: #7 Photoshop Events, Take 1</a> to review how PS events listening works. Now, there are three different changes you must be aware of:</p>
 
 <ol>
-  <li><code class="highlighter-rouge">"com.adobe.PhotoshopJSONCallback"</code> is the replacement event - no more <code class="highlighter-rouge">"com.adobe.PhotoshopCallback"</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">"com.adobe.PhotoshopJSONCallback"</code> is the replacement event - no more <code class="language-plaintext highlighter-rouge">"com.adobe.PhotoshopCallback"</code>.</li>
   <li>The ExtensionID must be <strong>appended as a suffix</strong>.</li>
 </ol>
 
 <p>So what used to be:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
-<span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"PhotoshopCallback"</span><span class="p">,</span> <span class="nx">PSCallback</span><span class="p">);</span></code></pre></figure>
+<span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">PhotoshopCallback</span><span class="dl">"</span><span class="p">,</span> <span class="nx">PSCallback</span><span class="p">);</span></code></pre></figure>
 
 <p>now becomes:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">extensionId</span> <span class="o">=</span>  <span class="nx">csInterface</span><span class="p">.</span><span class="nx">getExtensionID</span><span class="p">();</span>
-<span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"com.adobe.PhotoshopJSONCallback"</span> <span class="o">+</span> <span class="nx">extensionId</span><span class="p">,</span> <span class="nx">PhotoshopCallbackUnique</span><span class="p">);</span></code></pre></figure>
+<span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">com.adobe.PhotoshopJSONCallback</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">extensionId</span><span class="p">,</span> <span class="nx">PhotoshopCallbackUnique</span><span class="p">);</span></code></pre></figure>
 
 <ol>
   <li>The data property of the CSEvent that the PhotoshopCallbackUnique receives is a <strong>JSON string</strong> hidden inside a string.</li>
@@ -862,13 +866,13 @@
 <span class="c1">//     }</span>
 <span class="c1">//   }</span></code></pre></figure>
 
-<p>As you see, there’s a <code class="highlighter-rouge">ver1,</code> that needs to be stripped. Also, as a bonus, extra information is provided as JSON (here a New Document’s been created). I’ve uploaded a <a href="https://github.com/undavide/PS-Panels-Boilerplate/tree/master/src/com.undavide.PhotoshopJSONCallback">demo extension</a> on my GitHub repo, which looks like:</p>
+<p>As you see, there’s a <code class="language-plaintext highlighter-rouge">ver1,</code> that needs to be stripped. Also, as a bonus, extra information is provided as JSON (here a New Document’s been created). I’ve uploaded a <a href="https://github.com/undavide/PS-Panels-Boilerplate/tree/master/src/com.undavide.PhotoshopJSONCallback">demo extension</a> on my GitHub repo, which looks like:</p>
 
 <figure class="aligncenter">
 	<img width="400" src="/wp-content/uploads/2015/09/PhotoshopJSONCallback.png" />
 </figure>
 
-<p>Which basically let you switch on/off listeners to the corresponding events (<code class="highlighter-rouge">"make"</code>, <code class="highlighter-rouge">"duplicate"</code>, etc are the stringID). You can find the full code on GitHub, yet the relevant files are:</p>
+<p>Which basically let you switch on/off listeners to the corresponding events (<code class="language-plaintext highlighter-rouge">"make"</code>, <code class="language-plaintext highlighter-rouge">"duplicate"</code>, etc are the stringID). You can find the full code on GitHub, yet the relevant files are:</p>
 
 <h2 id="html">HTML</h2>
 
@@ -879,14 +883,14 @@
 
 <h2 id="js">JS</h2>
 
-<p>The <code class="highlighter-rouge">init</code> function starts the <code class="highlighter-rouge">themeManager</code> and then activate <em>persistence</em> (if you need a refresh on the topic, have a look at this older <a href="/2014/02/html-panels-tips-9-persistence/">HTML Panel Tip</a>). Be careful with persistence, since if it’s active it will constantly cache the extension in the Chrome Dev Tools (i.e. you change code, reboot the panel and changes aren’t loaded - you need to reboot Photoshop. This happens on OSX at least; knowing it will save some head scratching time). Then you add a listener for the PhotoshopJSONCallback plus extensionID (line 24).</p>
+<p>The <code class="language-plaintext highlighter-rouge">init</code> function starts the <code class="language-plaintext highlighter-rouge">themeManager</code> and then activate <em>persistence</em> (if you need a refresh on the topic, have a look at this older <a href="/2014/02/html-panels-tips-9-persistence/">HTML Panel Tip</a>). Be careful with persistence, since if it’s active it will constantly cache the extension in the Chrome Dev Tools (i.e. you change code, reboot the panel and changes aren’t loaded - you need to reboot Photoshop. This happens on OSX at least; knowing it will save some head scratching time). Then you add a listener for the PhotoshopJSONCallback plus extensionID (line 24).</p>
 
-<p>On line 26 <code class="highlighter-rouge">PhotoshopCallbackUnique</code> strips the <code class="highlighter-rouge">"ver1"</code> string in the <code class="highlighter-rouge">event.data</code>, then parse the JSON and puts it back as an Object. Line 44, <code class="highlighter-rouge">toggleEventRegistering</code>: this is the unique switches onChange callback, which duty is to dispatch the <code class="highlighter-rouge">com.adobe.PhotoshopRegisterEvent</code> or <code class="highlighter-rouge">com.adobe.PhotoshopUnRegisterEvent</code>, corresponding to the on-the-fly-calculated typeID of the provided stringID.</p>
+<p>On line 26 <code class="language-plaintext highlighter-rouge">PhotoshopCallbackUnique</code> strips the <code class="language-plaintext highlighter-rouge">"ver1"</code> string in the <code class="language-plaintext highlighter-rouge">event.data</code>, then parse the JSON and puts it back as an Object. Line 44, <code class="language-plaintext highlighter-rouge">toggleEventRegistering</code>: this is the unique switches onChange callback, which duty is to dispatch the <code class="language-plaintext highlighter-rouge">com.adobe.PhotoshopRegisterEvent</code> or <code class="language-plaintext highlighter-rouge">com.adobe.PhotoshopUnRegisterEvent</code>, corresponding to the on-the-fly-calculated typeID of the provided stringID.</p>
 
 <noscript><pre>400: Invalid request</pre></noscript>
 <script src="https://gist.github.com/d4cd799c8cc3ebd0244bc7c0ac209c9a.js"> </script>
 
-<p>I hope this help clarifying how things work now. I repeat, both <code class="highlighter-rouge">PhotoshopCallback</code> <strong>and</strong> <code class="highlighter-rouge">PhotoshopJSONCallback</code> are usable in Photoshop CC2015 (the first is “just” deprecated), while from CC2016 onwards only the latter will work. I’d like to thanks Tom Ruark who pointed me to the Adobe’s original code, that I’ve refactored a bit for this blogpost. Also, I take the chance to tell you I’m working at a more comprehensive learning resource about Photoshop HTML Panels (ebook + video series), so stay tuned here.<br />
+<p>I hope this help clarifying how things work now. I repeat, both <code class="language-plaintext highlighter-rouge">PhotoshopCallback</code> <strong>and</strong> <code class="language-plaintext highlighter-rouge">PhotoshopJSONCallback</code> are usable in Photoshop CC2015 (the first is “just” deprecated), while from CC2016 onwards only the latter will work. I’d like to thanks Tom Ruark who pointed me to the Adobe’s original code, that I’ve refactored a bit for this blogpost. Also, I take the chance to tell you I’m working at a more comprehensive learning resource about Photoshop HTML Panels (ebook + video series), so stay tuned here.<br />
 Ciao!</p>
 
 <hr />

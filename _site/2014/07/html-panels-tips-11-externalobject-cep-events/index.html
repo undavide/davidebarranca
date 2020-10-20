@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -811,11 +815,11 @@
 <ol>
   <li><strong>CEP Host Application Events</strong> - i.e. Photoshop events related either to the app itself or the documents (but from the “host app point of view”, see <a href="/2014/07/html-panels-tips-12-cep-application-events/" title="HTML Panels Tips: #12 CEP Application Events">this post</a>) such as:
     <ul>
-      <li><code class="highlighter-rouge">appOffline</code></li>
-      <li><code class="highlighter-rouge">appOnline</code></li>
-      <li><code class="highlighter-rouge">applicationActivate</code></li>
-      <li><code class="highlighter-rouge">documentAfterActivate</code></li>
-      <li><code class="highlighter-rouge">documentAfterDeactivate</code></li>
+      <li><code class="language-plaintext highlighter-rouge">appOffline</code></li>
+      <li><code class="language-plaintext highlighter-rouge">appOnline</code></li>
+      <li><code class="language-plaintext highlighter-rouge">applicationActivate</code></li>
+      <li><code class="language-plaintext highlighter-rouge">documentAfterActivate</code></li>
+      <li><code class="language-plaintext highlighter-rouge">documentAfterDeactivate</code></li>
     </ul>
   </li>
   <li><strong>ExtendScript Events</strong> - i.e. Events related to <em>actual</em> Photoshop operations (dispatched when the user creates new Layer, selects/moves something, etc), see <a href="/2014/02/html-panels-tips-7-events-photoshopregisterevent-photoshopcallback/" title="HTML Panels Tips: #7 Photoshop Events, Take 1">this post</a> and a <a href="/2014/02/html-panels-tips-8-photoshop-events-pshostadapter-libraries/" title="HTML Panels Tips: #8 Photoshop Events, Take 2">different approach</a>.</li>
@@ -824,7 +828,7 @@
 
 <h2 id="externalobject">ExternalObject</h2>
 
-<p>Photoshop, Illustrator and Premiere Pro CC 2014 by the time of this writing (July 2014) support natively the dispatching of custom Events (using the <code class="highlighter-rouge">PlugPlugExternalObject</code> - which library is embedded in the app and we can happily forget about it), while InDesign must explicitly add and reference it (<a href="https://github.com/Adobe-CEP/CEP-Resources/releases/tag/1" title="PlugPlugExternalObject library for InDesign">download it here</a> and see the SDK Guide at pag 45). Basically you set an Event Listener in the JS for a custom event (named as you like), providing a callback. Then in the JSX you create and dispatch a <code class="highlighter-rouge">CSXSEvent()</code> at will.</p>
+<p>Photoshop, Illustrator and Premiere Pro CC 2014 by the time of this writing (July 2014) support natively the dispatching of custom Events (using the <code class="language-plaintext highlighter-rouge">PlugPlugExternalObject</code> - which library is embedded in the app and we can happily forget about it), while InDesign must explicitly add and reference it (<a href="https://github.com/Adobe-CEP/CEP-Resources/releases/tag/1" title="PlugPlugExternalObject library for InDesign">download it here</a> and see the SDK Guide at pag 45). Basically you set an Event Listener in the JS for a custom event (named as you like), providing a callback. Then in the JSX you create and dispatch a <code class="language-plaintext highlighter-rouge">CSXSEvent()</code> at will.</p>
 
 <h2 id="example">Example</h2>
 
@@ -835,24 +839,24 @@
 <p>In the JS side there’s a simple EventListener with a callback as usual.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
-<span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"My Custom Event"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Data from the JSX payload: '</span> <span class="o">+</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">My Custom Event</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Data from the JSX payload: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">evt</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span></code></pre></figure>
 
 <h3 id="jsx">JSX</h3>
 
-<p>In the JSX you create an ExternalObject instance: <code class="highlighter-rouge">"lib:\PlugPlugExternalObject"</code> is the only parameter to pass. If there’s no error (the library exists and it’s available) you create a new <code class="highlighter-rouge">CSXSEvent</code> setting the type (which is referenced in the EventListener - the string must be the same, in the example “My Custom Event”) and a data property which is the payload that the HTML Panel is going to receive.</p>
+<p>In the JSX you create an ExternalObject instance: <code class="language-plaintext highlighter-rouge">"lib:\PlugPlugExternalObject"</code> is the only parameter to pass. If there’s no error (the library exists and it’s available) you create a new <code class="language-plaintext highlighter-rouge">CSXSEvent</code> setting the type (which is referenced in the EventListener - the string must be the same, in the example “My Custom Event”) and a data property which is the payload that the HTML Panel is going to receive.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">try</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">xLib</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ExternalObject</span><span class="p">(</span><span class="s2">"lib:</span><span class="err">\\</span><span class="s2">PlugPlugExternalObject"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">xLib</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ExternalObject</span><span class="p">(</span><span class="dl">"</span><span class="s2">lib:</span><span class="se">\\</span><span class="s2">PlugPlugExternalObject</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">xLib</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">eventObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSXSEvent</span><span class="p">();</span>
-    <span class="nx">eventObj</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"My Custom Event"</span><span class="p">;</span>
-    <span class="nx">eventObj</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="s2">"some payload data..."</span><span class="p">;</span>
+    <span class="nx">eventObj</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">My Custom Event</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nx">eventObj</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">some payload data...</span><span class="dl">"</span><span class="p">;</span>
     <span class="nx">eventObj</span><span class="p">.</span><span class="nx">dispatch</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 

@@ -755,6 +755,10 @@ Background...">
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -823,7 +827,7 @@ Background...">
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">$ </span>python <span class="nt">--version</span>
 Python 2.7.10</code></pre></figure>
 
-<p>This is what I still get after having installed Python 3.6 myself, via <a href="https://brew.sh/index_it">Homebrew</a>. I’m no Python expert, so it took me some Google time to understand that on a Mac you can still have the <code class="highlighter-rouge">python</code> command pointing to the System’s old 2.7 version, even if you’ve freshly installed the new one. Solutions involve manually changing symlinks (power users advise against it), or using one of the available packages to create isolate Python environments (e.g. <a href="https://virtualenv.pypa.io/en/stable/">virtualenv</a>, <a href="https://github.com/pyenv/pyenv">pyenv</a>, etc. A list of them is found <a href="https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe">here</a>). I couldn’t make neither of them to work in a reasonable amount of time, so I’ve resorted to simply use the <code class="highlighter-rouge">python3</code> command, e.g.</p>
+<p>This is what I still get after having installed Python 3.6 myself, via <a href="https://brew.sh/index_it">Homebrew</a>. I’m no Python expert, so it took me some Google time to understand that on a Mac you can still have the <code class="language-plaintext highlighter-rouge">python</code> command pointing to the System’s old 2.7 version, even if you’ve freshly installed the new one. Solutions involve manually changing symlinks (power users advise against it), or using one of the available packages to create isolate Python environments (e.g. <a href="https://virtualenv.pypa.io/en/stable/">virtualenv</a>, <a href="https://github.com/pyenv/pyenv">pyenv</a>, etc. A list of them is found <a href="https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe">here</a>). I couldn’t make neither of them to work in a reasonable amount of time, so I’ve resorted to simply use the <code class="language-plaintext highlighter-rouge">python3</code> command, e.g.</p>
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">$ </span>python3 <span class="nt">--version</span>
 Python 3.6.2</code></pre></figure>
@@ -905,14 +909,14 @@ Python 3.6.2</code></pre></figure>
 
 <span class="k">def</span> <span class="nf">checkImage</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
   <span class="n">proc</span> <span class="o">=</span> <span class="n">Popen</span><span class="p">(</span>\<span class="p">[</span><span class="s">'identify'</span><span class="p">,</span> <span class="s">'-verbose'</span><span class="p">,</span> <span class="n">fn</span>\<span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">PIPE</span><span class="p">)</span>
-  <span class="n">out</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">proc</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
-  <span class="n">exitcode</span> <span class="o">=</span> <span class="n">proc</span><span class="o">.</span><span class="n">returncode</span>
+  <span class="n">out</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">proc</span><span class="p">.</span><span class="n">communicate</span><span class="p">()</span>
+  <span class="n">exitcode</span> <span class="o">=</span> <span class="n">proc</span><span class="p">.</span><span class="n">returncode</span>
   <span class="k">return</span> <span class="n">exitcode</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">err</span>
 
-<span class="k">for</span> <span class="n">directory</span><span class="p">,</span> <span class="n">subdirectories</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">folderToCheck</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">directory</span><span class="p">,</span> <span class="n">subdirectories</span><span class="p">,</span> <span class="n">files</span><span class="p">,</span> <span class="ow">in</span> <span class="n">os</span><span class="p">.</span><span class="n">walk</span><span class="p">(</span><span class="n">folderToCheck</span><span class="p">):</span>
   <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">fileExtension</span><span class="p">):</span>
-      <span class="n">filePath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="nb">file</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">file</span><span class="p">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">fileExtension</span><span class="p">):</span>
+      <span class="n">filePath</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">directory</span><span class="p">,</span> <span class="nb">file</span><span class="p">)</span>
       <span class="n">code</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">checkImage</span><span class="p">(</span><span class="n">filePath</span><span class="p">)</span>
       <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">code</span><span class="p">)</span> <span class="o">!=</span><span class="s">"0"</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="s">"utf-8"</span><span class="p">)</span> <span class="o">!=</span> <span class="s">""</span><span class="p">:</span>
         <span class="k">print</span><span class="p">(</span><span class="s">"ERROR "</span> <span class="o">+</span> <span class="n">filePath</span><span class="p">)</span>
@@ -923,15 +927,15 @@ Python 3.6.2</code></pre></figure>
 
 <h3 id="how-it-works">How it works</h3>
 
-<p>The basic is the <code class="highlighter-rouge">identify</code> call (that comes from ImageMagick), which is set to <code class="highlighter-rouge">-verbose</code>. This is what performs the check: the rest is just looping through the filesystem, looking for the appropriate file extension, and logging a message.</p>
+<p>The basic is the <code class="language-plaintext highlighter-rouge">identify</code> call (that comes from ImageMagick), which is set to <code class="language-plaintext highlighter-rouge">-verbose</code>. This is what performs the check: the rest is just looping through the filesystem, looking for the appropriate file extension, and logging a message.</p>
 
 <h3 id="how-to-use-it">How to use it</h3>
 
-<p>Save this on a file with a <code class="highlighter-rouge">.py</code> extension, and then run it with the <code class="highlighter-rouge">python3</code> command on a terminal, e.g.</p>
+<p>Save this on a file with a <code class="language-plaintext highlighter-rouge">.py</code> extension, and then run it with the <code class="language-plaintext highlighter-rouge">python3</code> command on a terminal, e.g.</p>
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">$ </span>python3 check.py</code></pre></figure>
 
-<p>Before doing so, do change the content of the <code class="highlighter-rouge">folderToCheck</code> variable with an actual folder on your disk (with absolute path), and the <code class="highlighter-rouge">fileExtension</code> too: I’ve used <code class="highlighter-rouge">.psb</code>, but you can change it to <code class="highlighter-rouge">.psd</code>, <code class="highlighter-rouge">.tif</code>, <code class="highlighter-rouge">.jpg</code>, etc. As a result you’ll get a log in the Terminal; I’ve used a nifty, cheap application called <a href="https://coderunnerapp.com/">Code Runner</a> for such tests, and this is the result:</p>
+<p>Before doing so, do change the content of the <code class="language-plaintext highlighter-rouge">folderToCheck</code> variable with an actual folder on your disk (with absolute path), and the <code class="language-plaintext highlighter-rouge">fileExtension</code> too: I’ve used <code class="language-plaintext highlighter-rouge">.psb</code>, but you can change it to <code class="language-plaintext highlighter-rouge">.psd</code>, <code class="language-plaintext highlighter-rouge">.tif</code>, <code class="language-plaintext highlighter-rouge">.jpg</code>, etc. As a result you’ll get a log in the Terminal; I’ve used a nifty, cheap application called <a href="https://coderunnerapp.com/">Code Runner</a> for such tests, and this is the result:</p>
 
 <p><img src="/wp-content/uploads/2018/05/coderunner-700x426.png" alt="" /></p>
 
@@ -940,7 +944,7 @@ Python 3.6.2</code></pre></figure>
 <ul>
   <li>The script processes nested folders too.</li>
   <li>It is <em>awfully slow</em> and hungry: it eats CPU cycles and RAM. But it’s automatic, so heck!</li>
-  <li>The file extension is case sensitive, so <code class="highlighter-rouge">".JPG"</code> is different from <code class="highlighter-rouge">".jpg"</code>.</li>
+  <li>The file extension is case sensitive, so <code class="language-plaintext highlighter-rouge">".JPG"</code> is different from <code class="language-plaintext highlighter-rouge">".jpg"</code>.</li>
 </ul>
 
 <h3 id="how-to-make-it-better">How to make it better</h3>

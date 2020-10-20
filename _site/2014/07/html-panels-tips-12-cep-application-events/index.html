@@ -755,6 +755,10 @@ List of...">
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -813,13 +817,13 @@ List of...">
 <p>To date (CC 2014, version 2014.0.0 Release, 20140508.r58) this is the list of the Events that Photoshop is able to dispatch. Hopefully the names are self-explanatory.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">"com.adobe.csxs.events.AppOffline"</code></li>
-  <li><code class="highlighter-rouge">"com.adobe.csxs.events.AppOnline"</code></li>
-  <li><code class="highlighter-rouge">"applicationActivate"</code></li>
-  <li><code class="highlighter-rouge">"applicationBeforeQuit"</code></li>
-  <li><code class="highlighter-rouge">"documentAfterActivate"</code></li>
-  <li><code class="highlighter-rouge">"documentAfterDeactivate"</code></li>
-  <li><code class="highlighter-rouge">"documentEdited"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">"com.adobe.csxs.events.AppOffline"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">"com.adobe.csxs.events.AppOnline"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">"applicationActivate"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">"applicationBeforeQuit"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">"documentAfterActivate"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">"documentAfterDeactivate"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">"documentEdited"</code></li>
 </ul>
 
 <p>Mind you, according to the <em>Extension SDK guide</em> some of them aren’t supported in Photoshop yet; others aren’t listed there (but they come from the CEP HTML Test Panel from the <a href="https://github.com/Adobe-CEP/Samples/tree/master/CEP_HTML_Test_Extension_5.0" title="Adobe CEP Samples">Samples GitHub repo</a>).</p>
@@ -829,7 +833,7 @@ List of...">
 <p>As easy as it gets - this goes in the JS:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
-<span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"appOffline"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">);</span>
+<span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">appOffline</span><span class="dl">"</span><span class="p">,</span> <span class="nx">logEvent</span><span class="p">);</span>
 <span class="c1">// just a demo callback</span>
 <span class="kd">function</span> <span class="nx">logEvent</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">evt</span><span class="p">);</span> <span class="p">}</span></code></pre></figure>
 
@@ -838,37 +842,37 @@ List of...">
 <p>The event object passed to the callback in Photoshop has several properties:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">appId: "PHSX"</code></li>
-  <li><code class="highlighter-rouge">extensionId: ""</code></li>
-  <li><code class="highlighter-rouge">scope: "APPLICATION"</code></li>
-  <li><code class="highlighter-rouge">type</code></li>
-  <li><code class="highlighter-rouge">data</code></li>
+  <li><code class="language-plaintext highlighter-rouge">appId: "PHSX"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">extensionId: ""</code></li>
+  <li><code class="language-plaintext highlighter-rouge">scope: "APPLICATION"</code></li>
+  <li><code class="language-plaintext highlighter-rouge">type</code></li>
+  <li><code class="language-plaintext highlighter-rouge">data</code></li>
 </ul>
 
-<p>According to each <code class="highlighter-rouge">type</code>, the <code class="highlighter-rouge">data</code> might come as an XML String, as follows:</p>
+<p>According to each <code class="language-plaintext highlighter-rouge">type</code>, the <code class="language-plaintext highlighter-rouge">data</code> might come as an XML String, as follows:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">type</span><span class="p">:</span> <span class="s2">"com.adobe.csxs.events.AppOffline"</span>
-<span class="nx">data</span><span class="p">:</span> <span class="s2">""</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">com.adobe.csxs.events.AppOffline</span><span class="dl">"</span>
+<span class="nx">data</span><span class="p">:</span> <span class="dl">""</span>
 
-<span class="nx">type</span><span class="p">:</span> <span class="s2">"com.adobe.csxs.events.AppOnline"</span>
-<span class="nx">data</span><span class="p">:</span> <span class="s2">""</span>
+<span class="nx">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">com.adobe.csxs.events.AppOnline</span><span class="dl">"</span>
+<span class="nx">data</span><span class="p">:</span> <span class="dl">""</span>
 
-<span class="nx">type</span><span class="p">:</span> <span class="s2">"applicationActivate"</span>
-<span class="nx">data</span><span class="p">:</span> <span class="s2">"&lt;applicationActivate/&gt;"</span>
+<span class="nx">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">applicationActivate</span><span class="dl">"</span>
+<span class="nx">data</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;applicationActivate/&gt;</span><span class="dl">"</span>
 
-<span class="nx">type</span><span class="p">:</span> <span class="s2">"applicationBeforeQuit"</span>
-<span class="nx">data</span><span class="p">:</span> <span class="s2">"&lt;applicationBeforeQuit/&gt;"</span>
+<span class="nx">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">applicationBeforeQuit</span><span class="dl">"</span>
+<span class="nx">data</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;applicationBeforeQuit/&gt;</span><span class="dl">"</span>
 
-<span class="nx">type</span><span class="p">:</span> <span class="s2">"documentAfterActivate"</span>
-<span class="nx">data</span><span class="p">:</span> <span class="s2">"&lt;documentAfterActivate&gt;&lt;name&gt;icon&lt;/name&gt;&lt;url&gt;file:///Macintosh SSD/Users/Davide/Desktop/icon.tif&lt;/url&gt;&lt;/documentAfterActivate&gt;"</span>
+<span class="nx">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">documentAfterActivate</span><span class="dl">"</span>
+<span class="nx">data</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;documentAfterActivate&gt;&lt;name&gt;icon&lt;/name&gt;&lt;url&gt;file:///Macintosh SSD/Users/Davide/Desktop/icon.tif&lt;/url&gt;&lt;/documentAfterActivate&gt;</span><span class="dl">"</span>
 
-<span class="nx">type</span><span class="p">:</span> <span class="s2">"documentAfterDeactivate"</span>
-<span class="nx">data</span><span class="p">:</span> <span class="s2">"&lt;documentAfterDeactivate&gt;&lt;name&gt;icon&lt;/name&gt;&lt;url&gt;file:///Macintosh SSD/Users/Davide/Desktop/icon.tif&lt;/url&gt;&lt;/documentAfterDeactivate&gt;"</span>
+<span class="nx">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">documentAfterDeactivate</span><span class="dl">"</span>
+<span class="nx">data</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;documentAfterDeactivate&gt;&lt;name&gt;icon&lt;/name&gt;&lt;url&gt;file:///Macintosh SSD/Users/Davide/Desktop/icon.tif&lt;/url&gt;&lt;/documentAfterDeactivate&gt;</span><span class="dl">"</span>
 
-<span class="nx">type</span><span class="p">:</span> <span class="s2">"documentEdited"</span>
-<span class="nx">data</span><span class="p">:</span> <span class="s2">"&lt;documentEdited&gt;&lt;name&gt;icon&lt;/name&gt;&lt;url&gt;file:///Macintosh SSD/Users/Davide/Desktop/icon.tif&lt;/url&gt;&lt;/documentEdited&gt;"</span></code></pre></figure>
+<span class="nx">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">documentEdited</span><span class="dl">"</span>
+<span class="nx">data</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;documentEdited&gt;&lt;name&gt;icon&lt;/name&gt;&lt;url&gt;file:///Macintosh SSD/Users/Davide/Desktop/icon.tif&lt;/url&gt;&lt;/documentEdited&gt;</span><span class="dl">"</span></code></pre></figure>
 
-<p>Mind you, I’ve been able to log the <code class="highlighter-rouge">applicationBeforeQuit</code> event only trying to quit Photoshop when an unsaved document was open - this gives the time for the <code class="highlighter-rouge">console.dir</code> to be logged, otherwise the Object is empty, after the app has quit. Also, I haven’t been able to successfully intercept the <code class="highlighter-rouge">"com.adobe.csxs.events.ExtensionUnloaded"</code> event, which would be of <em>great use</em>.</p>
+<p>Mind you, I’ve been able to log the <code class="language-plaintext highlighter-rouge">applicationBeforeQuit</code> event only trying to quit Photoshop when an unsaved document was open - this gives the time for the <code class="language-plaintext highlighter-rouge">console.dir</code> to be logged, otherwise the Object is empty, after the app has quit. Also, I haven’t been able to successfully intercept the <code class="language-plaintext highlighter-rouge">"com.adobe.csxs.events.ExtensionUnloaded"</code> event, which would be of <em>great use</em>.</p>
 
 <hr />
 

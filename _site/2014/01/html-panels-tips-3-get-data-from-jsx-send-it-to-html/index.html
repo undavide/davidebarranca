@@ -757,6 +757,10 @@ csI...">
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -808,10 +812,10 @@ csI...">
     </header>
 
     <div class="post-content">
-        <p>This is how Photoshop (i.e. the JSX) sends back data to the HTML Panel. The HTML Panel communicates with Photoshop via evalScript - this is in the <code class="highlighter-rouge">main.js</code>:</p>
+        <p>This is how Photoshop (i.e. the JSX) sends back data to the HTML Panel. The HTML Panel communicates with Photoshop via evalScript - this is in the <code class="language-plaintext highlighter-rouge">main.js</code>:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
-<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'jsxFun()'</span><span class="p">);</span></code></pre></figure>
+<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">jsxFun()</span><span class="dl">'</span><span class="p">);</span></code></pre></figure>
 
 <p>In the JSX there must be some:</p>
 
@@ -822,7 +826,7 @@ csI...">
 <p>In order to enable double-way communication, <strong>provide a callback</strong> in the evalScript function:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
-<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'jsxFun()'</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">jsxFun()</span><span class="dl">'</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
 <span class="c1">// callback is a function defined somewhere (or anonymous)</span></code></pre></figure>
 
 <h2 id="example">Example</h2>
@@ -833,7 +837,7 @@ csI...">
 
 <h3 id="html">HTML</h3>
 
-<p>I define a button with <code class="highlighter-rouge">id="btnDocName"</code>, and an <code class="highlighter-rouge">h3</code> tag which will contain the Doc’s name.</p>
+<p>I define a button with <code class="language-plaintext highlighter-rouge">id="btnDocName"</code>, and an <code class="language-plaintext highlighter-rouge">h3</code> tag which will contain the Doc’s name.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
@@ -864,17 +868,17 @@ csI...">
 
 <h3 id="mainjs"> Main.js</h3>
 
-<p>Besides themeManager (<a href="http://davidderaedt.github.io/ccext-website/" title="CC Extensibility Helpers">boilerplate code</a> is by the great <a href="https://twitter.com/davidderaedt" title="David Deraedt on Twitter">David Deraedt</a>) you see I evaluate (i.e. call) a <code class="highlighter-rouge">getDocName()</code> function (which belongs to the JSX) ‘ve used an anonymous function to define a callback on the fly. The result argument is just the return value in the JSX, and it’s used to overwrite the h3 tag content in the Panel.</p>
+<p>Besides themeManager (<a href="http://davidderaedt.github.io/ccext-website/" title="CC Extensibility Helpers">boilerplate code</a> is by the great <a href="https://twitter.com/davidderaedt" title="David Deraedt on Twitter">David Deraedt</a>) you see I evaluate (i.e. call) a <code class="language-plaintext highlighter-rouge">getDocName()</code> function (which belongs to the JSX) ‘ve used an anonymous function to define a callback on the fly. The result argument is just the return value in the JSX, and it’s used to overwrite the h3 tag content in the Panel.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
 
   <span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">themeManager</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">"#btnDocName"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'getDocName()'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"docName"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">result</span><span class="p">;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#btnDocName</span><span class="dl">"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">getDocName()</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">docName</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">result</span><span class="p">;</span>
       <span class="p">});</span>
     <span class="p">});</span>
   <span class="p">}</span>
@@ -883,10 +887,10 @@ csI...">
 
 <h3 id="jsx">JSX</h3>
 
-<p>Contains the getDocName() function and returns the active document name as a String (the <code class="highlighter-rouge">toString()</code> shouldn’t be mandatory):</p>
+<p>Contains the getDocName() function and returns the active document name as a String (the <code class="language-plaintext highlighter-rouge">toString()</code> shouldn’t be mandatory):</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">getDocName</span><span class="p">(){</span>
-  <span class="k">return</span> <span class="nx">app</span><span class="p">.</span><span class="nx">documents</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="nx">app</span><span class="p">.</span><span class="nx">activeDocument</span><span class="p">.</span><span class="nx">name</span> <span class="p">:</span> <span class="s2">"No docs open!"</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">app</span><span class="p">.</span><span class="nx">documents</span><span class="p">.</span><span class="nx">length</span> <span class="p">?</span> <span class="nx">app</span><span class="p">.</span><span class="nx">activeDocument</span><span class="p">.</span><span class="nx">name</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">No docs open!</span><span class="dl">"</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>So as a result when you click the button on the HTML Panel, it evaluates the function in the JSX, which in turn passes its return value to the callback.</p>

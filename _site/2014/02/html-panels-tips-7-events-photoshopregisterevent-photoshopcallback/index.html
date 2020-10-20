@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -802,7 +806,7 @@
     </header>
 
     <div class="post-content">
-        <p>This tip shows you the first way to make an HTML Panel listen and react to Photoshop Events: via <code class="highlighter-rouge">PhotoshopRegisterEvent</code>. Back in the Flash land, there were <strong>two ways</strong> to register callbacks for Photoshop Events: using either a <strong>PSHosttAdapter</strong> library, or an <strong>ExternalInterface</strong> object and PhotoshopCallback. Today’s tip is about the latter (see <a href="/2014/02/html-panels-tips-8-photoshop-events-pshostadapter-libraries/" title="HTML Panels Tips: #8 Photoshop Events, Take 2">Tip #8</a> for the PSHostAdapter libraries). What we used to write in <strong>ActionScript</strong> was something like:</p>
+        <p>This tip shows you the first way to make an HTML Panel listen and react to Photoshop Events: via <code class="language-plaintext highlighter-rouge">PhotoshopRegisterEvent</code>. Back in the Flash land, there were <strong>two ways</strong> to register callbacks for Photoshop Events: using either a <strong>PSHosttAdapter</strong> library, or an <strong>ExternalInterface</strong> object and PhotoshopCallback. Today’s tip is about the latter (see <a href="/2014/02/html-panels-tips-8-photoshop-events-pshostadapter-libraries/" title="HTML Panels Tips: #8 Photoshop Events, Take 2">Tip #8</a> for the PSHostAdapter libraries). What we used to write in <strong>ActionScript</strong> was something like:</p>
 
 <figure class="highlight"><pre><code class="language-as" data-lang="as"><span class="c1">// Set TypeID for desired events</span>
 <span class="kr">private</span> <span class="kr">const</span> <span class="nx">COPY_INT</span><span class="o">:</span><span class="nx">int</span> <span class="o">=</span> <span class="nx">Photoshop</span><span class="p">.</span><span class="nx">app</span><span class="p">.</span><span class="nx">charIDToTypeID</span><span class="p">(</span><span class="err">’</span><span class="nx">copy</span><span class="err">’</span><span class="p">)</span><span class="o">;</span>
@@ -817,27 +821,27 @@
 <span class="c1">//</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Things are slightly different now in <strong>Javascript</strong>. and are based on <code class="highlighter-rouge">CSInterface</code> and the dispatching of a custom Event. As follows the mechanism in a nutshell, then I’ll show you an actual example:</p>
+<p>Things are slightly different now in <strong>Javascript</strong>. and are based on <code class="language-plaintext highlighter-rouge">CSInterface</code> and the dispatching of a custom Event. As follows the mechanism in a nutshell, then I’ll show you an actual example:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
 
 <span class="c1">// Create a new Event</span>
-<span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSEvent</span><span class="p">(</span><span class="s2">"com.adobe.PhotoshopRegisterEvent"</span><span class="p">,</span> <span class="s2">"APPLICATION"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSEvent</span><span class="p">(</span><span class="dl">"</span><span class="s2">com.adobe.PhotoshopRegisterEvent</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">APPLICATION</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Set Event properties: extension id</span>
-<span class="nx">event</span><span class="p">.</span><span class="nx">extensionId</span> <span class="o">=</span> <span class="s2">"com.example.psevents"</span><span class="p">;</span>
+<span class="nx">event</span><span class="p">.</span><span class="nx">extensionId</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">com.example.psevents</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="c1">// Set Event properties: data (as Type ID string, comma separated)</span>
 <span class="c1">// 1668247673 = charIDToTypeID( "copy" ) = copy</span>
 <span class="c1">// 1885434740 = charIDToTypeID( "past" ) = paste</span>
 <span class="c1">// 1668641824 = charIDToTypeID( "cut " ) = cut</span>
-<span class="nx">event</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="s2">"1668247673, 1885434740, 1668641824"</span><span class="p">;</span>
+<span class="nx">event</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">1668247673, 1885434740, 1668641824</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="c1">// Dispatch the Event</span>
 <span class="nx">csInterface</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
 
 <span class="c1">// Attach a callback</span>
-<span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"PhotoshopCallback"</span><span class="p">,</span> <span class="nx">PSCallback</span><span class="p">);</span>
+<span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">PhotoshopCallback</span><span class="dl">"</span><span class="p">,</span> <span class="nx">PSCallback</span><span class="p">);</span>
 
 <span class="c1">// Define the callback</span>
 <span class="kd">function</span> <span class="nx">PSCallback</span><span class="p">(</span><span class="nx">csEvent</span><span class="p">)</span> <span class="p">{</span>
@@ -858,26 +862,26 @@
 <span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
 
 <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"hostStyle"</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">"stylesheet"</span> <span class="nx">href</span><span class="o">=</span><span class="s2">"css/theme.css"</span> <span class="o">/&gt;</span>
-  <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"theme"</span> <span class="nx">rel</span><span class="o">=</span><span class="s2">"stylesheet"</span> <span class="nx">href</span><span class="o">=</span><span class="s2">"css/light.css"</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">hostStyle</span><span class="dl">"</span> <span class="nx">rel</span><span class="o">=</span><span class="dl">"</span><span class="s2">stylesheet</span><span class="dl">"</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">css/theme.css</span><span class="dl">"</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">theme</span><span class="dl">"</span> <span class="nx">rel</span><span class="o">=</span><span class="dl">"</span><span class="s2">stylesheet</span><span class="dl">"</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">css/light.css</span><span class="dl">"</span> <span class="o">/&gt;</span>
   <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;</span><span class="sr">/title</span><span class="err">&gt;
 </span><span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
 </span>
 <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"width: 80%; margin:0 auto"</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="nx">h3</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"center"</span><span class="o">&gt;</span><span class="nx">PS</span> <span class="nx">Events</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="nx">label</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"topcoat-switch"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"registerEvent"</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"checkbox"</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"topcoat-switch__input"</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"topcoat-switch__toggle"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="dl">"</span><span class="s2">width: 80%; margin:0 auto</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">h3</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">center</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">PS</span> <span class="nx">Events</span><span class="o">&lt;</span><span class="sr">/h3</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">label</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">topcoat-switch</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">registerEvent</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">topcoat-switch__input</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">topcoat-switch__toggle</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
 </span>    <span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text"</span> <span class="nx">id</span><span class="o">=</span><span class="s2">"result"</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"topcoat-text-input"</span> <span class="nx">style</span><span class="o">=</span><span class="s2">"margin-left:10px"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">"Listen for Events"</span> <span class="nx">value</span><span class="o">=</span><span class="s2">""</span><span class="o">&gt;</span>
+</span>    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text</span><span class="dl">"</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">result</span><span class="dl">"</span> <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">topcoat-text-input</span><span class="dl">"</span> <span class="nx">style</span><span class="o">=</span><span class="dl">"</span><span class="s2">margin-left:10px</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Listen for Events</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">""</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
 </span>
-  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"js/libs/CSInterface-4.0.0.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"js/libs/jquery-2.0.2.min.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"js/themeManager.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span>  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"js/main.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">js/libs/CSInterface-4.0.0.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">js/libs/jquery-2.0.2.min.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">js/themeManager.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">js/main.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span>
 <span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
 </span>
@@ -885,27 +889,27 @@
 
 <h3 id="javascript">Javascript</h3>
 
-<p>In <code class="highlighter-rouge">main.js</code> it’s defined the Register() function that attaches (or remove) the listener, dispatching a CSEvent as you’ve already seen. A jQuery function binds the switch to <code class="highlighter-rouge">Register()</code> and finally a <code class="highlighter-rouge">PSCallback</code> function is defined: there, the Event data String is split and passed for evaluation to JSX (see <a href="/2014/01/html-panels-tips-4-passing-objects-from-html-to-jsx/" title="HTML Panels Tips: #4 passing Objects from HTML to JSX">Tip #4</a> for details about HTML to JSX data exchange). The <code class="highlighter-rouge">evalScript</code> callback (that is, the JSX return value) is displayed in the Text Area.</p>
+<p>In <code class="language-plaintext highlighter-rouge">main.js</code> it’s defined the Register() function that attaches (or remove) the listener, dispatching a CSEvent as you’ve already seen. A jQuery function binds the switch to <code class="language-plaintext highlighter-rouge">Register()</code> and finally a <code class="language-plaintext highlighter-rouge">PSCallback</code> function is defined: there, the Event data String is split and passed for evaluation to JSX (see <a href="/2014/01/html-panels-tips-4-passing-objects-from-html-to-jsx/" title="HTML Panels Tips: #4 passing Objects from HTML to JSX">Tip #4</a> for details about HTML to JSX data exchange). The <code class="language-plaintext highlighter-rouge">evalScript</code> callback (that is, the JSX return value) is displayed in the Text Area.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
   <span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
 
   <span class="kd">function</span> <span class="nx">Register</span><span class="p">(</span><span class="nx">inOn</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">inOn</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSEvent</span><span class="p">(</span><span class="s2">"com.adobe.PhotoshopRegisterEvent"</span><span class="p">,</span> <span class="s2">"APPLICATION"</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSEvent</span><span class="p">(</span><span class="dl">"</span><span class="s2">com.adobe.PhotoshopRegisterEvent</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">APPLICATION</span><span class="dl">"</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSEvent</span><span class="p">(</span><span class="s2">"com.adobe.PhotoshopUnRegisterEvent"</span><span class="p">,</span> <span class="s2">"APPLICATION"</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSEvent</span><span class="p">(</span><span class="dl">"</span><span class="s2">com.adobe.PhotoshopUnRegisterEvent</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">APPLICATION</span><span class="dl">"</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="nx">event</span><span class="p">.</span><span class="nx">extensionId</span> <span class="o">=</span> <span class="s2">"com.example.psevents"</span><span class="p">;</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">extensionId</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">com.example.psevents</span><span class="dl">"</span><span class="p">;</span>
 
     <span class="c1">// some events:</span>
     <span class="c1">// 1668247673 = charIDToTypeID( "copy" ) = copy</span>
     <span class="c1">// 1885434740 = charIDToTypeID( "past" ) = paste</span>
     <span class="c1">// 1668641824 = charIDToTypeID( "cut " ) = cut</span>
-    <span class="nx">event</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="s2">"1668247673, 1885434740, 1668641824"</span><span class="p">;</span>
+    <span class="nx">event</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">1668247673, 1885434740, 1668641824</span><span class="dl">"</span><span class="p">;</span>
     <span class="nx">csInterface</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
   <span class="p">}</span>
 
@@ -914,21 +918,21 @@
     <span class="nx">themeManager</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
 
     <span class="c1">// Switch onChange callback</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">'#registerEvent'</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">Register</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s1">':checked'</span><span class="p">));</span> <span class="c1">// true or false</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#registerEvent</span><span class="dl">'</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">Register</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">'</span><span class="s1">:checked</span><span class="dl">'</span><span class="p">));</span> <span class="c1">// true or false</span>
     <span class="p">});</span>
   <span class="p">}</span>
 
   <span class="kd">function</span> <span class="nx">PSCallback</span><span class="p">(</span><span class="nx">csEvent</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">dataArray</span> <span class="o">=</span> <span class="nx">csEvent</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">","</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">dataArray</span> <span class="o">=</span> <span class="nx">csEvent</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="dl">"</span><span class="s2">,</span><span class="dl">"</span><span class="p">);</span>
     <span class="c1">// send to JSX to convert typeIDs to stringIDs</span>
-    <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'convertTypeID('</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dataArray</span><span class="err">\</span><span class="p">[</span><span class="mi">0</span><span class="err">\</span><span class="p">])</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s1">'#result'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+    <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">convertTypeID(</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dataArray</span><span class="err">\</span><span class="p">[</span><span class="mi">0</span><span class="err">\</span><span class="p">])</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">)</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#result</span><span class="dl">'</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
     <span class="p">});</span>
   <span class="p">}</span>
 
   <span class="nx">init</span><span class="p">();</span>
-  <span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"PhotoshopCallback"</span><span class="p">,</span> <span class="nx">PSCallback</span><span class="p">);</span>
+  <span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">PhotoshopCallback</span><span class="dl">"</span><span class="p">,</span> <span class="nx">PSCallback</span><span class="p">);</span>
 
 <span class="p">}());</span></code></pre></figure>
 

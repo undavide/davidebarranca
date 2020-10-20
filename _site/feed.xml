@@ -5,9 +5,65 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 Jul 2020 12:10:21 +0200</pubDate>
-    <lastBuildDate>Tue, 21 Jul 2020 12:10:21 +0200</lastBuildDate>
-    <generator>Jekyll v3.8.5</generator>
+    <pubDate>Wed, 21 Oct 2020 00:49:22 +0200</pubDate>
+    <lastBuildDate>Wed, 21 Oct 2020 00:49:22 +0200</lastBuildDate>
+    <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>UXP launch at Adobe MAX 2020</title>
+        <description>&lt;p&gt;The &lt;a href=&quot;https://www.adobe.com/max.html&quot;&gt;Adobe MAX 2020&lt;/a&gt; conference is unfolding right now, free and online, carrying a number of major updates in the Creative Cloud apps lineup – Photoshop 2021 included. These are three of the major keynote’s highlights IMHO.&lt;/p&gt;
+
+&lt;h4 id=&quot;conan-obrien-mentioning-cep-10-on-stage&quot;&gt;Conan O’Brien mentioning CEP 10 on stage&lt;/h4&gt;
+
+&lt;p&gt;Read that again to sink it in.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2020/10/Conan.jpg&quot; srcset=&quot;/wp-content/uploads/2020/10/Conan.jpg 1x, /wp-content/uploads/2020/05/Conan@2x.jpg 2x&quot; alt=&quot;Conan O'Brien on-stage at MAX 2020&quot; /&gt;
+&lt;figcaption&gt;Conan O'Brien on stage co-hosting MAX 2020. He really said &quot;CEP 10&quot;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h4 id=&quot;adobe-photoshop-2021-supporting-the-new-uxp-plugins-architecture-for-3rd-party-developers&quot;&gt;Adobe Photoshop 2021 supporting the new UXP plugins architecture for 3rd-party developers.&lt;/h4&gt;
+
+&lt;p&gt;UXP stands for &lt;em&gt;Unified Extensibility Platform&lt;/em&gt;, a technology that was Guinea-pigged on Adobe XD and &lt;a href=&quot;https://medium.com/adobetech/announcing-uxp-in-photoshop-288496ab5e3e&quot;&gt;“enables JavaScript-based plugin development with near-native performance”&lt;/a&gt;, quoting Ari Fuchs (Product Lead for in-app extensibility at Adobe).&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2020/10/UXP.png&quot; srcset=&quot;/wp-content/uploads/2020/10/UXP.png 1x, /wp-content/uploads/2020/05/UXP@2x.png 2x&quot; alt=&quot;The UXP architecture&quot; /&gt;
+&lt;figcaption&gt;The UXP Architecture (don't worry it'll be fine)&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;My fellow developer, if this doesn’t get you excited feel worried then: &lt;em&gt;in the long run&lt;/em&gt; UXP is going to replace CEP, so you must care sooner or later. Let me stress that it will &lt;em&gt;not&lt;/em&gt; happen overnight, we’re just in the early stages and they’re going to overlap for a significant amount of time. Yet, be aware that UXP is clearly the future of plugins development in Adobe-land for all major CC apps.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-creative-cloud-marketplace-featuring-uxp-plugins-photoshop&quot;&gt;The Creative Cloud Marketplace featuring UXP plugins Photoshop&lt;/h4&gt;
+
+&lt;p&gt;We’ve been working behind the scenes for months now (“we” being yours truly and other amazing developers, with the invaluable support of Adobe employees) to build and launch our UXP plugins in time for MAX 2020. I’ve released new versions of ALCE, Double USM (that for a limited time are 50% off the original price), and the free utilities Theme Switcher and Floating Adjustments.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img src=&quot;/wp-content/uploads/2020/10/UXP-Marketplace.jpg&quot; srcset=&quot;/wp-content/uploads/2020/10/UXP-Marketplace.jpg 1x, /wp-content/uploads/2020/05/UXP-Marketplace@2x.jpg 2x&quot; alt=&quot;The UXP architecture&quot; /&gt;
+&lt;figcaption&gt;The new Plugins panel and the CCD Marketplace &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The hub for plugins discovery and installation is now the CCD – Creative Cloud Desktop app – read more on &lt;a href=&quot;https://blog.adobe.com/en/2020/10/20/creative-cloud-ecosystem-update-max-2020.html&quot;&gt;this post&lt;/a&gt; by Vijay Vachani, (Sr. Director Product Management &amp;amp; Platform Partnerships at Adobe). Photoshop 2021 also sports a new Plugins menu and panel.&lt;/p&gt;
+
+&lt;h2 id=&quot;uxp-and-you--how-this-blog-can-help-&quot;&gt;UXP and you – how this blog can help 🚀&lt;/h2&gt;
+
+&lt;p&gt;In the past, I’ve extensively blogged about CEP in the apparently quite popular “HTML Panels Tip” series. I plan to do the very same here with UXP – with the difference that &lt;strong&gt;I’m also going to record videos&lt;/strong&gt;: the first being an introduction/first-aid to the UXP platform that I’ll release here before the end of the month. So stay tuned! And let me know what you think in the comment below.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, there are a number of freely available &lt;a href=&quot;https://www.adobe.com/max.html&quot;&gt;Adobe MAX sessions&lt;/a&gt; to watch and learn from – check them out. Stay safe and cheers from Italy! 🖐&lt;/p&gt;
+
+&lt;p&gt;Davide&lt;/p&gt;
+</description>
+        <pubDate>Tue, 20 Oct 2020 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/development/UXP-at-Adobe-MAX-2020.html</link>
+        <guid isPermaLink="true">http://localhost:4000/development/UXP-at-Adobe-MAX-2020.html</guid>
+        
+        <category>UXP</category>
+        
+        <category>Adobe MAX</category>
+        
+        
+        <category>Development</category>
+        
+      </item>
     
       <item>
         <title>JavaScript Native Applications for Photoshop</title>
@@ -96,7 +152,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;I am working on a new series of &lt;strong&gt;video-tutorials&lt;/strong&gt; on Photoshop Development.&lt;/li&gt;
-  &lt;li&gt;The subject is going to be &lt;strong&gt;Native Applications&lt;/strong&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;.app&lt;/code&gt; for Mac and &lt;code class=&quot;highlighter-rouge&quot;&gt;.exe&lt;/code&gt; for Windows, entirely written in Javascript) that connect to Photoshop.&lt;/li&gt;
+  &lt;li&gt;The subject is going to be &lt;strong&gt;Native Applications&lt;/strong&gt; (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.app&lt;/code&gt; for Mac and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.exe&lt;/code&gt; for Windows, entirely written in Javascript) that connect to Photoshop.&lt;/li&gt;
   &lt;li&gt;Think CEP (aka HTML) Panels, but transplanted outside Photoshop.&lt;/li&gt;
   &lt;li&gt;The Demo App is 98% complete: for fun, it also implements a simple &lt;em&gt;Machine Learning&lt;/em&gt; pre-trained model for image classification.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Availability&lt;/strong&gt;: approx. Q3/2020, updates in the blog.&lt;/li&gt;
@@ -193,7 +249,7 @@
     
       <item>
         <title>The state of Hasselblad Flextight scanners, FlexColor and the 3F format</title>
-        <description>&lt;p&gt;In case you missed it, Flextight scanners have vanished from the Hasselblad website around May 2019 and macOS Catalina doesn’t run FlexColor anymore. No software updates are planned, plus I’ve run into problems dealing with &lt;code class=&quot;highlighter-rouge&quot;&gt;fff&lt;/code&gt; files in Photoshop 2020. Heavens!&lt;/p&gt;
+        <description>&lt;p&gt;In case you missed it, Flextight scanners have vanished from the Hasselblad website around May 2019 and macOS Catalina doesn’t run FlexColor anymore. No software updates are planned, plus I’ve run into problems dealing with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fff&lt;/code&gt; files in Photoshop 2020. Heavens!&lt;/p&gt;
 
 &lt;h2 id=&quot;flextight-scanners&quot;&gt;Flextight scanners&lt;/h2&gt;
 
@@ -227,7 +283,7 @@
 
 &lt;p&gt;To the best of my knowledge, the Windows version still runs on whatever version is Windows at now, but with macOS you’re capped to 10.14 Mojave.&lt;/p&gt;
 
-&lt;p&gt;Neither FlexColor nor the scanners do require a high-performance computer, they’re probably going to work fine with old dedicated hardware for years to come. I think it’s possible to run Catalina and virtualize (with Parallels or VMWare) Mojave so that you can still run 32bit apps. Let’s hope that by the time the whole process becomes impractical or the spare parts are out of stock, the film we want to scan has been eroded away by chemical remains and fungi – checkmate, problem solved&lt;sup id=&quot;fnref:1980&quot;&gt;&lt;a href=&quot;#fn:1980&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Neither FlexColor nor the scanners do require a high-performance computer, they’re probably going to work fine with old dedicated hardware for years to come. I think it’s possible to run Catalina and virtualize (with Parallels or VMWare) Mojave so that you can still run 32bit apps. Let’s hope that by the time the whole process becomes impractical or the spare parts are out of stock, the film we want to scan has been eroded away by chemical remains and fungi – checkmate, problem solved&lt;sup id=&quot;fnref:1980&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:1980&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;Finally, due to legal reasons (very likely the use of some internal libraries that prevent it) FlexColor can’t be open-sourced. There are rumors about VueScan willing (or having been asked) to implement a module that would drive the Flextight hardware, but I couldn’t been able to find any official statement.&lt;/p&gt;
 
@@ -237,24 +293,24 @@
 
 &lt;p&gt;Here things are getting slightly more complex, please bear with me.&lt;/p&gt;
 
-&lt;p&gt;As we all know, FlexColor is used by archivists and photoshoppers alike to browse through, and extract &lt;code class=&quot;highlighter-rouge&quot;&gt;.tif&lt;/code&gt; files from, huge collections of &lt;code class=&quot;highlighter-rouge&quot;&gt;.fff&lt;/code&gt; (aka 3F) files. You may or may not know that the 3F format is nothing but a &lt;code class=&quot;highlighter-rouge&quot;&gt;.tif&lt;/code&gt; file with some proprietary tags: to prove it, try renaming a &lt;code class=&quot;highlighter-rouge&quot;&gt;.fff&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;.tif&lt;/code&gt; and open it in Photoshop. The extra stuff is:&lt;/p&gt;
+&lt;p&gt;As we all know, FlexColor is used by archivists and photoshoppers alike to browse through, and extract &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.tif&lt;/code&gt; files from, huge collections of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.fff&lt;/code&gt; (aka 3F) files. You may or may not know that the 3F format is nothing but a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.tif&lt;/code&gt; file with some proprietary tags: to prove it, try renaming a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.fff&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.tif&lt;/code&gt; and open it in Photoshop. The extra stuff is:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;the compressed/low-res bitmap preview that FlexColor uses to &lt;em&gt;temporarily&lt;/em&gt; display the 3F while waiting to read the actual data from the file (only if the 3F isn’t too large, in which case you’re &lt;em&gt;always&lt;/em&gt; only shown the preview)&lt;/li&gt;
   &lt;li&gt;metadata related to the scan acquisition and FlexColor settings (e.g. curves, FlexTouch, saturation, snapshots, etc.)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I have grown accustomed to skip FlexColor altogether for anything but driving the scanner (acquiring the 3F), and browsing (i.e. visualizing the files). That is to say: I &lt;strong&gt;do not use FlexColor anymore for any 3F processing&lt;/strong&gt; nor &lt;code class=&quot;highlighter-rouge&quot;&gt;.tif&lt;/code&gt; extraction. I’ve never liked FlexColor rudimental, limited features – they were sort-of OK in the mid-2000s, or for large files batches quick post-processing. My client’s work today is more focused on a smaller selection of scans, to be post-produced very accurately, so I only use Photoshop.&lt;/p&gt;
+&lt;p&gt;I have grown accustomed to skip FlexColor altogether for anything but driving the scanner (acquiring the 3F), and browsing (i.e. visualizing the files). That is to say: I &lt;strong&gt;do not use FlexColor anymore for any 3F processing&lt;/strong&gt; nor &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.tif&lt;/code&gt; extraction. I’ve never liked FlexColor rudimental, limited features – they were sort-of OK in the mid-2000s, or for large files batches quick post-processing. My client’s work today is more focused on a smaller selection of scans, to be post-produced very accurately, so I only use Photoshop.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;To briefly sum up the way I use to work&lt;/strong&gt; (which I can expand in a separate blogpost – leave a comment below in case it is of any interest):&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;I open the 3F in Photoshop (thanks to the &lt;code class=&quot;highlighter-rouge&quot;&gt;Imacon3F.plugin&lt;/code&gt; or its &lt;code class=&quot;highlighter-rouge&quot;&gt;.8bf&lt;/code&gt; Windows version), which in my case is going to appear as a color negative.&lt;/li&gt;
+  &lt;li&gt;I open the 3F in Photoshop (thanks to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Imacon3F.plugin&lt;/code&gt; or its &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.8bf&lt;/code&gt; Windows version), which in my case is going to appear as a color negative.&lt;/li&gt;
   &lt;li&gt;I apply an Invert adjustment layer and a couple of Curves adjustment layers to make it look more or less &lt;em&gt;correct&lt;/em&gt; to my eyes – no need to be precise here.&lt;/li&gt;
-  &lt;li&gt;I duplicate the background layer and perform all sorts of retouching voodoo (against dust, scratches, chemicals stains, fingerprints, semen, etc.), saving this intermediate layered file as a separate, temporary &lt;code class=&quot;highlighter-rouge&quot;&gt;.psb&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;I duplicate the background layer and perform all sorts of retouching voodoo (against dust, scratches, chemicals stains, fingerprints, semen, etc.), saving this intermediate layered file as a separate, temporary &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.psb&lt;/code&gt;.&lt;/li&gt;
   &lt;li&gt;When I’m happy, I flatten all the bitmap layers and discard all the adjustment layers, so that I’m back with a one-layer, color negative file again.&lt;/li&gt;
-  &lt;li&gt;I re-open the original &lt;code class=&quot;highlighter-rouge&quot;&gt;.fff&lt;/code&gt; file, drag and drop the retouched layer from the &lt;code class=&quot;highlighter-rouge&quot;&gt;.psb&lt;/code&gt;, flatten, and save as &lt;code class=&quot;highlighter-rouge&quot;&gt;.CLEAN.fff&lt;/code&gt; – this because one never knows what the future brings… I then trash the intermediate &lt;code class=&quot;highlighter-rouge&quot;&gt;.psb&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;I keep the &lt;code class=&quot;highlighter-rouge&quot;&gt;.CLEAN.fff&lt;/code&gt; open: assign the &lt;em&gt;FlexColor Input&lt;/em&gt; ICC, convert to Adobe RGB, Invert, and save my working file as a &lt;code class=&quot;highlighter-rouge&quot;&gt;.psb&lt;/code&gt;. This is my starting point, to which I apply the usual Curves, and whatever it takes to make the image work.&lt;/li&gt;
+  &lt;li&gt;I re-open the original &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.fff&lt;/code&gt; file, drag and drop the retouched layer from the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.psb&lt;/code&gt;, flatten, and save as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.CLEAN.fff&lt;/code&gt; – this because one never knows what the future brings… I then trash the intermediate &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.psb&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;I keep the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.CLEAN.fff&lt;/code&gt; open: assign the &lt;em&gt;FlexColor Input&lt;/em&gt; ICC, convert to Adobe RGB, Invert, and save my working file as a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.psb&lt;/code&gt;. This is my starting point, to which I apply the usual Curves, and whatever it takes to make the image work.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Enter another stray bullet in the Hasselblad game: Adobe. It turns out that &lt;strong&gt;Photoshop 2020 doesn’t want to open 3Fs anymore&lt;/strong&gt;, popping up this new errors:&lt;/p&gt;
@@ -265,20 +321,20 @@
 
 &lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/12/open.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The last working version (at least on a Mac) is Photoshop CC 2019 – which is a &lt;strong&gt;big concern&lt;/strong&gt;. Why? You may or may not have heard that in the last months Adobe has aggressively restricted the licensed versions range for Photoshop – e.g. you cannot, theoretically, install or run, say, Photoshop CC 2015 anymore. Without entering into yet another rabbit hole, it all boils down to royalties with third-parties, very likely Dolby&lt;sup id=&quot;fnref:dolby&quot;&gt;&lt;a href=&quot;#fn:dolby&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;The last working version (at least on a Mac) is Photoshop CC 2019 – which is a &lt;strong&gt;big concern&lt;/strong&gt;. Why? You may or may not have heard that in the last months Adobe has aggressively restricted the licensed versions range for Photoshop – e.g. you cannot, theoretically, install or run, say, Photoshop CC 2015 anymore. Without entering into yet another rabbit hole, it all boils down to royalties with third-parties, very likely Dolby&lt;sup id=&quot;fnref:dolby&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:dolby&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;p&gt;In the end, Adobe’s versions policy is (and it is fair to expect that it will be their default from now on) to license N-1 versions – in other words: you’ll be allowed to download and install the latest Photoshop, plus the version before it, period. At the time I’m writing this, it is PS 2020 + PS CC 2019. In one year, CC 2019 will be dropped, and it’ll be PS 2021 + PS 2020.&lt;/p&gt;
 
 &lt;p&gt;Which means: one year from now, the &lt;em&gt;officially available&lt;/em&gt; Photoshop versions won’t open 3F files anymore, and working versions’ installers won’t be available for download either. LMAO.&lt;/p&gt;
 
-&lt;p&gt;There is also the tangentially related problem of macOS notarization/digital signature, from macOS Catalina onwards: &lt;code class=&quot;highlighter-rouge&quot;&gt;.plugin&lt;/code&gt; files are requested to be at least&lt;sup id=&quot;fnref:sign&quot;&gt;&lt;a href=&quot;#fn:sign&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; signed by the developer, otherwise macOS GateKeeper will prevent to run them. This is not too much of a big deal, I have an active Apple Developer membership and I can sign the file myself if needed.&lt;/p&gt;
+&lt;p&gt;There is also the tangentially related problem of macOS notarization/digital signature, from macOS Catalina onwards: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.plugin&lt;/code&gt; files are requested to be at least&lt;sup id=&quot;fnref:sign&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:sign&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; signed by the developer, otherwise macOS GateKeeper will prevent to run them. This is not too much of a big deal, I have an active Apple Developer membership and I can sign the file myself if needed.&lt;/p&gt;
 
 &lt;h2 id=&quot;tldr&quot;&gt;TL;DR&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Hasselblad Flextight X1 and X5 scanners (previously known as Imacon) are discontinued. Scanner servicing will be provided as usual &lt;em&gt;as long as spare parts will be available&lt;/em&gt;.&lt;/li&gt;
   &lt;li&gt;FlexColor is abandonware: it doesn’t run on any macOS &amp;gt; 10.14.&lt;/li&gt;
-  &lt;li&gt;3F files don’t open anymore in Photoshop 2020; very likely the CC 2019 installer is not going to be available one year from now, and even if you have one, it’s definitely possible that macOS Catalina will prevent &lt;code class=&quot;highlighter-rouge&quot;&gt;Imacon3F.plugin&lt;/code&gt; from working because it’s not signed/notarized.&lt;/li&gt;
+  &lt;li&gt;3F files don’t open anymore in Photoshop 2020; very likely the CC 2019 installer is not going to be available one year from now, and even if you have one, it’s definitely possible that macOS Catalina will prevent &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Imacon3F.plugin&lt;/code&gt; from working because it’s not signed/notarized.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;workarounds-if-any&quot;&gt;Workarounds (if any)&lt;/h2&gt;
@@ -287,8 +343,8 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Acquiring new scans&lt;/strong&gt;, for the time being, requires FlexColor; so either you keep dedicated hardware running macOS Mojave, or you switch to Windows.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Browsing 3F collections&lt;/strong&gt; is, and will keep being, a pain in the butt: FlexColor is the &lt;em&gt;lesser evil&lt;/em&gt;, Adobe Bridge seems unable to load just the low-res preview that is embedded in &lt;code class=&quot;highlighter-rouge&quot;&gt;.fff&lt;/code&gt; files and it takes forever to read the file content to create a thumbnail. The same holds true with Finder. I’m not aware of any other viable options for the Mac.&lt;/li&gt;
-  &lt;li&gt;Extracting &lt;code class=&quot;highlighter-rouge&quot;&gt;.tif&lt;/code&gt; files for &lt;strong&gt;3F post-processing&lt;/strong&gt; is not a problem, as long as the Photoshop plugin keeps working 🤞🏻.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Browsing 3F collections&lt;/strong&gt; is, and will keep being, a pain in the butt: FlexColor is the &lt;em&gt;lesser evil&lt;/em&gt;, Adobe Bridge seems unable to load just the low-res preview that is embedded in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.fff&lt;/code&gt; files and it takes forever to read the file content to create a thumbnail. The same holds true with Finder. I’m not aware of any other viable options for the Mac.&lt;/li&gt;
+  &lt;li&gt;Extracting &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.tif&lt;/code&gt; files for &lt;strong&gt;3F post-processing&lt;/strong&gt; is not a problem, as long as the Photoshop plugin keeps working 🤞🏻.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Feel free to comment below if you have updated news, workflow suggestions, or you just want to share your point of view as a Hasselblad user.
@@ -296,16 +352,16 @@
 
 &lt;hr /&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:1980&quot;&gt;
-      &lt;p&gt;Please bear with me but I’m right in the middle of the postproduction of a batch of large format, color negative scans from the early 1980, and it’s a mess. Are you nostalgic of the old days of analogic photography? Bloody hell, no. &lt;a href=&quot;#fnref:1980&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:1980&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Please bear with me but I’m right in the middle of the postproduction of a batch of large format, color negative scans from the early 1980, and it’s a mess. Are you nostalgic of the old days of analogic photography? Bloody hell, no. &lt;a href=&quot;#fnref:1980&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:dolby&quot;&gt;
-      &lt;p&gt;Read &lt;a href=&quot;https://www.plagiarismtoday.com/2019/05/15/adobe-dolby-and-the-battle-over-your-software/&quot;&gt;here&lt;/a&gt; for more info about the Adobe-Dolby lawsuit. &lt;a href=&quot;#fnref:dolby&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:dolby&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Read &lt;a href=&quot;https://www.plagiarismtoday.com/2019/05/15/adobe-dolby-and-the-battle-over-your-software/&quot;&gt;here&lt;/a&gt; for more info about the Adobe-Dolby lawsuit. &lt;a href=&quot;#fnref:dolby&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:sign&quot;&gt;
-      &lt;p&gt;It is unclear to me, at the moment, whether a digital signature is enough or I would be required to notarize the &lt;code class=&quot;highlighter-rouge&quot;&gt;.plugin&lt;/code&gt; as well – not a big deal either, but not running Catalina myself I cannot test it. &lt;a href=&quot;#fnref:sign&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:sign&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;It is unclear to me, at the moment, whether a digital signature is enough or I would be required to notarize the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.plugin&lt;/code&gt; as well – not a big deal either, but not running Catalina myself I cannot test it. &lt;a href=&quot;#fnref:sign&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -345,7 +401,7 @@
 &lt;a href=&quot;https://www.ps-scripting.com/bundles.html&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2019/10/books.jpg&quot; srcset=&quot;/wp-content/uploads/2019/10/books.jpg 1x, /wp-content/uploads/2019/10/books@2x.jpg 2x&quot; alt=&quot;My Books&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;I do sell them on my own via &lt;a href=&quot;https://gumroad.com/&quot;&gt;Gumroad&lt;/a&gt;; I do the marketing/newsletter on my own; I find beta readers/tech editors on my own; I do design the book on my own. Basically, I’m ever such a grumpy, control-freak guy with some tech background who needs to produce the best looking &lt;code class=&quot;highlighter-rouge&quot;&gt;.pdf&lt;/code&gt; that he can.&lt;/p&gt;
+&lt;p&gt;I do sell them on my own via &lt;a href=&quot;https://gumroad.com/&quot;&gt;Gumroad&lt;/a&gt;; I do the marketing/newsletter on my own; I find beta readers/tech editors on my own; I do design the book on my own. Basically, I’m ever such a grumpy, control-freak guy with some tech background who needs to produce the best looking &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.pdf&lt;/code&gt; that he can.&lt;/p&gt;
 
 &lt;p&gt;Stuff &lt;strong&gt;I very much like&lt;/strong&gt;:&lt;/p&gt;
 
@@ -396,7 +452,7 @@
 &lt;p&gt;Technically speaking, at least with the MarkDown-in, PDF-out process, Leanpub relies on an intermediate LaTeX step; so it actually is MD to LaTeX to PDF (I suppose it is the same with Markua, but I can’t be sure). If you’re not familiar with it, LaTeX is a &lt;em&gt;“document preparation system for high-quality typesetting”&lt;/em&gt; – or in layman terms, an horribly complex markup language.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;MarkDown is a markup language too, but much simpler. It lets you write &lt;em&gt;plain text&lt;/em&gt; with a very light and minimal markup so that titles are made with &lt;code class=&quot;highlighter-rouge&quot;&gt;#&lt;/code&gt; symbols, the asterisks in &lt;code class=&quot;highlighter-rouge&quot;&gt;**that**&lt;/code&gt; turn &lt;strong&gt;that&lt;/strong&gt; bold, etc.&lt;/p&gt;
+  &lt;p&gt;MarkDown is a markup language too, but much simpler. It lets you write &lt;em&gt;plain text&lt;/em&gt; with a very light and minimal markup so that titles are made with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#&lt;/code&gt; symbols, the asterisks in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;**that**&lt;/code&gt; turn &lt;strong&gt;that&lt;/strong&gt; bold, etc.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;figure&gt;
@@ -404,7 +460,7 @@
 &lt;figcaption&gt;A MarkDown example (this blogpost)&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;In a way, you might simplify matters saying that, among the rest, Leanpub has put together a very well designed set of &lt;em&gt;LaTeX styles&lt;/em&gt; on top of a well-crafted MD conversion, so that the resulting PDF is remarkably good (setting aside &lt;code class=&quot;highlighter-rouge&quot;&gt;.epub&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;.mobi&lt;/code&gt; versions, that are not a strict requirement for me).&lt;/p&gt;
+&lt;p&gt;In a way, you might simplify matters saying that, among the rest, Leanpub has put together a very well designed set of &lt;em&gt;LaTeX styles&lt;/em&gt; on top of a well-crafted MD conversion, so that the resulting PDF is remarkably good (setting aside &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.epub&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.mobi&lt;/code&gt; versions, that are not a strict requirement for me).&lt;/p&gt;
 
 &lt;h3 id=&quot;leanpubs-pros-and-cons&quot;&gt;Leanpub’s Pros and Cons&lt;/h3&gt;
 
@@ -420,11 +476,11 @@
 
 &lt;h2 id=&quot;pandoc&quot;&gt;Pandoc&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://pandoc.org/&quot;&gt;Pandoc&lt;/a&gt; is an open source set of tools that let you convert between formats - a lot of them, including MarkDown,  ePub, Microsoft Word, InDesign &lt;code class=&quot;highlighter-rouge&quot;&gt;.idml&lt;/code&gt;, PDF (via LaTeX). If you need it, you can get get a &lt;code class=&quot;highlighter-rouge&quot;&gt;.mobi&lt;/code&gt; from an &lt;code class=&quot;highlighter-rouge&quot;&gt;.epub&lt;/code&gt; with the help of &lt;a href=&quot;https://calibre-ebook.com/&quot;&gt;Calibre&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://pandoc.org/&quot;&gt;Pandoc&lt;/a&gt; is an open source set of tools that let you convert between formats - a lot of them, including MarkDown,  ePub, Microsoft Word, InDesign &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.idml&lt;/code&gt;, PDF (via LaTeX). If you need it, you can get get a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.mobi&lt;/code&gt; from an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.epub&lt;/code&gt; with the help of &lt;a href=&quot;https://calibre-ebook.com/&quot;&gt;Calibre&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Pandoc is super-awesome, it is free, it runs as a command-line utility from the Terminal for Mac, Win and Linux, it provides the same sort of MD to LaTeX to PDF workflow that Leanpub sports. There’s an elephant in the room, though: you must rely on a set of custom &lt;em&gt;LaTeX styles&lt;/em&gt; to tweak the PDF appearance. In other words, the default conversion is elegant as almost any LaTeX document is by default, but rather dull: if you want to use some of the fancier stuff and you don’t know your LaTeX… you’re &lt;em&gt;totally&lt;/em&gt; out of luck.&lt;/p&gt;
 
-&lt;p&gt;Of course there is plenty of &lt;a href=&quot;https://github.com/jgm/pandoc/wiki/User-contributed-templates&quot;&gt;templates&lt;/a&gt;. I did play a little bit with one called &lt;a href=&quot;https://github.com/Wandmalfarbe/pandoc-latex-template&quot;&gt;Eisvogel&lt;/a&gt;, but I couldn’t really figure out how to bend it to my needs, nor I did know how to “teach Pandoc” to interpret the MarkDown that I would like to be linked, say, to a custom LaTeX &lt;code class=&quot;highlighter-rouge&quot;&gt;\newcommand&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Of course there is plenty of &lt;a href=&quot;https://github.com/jgm/pandoc/wiki/User-contributed-templates&quot;&gt;templates&lt;/a&gt;. I did play a little bit with one called &lt;a href=&quot;https://github.com/Wandmalfarbe/pandoc-latex-template&quot;&gt;Eisvogel&lt;/a&gt;, but I couldn’t really figure out how to bend it to my needs, nor I did know how to “teach Pandoc” to interpret the MarkDown that I would like to be linked, say, to a custom LaTeX &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\newcommand&lt;/code&gt;.&lt;/p&gt;
 
 &lt;figure&gt;
 &lt;img src=&quot;/wp-content/uploads/2019/10/eisvogel.png&quot; srcset=&quot;/wp-content/uploads/2019/10/eisvogel.png 1x, /wp-content/uploads/2019/10/eisvogel@2x.png 2x&quot; alt=&quot;The Eisvogel LaTeX template for Pandoc&quot; /&gt;
@@ -435,7 +491,7 @@
 
 &lt;h2 id=&quot;softcover&quot;&gt;Softcover&lt;/h2&gt;
 
-&lt;p&gt;I did use &lt;a href=&quot;https://www.softcover.io/&quot;&gt;SoftCover&lt;/a&gt; for my &lt;em&gt;short book&lt;/em&gt; a while ago, and I was quite pleased. Keeping it to the book generation process alone (Softcover offer sales services too), it is based on an open-source Ruby command-line set of tools to process MarkDown in, and output PDF, plus &lt;code class=&quot;highlighter-rouge&quot;&gt;.epub&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;.mobi&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;.html&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I did use &lt;a href=&quot;https://www.softcover.io/&quot;&gt;SoftCover&lt;/a&gt; for my &lt;em&gt;short book&lt;/em&gt; a while ago, and I was quite pleased. Keeping it to the book generation process alone (Softcover offer sales services too), it is based on an open-source Ruby command-line set of tools to process MarkDown in, and output PDF, plus &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.epub&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.mobi&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.html&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Softcover is more explicit in terms of intermediate steps, for it advocates the use of PolyTeX: &lt;em&gt;“a strict subset of the LaTeX typesetting language”&lt;/em&gt;. Quite interestingly, you’re allowed to mix-in some LaTeX in the MarkDown, that works in combination with the Softcover provided styles. The more LaTeX you know, the better you can customize them.&lt;/p&gt;
 
@@ -447,7 +503,7 @@
 &lt;p&gt;All in all, my experience with Softcover on the first book was OK. I had to tweak quite some things in the styles to my taste, and I’ve copied and pasted from &lt;a href=&quot;https://tex.stackexchange.com&quot;&gt;TeX StackExchange&lt;/a&gt; more than a sensible developer would find appropriate – without really knowing what I was doing. Still, I did like more the design that comes with Leanpub out-of-the-box; on the plus side, I enjoyed very much the local PDF generation and PolyTeX features such as named cross-references.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Since I’ve mentioned them a couple of times already, a &lt;em&gt;named cross reference&lt;/em&gt; is a piece of text (could be a title, a listing, a table, etc.) to which you attach a &lt;code class=&quot;highlighter-rouge&quot;&gt;\label&lt;/code&gt;, and to which you can refer to with the same label. Magic happens because you automatically get both the correct numeration and name (here, “figure 1.2”).&lt;/p&gt;
+  &lt;p&gt;Since I’ve mentioned them a couple of times already, a &lt;em&gt;named cross reference&lt;/em&gt; is a piece of text (could be a title, a listing, a table, etc.) to which you attach a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\label&lt;/code&gt;, and to which you can refer to with the same label. Magic happens because you automatically get both the correct numeration and name (here, “figure 1.2”).&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;figure&gt;
@@ -459,7 +515,7 @@
 
 &lt;h2 id=&quot;affinity-publisher&quot;&gt;Affinity Publisher&lt;/h2&gt;
 
-&lt;p&gt;I am a true believer on &lt;a href=&quot;https://affinity.serif.com&quot;&gt;Affinity&lt;/a&gt;’s products lineup, so I’ve listed their Publisher instead of Adobe InDesign – even if I’m more familiar with the latter than the former&lt;sup id=&quot;fnref:publisher&quot;&gt;&lt;a href=&quot;#fn:publisher&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. That is to say that I have evaluated the possibility to build the book “manually”, with a page design application.&lt;/p&gt;
+&lt;p&gt;I am a true believer on &lt;a href=&quot;https://affinity.serif.com&quot;&gt;Affinity&lt;/a&gt;’s products lineup, so I’ve listed their Publisher instead of Adobe InDesign – even if I’m more familiar with the latter than the former&lt;sup id=&quot;fnref:publisher&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:publisher&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. That is to say that I have evaluated the possibility to build the book “manually”, with a page design application.&lt;/p&gt;
 
 &lt;p&gt;I must confess that, even if I would have enjoyed the possibility to get a live, visual feedback and pixel precision positioning, I tend to keep InDesign and its breed at an arm distance whenever possible (which, thanks to my job, is not always): I’m afraid I just don’t like it. The idea to compose a short book, not to mention a long one, sounds dreadful to me.&lt;/p&gt;
 
@@ -500,9 +556,9 @@
 &lt;figcaption&gt;The TexPad app, with almost-live preview&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;I’ve started reading documentation and books: there are so many LaTeX Fetishists that manuals are abundant. In my experience, it is far better to start from a blank style (a file with a &lt;code class=&quot;highlighter-rouge&quot;&gt;.sty&lt;/code&gt; extension) and add pieces one by one, learning what they do as you insert them, instead of borrowing a complete style from somebody else and hack it to your taste.&lt;/p&gt;
+&lt;p&gt;I’ve started reading documentation and books: there are so many LaTeX Fetishists that manuals are abundant. In my experience, it is far better to start from a blank style (a file with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.sty&lt;/code&gt; extension) and add pieces one by one, learning what they do as you insert them, instead of borrowing a complete style from somebody else and hack it to your taste.&lt;/p&gt;
 
-&lt;p&gt;Line after line, I’ve merged pieces from &lt;code class=&quot;highlighter-rouge&quot;&gt;Softcover.sty&lt;/code&gt;,  &lt;code class=&quot;highlighter-rouge&quot;&gt;Eisvogel.sty&lt;/code&gt; and stuff I’ve found online; apparently there is a package for everything, from footnotes to listings, quotes, colors, bookmarks, you name it&lt;sup id=&quot;fnref:packages&quot;&gt;&lt;a href=&quot;#fn:packages&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. It would be impossible to list them all here – the bottom-line is that creating a decent set of styles for a book that is at least up to Leanpub standards is in fact a doable task for anyone with some inclination to code tinkering. Dare I to say, I’ve even got better listings 😉&lt;/p&gt;
+&lt;p&gt;Line after line, I’ve merged pieces from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Softcover.sty&lt;/code&gt;,  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Eisvogel.sty&lt;/code&gt; and stuff I’ve found online; apparently there is a package for everything, from footnotes to listings, quotes, colors, bookmarks, you name it&lt;sup id=&quot;fnref:packages&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:packages&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. It would be impossible to list them all here – the bottom-line is that creating a decent set of styles for a book that is at least up to Leanpub standards is in fact a doable task for anyone with some inclination to code tinkering. Dare I to say, I’ve even got better listings 😉&lt;/p&gt;
 
 &lt;figure&gt;
 &lt;img src=&quot;/wp-content/uploads/2019/10/listings.png&quot; srcset=&quot;/wp-content/uploads/2019/10/listings.png 1x, /wp-content/uploads/2019/10/listings@2x.png 2x&quot; alt=&quot;Custom styled listings&quot; /&gt;
@@ -525,13 +581,13 @@
 
 &lt;hr /&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:publisher&quot;&gt;
-      &lt;p&gt;Let’s not forget that, to date, Affinity isn’t Subscription based; and it has never told its users they can get sued for using old versions, &lt;a href=&quot;https://www.vice.com/en_us/article/a3xk3p/adobe-tells-users-they-can-get-sued-for-using-old-versions-of-photoshop&quot;&gt;like Adobe&lt;/a&gt;… &lt;a href=&quot;#fnref:publisher&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:publisher&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Let’s not forget that, to date, Affinity isn’t Subscription based; and it has never told its users they can get sued for using old versions, &lt;a href=&quot;https://www.vice.com/en_us/article/a3xk3p/adobe-tells-users-they-can-get-sued-for-using-old-versions-of-photoshop&quot;&gt;like Adobe&lt;/a&gt;… &lt;a href=&quot;#fnref:publisher&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:packages&quot;&gt;
-      &lt;p&gt;My understanding is that LaTeX is a macro-language on top of TeX, which is way too complex to be used right away. In addition to what comes built-in with LaTeX itself, you’re usually advised to load &lt;em&gt;packages&lt;/em&gt;: users contributed “macros” that make the process of implementing new features much easier. &lt;a href=&quot;#fnref:packages&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:packages&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;My understanding is that LaTeX is a macro-language on top of TeX, which is way too complex to be used right away. In addition to what comes built-in with LaTeX itself, you’re usually advised to load &lt;em&gt;packages&lt;/em&gt;: users contributed “macros” that make the process of implementing new features much easier. &lt;a href=&quot;#fnref:packages&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -567,7 +623,7 @@
 
 &lt;h2 id=&quot;gatekeeper&quot;&gt;Gatekeeper&lt;/h2&gt;
 
-&lt;p&gt;When your customers run your product’s &lt;code class=&quot;highlighter-rouge&quot;&gt;installer.pkg&lt;/code&gt;, macOS Gatekeeper connects with Apple, checking whether the file you’re executing has been vetted and thus can be run safely. If this is the case, Gatekeeper pops up the usual warning anyway:&lt;/p&gt;
+&lt;p&gt;When your customers run your product’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;installer.pkg&lt;/code&gt;, macOS Gatekeeper connects with Apple, checking whether the file you’re executing has been vetted and thus can be run safely. If this is the case, Gatekeeper pops up the usual warning anyway:&lt;/p&gt;
 
 &lt;figure&gt;
 &lt;img src=&quot;/wp-content/uploads/2019/05/gatekeeper.gif&quot; srcset=&quot;/wp-content/uploads/2019/05/gatekeeper.gif 1x, /wp-content/uploads/2019/05/gatekeeper@2x.gif 2x&quot; alt=&quot;Book Design&quot; /&gt;
@@ -585,7 +641,7 @@
 
 &lt;h2 id=&quot;notarization-walkthrough&quot;&gt;Notarization walkthrough&lt;/h2&gt;
 
-&lt;p&gt;I assume that you are at least vaguely familiar with the topic of code signing. I’m going to show you how to notarize a &lt;code class=&quot;highlighter-rouge&quot;&gt;.pkg&lt;/code&gt; installer; caveats for slightly more complex scenarios (e.g. a &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; that wraps a &lt;code class=&quot;highlighter-rouge&quot;&gt;.pkg&lt;/code&gt; and/or &lt;code class=&quot;highlighter-rouge&quot;&gt;.app&lt;/code&gt; plus other assets) will follow in a later section.&lt;/p&gt;
+&lt;p&gt;I assume that you are at least vaguely familiar with the topic of code signing. I’m going to show you how to notarize a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.pkg&lt;/code&gt; installer; caveats for slightly more complex scenarios (e.g. a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; that wraps a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.pkg&lt;/code&gt; and/or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.app&lt;/code&gt; plus other assets) will follow in a later section.&lt;/p&gt;
 
 &lt;h3 id=&quot;1-create-a-developerid-installer-certificate&quot;&gt;1. Create a DeveloperID Installer certificate&lt;/h3&gt;
 
@@ -599,19 +655,19 @@
 
 &lt;p&gt;You can verify that the certificate has been successfully installed opening the Terminal and pasting the following command:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;security find-identity -v
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;security find-identity -v
 
 1) 6A7C3D1A28FA5483E5E8857F2A12EDC71731CAED &quot;Developer ID Installer: Davide Barranca (I2WD7PWGD9)&quot;
   1 valid identities found
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Keep note of the string between quotes that says &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Developer ID Installer: ...&quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Keep note of the string between quotes that says &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;Developer ID Installer: ...&quot;&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;2-signing-the-installer&quot;&gt;2. Signing the Installer&lt;/h3&gt;
 
-&lt;p&gt;You don’t just need to &lt;em&gt;notarize&lt;/em&gt; an installer, it must be &lt;em&gt;signed&lt;/em&gt; first. Assuming that the &lt;code class=&quot;highlighter-rouge&quot;&gt;installer.pkg&lt;/code&gt; file sits in the folder you have &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; to in the Terminal window, you &lt;strong&gt;sign the installer&lt;/strong&gt; with the following command (the output I’ve got comes right below the first line):&lt;/p&gt;
+&lt;p&gt;You don’t just need to &lt;em&gt;notarize&lt;/em&gt; an installer, it must be &lt;em&gt;signed&lt;/em&gt; first. Assuming that the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;installer.pkg&lt;/code&gt; file sits in the folder you have &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cd&lt;/code&gt; to in the Terminal window, you &lt;strong&gt;sign the installer&lt;/strong&gt; with the following command (the output I’ve got comes right below the first line):&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;productsign --sign &quot;Developer ID Installer: Davide Barranca&quot; ./installer.pkg ./installer_signed.pkg
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;productsign --sign &quot;Developer ID Installer: Davide Barranca&quot; ./installer.pkg ./installer_signed.pkg
 
   productsign: using timestamp authority for signature
   productsign: signing product with identity &quot;Developer ID Installer: Davide Barranca (I2WD7PWGD9)&quot; from keychain /Library/Keychains/System.keychain
@@ -623,17 +679,17 @@
 &lt;p&gt;Let’s break down that:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;productsign&lt;/code&gt; is the utility in charge of the signing.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--sign&lt;/code&gt; is the argument that defines the Identity associated to the Apple issued certificated, which follows as a string.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./installer.pkg&lt;/code&gt; is the relative path (can be absolute as well) that points to the file you want to be signed.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./installer_signed.pkg&lt;/code&gt; is the path of the new, signed file that is going to be created by &lt;code class=&quot;highlighter-rouge&quot;&gt;productsign&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;productsign&lt;/code&gt; is the utility in charge of the signing.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--sign&lt;/code&gt; is the argument that defines the Identity associated to the Apple issued certificated, which follows as a string.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./installer.pkg&lt;/code&gt; is the relative path (can be absolute as well) that points to the file you want to be signed.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./installer_signed.pkg&lt;/code&gt; is the path of the new, signed file that is going to be created by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;productsign&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Of course you should substitute the &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Developer ID Installer:&quot;&lt;/code&gt; string with the one you’ve noted in the previous section, as well as the files paths.&lt;/p&gt;
+&lt;p&gt;Of course you should substitute the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;Developer ID Installer:&quot;&lt;/code&gt; string with the one you’ve noted in the previous section, as well as the files paths.&lt;/p&gt;
 
-&lt;p&gt;You can verify that the &lt;code class=&quot;highlighter-rouge&quot;&gt;installer_signed.pkg&lt;/code&gt; has been really signed with:&lt;/p&gt;
+&lt;p&gt;You can verify that the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;installer_signed.pkg&lt;/code&gt; has been really signed with:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pkgutil --check-signature ./installer_signed.pkg
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pkgutil --check-signature ./installer_signed.pkg
 
    Status: signed by a certificate trusted by Mac OS X
    Certificate Chain:
@@ -646,30 +702,30 @@
 
 &lt;h3 id=&quot;3-sending-the-notarization-request&quot;&gt;3. Sending the notarization request&lt;/h3&gt;
 
-&lt;p&gt;Keep handy the app-specific password you’ve requested from your AppleID account (if you’ve not done it yet, follow the instruction &lt;a href=&quot;https://support.apple.com/en-us/HT204397&quot;&gt;here&lt;/a&gt;). Let’s say that it is &lt;code class=&quot;highlighter-rouge&quot;&gt;cvbs-epfg-sizx-olwd&lt;/code&gt;. The command I’ve used to request the notarization is:&lt;/p&gt;
+&lt;p&gt;Keep handy the app-specific password you’ve requested from your AppleID account (if you’ve not done it yet, follow the instruction &lt;a href=&quot;https://support.apple.com/en-us/HT204397&quot;&gt;here&lt;/a&gt;). Let’s say that it is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cvbs-epfg-sizx-olwd&lt;/code&gt;. The command I’ve used to request the notarization is:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcrun altool --notarize-app --primary-bundle-id &quot;com.ccextensions.alce3&quot; --username &quot;YourAppleID@mail.com&quot; --password &quot;cvbs-epfg-sizx-olwd&quot; --file &quot;/full/path/to/the/installer_signed.pkg&quot;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcrun altool --notarize-app --primary-bundle-id &quot;com.ccextensions.alce3&quot; --username &quot;YourAppleID@mail.com&quot; --password &quot;cvbs-epfg-sizx-olwd&quot; --file &quot;/full/path/to/the/installer_signed.pkg&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Let’s break down that.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;xcrun&lt;/code&gt; is used to find and execute XCode commands.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;altool&lt;/code&gt; is the executable that performs the notarization request.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--notarize-app&lt;/code&gt; is the flag that tells &lt;code class=&quot;highlighter-rouge&quot;&gt;altool&lt;/code&gt; to request notarization.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--primary-bundle-id&lt;/code&gt; links to the installer I’m submitting its unique &lt;em&gt;bundle id&lt;/em&gt; (in my case &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;com.ccextensions.alce3&quot;&lt;/code&gt;, substitute it with yours)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--username&lt;/code&gt; wants your AppleID.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--password&lt;/code&gt; wants the app-specific password you’ve requested (here, &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;cvbs-epfg-sizx-olwd&quot;&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--file&lt;/code&gt; is the flag that tells &lt;code class=&quot;highlighter-rouge&quot;&gt;altool&lt;/code&gt; which file to upload. Please note that I had to specify the absolute full path (not the relative that starts with &lt;code class=&quot;highlighter-rouge&quot;&gt;./&lt;/code&gt;) between quotes&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xcrun&lt;/code&gt; is used to find and execute XCode commands.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;altool&lt;/code&gt; is the executable that performs the notarization request.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--notarize-app&lt;/code&gt; is the flag that tells &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;altool&lt;/code&gt; to request notarization.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--primary-bundle-id&lt;/code&gt; links to the installer I’m submitting its unique &lt;em&gt;bundle id&lt;/em&gt; (in my case &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;com.ccextensions.alce3&quot;&lt;/code&gt;, substitute it with yours)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--username&lt;/code&gt; wants your AppleID.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--password&lt;/code&gt; wants the app-specific password you’ve requested (here, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;cvbs-epfg-sizx-olwd&quot;&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--file&lt;/code&gt; is the flag that tells &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;altool&lt;/code&gt; which file to upload. Please note that I had to specify the absolute full path (not the relative that starts with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;./&lt;/code&gt;) between quotes&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;The command takes a while to upload the file, and gives you zero feedback; after a while, if the process has been successful, you get back something like:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2019-09-18 16:30:35.659 altool[8788:92462] No errors uploading '/full/path/to/the/installer_signed.pkg'.
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2019-09-18 16:30:35.659 altool[8788:92462] No errors uploading '/full/path/to/the/installer_signed.pkg'.
 RequestUUID = 181638fb-a618-2298-bff0-47fa79f01326
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Keep note of the &lt;code class=&quot;highlighter-rouge&quot;&gt;RequestUUID&lt;/code&gt; string.&lt;/p&gt;
+&lt;p&gt;Keep note of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RequestUUID&lt;/code&gt; string.&lt;/p&gt;
 
 &lt;p&gt;At this point your request for notarizationhas been sent to Apple, and you have to wait for them to process the file.&lt;/p&gt;
 
@@ -677,10 +733,10 @@ RequestUUID = 181638fb-a618-2298-bff0-47fa79f01326
 
 &lt;p&gt;You can launch XCode to check whether it asks you to accept its Terms and Conditions, or run the following command to agree from the Terminal:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo xcodebuild -license
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo xcodebuild -license
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Then try checking at &lt;a href=&quot;https://itunesconnect.apple.com/&quot;&gt;iTunesConnect&lt;/a&gt;, in the section “Agreements, Tax and Banking”. The “Paid Apps” list item may have a Status of “Pending User Information”&lt;sup id=&quot;fnref:itc&quot;&gt;&lt;a href=&quot;#fn:itc&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, but there shouldn’t be any Agreement pending (usually their warnings are listed separately).&lt;/p&gt;
+&lt;p&gt;Then try checking at &lt;a href=&quot;https://itunesconnect.apple.com/&quot;&gt;iTunesConnect&lt;/a&gt;, in the section “Agreements, Tax and Banking”. The “Paid Apps” list item may have a Status of “Pending User Information”&lt;sup id=&quot;fnref:itc&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:itc&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;, but there shouldn’t be any Agreement pending (usually their warnings are listed separately).&lt;/p&gt;
 
 &lt;p&gt;If, still, nothing works it may be a glitch on Apple’s side, so wait a couple of hours and try again.&lt;/p&gt;
 
@@ -688,12 +744,12 @@ RequestUUID = 181638fb-a618-2298-bff0-47fa79f01326
 
 &lt;p&gt;In the Terminal, enter:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcrun altool --notarization-info 181638fb-a618-2298-bff0-47fa79f01326 --username &quot;YourAppleID@mail.com&quot; --password &quot;cvbs-epfg-sizx-olwd&quot;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcrun altool --notarization-info 181638fb-a618-2298-bff0-47fa79f01326 --username &quot;YourAppleID@mail.com&quot; --password &quot;cvbs-epfg-sizx-olwd&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The command uses now &lt;code class=&quot;highlighter-rouge&quot;&gt;--notarization-info&lt;/code&gt; to ping the current status, and expects the same &lt;code class=&quot;highlighter-rouge&quot;&gt;RequestUUID&lt;/code&gt; string that has been sent you in response of the original request. The result is something like that:&lt;/p&gt;
+&lt;p&gt;The command uses now &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--notarization-info&lt;/code&gt; to ping the current status, and expects the same &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RequestUUID&lt;/code&gt; string that has been sent you in response of the original request. The result is something like that:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2019-09-18 16:31:48.449 altool[9133:95654] No errors getting notarization info.
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2019-09-18 16:31:48.449 altool[9133:95654] No errors getting notarization info.
 
    RequestUUID: 181638fb-a618-2298-bff0-47fa79f01326
           Date: 2019-09-18 14:30:36 +0000
@@ -703,7 +759,7 @@ RequestUUID = 181638fb-a618-2298-bff0-47fa79f01326
 
 &lt;p&gt;Please note the &lt;em&gt;in progress&lt;/em&gt; status. At some point the result will be different, and hopefully similar to this one:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   RequestUUID: 287628eb-e628-4998-b4b0-47fa79f07386
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   RequestUUID: 287628eb-e628-4998-b4b0-47fa79f07386
           Date: 2019-09-18 14:30:36 +0000
         Status: success
     LogFileURL: https://osxapps-ssl.itunes.apple.com/awfully/long/URL
@@ -715,7 +771,7 @@ Status Message: Package Approved
 
 &lt;p&gt;If, for some reason, you have to perform several requests and want to check the notarization requests history, run the following command:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcrun altool --notarization-history 0 --username &quot;YourAppleID@mail.com&quot; --password &quot;cvbs-epfg-sizx-olwd&quot;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcrun altool --notarization-history 0 --username &quot;YourAppleID@mail.com&quot; --password &quot;cvbs-epfg-sizx-olwd&quot;
 
 Notarization History - page 0
 
@@ -731,20 +787,20 @@ Next page value: 1768817026000
 
 &lt;p&gt;As I wrote, this step is optional but highly recommended: Gatekeeper will be able to find the whitelist info in the file itself, without the need to perform an online check.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcrun stapler staple &quot;/full/path/to/the/installer_signed.pkg&quot;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xcrun stapler staple &quot;/full/path/to/the/installer_signed.pkg&quot;
 
 Processing: /full/path/to/the/installer_signed.pkg
 The staple and validate action worked!
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The command here is much simpler: you don’t need to pass any &lt;code class=&quot;highlighter-rouge&quot;&gt;RequestUUID&lt;/code&gt; string yourself, for &lt;code class=&quot;highlighter-rouge&quot;&gt;stapler&lt;/code&gt; will do the call home at Apple’s on its own.&lt;/p&gt;
+&lt;p&gt;The command here is much simpler: you don’t need to pass any &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RequestUUID&lt;/code&gt; string yourself, for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;stapler&lt;/code&gt; will do the call home at Apple’s on its own.&lt;/p&gt;
 
 &lt;p&gt;You can check stapling details with:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;stapler validate --verbose &quot;/full/path/to/the/installer_signed.pkg&quot;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;stapler validate --verbose &quot;/full/path/to/the/installer_signed.pkg&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The result is too long to paste here, and frankly I’ve no idea what it means: as long as it ends with &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;The validate action worked!&quot;&lt;/code&gt; you should be fine.&lt;/p&gt;
+&lt;p&gt;The result is too long to paste here, and frankly I’ve no idea what it means: as long as it ends with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;The validate action worked!&quot;&lt;/code&gt; you should be fine.&lt;/p&gt;
 
 &lt;p&gt;And… &lt;strong&gt;you’re done&lt;/strong&gt; 🍾&lt;/p&gt;
 
@@ -752,22 +808,22 @@ The staple and validate action worked!
 
 &lt;h2 id=&quot;caveats-for-different-scenarios&quot;&gt;Caveats for different scenarios&lt;/h2&gt;
 
-&lt;p&gt;The example I’ve shown is for one &lt;code class=&quot;highlighter-rouge&quot;&gt;installer.pkg&lt;/code&gt; file. Let’s say that you (as I do) deliver to your customers a &lt;code class=&quot;highlighter-rouge&quot;&gt;product.dmg&lt;/code&gt; file, that wraps the &lt;code class=&quot;highlighter-rouge&quot;&gt;installer.pkg&lt;/code&gt;, an additional &lt;code class=&quot;highlighter-rouge&quot;&gt;uninstaller.app&lt;/code&gt; (say, an &lt;em&gt;app-ified&lt;/em&gt; AppleScript) and some documentation as well.&lt;/p&gt;
+&lt;p&gt;The example I’ve shown is for one &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;installer.pkg&lt;/code&gt; file. Let’s say that you (as I do) deliver to your customers a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;product.dmg&lt;/code&gt; file, that wraps the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;installer.pkg&lt;/code&gt;, an additional &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uninstaller.app&lt;/code&gt; (say, an &lt;em&gt;app-ified&lt;/em&gt; AppleScript) and some documentation as well.&lt;/p&gt;
 
 &lt;p&gt;In this case, you need to:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Notarize only the outmost container (here the &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt;).&lt;/li&gt;
-  &lt;li&gt;Sign all the executable children elements (here the &lt;code class=&quot;highlighter-rouge&quot;&gt;.app&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;.pkg&lt;/code&gt;) &lt;em&gt;and&lt;/em&gt; the &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; as well.&lt;/li&gt;
+  &lt;li&gt;Notarize only the outmost container (here the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.dmg&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;Sign all the executable children elements (here the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.app&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.pkg&lt;/code&gt;) &lt;em&gt;and&lt;/em&gt; the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; as well.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Please note that in order to sign a &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; you need a “Developer ID Application” certificate, instead of the “Developer ID Installer” I’ve used for the &lt;code class=&quot;highlighter-rouge&quot;&gt;.pkg&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Please note that in order to sign a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; you need a “Developer ID Application” certificate, instead of the “Developer ID Installer” I’ve used for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.pkg&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Lastly, things may get a bit convoluted when it comes to extra libraries/bundles that may be called by your panel – if you feel like it’s your case, please read &lt;a href=&quot;https://forums.developer.apple.com/message/383180&quot;&gt;this thread&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;update-dmg-canvas&quot;&gt;UPDATE: DMG Canvas&lt;/h3&gt;
 
-&lt;p&gt;The software that I use, and recommend, to build &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; files is &lt;a href=&quot;https://www.araelium.com/dmgcanvas&quot;&gt;Araelium DMG Canvas&lt;/a&gt;, which has recently bumped to version 3.x (a paid upgrade, around $10). One of the new features is the possibility to automate the notarization process while building the &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; itself.&lt;/p&gt;
+&lt;p&gt;The software that I use, and recommend, to build &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; files is &lt;a href=&quot;https://www.araelium.com/dmgcanvas&quot;&gt;Araelium DMG Canvas&lt;/a&gt;, which has recently bumped to version 3.x (a paid upgrade, around $10). One of the new features is the possibility to automate the notarization process while building the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; itself.&lt;/p&gt;
 
 &lt;figure&gt;
 &lt;img src=&quot;/wp-content/uploads/2019/05/DMGCanvas.jpg&quot; srcset=&quot;/wp-content/uploads/2019/05/DMGCanvas.jpg 1x, /wp-content/uploads/2019/05/DMGCanvas@2x.jpg 2x&quot; alt=&quot;DMG Canvas&quot; /&gt;
@@ -777,16 +833,16 @@ The staple and validate action worked!
 
 &lt;h3 id=&quot;update-uninstaller-app&quot;&gt;UPDATE: Uninstaller app&lt;/h3&gt;
 
-&lt;p&gt;As I’ve finally upgraded my machine to Catalina, I’m able to experience the entire, happy spectrum of Catalina-related issues. I’ve discovered that with the &lt;code class=&quot;highlighter-rouge&quot;&gt;Uninstall.app&lt;/code&gt; the signature I’ve been doing is not enough: the notarization of the outer &lt;code class=&quot;highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; fails with the error: &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;The executable does not have the hardened runtime enabled.&quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;As I’ve finally upgraded my machine to Catalina, I’m able to experience the entire, happy spectrum of Catalina-related issues. I’ve discovered that with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Uninstall.app&lt;/code&gt; the signature I’ve been doing is not enough: the notarization of the outer &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.dmg&lt;/code&gt; fails with the error: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;The executable does not have the hardened runtime enabled.&quot;&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;If this is the case, be aware that you should &lt;strong&gt;not&lt;/strong&gt; export the &lt;code class=&quot;highlighter-rouge&quot;&gt;Uninstall.scpt&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;Uninstall.app&lt;/code&gt; while signing it with the Script Editor (it’s an option in the File &amp;gt; Export dialog). Instead, export it without signature and then use the &lt;code class=&quot;highlighter-rouge&quot;&gt;codesign&lt;/code&gt; utility with the &lt;code class=&quot;highlighter-rouge&quot;&gt;-o runtime&lt;/code&gt; flag:&lt;/p&gt;
+&lt;p&gt;If this is the case, be aware that you should &lt;strong&gt;not&lt;/strong&gt; export the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Uninstall.scpt&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Uninstall.app&lt;/code&gt; while signing it with the Script Editor (it’s an option in the File &amp;gt; Export dialog). Instead, export it without signature and then use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;codesign&lt;/code&gt; utility with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-o runtime&lt;/code&gt; flag:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;codesign -s &quot;Developer ID Application: Davide Barranca&quot; -o runtime /path/to/Uninstall.app
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;codesign -s &quot;Developer ID Application: Davide Barranca&quot; -o runtime /path/to/Uninstall.app
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Also, it might happen that the signing process of the &lt;code class=&quot;highlighter-rouge&quot;&gt;.app&lt;/code&gt; fails because of the error: &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;resource fork, Finder information, or similar detritus not allowed&quot;&lt;/code&gt;. You can spot such digital &lt;em&gt;detritus&lt;/em&gt; running:&lt;/p&gt;
+&lt;p&gt;Also, it might happen that the signing process of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.app&lt;/code&gt; fails because of the error: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;resource fork, Finder information, or similar detritus not allowed&quot;&lt;/code&gt;. You can spot such digital &lt;em&gt;detritus&lt;/em&gt; running:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xattr -lr /path/to/Uninstall.app
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xattr -lr /path/to/Uninstall.app
 
 /path/to/Uninstall.app: com.apple.FinderInfo:
 00000000  50 4C 41 50 6C 74 61 70 00 00 00 00 00 00 00 00  |PLAPltap........|
@@ -809,10 +865,10 @@ The staple and validate action worked!
 
 &lt;p&gt;To clean that mess (whatever it is), run:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xattr -cr /path/to/Uninstall.app
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;xattr -cr /path/to/Uninstall.app
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;…and the subsequent &lt;code class=&quot;highlighter-rouge&quot;&gt;codesign&lt;/code&gt; should complete with no problems.&lt;/p&gt;
+&lt;p&gt;…and the subsequent &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;codesign&lt;/code&gt; should complete with no problems.&lt;/p&gt;
 
 &lt;h2 id=&quot;support-this-site&quot;&gt;Support this site!&lt;/h2&gt;
 
@@ -823,10 +879,10 @@ The staple and validate action worked!
 &lt;/figure&gt;
 
 &lt;p&gt;PS. I will update the Ultimate Guide to Native Installers and Automated Build Systems as well, I just wanted you to get informed asap.&lt;/p&gt;
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:itc&quot;&gt;
-      &lt;p&gt;If you don’t plan to sell through Apple, there’s no point in filling the uber-annoying Tax forms, etc. &lt;a href=&quot;#fnref:itc&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:itc&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;If you don’t plan to sell through Apple, there’s no point in filling the uber-annoying Tax forms, etc. &lt;a href=&quot;#fnref:itc&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -912,11 +968,11 @@ In my daytime job I also do some books designing for my client, when asked; I ha
 
 &lt;p&gt;&lt;strong&gt;I couldn’t recommend Leanpub more&lt;/strong&gt;, seriously: as a company, they offer extra services that I don’t really need (book landing page, e-commerce, in-progress publishing, etc), but their writing platform alone is superb. I’ve already used Leanpub for my previous book &lt;a href=&quot;https://www.htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development&lt;/a&gt;, hence I was no stranger to the whole process.&lt;/p&gt;
 
-&lt;p&gt;I took some R&amp;amp;D time to evaluate alternative options within my reach: I could use InDesign, iBooks Author, write in MarkDown and convert to PDF with Softcover or Pandoc&lt;sup id=&quot;fnref:Pandoc&quot;&gt;&lt;a href=&quot;#fn:Pandoc&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. After some pondering, I decided that they all required too much efforts on my side to customize the result compared to Leanpub design, which was excellent out-of-the-box; and so I went with it. The book in itself was already a tough enterprise to undertake, I’d be better off spending my time on content creation.&lt;/p&gt;
+&lt;p&gt;I took some R&amp;amp;D time to evaluate alternative options within my reach: I could use InDesign, iBooks Author, write in MarkDown and convert to PDF with Softcover or Pandoc&lt;sup id=&quot;fnref:Pandoc&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Pandoc&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. After some pondering, I decided that they all required too much efforts on my side to customize the result compared to Leanpub design, which was excellent out-of-the-box; and so I went with it. The book in itself was already a tough enterprise to undertake, I’d be better off spending my time on content creation.&lt;/p&gt;
 
 &lt;h3 id=&quot;writing-in-markdown&quot;&gt;Writing in MarkDown&lt;/h3&gt;
 
-&lt;p&gt;To briefly describe the process, &lt;strong&gt;I’ve written the entire book in MarkDown&lt;/strong&gt; – a textual format with handy shortcuts, e.g., &lt;code class=&quot;highlighter-rouge&quot;&gt;_italic_&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;**bold**&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;[^footnotes]&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;![Images](graphic.png)&lt;/code&gt; and everything else a writer may need –, keeping the files in synch with Leanpub via Dropbox&lt;sup id=&quot;fnref:hook&quot;&gt;&lt;a href=&quot;#fn:hook&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;To briefly describe the process, &lt;strong&gt;I’ve written the entire book in MarkDown&lt;/strong&gt; – a textual format with handy shortcuts, e.g., &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_italic_&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;**bold**&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[^footnotes]&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;![Images](graphic.png)&lt;/code&gt; and everything else a writer may need –, keeping the files in synch with Leanpub via Dropbox&lt;sup id=&quot;fnref:hook&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:hook&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;figure&gt;
 &lt;img src=&quot;/wp-content/uploads/2019/04/Markdown.png&quot; srcset=&quot;/wp-content/uploads/2019/04/Markdown.png 1x, /wp-content/uploads/2019/04/Markdown@2x.png 2x&quot; alt=&quot;Markdown&quot; /&gt;
@@ -925,7 +981,7 @@ In my daytime job I also do some books designing for my client, when asked; I ha
 
 &lt;p&gt;I’ve used &lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt;, &lt;a href=&quot;https://macdown.uranusjr.com/&quot;&gt;MacDown&lt;/a&gt; and &lt;a href=&quot;https://www.mweb.im/&quot;&gt;MWeb&lt;/a&gt; to write MarkDown, yet there’s plenty of apps (free or paid) available, even if to the best of my knowledge none of them supports the Leanpub’s &lt;em&gt;flavour&lt;/em&gt;.  In the last years they have been working on the specs of &lt;a href=&quot;http://markua.com/&quot;&gt;Markua&lt;/a&gt;, a MarkDown superset that specifically targets eBooks creation; it is already available as an option to authors, but besides Leanpub’s Markua online editor I don’t think there are apps for it.&lt;/p&gt;
 
-&lt;p&gt;You can trigger the book compilation on-demand, either the entire content or just an excerpt to make the task quicker; the compilation itself is performed &lt;em&gt;on their servers&lt;/em&gt; and the results (PDF, ePub and MOBI files) uploaded to a shared Dropbox folder automatically. This is the main Leanpub’s downside, in my opinion: depending on the amount of content you’ve written, &lt;strong&gt;the PDF generation process can take few minutes&lt;/strong&gt; to complete: besides the transformation from MarkDown to PDF&lt;sup id=&quot;fnref:md2pdf&quot;&gt;&lt;a href=&quot;#fn:md2pdf&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;, you have to wait for the files to get uploaded to Dropbox, and downloaded locally. Alas, we’re not used to waiting anymore.&lt;/p&gt;
+&lt;p&gt;You can trigger the book compilation on-demand, either the entire content or just an excerpt to make the task quicker; the compilation itself is performed &lt;em&gt;on their servers&lt;/em&gt; and the results (PDF, ePub and MOBI files) uploaded to a shared Dropbox folder automatically. This is the main Leanpub’s downside, in my opinion: depending on the amount of content you’ve written, &lt;strong&gt;the PDF generation process can take few minutes&lt;/strong&gt; to complete: besides the transformation from MarkDown to PDF&lt;sup id=&quot;fnref:md2pdf&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:md2pdf&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;, you have to wait for the files to get uploaded to Dropbox, and downloaded locally. Alas, we’re not used to waiting anymore.&lt;/p&gt;
 
 &lt;p&gt;Speaking of the PDF, which is what you’d use for printing purposes, their book design has a &lt;strong&gt;classic and professional look&lt;/strong&gt;, very well suited to technical publishing like my project.&lt;/p&gt;
 
@@ -947,7 +1003,7 @@ In my daytime job I also do some books designing for my client, when asked; I ha
   &lt;li&gt;It has occasional blank pages to ensure that chapters start on the right side.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;There is an alternative &lt;strong&gt;Export InDesign Files&lt;/strong&gt; option that outputs InCopy &lt;code class=&quot;highlighter-rouge&quot;&gt;.icml&lt;/code&gt; files, one per chapter: your job is to manually insert each chapter in a provided, dummy InDesign &lt;code class=&quot;highlighter-rouge&quot;&gt;.indd&lt;/code&gt; file, which you can then customize to your book designer taste. Since I was in hurry, and Leanpub had a (now fixed) bug in the InDesign Export, I postulated that the Print-Ready PDF was a good enough starting point for me.&lt;/p&gt;
+&lt;p&gt;There is an alternative &lt;strong&gt;Export InDesign Files&lt;/strong&gt; option that outputs InCopy &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.icml&lt;/code&gt; files, one per chapter: your job is to manually insert each chapter in a provided, dummy InDesign &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.indd&lt;/code&gt; file, which you can then customize to your book designer taste. Since I was in hurry, and Leanpub had a (now fixed) bug in the InDesign Export, I postulated that the Print-Ready PDF was a good enough starting point for me.&lt;/p&gt;
 
 &lt;h2 id=&quot;choosing-a-print-on-demand-service&quot;&gt;Choosing a print-on-demand service&lt;/h2&gt;
 
@@ -957,7 +1013,7 @@ In my daytime job I also do some books designing for my client, when asked; I ha
   &lt;p&gt;“a simple, old-school book with… letters in it”&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;I.e., a novel. My book, instead, is in the &lt;strong&gt;technical publishing&lt;/strong&gt; category (software development), with illustrations, screenshots, few photographs and a lot of syntax highlighted code. Our needs didn’t really match, but it was a well-thought comparison of &lt;a href=&quot;https://www.blurb.com/getting-started#&quot;&gt;Blurb&lt;/a&gt;, &lt;a href=&quot;https://www.bookbaby.com/print-on-demand&quot;&gt;BookBaby&lt;/a&gt;, &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Lulu&lt;/a&gt; and Nook Press (now &lt;a href=&quot;https://press.barnesandnoble.com/print-on-demand/&quot;&gt;Barnes and Noble Press&lt;/a&gt;) anyway. For a while, I’ve evaluated local, Italy-based services as well, yet the price-tag was way too high; I also tried to understand how &lt;a href=&quot;https://kdp.amazon.com/en_US/&quot;&gt;Kindle Direct Publishing&lt;/a&gt; works, but I couldn’t get whether the printed books must be sold via Amazon or could be directly shipped to the author, so I gave it up&lt;sup id=&quot;fnref:time&quot;&gt;&lt;a href=&quot;#fn:time&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;. If you have experience of KDP, please let me know in the comments.&lt;/p&gt;
+&lt;p&gt;I.e., a novel. My book, instead, is in the &lt;strong&gt;technical publishing&lt;/strong&gt; category (software development), with illustrations, screenshots, few photographs and a lot of syntax highlighted code. Our needs didn’t really match, but it was a well-thought comparison of &lt;a href=&quot;https://www.blurb.com/getting-started#&quot;&gt;Blurb&lt;/a&gt;, &lt;a href=&quot;https://www.bookbaby.com/print-on-demand&quot;&gt;BookBaby&lt;/a&gt;, &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Lulu&lt;/a&gt; and Nook Press (now &lt;a href=&quot;https://press.barnesandnoble.com/print-on-demand/&quot;&gt;Barnes and Noble Press&lt;/a&gt;) anyway. For a while, I’ve evaluated local, Italy-based services as well, yet the price-tag was way too high; I also tried to understand how &lt;a href=&quot;https://kdp.amazon.com/en_US/&quot;&gt;Kindle Direct Publishing&lt;/a&gt; works, but I couldn’t get whether the printed books must be sold via Amazon or could be directly shipped to the author, so I gave it up&lt;sup id=&quot;fnref:time&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:time&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;. If you have experience of KDP, please let me know in the comments.&lt;/p&gt;
 
 &lt;p&gt;Each and every print-on-demand (POD) service provider offers some sort of “Make your book” page where you choose the book’s options, such as Size, Binding, Paper and Inks, etc. and gives you an estimate of the cost per copy. Depending on the print batch size, small discounts may apply as well. I suggest you to go through that process for all the PODs that you want to test, to understand which one better suits your needs and budget.&lt;/p&gt;
 
@@ -1090,7 +1146,7 @@ Lulu’s &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Producs 
 
 &lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/04/Bleed.png&quot; srcset=&quot;/wp-content/uploads/2019/04/Bleed.png 1x, /wp-content/uploads/2019/04/Bleed@2x.png 2x&quot; alt=&quot;Bleed&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Speaking of &lt;strong&gt;Transparency Flattener&lt;/strong&gt;, Lulu provides a &lt;code class=&quot;highlighter-rouge&quot;&gt;Lulu-High-Res-Outlines.flst&lt;/code&gt; preset file: you can’t use it in Acrobat, only when exporting to PDF from InDesign. But from InDesign you can edit it to find out what the settings are.&lt;/p&gt;
+&lt;p&gt;Speaking of &lt;strong&gt;Transparency Flattener&lt;/strong&gt;, Lulu provides a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lulu-High-Res-Outlines.flst&lt;/code&gt; preset file: you can’t use it in Acrobat, only when exporting to PDF from InDesign. But from InDesign you can edit it to find out what the settings are.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/04/Transparency.png&quot; srcset=&quot;/wp-content/uploads/2019/04/Transparency.png 1x, /wp-content/uploads/2019/04/Transparency@2x.png 2x&quot; alt=&quot;Transparency&quot; /&gt;&lt;/p&gt;
 
@@ -1175,9 +1231,9 @@ Lulu’s &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Producs 
 &lt;h3 id=&quot;my-mistakes&quot;&gt;My mistakes&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;The &lt;strong&gt;book size&lt;/strong&gt; I chose is too big to my taste. This is something I couldn’t change&lt;sup id=&quot;fnref:change&quot;&gt;&lt;a href=&quot;#fn:change&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;: it would have meant re-checking all the elements flow, and I had no time for that. When you start writing your eBook, even if you don’t plan to print it, think about the physical size of the page: PDF area is one thing, paper surface is another. I went with US Letter (8.5x11 inches, 21.6x27.9cm): other books in the software development category are smaller, like 18x23.5cm (O’Reilly) or 1cm wider (Packt), so around 7-7.5x9.2 inches. Mine looks unnecessarily large.&lt;/li&gt;
+  &lt;li&gt;The &lt;strong&gt;book size&lt;/strong&gt; I chose is too big to my taste. This is something I couldn’t change&lt;sup id=&quot;fnref:change&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:change&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;: it would have meant re-checking all the elements flow, and I had no time for that. When you start writing your eBook, even if you don’t plan to print it, think about the physical size of the page: PDF area is one thing, paper surface is another. I went with US Letter (8.5x11 inches, 21.6x27.9cm): other books in the software development category are smaller, like 18x23.5cm (O’Reilly) or 1cm wider (Packt), so around 7-7.5x9.2 inches. Mine looks unnecessarily large.&lt;/li&gt;
   &lt;li&gt;I didn’t check all the &lt;strong&gt;images resolution&lt;/strong&gt; properly, so you can spot some pixelation here and there.&lt;/li&gt;
-  &lt;li&gt;Never, ever take &lt;strong&gt;dark interface programs’ screenshots&lt;/strong&gt;. Dark interfaces are cool to use, eye-relaxing to look at, moderately nice in PDFs, dreadful in print, for legibility is compromised. My code’s syntax highlighting was great on the printed page, for it uses a light theme: don’t even think about using a dark theme for it. Also, I’m not 100% sure to have converted to sRGB all the screenshots when taking them&lt;sup id=&quot;fnref:ICC&quot;&gt;&lt;a href=&quot;#fn:ICC&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+  &lt;li&gt;Never, ever take &lt;strong&gt;dark interface programs’ screenshots&lt;/strong&gt;. Dark interfaces are cool to use, eye-relaxing to look at, moderately nice in PDFs, dreadful in print, for legibility is compromised. My code’s syntax highlighting was great on the printed page, for it uses a light theme: don’t even think about using a dark theme for it. Also, I’m not 100% sure to have converted to sRGB all the screenshots when taking them&lt;sup id=&quot;fnref:ICC&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:ICC&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;It’s not my mistake but it’s not clear either (I’ve to check with Leanpub on that) whether or not the Print-Ready PDF export option downsamples images. It may make sense for display PDFs, not so for Print where it is desirable to keep the max resolution available.&lt;/p&gt;
@@ -1188,7 +1244,7 @@ Lulu’s &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Producs 
 
 &lt;p&gt;But I didn’t tell you the entire story…&lt;/p&gt;
 
-&lt;p&gt;Jeff offered me the possibility to send him two copies of my book: one as a well deserved gift to him, the other… would be sent me back with signatures by the Photoshop teams from both the Minnesota and California offices! Accidentally, &lt;em&gt;“somebody”&lt;/em&gt; 🙏🏻 let also some tattoos, stickers, a pin and a shirt slip into the package, so I’ve now some Photoshop branded swag in the house, for my daughter to steal me&lt;sup id=&quot;fnref:wand&quot;&gt;&lt;a href=&quot;#fn:wand&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;Jeff offered me the possibility to send him two copies of my book: one as a well deserved gift to him, the other… would be sent me back with signatures by the Photoshop teams from both the Minnesota and California offices! Accidentally, &lt;em&gt;“somebody”&lt;/em&gt; 🙏🏻 let also some tattoos, stickers, a pin and a shirt slip into the package, so I’ve now some Photoshop branded swag in the house, for my daughter to steal me&lt;sup id=&quot;fnref:wand&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:wand&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 
 &lt;figure&gt;
 &lt;img src=&quot;/wp-content/uploads/2019/04/Signatures.jpg&quot; srcset=&quot;/wp-content/uploads/2019/04/Signatures.jpg 1x, /wp-content/uploads/2019/04/Signatures@2x.jpg 2x&quot; alt=&quot;Signatures&quot; /&gt;
@@ -1197,28 +1253,28 @@ Lulu’s &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Producs 
 
 &lt;p&gt;Isn’t that &lt;strong&gt;awesome&lt;/strong&gt;?! ❤️&lt;/p&gt;
 
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:Pandoc&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://pandoc.org/&quot;&gt;Pandoc&lt;/a&gt; is an open-source conversion tool that is also able to export to PDF from MarkDown, but the styling part is time consuming and you got to have quite some LaTeX knowledge. &lt;a href=&quot;https://www.softcover.io/&quot;&gt;Softcover&lt;/a&gt; is a free alternative to Leanpub for the MarkDown to PDF part, but it requires more customization efforts, a bit of LaTeX skills and the resulting book style isn’t as good as Leanpub’s. Both have the notable upside that the entire process is local, whereas Leanpub creates the PDF server-side. &lt;a href=&quot;#fnref:Pandoc&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:Pandoc&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://pandoc.org/&quot;&gt;Pandoc&lt;/a&gt; is an open-source conversion tool that is also able to export to PDF from MarkDown, but the styling part is time consuming and you got to have quite some LaTeX knowledge. &lt;a href=&quot;https://www.softcover.io/&quot;&gt;Softcover&lt;/a&gt; is a free alternative to Leanpub for the MarkDown to PDF part, but it requires more customization efforts, a bit of LaTeX skills and the resulting book style isn’t as good as Leanpub’s. Both have the notable upside that the entire process is local, whereas Leanpub creates the PDF server-side. &lt;a href=&quot;#fnref:Pandoc&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:hook&quot;&gt;
-      &lt;p&gt;The whole book was within a &lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt; repository, with an optional hook so that each push triggered the book compilation. &lt;a href=&quot;#fnref:hook&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:hook&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;The whole book was within a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt; repository, with an optional hook so that each push triggered the book compilation. &lt;a href=&quot;#fnref:hook&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:md2pdf&quot;&gt;
-      &lt;p&gt;Leanpub conversion uses an intermediate LaTeX step, so it’s actually MarkDown to LaTeX to PDF. It is very likely that, internally, thay make use of Pandoc heavily tweaked with custom LaTeX styling. Which is what allows Text Blocks with Icons, Syntax Highlighting and all the features that make Leanpub ebooks so nice. &lt;a href=&quot;#fnref:md2pdf&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:md2pdf&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Leanpub conversion uses an intermediate LaTeX step, so it’s actually MarkDown to LaTeX to PDF. It is very likely that, internally, thay make use of Pandoc heavily tweaked with custom LaTeX styling. Which is what allows Text Blocks with Icons, Syntax Highlighting and all the features that make Leanpub ebooks so nice. &lt;a href=&quot;#fnref:md2pdf&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:time&quot;&gt;
-      &lt;p&gt;It all may sound a bit sloppy now, but back then I really felt like I was in hurry: with more time, I could have evaluated options more carefully. &lt;a href=&quot;#fnref:time&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:time&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;It all may sound a bit sloppy now, but back then I really felt like I was in hurry: with more time, I could have evaluated options more carefully. &lt;a href=&quot;#fnref:time&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:change&quot;&gt;
-      &lt;p&gt;Leanpub lets you pick a different page size when you export the Print-Ready PDF, but as I’ve written I had no time to check +400 pages again to look for, and fix, misplaced elements. &lt;a href=&quot;#fnref:change&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:change&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Leanpub lets you pick a different page size when you export the Print-Ready PDF, but as I’ve written I had no time to check +400 pages again to look for, and fix, misplaced elements. &lt;a href=&quot;#fnref:change&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:ICC&quot;&gt;
-      &lt;p&gt;On Mac, when you take a screenshot it is assigned the Display’s ICC profile. If you save the PNG/JPG with the embedded ICC, it gets properly converted to sRGB in the PDF post-production stage; if, by mistake, you discard the ICC profile while saving, sRGB is assigned (and therefore not converted) in the PDF, and colors will shift. &lt;a href=&quot;#fnref:ICC&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:ICC&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;On Mac, when you take a screenshot it is assigned the Display’s ICC profile. If you save the PNG/JPG with the embedded ICC, it gets properly converted to sRGB in the PDF post-production stage; if, by mistake, you discard the ICC profile while saving, sRGB is assigned (and therefore not converted) in the PDF, and colors will shift. &lt;a href=&quot;#fnref:ICC&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:wand&quot;&gt;
-      &lt;p&gt;She’s got a Magic Wand tattoo on her forearm that she wiggles around the house like Hermione Granger. &lt;a href=&quot;#fnref:wand&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:wand&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;She’s got a Magic Wand tattoo on her forearm that she wiggles around the house like Hermione Granger. &lt;a href=&quot;#fnref:wand&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -1250,7 +1306,7 @@ Lulu’s &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Producs 
 
 &lt;h2 id=&quot;static-vs-dynamic&quot;&gt;Static vs. Dynamic&lt;/h2&gt;
 
-&lt;p&gt;As opposed to WP, where each PHP &lt;em&gt;template&lt;/em&gt;&lt;sup id=&quot;fnref:template&quot;&gt;&lt;a href=&quot;#fn:template&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; is filled on-demand – i.e. when a user requests a page, fetching the content from a database and returning the processed data as html – a Static site is &lt;em&gt;pre-compiled&lt;/em&gt; so to speak, and simply made available online all at once.&lt;/p&gt;
+&lt;p&gt;As opposed to WP, where each PHP &lt;em&gt;template&lt;/em&gt;&lt;sup id=&quot;fnref:template&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:template&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; is filled on-demand – i.e. when a user requests a page, fetching the content from a database and returning the processed data as html – a Static site is &lt;em&gt;pre-compiled&lt;/em&gt; so to speak, and simply made available online all at once.&lt;/p&gt;
 
 &lt;p&gt;As a consequence, a WP site needs a machine running some server-side scripting language such as PHP, a database like mySQL, and some processing resources; a static site is happy when it is hosted on a server that is (a) turned on, and (b) connected to the net.&lt;/p&gt;
 
@@ -1265,7 +1321,7 @@ Lulu’s &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Producs 
 &lt;figcaption&gt;If you feel inclined, a way too big list of SSGs is found &lt;a href=&quot;https://www.staticgen.com/&quot;&gt;here&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p&gt;All of them share the sublime idea that you compose your writing (both pages and blog-posts) in MarkDown: a text file with a basic set of formatting rules, such as **&lt;strong&gt;bold&lt;/strong&gt;**, _&lt;em&gt;italic&lt;/em&gt;_ etc. Hence, all your website content is not hidden into some resources-hungry DataBase, but exposed to you as plain text files with a &lt;code class=&quot;highlighter-rouge&quot;&gt;.md&lt;/code&gt; extension.&lt;/p&gt;
+&lt;p&gt;All of them share the sublime idea that you compose your writing (both pages and blog-posts) in MarkDown: a text file with a basic set of formatting rules, such as **&lt;strong&gt;bold&lt;/strong&gt;**, _&lt;em&gt;italic&lt;/em&gt;_ etc. Hence, all your website content is not hidden into some resources-hungry DataBase, but exposed to you as plain text files with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.md&lt;/code&gt; extension.&lt;/p&gt;
 
 &lt;h3 id=&quot;which-ssg-to-pick&quot;&gt;Which SSG to pick&lt;/h3&gt;
 
@@ -1287,16 +1343,16 @@ Lulu’s &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Producs 
   &lt;li&gt;Migrate all your comments to &lt;a href=&quot;https://disqus.com&quot;&gt;Disqus&lt;/a&gt;: sign up and follow the instruction to install Disqus on WordPress (you’ll need to get &lt;a href=&quot;https://wordpress.org/plugins/disqus-comment-system/&quot;&gt;this WP Plugin&lt;/a&gt;).&lt;/li&gt;
   &lt;li&gt;Do a full backup: I’ve always used &lt;a href=&quot;https://ithemes.com/purchase/backupbuddy/&quot;&gt;BackupBuddy&lt;/a&gt;, which isn’t cheap but works like a charm – perhaps also the built-in WP Export is OK. You need to backup both the WP assets and the DB.&lt;/li&gt;
   &lt;li&gt;Install &lt;a href=&quot;https://www.mamp.info/&quot;&gt;MAMP&lt;/a&gt; or a similar software and restore your WordPress installation on a local server (e.g. on your laptop). This will make the following step faster.&lt;/li&gt;
-  &lt;li&gt;On your local WP, install both &lt;a href=&quot;https://github.com/SchumacherFM/wordpress-to-hugo-exporter&quot;&gt;WP to Hugo&lt;/a&gt; and &lt;a href=&quot;https://wordpress.org/plugins/jekyll-exporter/&quot;&gt;Jekyll Exporter&lt;/a&gt; migration tools, and perform both Exports. You’ll get two &lt;code class=&quot;highlighter-rouge&quot;&gt;.zip&lt;/code&gt; files with a bunch of MarkDown in them. I’ve found that the Hugo version of the posts returns a better MarkDown conversion – but the files aren’t named as they should (i.e., prefixed with the date, like &lt;code class=&quot;highlighter-rouge&quot;&gt;2018-11-29-something.md&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;On your local WP, install both &lt;a href=&quot;https://github.com/SchumacherFM/wordpress-to-hugo-exporter&quot;&gt;WP to Hugo&lt;/a&gt; and &lt;a href=&quot;https://wordpress.org/plugins/jekyll-exporter/&quot;&gt;Jekyll Exporter&lt;/a&gt; migration tools, and perform both Exports. You’ll get two &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.zip&lt;/code&gt; files with a bunch of MarkDown in them. I’ve found that the Hugo version of the posts returns a better MarkDown conversion – but the files aren’t named as they should (i.e., prefixed with the date, like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2018-11-29-something.md&lt;/code&gt;).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;jekyll-import&quot;&gt;Jekyll import&lt;/h2&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;I have then manually reviewed the markdown files of the majority of my posts (~150) coming from the export, deleting items in the YAML FrontMatter&lt;sup id=&quot;fnref:frontmatter&quot;&gt;&lt;a href=&quot;#fn:frontmatter&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; that aren’t meaningful, and fixing the markdown.&lt;/li&gt;
-  &lt;li&gt;Make sure you keep the original &lt;code class=&quot;highlighter-rouge&quot;&gt;permalink&lt;/code&gt; (the post URL): this way each post will have the same URL of your old WP site. This way people who get to you from other sites’ links don’t get 404’ed, and you keep analytics intact.&lt;/li&gt;
-  &lt;li&gt;Remove in the MarkDown all the links to &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:8888/&lt;/code&gt;. For instance, my Hugo export (the one with nicer markup) has all the posts’ assets with urls like &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:8888/wp-content/uploads/2018/03/logo.png&lt;/code&gt;. Do a batch search and replace and turn them to &lt;code class=&quot;highlighter-rouge&quot;&gt;/wp-content/uploads/2018/03/logo.png&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Move the markdown posts in Jekyll’s &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; folder, and also move in the website root the exported &lt;code class=&quot;highlighter-rouge&quot;&gt;/wp-content&lt;/code&gt; folder, which contains all the images coming from WP&lt;sup id=&quot;fnref:redundant&quot;&gt;&lt;a href=&quot;#fn:redundant&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+  &lt;li&gt;I have then manually reviewed the markdown files of the majority of my posts (~150) coming from the export, deleting items in the YAML FrontMatter&lt;sup id=&quot;fnref:frontmatter&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:frontmatter&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; that aren’t meaningful, and fixing the markdown.&lt;/li&gt;
+  &lt;li&gt;Make sure you keep the original &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;permalink&lt;/code&gt; (the post URL): this way each post will have the same URL of your old WP site. This way people who get to you from other sites’ links don’t get 404’ed, and you keep analytics intact.&lt;/li&gt;
+  &lt;li&gt;Remove in the MarkDown all the links to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:8888/&lt;/code&gt;. For instance, my Hugo export (the one with nicer markup) has all the posts’ assets with urls like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:8888/wp-content/uploads/2018/03/logo.png&lt;/code&gt;. Do a batch search and replace and turn them to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/wp-content/uploads/2018/03/logo.png&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Move the markdown posts in Jekyll’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; folder, and also move in the website root the exported &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/wp-content&lt;/code&gt; folder, which contains all the images coming from WP&lt;sup id=&quot;fnref:redundant&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:redundant&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;An example of the YAML FrontMatter for this very post:&lt;/p&gt;
@@ -1320,13 +1376,13 @@ Lulu’s &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Producs 
 
 &lt;h2 id=&quot;github&quot;&gt;GitHub&lt;/h2&gt;
 
-&lt;p&gt;The whole idea around this SSG thing is that both the site build and the site updates must be easy. I’ve created a git repository on &lt;a href=&quot;https://www.github.com&quot;&gt;GitHub&lt;/a&gt; and pushed my Jekyll website there. Be aware that GitHub itself provides you for free with &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;, a service based on Jekyll that automatically builds your site each time you push a commit to a &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch, and hosts the result on https for free.&lt;/p&gt;
+&lt;p&gt;The whole idea around this SSG thing is that both the site build and the site updates must be easy. I’ve created a git repository on &lt;a href=&quot;https://www.github.com&quot;&gt;GitHub&lt;/a&gt; and pushed my Jekyll website there. Be aware that GitHub itself provides you for free with &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;, a service based on Jekyll that automatically builds your site each time you push a commit to a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch, and hosts the result on https for free.&lt;/p&gt;
 
 &lt;p&gt;There are some limitations in terms of Jekyll plugins (see the &lt;a href=&quot;https://help.github.com/en/articles/configuring-jekyll-plugins#default-plugins&quot;&gt;whitelist here&lt;/a&gt;), so I’ve decided to try a different approach.&lt;/p&gt;
 
 &lt;h2 id=&quot;netlify&quot;&gt;Netlify&lt;/h2&gt;
 
-&lt;p&gt;Go create a free account on &lt;a href=&quot;https://www.netlify.com/&quot;&gt;Netlify&lt;/a&gt;, which provides an amazing service similar to GitHub pages. Then link your GitHub/Bitbucket repository, define a build command (mine is simply &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt;), and they will serve the Jekyll output on a dedicated, public subdomain – that you can use to check the site or point collaborators/clients to.&lt;/p&gt;
+&lt;p&gt;Go create a free account on &lt;a href=&quot;https://www.netlify.com/&quot;&gt;Netlify&lt;/a&gt;, which provides an amazing service similar to GitHub pages. Then link your GitHub/Bitbucket repository, define a build command (mine is simply &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt;), and they will serve the Jekyll output on a dedicated, public subdomain – that you can use to check the site or point collaborators/clients to.&lt;/p&gt;
 
 &lt;p&gt;At this point, you can link your existing domain (the process is quite easy): Netlify will give you few domain name servers to set e.g. on GoDaddy, or wherever your domain is hosted. You’ll be asked also to add to Netlify all the existing CNAME and MX records from your host (copy them from GoDaddy – they are for email, FTP and such).&lt;/p&gt;
 
@@ -1347,16 +1403,16 @@ Lulu’s &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Producs 
 
 &lt;p&gt;If I had more time I’d explore Jekyll and Netlify features more in depth, or even consider adapting my theme to Hugo to save some building time in the future. Luckily, I haven’t got any spare time left 😅 So I’ll just call quit and feel good.&lt;br /&gt;
 Thanks for reading!&lt;/p&gt;
-&lt;div class=&quot;footnotes&quot;&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
-    &lt;li id=&quot;fn:template&quot;&gt;
-      &lt;p&gt;For a lack of better word. &lt;a href=&quot;#fnref:template&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:template&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;For a lack of better word. &lt;a href=&quot;#fnref:template&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:frontmatter&quot;&gt;
-      &lt;p&gt;It’s the &lt;em&gt;header&lt;/em&gt; content of each &lt;code class=&quot;highlighter-rouge&quot;&gt;.md&lt;/code&gt; file, which is wrapped with three dashes &lt;code class=&quot;highlighter-rouge&quot;&gt;---&lt;/code&gt;. It contains the post’s metadata (e.g. the title, the excerpt), that is used by Jekyll to display it. &lt;a href=&quot;#fnref:frontmatter&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:frontmatter&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;It’s the &lt;em&gt;header&lt;/em&gt; content of each &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.md&lt;/code&gt; file, which is wrapped with three dashes &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;---&lt;/code&gt;. It contains the post’s metadata (e.g. the title, the excerpt), that is used by Jekyll to display it. &lt;a href=&quot;#fnref:frontmatter&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
-    &lt;li id=&quot;fn:redundant&quot;&gt;
-      &lt;p&gt;There is a lot of redundant stuff in there, for WP creates several versions of all images you’ve imported at different resolutions. &lt;a href=&quot;#fnref:redundant&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;li id=&quot;fn:redundant&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;There is a lot of redundant stuff in there, for WP creates several versions of all images you’ve imported at different resolutions. &lt;a href=&quot;#fnref:redundant&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;
@@ -1376,9 +1432,9 @@ Thanks for reading!&lt;/p&gt;
     
       <item>
         <title>Adobe Extension Manager Error Codes</title>
-        <description>&lt;p&gt;Here is a list of Adobe Extension Manager &lt;code class=&quot;highlighter-rouge&quot;&gt;ExManCmd&lt;/code&gt; error codes.&lt;/p&gt;
+        <description>&lt;p&gt;Here is a list of Adobe Extension Manager &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ExManCmd&lt;/code&gt; error codes.&lt;/p&gt;
 
-&lt;p&gt;I don’t use &lt;code class=&quot;highlighter-rouge&quot;&gt;zxp&lt;/code&gt; files to install my products, but some people do (e.g. with &lt;a href=&quot;https://install.anastasiy.com/&quot;&gt;Anastasiy’s Extension Manager&lt;/a&gt;, that under the hood calls &lt;code class=&quot;highlighter-rouge&quot;&gt;ExManCmd&lt;/code&gt;) and error numbers are always hard to decode. The list has been kindly provided by Adobe’s Erin Finnegan.&lt;/p&gt;
+&lt;p&gt;I don’t use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zxp&lt;/code&gt; files to install my products, but some people do (e.g. with &lt;a href=&quot;https://install.anastasiy.com/&quot;&gt;Anastasiy’s Extension Manager&lt;/a&gt;, that under the hood calls &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ExManCmd&lt;/code&gt;) and error numbers are always hard to decode. The list has been kindly provided by Adobe’s Erin Finnegan.&lt;/p&gt;
 
 &lt;h2 id=&quot;exmancmd-errors&quot;&gt;ExManCmd Errors&lt;/h2&gt;
 
@@ -1509,48 +1565,6 @@ EXMAN_FAILED_GET_USER_HOME_FOLDER = -904&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
         
         
         <category>CEP</category>
-        
-      </item>
-    
-      <item>
-        <title>Professional Photoshop Scripting is published!</title>
-        <description>&lt;p&gt;After 10 months since the launch of the Early Access Program, I am incredibly happy to announce that my book is now complete! Read the full report below.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://ps-scripting.com/&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2019/02/cover.jpg&quot; alt=&quot;Professional Photoshop Scripting book cover&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;the-final-version-10&quot;&gt;The Final Version 1.0!&lt;/h3&gt;
-
-&lt;p&gt;The book is now &lt;strong&gt;12 Chapters/409 pages&lt;/strong&gt;, fully CC 2019 compliant: compared to the last EAP version 0.2, I’ve added one Chapter, an Appendix, a proper Acknowledgement section, some extra-content on ActionManager, and given it a final round of proofreading and fixes.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2019/02/open-book-5@2x.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I’ve also finally credited my dear friend and colleague &lt;a href=&quot;http://zettagraphics.com/&quot;&gt;Sandra Voelker&lt;/a&gt; for her work as the &lt;strong&gt;Technical Editor&lt;/strong&gt; – she’s been providing suggestions and corrections of remarkably high value.&lt;/p&gt;
-
-&lt;p&gt;I am also especially honored to tell you that the book contains an awesome &lt;strong&gt;Foreword by Jeffrey Tranberry&lt;/strong&gt;, Sr. Product Manager, Digital Imaging at Adobe Systems, and author with Geoff Scott of the book “&lt;a href=&quot;https://www.amazon.com/Power-Speed-Automation-Adobe-Photoshop-ebook/dp/B0083JCBZ2/&quot;&gt;Power, Speed &amp;amp; Automation with Adobe Photoshop&lt;/a&gt;” (2012).&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2019/02/open-book-2@2x.jpg&quot; alt=&quot;Professional Photoshop Scripting book sample content&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;All in all, I am quite happy about how it has turned out: it took me &lt;em&gt;just&lt;/em&gt; two years and a half! Dare I to say, you won’t find anywhere else such a comprehensive learning path that goes from the basics of the ExtendScript language, up to advanced topics such as ActionManager (~70 pages) and Adobe Generator (~60 pages).&lt;/p&gt;
-
-&lt;p&gt;The book V1.0. is for sale right now at &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;PS-Scripting.com&lt;/a&gt;, where you can also &lt;a href=&quot;https://www.ps-scripting.com/#get-sample&quot;&gt;Get Sample Content!&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I really hope you’ll enjoy it! As I wrote in an earlier post, my intention is to match the &lt;a href=&quot;https://www.htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development&lt;/a&gt; course and add a series of video tutorials: I tested the equipment but stopped for the final rush needed to publish the book.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2018/11/DB-2018-11-18-at-11.23.40.jpg&quot; alt=&quot;Professional Photoshop Scripting course video recording&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Many thanks to all who have contributed, helped, and supported the project buying the EAP 🙏🏻 Your support has been truly appreciated.
-Thank you all!&lt;/p&gt;
-
-&lt;p&gt;👉 &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;Book Website&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 13 Feb 2019 01:43:32 +0100</pubDate>
-        <link>http://localhost:4000/2019/02/professional-photoshop-scripting-v1/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/02/professional-photoshop-scripting-v1/</guid>
-        
-        <category>Professional Photoshop Scripting</category>
-        
-        
-        <category>Scripting</category>
         
       </item>
     

@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -832,16 +836,16 @@
 	<span class="nt">&lt;/MenuItem&gt;</span> \
 <span class="nt">&lt;/Menu&gt;</span>';</code></pre></figure>
 
-<p>Remember the <code class="highlighter-rouge">\</code> at the lines’ end to escape the carriage return. Nothing fancy, just <code class="highlighter-rouge">MenuItem</code> tags to define the structure. Mind you, nested menus don’t work right now (in Photoshop CC 2014.2.0 - although After Effects and Premiere are OK) but the bug is going to be fixed. You actually <strong>build</strong> the menu feeding <code class="highlighter-rouge">setPanelFlyoutMenu</code> with the XML string:</p>
+<p>Remember the <code class="language-plaintext highlighter-rouge">\</code> at the lines’ end to escape the carriage return. Nothing fancy, just <code class="language-plaintext highlighter-rouge">MenuItem</code> tags to define the structure. Mind you, nested menus don’t work right now (in Photoshop CC 2014.2.0 - although After Effects and Premiere are OK) but the bug is going to be fixed. You actually <strong>build</strong> the menu feeding <code class="language-plaintext highlighter-rouge">setPanelFlyoutMenu</code> with the XML string:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Uses the XML string to build the menu</span>
 <span class="nx">csInterface</span><span class="p">.</span><span class="nx">setPanelFlyoutMenu</span><span class="p">(</span><span class="nx">flyoutXML</span><span class="p">);</span></code></pre></figure>
 
-<p>An event listener has been added to respond to clicks (the event is <code class="highlighter-rouge">"com.adobe.csxs.events.flyoutMenuClicked"</code>):</p>
+<p>An event listener has been added to respond to clicks (the event is <code class="language-plaintext highlighter-rouge">"com.adobe.csxs.events.flyoutMenuClicked"</code>):</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"com.adobe.csxs.events.flyoutMenuClicked"</span><span class="p">,</span> <span class="nx">flyoutMenuClickedHandler</span><span class="p">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">com.adobe.csxs.events.flyoutMenuClicked</span><span class="dl">"</span><span class="p">,</span> <span class="nx">flyoutMenuClickedHandler</span><span class="p">);</span></code></pre></figure>
 
-<p>When a click occurs, an <code class="highlighter-rouge">event</code> is passed to the callback. It’s <code class="highlighter-rouge">data</code> attribute is an object containing both <code class="highlighter-rouge">menuId</code> and <code class="highlighter-rouge">menuName</code> . The callback in my case is as follows:</p>
+<p>When a click occurs, an <code class="language-plaintext highlighter-rouge">event</code> is passed to the callback. It’s <code class="language-plaintext highlighter-rouge">data</code> attribute is an object containing both <code class="language-plaintext highlighter-rouge">menuId</code> and <code class="language-plaintext highlighter-rouge">menuName</code> . The callback in my case is as follows:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Ugly workaround to keep track of "checked" and "enabled" statuses</span>
 <span class="kd">var</span> <span class="nx">checkableMenuItem_isChecked</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
@@ -853,21 +857,21 @@
   <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
   <span class="k">switch</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">menuId</span><span class="p">)</span> <span class="p">{</span>
 
-    <span class="k">case</span> <span class="s2">"checkableMenuItem"</span><span class="p">:</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">checkableMenuItem</span><span class="dl">"</span><span class="p">:</span>
       <span class="nx">checkableMenuItem_isChecked</span> <span class="o">=</span> <span class="o">!</span><span class="nx">checkableMenuItem_isChecked</span><span class="p">;</span>
-      <span class="nx">csInterface</span><span class="p">.</span><span class="nx">updatePanelMenuItem</span><span class="p">(</span><span class="s2">"Checkable Menu Item"</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">checkableMenuItem_isChecked</span><span class="p">);</span>
+      <span class="nx">csInterface</span><span class="p">.</span><span class="nx">updatePanelMenuItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">Checkable Menu Item</span><span class="dl">"</span><span class="p">,</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">checkableMenuItem_isChecked</span><span class="p">);</span>
       <span class="k">break</span><span class="p">;</span>
 
-    <span class="k">case</span> <span class="s2">"actionMenuItem"</span><span class="p">:</span>
+    <span class="k">case</span> <span class="dl">"</span><span class="s2">actionMenuItem</span><span class="dl">"</span><span class="p">:</span>
       <span class="nx">targetMenuItem_isEnabled</span> <span class="o">=</span> <span class="o">!</span><span class="nx">targetMenuItem_isEnabled</span><span class="p">;</span>
-      <span class="nx">csInterface</span><span class="p">.</span><span class="nx">updatePanelMenuItem</span><span class="p">(</span><span class="s2">"Target Menu Item"</span><span class="p">,</span> <span class="nx">targetMenuItem_isEnabled</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+      <span class="nx">csInterface</span><span class="p">.</span><span class="nx">updatePanelMenuItem</span><span class="p">(</span><span class="dl">"</span><span class="s2">Target Menu Item</span><span class="dl">"</span><span class="p">,</span> <span class="nx">targetMenuItem_isEnabled</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
       <span class="k">break</span><span class="p">;</span>
 
     <span class="nl">default</span><span class="p">:</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">menuName</span> <span class="o">+</span> <span class="s2">" clicked!"</span><span class="p">);</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">menuName</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> clicked!</span><span class="dl">"</span><span class="p">);</span>
   <span class="p">}</span>
 
-  <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s2">"alert('Clicked!</span><span class="err">\</span><span class="se">\n</span><span class="s2"> </span><span class="se">\"</span><span class="s2">"</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">menuName</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">');"</span><span class="p">);</span>
+  <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">"</span><span class="s2">alert('Clicked!</span><span class="se">\\</span><span class="s2">n </span><span class="se">\"</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">menuName</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\"</span><span class="s2">');</span><span class="dl">"</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>The code above:</p>
@@ -878,7 +882,7 @@
   <li>toggles the enabled/disabled status of a menu item when you click on a different item.</li>
 </ul>
 
-<p>I haven’t been able to retrieve the <em>enabled/disabled</em> and <em>checked/unchecked</em> menu items status dynamically, so I’ve worked around storing them in vars. Not ideal maybe, but it works As you see, I’ve used the <code class="highlighter-rouge">updatePanelMenuItem</code> function, which is used this way (straight from <code class="highlighter-rouge">CSInterface.js</code> sourcecode):</p>
+<p>I haven’t been able to retrieve the <em>enabled/disabled</em> and <em>checked/unchecked</em> menu items status dynamically, so I’ve worked around storing them in vars. Not ideal maybe, but it works As you see, I’ve used the <code class="language-plaintext highlighter-rouge">updatePanelMenuItem</code> function, which is used this way (straight from <code class="language-plaintext highlighter-rouge">CSInterface.js</code> sourcecode):</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/**
  * Updates a menu item in the extension window's flyout menu, by setting the enabled
@@ -899,7 +903,7 @@
   <span class="kd">var</span> <span class="nx">ret</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getHostCapabilities</span><span class="p">().</span><span class="nx">EXTENDED_PANEL_MENU</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">itemStatus</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MenuItemStatus</span><span class="p">(</span><span class="nx">menuItemLabel</span><span class="p">,</span> <span class="nx">enabled</span><span class="p">,</span> <span class="nx">checked</span><span class="p">);</span>
-    <span class="nx">ret</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">__adobe_cep__</span><span class="p">.</span><span class="nx">invokeSync</span><span class="p">(</span><span class="s2">"updatePanelMenuItem"</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">itemStatus</span><span class="p">));</span>
+    <span class="nx">ret</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">__adobe_cep__</span><span class="p">.</span><span class="nx">invokeSync</span><span class="p">(</span><span class="dl">"</span><span class="s2">updatePanelMenuItem</span><span class="dl">"</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">itemStatus</span><span class="p">));</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="nx">ret</span><span class="p">;</span>
 <span class="p">};</span></code></pre></figure>

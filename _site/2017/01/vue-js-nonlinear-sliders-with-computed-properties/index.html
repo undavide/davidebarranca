@@ -770,6 +770,10 @@ While working on the forthcoming version of my DoubleUSM script, which I’m por
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -851,7 +855,7 @@ While working on the forthcoming version of my DoubleUSM script, which I’m por
   <figcaption>Click the image to open the <a href="https://jsbin.com/xenelej/edit?js,output">JSBin</a></figcaption>
 </figure>
 
-<p>As you see, I’ve bound the slider (aka input of type range, width of 175 pixels) and the number box (input of type number: I’ve hidden the spin boxes because I think they’re ugly) to the same radius property using <code class="highlighter-rouge">v-model</code>. It kinda works, but functionally, as a Radius slider, it’s unusable. I can’t precisely target any small value (say 0.4), because the whole slider is just too tiny to keep track of them: the first available value is 2.3! How did Adobe solve that issue? The only way to find it is experimentally: I’ve grabbed screenshots of the USM dialog at different Radius values, and measured the pixel span of the slider thumb aka handler. Annoying, and perhaps not ideal, but it worked. I’ve used a spreadsheet to graph the range pixels span (first column), against the radius value (last column)</p>
+<p>As you see, I’ve bound the slider (aka input of type range, width of 175 pixels) and the number box (input of type number: I’ve hidden the spin boxes because I think they’re ugly) to the same radius property using <code class="language-plaintext highlighter-rouge">v-model</code>. It kinda works, but functionally, as a Radius slider, it’s unusable. I can’t precisely target any small value (say 0.4), because the whole slider is just too tiny to keep track of them: the first available value is 2.3! How did Adobe solve that issue? The only way to find it is experimentally: I’ve grabbed screenshots of the USM dialog at different Radius values, and measured the pixel span of the slider thumb aka handler. Annoying, and perhaps not ideal, but it worked. I’ve used a spreadsheet to graph the range pixels span (first column), against the radius value (last column)</p>
 
 <p><img src="/wp-content/uploads/2017/01/graph01.png" alt="" /></p>
 
@@ -861,41 +865,41 @@ While working on the forthcoming version of my DoubleUSM script, which I’m por
   <p>You’ll forgive me if I’m a bit imprecise with these calculations. Fact is that I have no idea whether a 175px width slider has room, for its thumb/handler, for 175 actual different positions when you drag it. I’ve set in the HTML its min=0 and max=175, roughly matching its current width in pixels. BTW 0..175 is a range of 176 values.</p>
 </blockquote>
 
-<p>Looking at the graph, you can see four separate, linear segments: [0..10], [10..50], [50..200], [200..500], which is bearable: this is what they do, and I could perhaps replicate them. I’m afraid it doesn’t suit my own taste so I’ll change the mapping to fit my own idea of the <em>proper</em> slider behaviour for USM Radius. And the way to do that is via VueJS Computed Properties. The idea is that we’ll bind (via <code class="highlighter-rouge">v-model</code>) the spinner (number field) to the same <code class="highlighter-rouge">radius</code> property of the initial example, while the slider to another prop called  <code class="highlighter-rouge">sliderRadius</code>, calculated on the fly from <code class="highlighter-rouge">radius</code>. This goes in the <code class="highlighter-rouge">computed</code> section of the Vue instance, see below (please note that I’m returning the same, unprocessed value for now).</p>
+<p>Looking at the graph, you can see four separate, linear segments: [0..10], [10..50], [50..200], [200..500], which is bearable: this is what they do, and I could perhaps replicate them. I’m afraid it doesn’t suit my own taste so I’ll change the mapping to fit my own idea of the <em>proper</em> slider behaviour for USM Radius. And the way to do that is via VueJS Computed Properties. The idea is that we’ll bind (via <code class="language-plaintext highlighter-rouge">v-model</code>) the spinner (number field) to the same <code class="language-plaintext highlighter-rouge">radius</code> property of the initial example, while the slider to another prop called  <code class="language-plaintext highlighter-rouge">sliderRadius</code>, calculated on the fly from <code class="language-plaintext highlighter-rouge">radius</code>. This goes in the <code class="language-plaintext highlighter-rouge">computed</code> section of the Vue instance, see below (please note that I’m returning the same, unprocessed value for now).</p>
 
 <figure>
 	<a href="https://jsbin.com/lahupu/edit?js,output"><img src="/wp-content/uploads/2017/01/jsbin2.jpg" /></a>
   <figcaption>Click the image to open the <a href="https://jsbin.com/lahupu/edit?js,output">JSBin</a></figcaption>
 </figure>
 
-<p>The getter here is the function that computes <code class="highlighter-rouge">sliderRadius</code> from <code class="highlighter-rouge">radius</code>, while the setter does the reverse (sets the <code class="highlighter-rouge">radius</code> from <code class="highlighter-rouge">sliderRadius</code>). In practice, the getter is involved when you type number values in the spinner; the setter when you drag the slider. With this in place, it’s time to compute the two functions. I’ve decided that four linear ranges like <strong>[0..5], [5..30], [30..100], [100..500]</strong> are a better fit for me – see the following graph.</p>
+<p>The getter here is the function that computes <code class="language-plaintext highlighter-rouge">sliderRadius</code> from <code class="language-plaintext highlighter-rouge">radius</code>, while the setter does the reverse (sets the <code class="language-plaintext highlighter-rouge">radius</code> from <code class="language-plaintext highlighter-rouge">sliderRadius</code>). In practice, the getter is involved when you type number values in the spinner; the setter when you drag the slider. With this in place, it’s time to compute the two functions. I’ve decided that four linear ranges like <strong>[0..5], [5..30], [30..100], [100..500]</strong> are a better fit for me – see the following graph.</p>
 
 <p><img src="/wp-content/uploads/2017/01/graph04.png" alt="" /></p>
 
 <p>In case you’re dubious, I’m plotting now Radius in the  $ x $, Slider in the  $ y, $  whereas the in previous graph I did the reverse (Slider  $ x $, Radius  $ y $). I’ve set the points so that there is a (theoretical) match for the important ranges. For instance, the Radius range [0..5] is mapped to [0..50] in the slider, so that (theoretically) each point value (0, 0.1, 0.2, 0.3…) has a perfect match with the slider (0, 1, 2, 3, and so on). At least this is what I hope is the case, because – as I’ve written – there’s no guarantee that a 175px slider has 175 available positions for the thumb. Now it’s only a matter of finding the $ a $ and $ b $ coefficient for a linear equation $ y = ax + b $. Solving that for $ a, b $ is easy: $ a $ is rise over run e.g. for the getter in the second range [5..30]:</p>
 
-<script type="math/tex; mode=display">a = (100-50)/(30-5) = 2</script>
+\[a = (100-50)/(30-5) = 2\]
 
 <p>We know all the Radius/Slider pairs, so <em>b</em> is got substituting the <em>x,y</em> and recently found <em>a</em> values in the linear equation, eg.</p>
 
-<script type="math/tex; mode=display">b = 100 - ( 2*30) = 40</script>
+\[b = 100 - ( 2*30) = 40\]
 
 <p>As a result, the linear equation for the second range [5..30] getter is:</p>
 
-<script type="math/tex; mode=display">Slider = 2 * Radius + 40</script>
+\[Slider = 2 * Radius + 40\]
 
 <p>That’s for the <strong>getter</strong>. You have to invert Slider and Radius to obtain <strong>setter</strong> coefficients, so for instance (setter, second range):</p>
 
-<script type="math/tex; mode=display">a = (30-5)/(100-50) = 0.5</script>
+\[a = (30-5)/(100-50) = 0.5\]
 
-<script type="math/tex; mode=display">b = 30 - (0.5 * 100) = -20</script>
+\[b = 30 - (0.5 * 100) = -20\]
 
-<script type="math/tex; mode=display">Radius = 0.5 * Slider - 20</script>
+\[Radius = 0.5 * Slider - 20\]
 
 <p>Which translates into the following code:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-  <span class="na">el</span><span class="p">:</span> <span class="s1">'#app'</span><span class="p">,</span>
+  <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">radius</span><span class="p">:</span> <span class="mi">100</span>
   <span class="p">},</span>
@@ -929,7 +933,7 @@ While working on the forthcoming version of my DoubleUSM script, which I’m por
   <span class="p">}</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>I’ve added a <code class="highlighter-rouge">Math.round10</code> function borrowed from <a href="https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Math/round">MDN</a>, which allows me to send to the spinner properly formatted numbers. Also note that I’ve changed accordingly the HTML, limiting the slider to <code class="highlighter-rouge">max=175</code> and, importantly, setting the step to <code class="highlighter-rouge">0.1</code>: otherwise, when you change numbers in the steppers, the slider would jump. The final, working JSBin is this one:</p>
+<p>I’ve added a <code class="language-plaintext highlighter-rouge">Math.round10</code> function borrowed from <a href="https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Math/round">MDN</a>, which allows me to send to the spinner properly formatted numbers. Also note that I’ve changed accordingly the HTML, limiting the slider to <code class="language-plaintext highlighter-rouge">max=175</code> and, importantly, setting the step to <code class="language-plaintext highlighter-rouge">0.1</code>: otherwise, when you change numbers in the steppers, the slider would jump. The final, working JSBin is this one:</p>
 
 <figure>
 	<a href="http://jsbin.com/lahupu/6/edit?js,output"><img src="/wp-content/uploads/2017/01/jsbin3.jpg" /></a>

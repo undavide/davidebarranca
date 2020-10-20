@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -809,7 +813,7 @@
 
 <p>Why should it? I tell you why, it’s a matter of mismatching expectations. The Creative Cloud app tells you it will port your Preferences: you would expect that this means Scripts-Plugins too but alas it’s not the case. Moreover, by default (what a tumble!) the CC app <strong>removes old versions</strong> of Photoshop CC, so that you can’t just copy Scripts and Plugins from CC2014 on CC2015.</p>
 
-<p><strong>Developer</strong>: advise your customers to look in the Advanced properties of the CC update application and uncheck “Remove previous versions” so that they have access to stuff installed within the Photoshop CC2014 folder. <strong>User</strong>: look in the <code class="highlighter-rouge">Photoshop CC2014/Presets/Scripts/</code> for Script products, and/or <code class="highlighter-rouge">Photoshop CC2014/Plug-ins/</code> and manually copy sensible stuff from there into the corresponding Photoshop CC2015/ paths - ask your developer for help.</p>
+<p><strong>Developer</strong>: advise your customers to look in the Advanced properties of the CC update application and uncheck “Remove previous versions” so that they have access to stuff installed within the Photoshop CC2014 folder. <strong>User</strong>: look in the <code class="language-plaintext highlighter-rouge">Photoshop CC2014/Presets/Scripts/</code> for Script products, and/or <code class="language-plaintext highlighter-rouge">Photoshop CC2014/Plug-ins/</code> and manually copy sensible stuff from there into the corresponding Photoshop CC2015/ paths - ask your developer for help.</p>
 
 <h2 id="2-adobe-extension-manager-says-the-product-is-installed-but-it-isnt">2. Adobe Extension Manager says the product is installed but it isn’t!</h2>
 
@@ -817,21 +821,21 @@
 
 <p><strong>Developer</strong>: it’s somehow <em>by chance</em> (or by design, depending on your POV) that your Panel shows up in CC2015, because the path for CC2014 and CC2015 is shared:</p>
 
-<p>Mac: <code class="highlighter-rouge">~/Library/Application Support/Adobe/CEP/extensions</code><br />
-Win: <code class="highlighter-rouge">C:\&lt;username&gt;\AppData\Roaming\Adobe\CEP\extensions</code></p>
+<p>Mac: <code class="language-plaintext highlighter-rouge">~/Library/Application Support/Adobe/CEP/extensions</code><br />
+Win: <code class="language-plaintext highlighter-rouge">C:\&lt;username&gt;\AppData\Roaming\Adobe\CEP\extensions</code></p>
 
-<p>Mind you: if your panel is self-contained (doesn’t require files such as scripts installed within the Photoshop folder, like JSXs in <code class="highlighter-rouge">Presets/Scripts/</code> or plugins in <code class="highlighter-rouge">Plug-ins/</code>) it will work on CC2015. Otherwise, you need to move the required files manually in order for the panel to be functional. The same applies for Plug-ins and Scripts.</p>
+<p>Mind you: if your panel is self-contained (doesn’t require files such as scripts installed within the Photoshop folder, like JSXs in <code class="language-plaintext highlighter-rouge">Presets/Scripts/</code> or plugins in <code class="language-plaintext highlighter-rouge">Plug-ins/</code>) it will work on CC2015. Otherwise, you need to move the required files manually in order for the panel to be functional. The same applies for Plug-ins and Scripts.</p>
 
 <p><strong>User</strong>: ask your developer if you think the Panel is not working properly even if it shows up, and ask for CC2015 installers (yes, you need to install them on the new version.</p>
 
 <h2 id="3-the-insert-name-herepanel-says-its-not-properly-signed-andor-timestamped">3. The [insert name here] Panel says it’s not properly signed and/or timestamped!</h2>
 
-<p>My friend, have you signed and timestamped your panel? Chances are you’ve not - or possibly you are used to keep the debug flag on (CC2014) on your machine and your users don’t - and you don’t have it either on CC2015. CEP panels need to be signed/timestamped - I personally do this via <code class="highlighter-rouge">ZXPSignCmd</code> commandline tool, you’ll find all the excruciating details <a href="/2014/05/html-panels-tips-10-packaging-zxp-installers/" title="HTML Panels Tips: #10 Packaging / ZXP Installers">here</a>).</p>
+<p>My friend, have you signed and timestamped your panel? Chances are you’ve not - or possibly you are used to keep the debug flag on (CC2014) on your machine and your users don’t - and you don’t have it either on CC2015. CEP panels need to be signed/timestamped - I personally do this via <code class="language-plaintext highlighter-rouge">ZXPSignCmd</code> commandline tool, you’ll find all the excruciating details <a href="/2014/05/html-panels-tips-10-packaging-zxp-installers/" title="HTML Panels Tips: #10 Packaging / ZXP Installers">here</a>).</p>
 
-<p><strong>Developer</strong>: Build a signed/timestamped ZXP, rename it as ZIP, unZip it (OSX won’t let you do this because his inner soul is mean, download any third party free app such as <a href="https://itunes.apple.com/it/app/the-unarchiver/id425424353?mt=12" title="The Unarchiver (OSX)">The Unarchiver</a>) and now distribute the folder for manual installation in the usual paths (see #2 above). You’ll notice that a signed/timestamped panel contains a <code class="highlighter-rouge">META-INF</code> folder and a <code class="highlighter-rouge">mimetype</code> file: take care of these guys. Please notice that:</p>
+<p><strong>Developer</strong>: Build a signed/timestamped ZXP, rename it as ZIP, unZip it (OSX won’t let you do this because his inner soul is mean, download any third party free app such as <a href="https://itunes.apple.com/it/app/the-unarchiver/id425424353?mt=12" title="The Unarchiver (OSX)">The Unarchiver</a>) and now distribute the folder for manual installation in the usual paths (see #2 above). You’ll notice that a signed/timestamped panel contains a <code class="language-plaintext highlighter-rouge">META-INF</code> folder and a <code class="language-plaintext highlighter-rouge">mimetype</code> file: take care of these guys. Please notice that:</p>
 
 <ul>
-  <li>You modify a single file in a signed/timestamped panel (such as the <code class="highlighter-rouge">manifest.xml</code> to add compatibility to CC2015) and the signing/timestamping is screwed, error will follow and the panel won’t show up anymore.</li>
+  <li>You modify a single file in a signed/timestamped panel (such as the <code class="language-plaintext highlighter-rouge">manifest.xml</code> to add compatibility to CC2015) and the signing/timestamping is screwed, error will follow and the panel won’t show up anymore.</li>
   <li>You let the uncompressed panel lie in a Google Drive folder shared with somebody else, and the signing/timestamping is screwed as well (true! It took me forever to get this one, still I don’t know why it happens).</li>
   <li>Perhaps if you stare at a panel long enough, the signing and timestamping will break into tears.</li>
 </ul>
@@ -857,10 +861,10 @@ Win: <code class="highlighter-rouge">C:\&lt;username&gt;\AppData\Roaming\Adobe\
 
 <p>Set the <strong>PlayerDebugMode</strong> as a String with value “1” in:</p>
 
-<p>Win: <code class="highlighter-rouge">regedit &gt; HKEY_CURRENT_USER/Software/Adobe/CSXS.6</code><br />
-Mac: <code class="highlighter-rouge">/Users/&lt;username&gt;/Library/Preferences/com.adobe.CSXS.6.plist</code></p>
+<p>Win: <code class="language-plaintext highlighter-rouge">regedit &gt; HKEY_CURRENT_USER/Software/Adobe/CSXS.6</code><br />
+Mac: <code class="language-plaintext highlighter-rouge">/Users/&lt;username&gt;/Library/Preferences/com.adobe.CSXS.6.plist</code></p>
 
-<p>Let me read your mind: <code class="highlighter-rouge">com.adobe.CSXS.6</code> doesn’t exist. Brave developer, clone it from CSXS.5 and rename it, you’ll be forgiven. Mind you: Starting with Mac 10.9, Apple introduced a caching mechanism for plist files. Your modifications to plist files do not take effect until the cache gets updated (on a periodic basis, you cannot know exactly when the update will happen). To make sure your modifications take effect, kill all <code class="highlighter-rouge">cfprefsd</code> processes. They will restart automatically.</p>
+<p>Let me read your mind: <code class="language-plaintext highlighter-rouge">com.adobe.CSXS.6</code> doesn’t exist. Brave developer, clone it from CSXS.5 and rename it, you’ll be forgiven. Mind you: Starting with Mac 10.9, Apple introduced a caching mechanism for plist files. Your modifications to plist files do not take effect until the cache gets updated (on a periodic basis, you cannot know exactly when the update will happen). To make sure your modifications take effect, kill all <code class="language-plaintext highlighter-rouge">cfprefsd</code> processes. They will restart automatically.</p>
 
 <h2 id="6-how-do-i-let-users-install-insert-name-here-if-adobe-extension-manager-is-gone">6. How do I let users install [insert name here] if Adobe Extension Manager is gone?</h2>
 

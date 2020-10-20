@@ -755,6 +755,10 @@ Spectrum CSS are really ...">
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -808,35 +812,35 @@ Spectrum CSS are really ...">
     <div class="post-content">
         <p>In a <a href="/2018/11/adobe-spectrum-css-open-sourced/">previous post</a> I’ve introduced the recently open-sourced Spectrum CSS. Here, I’ll be demonstrating how to use them to build a simple Vue.js component: a DropDown menu.</p>
 
-<p>Spectrum CSS are really appealing, but as I’ve mentioned <a href="/2018/11/adobe-spectrum-css-open-sourced/">earlier</a>, they’re not bundled with any JavaScript – besides what you may borrow from the <a href="http://opensource.adobe.com/spectrum-css">online documentation</a> page. While elements such as Sliders are <em>plug &amp; play</em>, for they actually do use a <code class="highlighter-rouge">&lt;input type="range"&gt;</code> wrapped in a lot of finely styled <code class="highlighter-rouge">&lt;div&gt;</code> tags, others such as the DropDown are not.</p>
+<p>Spectrum CSS are really appealing, but as I’ve mentioned <a href="/2018/11/adobe-spectrum-css-open-sourced/">earlier</a>, they’re not bundled with any JavaScript – besides what you may borrow from the <a href="http://opensource.adobe.com/spectrum-css">online documentation</a> page. While elements such as Sliders are <em>plug &amp; play</em>, for they actually do use a <code class="language-plaintext highlighter-rouge">&lt;input type="range"&gt;</code> wrapped in a lot of finely styled <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> tags, others such as the DropDown are not.</p>
 
 <figure>
 	<img width="300" src="/wp-content/uploads/2018/12/dropdown.gif" />
 	<figcaption>Screenshot from the Spectrum CSS documentation</figcaption>
 </figure>
 
-<p>I.e. if you click on a Closed dropdown, it won’t open (the above is just a screenshot so it’s pointless to try, but the result would be the same). The reason being that a Spectrum DropDown is not really a <code class="highlighter-rouge">&lt;select&gt;</code> element, as you can see in the snippet below:</p>
+<p>I.e. if you click on a Closed dropdown, it won’t open (the above is just a screenshot so it’s pointless to try, but the result would be the same). The reason being that a Spectrum DropDown is not really a <code class="language-plaintext highlighter-rouge">&lt;select&gt;</code> element, as you can see in the snippet below:</p>
 
 <p><img src="/wp-content/uploads/2018/12/code.png" alt="The Spectrum code that renders a DropDown" /></p>
 
-<p>As far as I get, re-creating an element from scratch is a standard practice to avoid rendering differences between browsers (the <code class="highlighter-rouge">&lt;select&gt;</code> is a good example here).</p>
+<p>As far as I get, re-creating an element from scratch is a standard practice to avoid rendering differences between browsers (the <code class="language-plaintext highlighter-rouge">&lt;select&gt;</code> is a good example here).</p>
 
-<p>Anyways: no <code class="highlighter-rouge">&lt;select&gt;</code> means no default behavior on click, change, etc. In other words, you are the one in charge of populating the <code class="highlighter-rouge">&lt;div&gt;</code> elements above and adding relevant event handlers so that the DropDown stops being a nice but still and useless object.</p>
+<p>Anyways: no <code class="language-plaintext highlighter-rouge">&lt;select&gt;</code> means no default behavior on click, change, etc. In other words, you are the one in charge of populating the <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> elements above and adding relevant event handlers so that the DropDown stops being a nice but still and useless object.</p>
 
-<p>This is a perfect test case for encapsulating everything in a <strong>Vue.js Component</strong>! The only drawback is that I don’t feel particularly comfortable with the idea of creating Components from scratch. All my CEP Panels use Vue.js now, that’s true, but frankly in a very simple and not over-engineered fashion: I’ve always used one shared <code class="highlighter-rouge">data</code>, the farther I’ve ventured into fanciness was setting up an Event Hub.</p>
+<p>This is a perfect test case for encapsulating everything in a <strong>Vue.js Component</strong>! The only drawback is that I don’t feel particularly comfortable with the idea of creating Components from scratch. All my CEP Panels use Vue.js now, that’s true, but frankly in a very simple and not over-engineered fashion: I’ve always used one shared <code class="language-plaintext highlighter-rouge">data</code>, the farther I’ve ventured into fanciness was setting up an Event Hub.</p>
 
 <p>Thanks god I’ve a PhD in <em>Copy&amp;Paste</em>, so I’ve been able to adapt <a href="https://vuejsexamples.com/a-prettier-way-to-display-select-boxes/">this one</a>:</p>
 
 <p><img src="/wp-content/uploads/2018/12/display-select-boxes.gif" alt="" /></p>
 
-<p>… into a proper Vue Component that wraps the Spectrum DropDown original markup. The <code class="highlighter-rouge">.vue</code> file I came up with is as follows:</p>
+<p>… into a proper Vue Component that wraps the Spectrum DropDown original markup. The <code class="language-plaintext highlighter-rouge">.vue</code> file I came up with is as follows:</p>
 
 <noscript><pre>400: Invalid request</pre></noscript>
 <script src="https://gist.github.com/ec5c7ef0d83b5d14252a963e761896f7.js"> </script>
 
-<p>I won’t go too much into the details here. If you look at the <code class="highlighter-rouge">&lt;template&gt;</code> tag and compare it with the original Spectrum html, you can spot the differences: I’ve added a couple of classes that depend on the selected item or the <code class="highlighter-rouge">showMenu</code>boolean, and used a <code class="highlighter-rouge">v-for</code> loop to populate the options.</p>
+<p>I won’t go too much into the details here. If you look at the <code class="language-plaintext highlighter-rouge">&lt;template&gt;</code> tag and compare it with the original Spectrum html, you can spot the differences: I’ve added a couple of classes that depend on the selected item or the <code class="language-plaintext highlighter-rouge">showMenu</code>boolean, and used a <code class="language-plaintext highlighter-rouge">v-for</code> loop to populate the options.</p>
 
-<p>The <code class="highlighter-rouge">&lt;script&gt;</code> tag is where the actual logic belongs: I’ve added two methods, one to show the opened dropdown and one to emit an event to the parent when something is selected. From the <code class="highlighter-rouge">props</code> you’re able to tell how to consume such element, e.g.:</p>
+<p>The <code class="language-plaintext highlighter-rouge">&lt;script&gt;</code> tag is where the actual logic belongs: I’ve added two methods, one to show the opened dropdown and one to emit an event to the parent when something is selected. From the <code class="language-plaintext highlighter-rouge">props</code> you’re able to tell how to consume such element, e.g.:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;drop-down</span> <span class="na">:options=</span><span class="s">"arrayOfObjects"</span> <span class="na">v-on:updateOption=</span><span class="s">"methodToRunOnSelect"</span> <span class="na">placeholder=</span><span class="s">"Select a thing..."</span><span class="nt">/&gt;</span></code></pre></figure>
 

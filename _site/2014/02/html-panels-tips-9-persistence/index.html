@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -805,7 +809,7 @@
         <p>How do you make the HTML Panel’s session persist even if the panel is closed in Photoshop? Each time an HTML Panel is launched, its GUI resets to the default values and initialization is performed. This happens not only in between Photoshop sessions, but also when the Panel is collapsed, iconized or closed. Today’s tip shows you how to make the Panel persistent, as we did back in Flash land with:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// In Flash panels you would:</span>
-<span class="nx">CSXSInterface</span><span class="p">.</span><span class="nx">instance</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s2">"PhotoshopPersistent"</span><span class="p">);</span></code></pre></figure>
+<span class="nx">CSXSInterface</span><span class="p">.</span><span class="nx">instance</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">"</span><span class="s2">PhotoshopPersistent</span><span class="dl">"</span><span class="p">);</span></code></pre></figure>
 
 <p>The mechanism now in HTML land requires Event dispatching - see <a href="/2014/02/html-panels-tips-7-events-photoshopregisterevent-photoshopcallback/" title="HTML Panels Tips: #7 Photoshop Events, Take 1">Tip #7</a>: Photoshop Events Take 1 for the details.</p>
 
@@ -894,20 +898,20 @@
 
 <h3 id="javascript">Javascript</h3>
 
-<p>The <code class="highlighter-rouge">main.js</code> file is where things happen. A <code class="highlighter-rouge">Persistent()</code> function is called every time the <code class="highlighter-rouge">persistenceSwitch</code> changes: it sets up and dispatches a <code class="highlighter-rouge">CSEvent</code> (see the highlighted lines), which is bound to the extension’s id (<code class="highlighter-rouge">gExtensionId</code> variable).</p>
+<p>The <code class="language-plaintext highlighter-rouge">main.js</code> file is where things happen. A <code class="language-plaintext highlighter-rouge">Persistent()</code> function is called every time the <code class="language-plaintext highlighter-rouge">persistenceSwitch</code> changes: it sets up and dispatches a <code class="language-plaintext highlighter-rouge">CSEvent</code> (see the highlighted lines), which is bound to the extension’s id (<code class="language-plaintext highlighter-rouge">gExtensionId</code> variable).</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
 
   <span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
-  <span class="kd">var</span> <span class="nx">gExtensionId</span> <span class="o">=</span> <span class="s2">"com.example.persistent"</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">gExtensionId</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">com.example.persistent</span><span class="dl">"</span><span class="p">;</span>
 
   <span class="kd">function</span> <span class="nx">Persistent</span><span class="p">(</span><span class="nx">inOn</span><span class="p">)</span> <span class="p">{</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">inOn</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSEvent</span><span class="p">(</span><span class="s2">"com.adobe.PhotoshopPersistent"</span><span class="p">,</span> <span class="s2">"APPLICATION"</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSEvent</span><span class="p">(</span><span class="dl">"</span><span class="s2">com.adobe.PhotoshopPersistent</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">APPLICATION</span><span class="dl">"</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSEvent</span><span class="p">(</span><span class="s2">"com.adobe.PhotoshopUnPersistent"</span><span class="p">,</span> <span class="s2">"APPLICATION"</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSEvent</span><span class="p">(</span><span class="dl">"</span><span class="s2">com.adobe.PhotoshopUnPersistent</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">APPLICATION</span><span class="dl">"</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="nx">event</span><span class="p">.</span><span class="nx">extensionId</span> <span class="o">=</span> <span class="nx">gExtensionId</span><span class="p">;</span>
     <span class="nx">csInterface</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
@@ -917,8 +921,8 @@
 
     <span class="nx">themeManager</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
 
-    <span class="nx">$</span><span class="p">(</span><span class="s1">'#persistenceSwitch'</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">Persistent</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s1">':checked'</span><span class="p">));</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#persistenceSwitch</span><span class="dl">'</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">Persistent</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="dl">'</span><span class="s1">:checked</span><span class="dl">'</span><span class="p">));</span>
     <span class="p">});</span>
   <span class="p">}</span>
 

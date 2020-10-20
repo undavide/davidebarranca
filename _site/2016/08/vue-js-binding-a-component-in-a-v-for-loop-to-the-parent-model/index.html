@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -833,24 +837,24 @@
 <p>While the Javascript and the Vue code is:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-  <span class="na">el</span><span class="p">:</span> <span class="s1">'#main-container'</span><span class="p">,</span>
+  <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#main-container</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">boxes</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'zero'</span><span class="p">,</span>  <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'one'</span><span class="p">,</span>   <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'two'</span><span class="p">,</span>   <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'three'</span><span class="p">,</span> <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'four'</span><span class="p">,</span>  <span class="s1">'status'</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
-      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'five'</span><span class="p">,</span>  <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'six'</span><span class="p">,</span>   <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'seven'</span><span class="p">,</span> <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'eight'</span><span class="p">,</span> <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
-      <span class="p">{</span><span class="s1">'name'</span> <span class="p">:</span> <span class="s1">'nine'</span><span class="p">,</span>  <span class="s1">'status'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">zero</span><span class="dl">'</span><span class="p">,</span>  <span class="dl">'</span><span class="s1">status</span><span class="dl">'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">one</span><span class="dl">'</span><span class="p">,</span>   <span class="dl">'</span><span class="s1">status</span><span class="dl">'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">two</span><span class="dl">'</span><span class="p">,</span>   <span class="dl">'</span><span class="s1">status</span><span class="dl">'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">three</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">status</span><span class="dl">'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">four</span><span class="dl">'</span><span class="p">,</span>  <span class="dl">'</span><span class="s1">status</span><span class="dl">'</span><span class="p">:</span> <span class="kc">true</span> <span class="p">},</span>
+      <span class="p">{</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">five</span><span class="dl">'</span><span class="p">,</span>  <span class="dl">'</span><span class="s1">status</span><span class="dl">'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">six</span><span class="dl">'</span><span class="p">,</span>   <span class="dl">'</span><span class="s1">status</span><span class="dl">'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">seven</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">status</span><span class="dl">'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">eight</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">status</span><span class="dl">'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+      <span class="p">{</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span> <span class="p">:</span> <span class="dl">'</span><span class="s1">nine</span><span class="dl">'</span><span class="p">,</span>  <span class="dl">'</span><span class="s1">status</span><span class="dl">'</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
     <span class="p">]</span>
   <span class="p">}</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>In this scenario it is particularly important for me that the <code class="highlighter-rouge">v-model</code> of each checkbox is bound to the <code class="highlighter-rouge">boxes</code> array of objects, so that other functions are able to refer to them (say, passing their values down to the Photoshop JSX layer). But clearly the checkboxes cry to be implemented as Vue Components! So let’s do that – first in the HTML as a template – that, by now, is mostly an empty placeholder:</p>
+<p>In this scenario it is particularly important for me that the <code class="language-plaintext highlighter-rouge">v-model</code> of each checkbox is bound to the <code class="language-plaintext highlighter-rouge">boxes</code> array of objects, so that other functions are able to refer to them (say, passing their values down to the Photoshop JSX layer). But clearly the checkboxes cry to be implemented as Vue Components! So let’s do that – first in the HTML as a template – that, by now, is mostly an empty placeholder:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;template</span> <span class="na">id=</span><span class="s">"boxes-template"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;div&gt;</span>
@@ -864,11 +868,11 @@
 <p>We need to register the Component in the JS, so:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">BoxesChecks</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-  <span class="na">props</span><span class="p">:</span> <span class="p">[</span><span class="s1">'boxIndex'</span><span class="p">,</span> <span class="s1">'boxName'</span><span class="p">,</span> <span class="s1">'boxStatus'</span><span class="p">],</span>
-  <span class="na">template</span><span class="p">:</span> <span class="s1">'#boxes-template'</span>
+  <span class="na">props</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">boxIndex</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">boxName</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">boxStatus</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#boxes-template</span><span class="dl">'</span>
 <span class="p">});</span>
 
-<span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">'boxes-checks'</span><span class="p">,</span> <span class="nx">BoxesChecks</span><span class="p">);</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">boxes-checks</span><span class="dl">'</span><span class="p">,</span> <span class="nx">BoxesChecks</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
 <span class="c1">// etc. etc.</span>
@@ -877,12 +881,12 @@
 <p>Please note that I’m using both camelCase and kebab-case, as the Vue.js doc suggests. I’ve declared three props:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">boxIndex</code>: will be 0, 1, 2, 3… 9.</li>
-  <li><code class="highlighter-rouge">boxName</code>: the checkbox string label, like <code class="highlighter-rouge">"one"</code>, <code class="highlighter-rouge">"two"</code>, etc.</li>
-  <li><code class="highlighter-rouge">boxStatus</code>: will be the Checkbox checked status (either true or false), and will be bound to the <code class="highlighter-rouge">data.boxes</code> Object.</li>
+  <li><code class="language-plaintext highlighter-rouge">boxIndex</code>: will be 0, 1, 2, 3… 9.</li>
+  <li><code class="language-plaintext highlighter-rouge">boxName</code>: the checkbox string label, like <code class="language-plaintext highlighter-rouge">"one"</code>, <code class="language-plaintext highlighter-rouge">"two"</code>, etc.</li>
+  <li><code class="language-plaintext highlighter-rouge">boxStatus</code>: will be the Checkbox checked status (either true or false), and will be bound to the <code class="language-plaintext highlighter-rouge">data.boxes</code> Object.</li>
 </ul>
 
-<p>OK, how do we implement the <code class="highlighter-rouge">v-for loop</code>, so that all the ten Components instances are rendered on the page? A good starting point is:</p>
+<p>OK, how do we implement the <code class="language-plaintext highlighter-rouge">v-for loop</code>, so that all the ten Components instances are rendered on the page? A good starting point is:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;boxes-checks</span> <span class="na">v-for=</span><span class="s">"box in boxes"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/boxes-checks&gt;</span></code></pre></figure>
@@ -910,15 +914,15 @@
 
 { { boxes | json } }</code></pre></figure>
 
-<p>The checkbox <code class="highlighter-rouge">value</code> is <code class="highlighter-rouge">{ { boxIndex } }</code>, that is passed as a prop using the shorthand syntax <code class="highlighter-rouge">:box-index</code> (which stands for <code class="highlighter-rouge">v-bind:box-index</code>) and assigned to the special property provided by the <code class="highlighter-rouge">v-for</code> loop <code class="highlighter-rouge">$index</code>. Note here camelCase and kebab-case. Similarly, <code class="highlighter-rouge">{ {boxName} }</code> and <code class="highlighter-rouge">{ {boxStatus} }</code> are passed in the loop using <code class="highlighter-rouge">:box-name</code> and <code class="highlighter-rouge">:box-status</code>, and the latter is used to fill the <code class="highlighter-rouge">checked</code> property of the input tag.</p>
+<p>The checkbox <code class="language-plaintext highlighter-rouge">value</code> is <code class="language-plaintext highlighter-rouge">{ { boxIndex } }</code>, that is passed as a prop using the shorthand syntax <code class="language-plaintext highlighter-rouge">:box-index</code> (which stands for <code class="language-plaintext highlighter-rouge">v-bind:box-index</code>) and assigned to the special property provided by the <code class="language-plaintext highlighter-rouge">v-for</code> loop <code class="language-plaintext highlighter-rouge">$index</code>. Note here camelCase and kebab-case. Similarly, <code class="language-plaintext highlighter-rouge">{ {boxName} }</code> and <code class="language-plaintext highlighter-rouge">{ {boxStatus} }</code> are passed in the loop using <code class="language-plaintext highlighter-rouge">:box-name</code> and <code class="language-plaintext highlighter-rouge">:box-status</code>, and the latter is used to fill the <code class="language-plaintext highlighter-rouge">checked</code> property of the input tag.</p>
 
-<p>This way, the component “knows” whether to be initialized as checked / unchecked depending on the <code class="highlighter-rouge">status</code> property of the respective object in the <code class="highlighter-rouge">boxes</code> array. I’ve also added as a label for each box component a string containing them all, and at the bottom the JSON version of the boxes object to check if binding works properly.</p>
+<p>This way, the component “knows” whether to be initialized as checked / unchecked depending on the <code class="language-plaintext highlighter-rouge">status</code> property of the respective object in the <code class="language-plaintext highlighter-rouge">boxes</code> array. I’ve also added as a label for each box component a string containing them all, and at the bottom the JSON version of the boxes object to check if binding works properly.</p>
 
 <figure class="aligncenter">
 	<img width="400" src="/wp-content/uploads/2016/08/DB-2016-08-01-at-22.40.52.png" />
 </figure>
 
-<p>We’re slowly getting there: each checkbox shows its index, name and status, and the one labelled “four” correctly initializes itself as “checked”. But if you try clicking them, neither their <code class="highlighter-rouge">status</code>, (true/false in the label) nor the root <code class="highlighter-rouge">boxes</code> object updates. This binding requires a couple of new lines of code, one in the Component’s template – i.e. a click handler:</p>
+<p>We’re slowly getting there: each checkbox shows its index, name and status, and the one labelled “four” correctly initializes itself as “checked”. But if you try clicking them, neither their <code class="language-plaintext highlighter-rouge">status</code>, (true/false in the label) nor the root <code class="language-plaintext highlighter-rouge">boxes</code> object updates. This binding requires a couple of new lines of code, one in the Component’s template – i.e. a click handler:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span>
        <span class="na">value=</span><span class="s">"{ { boxIndex } }"</span>
@@ -929,8 +933,8 @@
 <p>and the corresponding function in the Components declaration in the JS:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">BoxesChecks</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-  <span class="na">props</span><span class="p">:</span> <span class="p">[</span><span class="s1">'boxIndex'</span><span class="p">,</span> <span class="s1">'boxName'</span><span class="p">,</span> <span class="s1">'boxStatus'</span><span class="p">],</span>
-  <span class="na">template</span><span class="p">:</span> <span class="s1">'#boxes-template'</span><span class="p">,</span>
+  <span class="na">props</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">boxIndex</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">boxName</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">boxStatus</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#boxes-template</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">changeStatus</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">boxStatus</span> <span class="o">=</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">boxStatus</span><span class="p">;</span>
@@ -942,20 +946,20 @@
 	<img width="400" src="/wp-content/uploads/2016/08/DB-2016-08-01-at-22.51.30.png" />
 </figure>
 
-<p>This triggers a change in the Component’s <code class="highlighter-rouge">boxStatus</code> property, so that when you click each checkbox, you see that its own <code class="highlighter-rouge">status</code> (logged in the label) changes accordingly. Which is cool, but there’s just one piece of the puzzle missing – can you find it? The Component’s <code class="highlighter-rouge">boxStatus</code> is updated, but the Component (or better: each Component) has an <strong>isolated scope of its own</strong>! In fact, the boxes object, logged as JSON is not changed (every status is false but one). In order to make a two way binding, you need to add the binding type modifier .sync to the prop, like:</p>
+<p>This triggers a change in the Component’s <code class="language-plaintext highlighter-rouge">boxStatus</code> property, so that when you click each checkbox, you see that its own <code class="language-plaintext highlighter-rouge">status</code> (logged in the label) changes accordingly. Which is cool, but there’s just one piece of the puzzle missing – can you find it? The Component’s <code class="language-plaintext highlighter-rouge">boxStatus</code> is updated, but the Component (or better: each Component) has an <strong>isolated scope of its own</strong>! In fact, the boxes object, logged as JSON is not changed (every status is false but one). In order to make a two way binding, you need to add the binding type modifier .sync to the prop, like:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;boxes-checks</span>
   <span class="na">v-for=</span><span class="s">"box in boxes"</span>
   <span class="na">:box-index=</span><span class="s">"$index"</span>
   <span class="na">:box-name=</span><span class="s">"box.name"</span>
-  <span class="na">:box-status</span><span class="err">.</span><span class="na">sync=</span><span class="s">"box.status"</span><span class="nt">&gt;</span>
+  <span class="na">:box-status.sync=</span><span class="s">"box.status"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/boxes-checks&gt;</span></code></pre></figure>
 
 <p>This correctly set everything: each Component is initialized with the boxes object, and two-ways bound to it – the same way it was just before refactoring with Components. See the full code in <a href="http://jsbin.com/simuzi/13/edit?html,js,output">this JSBin here</a></p>
 
 <hr />
 
-<p><strong>Vue 2.x October 2017 UPDATE</strong> With the new version, <code class="highlighter-rouge">.sync</code> has been first deprecated, then re-introduced (see <a href="https://vuejs.org/v2/guide/components.html#sync-Modifier">here</a>). Yet, letting a child component modify parent data is considered an anti pattern in Vue: in this case, you should emit events and use a new Vue instance as a hub. See the <a href="http://jsbin.com/niloxid/2/edit?html,js,output">following JSBin</a> as an example.</p>
+<p><strong>Vue 2.x October 2017 UPDATE</strong> With the new version, <code class="language-plaintext highlighter-rouge">.sync</code> has been first deprecated, then re-introduced (see <a href="https://vuejs.org/v2/guide/components.html#sync-Modifier">here</a>). Yet, letting a child component modify parent data is considered an anti pattern in Vue: in this case, you should emit events and use a new Vue instance as a hub. See the <a href="http://jsbin.com/niloxid/2/edit?html,js,output">following JSBin</a> as an example.</p>
 
 <hr />
 
@@ -981,47 +985,47 @@
   <span class="nt">&gt;</span>
 <span class="nt">&lt;/channel-radio&gt;</span></code></pre></figure>
 
-<p>You see that there are <code class="highlighter-rouge">channelName</code>, <code class="highlighter-rouge">channelIndex</code> and <code class="highlighter-rouge">channelChecked</code> props, with a similar <code class="highlighter-rouge">changeRadio</code> function for the click handler. The loop is based upon a <code class="highlighter-rouge">channels</code> array, see the JS side:</p>
+<p>You see that there are <code class="language-plaintext highlighter-rouge">channelName</code>, <code class="language-plaintext highlighter-rouge">channelIndex</code> and <code class="language-plaintext highlighter-rouge">channelChecked</code> props, with a similar <code class="language-plaintext highlighter-rouge">changeRadio</code> function for the click handler. The loop is based upon a <code class="language-plaintext highlighter-rouge">channels</code> array, see the JS side:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">ChannelRadio</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-  <span class="na">props</span><span class="p">:</span> <span class="p">[</span><span class="s1">'channelName'</span><span class="p">,</span> <span class="s1">'channelIndex'</span><span class="p">,</span> <span class="s1">'channelChecked'</span><span class="p">],</span>
-  <span class="na">template</span><span class="p">:</span> <span class="s1">'#channel-radio'</span><span class="p">,</span>
+  <span class="na">props</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">channelName</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">channelIndex</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">channelChecked</span><span class="dl">'</span><span class="p">],</span>
+  <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#channel-radio</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">changeRadio</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">$dispatch</span><span class="p">(</span><span class="s1">'radioClick'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">channelName</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">$dispatch</span><span class="p">(</span><span class="dl">'</span><span class="s1">radioClick</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">channelName</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">'channel-radio'</span><span class="p">,</span> <span class="nx">ChannelRadio</span><span class="p">);</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="dl">'</span><span class="s1">channel-radio</span><span class="dl">'</span><span class="p">,</span> <span class="nx">ChannelRadio</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-  <span class="na">el</span><span class="p">:</span> <span class="s1">'#main-container'</span><span class="p">,</span>
+  <span class="na">el</span><span class="p">:</span> <span class="dl">'</span><span class="s1">#main-container</span><span class="dl">'</span><span class="p">,</span>
   <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">channels</span><span class="p">:</span> <span class="p">[{</span>
-        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Luminosity'</span><span class="p">,</span>
-        <span class="s1">'index'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s1">'checked'</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Luminosity</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">index</span><span class="dl">'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">checked</span><span class="dl">'</span><span class="p">:</span> <span class="kc">false</span>
       <span class="p">},</span>
       <span class="p">{</span>
-        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Red'</span><span class="p">,</span>
-        <span class="s1">'index'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s1">'checked'</span><span class="p">:</span> <span class="kc">true</span>
+        <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Red</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">index</span><span class="dl">'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">checked</span><span class="dl">'</span><span class="p">:</span> <span class="kc">true</span>
       <span class="p">},</span>
       <span class="p">{</span>
-        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Green'</span><span class="p">,</span>
-        <span class="s1">'index'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="s1">'checked'</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Green</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">index</span><span class="dl">'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">checked</span><span class="dl">'</span><span class="p">:</span> <span class="kc">false</span>
       <span class="p">},</span>
       <span class="p">{</span>
-        <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'Blue'</span><span class="p">,</span>
-        <span class="s1">'index'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-        <span class="s1">'checked'</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Blue</span><span class="dl">'</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">index</span><span class="dl">'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="dl">'</span><span class="s1">checked</span><span class="dl">'</span><span class="p">:</span> <span class="kc">false</span>
       <span class="p">}</span>
     <span class="p">]</span>
   <span class="p">},</span>
   <span class="na">events</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">radioClick</span><span class="p">:</span> <span class="s1">'handleRadioClick'</span>
+    <span class="na">radioClick</span><span class="p">:</span> <span class="dl">'</span><span class="s1">handleRadioClick</span><span class="dl">'</span>
   <span class="p">},</span>
   <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">handleRadioClick</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">radioName</span><span class="p">)</span> <span class="p">{</span>
@@ -1036,9 +1040,9 @@
   <span class="p">}</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>Clicking on each radiobutton component now dispatches a <code class="highlighter-rouge">'radioClick'</code> message (defined in the component’s <code class="highlighter-rouge">methods</code> object, and carrying the <code class="highlighter-rouge">channelName</code> as the payload), handled by the root Vue instance (see both <code class="highlighter-rouge">events</code> and <code class="highlighter-rouge">methods</code> objects).</p>
+<p>Clicking on each radiobutton component now dispatches a <code class="language-plaintext highlighter-rouge">'radioClick'</code> message (defined in the component’s <code class="language-plaintext highlighter-rouge">methods</code> object, and carrying the <code class="language-plaintext highlighter-rouge">channelName</code> as the payload), handled by the root Vue instance (see both <code class="language-plaintext highlighter-rouge">events</code> and <code class="language-plaintext highlighter-rouge">methods</code> objects).</p>
 
-<p>The handleRadioClick then adjust the <code class="highlighter-rouge">checked</code> properties on each object within the <code class="highlighter-rouge">channels</code> array, that the radiobuttons are bound to – please note that because of this, there’s no need to add <code class="highlighter-rouge">.sync</code> in the template now.</p>
+<p>The handleRadioClick then adjust the <code class="language-plaintext highlighter-rouge">checked</code> properties on each object within the <code class="language-plaintext highlighter-rouge">channels</code> array, that the radiobuttons are bound to – please note that because of this, there’s no need to add <code class="language-plaintext highlighter-rouge">.sync</code> in the template now.</p>
 
 <p>See it in action in <a href="http://jsbin.com/belele/edit?html,js,output">this JSBin here</a>.</p>
 

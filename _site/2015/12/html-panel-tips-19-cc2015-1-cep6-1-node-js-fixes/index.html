@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -812,7 +816,7 @@
 
 <h3 id="nodejs-is-disabled-by-default">Node.js is disabled by default</h3>
 
-<p>Due to security concerns, Node.js was by default enabled in CEP6.0 and prior versions - it’s now <strong>disabled</strong>, unless you add in the <code class="highlighter-rouge">manifest.xml</code>, in the <code class="highlighter-rouge">&lt;resources&gt;</code> tag the following:</p>
+<p>Due to security concerns, Node.js was by default enabled in CEP6.0 and prior versions - it’s now <strong>disabled</strong>, unless you add in the <code class="language-plaintext highlighter-rouge">manifest.xml</code>, in the <code class="language-plaintext highlighter-rouge">&lt;resources&gt;</code> tag the following:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;CEFCommandLine&gt;</span>
   <span class="nt">&lt;Parameter&gt;</span>--enable-nodejs<span class="nt">&lt;/Parameter&gt;</span>
@@ -824,7 +828,7 @@
 
 <h3 id="nodejs-and-browser-contexts-are-detached">Node.js and Browser contexts are detached</h3>
 
-<p><strong>[UPDATE]</strong> The unified context is back in the PS <strong>CC2015.1.2</strong> update, but it’s <strong>disabled by default</strong>. In order to enable it, put this one in the <code class="highlighter-rouge">manifest.xml</code>:</p>
+<p><strong>[UPDATE]</strong> The unified context is back in the PS <strong>CC2015.1.2</strong> update, but it’s <strong>disabled by default</strong>. In order to enable it, put this one in the <code class="language-plaintext highlighter-rouge">manifest.xml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;CEFCommandLine&gt;</span>
   <span class="nt">&lt;Parameter&gt;</span>--enable-nodejs<span class="nt">&lt;/Parameter&gt;</span>
@@ -833,7 +837,7 @@
 
 <p>What follows below still applies for previous version of Photoshop.</p>
 
-<p>Due to the io.js move, Node.js and the Browser context don’t talk to each other anymore. This is a big pain in the ass, and, according to Adobe’s engineers, a unified context will be back in CEP7 (that should be released, if they keep the same pace, alongside with Photoshop CC2016, so many months from now). What does the above mean? If you have a Node.js module and try to access jQuery <code class="highlighter-rouge">$</code> object, or <code class="highlighter-rouge">csInterface</code>, or anything else defined in the Browser context (e.g. your <code class="highlighter-rouge">main.js</code> file), it will fail! So much fun. Workaround: use the global <code class="highlighter-rouge">window</code> object as a bridge:</p>
+<p>Due to the io.js move, Node.js and the Browser context don’t talk to each other anymore. This is a big pain in the ass, and, according to Adobe’s engineers, a unified context will be back in CEP7 (that should be released, if they keep the same pace, alongside with Photoshop CC2016, so many months from now). What does the above mean? If you have a Node.js module and try to access jQuery <code class="language-plaintext highlighter-rouge">$</code> object, or <code class="language-plaintext highlighter-rouge">csInterface</code>, or anything else defined in the Browser context (e.g. your <code class="language-plaintext highlighter-rouge">main.js</code> file), it will fail! So much fun. Workaround: use the global <code class="language-plaintext highlighter-rouge">window</code> object as a bridge:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// ===========</span>
 <span class="c1">// in main.js</span>

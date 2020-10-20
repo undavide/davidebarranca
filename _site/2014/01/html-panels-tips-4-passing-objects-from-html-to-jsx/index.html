@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -802,15 +806,15 @@
     </header>
 
     <div class="post-content">
-        <p>How do you pass complex Objects from the HTML Panel to a Photoshop’s ExtendScript function in a JSX file? You may want to pack different information from the HTML Panel (for instance all the values in the GUI) in a single Object, and pass just it as a parameter to a JSX function - that the Photoshop interpreter will eventually execute. For primitive, multiple parameters this is easily done via <code class="highlighter-rouge">CSInterface.evalScript()</code>, in the main.js:</p>
+        <p>How do you pass complex Objects from the HTML Panel to a Photoshop’s ExtendScript function in a JSX file? You may want to pack different information from the HTML Panel (for instance all the values in the GUI) in a single Object, and pass just it as a parameter to a JSX function - that the Photoshop interpreter will eventually execute. For primitive, multiple parameters this is easily done via <code class="language-plaintext highlighter-rouge">CSInterface.evalScript()</code>, in the main.js:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
-<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'sayHello("Ciao", 2014)'</span><span class="p">);</span></code></pre></figure>
+<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">sayHello("Ciao", 2014)</span><span class="dl">'</span><span class="p">);</span></code></pre></figure>
 
 <p>…and providing a corresponding function in the JSX file:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">sayHello</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="s2">"Photoshop says "</span> <span class="o">+</span> <span class="nx">str</span> <span class="o">+</span> <span class="s2">"! Have a great "</span> <span class="o">+</span> <span class="nx">num</span><span class="p">);</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Photoshop says </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">str</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">! Have a great </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">num</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>How do you deal with Objects? <strong>Stringify them as JSON objects first</strong>. No need to parse them afterwards.</p>
@@ -821,7 +825,7 @@
 
 <h3 id="html">HTML</h3>
 
-<p>This is a minimal <code class="highlighter-rouge">index.html</code> with just a button.</p>
+<p>This is a minimal <code class="language-plaintext highlighter-rouge">index.html</code> with just a button.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
@@ -849,23 +853,23 @@
 <p>Here I’ve hardcoded an Object literal (feel free to fill it with actual values from the HTML GUI), which is <strong>stringified as a JSON object</strong> in order to pass it as a parameter:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
 
   <span class="kd">function</span> <span class="nx">init</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">themeManager</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
     <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="na">str</span><span class="p">:</span> <span class="s2">"Love your job!"</span><span class="p">,</span>
+      <span class="na">str</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Love your job!</span><span class="dl">"</span><span class="p">,</span>
       <span class="na">num</span><span class="p">:</span> <span class="mi">38</span><span class="p">,</span>
       <span class="na">today</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
       <span class="na">nestedObj</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">nestedStr</span><span class="p">:</span> <span class="s2">"Even if nothing works"</span><span class="p">,</span>
+        <span class="na">nestedStr</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Even if nothing works</span><span class="dl">"</span><span class="p">,</span>
         <span class="na">nestedNum</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
         <span class="na">nestedDate</span><span class="p">:</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span>
       <span class="p">}</span>
     <span class="p">}</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">"#btnSend"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'parseObj('</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="o">+</span> <span class="s1">')'</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#btnSend</span><span class="dl">"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">parseObj(</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">)</span><span class="dl">'</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">}</span>
   <span class="nx">init</span><span class="p">();</span>
@@ -876,16 +880,16 @@
 <p>In the ExtendScript file I’ve provided a logging function to actually verify that the Object is interpreted correctly.</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">parseObj</span><span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">str</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="nx">prop</span> <span class="k">in</span> <span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">str</span> <span class="o">+=</span> <span class="nx">prop</span> <span class="o">+</span> <span class="s2">" </span><span class="err">\</span><span class="s2">["</span> <span class="o">+</span> <span class="k">typeof</span> <span class="nx">o</span><span class="err">\</span><span class="p">[</span><span class="nx">prop</span><span class="err">\</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"</span><span class="err">\</span><span class="s2">]: "</span> <span class="o">+</span> <span class="nx">o</span><span class="err">\</span><span class="p">[</span><span class="nx">prop</span><span class="err">\</span><span class="p">]</span> <span class="o">+</span> <span class="s2">".</span><span class="err">\</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+      <span class="nx">str</span> <span class="o">+=</span> <span class="nx">prop</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="se">\</span><span class="s2">[</span><span class="dl">"</span> <span class="o">+</span> <span class="k">typeof</span> <span class="nx">o</span><span class="err">\</span><span class="p">[</span><span class="nx">prop</span><span class="err">\</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\</span><span class="s2">]: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">o</span><span class="err">\</span><span class="p">[</span><span class="nx">prop</span><span class="err">\</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">.</span><span class="se">\\</span><span class="s2">n</span><span class="dl">"</span><span class="p">;</span>
     <span class="p">}</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
 <p><img src="/wp-content/uploads/2014/01/Object.png" alt="Object" /></p>
 
-<p>Mind you: I’ve experimented importing a JSON library in the ExtendScript code (which doesn’t natively support it) and tried to <code class="highlighter-rouge">var obj=JSON.parse(o);</code> to no avail. Apparently the code is OK as it is, without it.</p>
+<p>Mind you: I’ve experimented importing a JSON library in the ExtendScript code (which doesn’t natively support it) and tried to <code class="language-plaintext highlighter-rouge">var obj=JSON.parse(o);</code> to no avail. Apparently the code is OK as it is, without it.</p>
 
 <hr />
 

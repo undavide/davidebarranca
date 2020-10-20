@@ -765,6 +765,10 @@ Quoting StackOverflow:
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -816,7 +820,7 @@ Quoting StackOverflow:
     </header>
 
     <div class="post-content">
-        <p>Today’s tip focuses on the Asynchronous nature of <code class="highlighter-rouge">CSInterface.evalScript()</code> calls, and on ways to make it work in a synchronous fashion.</p>
+        <p>Today’s tip focuses on the Asynchronous nature of <code class="language-plaintext highlighter-rouge">CSInterface.evalScript()</code> calls, and on ways to make it work in a synchronous fashion.</p>
 
 <h2 id="synchronous-vs-asynchronous">Synchronous vs. Asynchronous</h2>
 
@@ -832,10 +836,10 @@ Quoting StackOverflow:
 
 <p><img src="/wp-content/uploads/2014/12/async.png" alt="Asynchronous" /></p>
 
-<p>Back in Flash days <code class="highlighter-rouge">evalScript</code> was synchronous, now in HTML land is asynchronous:</p>
+<p>Back in Flash days <code class="language-plaintext highlighter-rouge">evalScript</code> was synchronous, now in HTML land is asynchronous:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">CSXSInterface</span><span class="p">.</span><span class="nx">instance</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'jsxFunction'</span><span class="p">);</span> <span class="c1">// Sync</span>
-<span class="nx">csInterface</span><span class="p">().</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'jsxFunction'</span><span class="p">);</span> <span class="c1">// Async</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">CSXSInterface</span><span class="p">.</span><span class="nx">instance</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">jsxFunction</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// Sync</span>
+<span class="nx">csInterface</span><span class="p">().</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">jsxFunction</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// Async</span></code></pre></figure>
 
 <h2 id="async-example">Async example</h2>
 
@@ -851,13 +855,13 @@ Quoting StackOverflow:
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">numberOfDocuments</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
 
-<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'app.documents.length'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">app.documents.length</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">numberOfDocuments</span> <span class="o">=</span> <span class="nx">result</span><span class="p">;</span>
 <span class="p">});</span>
 
 <span class="nx">alert</span><span class="p">(</span><span class="nx">numberOfDocuments</span><span class="p">);</span> <span class="c1">// undefined</span></code></pre></figure>
 
-<p>In the above example the <code class="highlighter-rouge">app.documents.length</code> statement is executed and directly returned - the number of currently opened documents in Photoshop is passed to the callback, which assigns it to the <code class="highlighter-rouge">numberOfDocuments</code> variable. The alert says “undefined” because of the <strong>asynchronous</strong> nature of evalScript: line #4 executes, then the interpreter goes ahead to line #8 not waiting for the ExtendScript to return (in this example, a single line of code, but in real world a long chain of functions that trigger usually time consuming Photoshop operations) so when <code class="highlighter-rouge">alert(numberOfDocuments)</code> is called, <code class="highlighter-rouge">numberOfDocuments</code> is still <em>undefined</em>. So to speak, it is like asking your partner to do the shopping then, as soon as (s)he goes out, open the fridge and say “rats, it’s empty!”</p>
+<p>In the above example the <code class="language-plaintext highlighter-rouge">app.documents.length</code> statement is executed and directly returned - the number of currently opened documents in Photoshop is passed to the callback, which assigns it to the <code class="language-plaintext highlighter-rouge">numberOfDocuments</code> variable. The alert says “undefined” because of the <strong>asynchronous</strong> nature of evalScript: line #4 executes, then the interpreter goes ahead to line #8 not waiting for the ExtendScript to return (in this example, a single line of code, but in real world a long chain of functions that trigger usually time consuming Photoshop operations) so when <code class="language-plaintext highlighter-rouge">alert(numberOfDocuments)</code> is called, <code class="language-plaintext highlighter-rouge">numberOfDocuments</code> is still <em>undefined</em>. So to speak, it is like asking your partner to do the shopping then, as soon as (s)he goes out, open the fridge and say “rats, it’s empty!”</p>
 
 <h2 id="sync-workarounds">Sync workarounds</h2>
 
@@ -870,7 +874,7 @@ Quoting StackOverflow:
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">numberOfDocuments</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
 
-<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'app.documents.length'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">app.documents.length</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">numberOfDocuments</span> <span class="o">=</span> <span class="nx">result</span><span class="p">;</span>
 <span class="p">});</span>
 <span class="nx">setTimeout</span><span class="p">(</span> <span class="nx">alert</span><span class="p">(</span><span class="nx">numberOfDocuments</span><span class="p">),</span> <span class="mi">500</span><span class="p">);</span></code></pre></figure>
@@ -884,15 +888,15 @@ Quoting StackOverflow:
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">numberOfDocuments</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
 
-<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'app.documents.length'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">app.documents.length</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">numberOfDocuments</span> <span class="o">=</span> <span class="nx">result</span><span class="p">;</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">numberOfDocuments</span><span class="p">);</span>
 <span class="p">});</span></code></pre></figure>
 
 <p>Of course this can lead to the so-called <em>callback hell</em> – nesting evalScript calls one inside another, like:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'/* some code */'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'/* some other code */'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">/* some code */</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">/* some other code */</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// etc...</span>
   <span class="p">})</span>
 <span class="p">});</span></code></pre></figure>
@@ -905,14 +909,14 @@ Quoting StackOverflow:
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">getNumberOfDocuments</span> <span class="p">()</span> <span class="p">{</span>
   <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">xLib</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ExternalObject</span><span class="p">(</span><span class="s2">"lib:</span><span class="err">\\</span><span class="s2">PlugPlugExternalObject"</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">xLib</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ExternalObject</span><span class="p">(</span><span class="dl">"</span><span class="s2">lib:</span><span class="se">\\</span><span class="s2">PlugPlugExternalObject</span><span class="dl">"</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">alert</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
   <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="kd">var</span> <span class="nx">eventObj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSXSEvent</span><span class="p">();</span>
-  <span class="nx">eventObj</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">"alertDocumentsNumber"</span><span class="p">;</span>
+  <span class="nx">eventObj</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">alertDocumentsNumber</span><span class="dl">"</span><span class="p">;</span>
 
   <span class="c1">// data must be a string otherwise PS (at least CC 2014.1.2) crashes</span>
   <span class="nx">eventObj</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">documents</span><span class="p">.</span><span class="nx">length</span><span class="p">.</span><span class="nx">toString</span><span class="p">();</span>
@@ -926,12 +930,12 @@ Quoting StackOverflow:
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">csInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CSInterface</span><span class="p">();</span>
 
-<span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"alertDocumentsNumber"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="s2">"The number of open documents is: "</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="nx">csInterface</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">alertDocumentsNumber</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">The number of open documents is: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="s1">'getNumberOfDocuments()'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="o">==</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span> <span class="nx">alert</span> <span class="p">(</span><span class="s2">"There's been a problem."</span><span class="p">);</span> <span class="p">}</span>
+<span class="nx">csInterface</span><span class="p">.</span><span class="nx">evalScript</span><span class="p">(</span><span class="dl">'</span><span class="s1">getNumberOfDocuments()</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">result</span> <span class="o">==</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span> <span class="nx">alert</span> <span class="p">(</span><span class="dl">"</span><span class="s2">There's been a problem.</span><span class="dl">"</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">});</span></code></pre></figure>
 
 <p>Mind you, as far as other devs such as <a href="http://www.rorohiko.com">Kris Coppieters</a> have supposed, “<em>even if you manage to make multiple JSX calls from different parts of your JS, probably you can’t run multiple ExtendScripts concurrently</em>”.</p>

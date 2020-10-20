@@ -759,6 +759,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -818,7 +822,7 @@
   <li><strong>Hybrid Extensions</strong> (Panel + Plug-ins / Assets, etc)</li>
 </ol>
 
-<p>using the <code class="highlighter-rouge">ZXPSignCmd</code>, the <code class="highlighter-rouge">ucf.jar</code> command line tools, and custom MXI files. As a primer on Extension installers, you must know that:</p>
+<p>using the <code class="language-plaintext highlighter-rouge">ZXPSignCmd</code>, the <code class="language-plaintext highlighter-rouge">ucf.jar</code> command line tools, and custom MXI files. As a primer on Extension installers, you must know that:</p>
 
 <ol>
   <li>in order to deploy your products (either Panels, Scripts but also assets such as Brushes, Textures, etc) you have to build a ZXP package - to be submitted to <a href="https://creative.adobe.com/addons/" title="Adobe Add Ons">Adobe Add-ons</a> (the Adobe Exchange web store) or distributed in other ways.</li>
@@ -832,7 +836,7 @@
 
 <h2 id="1-create-a-certificate">1. Create a Certificate</h2>
 
-<p>First, grab the <a href="http://labs.adobe.com/downloads/extensionbuilder3.html" title="CC Extensions Signing Toolkit">CC Extensions Signing Toolkit</a>, that is to say the <code class="highlighter-rouge">ZXPSignCmd</code> executable file. Myself, I will go with a free, self-signed certificate: Adobe Extension Manager will fire a couple of warning popups, but Adobe Add-ons is perfectly fine with it and won’t complain. So: fire the Terminal (or the Win Command line), get to the directory where you’ve moved the ZXPSignCmd file (if you don’t know how to do this, just type “cd “ - mind you there’s a space - in the terminal and drag and drop the folder, then hit Enter) and create a certificate using this pattern:</p>
+<p>First, grab the <a href="http://labs.adobe.com/downloads/extensionbuilder3.html" title="CC Extensions Signing Toolkit">CC Extensions Signing Toolkit</a>, that is to say the <code class="language-plaintext highlighter-rouge">ZXPSignCmd</code> executable file. Myself, I will go with a free, self-signed certificate: Adobe Extension Manager will fire a couple of warning popups, but Adobe Add-ons is perfectly fine with it and won’t complain. So: fire the Terminal (or the Win Command line), get to the directory where you’ve moved the ZXPSignCmd file (if you don’t know how to do this, just type “cd “ - mind you there’s a space - in the terminal and drag and drop the folder, then hit Enter) and create a certificate using this pattern:</p>
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">ZXPSignCmd <span class="nt">-selfSignedCert</span> &lt;countryCode&gt; &lt;stateOrProvince&gt; &lt;organization&gt; &lt;commonName&gt; &lt;password&gt; &lt;outputPath.p12&gt;</code></pre></figure>
 
@@ -840,7 +844,7 @@
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">./ZXPSignCmd <span class="nt">-selfSignedCert</span> IT BO DBCompany <span class="s2">"Davide Barranca"</span> OcaMorta selfDB.p12</code></pre></figure>
 
-<p>Mind you, <code class="highlighter-rouge">./</code> at the beginning instructs the shell to look for the executable in the current directory. If everything went OK you should find a newly created <code class="highlighter-rouge">selfDB.p12</code>. That’s your self signed cert.</p>
+<p>Mind you, <code class="language-plaintext highlighter-rouge">./</code> at the beginning instructs the shell to look for the executable in the current directory. If everything went OK you should find a newly created <code class="language-plaintext highlighter-rouge">selfDB.p12</code>. That’s your self signed cert.</p>
 
 <h2 id="2-pack-and-sign-an-html-extension">2. Pack and Sign an HTML Extension</h2>
 
@@ -854,26 +858,26 @@
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">./ZXPSignCmd <span class="nt">-sign</span> com.example.helloworld com.example.helloworld.zxp selfDB.p12 OcaMorta <span class="nt">-tsa</span> https://timestamp.geotrust.com/tsa</code></pre></figure>
 
-<p>If everything’s OK you should find a newly created <code class="highlighter-rouge">com.example.helloworld.zxp</code> file. That’s your self signed, timestamped installer; submit it to the Add Ons website and/or privately and enjoy.</p>
+<p>If everything’s OK you should find a newly created <code class="language-plaintext highlighter-rouge">com.example.helloworld.zxp</code> file. That’s your self signed, timestamped installer; submit it to the Add Ons website and/or privately and enjoy.</p>
 
 <h2 id="3pack-and-sign-html--flash-extensions">3. Pack and Sign HTML + Flash Extensions</h2>
 
 <p>Here comes the fun. I assume you have (for the same product) already coded and packed an HTML version, plus the Flash version, so you have:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">com.example.helloworld.zxp</code> (HTML version, packed and signed as shown above)</li>
-  <li><code class="highlighter-rouge">com.example.helloworld.zxp</code> (Flash version, packed and signed with Flash Builder 4.5 as we used to do back in the Flex days)</li>
+  <li><code class="language-plaintext highlighter-rouge">com.example.helloworld.zxp</code> (HTML version, packed and signed as shown above)</li>
+  <li><code class="language-plaintext highlighter-rouge">com.example.helloworld.zxp</code> (Flash version, packed and signed with Flash Builder 4.5 as we used to do back in the Flex days)</li>
 </ul>
 
-<p>Mind you, I use IDs for the ZXP names because in the past Adobe Exchange was a bit picky in that regard - so it’s not just <code class="highlighter-rouge">hello.zxp</code>. I don’t know whether things have changed now, try and let me know.</p>
+<p>Mind you, I use IDs for the ZXP names because in the past Adobe Exchange was a bit picky in that regard - so it’s not just <code class="language-plaintext highlighter-rouge">hello.zxp</code>. I don’t know whether things have changed now, try and let me know.</p>
 
 <p><img src="/wp-content/uploads/2014/05/HTML_Flash_Folders.png" alt="HTML_Flash_Folders" /></p>
 
 <p>Please grab the <a href="http://www.adobe.com/devnet/creativesuite/sdk/eula_cs6-signing-toolkit.html" title="ucf.jar">ucf.jar command line tool</a> and arrange things in the way shown in the screenshot at right. That is to say, put into a folder:</p>
 
 <ol>
-  <li>the <code class="highlighter-rouge">selfDB.p12</code></li>
-  <li>the <code class="highlighter-rouge">ucf.jar</code></li>
+  <li>the <code class="language-plaintext highlighter-rouge">selfDB.p12</code></li>
+  <li>the <code class="language-plaintext highlighter-rouge">ucf.jar</code></li>
   <li>a 46x46px icon.png (to be used as the icon in Extension Manager)</li>
   <li>a new MXI folder. Inside the MXI there’s:
     <ul>
@@ -937,15 +941,15 @@
 <p>Couple of things to notice:</p>
 
 <ul>
-  <li>In the <code class="highlighter-rouge">product</code> tag, the version is actually the minimum version supported.</li>
-  <li>When the <code class="highlighter-rouge">file-type="CSXS"</code> there’s no need to specify the destination.</li>
+  <li>In the <code class="language-plaintext highlighter-rouge">product</code> tag, the version is actually the minimum version supported.</li>
+  <li>When the <code class="language-plaintext highlighter-rouge">file-type="CSXS"</code> there’s no need to specify the destination.</li>
 </ul>
 
 <p>Now, fire the Terminal and:</p>
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">java <span class="nt">-jar</span> ucf.jar <span class="nt">-package</span> <span class="nt">-storetype</span> PKCS12 <span class="nt">-keystore</span> ./selfDB.p12 <span class="nt">-tsa</span> http://timestamp.entrust.net/TSS/JavaHttpTS com.sample.helloworld.zxp <span class="nt">-C</span> <span class="s2">"./MXI/"</span> .</code></pre></figure>
 
-<p>It will ask you for the p12 password, and eventually the <code class="highlighter-rouge">com.sample.helloworld.zxp</code> file is built. Some other notes:</p>
+<p>It will ask you for the p12 password, and eventually the <code class="language-plaintext highlighter-rouge">com.sample.helloworld.zxp</code> file is built. Some other notes:</p>
 
 <ul>
   <li>You might need to download Java from Oracle</li>
@@ -953,13 +957,13 @@
   <li>There’s a final dot you have to keep!</li>
 </ul>
 
-<p>You may ask why the <code class="highlighter-rouge">ucf.jar</code> and not <code class="highlighter-rouge">ZXPSignCmd</code>: the reason is that, in order to be CS6 compatible, <code class="highlighter-rouge">ucf.jar</code> is the tool of choice.</p>
+<p>You may ask why the <code class="language-plaintext highlighter-rouge">ucf.jar</code> and not <code class="language-plaintext highlighter-rouge">ZXPSignCmd</code>: the reason is that, in order to be CS6 compatible, <code class="language-plaintext highlighter-rouge">ucf.jar</code> is the tool of choice.</p>
 
 <h2 id="4-pack-and-sign-hybrid-extensions">4. Pack and Sign Hybrid Extensions</h2>
 
 <p><img src="/wp-content/uploads/2014/05/hybrid.png" alt="Hybrid MXI" /></p>
 
-<p>Hybrid extensions let you install extra content, which can be platform (Mac/Win) and/or version (CS6/CC) and/or bit version (32/64bit) targeted: either Plugins, PDFs, etc. In fact the Flash+HTML extension above qualifies as an Hybrid extension too. In this example I will bundle a lot of extra content - keep in mind that all the paths are relative to the MXI file location. For the completeness sake, I will then use the <code class="highlighter-rouge">ZXPSignCmd</code> since we will pretend that this one is a CC only Extension.</p>
+<p>Hybrid extensions let you install extra content, which can be platform (Mac/Win) and/or version (CS6/CC) and/or bit version (32/64bit) targeted: either Plugins, PDFs, etc. In fact the Flash+HTML extension above qualifies as an Hybrid extension too. In this example I will bundle a lot of extra content - keep in mind that all the paths are relative to the MXI file location. For the completeness sake, I will then use the <code class="language-plaintext highlighter-rouge">ZXPSignCmd</code> since we will pretend that this one is a CC only Extension.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;files&gt;</span>
 <span class="c">&lt;!-- The HTML panel, for 15.0 onwards --&gt;</span>

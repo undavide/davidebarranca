@@ -755,6 +755,10 @@ Adobe Configurator 4, which relies ...">
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -806,24 +810,24 @@ Adobe Configurator 4, which relies ...">
     </header>
 
     <div class="post-content">
-        <p>Recently, running the <code class="highlighter-rouge">ZXPSignCmd</code> command line utility to sign and timestamp HTML Panels has proved to cause errors. The problem lies in the Timestamp Authority.</p>
+        <p>Recently, running the <code class="language-plaintext highlighter-rouge">ZXPSignCmd</code> command line utility to sign and timestamp HTML Panels has proved to cause errors. The problem lies in the Timestamp Authority.</p>
 
-<p>Adobe Configurator 4, which relies on it behind the scenes to export the (Flash) panel as ZXP is also affected. Quick fix as follows: hammer it! And if it doesn’t work, change the timestamp authority. We’ve been using <code class="highlighter-rouge">https://timestamp.geotrust.com/tsa</code> for quite some time now. Is its recent failure linked to the SHA-1 deprecation? I can’t say, but you can try a different service from this list – that comes from the small but always great CEP (HTML) Panels developers community.</p>
+<p>Adobe Configurator 4, which relies on it behind the scenes to export the (Flash) panel as ZXP is also affected. Quick fix as follows: hammer it! And if it doesn’t work, change the timestamp authority. We’ve been using <code class="language-plaintext highlighter-rouge">https://timestamp.geotrust.com/tsa</code> for quite some time now. Is its recent failure linked to the SHA-1 deprecation? I can’t say, but you can try a different service from this list – that comes from the small but always great CEP (HTML) Panels developers community.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">http://tsa.starfieldtech.com</code></li>
-  <li><code class="highlighter-rouge">http://sha256timestamp.ws.symantec.com/sha256/timestamp</code></li>
-  <li><code class="highlighter-rouge">http://timestamp.comodoca.com</code></li>
-  <li><code class="highlighter-rouge">http://timestamp.verisign.com/scripts/timstamp.dll</code></li>
-  <li><code class="highlighter-rouge">http://timestamp.digicert.com</code></li>
-  <li><code class="highlighter-rouge">http://time.certum.pl</code></li>
+  <li><code class="language-plaintext highlighter-rouge">http://tsa.starfieldtech.com</code></li>
+  <li><code class="language-plaintext highlighter-rouge">http://sha256timestamp.ws.symantec.com/sha256/timestamp</code></li>
+  <li><code class="language-plaintext highlighter-rouge">http://timestamp.comodoca.com</code></li>
+  <li><code class="language-plaintext highlighter-rouge">http://timestamp.verisign.com/scripts/timstamp.dll</code></li>
+  <li><code class="language-plaintext highlighter-rouge">http://timestamp.digicert.com</code></li>
+  <li><code class="language-plaintext highlighter-rouge">http://time.certum.pl</code></li>
 </ul>
 
 <p>I assume you know how to use it. If this is not the case, check out my previous posts: <a href="/2014/05/html-panels-tips-10-packaging-zxp-installers/">here</a> and also <a href="/2014/08/html-panels-tips-13-automate-zxp-packaging-with-gulp-js/">here</a>. Few notes: first, it might be that in the future Geotrust will be working again (I’ll update the post, if/when).</p>
 
-<p>Second, I’ve tried a mild Configurator 4 hack, but without any success – I guess the <code class="highlighter-rouge">ZXPSignCmd</code> call is somewhere out of my reach – if you find a way to change the timestamp authority there, or if you want to suggest other timestemp URLs, please let me know in the comments!</p>
+<p>Second, I’ve tried a mild Configurator 4 hack, but without any success – I guess the <code class="language-plaintext highlighter-rouge">ZXPSignCmd</code> call is somewhere out of my reach – if you find a way to change the timestamp authority there, or if you want to suggest other timestemp URLs, please let me know in the comments!</p>
 
-<p>Third, make sure to have the latest version of the <code class="highlighter-rouge">ZXPSignCmd</code>, which you can download <a href="https://github.com/Adobe-CEP/CEP-Resources/tree/master/ZXPSignCMD">here</a>.</p>
+<p>Third, make sure to have the latest version of the <code class="language-plaintext highlighter-rouge">ZXPSignCmd</code>, which you can download <a href="https://github.com/Adobe-CEP/CEP-Resources/tree/master/ZXPSignCMD">here</a>.</p>
 
 <hr />
 

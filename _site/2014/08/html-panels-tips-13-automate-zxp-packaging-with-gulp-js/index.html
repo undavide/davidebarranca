@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -818,7 +822,7 @@
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nb">sudo </span>npm <span class="nb">install</span> <span class="nt">-g</span> gulp</code></pre></figure>
 
-<p>Enter your user password when requested (<code class="highlighter-rouge">sudo</code> is a mandatory step on OSX as far as I know - I can’t say if it’s needed on Windows shell too).</p>
+<p>Enter your user password when requested (<code class="language-plaintext highlighter-rouge">sudo</code> is a mandatory step on OSX as far as I know - I can’t say if it’s needed on Windows shell too).</p>
 
 <h2 id="foldersstructure">Folders’ structure</h2>
 
@@ -827,33 +831,33 @@
 <p>I will package a hybrid extension - the very same I showed in <a href="/2014/05/html-panels-tips-10-packaging-zxp-installers/" title="HTML Panels Tips: #10 Packaging / ZXP Installers">HTML Panels Tips: #10 Packaging / ZXP Installers</a>. That is, an installer that deploys an HTML Panel, a Mac and Windows specific plugin files and a shared Photoshop script. Please refer to the original post for information about the manual process - here I’ll just automate it. The folder hierarchy is as follows:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">src/</code> contains all the source code; <code class="highlighter-rouge">build/</code> is empty and will contain just the final installer.</li>
-  <li>The source for the HTML panel is the <code class="highlighter-rouge">src/com.example.myExtension</code> folder.</li>
-  <li>The <code class="highlighter-rouge">src/MXI</code> folder gathers all the assets needed to pack the hybrid extension:
+  <li><code class="language-plaintext highlighter-rouge">src/</code> contains all the source code; <code class="language-plaintext highlighter-rouge">build/</code> is empty and will contain just the final installer.</li>
+  <li>The source for the HTML panel is the <code class="language-plaintext highlighter-rouge">src/com.example.myExtension</code> folder.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">src/MXI</code> folder gathers all the assets needed to pack the hybrid extension:
     <ul>
-      <li><code class="highlighter-rouge">src/MXI/com.example.myExtension.mxi</code> is the configuration file (<a href="/2014/05/html-panels-tips-10-packaging-zxp-installers/" title="HTML Panels Tips: #10 Packaging / ZXP Installers">info here</a>).</li>
-      <li><code class="highlighter-rouge">src/MXI/HTML</code> is empty but will contain the ZXP of the HTML panel.</li>
-      <li><code class="highlighter-rouge">src/MXI/MAC</code>, <code class="highlighter-rouge">src/MXI/WIN</code> and <code class="highlighter-rouge">src/MXI/SCRIPT</code> are the plugins and scripts needed by the extension.</li>
+      <li><code class="language-plaintext highlighter-rouge">src/MXI/com.example.myExtension.mxi</code> is the configuration file (<a href="/2014/05/html-panels-tips-10-packaging-zxp-installers/" title="HTML Panels Tips: #10 Packaging / ZXP Installers">info here</a>).</li>
+      <li><code class="language-plaintext highlighter-rouge">src/MXI/HTML</code> is empty but will contain the ZXP of the HTML panel.</li>
+      <li><code class="language-plaintext highlighter-rouge">src/MXI/MAC</code>, <code class="language-plaintext highlighter-rouge">src/MXI/WIN</code> and <code class="language-plaintext highlighter-rouge">src/MXI/SCRIPT</code> are the plugins and scripts needed by the extension.</li>
     </ul>
   </li>
-  <li>Finally, <code class="highlighter-rouge">ucf.jar</code>, <code class="highlighter-rouge">ZXPSignCmd</code> and <code class="highlighter-rouge">myCertificate.p12</code> are the command line tools and the signing certificate that you should well know about.</li>
+  <li>Finally, <code class="language-plaintext highlighter-rouge">ucf.jar</code>, <code class="language-plaintext highlighter-rouge">ZXPSignCmd</code> and <code class="language-plaintext highlighter-rouge">myCertificate.p12</code> are the command line tools and the signing certificate that you should well know about.</li>
 </ul>
 
-<p>I’ve left alone the <code class="highlighter-rouge">package.json</code> and <code class="highlighter-rouge">gulpfile.js</code> files, which I will disclose in a moment.</p>
+<p>I’ve left alone the <code class="language-plaintext highlighter-rouge">package.json</code> and <code class="language-plaintext highlighter-rouge">gulpfile.js</code> files, which I will disclose in a moment.</p>
 
 <h2 id="setting-up-the-project">Setting up the project</h2>
 
-<p>You can either create yourself the <code class="highlighter-rouge">package.json</code> file with the following content:</p>
+<p>You can either create yourself the <code class="language-plaintext highlighter-rouge">package.json</code> file with the following content:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Gulp-package-demo"</span><span class="p">,</span>
-  <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"0.1.0"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"CC Extension packaging with Gulp - DEMO"</span><span class="p">,</span>
-  <span class="s2">"author"</span><span class="p">:</span> <span class="s2">"Davide Barranca"</span><span class="p">,</span>
-  <span class="s2">"license"</span><span class="p">:</span> <span class="s2">"MIT"</span>
+  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Gulp-package-demo</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">version</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0.1.0</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CC Extension packaging with Gulp - DEMO</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Davide Barranca</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">license</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MIT</span><span class="dl">"</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Or let npm do it for you: <code class="highlighter-rouge">cd</code> into the project directory (the root), and</p>
+<p>Or let npm do it for you: <code class="language-plaintext highlighter-rouge">cd</code> into the project directory (the root), and</p>
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">npm init</code></pre></figure>
 
@@ -895,7 +899,7 @@ About to write to /Users/Davide/Google Drive/PACK/Gulp/package.json:
 
 Is this ok? <span class="o">(</span><span class="nb">yes</span><span class="o">)</span></code></pre></figure>
 
-<p>One way or the other, a <code class="highlighter-rouge">package.json</code> file should be there. Now let’s install (<em>locally</em> – i.e. in this very folder) gulp:</p>
+<p>One way or the other, a <code class="language-plaintext highlighter-rouge">package.json</code> file should be there. Now let’s install (<em>locally</em> – i.e. in this very folder) gulp:</p>
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">npm <span class="nb">install</span> <span class="nt">--save-dev</span> gulp</code></pre></figure>
 
@@ -907,47 +911,47 @@ Is this ok? <span class="o">(</span><span class="nb">yes</span><span class="o">)
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">npm <span class="nb">install</span> <span class="nt">--save-dev</span> gulp-shell</code></pre></figure>
 
-<p>The <code class="highlighter-rouge">--save-dev</code> flag instructs npm to add these ones as project’s dependencies, automatically modifying the json file for you:</p>
+<p>The <code class="language-plaintext highlighter-rouge">--save-dev</code> flag instructs npm to add these ones as project’s dependencies, automatically modifying the json file for you:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Gulp-package-demo"</span><span class="p">,</span>
-  <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"0.1.0"</span><span class="p">,</span>
-  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"CC Extension packaging with Gulp - DEMO"</span><span class="p">,</span>
-  <span class="s2">"author"</span><span class="p">:</span> <span class="s2">"Davide Barranca"</span><span class="p">,</span>
-  <span class="s2">"license"</span><span class="p">:</span> <span class="s2">"MIT"</span><span class="p">,</span>
-  <span class="s2">"devDependencies"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"gulp"</span><span class="p">:</span> <span class="s2">"~3.8.7"</span><span class="p">,</span>
-    <span class="s2">"gulp-shell"</span><span class="p">:</span> <span class="s2">"~0.2.9"</span><span class="p">,</span>
-    <span class="s2">"gulp-clean"</span><span class="p">:</span> <span class="s2">"~0.3.1"</span>
+  <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Gulp-package-demo</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">version</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0.1.0</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">description</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CC Extension packaging with Gulp - DEMO</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">author</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Davide Barranca</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">license</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">MIT</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">devDependencies</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">"</span><span class="s2">gulp</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">~3.8.7</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">gulp-shell</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">~0.2.9</span><span class="dl">"</span><span class="p">,</span>
+    <span class="dl">"</span><span class="s2">gulp-clean</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">~0.3.1</span><span class="dl">"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>You’ll see that npm has installed these dependencies in a <code class="highlighter-rouge">node_modules</code> folder.</p>
+<p>You’ll see that npm has installed these dependencies in a <code class="language-plaintext highlighter-rouge">node_modules</code> folder.</p>
 
 <h2 id="gulpfilejs">gulpfile.js</h2>
 
-<p>Here comes the fun: the <code class="highlighter-rouge">gulpfile.js</code> is where you start defining tasks, that you’ll be calling from the Terminal. Before digging into the actual, entire workflow, let’s familiarize with <strong>tasks</strong> - here’s a simple one:</p>
+<p>Here comes the fun: the <code class="language-plaintext highlighter-rouge">gulpfile.js</code> is where you start defining tasks, that you’ll be calling from the Terminal. Before digging into the actual, entire workflow, let’s familiarize with <strong>tasks</strong> - here’s a simple one:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">clean</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-clean'</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">clean</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-clean</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// clean all ZXP files found everywhere</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'clean-all'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-	<span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./**/*.zxp'</span><span class="p">,</span> <span class="p">{</span> <span class="na">read</span><span class="p">:</span> <span class="kc">false</span> <span class="p">})</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">clean-all</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="dl">'</span><span class="s1">./**/*.zxp</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">read</span><span class="p">:</span> <span class="kc">false</span> <span class="p">})</span>
 	<span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">clean</span><span class="p">());</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>You first <code class="highlighter-rouge">require</code> gulp, then call the <code class="highlighter-rouge">gulp.task</code> function. The first parameter is the task name as a string (here <code class="highlighter-rouge">'clean-all'</code>), the second is the function that will return a <em>Stream</em> (if you feel inclined, find <a href="https://github.com/substack/stream-handbook" title="Node.js Stream handbook">here</a> info about Streams). Don’t worry too much about that: what you need to know is just that you usually define a gulp source (here every zxp file from any subdirectory) and you pipe that to the <code class="highlighter-rouge">clean</code> function - which deletes files. The <code class="highlighter-rouge">{ read: false }</code> is a configuration object that instructs gulp not to read them, to speed up the process. How do you call that task? In the Terminal (root folder):</p>
+<p>You first <code class="language-plaintext highlighter-rouge">require</code> gulp, then call the <code class="language-plaintext highlighter-rouge">gulp.task</code> function. The first parameter is the task name as a string (here <code class="language-plaintext highlighter-rouge">'clean-all'</code>), the second is the function that will return a <em>Stream</em> (if you feel inclined, find <a href="https://github.com/substack/stream-handbook" title="Node.js Stream handbook">here</a> info about Streams). Don’t worry too much about that: what you need to know is just that you usually define a gulp source (here every zxp file from any subdirectory) and you pipe that to the <code class="language-plaintext highlighter-rouge">clean</code> function - which deletes files. The <code class="language-plaintext highlighter-rouge">{ read: false }</code> is a configuration object that instructs gulp not to read them, to speed up the process. How do you call that task? In the Terminal (root folder):</p>
 
 <figure class="highlight"><pre><code class="language-sh" data-lang="sh">gulp clean-all</code></pre></figure>
 
-<p>And presto! all the ZXPs that might have been around are gone. Here is another useful task - it uses the <code class="highlighter-rouge">gulp-shell</code> plugin to call the <code class="highlighter-rouge">ZXPSignCmd</code> command line and actually pack files:</p>
+<p>And presto! all the ZXPs that might have been around are gone. Here is another useful task - it uses the <code class="language-plaintext highlighter-rouge">gulp-shell</code> plugin to call the <code class="language-plaintext highlighter-rouge">ZXPSignCmd</code> command line and actually pack files:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">shell</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-shell'</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">shell</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">gulp-shell</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="c1">// pack the HTML panel using ZXPSignCmd</span>
-<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'pack-html'</span><span class="p">,</span>  
-	<span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'./ZXPSignCmd -sign src/com.example.myExtension src/com.example.myExtension.zxp myCertificate.p12 myPassword -tsa https://timestamp.geotrust.com/tsa'</span><span class="p">)</span> <span class="c1">// don't put the semicolon here or it will break!</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">pack-html</span><span class="dl">'</span><span class="p">,</span>  
+	<span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">./ZXPSignCmd -sign src/com.example.myExtension src/com.example.myExtension.zxp myCertificate.p12 myPassword -tsa https://timestamp.geotrust.com/tsa</span><span class="dl">'</span><span class="p">)</span> <span class="c1">// don't put the semicolon here or it will break!</span>
 <span class="p">);</span></code></pre></figure>
 
 <p>If you run in the Terminal:</p>
@@ -960,17 +964,17 @@ Is this ok? <span class="o">(</span><span class="nb">yes</span><span class="o">)
 
 <p>A task can rely on other tasks - <strong>dependencies</strong> are defined into an array of tasks:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'pack-html'</span><span class="p">,</span> <span class="err">\</span><span class="p">[</span><span class="s1">'clean-all'</span><span class="err">\</span><span class="p">].</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-	<span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'./ZXPSignCmd -sign src/com.example.myExtension src/com.example.myExtension.zxp myCertificate.p12 myPassword -tsa https://timestamp.geotrust.com/tsa'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">pack-html</span><span class="dl">'</span><span class="p">,</span> <span class="err">\</span><span class="p">[</span><span class="dl">'</span><span class="s1">clean-all</span><span class="dl">'</span><span class="err">\</span><span class="p">].</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+	<span class="nx">shell</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">./ZXPSignCmd -sign src/com.example.myExtension src/com.example.myExtension.zxp myCertificate.p12 myPassword -tsa https://timestamp.geotrust.com/tsa</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>In the above example, the <code class="highlighter-rouge">'clean-all'</code> task is performed <em>first</em>, then the <code class="highlighter-rouge">'pack-html'</code> task runs. If you have multiple dependencies (that is: your task needs to run after <em>several</em> other tasks) you can define them this way:</p>
+<p>In the above example, the <code class="language-plaintext highlighter-rouge">'clean-all'</code> task is performed <em>first</em>, then the <code class="language-plaintext highlighter-rouge">'pack-html'</code> task runs. If you have multiple dependencies (that is: your task needs to run after <em>several</em> other tasks) you can define them this way:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'test-task'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'first-dep'</span><span class="p">,</span> <span class="s1">'second-dep'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="dl">'</span><span class="s1">test-task</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="dl">'</span><span class="s1">first-dep</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">second-dep</span><span class="dl">'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="c1">//...</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Mind you: while the <code class="highlighter-rouge">'test-task'</code> actually runs after <code class="highlighter-rouge">'first-dep'</code> and <code class="highlighter-rouge">'second-dep'</code>, you cannot be sure that <code class="highlighter-rouge">'first-dep'</code> and <code class="highlighter-rouge">'second-dep'</code> are executed in this very order! Dependencies are processed <strong>asynchronously</strong>: <code class="highlighter-rouge">'second-dep'</code> may finish before <code class="highlighter-rouge">'first-dep'</code>.</p>
+<p>Mind you: while the <code class="language-plaintext highlighter-rouge">'test-task'</code> actually runs after <code class="language-plaintext highlighter-rouge">'first-dep'</code> and <code class="language-plaintext highlighter-rouge">'second-dep'</code>, you cannot be sure that <code class="language-plaintext highlighter-rouge">'first-dep'</code> and <code class="language-plaintext highlighter-rouge">'second-dep'</code> are executed in this very order! Dependencies are processed <strong>asynchronously</strong>: <code class="language-plaintext highlighter-rouge">'second-dep'</code> may finish before <code class="language-plaintext highlighter-rouge">'first-dep'</code>.</p>
 
 <h2 id="-synchronously">… synchronously!</h2>
 
@@ -994,10 +998,10 @@ Is this ok? <span class="o">(</span><span class="nb">yes</span><span class="o">)
 <p>Hopefully the code and the comments are self-explanatory. Few caveats that might save you some search time on Google:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">'./**/*.zxp'</code> is a way to mean: every zxp file in every subfolder of the root (being the root <code class="highlighter-rouge">'./'</code>).</li>
-  <li>For a reason that I don’t know, a semicolon after the <code class="highlighter-rouge">shell.task()</code> breaks gulp.</li>
-  <li><code class="highlighter-rouge">{ read: false }</code> speeds up the process when you don’t need gulp to read files.</li>
-  <li><code class="highlighter-rouge">{ base: './src/' }</code> (as used in task #2) tells gulp to use <code class="highlighter-rouge">./src/</code> as a base for the relative paths. If you omit it or set it to the root <code class="highlighter-rouge">'./'</code>, you’ll end up with <code class="highlighter-rouge">/src/MXI/HTML/src/com.example.myExtension.zxp</code> (and extra <code class="highlighter-rouge">/src/</code>) and not <code class="highlighter-rouge">/src/MXI/HTML/com.example.myExtension.zxp</code> which is what you actually want.</li>
+  <li><code class="language-plaintext highlighter-rouge">'./**/*.zxp'</code> is a way to mean: every zxp file in every subfolder of the root (being the root <code class="language-plaintext highlighter-rouge">'./'</code>).</li>
+  <li>For a reason that I don’t know, a semicolon after the <code class="language-plaintext highlighter-rouge">shell.task()</code> breaks gulp.</li>
+  <li><code class="language-plaintext highlighter-rouge">{ read: false }</code> speeds up the process when you don’t need gulp to read files.</li>
+  <li><code class="language-plaintext highlighter-rouge">{ base: './src/' }</code> (as used in task #2) tells gulp to use <code class="language-plaintext highlighter-rouge">./src/</code> as a base for the relative paths. If you omit it or set it to the root <code class="language-plaintext highlighter-rouge">'./'</code>, you’ll end up with <code class="language-plaintext highlighter-rouge">/src/MXI/HTML/src/com.example.myExtension.zxp</code> (and extra <code class="language-plaintext highlighter-rouge">/src/</code>) and not <code class="language-plaintext highlighter-rouge">/src/MXI/HTML/com.example.myExtension.zxp</code> which is what you actually want.</li>
 </ul>
 
 <p>This tip just scratches the surface of gulp.js as a task runner for CC Extensions - I hope to have time to dig deeper and share my findings again - feel free to add yours in the comments!</p>

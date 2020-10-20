@@ -751,6 +751,10 @@
             
                 
             
+                
+            
+                
+            
         </div>
         
     
@@ -857,7 +861,7 @@
 
 <h3 id="versions">Versions</h3>
 
-<p>CEF has been bumped to 3.2987, Chromium is 57.0.2987.74 (leap of faith because for some mysterious reason <code class="highlighter-rouge">window.location = "chrome://version"</code> doesn’t work anymore) and Node.js is 7.7.4, whereas Generator’s Node.js is 4.8.4. Enough with digits, let’s dig into actual stuff. You’d be tempted to use <code class="highlighter-rouge">Version="8.0"</code> in manifest.xml, like:</p>
+<p>CEF has been bumped to 3.2987, Chromium is 57.0.2987.74 (leap of faith because for some mysterious reason <code class="language-plaintext highlighter-rouge">window.location = "chrome://version"</code> doesn’t work anymore) and Node.js is 7.7.4, whereas Generator’s Node.js is 4.8.4. Enough with digits, let’s dig into actual stuff. You’d be tempted to use <code class="language-plaintext highlighter-rouge">Version="8.0"</code> in manifest.xml, like:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;ExtensionManifest</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
@@ -881,7 +885,7 @@
   <span class="c">&lt;!-- etc. --&gt;</span>
 <span class="nt">&lt;/ExtensionManifest&gt;</span></code></pre></figure>
 
-<p>Tempting, but <strong>don’t do it</strong>. <code class="highlighter-rouge">Version</code> in <code class="highlighter-rouge">&lt;ExtensionManifest&gt;</code> and <code class="highlighter-rouge">&lt;RequiredRuntime&gt;</code> has always matched CEP version, but in this case setting the two to <code class="highlighter-rouge">"8.0"</code> will make your panel disappear from the Window &gt; Extensions menu. Why? We’re in the same boat, I’ve asked around but got no plausible answer yet. Stick to <code class="highlighter-rouge">"7.0"</code>.</p>
+<p>Tempting, but <strong>don’t do it</strong>. <code class="language-plaintext highlighter-rouge">Version</code> in <code class="language-plaintext highlighter-rouge">&lt;ExtensionManifest&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;RequiredRuntime&gt;</code> has always matched CEP version, but in this case setting the two to <code class="language-plaintext highlighter-rouge">"8.0"</code> will make your panel disappear from the Window &gt; Extensions menu. Why? We’re in the same boat, I’ve asked around but got no plausible answer yet. Stick to <code class="language-plaintext highlighter-rouge">"7.0"</code>.</p>
 
 <h3 id="csinterface">CSInterface</h3>
 
@@ -889,7 +893,7 @@
 
 <h3 id="debugging">Debugging</h3>
 
-<p>Debugging tips: Google Chrome 62.0.3202.62 (Official Build) (64-bit) at least on macOS Sierra 10.12.6 can’t connect anymore a debug session. It seems it can: you successfully load localhost:8088 (or whatever port you’re using) and the usual textual link appears. Click it, and you’re staring at a blank Chrome Developer Tools page. Out of curiosity I opened the Console and got a “Uncaught Error: No setting registered: showAdvancedHeapSnapshotProperties” referring to <code class="highlighter-rouge">inspector.js</code>.</p>
+<p>Debugging tips: Google Chrome 62.0.3202.62 (Official Build) (64-bit) at least on macOS Sierra 10.12.6 can’t connect anymore a debug session. It seems it can: you successfully load localhost:8088 (or whatever port you’re using) and the usual textual link appears. Click it, and you’re staring at a blank Chrome Developer Tools page. Out of curiosity I opened the Console and got a “Uncaught Error: No setting registered: showAdvancedHeapSnapshotProperties” referring to <code class="language-plaintext highlighter-rouge">inspector.js</code>.</p>
 
 <p><img src="/wp-content/uploads/2017/10/console-700x226.png" alt="" /></p>
 
@@ -897,7 +901,7 @@
 
 <h3 id="nodejs">Node.js</h3>
 
-<p>There must be some kind of bloody war going on at the Adobe headquarters around Node.js. Only between CC 2015.0 and CC 2015.1.2 its implementation changed thrice, and of course there’s something new and backward not compatible in CEP 8 as well. Anyway, the State of the Art is as follows. Node is still <strong>disabled by default</strong>. Very like with CEP 7, if you want to enable it, add these in the <code class="highlighter-rouge">manifest.xml</code>:</p>
+<p>There must be some kind of bloody war going on at the Adobe headquarters around Node.js. Only between CC 2015.0 and CC 2015.1.2 its implementation changed thrice, and of course there’s something new and backward not compatible in CEP 8 as well. Anyway, the State of the Art is as follows. Node is still <strong>disabled by default</strong>. Very like with CEP 7, if you want to enable it, add these in the <code class="language-plaintext highlighter-rouge">manifest.xml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;Resources&gt;</span>
   <span class="nt">&lt;CEFCommandLine&gt;</span>
@@ -905,17 +909,17 @@
     <span class="nt">&lt;Parameter&gt;</span>--mixed-context<span class="nt">&lt;/Parameter&gt;</span>
   <span class="nt">&lt;/CEFCommandLine&gt;</span></code></pre></figure>
 
-<p>Mind you, <code class="highlighter-rouge">--mixed-context</code> is optional. So you basically have three possible scenarios:</p>
+<p>Mind you, <code class="language-plaintext highlighter-rouge">--mixed-context</code> is optional. So you basically have three possible scenarios:</p>
 
 <ol>
-  <li>Forget about Node entirely (no <code class="highlighter-rouge">--enable-nodejs</code> flag): it’s disabled.</li>
-  <li>Enable Node in a <strong>Separate Context</strong> (<code class="highlighter-rouge">--enable-nodejs</code> but no <code class="highlighter-rouge">--mixed-context</code>).</li>
-  <li>Enable Node in a <strong>Mixed Context</strong> (<code class="highlighter-rouge">--enable-nodejs</code> and <code class="highlighter-rouge">--mixed-context</code>).</li>
+  <li>Forget about Node entirely (no <code class="language-plaintext highlighter-rouge">--enable-nodejs</code> flag): it’s disabled.</li>
+  <li>Enable Node in a <strong>Separate Context</strong> (<code class="language-plaintext highlighter-rouge">--enable-nodejs</code> but no <code class="language-plaintext highlighter-rouge">--mixed-context</code>).</li>
+  <li>Enable Node in a <strong>Mixed Context</strong> (<code class="language-plaintext highlighter-rouge">--enable-nodejs</code> and <code class="language-plaintext highlighter-rouge">--mixed-context</code>).</li>
 </ol>
 
-<p>As a quick reminder on Contexts, due to the <code class="highlighter-rouge">io.js</code> switch back in an earlier version, I’ve been told, Node.js and the Browser/Panel contexts don’t talk to each other anymore. What does this mean? If you have a Node.js module and try to access the jQuery <code class="highlighter-rouge">$</code> object, or <code class="highlighter-rouge">csInterface</code>, or anything else defined in the Browser context (e.g. your <code class="highlighter-rouge">main.js</code> file), it won’t work. Workaround: use the global <code class="highlighter-rouge">window</code> object as a bridge. Or enable Mixed Context.</p>
+<p>As a quick reminder on Contexts, due to the <code class="language-plaintext highlighter-rouge">io.js</code> switch back in an earlier version, I’ve been told, Node.js and the Browser/Panel contexts don’t talk to each other anymore. What does this mean? If you have a Node.js module and try to access the jQuery <code class="language-plaintext highlighter-rouge">$</code> object, or <code class="language-plaintext highlighter-rouge">csInterface</code>, or anything else defined in the Browser context (e.g. your <code class="language-plaintext highlighter-rouge">main.js</code> file), it won’t work. Workaround: use the global <code class="language-plaintext highlighter-rouge">window</code> object as a bridge. Or enable Mixed Context.</p>
 
-<p>This hasn’t change from CEP7, so I’ll skip to the new stuff. Besides injecting in the global space <code class="highlighter-rouge">Buffer</code>, <code class="highlighter-rouge">global</code>, <code class="highlighter-rouge">process</code>, <code class="highlighter-rouge">require</code> and <code class="highlighter-rouge">module</code>, CEP 8 adds a new <code class="highlighter-rouge">cep_node</code> global, which has its own <code class="highlighter-rouge">Buffer</code>, <code class="highlighter-rouge">global</code>, <code class="highlighter-rouge">process</code> and <code class="highlighter-rouge">require</code> properties. These new props props are useful because now an <code class="highlighter-rouge">&lt;iframe&gt;</code> (which still needs to have its own <code class="highlighter-rouge">enable-nodejs</code> specified), is going access <code class="highlighter-rouge">cep_node</code>, that you can use as a bridge object between <code class="highlighter-rouge">&lt;iframe&gt;</code> elements when the <strong>Context is Separate</strong>. This marks a difference with CEP7, where Node globals were always available. Also, order of appearance is important to access data, see below:</p>
+<p>This hasn’t change from CEP7, so I’ll skip to the new stuff. Besides injecting in the global space <code class="language-plaintext highlighter-rouge">Buffer</code>, <code class="language-plaintext highlighter-rouge">global</code>, <code class="language-plaintext highlighter-rouge">process</code>, <code class="language-plaintext highlighter-rouge">require</code> and <code class="language-plaintext highlighter-rouge">module</code>, CEP 8 adds a new <code class="language-plaintext highlighter-rouge">cep_node</code> global, which has its own <code class="language-plaintext highlighter-rouge">Buffer</code>, <code class="language-plaintext highlighter-rouge">global</code>, <code class="language-plaintext highlighter-rouge">process</code> and <code class="language-plaintext highlighter-rouge">require</code> properties. These new props props are useful because now an <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> (which still needs to have its own <code class="language-plaintext highlighter-rouge">enable-nodejs</code> specified), is going access <code class="language-plaintext highlighter-rouge">cep_node</code>, that you can use as a bridge object between <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> elements when the <strong>Context is Separate</strong>. This marks a difference with CEP7, where Node globals were always available. Also, order of appearance is important to access data, see below:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;body&gt;</span>
   <span class="c">&lt;!-- Node globals: OK, cep_node:OK --&gt;</span>
@@ -936,7 +940,7 @@
 <span class="nt">&lt;/body&gt;</span>
 <span class="c">&lt;!-- &lt;script&gt; tags belongs to iframe1.html and iframe2.html --&gt;</span></code></pre></figure>
 
-<p>As opposed to the previous case and still specific to CEP8, with <strong>Mixed Context</strong> the Node globals are always available, everywhere (<code class="highlighter-rouge">&lt;iframe&gt;</code> elements included), but this time <code class="highlighter-rouge">cep_node</code> is rebuilt from scratch in each <code class="highlighter-rouge">&lt;iframe&gt;</code>.</p>
+<p>As opposed to the previous case and still specific to CEP8, with <strong>Mixed Context</strong> the Node globals are always available, everywhere (<code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> elements included), but this time <code class="language-plaintext highlighter-rouge">cep_node</code> is rebuilt from scratch in each <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code>.</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;body&gt;</span>
   <span class="c">&lt;!-- Node globals: OK, cep_node:OK --&gt;</span>
@@ -957,14 +961,14 @@
 <span class="nt">&lt;/body&gt;</span>
 <span class="c">&lt;!-- &lt;script&gt; tags belongs to iframe1.html and iframe2.html --&gt;</span></code></pre></figure>
 
-<p>What else: <code class="highlighter-rouge">module</code> and <code class="highlighter-rouge">exports</code> globals may conflict with some JS libraries, e.g. jQuery, resulting in the library being loaded in the Node context rather than in the Browser’s. As a fix, try:</p>
+<p>What else: <code class="language-plaintext highlighter-rouge">module</code> and <code class="language-plaintext highlighter-rouge">exports</code> globals may conflict with some JS libraries, e.g. jQuery, resulting in the library being loaded in the Node context rather than in the Browser’s. As a fix, try:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Insert above script imports --&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">module</span> <span class="o">===</span> <span class="s1">'object'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">module</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">object</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
     <span class="nb">window</span><span class="p">.</span><span class="nx">module</span> <span class="o">=</span> <span class="nx">module</span><span class="p">;</span> <span class="nx">module</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
   <span class="p">}</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">exports</span> <span class="o">===</span> <span class="s1">'object'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">exports</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">object</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
   	<span class="nb">window</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">exports</span><span class="p">;</span> <span class="nx">exports</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="nt">&lt;/script&gt;</span>
@@ -977,17 +981,17 @@
   <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">exports</span><span class="p">)</span> <span class="nx">exports</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">exports</span><span class="p">;</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
-<p>Oh, now in CEP 8 <code class="highlighter-rouge">require()</code> paths need to be absolute and not relative, like:</p>
+<p>Oh, now in CEP 8 <code class="language-plaintext highlighter-rouge">require()</code> paths need to be absolute and not relative, like:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="c1">// Replace this:</span>
-	<span class="nx">require</span><span class="p">(</span><span class="s2">"./js/lib/javascriptobfuscator.js"</span><span class="p">);</span>
+	<span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./js/lib/javascriptobfuscator.js</span><span class="dl">"</span><span class="p">);</span>
 
 	<span class="c1">// With either this:</span>
-	<span class="kd">var</span> <span class="nx">dir</span> <span class="o">=</span> <span class="nx">csInterface</span><span class="p">.</span><span class="nx">getSystemPath</span><span class="p">(</span><span class="s2">"extension"</span><span class="p">)</span>
-	<span class="nx">require</span><span class="p">(</span><span class="nx">dir</span> <span class="o">+</span> <span class="s2">"/js/lib/javascriptobfuscator.js"</span><span class="p">);</span>
+	<span class="kd">var</span> <span class="nx">dir</span> <span class="o">=</span> <span class="nx">csInterface</span><span class="p">.</span><span class="nx">getSystemPath</span><span class="p">(</span><span class="dl">"</span><span class="s2">extension</span><span class="dl">"</span><span class="p">)</span>
+	<span class="nx">require</span><span class="p">(</span><span class="nx">dir</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/js/lib/javascriptobfuscator.js</span><span class="dl">"</span><span class="p">);</span>
 
 	<span class="c1">// Or:</span>
-	<span class="nx">require</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="s2">"/js/lib/javascriptobfuscator.js"</span><span class="p">);</span>  </code></pre></figure>
+	<span class="nx">require</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">/js/lib/javascriptobfuscator.js</span><span class="dl">"</span><span class="p">);</span>  </code></pre></figure>
 
 <p>And I’d say this sums up things for Node.js</p>
 
@@ -996,10 +1000,10 @@
 <p>I’m listing here the known CEP 8 bugs, even the one already mentioned in the post.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Version="8.0"</code> in the <code class="highlighter-rouge">&lt;ExtensionManifest&gt;</code> and <code class="highlighter-rouge">&lt;RequiredRuntime&gt;</code> tags in <code class="highlighter-rouge">manifest.xml</code> (to match CEP version) makes the Panel disappear from the Extensions list.</li>
-  <li><strong>Panel Geometry bug</strong>: setting <code class="highlighter-rouge">&lt;Size&gt;</code>, <code class="highlighter-rouge">&lt;MinSize&gt;</code> and <code class="highlighter-rouge">&lt;MaxSize&gt;</code> with equal values doesn’t produce a fixed size (unresizable) panel anymore, as it used to do with <em>any</em> other pre-2018 version. In order to make a fixed sized panel in 2018, set only the <code class="highlighter-rouge">&lt;Size&gt;</code> tag. That is to say: panel is fixed size in 2018 but not in CC, 2014, 2015, 2015.5, 2017 or the other way around. Very funny. Moreover, the very fist time a panel is collapsed/reopened, it assumes forever some completely wrong width/height, and may hide relevant content.</li>
-  <li><strong>Bug with Panel Refresh</strong>: (either via ⌘+R on Chromium Dev Tools, or <code class="highlighter-rouge">window.location.reload(true)</code> in the panel). You may run into problems with Node after the first refresh unless you have both <code class="highlighter-rouge">--enable-nodejs</code> and <code class="highlighter-rouge">--mixed-context</code> flags set.</li>
-  <li>As I mentioned before, setting the panel’s <code class="highlighter-rouge">window.location = "chrome://version"</code> <strong>doesn’t load the Chrome Version page in the Panel</strong> anymore – it used to work fine with CC 2017.</li>
+  <li><code class="language-plaintext highlighter-rouge">Version="8.0"</code> in the <code class="language-plaintext highlighter-rouge">&lt;ExtensionManifest&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;RequiredRuntime&gt;</code> tags in <code class="language-plaintext highlighter-rouge">manifest.xml</code> (to match CEP version) makes the Panel disappear from the Extensions list.</li>
+  <li><strong>Panel Geometry bug</strong>: setting <code class="language-plaintext highlighter-rouge">&lt;Size&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;MinSize&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;MaxSize&gt;</code> with equal values doesn’t produce a fixed size (unresizable) panel anymore, as it used to do with <em>any</em> other pre-2018 version. In order to make a fixed sized panel in 2018, set only the <code class="language-plaintext highlighter-rouge">&lt;Size&gt;</code> tag. That is to say: panel is fixed size in 2018 but not in CC, 2014, 2015, 2015.5, 2017 or the other way around. Very funny. Moreover, the very fist time a panel is collapsed/reopened, it assumes forever some completely wrong width/height, and may hide relevant content.</li>
+  <li><strong>Bug with Panel Refresh</strong>: (either via ⌘+R on Chromium Dev Tools, or <code class="language-plaintext highlighter-rouge">window.location.reload(true)</code> in the panel). You may run into problems with Node after the first refresh unless you have both <code class="language-plaintext highlighter-rouge">--enable-nodejs</code> and <code class="language-plaintext highlighter-rouge">--mixed-context</code> flags set.</li>
+  <li>As I mentioned before, setting the panel’s <code class="language-plaintext highlighter-rouge">window.location = "chrome://version"</code> <strong>doesn’t load the Chrome Version page in the Panel</strong> anymore – it used to work fine with CC 2017.</li>
   <li>Not really a bug, but be aware that some videos that used to play well (e.g. from YouTube) in CEP 7, won’t play at all in CEP 8. This is due to a WebM VP9 codec that Chromium doesn’t support anymore (the codec License doesn’t get along well with the Chromium Open Source License, so they dropped the support).</li>
 </ul>
 
