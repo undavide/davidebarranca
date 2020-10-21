@@ -6,7 +6,7 @@ excerpt: "The Adobe MAX 2020 conference is unfolding right now, free and online,
 layout: post
 description: "The Adobe MAX 2020 conference is unfolding right now, free and online, carrying a number of major updates in the Creative Cloud apps lineup – Photoshop 2021 included. These are three of the major keynote's highlights."
 image: "/wp-content/uploads/2020/10/MAX.png"
-media_card: /wp-content/uploads/2020/20/UXP-facebook.jpg
+media_card: /wp-content/uploads/2020/10/UXP-facebook.jpg
 category:
   - Development
 tags:
