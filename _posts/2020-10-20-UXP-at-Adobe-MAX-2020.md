@@ -60,6 +60,7 @@ This is a collection of the available UXP resources at the moment:
 
 - [Announcing UXP in Photoshop](https://medium.com/adobetech/announcing-uxp-in-photoshop-288496ab5e3e)
 - [Adobe expands Creative Cloud Platform capabilities and new marketplace for plugins and integrations](https://blog.adobe.com/en/2020/10/20/creative-cloud-ecosystem-update-max-2020.html#gs.j8yw75)
+- [The Next Iteration of Creative Cloud Plugin Distribution](https://medium.com/adobetech/the-next-iteration-of-adobe-plugin-distribution-47ba732dc20a)
 - [UXP for Adobe Photoshop Documentation](https://www.adobe.io/photoshop/uxp/)
 - [Public Forums for UXP developers](https://forums.creativeclouddeveloper.com/)
 
