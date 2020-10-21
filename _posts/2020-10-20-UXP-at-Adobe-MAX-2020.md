@@ -54,7 +54,14 @@ The hub for plugins discovery and installation is now the CCD – Creative Cloud
 
 ## UXP and you – how this blog can help 🚀
 
-In the past, I've extensively blogged about CEP in the apparently quite popular "HTML Panels Tip" series. I plan to do the very same here with UXP – with the difference that **I'm also going to record videos**: the first being an introduction/first-aid to the UXP platform that I'll release here before the end of the month. So stay tuned! And let me know what you think in the comment below.
+In the past, I've extensively blogged about CEP in the apparently quite popular "HTML Panels Tip" series. I plan to do the very same here with UXP – with the difference that **I'm also going to record videos**: the first being an extensive introduction/first-aid to the UXP platform that I'll release here before the end of the month. So stay tuned! And let me know what you think in the comment below.
+
+In the meantime, this is a collection of the available UXP resources:
+
+- [Announcing UXP in Photoshop](https://medium.com/adobetech/announcing-uxp-in-photoshop-288496ab5e3e)
+- [Adobe expands Creative Cloud Platform capabilities and new marketplace for plugins and integrations](https://blog.adobe.com/en/2020/10/20/creative-cloud-ecosystem-update-max-2020.html#gs.j8yw75)
+- [UXP for Adobe Photoshop Documentation](https://www.adobe.io/photoshop/uxp/)
+- [Public Forums for UXP developers](https://forums.creativeclouddeveloper.com/)
 
 In the meantime, there are a number of freely available [Adobe MAX sessions](https://www.adobe.com/max.html) to watch and learn from – check them out. Stay safe and cheers from Italy! 🖐
 
