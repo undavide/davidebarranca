@@ -34,7 +34,12 @@ UXP stands for _Unified Extensibility Platform_, a technology that was Guinea-pi
 <figcaption>The UXP Architecture (don't worry it'll be fine)</figcaption>
 </figure>  
 
-My fellow developer, if this doesn't get you excited feel worried then: _in the long run_ UXP is going to replace CEP, so you must care sooner or later. Let me stress that it will _not_ happen overnight, we're just in the early stages and they're going to overlap for a significant amount of time. Yet, be aware that UXP is clearly the future of plugins development in Adobe-land for all major CC apps.
+My fellow developer, if this doesn't get you excited feel worried then: **in the long run UXP is going to replace CEP**, so you must care sooner or later. Let me stress that _it will not happen overnight_, we're just in the early stages and they're going to overlap for a significant amount of time. Yet, be aware that UXP is clearly the future of plugins development in Adobe-land for all major CC apps. Which apps?
+
+<figure>
+<img src="/wp-content/uploads/2020/10/UXP-apps.png" srcset="/wp-content/uploads/2020/10/UXP-apps.png 1x, /wp-content/uploads/2020/10/UXP-apps@2x.png 2x" alt="The UXP architecture">
+<figcaption>Ari Fuchs on current UXP support for internal features; 3rd party support will follow sometimes in the future.</figcaption>
+</figure>
 
 #### The Creative Cloud Marketplace featuring UXP plugins Photoshop
 
