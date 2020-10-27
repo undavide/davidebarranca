@@ -63,6 +63,7 @@ This is a collection of the available UXP resources at the moment:
 - [The Next Iteration of Creative Cloud Plugin Distribution](https://medium.com/adobetech/the-next-iteration-of-adobe-plugin-distribution-47ba732dc20a)
 - [UXP for Adobe Photoshop Documentation](https://www.adobe.io/photoshop/uxp/)
 - [Public Forums for UXP developers](https://forums.creativeclouddeveloper.com/)
+- [Fix common installation issues with Creative Cloud app extensions or plugins](https://helpx.adobe.com/creative-cloud/kb/troubleshoot-common-addon-installation-issues.html)
 
 In the meantime, there are a number of freely available [Adobe MAX sessions](https://www.adobe.com/max.html) to watch and learn from – check them out. Stay safe and cheers from Italy! 🖐
 
