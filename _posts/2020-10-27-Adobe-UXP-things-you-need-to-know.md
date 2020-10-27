@@ -6,7 +6,7 @@ excerpt: "I am starting a new series on Adobe UXP development, very much along t
 layout: post
 description: "I am starting a new series on Adobe UXP development, very much along the lines of the CEP's HTML Panels Tips. But on video."
 image: "/wp-content/uploads/2020/10/TYNTN.png"
-media_card: /wp-content/uploads/2020/10/TYNTN-facebook.png
+media_card: /wp-content/uploads/2020/10/TYNTN-twitter.png
 category:
   - Development
 tags:
