@@ -5,9 +5,46 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 05 Nov 2020 21:47:52 +0100</pubDate>
-    <lastBuildDate>Thu, 05 Nov 2020 21:47:52 +0100</lastBuildDate>
+    <pubDate>Fri, 13 Nov 2020 23:30:32 +0100</pubDate>
+    <lastBuildDate>Fri, 13 Nov 2020 23:30:32 +0100</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>Adobe UXP: Things you need to know! #3 UXP Developer Tool</title>
+        <description>&lt;p&gt;In this episode I’ll talk about the new UXP Developer Tool, that you’re going to use to load, reload, watch, debug and scaffold new UXP plugins from templates!&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/jj9ZzT1iwRU&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt; – 2020 is a hell of a year. I don’t have a Patreon page, but I’ve got two fairly cheap plugins on the Photoshop Marketplace, &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=28db2e07&amp;amp;workflow=share&quot;&gt;ALCE&lt;/a&gt; (Advanced Local Contrast Enhancer) and &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=78c3cdaf&amp;amp;workflow=share&quot;&gt;Double USM&lt;/a&gt; (on sharpening). If you happen to buy them, please leave a positive rating/review, it would greatly help. Or, you can&lt;/p&gt;
+
+&lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
+&lt;input type=&quot;image&quot; src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; title=&quot;PayPal - The safer, easier way to pay online!&quot; alt=&quot;Donate with PayPal button&quot; /&gt;
+&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;https://www.paypal.com/en_IT/i/scr/pixel.gif&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;
+&lt;/form&gt;
+
+&lt;p&gt;If you cannot, or don’t want to, that’s OK anyway.&lt;br /&gt;
+Stay safe and thanks! 🙏🏻&lt;/p&gt;
+
+&lt;h2 id=&quot;the-whole-series-so-far&quot;&gt;The whole series so far&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know.html&quot;&gt;#01 – Rundown on the UXP announcement @ the Adobe MAX 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Fri, 13 Nov 2020 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html</link>
+        <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html</guid>
+        
+        <category>UXP</category>
+        
+        
+        <category>Development</category>
+        
+      </item>
     
       <item>
         <title>Adobe UXP: Things you need to know! #2 Documentation</title>
@@ -24,7 +61,15 @@
 &lt;/form&gt;
 
 &lt;p&gt;If you cannot, or don’t want to, that’s OK anyway.&lt;br /&gt;
-Stay safe and thanks!&lt;/p&gt;
+Stay safe and thanks! 🙏🏻&lt;/p&gt;
+
+&lt;h2 id=&quot;the-whole-series-so-far&quot;&gt;The whole series so far&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know.html&quot;&gt;#01 – Rundown on the UXP announcement @ the Adobe MAX 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
 
@@ -51,12 +96,28 @@ Stay safe and thanks!&lt;/p&gt;
         <title>Adobe UXP: Things you need to know!</title>
         <description>&lt;p&gt;I am starting a new series on development, called “Adobe UXP: Things you need to know” (I’m getting fancy with titles 😊) In my intentions it’ll be very much along the lines of the old “HTML Panels Tips” series but in a different media. This first installment, a quick rundown on the news from the Adobe MAX 2020 announcement, is a 27 minutes video.&lt;/p&gt;
 
-&lt;p&gt;Let me know what you think: feedbacks on the series idea, about UXP, life during the pandemic.
-Speaking of which: if you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt; – 2020 is a hell of a year. I don’t have a Patreon page, but I’ve got two fairly cheap plugins on the Photoshop Marketplace, &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=28db2e07&amp;amp;workflow=share&quot;&gt;ALCE&lt;/a&gt; (Advanced Local Contrast Enhancer) and &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=78c3cdaf&amp;amp;workflow=share&quot;&gt;Double USM&lt;/a&gt; (on sharpening). If you happen to buy them, please leave a positive rating/review, it would greatly help. If you cannot, or don’t want to, that’s OK anyway.&lt;/p&gt;
-
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/zAOUBpDjc1Q&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;Stay safe and thanks!&lt;/p&gt;
+&lt;p&gt;Let me know what you think: feedbacks on the series idea, about UXP, life during the pandemic.
+Speaking of which: if you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt; – 2020 is a hell of a year. I don’t have a Patreon page, but I’ve got two fairly cheap plugins on the Photoshop Marketplace, &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=28db2e07&amp;amp;workflow=share&quot;&gt;ALCE&lt;/a&gt; (Advanced Local Contrast Enhancer) and &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=78c3cdaf&amp;amp;workflow=share&quot;&gt;Double USM&lt;/a&gt; (on sharpening). If you happen to buy them, please leave a positive rating/review, it would greatly help. Or, you can&lt;/p&gt;
+
+&lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
+&lt;input type=&quot;image&quot; src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; title=&quot;PayPal - The safer, easier way to pay online!&quot; alt=&quot;Donate with PayPal button&quot; /&gt;
+&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;https://www.paypal.com/en_IT/i/scr/pixel.gif&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;
+&lt;/form&gt;
+
+&lt;p&gt;If you cannot, or don’t want to, that’s OK anyway.&lt;/p&gt;
+
+&lt;p&gt;Stay safe and thanks! 🙏🏻&lt;/p&gt;
+
+&lt;h2 id=&quot;the-whole-series-so-far&quot;&gt;The whole series so far&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know.html&quot;&gt;#01 – Rundown on the UXP announcement @ the Adobe MAX 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
 
@@ -1472,398 +1533,6 @@ The staple and validate action worked!
         
         
         <category>HTML Panels tips</category>
-        
-      </item>
-    
-      <item>
-        <title>Printing on demand a Leanpub book with Lulu.com</title>
-        <description>&lt;style type=&quot;text/css&quot;&gt;
-table { padding: 0; border-collapse: collapse; margin: auto auto }
-table tr {
-  border-top: 1px solid #cccccc;
-  background-color: white;
-  margin: 0;
-  padding: 0;
-}
-table tr:nth-child(2n) {
-  background-color: #f8f8f8;
-}
-table tr th {
-  font-weight: bold;
-  border: 1px solid #cccccc;
-  margin: 0;
-  padding: 6px 13px;
-}
-table tr td {
-  border: 1px solid #cccccc;
-  margin: 0;
-  padding: 6px 13px;
-}
-table tr th :first-child, table tr td :first-child {
-  margin-top: 0;
-}
-table tr th :last-child, table tr td :last-child {
-  margin-bottom: 0;
-}
-&lt;/style&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/04/ProPSScriptingWithBloom.jpg&quot; srcset=&quot;/wp-content/uploads/2019/04/ProPSScriptingWithBloom.jpg 1x, /wp-content/uploads/2019/04/ProPSScriptingWithBloom@2x.jpg 2x&quot; alt=&quot;Leanpub&quot; /&gt;
-&lt;figcaption&gt;&quot;And this shall be mine, human...&quot;&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Authoring a book is awesome – especially when you’re done with it – but holding an actual object in your hands still gives a special kind of thrill. I’ve just run an ultra-small print batch of my &lt;a href=&quot;https://www.ps-scripting.com/&quot;&gt;Professional Photoshop Scripting&lt;/a&gt; book, that I have self-published with Leanpub and printed-on-demand with Lulu: in this post I’m going to describe the whole process, what I’ve learned from it, and what I’d do differently to make the result even better.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;&lt;br /&gt;
-There is some room for improvement but all considered I am pleased!&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Disclaimer&lt;/strong&gt;&lt;br /&gt;
-In my daytime job I also do some books designing for my client, when asked; I have a decent understanding of printing process’ technical aspects in general, and I am familiar with the related software. In a previous life of mine I’ve been a color-management consultant for press/pre-press too. Nonetheless, this whole “get the book printed!” business took me by surprise, and I wanted to go through it as swiftly as possible; as a consequence, I admit to have taken, sometimes, the quickest path (i.e., not the best one).&lt;/p&gt;
-
-&lt;h2 id=&quot;why-have-i-got-a-printed-version-of-my-book-in-the-first-place&quot;&gt;Why have I got a printed version of my book in the first place?&lt;/h2&gt;
-
-&lt;p&gt;I didn’t want to; I mean, it wasn’t planned when I was writing it. Jeffrey Tranberry (&lt;em&gt;Sr. Product Manager, Digital Imaging at Adobe Systems&lt;/em&gt;, and long time Scripting advocate) has very kindly accepted to write the book’s foreword: he’s gotten in touch with me a few weeks later asking if it was possible for him to receive a signed copy. Sure, I’d be glad to! Although it took me a moment to get accustomed to the idea that I, Davide, was the one supposed to sign a book for Jeff and not the other way around – in 2012 he wrote &lt;a href=&quot;https://www.amazon.com/Power-Speed-Automation-Adobe-Photoshop-ebook/dp/B0083JCBZ2/&quot;&gt;Power, Speed &amp;amp; Automation with Adobe Photoshop&lt;/a&gt; with Geoff Scott, the only other book on earth that touches PS Scripting.&lt;/p&gt;
-
-&lt;p&gt;The main problem was that I had no actual printed book to send, just a PDF. I felt morally obliged to fulfill Jeff’s fair request as soon as possible, so I started my research for an online, print-on-demand service.&lt;/p&gt;
-
-&lt;h2 id=&quot;creating-an-ebook-with-leanpub&quot;&gt;Creating an ebook with Leanpub&lt;/h2&gt;
-
-&lt;p&gt;My starting point was an ebook that I self published with &lt;a href=&quot;https://leanpub.com/&quot;&gt;Leanpub&lt;/a&gt;. If you’re not familiar with them, you are allowed to:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;[…] write books in Markdown (our dialect is called Markua), Google Docs or our visual editor, and publish an ebook (in PDF, EPUB and MOBI) with one click. The Leanpub store helps you sell your book while it’s in-progress, getting reader feedback and earning 80% royalties. Or, upload a completed ebook to sell in our store.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/04/Leanpub.png&quot; srcset=&quot;/wp-content/uploads/2019/04/Leanpub.png 1x, /wp-content/uploads/2019/04/Leanpub@2x.png 2x&quot; alt=&quot;Leanpub&quot; /&gt;
-&lt;figcaption&gt;The Leanpub book's author backend page&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;&lt;strong&gt;I couldn’t recommend Leanpub more&lt;/strong&gt;, seriously: as a company, they offer extra services that I don’t really need (book landing page, e-commerce, in-progress publishing, etc), but their writing platform alone is superb. I’ve already used Leanpub for my previous book &lt;a href=&quot;https://www.htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development&lt;/a&gt;, hence I was no stranger to the whole process.&lt;/p&gt;
-
-&lt;p&gt;I took some R&amp;amp;D time to evaluate alternative options within my reach: I could use InDesign, iBooks Author, write in MarkDown and convert to PDF with Softcover or Pandoc&lt;sup id=&quot;fnref:Pandoc&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Pandoc&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. After some pondering, I decided that they all required too much efforts on my side to customize the result compared to Leanpub design, which was excellent out-of-the-box; and so I went with it. The book in itself was already a tough enterprise to undertake, I’d be better off spending my time on content creation.&lt;/p&gt;
-
-&lt;h3 id=&quot;writing-in-markdown&quot;&gt;Writing in MarkDown&lt;/h3&gt;
-
-&lt;p&gt;To briefly describe the process, &lt;strong&gt;I’ve written the entire book in MarkDown&lt;/strong&gt; – a textual format with handy shortcuts, e.g., &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_italic_&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;**bold**&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[^footnotes]&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;![Images](graphic.png)&lt;/code&gt; and everything else a writer may need –, keeping the files in synch with Leanpub via Dropbox&lt;sup id=&quot;fnref:hook&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:hook&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/04/Markdown.png&quot; srcset=&quot;/wp-content/uploads/2019/04/Markdown.png 1x, /wp-content/uploads/2019/04/Markdown@2x.png 2x&quot; alt=&quot;Markdown&quot; /&gt;
-&lt;figcaption&gt;Using the MWeb app to write and preview MarkDown.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;I’ve used &lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt;, &lt;a href=&quot;https://macdown.uranusjr.com/&quot;&gt;MacDown&lt;/a&gt; and &lt;a href=&quot;https://www.mweb.im/&quot;&gt;MWeb&lt;/a&gt; to write MarkDown, yet there’s plenty of apps (free or paid) available, even if to the best of my knowledge none of them supports the Leanpub’s &lt;em&gt;flavour&lt;/em&gt;.  In the last years they have been working on the specs of &lt;a href=&quot;http://markua.com/&quot;&gt;Markua&lt;/a&gt;, a MarkDown superset that specifically targets eBooks creation; it is already available as an option to authors, but besides Leanpub’s Markua online editor I don’t think there are apps for it.&lt;/p&gt;
-
-&lt;p&gt;You can trigger the book compilation on-demand, either the entire content or just an excerpt to make the task quicker; the compilation itself is performed &lt;em&gt;on their servers&lt;/em&gt; and the results (PDF, ePub and MOBI files) uploaded to a shared Dropbox folder automatically. This is the main Leanpub’s downside, in my opinion: depending on the amount of content you’ve written, &lt;strong&gt;the PDF generation process can take few minutes&lt;/strong&gt; to complete: besides the transformation from MarkDown to PDF&lt;sup id=&quot;fnref:md2pdf&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:md2pdf&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;, you have to wait for the files to get uploaded to Dropbox, and downloaded locally. Alas, we’re not used to waiting anymore.&lt;/p&gt;
-
-&lt;p&gt;Speaking of the PDF, which is what you’d use for printing purposes, their book design has a &lt;strong&gt;classic and professional look&lt;/strong&gt;, very well suited to technical publishing like my project.&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/04/BookDesign.jpg&quot; srcset=&quot;/wp-content/uploads/2019/04/BookDesign.jpg 1x, /wp-content/uploads/2019/04/BookDesign@2x.jpg 2x&quot; alt=&quot;Book Design&quot; /&gt;
-&lt;figcaption&gt;The Leanpub book's design is professional and well balanced&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Keep in mind that using a markup language also means that your content follows well defined formatting rules; while you focus on the writing, the book “composes itself”, so to speak. On the other side you don’t have pixel-perfect elements positioning as with, say,  InDesign. Some trial and error is intrinsic to the process, but it inevitably extends the waiting time in-between PDF generations.&lt;/p&gt;
-
-&lt;h3 id=&quot;exporting-for-print&quot;&gt;Exporting for print&lt;/h3&gt;
-
-&lt;p&gt;Leanpub has a specific Export option called &lt;strong&gt;Print-Ready PDF&lt;/strong&gt;, that is the one you should pick when your goal is ink on paper. It slightly differs from the traditional screen output, quoting from their website:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;It has no cover image. Services like KDP and Lulu want you to upload a wraparound cover, so our ebook cover image would be redundant. Instead, it starts with the inside cover.&lt;/li&gt;
-  &lt;li&gt;It has alternating page numbers, so that they end up on the outside corners. (The outside corners are the ones which are away from the book spine.)&lt;/li&gt;
-  &lt;li&gt;It has alternating margins: the inside margins are often wider than the outside margins, so that you can actually see the text on the inside margins. (The inside margins are the ones which are next to the book spine.)&lt;/li&gt;
-  &lt;li&gt;It has occasional blank pages to ensure that chapters start on the right side.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There is an alternative &lt;strong&gt;Export InDesign Files&lt;/strong&gt; option that outputs InCopy &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.icml&lt;/code&gt; files, one per chapter: your job is to manually insert each chapter in a provided, dummy InDesign &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.indd&lt;/code&gt; file, which you can then customize to your book designer taste. Since I was in hurry, and Leanpub had a (now fixed) bug in the InDesign Export, I postulated that the Print-Ready PDF was a good enough starting point for me.&lt;/p&gt;
-
-&lt;h2 id=&quot;choosing-a-print-on-demand-service&quot;&gt;Choosing a print-on-demand service&lt;/h2&gt;
-
-&lt;p&gt;My dear friend and Photoshop retoucher &lt;a href=&quot;https://www.colorduels.com/&quot;&gt;Daniele Di Stanio&lt;/a&gt; promptly pointed me to an article titled “&lt;a href=&quot;https://medium.com/@mwichary/my-experiences-printing-a-small-batch-of-books-c04141b63dfe&quot;&gt;My experiences printing a small batch of books&lt;/a&gt;”. The goal of the post’s author was to publish&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;“a simple, old-school book with… letters in it”&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I.e., a novel. My book, instead, is in the &lt;strong&gt;technical publishing&lt;/strong&gt; category (software development), with illustrations, screenshots, few photographs and a lot of syntax highlighted code. Our needs didn’t really match, but it was a well-thought comparison of &lt;a href=&quot;https://www.blurb.com/getting-started#&quot;&gt;Blurb&lt;/a&gt;, &lt;a href=&quot;https://www.bookbaby.com/print-on-demand&quot;&gt;BookBaby&lt;/a&gt;, &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Lulu&lt;/a&gt; and Nook Press (now &lt;a href=&quot;https://press.barnesandnoble.com/print-on-demand/&quot;&gt;Barnes and Noble Press&lt;/a&gt;) anyway. For a while, I’ve evaluated local, Italy-based services as well, yet the price-tag was way too high; I also tried to understand how &lt;a href=&quot;https://kdp.amazon.com/en_US/&quot;&gt;Kindle Direct Publishing&lt;/a&gt; works, but I couldn’t get whether the printed books must be sold via Amazon or could be directly shipped to the author, so I gave it up&lt;sup id=&quot;fnref:time&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:time&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;. If you have experience of KDP, please let me know in the comments.&lt;/p&gt;
-
-&lt;p&gt;Each and every print-on-demand (POD) service provider offers some sort of “Make your book” page where you choose the book’s options, such as Size, Binding, Paper and Inks, etc. and gives you an estimate of the cost per copy. Depending on the print batch size, small discounts may apply as well. I suggest you to go through that process for all the PODs that you want to test, to understand which one better suits your needs and budget.&lt;/p&gt;
-
-&lt;h2 id=&quot;printing-with-lulu&quot;&gt;Printing with Lulu&lt;/h2&gt;
-
-&lt;p&gt;At the end of the day, I decided to go with &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Lulu&lt;/a&gt;; probably other PODs could have worked fine too – after all I don’t have ultra-specific needs –, but one can’t keep splitting hairs in two for too long.&lt;/p&gt;
-
-&lt;h3 id=&quot;books-options&quot;&gt;Book’s options&lt;/h3&gt;
-
-&lt;p&gt;In Lulu’s &lt;a href=&quot;https://xpress.lulu.com/pricing&quot;&gt;Book Pricing Calculator page&lt;/a&gt; I could test how the various options affected the price per copy; besides a large variety of book sizes, the main choices were:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Binding&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Hardcover Casewrap (traditional hardcover, stitched)&lt;/li&gt;
-      &lt;li&gt;“Perfect Bound” (milled/glued)&lt;/li&gt;
-      &lt;li&gt;Coil bound (with plastic coil)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Inks&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Standard B/W&lt;/li&gt;
-      &lt;li&gt;Standard Color&lt;/li&gt;
-      &lt;li&gt;Premium B/W&lt;/li&gt;
-      &lt;li&gt;Premium Color&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Paper&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;60# Cream Uncoated&lt;/li&gt;
-      &lt;li&gt;60# White Uncoated&lt;/li&gt;
-      &lt;li&gt;80# White Coated&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Few remarks.&lt;br /&gt;
-Lulu’s &lt;a href=&quot;https://xpress.lulu.com/our-products&quot;&gt;Producs descriptions&lt;/a&gt; fall a bit short of tech specs: each option is related to the final result instead.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/04/PrintOptions.jpg&quot; srcset=&quot;/wp-content/uploads/2019/04/PrintOptions.jpg 1x, /wp-content/uploads/2019/04/PrintOptions@2x.jpg 2x&quot; alt=&quot;Print Options&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;For instance, Standard Color is &lt;em&gt;“Ideal for text-heavy content with a few color images, graphs, or illustrations that have low to moderate ink coverage”&lt;/em&gt; whereas Premium Color’s &lt;em&gt;“Ideal for image-heavy content with heavy ink coverage on the pages”&lt;/em&gt;. I can understand this, but it tells nothing about the kind of inks used, print resolution, the Total Ink Coverage allowed, etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/04/PerfectBound.jpg&quot; srcset=&quot;/wp-content/uploads/2019/04/PerfectBound.jpg 1x, /wp-content/uploads/2019/04/PerfectBound@2x.jpg 2x&quot; alt=&quot;PerfectBound&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;While Binding options are illustrated with photographs of the final object, no such close-up pictures are given for Paper types or Inks. I suppose 60# and 80# refers to the paper weight, in grams per square meter.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/04/PaperTypes.jpg&quot; srcset=&quot;/wp-content/uploads/2019/04/PaperTypes.jpg 1x, /wp-content/uploads/2019/04/PaperTypes@2x.jpg 2x&quot; alt=&quot;Paper types&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Given that my original PDF was US Letter (8.5x11 inches) sized, 400-ish pages long, this is the cost per copy for a variety of different Ink, Paper, Binding combinations:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Ink&lt;/th&gt;
-      &lt;th&gt;Paper&lt;/th&gt;
-      &lt;th&gt;Binding&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Price&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Color Standard&lt;/td&gt;
-      &lt;td&gt;60# Uncoated White&lt;/td&gt;
-      &lt;td&gt;Perfect Bound&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$17.40&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Color Standard&lt;/td&gt;
-      &lt;td&gt;80# Coated White&lt;/td&gt;
-      &lt;td&gt;Perfect Bound&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$19.40&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;B/W Standard&lt;/td&gt;
-      &lt;td&gt;80# Coated White&lt;/td&gt;
-      &lt;td&gt;Perfect Bound&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$9.80&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;B/W Premium&lt;/td&gt;
-      &lt;td&gt;80# Coated White&lt;/td&gt;
-      &lt;td&gt;Perfect Bound&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$15.40&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;B/W Premium&lt;/td&gt;
-      &lt;td&gt;80# Coated White&lt;/td&gt;
-      &lt;td&gt;Casewrap&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$22.75&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Color Premium&lt;/td&gt;
-      &lt;td&gt;80# Coated White&lt;/td&gt;
-      &lt;td&gt;Perfect Bound&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$65.40&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Color Premium&lt;/td&gt;
-      &lt;td&gt;80# Coated White&lt;/td&gt;
-      &lt;td&gt;Perfect Bound&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$65.40&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Color Premium&lt;/td&gt;
-      &lt;td&gt;80# Coated White&lt;/td&gt;
-      &lt;td&gt;Casewrap&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;$72.50&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;My book is quite long, so keep that in mind when evaluating prices. Printing with Lulu goes from a nice $9.80 for a Black &amp;amp; White Standard Inks on the best paper with glued/milled binding, to a surprising $72.50 for the top quality options in all departments.&lt;/p&gt;
-
-&lt;p&gt;You can see that the paper choice doesn’t really influence the price that much, $2.00 spread over four hundred pages is half of a Cent difference per page, so &lt;strong&gt;80# Coated White&lt;/strong&gt; was a no brainer.&lt;/p&gt;
-
-&lt;p&gt;Inks make the greatest difference of all: +$5.60 to upgrade from B/W Standard to B/W Premium; +$4.00 from B/W Premium to Color Standard, and a whopping +$46 to get from Color Standard to Color Premium! I understand that the more expensive option is for Photo Books, which mine is not, out of question/budget. I was left deciding between B/W Premium and Color Standard: since I have several graphics in color, pictures and syntax highlighted code, I thought that it’d be cheap to print grayscale so I went with &lt;strong&gt;Color Standard Inks&lt;/strong&gt;. Finger crossed for the &lt;em&gt;“few color images, graphs, or illustrations that have low to moderate ink coverage”&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;I should have picked Casewrap (the hardcover, stitched binding option), but +$7.10 looked too much for the cheapskate I’ve become in my forties, so I got &lt;strong&gt;Perfect Bound&lt;/strong&gt; with a glossy finish.&lt;/p&gt;
-
-&lt;p&gt;My final price was around $20 per copy; I ordered the titanic amount of 3 copies, which added $23 in Ground Courier Shipment, 4/5 days to wait. With my country’s VAT, all this print-on-demand test of mine was worth something more than $90, or about $30 per copy in total.&lt;/p&gt;
-
-&lt;h3 id=&quot;preparing-the-pdf&quot;&gt;Preparing the PDF&lt;/h3&gt;
-
-&lt;p&gt;This section is going to be a bit technical: if you happen to read this post because you want to Lulu-print your own book and it’s not text only (e.g., a novel or poetry), try asking a graphic designer for help. Being subscribed to the Adobe Creative Cloud, I have access to software such as Acrobat DC, InDesign and Photoshop, that I’ve used extensively here.&lt;/p&gt;
-
-&lt;p&gt;Grab all Lulu’s relevant &lt;strong&gt;documentation PDFs&lt;/strong&gt; from &lt;a href=&quot;https://toolkit.lulu.com/&quot;&gt;this page&lt;/a&gt;, and give it a read.&lt;/p&gt;
-
-&lt;p&gt;First, duplicate your Leanpub Print-Ready PDF. Open it in Acrobat and add the recommended &lt;strong&gt;bleed&lt;/strong&gt; – in my case 0.125”; make sure you have a single page (not spreads) PDF with an even number of pages.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/04/Bleed.png&quot; srcset=&quot;/wp-content/uploads/2019/04/Bleed.png 1x, /wp-content/uploads/2019/04/Bleed@2x.png 2x&quot; alt=&quot;Bleed&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Speaking of &lt;strong&gt;Transparency Flattener&lt;/strong&gt;, Lulu provides a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lulu-High-Res-Outlines.flst&lt;/code&gt; preset file: you can’t use it in Acrobat, only when exporting to PDF from InDesign. But from InDesign you can edit it to find out what the settings are.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/04/Transparency.png&quot; srcset=&quot;/wp-content/uploads/2019/04/Transparency.png 1x, /wp-content/uploads/2019/04/Transparency@2x.png 2x&quot; alt=&quot;Transparency&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I am fine with everything but converting the text to outline, so I run the built-in Acrobat Transparency Flattener at high resolution:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/04/Flattener.png&quot; srcset=&quot;/wp-content/uploads/2019/04/Flattener.png 1x, /wp-content/uploads/2019/04/Flattener@2x.png 2x&quot; alt=&quot;Flattener&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I’ve then run a &lt;strong&gt;preflight&lt;/strong&gt; against PDF/X-1a, fixing the errors when possible. I’ve manually substituted images which were too low-res for the print version (but OK for screen/display visualization).&lt;/p&gt;
-
-&lt;p&gt;When it comes to &lt;strong&gt;Color Management&lt;/strong&gt;, things are a bit fuzzy: Lulu provides two sets of JobOptions, &lt;a href=&quot;http://connect.lulu.com/en/discussion/32882/how-to-make-a-pdf-using-adobe-indesign&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;http://connect.lulu.com/en/discussion/33681/pdf-creation-settings-how-can-i-be-sure-my-pdf-will-print-correctly&quot;&gt;here&lt;/a&gt;, with of instruction contrasting with each other, or with information that Lulu provides in the Guides. For instance, I’ve read to convert everything to sRGB, and Leave Color Unchanged at the same time.&lt;/p&gt;
-
-&lt;p&gt;I’ve &lt;a href=&quot;http://connect.lulu.com/en/discussion/353421/joboptions-and-colormanagement/&quot;&gt;asked in their forums&lt;/a&gt;, and they opened a support ticket for me. After a couple of very kind emails, I got this:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;They have ongoing partnerships with several print facilities in different places in the world (US, Canada, Europe, and Australia).&lt;/li&gt;
-  &lt;li&gt;They have agreed with each contractor on a set of quality standards (based on ink/paper), although their print partners are largely autonomous.&lt;/li&gt;
-  &lt;li&gt;They tend to suggest sRGB to standardize the color input (and avoid problems).&lt;/li&gt;
-  &lt;li&gt;It is not possible to micro-manage (prepress-style) graphic elements in the PDF (custom CMYK separations, GCR, etc) for each print shop may do &lt;em&gt;CMYK repurposing&lt;/em&gt; on their own e.g., for color management or ink saving purposes.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This also explains why the product description is not very much detailed, but based on broad quality definitions. Reluctantly, I made sure that everything was &lt;strong&gt;converted to sRGB&lt;/strong&gt; and did upload the PDF to Lulu’s servers – hoping that the pre-press gods wouldn’t notice my sin.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/04/sRGB.png&quot; srcset=&quot;/wp-content/uploads/2019/04/sRGB.png 1x, /wp-content/uploads/2019/04/sRGB@2x.png 2x&quot; alt=&quot;sRGB&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In case you’re wondering, I didn’t go on asking which print facility my order would have been sent to (somewhere in south UK, it turned out), with the idea of getting in touch with their prepress department.&lt;/p&gt;
-
-&lt;p&gt;For the &lt;strong&gt;cover&lt;/strong&gt;, Lulu provides an InDesign template and a Spine width calculator (based on the binding type and pages number) – creating the design from scratch wasn’t difficult.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/04/Cover.jpg&quot; srcset=&quot;/wp-content/uploads/2019/04/Cover.jpg 1x, /wp-content/uploads/2019/04/Cover@2x.jpg 2x&quot; alt=&quot;Cover&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The whole online order creation process is guided, and almost impossible to mess up when you have all the assets ready. I paid with PayPal, and the book got printed I think the next day, and arrived in my hands in a few days later as expected.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-printed-result&quot;&gt;The printed result&lt;/h2&gt;
-
-&lt;p&gt;It’s hard to be judgmental the very moment you hold for the first time a printed copy of the work that took 1.5 years of your life to complete: it looked awesome, and at the same time I was so fed up with the entire project that I gave it a quick review, wrote an affectionate dedication to Jeffrey, prepared the package and sent it to Adobe’s offices in Minnesota, US.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2019/04/Spread.jpg&quot; srcset=&quot;/wp-content/uploads/2019/04/Spread.jpg 1x, /wp-content/uploads/2019/04/Spread@2x.jpg 2x&quot; alt=&quot;Spread&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;That said, you can read below a frank bullet-points list of what I liked, what I didn’t really like, what was my fault and what I’d do differently next time to get a better result.&lt;/p&gt;
-
-&lt;video width=&quot;680&quot; height=&quot;382&quot; controls=&quot;controls&quot; style=&quot;max-width: 100%; margin: 0 auto; height: auto; display: block; border: 0;&quot;&gt;
-&lt;source src=&quot;/wp-content/uploads/2019/04/FlippingPages.mp4&quot; type=&quot;video/mp4&quot; /&gt;
-&lt;/video&gt;
-
-&lt;h3 id=&quot;the-good-parts&quot;&gt;The good parts&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The &lt;strong&gt;paper&lt;/strong&gt; is nice: it looks very much like an 80g/mq, the coating is OK, it surely has some optical brighteners but it’s not obviously bluish/greenish.&lt;/li&gt;
-  &lt;li&gt;The &lt;strong&gt;print quality&lt;/strong&gt; is OK too. I was a bit worried about some pages with higher ink coverage, but in general there are no ghosting problems, stains and such. The color rendition and gray balance are fine too. Usually, software development books are printed in B/W, but given the limited batch I’ve ordered, it made little sense to save few bucks on B/W inks. Would I need a larger number of copies, I’d surely go for it. In case, it would be nice to have an 80 grams uncoated paper, but Lulu offers 60 only without coating.&lt;/li&gt;
-  &lt;li&gt;The &lt;strong&gt;binding&lt;/strong&gt; is robust, not the kind of book that looks like it will shred pages around the fifth time you open it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure&gt;  
-&lt;img src=&quot;/wp-content/uploads/2019/04/Binding.jpg&quot; srcset=&quot;/wp-content/uploads/2019/04/Binding.jpg 1x, /wp-content/uploads/2019/04/Binding@2x.jpg 2x&quot; alt=&quot;Binding&quot; /&gt;
-&lt;figcaption&gt;PerfectBound looks sturdy indeed&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;the-bad-parts&quot;&gt;The bad parts&lt;/h3&gt;
-
-&lt;p&gt;Or at least the ones I personally find not up my expectations.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The &lt;strong&gt;package&lt;/strong&gt; wasn’t particularly good: the usual cardboard box with little protection against corners damage.&lt;/li&gt;
-  &lt;li&gt;The soft &lt;strong&gt;cover&lt;/strong&gt; is rather fragile, especially along edges, where the glossy coat may get slightly peeled off. I’d be curious to see whether a matte finish is less delicate.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure&gt;  
-&lt;img src=&quot;/wp-content/uploads/2019/04/Peeled.jpg&quot; srcset=&quot;/wp-content/uploads/2019/04/Peeled.jpg 1x, /wp-content/uploads/2019/04/Peeled@2x.jpg 2x&quot; alt=&quot;Peeled glossy finish&quot; /&gt;
-&lt;figcaption&gt;Glossy finish peeling off&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Not being able to micro-manage the &lt;strong&gt;color separations&lt;/strong&gt; still bugs me a bit.&lt;/li&gt;
-  &lt;li&gt;There is some &lt;strong&gt;banding&lt;/strong&gt; here and there, that somehow I expected on a digital printed book. Probably the pricey “Color Premium inks” option deals with it.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;figure&gt;  
-&lt;img src=&quot;/wp-content/uploads/2019/04/Banding.jpg&quot; srcset=&quot;/wp-content/uploads/2019/04/Banding.jpg 1x, /wp-content/uploads/2019/04/Banding@2x.jpg 2x&quot; alt=&quot;Banding&quot; /&gt;
-&lt;figcaption&gt;Dark and light Banding on the sky&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h3 id=&quot;my-mistakes&quot;&gt;My mistakes&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The &lt;strong&gt;book size&lt;/strong&gt; I chose is too big to my taste. This is something I couldn’t change&lt;sup id=&quot;fnref:change&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:change&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;: it would have meant re-checking all the elements flow, and I had no time for that. When you start writing your eBook, even if you don’t plan to print it, think about the physical size of the page: PDF area is one thing, paper surface is another. I went with US Letter (8.5x11 inches, 21.6x27.9cm): other books in the software development category are smaller, like 18x23.5cm (O’Reilly) or 1cm wider (Packt), so around 7-7.5x9.2 inches. Mine looks unnecessarily large.&lt;/li&gt;
-  &lt;li&gt;I didn’t check all the &lt;strong&gt;images resolution&lt;/strong&gt; properly, so you can spot some pixelation here and there.&lt;/li&gt;
-  &lt;li&gt;Never, ever take &lt;strong&gt;dark interface programs’ screenshots&lt;/strong&gt;. Dark interfaces are cool to use, eye-relaxing to look at, moderately nice in PDFs, dreadful in print, for legibility is compromised. My code’s syntax highlighting was great on the printed page, for it uses a light theme: don’t even think about using a dark theme for it. Also, I’m not 100% sure to have converted to sRGB all the screenshots when taking them&lt;sup id=&quot;fnref:ICC&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:ICC&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It’s not my mistake but it’s not clear either (I’ve to check with Leanpub on that) whether or not the Print-Ready PDF export option downsamples images. It may make sense for display PDFs, not so for Print where it is desirable to keep the max resolution available.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
-
-&lt;p&gt;All in all, I am really pleased with the result. It took me some time to figure out the workflow for I was a first timer and I got some things wrong, but I can do better next time (even if I do not plan to offer my book in a printed version anytime soon). The materials are OK, the price is fair for a micro print batch such as mine. I’m curious to hear your experiences with print-on-demand services, so please share it in the comments section.&lt;/p&gt;
-
-&lt;p&gt;But I didn’t tell you the entire story…&lt;/p&gt;
-
-&lt;p&gt;Jeff offered me the possibility to send him two copies of my book: one as a well deserved gift to him, the other… would be sent me back with signatures by the Photoshop teams from both the Minnesota and California offices! Accidentally, &lt;em&gt;“somebody”&lt;/em&gt; 🙏🏻 let also some tattoos, stickers, a pin and a shirt slip into the package, so I’ve now some Photoshop branded swag in the house, for my daughter to steal me&lt;sup id=&quot;fnref:wand&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:wand&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/04/Signatures.jpg&quot; srcset=&quot;/wp-content/uploads/2019/04/Signatures.jpg 1x, /wp-content/uploads/2019/04/Signatures@2x.jpg 2x&quot; alt=&quot;Signatures&quot; /&gt;
-&lt;figcaption&gt;Adobe Photoshop team signatures from Minnesota and California offices&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Isn’t that &lt;strong&gt;awesome&lt;/strong&gt;?! ❤️&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:Pandoc&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;&lt;a href=&quot;https://pandoc.org/&quot;&gt;Pandoc&lt;/a&gt; is an open-source conversion tool that is also able to export to PDF from MarkDown, but the styling part is time consuming and you got to have quite some LaTeX knowledge. &lt;a href=&quot;https://www.softcover.io/&quot;&gt;Softcover&lt;/a&gt; is a free alternative to Leanpub for the MarkDown to PDF part, but it requires more customization efforts, a bit of LaTeX skills and the resulting book style isn’t as good as Leanpub’s. Both have the notable upside that the entire process is local, whereas Leanpub creates the PDF server-side. &lt;a href=&quot;#fnref:Pandoc&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:hook&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;The whole book was within a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git&lt;/code&gt; repository, with an optional hook so that each push triggered the book compilation. &lt;a href=&quot;#fnref:hook&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:md2pdf&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;Leanpub conversion uses an intermediate LaTeX step, so it’s actually MarkDown to LaTeX to PDF. It is very likely that, internally, thay make use of Pandoc heavily tweaked with custom LaTeX styling. Which is what allows Text Blocks with Icons, Syntax Highlighting and all the features that make Leanpub ebooks so nice. &lt;a href=&quot;#fnref:md2pdf&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:time&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;It all may sound a bit sloppy now, but back then I really felt like I was in hurry: with more time, I could have evaluated options more carefully. &lt;a href=&quot;#fnref:time&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:change&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;Leanpub lets you pick a different page size when you export the Print-Ready PDF, but as I’ve written I had no time to check +400 pages again to look for, and fix, misplaced elements. &lt;a href=&quot;#fnref:change&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:ICC&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;On Mac, when you take a screenshot it is assigned the Display’s ICC profile. If you save the PNG/JPG with the embedded ICC, it gets properly converted to sRGB in the PDF post-production stage; if, by mistake, you discard the ICC profile while saving, sRGB is assigned (and therefore not converted) in the PDF, and colors will shift. &lt;a href=&quot;#fnref:ICC&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:wand&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;She’s got a Magic Wand tattoo on her forearm that she wiggles around the house like Hermione Granger. &lt;a href=&quot;#fnref:wand&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Sat, 13 Apr 2019 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2019/04/printing-leanpub-books-on-lulu/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/04/printing-leanpub-books-on-lulu/</guid>
-        
-        <category>Leanpub</category>
-        
-        <category>Lulu</category>
-        
-        <category>Print-on-demand</category>
-        
-        
-        <category>Personal</category>
         
       </item>
     

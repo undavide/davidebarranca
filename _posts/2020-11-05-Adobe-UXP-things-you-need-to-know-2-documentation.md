@@ -27,7 +27,9 @@ If you find this content useful, _please consider supporting me_ – 2020 is a h
 </form>
 
 If you cannot, or don't want to, that's OK anyway.  
-Stay safe and thanks!
+Stay safe and thanks! 🙏🏻
+
+{% include UXP_TYNTN.md %}
 
 ## Transcription
 
