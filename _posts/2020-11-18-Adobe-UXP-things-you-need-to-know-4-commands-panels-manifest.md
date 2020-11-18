@@ -15,7 +15,7 @@ tags:
 
 In this episode I'm discussing Panels vs. Commands in Vanilla JS UXP plugins and the way they are expressed in the `manifest.json`
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dWL-csGECW8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LkWfEC7bqdE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 If you find this content useful, _please consider supporting me_ – 2020 is a hell of a year. I don't have a Patreon page, but I've got two fairly cheap plugins on the Photoshop Marketplace, [ALCE](https://adobe.com/go/cc_plugins_discover_plugin?pluginId=28db2e07&workflow=share) (Advanced Local Contrast Enhancer) and [Double USM](https://adobe.com/go/cc_plugins_discover_plugin?pluginId=78c3cdaf&workflow=share) (on sharpening). If you happen to buy them, please leave a positive rating/review, it would greatly help. Or, you can
 
