@@ -5,15 +5,15 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 Nov 2020 21:14:49 +0100</pubDate>
-    <lastBuildDate>Wed, 18 Nov 2020 21:14:49 +0100</lastBuildDate>
+    <pubDate>Mon, 23 Nov 2020 17:31:25 +0100</pubDate>
+    <lastBuildDate>Mon, 23 Nov 2020 17:31:25 +0100</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
-        <title>Adobe UXP: Things you need to know! #4 Commands, Panels and the manifest.json</title>
-        <description>&lt;p&gt;In this episode I’m discussing Panels vs. Commands in Vanilla JS UXP plugins and the way they are expressed in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;manifest.json&lt;/code&gt;&lt;/p&gt;
+        <title>Adobe UXP: Things you need to know! #5 Sync vs. Async code in Photoshop DOM Scripting</title>
+        <description>&lt;p&gt;In this episode I’m discussing asynchronous code in the Photoshop DOM and how the new JavaScript Scripting engine differs from ExtendScript.&lt;/p&gt;
 
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/dWL-csGECW8&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/sf7YPWUppSM&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt; – 2020 is a hell of a year. I don’t have a Patreon page, but I’ve got two fairly cheap plugins on the Photoshop Marketplace, &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=28db2e07&amp;amp;workflow=share&quot;&gt;ALCE&lt;/a&gt; (Advanced Local Contrast Enhancer) and &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=78c3cdaf&amp;amp;workflow=share&quot;&gt;Double USM&lt;/a&gt; (on sharpening). If you happen to buy them, please leave a positive rating/review, it would greatly help. Or, you can&lt;/p&gt;
 
@@ -33,6 +33,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -40,7 +41,69 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
 &lt;p&gt;The transcripted video looks weird, but I’m told it helps to have it anyway because it’s easier to translate to other languages. Apologies for the lack of punctuation and the sloppy syntax.&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;&lt;em&gt;transcription in progress, please wait&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;To be added soon…&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 23 Nov 2020 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html</link>
+        <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html</guid>
+        
+        <category>UXP</category>
+        
+        
+        <category>Development</category>
+        
+      </item>
+    
+      <item>
+        <title>Adobe UXP: Things you need to know! #4 Commands, Panels and the manifest.json</title>
+        <description>&lt;p&gt;In this episode I’m discussing Panels vs. Commands in Vanilla JS UXP plugins and the way they are expressed in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;manifest.json&lt;/code&gt;&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/LkWfEC7bqdE&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt; – 2020 is a hell of a year. I don’t have a Patreon page, but I’ve got two fairly cheap plugins on the Photoshop Marketplace, &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=28db2e07&amp;amp;workflow=share&quot;&gt;ALCE&lt;/a&gt; (Advanced Local Contrast Enhancer) and &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=78c3cdaf&amp;amp;workflow=share&quot;&gt;Double USM&lt;/a&gt; (on sharpening). If you happen to buy them, please leave a positive rating/review, it would greatly help. Or, you can&lt;/p&gt;
+
+&lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
+&lt;input type=&quot;image&quot; src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; title=&quot;PayPal - The safer, easier way to pay online!&quot; alt=&quot;Donate with PayPal button&quot; /&gt;
+&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;https://www.paypal.com/en_IT/i/scr/pixel.gif&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;
+&lt;/form&gt;
+
+&lt;p&gt;If you cannot, or don’t want to, that’s OK anyway.&lt;br /&gt;
+Stay safe and thanks! 🙏🏻&lt;/p&gt;
+
+&lt;h2 id=&quot;the-whole-series-so-far&quot;&gt;The whole series so far&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know.html&quot;&gt;#01 – Rundown on the UXP announcement @ the Adobe MAX 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
+
+&lt;p&gt;The transcripted video looks weird, but I’m told it helps to have it anyway because it’s easier to translate to other languages. Apologies for the lack of punctuation and the sloppy syntax.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Hey I’m Davide and this is Adobe UXP things you need to know! Today I’m talking about Panels versus Commands in vanilla JavaScript plugins and the way they are expressed in the manifest.json. Plus some other stuff, but this is the main plan so let’s get to it. I need some plug-in samples to work on so head to this GitHub repo and grab them all. The ones that I’m interested into this time are the direct-action-js-sample the hello-world-panel-js-sample and the ui-kitchen-sink sample so let me load in Photoshop as well this first one here so back to the UXP DevTool and if you are unsure how to operate with the UXP DevTool please refer to my previous video let’s add this one first so let’s point to the manifest.json which is here and open this loads it not in Photoshop but in the ui of the UXP DevTool and then with this load command we should find it in Photoshop unless we don’t and the reason why we don’t see anything is because this plugin isn’t made of panels if you remember something that I told you I think in the very first video is that UXP plugins could be made of zero or more panels zero or more commands zero or more modal dialogues and this one has no graphic user interface has no panel it’s just one command in fact you can find it here in the plugins sample write layer names and this is the commands or also in the plugins panel and here you find it right so let’s see what this is all about so let me try to run it first to see that it is operational please open at least one document let me create quickly one then duplicate the background layer a bunch of times click write layer names to a file and this pops up this dialog that asks me to save this layer names txt let’s pick UXP and then samples this is a good place I think it’s done so let’s check in the Finder we should have it UXP samples and here it is layernames.txt and here are the layer names that I have in my document. So cool this works.
+Now I’m not really interested into the mechanics of the plugin but in the way that it is structured to contain a single command or more commands as we will see because you have to know, and this is
+a very important take away, that in UXP there is no concept of an independent script. At least so far. So the things that you were used to find for instance in the file &amp;gt; scripts &amp;gt; browse… menu so loading and running a JSX file, a single independent script this is not any more a thing in UXP again at least so far so things might change in the future but right now scripts can live only within the context of a UXP plugin which is exactly what this sample write layer names plugin does: it contains one command aka one script so let’s look at the code for it and the one thing that I want to show you first is the manifest.json so let me collapse everything and here you have the id which in this case follows the reverse url convention so it’s com.adobe. and then the name of the panel instead of the alphanumeric string that you are given by the UXP marketplace actually by the developer console when you want to create a new product for the UXP marketplace you could add here everything even mamma mia that’s going to work just fine then you have the name which is the string here the version 1.0.0 and the entry point which in this case is a JavaScript file and this makes sense because this plugin doesn’t have a graphic user interface so you don’t have the need for an html file. Usually plugins with panels have an entry point of an html index.html in this case it makes sense to have a JavaScript file. In case of React it makes no difference you can have either the JS or the html in case of the JS it’s React that is injecting the html elements in the DOM via JavaScript right so then the host array we have Photoshop minimum version 22.0.0 and the manifest version must be at least four now let me skate over the entry points for the moment and let’s focus on the icons so this is an array but it contains only one object because this icon that we are specifying here with this path applies to all the themes the darkest dark the lightest and the light medium I am positive is just an Adobe XD thing so you can remove it and all is a bit redundant here if you want to have an icon for the dark theme set and another for the light theme sets you just have to duplicate this entire object and of course pick the right icon and then set the themes for which it applies very important the species here: is pluginList and this pluginList means the icon for Photoshop’s own plugins panel which is different in case of a panel that has its own icon but we will see that when we deal with panels in the next example so these are the icons and please note that even if we specify this plugin-icon.png we don’t have it in the icons folder we have plugin-icon@1x and plugin-icon@2x this is because we have a couple of scales the default one and the one for retina displays and we specify explicitly the size for the retina one here so the 2x is 48 x 48 and the 1x is 24 x 24 and we add the 48 here okay so these are the icons let’s now focus on the entry points this is an array because you can have more than one we have just one command here which is this one write layer names to a file so one object the type is command instead of panel and you have an id of writelayers and this is really important so remember that and then a label: label is of course what is written here write layer names to a file and it has default property because you can localize this so for instance if you want to add an Italian version you say “it” and then you add here the translation okay but you must provide the defaults let me get rid of that and be aware that trailing commas are evil in manifests so they’re going to break everything if you leave them around so let’s save back the file as it was all right so the id I said is really important so let me close those icons and let me open the index.js let’s start from the very beginning so you are requiring UXP and UXP is provided by the environment and if you are unfamiliar with this kind of syntax which is modern JavaScript let’s say that this is equal to const UXP is equal to require UXP so you’re saying listen: require UXP returns an object and this object has an entrypoints property so you could say UXP dot entry point and that would be perfectly fine you could even say listen let’s stick that into another constant so const entrypoints let me grab this here equal UXP dot entrypoints right with this modern syntax you are saying I know I understand that you’re returning me an object with an entrypoints property and I’m only interested into that so please stick it into an entrypoints constant okay right so the entrypoints has a setup method and the setup method accepts an object which is this one this object has a commands property which is in turn another object and in here you can have all the commands that your UXP plug-in is going to host right in this case it’s only one because we have only one so this command here and this property here must match absolutely with the id that you set in the manifest json so think about it this way the manifest.json tells Photoshop how to construct the UXP plug-in so what are the elements you have one UXP plugin named this way that contains for instance one command with this name but it’s the index.js that links that menu item with the function that you’re going to run so this write layers commands is going to run this write layers function which is defined below so let me collapse all those because we’re not really interested in what they are doing but the way they are connected to the manifest again if you are unfamiliar with the syntax well this is just an anonymous function you could write it like a function and then instead of the fat arrow you add parenthesis here okay so it’s an anonymous function that runs a write layers this is exactly the same actually there is no need to wrap it with an anonymous function because you run just this so you could just say you write layers write layers without the parenthesis okay actually even better if this was a lowercase L so let me quickly rename this this way there is no need to duplicate the writing you could just say write layers stop right and this works so let me save this just to show you that it works this is being loaded I want to watch it it’s watching for changes I’m saving so this should be it and you see that it pops up the dialog as it is supposed to do so this is a perfectly viable syntax but let’s get back to the original one all right so what does it say here if we had other menu items it would go here and then the manifest.json file so let’s try to do that
+let’s add another command so let me duplicate the entire object because we are developers we love to copy and paste and instead of write layers this is going to be write I don’t know what documents okay and the label is write document names to a file like that so in this case we need to add another command so comma and write documents and another anonymous function that well let me do something different since we have a show alert here which is just a wrapper for the Photoshop app show alert function let me alert something like I don’t know what writing docs okay so at this point we have this command that matches this id, does it? It does, so let me save everything. I know for a fact that watching for changes at least right now doesn’t take into account manifest changes so if you see here you find just one item in the plugins menu as well so you need to explicitly load it again plug in loaded successfully and now you have both of them and let’s click write document names to a file and an alert should pop up and sure enough it does so it works so you have seen how to add another commands how to create plugins with a command just in case again you’re not really familiar with this new syntax let me tell you how to compartmentalize – is that a word? – how to split the code into a different file so we have all these functions here that you might want to have in another separate file so let me create one and I’m calling this I don’t know what lib.js and let me paste everything in here it’s not too big of a deal I mean there are just three functions but functions grow here we need the right layers and the show alerts so we need to export those in the lib.js so let me module dot exports&lt;/p&gt;
+
+&lt;p&gt;and then I want the write layers to disk which is equal to write layer to disk and then duplicate this and then do the same with show alert which is here let me save this and in the index.js I need to do something quite close to that so instead of entrypoints and requiring UXP we are requiring the lib that sits in the same folder as this index.js and we are interested in the show alert and in the write layers&lt;/p&gt;
+
+&lt;p&gt;with a capital L so this should work fine we are watching for changes and if I click this the alert pops up and if I click the other it doesn’t so something is missing let me try to understand what write layers&lt;/p&gt;
+
+&lt;p&gt;oh write layers to disk I took the wrong one so write layers is the one that I need to export and it has a lowercase L so let me save this and rename that as well and I think that should be it so write layer names to a file still doesn’t work okay let’s take a chance and debug that so debug type error write layers is not defined with a capital l so probably again I’m messing with the yeah messing with the with the names oh because I renamed that oh my bad to show you that you could just remove the second part of the assignment in the object that was a capital L write layers with a capital L and again capital L here and here save capital L save again and this time I bet that is going to run please yes it does so it was little error on my side apologies for the time spent all right so that was it for the commands plugin let’s see what is in a panels plugin so the hello-world-panel-js-sample I want to add the plugin which is this panel-js-sample here so let me point to the manifest json and also load it in Photoshop loaded it successfully and this time it has a UI so it’s just a panel and you see it here sample hello world panel right you can close it and open it this way or from the plugin menu hello world sample what can we do we can show alerts uh we can populate the layers very much like the other one but this time in the panel itself we saw that code in a previous video and we can also clear the list so let’s see what’s different in terms of manifest and the JavaScript code so same things as long as the id name version are involved the main entry point is different though we have an index.html again because this is a panel and it makes sense to have an html the host is the same manifest version as well the icons are the same yes exactly the same the difference is in the entry points for once we have a type of panel this time an id of hello world the id is really important we will see why in a moment then we have a bunch of sizes minimum size maximum size that are exactly what you are expecting them to be and also a preferred docked size so when the panel is docked like this this is a preferred size and the preferred floating size so when it is floating freely all right then you have the label again with the default hellworld sample and the icon so this is different compared to those icons so the icons that are outside of everything are the icons for the plugins panel whereas the icons that are inside the entry point in this case are the panels icons so these icons here you see that this is pretty much different compared to that another difference for the icon is as follows so you still have the theme and in this case you see that you have two different objects in the icons array one for the darkest and dark and another for the lightest and light but also you specify the width and the height of the default scale not the retina scale so on the one hand these are different so it’s 23 times 23 and 46 times 46 instead of the plugins icons that are 24 and 48 so few pixels of difference but here you set the standard slash&lt;/p&gt;
+
+&lt;p&gt;default size whereas in the plugins panel you set the retina size right so this is a little bit of a difference that you have to be aware of when writing your manifest otherwise you’re going to run into unwanted behaviours so let’s have a look at the JavaScript side so this is the manifest we expect to see something similar to this entry point setup thing here and we don’t because apparently you can get away with not having an entry point set up if it’s not strictly needed so here you don’t have it but the panel works fine just the same I don’t know if they are going to require that in the future but so far that’s a possibility but let’s look at the kitchen sink for comparison so in this case the kitchen sink let me reload that once more we saw that in a couple of previous videos ui-kitchen-sink it’s here manifest.json open and then also load it into Photoshop here it is let me close that white background that annoys me all right the kitchen sink is a particular panel in the sense that it contains both a panel which is this one and a command so both of them and you can see them better probably in the menu item the kitchen sink is the plugin and the reload plugin which in this case just reloads the plugin is a command so it contains both of the different types so you have two entry points one object here for the type command id reload plugin and another one for the type panel with id kitchensink and in the JavaScript you have this entrypoints and you should see them somewhere below let me try to find them entry points here you have the entry points setup function that has both the commands and the panels and this kitchen sink here is exactly the same id that is defined in the manifest so again think about the manifest as what to display in the Photoshop ui versus the JavaScript how to link this to actual functions and one that you see here in the panels is the show function that takes a funny argument but we won’t go into that in this video maybe in a later one so what happens in this show is code that is run the first time that the panels show in this case they’re using local storage so let me briefly explain it to you when you switch from tab to tab the active tab is saved in the local storage so that in the next session when you open the panel it opens showing the same exact tab that you left off with okay so this is one possibility let me try to implement the same kind of functionality in this hello-world-panel-js-sample so we need to import again the same let me copy and paste because I’m lazy the same entry point thing so here above we want to have the entry points and then we need to run the setup function in the entry point so entry points dot setup and this accepts an object that has a panels&lt;/p&gt;
+
+&lt;p&gt;property that in turn contains an object again that has this time the id the id of the panel and again be aware that we’re not talking about the idea of the plugin but the id of the panel which is hello world okay so this here and this one is going to have an object and in here we have a show function and in this show function what do I want to do I don’t know just maybe show an alert and show alert again is just a wrapper for the require Photoshop app show alert so show alerts and I don’t know showing like that okay so let me save am I watching this plugin I doubt in fact I’m not watching let me watch for changes and let me save again just to trigger the watch and it says showing now very important thing don’t think that this function shows every time that the panel is closed and reopened because it won’t let me close the kitchen sink the hello world sample is here you see it doesn’t and the reason why is that this shows only the first time because UXP panels are persistent by default if you have experience with CEP panels you know that the initialization code that they might contain would run each time that you reopen them unless they are persistent in which case the init code runs just once while UXP panels are persistent by default so no matter how many times that you close and reopen them this show will run just once if you want to run code based on the show hide status you have to follow a different path that we might look at in a future video so the bottom line is that this show alert just run once okay okay let me recap what we have seen so far we can have plugins that contain just commands scripts must be wrapped with UXP plugins and this is how to do it you can have more than one command inside the same UXP plugin and we’ve also seen how to export functions to be imported with this require syntax and the object destructuring syntax here then we have this hello world panel sample where instead we have panels as opposed to commands and this is defined by the type we still have the id and we can have this entrypoints set up panels and the show function again this must match the string that is found in the manifest.json right and then in the kitchen sync example we have seen a plugin that contains both a command and a panel and the way that the two are set up in the entrypoints setup right? OK I think this is it for this time I hope you have learned something new and if this is the case please consider  &lt;/p&gt;
+
+&lt;p&gt;supporting me I want to thank all the people who made a donation there’s a button on my website it’s been truly very much appreciated you can also purchase ALCE and DoubleUSM in the Photoshop marketplace and if you happen to buy them please leave a positive rating or a review which will always help very much as well. Okay thanks for watching and see you in the next one. Bye!&lt;/p&gt;
 </description>
         <pubDate>Wed, 18 Nov 2020 00:00:00 +0100</pubDate>
         <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html</link>
@@ -77,6 +140,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -121,6 +185,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -170,6 +235,7 @@ Speaking of which: if you find this content useful, &lt;em&gt;please consider su
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -1069,230 +1135,6 @@ see you in the next one. Stay safe! Bye.&lt;/p&gt;
         
         
         <category>Photoshop</category>
-        
-      </item>
-    
-      <item>
-        <title>Leanpub alternatives, IMHO</title>
-        <description>&lt;p&gt;If you’re into technical writing, read along. I’ve used Leanpub’s services for two books of mine out of three, and I am still 100% sure that I couldn’t make a better choice. But when you’re more experienced, there might be reasons to look for alternatives: I’ll tell you mine, how I’ve sorted my doubts out, and what I’ve eventually chosen.&lt;/p&gt;
-
-&lt;h2 id=&quot;tldr&quot;&gt;TL;DR&lt;/h2&gt;
-
-&lt;p&gt;Notable options among others are &lt;a href=&quot;https://pandoc.org/&quot;&gt;Pandoc&lt;/a&gt;, &lt;a href=&quot;https://www.softcover.io/&quot;&gt;SoftCover&lt;/a&gt;, &lt;a href=&quot;https://www.latex-project.org/&quot;&gt;LaTeX&lt;/a&gt;, &lt;a href=&quot;https://affinity.serif.com/en-gb/publisher/&quot;&gt;Affinity Publisher&lt;/a&gt;. Read along to see the piece of technology that I’ve embraced, and why.&lt;/p&gt;
-
-&lt;h2 id=&quot;my-own-needs-which-may-differ-from-yours&quot;&gt;My own needs (which may differ from yours)&lt;/h2&gt;
-
-&lt;p&gt;I am into technical publishing/programming books: I’ve written three of them, that I refer to as &lt;em&gt;“the two big ones”&lt;/em&gt; (more than 350 pages, &lt;a href=&quot;https://www.htmlpanelsbook.com/&quot;&gt;Adobe Photoshop HTML Panels Development&lt;/a&gt; and &lt;a href=&quot;https://www.ps-scripting.com&quot;&gt;Professional Photoshop Scripting&lt;/a&gt;), and &lt;em&gt;“the short one”&lt;/em&gt; (less than 100 pages, &lt;a href=&quot;https://www.davidebarranca.com/2018/01/ultimate-guide-native-installers-automated-build-system/&quot;&gt;The Ultimate Guide to Native Installers and Automated Build Systems&lt;/a&gt;).&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;a href=&quot;https://www.ps-scripting.com/bundles.html&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2019/10/books.jpg&quot; srcset=&quot;/wp-content/uploads/2019/10/books.jpg 1x, /wp-content/uploads/2019/10/books@2x.jpg 2x&quot; alt=&quot;My Books&quot; /&gt;&lt;/a&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;I do sell them on my own via &lt;a href=&quot;https://gumroad.com/&quot;&gt;Gumroad&lt;/a&gt;; I do the marketing/newsletter on my own; I find beta readers/tech editors on my own; I do design the book on my own. Basically, I’m ever such a grumpy, control-freak guy with some tech background who needs to produce the best looking &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.pdf&lt;/code&gt; that he can.&lt;/p&gt;
-
-&lt;p&gt;Stuff &lt;strong&gt;I very much like&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Being able to customize the page design&lt;/li&gt;
-  &lt;li&gt;Relying on a repeatable, robust process&lt;/li&gt;
-  &lt;li&gt;Open source / offline tools&lt;/li&gt;
-  &lt;li&gt;Automated typesetting&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Stuff &lt;strong&gt;I don’t particularly need/like&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Anything that goes beyond the PDF creation&lt;/li&gt;
-  &lt;li&gt;Online tools&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;To some extent, I can trade easiness for customizability because I do not write regularly: I embarque on big projects about once every couple of years, I am not willing to reinvent the wheel each time.&lt;/p&gt;
-
-&lt;p&gt;What follows is my personal quest for viable Leanpub alternatives: it is 100% based on my needs, skillset and amount of time I can currently devote on this.&lt;/p&gt;
-
-&lt;h2 id=&quot;why-am-i-looking-for-alternatives-in-the-first-place&quot;&gt;Why am I looking for alternatives in the first place?&lt;/h2&gt;
-
-&lt;p&gt;In my opinion, &lt;strong&gt;Leanpub is by far the most usable, well crafted service on the market for ebook authors, and I couldn’t recommend them more&lt;/strong&gt;. My &lt;em&gt;two big books&lt;/em&gt; have been produced by Leanpub, and could I go back in time I’d choose them again.&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/10/PSScripting.png&quot; srcset=&quot;/wp-content/uploads/2019/10/PSScripting.png 1x, /wp-content/uploads/2019/10/PSScripting@2x.png 2x&quot; alt=&quot;Professional Photoshop Scripting, a Leanpub book&quot; /&gt;
-&lt;figcaption&gt;Professional Photoshop Scripting, a Leanpub book&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Not only they provide you with great tools for creating e-books, connecting authors with readers, managing sales, landing pages and the like, they are also heavily involved into advancing the industry with new standards such as &lt;a href=&quot;https://leanpub.com/markua/read&quot;&gt;Markua&lt;/a&gt; (a book-targeted, enhanced flavour of MarkDown). Lately, they have broaden their offer developing courses creation tools as well.&lt;/p&gt;
-
-&lt;p&gt;If you’re tackling your first book, then Leanpub is a no brainer. Stop reading this and go creating a new Author account on their website.&lt;/p&gt;
-
-&lt;p&gt;That said, the show stopper for me is that the PDF creation is a &lt;strong&gt;remote process&lt;/strong&gt; – well managed, sync’d with Dropbox, hooked with GitHub/Bitbuckets, yet remote nonetheless.&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/10/generation.jpg&quot; srcset=&quot;/wp-content/uploads/2019/10/generation.jpg 1x, /wp-content/uploads/2019/10/generation@2x.jpg 2x&quot; alt=&quot;Leanpub remote PDF generation&quot; /&gt;
-&lt;figcaption&gt;Leanpub remote PDF generation&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;I don’t necessarily would like WYSIWYG, but synch’ing, waiting some minutes for the generation, and downloading is adding a friction that over time I’ve found unbearable. Especially when something doesn’t go the way you expect, i.e. if the layout requires many small tweaks, or worse the PDF generation crashes due to errors that aren’t easy to debug. When needed, Leanpub support never fails you; still, you need them to look at the log and find out what went wrong. Interrupting the creative flow is never a jolly business.&lt;/p&gt;
-
-&lt;p&gt;Features wise, I have little to complain: some of the limitations I had when I wrote my &lt;em&gt;two big books&lt;/em&gt; with Leanpub may have been overcome with the introduction of Markua, which wasn’t ready back then. Extra customization is always welcome, but the built-in set is comprehensive enough.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-leanpub-pdf-generation&quot;&gt;The Leanpub PDF generation&lt;/h3&gt;
-
-&lt;p&gt;Technically speaking, at least with the MarkDown-in, PDF-out process, Leanpub relies on an intermediate LaTeX step; so it actually is MD to LaTeX to PDF (I suppose it is the same with Markua, but I can’t be sure). If you’re not familiar with it, LaTeX is a &lt;em&gt;“document preparation system for high-quality typesetting”&lt;/em&gt; – or in layman terms, an horribly complex markup language.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;MarkDown is a markup language too, but much simpler. It lets you write &lt;em&gt;plain text&lt;/em&gt; with a very light and minimal markup so that titles are made with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#&lt;/code&gt; symbols, the asterisks in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;**that**&lt;/code&gt; turn &lt;strong&gt;that&lt;/strong&gt; bold, etc.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/10/markdown.png&quot; srcset=&quot;/wp-content/uploads/2019/10/markdown.png 1x, /wp-content/uploads/2019/10/markdown@2x.png 2x&quot; alt=&quot;MarkDown Example&quot; /&gt;
-&lt;figcaption&gt;A MarkDown example (this blogpost)&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;In a way, you might simplify matters saying that, among the rest, Leanpub has put together a very well designed set of &lt;em&gt;LaTeX styles&lt;/em&gt; on top of a well-crafted MD conversion, so that the resulting PDF is remarkably good (setting aside &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.epub&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.mobi&lt;/code&gt; versions, that are not a strict requirement for me).&lt;/p&gt;
-
-&lt;h3 id=&quot;leanpubs-pros-and-cons&quot;&gt;Leanpub’s Pros and Cons&lt;/h3&gt;
-
-&lt;p&gt;IMHO, on the plus side: writing in MarkDown is almost frictionless, the MD to PDF workflow frees your mind and lets you concentrate on producing the actual content, Markua is a promising evolution, they offer a ton of marketing features.&lt;/p&gt;
-
-&lt;p&gt;IMHO, the cons: there is a limited set of available customizations, it’s a paid service (as it should be!), above all the PDF generation doesn’t happen locally but on their servers – which is the real obstacle for me.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-i-have-evaluated-alternatives&quot;&gt;How I have evaluated alternatives&lt;/h2&gt;
-
-&lt;p&gt;I am not the kind of guy who would write a book using Libre Office, and exporting it to PDF right away. It may be super handy for articles, yet I don’t think it is up to the task for books. Or possibly it is, but either I am not familiar enough with it to deal with named cross-references, etc. or it is not a good fit for &lt;em&gt;programming&lt;/em&gt; books: e.g., my stuff involves a good deal of listings (programming code, mostly but not exclusively written in JavaScript) that require to be numbered and colored with proper syntax-highlighting, etc.&lt;/p&gt;
-
-&lt;p&gt;A tradeoff that I can bear: giving up some of the easiness that comes with writing-in-MarkDown-and-forget-about-everything-else. I.e., I am ready to decouple the writing from the typesetting processes.&lt;/p&gt;
-
-&lt;h2 id=&quot;pandoc&quot;&gt;Pandoc&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://pandoc.org/&quot;&gt;Pandoc&lt;/a&gt; is an open source set of tools that let you convert between formats - a lot of them, including MarkDown,  ePub, Microsoft Word, InDesign &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.idml&lt;/code&gt;, PDF (via LaTeX). If you need it, you can get get a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.mobi&lt;/code&gt; from an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.epub&lt;/code&gt; with the help of &lt;a href=&quot;https://calibre-ebook.com/&quot;&gt;Calibre&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Pandoc is super-awesome, it is free, it runs as a command-line utility from the Terminal for Mac, Win and Linux, it provides the same sort of MD to LaTeX to PDF workflow that Leanpub sports. There’s an elephant in the room, though: you must rely on a set of custom &lt;em&gt;LaTeX styles&lt;/em&gt; to tweak the PDF appearance. In other words, the default conversion is elegant as almost any LaTeX document is by default, but rather dull: if you want to use some of the fancier stuff and you don’t know your LaTeX… you’re &lt;em&gt;totally&lt;/em&gt; out of luck.&lt;/p&gt;
-
-&lt;p&gt;Of course there is plenty of &lt;a href=&quot;https://github.com/jgm/pandoc/wiki/User-contributed-templates&quot;&gt;templates&lt;/a&gt;. I did play a little bit with one called &lt;a href=&quot;https://github.com/Wandmalfarbe/pandoc-latex-template&quot;&gt;Eisvogel&lt;/a&gt;, but I couldn’t really figure out how to bend it to my needs, nor I did know how to “teach Pandoc” to interpret the MarkDown that I would like to be linked, say, to a custom LaTeX &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\newcommand&lt;/code&gt;.&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/10/eisvogel.png&quot; srcset=&quot;/wp-content/uploads/2019/10/eisvogel.png 1x, /wp-content/uploads/2019/10/eisvogel@2x.png 2x&quot; alt=&quot;The Eisvogel LaTeX template for Pandoc&quot; /&gt;
-&lt;figcaption&gt;The Eisvogel LaTeX template for Pandoc&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;In the end, I was facing two distinct and quite steep learning curves: getting the hang of LaTeX and Pandoc &lt;em&gt;at the same time&lt;/em&gt;, I got frightened and called quit.&lt;/p&gt;
-
-&lt;h2 id=&quot;softcover&quot;&gt;Softcover&lt;/h2&gt;
-
-&lt;p&gt;I did use &lt;a href=&quot;https://www.softcover.io/&quot;&gt;SoftCover&lt;/a&gt; for my &lt;em&gt;short book&lt;/em&gt; a while ago, and I was quite pleased. Keeping it to the book generation process alone (Softcover offer sales services too), it is based on an open-source Ruby command-line set of tools to process MarkDown in, and output PDF, plus &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.epub&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.mobi&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.html&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Softcover is more explicit in terms of intermediate steps, for it advocates the use of PolyTeX: &lt;em&gt;“a strict subset of the LaTeX typesetting language”&lt;/em&gt;. Quite interestingly, you’re allowed to mix-in some LaTeX in the MarkDown, that works in combination with the Softcover provided styles. The more LaTeX you know, the better you can customize them.&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/10/softcover.jpg&quot; srcset=&quot;/wp-content/uploads/2019/10/softcover.jpg 1x, /wp-content/uploads/2019/10/softcover@2x.jpg 2x&quot; alt=&quot;The Softcover Manual&quot; /&gt;
-&lt;figcaption&gt;The Softcover Manual&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;All in all, my experience with Softcover on the first book was OK. I had to tweak quite some things in the styles to my taste, and I’ve copied and pasted from &lt;a href=&quot;https://tex.stackexchange.com&quot;&gt;TeX StackExchange&lt;/a&gt; more than a sensible developer would find appropriate – without really knowing what I was doing. Still, I did like more the design that comes with Leanpub out-of-the-box; on the plus side, I enjoyed very much the local PDF generation and PolyTeX features such as named cross-references.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Since I’ve mentioned them a couple of times already, a &lt;em&gt;named cross reference&lt;/em&gt; is a piece of text (could be a title, a listing, a table, etc.) to which you attach a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\label&lt;/code&gt;, and to which you can refer to with the same label. Magic happens because you automatically get both the correct numeration and name (here, “figure 1.2”).&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/10/cref.png&quot; srcset=&quot;/wp-content/uploads/2019/10/cref.png 1x, /wp-content/uploads/2019/10/cref@2x.png 2x&quot; alt=&quot;Named cross references&quot; /&gt;
-&lt;figcaption&gt;Named cross references&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Unfortunately, when I got back to my one year old &lt;em&gt;short book&lt;/em&gt; markdown text to add some new content, the book generation failed. I couldn’t get to the root of the problem in a decent amount of time – a Ruby version issue, some dependencies missing, who knows. That mishap did leave me with a vague “lack of robustness” feeling: had I used Softcover more frequently, I would have been able to steer the wheel and correct any small issue that, inevitably, presented itself over time. But after such a long hiatus, I felt that using a tool on which I wasn’t in full control was too much of a gamble.&lt;/p&gt;
-
-&lt;h2 id=&quot;affinity-publisher&quot;&gt;Affinity Publisher&lt;/h2&gt;
-
-&lt;p&gt;I am a true believer on &lt;a href=&quot;https://affinity.serif.com&quot;&gt;Affinity&lt;/a&gt;’s products lineup, so I’ve listed their Publisher instead of Adobe InDesign – even if I’m more familiar with the latter than the former&lt;sup id=&quot;fnref:publisher&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:publisher&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. That is to say that I have evaluated the possibility to build the book “manually”, with a page design application.&lt;/p&gt;
-
-&lt;p&gt;I must confess that, even if I would have enjoyed the possibility to get a live, visual feedback and pixel precision positioning, I tend to keep InDesign and its breed at an arm distance whenever possible (which, thanks to my job, is not always): I’m afraid I just don’t like it. The idea to compose a short book, not to mention a long one, sounds dreadful to me.&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/10/publisher.jpg&quot; srcset=&quot;/wp-content/uploads/2019/10/publisher.jpg 1x, /wp-content/uploads/2019/10/publisher@2x.jpg 2x&quot; alt=&quot;Affinity Publisher&quot; /&gt;
-&lt;figcaption&gt;Affinity Publisher&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Besides, listings are not so easy to typeset on Publisher: you’d need to copy the code from, say, Visual Studio Code, paste it on Pages/Word, copy it again and eventually paste inside a Text Frame to retain the RTF information – i.e. to keep the Syntax Highlighting. Which is a PITA for code maintenance and it doesn’t really scale up when the book grows. I’ve logged a feature request for automated programming languages syntax highlighting on Affinity’s forums, and I’ve moved on.&lt;/p&gt;
-
-&lt;h2 id=&quot;latex&quot;&gt;LaTeX&lt;/h2&gt;
-
-&lt;p&gt;Frankly, the idea of messing with master pages, character and paragraph styles, references, etc. on a page design application such as Affinity Publisher shedded a new, much brighter light on LaTeX. Which I started exploring. Given that I tend to fall in love with whatever piece of technology that you put in front of my nose, I tried to be unbiased.&lt;/p&gt;
-
-&lt;p&gt;LaTeX is mostly used in academia, almost exclusively sciences and maths. It is known for providing an elegant typesetting out of the box, and equations so &lt;a href=&quot;https://www.nature.com/articles/d41586-019-01796-1&quot;&gt;beautifully drawn&lt;/a&gt; that mathematicians could stare at them for hours on end.&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/10/math.png&quot; srcset=&quot;/wp-content/uploads/2019/10/math.png 1x, /wp-content/uploads/2019/10/math@2x.png 2x&quot; alt=&quot;LaTeX equations example&quot; /&gt;
-&lt;figcaption&gt;LaTeX equations example&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;Actually, it seems to have spread just because academic writers were such bad typesetters that they desperately needed some sort of tool that let them focus on the content only. That said, it strikes me that among the many hundreds of packages (i.e. add-on features) available for LaTeX, their documentation, that is obviously written in LaTeX, kind of stinks. Visually I mean, it’s ugly – which is quite ironic I suppose.&lt;/p&gt;
-
-&lt;p&gt;LaTeX is unfriendly to say the least: the learning curve is undoubtedly &lt;em&gt;steep&lt;/em&gt;. For some reason, it seems like documentation is chiefly reference-based, with rare occasional examples. You can easily find yourself browsing for 7 years old replies on TeX StackExchange thinking: “Sweet, that is probably gonna work” (would it be a JavaScript library, a 7 months old reply has already a good chance to be outdated).&lt;/p&gt;
-
-&lt;p&gt;I subscribe 100% to the author of &lt;a href=&quot;http://www.danielallington.net/2016/09/the-latex-fetish/&quot;&gt;The LaTeX Fetish (Or: Don’t write in LaTeX! It’s just for typesetting)&lt;/a&gt;, which has an interesting series of comments and replies. I could never write on LaTeX: it is too crowded, MarkDown is much less distracting to the eye. But I agree that LaTeX, a fossil from the past, still rocks as a typesetting tool.&lt;/p&gt;
-
-&lt;p&gt;So, I thought: if Pandoc, Softcover, and Leanpub are all LaTeX based; if I seem unable to just hack my way through them; wouldn’t it be better if I started with the real thing from scratch? And so I did.&lt;/p&gt;
-
-&lt;h2 id=&quot;my-latex-journey&quot;&gt;My LaTeX journey&lt;/h2&gt;
-
-&lt;p&gt;First, I’ve set a simple goal: re-typeset the &lt;em&gt;small book&lt;/em&gt;, that you may remember was built with Softcover so I had both the MarkDown and the PolyTeX code available.&lt;/p&gt;
-
-&lt;p&gt;If you want to try LaTeX, head &lt;a href=&quot;https://www.latex-project.org/get/&quot;&gt;here&lt;/a&gt; and download the distribution for Mac, Win or Linux. Speaking of applications (IDEs), there are freewares such as &lt;a href=&quot;https://texstudio.org/&quot;&gt;TeXstudio&lt;/a&gt; or &lt;a href=&quot;https://pages.uoregon.edu/koch/texshop/&quot;&gt;TeXShop&lt;/a&gt;, but I’ve found more user-friendly &lt;a href=&quot;https://www.texpad.com/&quot;&gt;Texpad&lt;/a&gt; (30$), or the free Visual Studio Code extension &lt;a href=&quot;https://github.com/James-Yu/LaTeX-Workshop&quot;&gt;LaTeX Workshop&lt;/a&gt;.&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/10/texpad.png&quot; srcset=&quot;/wp-content/uploads/2019/10/texpad.png 1x, /wp-content/uploads/2019/10/texpad@2x.png 2x&quot; alt=&quot;The TexPad app, with almost-live preview&quot; /&gt;
-&lt;figcaption&gt;The TexPad app, with almost-live preview&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;I’ve started reading documentation and books: there are so many LaTeX Fetishists that manuals are abundant. In my experience, it is far better to start from a blank style (a file with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.sty&lt;/code&gt; extension) and add pieces one by one, learning what they do as you insert them, instead of borrowing a complete style from somebody else and hack it to your taste.&lt;/p&gt;
-
-&lt;p&gt;Line after line, I’ve merged pieces from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Softcover.sty&lt;/code&gt;,  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Eisvogel.sty&lt;/code&gt; and stuff I’ve found online; apparently there is a package for everything, from footnotes to listings, quotes, colors, bookmarks, you name it&lt;sup id=&quot;fnref:packages&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:packages&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. It would be impossible to list them all here – the bottom-line is that creating a decent set of styles for a book that is at least up to Leanpub standards is in fact a doable task for anyone with some inclination to code tinkering. Dare I to say, I’ve even got better listings 😉&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2019/10/listings.png&quot; srcset=&quot;/wp-content/uploads/2019/10/listings.png 1x, /wp-content/uploads/2019/10/listings@2x.png 2x&quot; alt=&quot;Custom styled listings&quot; /&gt;
-&lt;figcaption&gt;Custom styled listings in LaTeX with the `listings` package&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;At this point I cannot call myself a LaTeX expert at all, but for sure a better hacker: at least I am able to understand what is in the realm of my possibilities and what’s better to keep away from. I’ve succeeded in re-typesetting my &lt;em&gt;short book&lt;/em&gt; in two/three night-time weeks, for which I’m quite pleased.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-only-time-will-tell&quot;&gt;What only time will tell&lt;/h2&gt;
-
-&lt;p&gt;It is to be seen whether I will perceive LaTeX as a robust solution, i.e. will the same source, untouched, compile flawlessly one year from now, on a different machine? I have the feeling that such is the case, unless my cat sits on the keyboard when I’m off the desk. LaTeX is just markup after all, and it is so modular that I doubt it will all crash.&lt;/p&gt;
-
-&lt;p&gt;Now that I am slightly more acquainted with it, I may want to approach Pandoc again. No doubts that, as I’ve mentioned before, LaTeX isn’t a tool for writing but typesetting: I still miss the MarkDown to PDF workflow. If I can manage to create a template for Pandoc that takes into account all my listings styles and the like, I’ll be the happiest camper.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
-
-&lt;p&gt;As it has already happened countless times to me, learning is rarely a direct path from point A to point B. I still have to find my dream workflow, but I think the one I’ve used – unless proven otherwise – is viable to say the least, and a good fit to the requirements I’ve set.&lt;/p&gt;
-
-&lt;p&gt;If you’re a technical writer feel free to comment below, I’m eager to listen to your experience. Thanks for reading!&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:publisher&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;Let’s not forget that, to date, Affinity isn’t Subscription based; and it has never told its users they can get sued for using old versions, &lt;a href=&quot;https://www.vice.com/en_us/article/a3xk3p/adobe-tells-users-they-can-get-sued-for-using-old-versions-of-photoshop&quot;&gt;like Adobe&lt;/a&gt;… &lt;a href=&quot;#fnref:publisher&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li id=&quot;fn:packages&quot; role=&quot;doc-endnote&quot;&gt;
-      &lt;p&gt;My understanding is that LaTeX is a macro-language on top of TeX, which is way too complex to be used right away. In addition to what comes built-in with LaTeX itself, you’re usually advised to load &lt;em&gt;packages&lt;/em&gt;: users contributed “macros” that make the process of implementing new features much easier. &lt;a href=&quot;#fnref:packages&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Tue, 15 Oct 2019 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/2019/10/2019-10-15-leanpub-alternatives-IMHO/</link>
-        <guid isPermaLink="true">http://localhost:4000/2019/10/2019-10-15-leanpub-alternatives-IMHO/</guid>
-        
-        <category>Leanpub</category>
-        
-        <category>Softcover</category>
-        
-        <category>Pandoc</category>
-        
-        <category>LaTeX</category>
-        
-        
-        <category>Digital Publishing</category>
         
       </item>
     
