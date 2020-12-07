@@ -5,9 +5,61 @@
     <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Dec 2020 17:57:07 +0100</pubDate>
-    <lastBuildDate>Tue, 01 Dec 2020 17:57:07 +0100</lastBuildDate>
+    <pubDate>Mon, 07 Dec 2020 11:47:22 +0100</pubDate>
+    <lastBuildDate>Mon, 07 Dec 2020 11:47:22 +0100</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>Adobe UXP: Things you need to know! #7 BatchPlay (part 2): the Alchemist plugin as a Listener</title>
+        <description>&lt;p&gt;In this episode I explore BatchPlay code with the Alchemist plugin as a powerful UXP Script Listener. BatchPlay is the subject of a three-parts mini-series.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/aZn_6X6nvUM&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Download the Alchemist plugin by Jaroslav Bereza &lt;a href=&quot;https://adobe.ly/33NvdhO&quot;&gt;here 🍺&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt; – 2020 is a hell of a year. I don’t have a Patreon page, but I’ve got two fairly cheap plugins on the Photoshop Marketplace, &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=28db2e07&amp;amp;workflow=share&quot;&gt;ALCE&lt;/a&gt; (Advanced Local Contrast Enhancer) and &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=78c3cdaf&amp;amp;workflow=share&quot;&gt;Double USM&lt;/a&gt; (on sharpening). If you happen to buy them, please leave a positive rating/review, it would greatly help. Or, you can&lt;/p&gt;
+
+&lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
+&lt;input type=&quot;image&quot; src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; title=&quot;PayPal - The safer, easier way to pay online!&quot; alt=&quot;Donate with PayPal button&quot; /&gt;
+&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;https://www.paypal.com/en_IT/i/scr/pixel.gif&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;
+&lt;/form&gt;
+
+&lt;p&gt;If you cannot, or don’t want to, that’s OK anyway.&lt;br /&gt;
+Stay safe and thanks! 🙏🏻&lt;/p&gt;
+
+&lt;h2 id=&quot;the-whole-series-so-far&quot;&gt;The whole series so far&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know.html&quot;&gt;#01 – Rundown on the UXP announcement @ the Adobe MAX 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
+
+&lt;p&gt;The transcripted video looks weird, but I’m told it helps to have it anyway because it’s easier to translate to other languages. Apologies for the lack of punctuation and the sloppy syntax.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;To be added soon…&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 07 Dec 2020 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html</link>
+        <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html</guid>
+        
+        <category>UXP</category>
+        
+        <category>Alchemist plugin</category>
+        
+        
+        <category>Development</category>
+        
+      </item>
     
       <item>
         <title>Adobe UXP: Things you need to know! #6 BatchPlay (part 1): the ActionManager roots</title>
@@ -35,6 +87,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -82,6 +135,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -130,6 +184,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -192,6 +247,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -238,6 +294,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -289,6 +346,7 @@ Speaking of which: if you find this content useful, &lt;em&gt;please consider su
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -940,107 +998,6 @@ see you in the next one. Stay safe! Bye.&lt;/p&gt;
         <pubDate>Wed, 27 May 2020 00:00:00 +0200</pubDate>
         <link>http://localhost:4000/development/Photoshop-native-applications-update.html</link>
         <guid isPermaLink="true">http://localhost:4000/development/Photoshop-native-applications-update.html</guid>
-        
-        <category>Native App</category>
-        
-        <category>JavaScript</category>
-        
-        <category>Machine Learning</category>
-        
-        
-        <category>Development</category>
-        
-      </item>
-    
-      <item>
-        <title>Photoshop JS Native Applications Course (work-in-progress)</title>
-        <description>&lt;h2 id=&quot;tldr&quot;&gt;TL;DR&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;I am working on a new series of &lt;strong&gt;video-tutorials&lt;/strong&gt; on Photoshop Development.&lt;/li&gt;
-  &lt;li&gt;The subject is going to be &lt;strong&gt;Native Applications&lt;/strong&gt; (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.app&lt;/code&gt; for Mac and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.exe&lt;/code&gt; for Windows, entirely written in Javascript) that connect to Photoshop.&lt;/li&gt;
-  &lt;li&gt;Think CEP (aka HTML) Panels, but transplanted outside Photoshop.&lt;/li&gt;
-  &lt;li&gt;The Demo App is 98% complete: for fun, it also implements a simple &lt;em&gt;Machine Learning&lt;/em&gt; pre-trained model for image classification.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Availability&lt;/strong&gt;: approx. Q3/2020, updates in the blog.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Pricing&lt;/strong&gt;: $149 for individuals, $249 for companies; early bird discounts available.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;long-time-no-see&quot;&gt;Long time no see&lt;/h2&gt;
-
-&lt;p&gt;I’ve slowed down a bit with blog-posting in the last year due to a mix of personal reasons (burnout recovery, house restoration, work, fighting with a neighbour-from-hell, this kind of stuff) plus a general lack of relevant things to say.&lt;/p&gt;
-
-&lt;p&gt;In the meantime, since late Q2/2019 I’ve been playing with the idea of building independent, native apps that can connect to Photoshop and act very much like CEP Panels would. As I’m slooooow and distracted, I’ve got to the point of having a working Demo App in my hands around March 2020 – not bad for a coding-sloth.&lt;/p&gt;
-
-&lt;h2 id=&quot;why-native-apps&quot;&gt;Why Native Apps?&lt;/h2&gt;
-
-&lt;p&gt;I got a bit tired of CEP: I wanted to allow myself the luxury of &lt;em&gt;some more control&lt;/em&gt; over the development environment; if you’re a CEP developer I think you can relate. As anybody who’s been around in this business long enough knows, we’ve had the possibility to connect to PS &lt;em&gt;from the outside&lt;/em&gt; for like 10 years (now you can call me a true sloth); reliable Native apps with JavaScript are here, so it was a no-brainer for me to give it a try, finally.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Pros&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;You’re &lt;em&gt;totally&lt;/em&gt; in charge over the technologies to use – no more “This has been fixed in PS 2029, but older PS versions are still out-of-luck”, or the cyclic “you’ve been doing X for a jolly bunch of years, guess what from now on it’s done the Y way” kind of troubles.&lt;/li&gt;
-  &lt;li&gt;Still JS/Node.js stuff, easy transition if you come from a CEP background.&lt;/li&gt;
-  &lt;li&gt;You can update to Chromium/Node-latest whenever you want for whatever PS version you want.&lt;/li&gt;
-  &lt;li&gt;Native means independent, separate, dock-bouncing apps, with access to OS-level stuff like tray icons, notifications, FileSystem, you name it; Mac and Windows alike.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Cons&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Not all projects are a good fit for an independent app: if you need a tighter, super-fast integration with PS, stick to CEP or whatever &lt;em&gt;default&lt;/em&gt; technology Adobe provides.&lt;/li&gt;
-  &lt;li&gt;There’s a bit of a learning curve, but I’m here to ease the process.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;how-does-it-work-technically-speaking&quot;&gt;How does it work, technically speaking?&lt;/h2&gt;
-
-&lt;p&gt;NW.js, Vue.js, Vuex, Socket.io, Adobe Generator Plugin, MobileNet, Node.js stuff, trial and error. For now you’ll make do with that.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-will-the-video-course-cover&quot;&gt;What will the Video Course cover?&lt;/h2&gt;
-
-&lt;p&gt;I’m going to build a demo app from scratch over the course of some hours of recording. Features are totally arbitrary, and it have been chosen to serve just one purpose: showing how things can be done in the context of a native app connecting to PS, i.e. solving specific problems that you’re likely to run into (e.g. passing data from/to PS, executing scripts, synchronous/asynchronous operations, storing permanent data between sessions, etc.)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2020/03/demo-app.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;What does the demo app do?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;the user selects a bunch of files from the disk&lt;/li&gt;
-  &lt;li&gt;the user also toggles few Image Classification tags&lt;/li&gt;
-  &lt;li&gt;the app retrieves ActionSets/Actions loaded in Photoshop&lt;/li&gt;
-  &lt;li&gt;if each file’s &lt;em&gt;subject&lt;/em&gt; matches the ones selected by the user (that one document actually &lt;em&gt;depicts&lt;/em&gt; a tiger), Photoshop will process it with the selected Action&lt;/li&gt;
-  &lt;li&gt;when the batch ends, a System Notification pops up some info&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;As simple as it looks, it’s enough to build a rather structured NW.js/Vue.js architecture that can serve as a blueprint for more complex projects of yours.&lt;/p&gt;
-
-&lt;p&gt;Everything’s based on a solid build system, so 99% of the tasks are completely automated.&lt;/p&gt;
-
-&lt;h2 id=&quot;courses-goals&quot;&gt;Course’s goals&lt;/h2&gt;
-
-&lt;p&gt;Like &lt;a href=&quot;https://www.ps-scripting.com/bundles.html&quot;&gt;everything&lt;/a&gt; I’ve ever published, the main goal is to give you a substantial head-start, and save you all the time I’ve spent stuck trying to solve specific technical problems. As in life, there are many more ways to mess up than to get it right: this course will provide you with a selected range of working options to build commercial-grade applications.&lt;/p&gt;
-
-&lt;h2 id=&quot;pricing-and-availability&quot;&gt;Pricing and Availability&lt;/h2&gt;
-
-&lt;p&gt;I’m bugfixing the app, which functionally speaking is done. Knowing myself, it will take me some more months to record the actual content, so friendly advice: don’t hold your breath.&lt;/p&gt;
-
-&lt;p&gt;It’ll be priced according to previous courses of mine:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;$149&lt;/strong&gt; for individuals, with lifetime updates and HD videos for streaming&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;$249&lt;/strong&gt; for enterprise licenses up to 10 seats, with lifetime updates and HD videos for download&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Early bird discounts available. If you’re interested, please enter your email in the form below (no spam at all); you’ll receive a notification with a discounted offer before the course goes public.&lt;/p&gt;
-
-&lt;iframe width=&quot;540&quot; height=&quot;650&quot; src=&quot;https://3dc77a80.sibforms.com/serve/MUIEAHsKpwIq1yNWbj_lxLqna87ra1XJHISVSYzDNKhSsYsYb4rLHME8ojWOr2YC4crxEuI6GRaX1pYUKI5bLh6Knr5sKmIwW1kvScZISpzmqLc1EUaREv-6OVq9ff5bRhJEKnM4Qi-2WIBNuk1Q4IlyEGw5jxOj1iiVa3KqHUw8x2V0NyAwNEZec3NIfkETDoIDPbaN-DPhUG86&quot; frameborder=&quot;0&quot; scrolling=&quot;auto&quot; allowfullscreen=&quot;&quot; style=&quot;display: block;margin-left: auto;margin-right: auto;max-width: 100%;&quot;&gt;&lt;/iframe&gt;
-
-&lt;h2 id=&quot;questions&quot;&gt;Questions?&lt;/h2&gt;
-
-&lt;p&gt;Unless they’re along the lines of &lt;em&gt;“Sir, why X instead of Y?”&lt;/em&gt;, I encourage you to post in the comments below. Thanks for reading and have a good day!&lt;/p&gt;
-</description>
-        <pubDate>Sun, 01 Mar 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/development/Photoshop-native-applications-wip.html</link>
-        <guid isPermaLink="true">http://localhost:4000/development/Photoshop-native-applications-wip.html</guid>
         
         <category>Native App</category>
         

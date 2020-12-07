@@ -6,3 +6,4 @@
 - [#04 - Commands vs. Panels and the manifest.json]({% post_url  2020-11-18-Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest %})
 - [#05 - Sync vs. Async code in Photoshop DOM Scripting]({% post_url  2020-11-23-Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting %})
 - [#06 - BatchPlay (part 1): the ActionManager roots]({% post_url  2020-12-01-Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots %})
+- [#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener]({% post_url  2020-12-07-Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener %})
