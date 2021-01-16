@@ -1,5 +1,5 @@
 ---
-title: "Adobe UXP: Things you need to know!"
+title: "Adobe UXP: Things you need to know! #1 Rundown on the UXP announcement"
 date: 2020-10-27
 author: "Davide Barranca"
 excerpt: "I am starting a new series on Adobe UXP development, very much along the lines of the CEP's HTML Panels Tips. But on video."
