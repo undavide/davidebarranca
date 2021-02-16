@@ -7,4 +7,5 @@
 - [#05 - Sync vs. Async code in Photoshop DOM Scripting]({% post_url  2020-11-23-Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting %})
 - [#06 - BatchPlay (part 1): the ActionManager roots]({% post_url  2020-12-01-Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots %})
 - [#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener]({% post_url  2020-12-07-Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener %})
-- [#08 - BatchPlay (part 3): Alchemist as a UXP Inspector]({% post_url  2020-12-14-Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector %})
+- [#09 - BatchPlay (part 3): Alchemist as a UXP Inspector]({% post_url  2020-12-14-Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector %})
+- [#09 - Adobe Spectrum UXP]({% post_url  2021-02-05-Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP %})

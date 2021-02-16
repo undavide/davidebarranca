@@ -2,12 +2,427 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <description>Digital Caveman. Photoshop retoucher and script/panels developer. I am also an author, check the Courses page!</description>
+    <description>Digital Caveman. Photoshop retoucher and plugins developer. Check out my Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 14 Dec 2020 19:35:47 +0100</pubDate>
-    <lastBuildDate>Mon, 14 Dec 2020 19:35:47 +0100</lastBuildDate>
+    <pubDate>Tue, 16 Feb 2021 01:08:00 +0100</pubDate>
+    <lastBuildDate>Tue, 16 Feb 2021 01:08:00 +0100</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>Adobe UXP: Things you need to know! #9 Adobe Spectrum</title>
+        <description>&lt;p&gt;In this episode I’ll talk about UI making and Adobe Spectrum Components. Also a quick and hopefully welcome announcement: from now on I’ll publish a written article alongside with the YouTube video, so that you can choose the medium you prefer.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/j58FvGYNPnE&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;native-uis&quot;&gt;Native UIs&lt;/h2&gt;
+
+&lt;p&gt;Let me bring up the slide that I’ve shown in the first episode, that comes directly from Adobe:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/02/slide.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you focus on the center/left part, you see that the &lt;strong&gt;Layout Engine&lt;/strong&gt; let’s you write – as we already know very well at this point – HTML and CSS, but those aren’t &lt;em&gt;just displayed&lt;/em&gt; in some sort of a Browser context, as CEP would do. Instead, UXP maps the DOM representation to a native UI hierarchy at runtime, so the UI is expressed with &lt;strong&gt;Native Host Controls&lt;/strong&gt; (hence it’s faster, as it doesn’t require anything as heavy as CEF – the Chromium Embedded Framework – to step in).&lt;/p&gt;
+
+&lt;p&gt;This also means – as it’s been mentioned in this series a lot, but it’s still worth stressing – that you shouldn’t expect UXP to support everything that a Browser would, by default. CSS properties, Browser API or HTML elements must be willingly implemented by the UXP team, and – as it’s fair to assume – priorities must be given.&lt;/p&gt;
+
+&lt;p&gt;So for instance we’ve got CSS FlexBox, but not CSS Grids yet – these will come down the line I’m told. Or, as I usually mention because I know that several developers are making use of its 2D context to draw particularly complex and awesome UIs, there’s no &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;canvas&amp;gt;&lt;/code&gt; element &lt;em&gt;yet&lt;/em&gt;. So if you feel like there’s something in UXP that is missing and you absolutely need it, feel free send a feature request to the team, I’m sure they’ll note that down – there’s a &lt;a href=&quot;https://forums.creativeclouddeveloper.com/&quot;&gt;Forum&lt;/a&gt; that you can use.&lt;/p&gt;
+
+&lt;p&gt;Although, say, animations are cool, maybe it’s better to have grids first, as they’re more valuable for a larger population of developers, and a robust, non-experimental feature. The good part is that we’re in a very active development phase hence we’re still in the position to chime in and try influence the course of action – the UXP team is listening.&lt;/p&gt;
+
+&lt;h2 id=&quot;spectrum-uxp&quot;&gt;Spectrum UXP&lt;/h2&gt;
+
+&lt;p&gt;At the moment we’re free to use HTML native &lt;em&gt;“form”&lt;/em&gt; elements so to speak, e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;select&amp;gt;&lt;/code&gt;, or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;textarea&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;input&amp;gt;&lt;/code&gt; etc. They’re decently styled (not overly cool), you can see them in action in the &lt;a href=&quot;https://github.com/AdobeDocs/uxp-photoshop-plugin-samples/tree/main/ui-kitchen-sink&quot;&gt;Kitchen Sink plugin&lt;/a&gt;, Native tab:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/02/kitchen-sink.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But, be aware that in the long run those HTML native elements will be deprecated in favor of their Spectrum UXP widgets counterparts.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/02/kitchen-sink-spectrum.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Please note that I’m talking about what I’ve deemed as “form” elements or UI elements &lt;em&gt;only&lt;/em&gt;: layout or basic elements such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;span&amp;gt;&lt;/code&gt; and the like will still be available. My suggestion is, when possible, to use Spectrum.&lt;/p&gt;
+
+&lt;p&gt;Time to look in more depth to what Adobe Spectrum is, and how implement it in your projects.&lt;/p&gt;
+
+&lt;h3 id=&quot;adobe-spectrum&quot;&gt;Adobe Spectrum&lt;/h3&gt;
+
+&lt;p&gt;In the beginning there was the &lt;a href=&quot;https://spectrum.adobe.com/&quot;&gt;Adobe Spectrum Design system&lt;/a&gt;: this is the set of &lt;em&gt;specifications&lt;/em&gt; that define the Adobe Spectrum Design – the design tokens, color palettes, typography, how to lay out content, etc. all the informed choices that Adobe UI/UX designers made while creating Spectrum.&lt;/p&gt;
+
+&lt;p&gt;These are just the specs – you could read them and design, say, a Spectrum-compliant game console or, whatever. In order to implement the Spectrum Design system in the context we care about, then we need something else.&lt;/p&gt;
+
+&lt;h3 id=&quot;spectrum-css&quot;&gt;Spectrum CSS&lt;/h3&gt;
+
+&lt;p&gt;If you google Adobe Spectrum, chances are that the first thing you’re going to run into is the &lt;a href=&quot;https://opensource.adobe.com/spectrum-css/&quot;&gt;Spectrum CSS&lt;/a&gt;, the StyleSheet implementation of the Spectrum Design system. You shouldn’t directly use it though, because this is more about laying down the design of Spectrum elements rather than thoroughly implement their behaviour. Take the &lt;a href=&quot;https://opensource.adobe.com/spectrum-css/stepper.html&quot;&gt;stepper&lt;/a&gt; for instance:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/02/stepper.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Besides the amount of markup code required it looks OK, but the arrow buttons aren’t wired up, so when you click them nothing happens to the input value. The Spectrum CSS is meant to be used within/to build components that expose a simpler interface, for instance something like a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;stepper /&amp;gt;&lt;/code&gt; element, which finally brings us to…&lt;/p&gt;
+
+&lt;h3 id=&quot;spectrum-web-components&quot;&gt;Spectrum Web Components&lt;/h3&gt;
+
+&lt;p&gt;Spectrum Web Components are &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Web_Components&quot;&gt;Web Components&lt;/a&gt; that follow the Spectrum specs, obviously enough. Generally speaking, a &lt;em&gt;web component&lt;/em&gt; is a reusable custom HTML element that encapsulates a Shadow DOM (a hidden DOM tree that is rendered separately from the Document’s DOM tree) with its own set of styles and behaviour.&lt;/p&gt;
+
+&lt;p&gt;There are two different Spectrum web components projects maintained by Adobe: &lt;a href=&quot;https://opensource.adobe.com/coral-spectrum/documentation/&quot;&gt;Coral Spectrum&lt;/a&gt;, and &lt;em&gt;the&lt;/em&gt; &lt;a href=&quot;https://opensource.adobe.com/spectrum-web-components/&quot;&gt;Spectrum Web Components&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/02/spectrum-web-components.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I have no idea why there are two of them, but I like the abundance – I guess that Coral Spectrum pre-dates in a way &lt;em&gt;the&lt;/em&gt; Spectrum Web Components, but all in all it’s &lt;em&gt;the&lt;/em&gt; Spectrum Web Components the kind of Spectrum web components that are the foundation for the ones in use within UXP that are referred to as &lt;em&gt;“Spectrum UXP”&lt;/em&gt; in the documentation.&lt;/p&gt;
+
+&lt;h3 id=&quot;react-spectrum&quot;&gt;React Spectrum&lt;/h3&gt;
+
+&lt;p&gt;Lastly, since Adobe uses React.js as its framework of choice, a different set of React Components have been developed and this is the &lt;a href=&quot;https://react-spectrum.adobe.com/react-spectrum/index.html&quot;&gt;React Spectrum&lt;/a&gt; project.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/02/react-spectrum.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At the moment React Spectrum components are slighly behind in terms of Spectrum coverage but they’re catching up, and in the future – not now – they’re going to be available in UXP projects as well.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-spectrum-uxp&quot;&gt;Using Spectrum UXP&lt;/h2&gt;
+
+&lt;p&gt;Speaking of availablility, you don’t need to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;import&lt;/code&gt; or load anything in your projects in order to use Spectrum UXP components: they are available straight away, just use them in your HTML. Please note that at the moment you can use just a subset of components compared to the ones listed in &lt;em&gt;the&lt;/em&gt; Spectrum Web Components &lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/&quot;&gt;documentation&lt;/a&gt;. As of early February 2021 this is what we have for the Typography:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/Typography/sp-body/&quot;&gt;sp-body&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/Typography/sp-detail/&quot;&gt;sp-detail&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/Typography/sp-heading/&quot;&gt;sp-heading&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/Typography/sp-label/&quot;&gt;sp-label&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And for User Interface elements:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-action-button/&quot;&gt;sp-action-button&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-button/&quot;&gt;sp-button&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-checkbox/&quot;&gt;sp-checkbox&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-divider/&quot;&gt;sp-divider&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-dropdown/&quot;&gt;sp-dropdown&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-icon/&quot;&gt;sp-icon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-link/&quot;&gt;sp-link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-menu/&quot;&gt;sp-menu&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-menu-item/&quot;&gt;sp-menu-item&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-progressbar/&quot;&gt;sp-progressbar&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-radio/&quot;&gt;sp-radio&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-radio-group/&quot;&gt;sp-radio-group&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-slider/&quot;&gt;sp-slider&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-textfield/&quot;&gt;sp-textfield&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User Interface/sp-textarea/&quot;&gt;sp-textarea&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The team is implementing more Spectrum UXP components so keep an eye on the UXP doc pages. Also please note that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The Spectrum UXP component API for UXP 4.1 is not perfectly compatible with the published version of the Spectrum Web Components API. Future versions of UXP will have a way to specify the version you need to use, but this is not yet available in UXP 4.1.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Meaning that you’ve got to play cool if the API in &lt;em&gt;the&lt;/em&gt; Spectrum Web Components is not entirely funtional in UXP – rough edges will be ironed down as time goes by. Since it’s a bit small and you can easily miss it, the API section of each element is a tab right below the component’s title:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/02/API.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There you’ll find both Properties and Events. Again: be aware that Spectrum UXP isn’t a 1:1 match with &lt;em&gt;the&lt;/em&gt; Spectrum Web Components.&lt;/p&gt;
+
+&lt;h3 id=&quot;typography&quot;&gt;Typography&lt;/h3&gt;
+
+&lt;p&gt;I recommend you to always use of Spectrum Typography elements, e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-body&amp;gt;&lt;/code&gt; (please note the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sp-&lt;/code&gt; prefix common to all Spectrum components) in place of the standard &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;p&amp;gt;&lt;/code&gt;. If anything, because they ensure that the text color follows along automatically when the Photoshop theme changes (to either darker, dark, light, lighter),   – this is true for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-body&amp;gt;&lt;/code&gt;,   &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-heading&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-detail&amp;gt;&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-label&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/02/sp-body.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s the possibility to use so-called &lt;em&gt;T-Shirt sizes&lt;/em&gt; with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;size&lt;/code&gt; attribute, e.g.:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-heading&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;XXXL&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Heading XXXL&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-heading&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-heading&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;XXL&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Heading XXL&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-heading&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-heading&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;XL&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Heading XL&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-heading&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-heading&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;L&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Heading L&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-heading&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-heading&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Heading M&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-heading&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-heading&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;S&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Heading S&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-heading&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-heading&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;XS&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Heading XS&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-heading&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-heading&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;XXS&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Heading XXS&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-heading&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Sizes from &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;XXXL&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;XS&lt;/code&gt; will work for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-body&amp;gt;&lt;/code&gt; too, in case you need them. Be aware that not all the Spectrum widgets support T-Shirts though, like the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-divider&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-divider&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;small&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-divider&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;medium&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-divider&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;large&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;ui-elements&quot;&gt;UI elements&lt;/h3&gt;
+
+&lt;p&gt;Most of the times this is what your plugin will primarily be made of sliders, buttons, checkboxes, text inputs, icons, etc. The supported Spectrum UXP components are documented both in the &lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User%20Interface/&quot;&gt;UXP minisite&lt;/a&gt; and more extensively in &lt;em&gt;the&lt;/em&gt; &lt;a href=&quot;https://opensource.adobe.com/spectrum-web-components/&quot;&gt;Spectrum Web Components doc&lt;/a&gt; (that remember, contains a larger set than the one available in UXP).&lt;/p&gt;
+
+&lt;p&gt;Please also note that there might be differences between the two sets, for instance if you copy and paste from the Spectrum Web Components the following code…&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/02/action-button.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;… It won’t work, because of a slight difference in the way UXP handles icons. The proper code (from the UXP doc) will be something like:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-action-button&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-icon&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ui:Star&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xs&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/sp-icon&amp;gt;&lt;/span&gt;
+  Star this project!
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-action-button&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Since I’ve mentioned icons let me show you that you can either use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ui&lt;/code&gt; set directly as in the example above (only 36 are available, check &lt;a href=&quot;As the [UXP icons page](https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/User%20Interface/sp-icon/) will tell you.&quot;&gt;this page&lt;/a&gt; for the list), or you can pick any Spectrum Icon from this 897 strong &lt;a href=&quot;https://spectrum.adobe.com/page/icons/&quot;&gt;collection&lt;/a&gt; copying the code to the clipboard:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/02/icons.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And pasting the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; (sanitized of styles and classes) directly into a normal &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; (mind you, not an&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-icon&amp;gt;&lt;/code&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-action-button&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;slot=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fill: currentColor&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;svg&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/2000/svg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;viewBox=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0 0 18 18&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;rect&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Canvas&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#ff13dc&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;opacity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M12.7675,10.669l-1.604,1.6055,4.3925,4.392a.6815.6815,0,0,0,.96379.00071l.00071-.00071.64-.64a.6815.6815,0,0,0,.00071-.96379L17.1605,15.062Z&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M3.329,9.7655l.726-.726c.2665-.2665-.011-.644-.011-.644l.746-.719A.68149.68149,0,0,0,5.75,7.67l.4055-.4055.781.7805L8.541,6.4405,7.7585,5.66l.264-.2645a.6815.6815,0,0,0,.00071-.96379L8.0225,4.431l-.32-.32s.9425-1.058,1.14-1.256c.8325-.832,2.6755-.2955,2.7605-.7215S7.5115.1275,5.2245,2.414L2.845,4.794a.6815.6815,0,0,0-.00222.96378L2.845,5.76l.161.155L2.3,6.65a.4535.4535,0,0,0-.64081-.02621L1.65,6.6325l-.728.726a.341.341,0,0,0,0,.482l1.9245,1.925a.3405.3405,0,0,0,.48154.001Z&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M5.5205,15.2615c-.787.283-1.7705.6385-2.45.8815l.877-2.45Zm9.1-13.183-11.19,11.19a.56358.56358,0,0,0-.132.2065l-1.062,2.932a.42.42,0,0,0,.55.5545l2.947-1.05a.56353.56353,0,0,0,.21-.1335L17.131,4.578a.4785.4785,0,0,0,.0435-.673l-1.882-1.872A.4785.4785,0,0,0,14.6205,2.0785Z&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/svg&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  Do the thing
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-action-button&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Please note the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;style=&quot;fill: currentColor&quot;&lt;/code&gt; in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; that keeps the icon’s color in sync with the theme.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/02/custom-icon.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This way, if/when needed, you can use also your own custom-designed &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;svg&lt;/code&gt; icons in place of Spectrum’s.&lt;/p&gt;
+
+&lt;h2 id=&quot;sample-code&quot;&gt;Sample code&lt;/h2&gt;
+
+&lt;p&gt;Let’s put together a very simple example. Please note that code for this plugins can be found at this brand new &lt;a href=&quot;https://github.com/undavide/Adobe-UXP&quot;&gt;GitHub repository&lt;/a&gt;. I’ve created a new Photoshop plugin using the UXP Developer Tool’s Starter Panel template (see &lt;a href=&quot;https://youtu.be/jj9ZzT1iwRU&quot;&gt;this video&lt;/a&gt; if you need a reminder). The HTML is as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;index.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100vh&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.column&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.row&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;15px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;justify-content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;space-between&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.border&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;15px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;border-radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#888&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prefers-color-scheme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prefers-color-scheme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;darkest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.money&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;py&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;rgb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;51&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;171&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;132&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prefers-color-scheme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;light&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prefers-color-scheme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lightest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;.money&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;py&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;rgb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;18&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;92&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;column&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-heading&amp;gt;&lt;/span&gt;Sample Spectrum plugin&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-heading&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-divider&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;large&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/sp-divider&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;column&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-body&amp;gt;&lt;/span&gt;Just an example of the Spectrum widgets that you're allowed to use in your own plugins...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;column border&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-detail&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;slot=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;MAKE SOME CHOICES&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-detail&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-slider&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;variant=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;filled&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;min=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;max=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;3&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;order&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-label&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;slot=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;How many T-Shirts do you want?&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-label&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-slider&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-radio-group&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;size&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-label&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;slot=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Pick your size:&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-label&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-radio&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;XL&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;XL&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-radio&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-radio&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;L&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;checked&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;L&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-radio&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-radio&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;M&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-radio&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-radio&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;S&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;S&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-radio&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-radio&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;XS&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;XS&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-radio&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-radio-group&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-dropdown&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Select the color&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;color&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-menu&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;slot=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;options&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-menu-item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;blue&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Blue&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-menu-item&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-menu-item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;teal&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Teal&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-menu-item&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-menu-item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;green&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Green&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-menu-item&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-menu-item&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;purple&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Purple (out of stock)&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-menu-item&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-menu&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-dropdown&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;img/default.jpg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;200&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;margin: 10px auto; border-radius: 4px&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;shirt-img&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-textfield&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UXP 🚀&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;message&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width: 100%&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-label&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;slot=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Shirt personalized text (optional)&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-label&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-textfield&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-action-button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Give back&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-action-button&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-action-button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;disabled&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Complain&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-action-button&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-action-button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;buy&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;slot=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;money&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;margin-left:8px&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;svg&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/2000/svg&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;viewBox=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0 0 18 18&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;rect&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Canvas&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fill=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#ff13dc&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;opacity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;circle&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cx=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;11&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cy=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;7&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;r=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M4,10.5v-7A.5.5,0,0,1,4.5,3h13a.5.5,0,0,1,.5.5v7a.5.5,0,0,1-.5.5H4.5A.5.5,0,0,1,4,10.5ZM17,5.8285A3.008,3.008,0,0,1,15.1715,4H6.8285A3.00753,3.00753,0,0,1,5,5.8285v2.343A3.008,3.008,0,0,1,6.8285,10h8.343A3.00753,3.00753,0,0,1,17,8.1715Z&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M16.5,13H2.5a.5.5,0,0,1-.5-.5v-8A.5.5,0,0,1,2.5,4H3v8H17v.5A.5.5,0,0,1,16.5,13Z&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;path&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;M14.5,15H.5a.5.5,0,0,1-.5-.5v-8A.5.5,0,0,1,.5,6H1v8H15v.5A.5.5,0,0,1,14.5,15Z&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/svg&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  Purchase
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-action-button&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And this is the result:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/02/sample.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You see that I’m using a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-heading&amp;gt;&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-divider&amp;gt;&lt;/code&gt; as previously demonstrated – &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-detail&amp;gt;&lt;/code&gt; provides some emphasis. Please note that a class named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;row&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;column&lt;/code&gt; automatically triggers the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;display: flex&lt;/code&gt; and sets the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;orientation&lt;/code&gt; accordingly, which is nice to have.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-slider&amp;gt;&lt;/code&gt; contains an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-label&amp;gt;&lt;/code&gt;, and is of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;variant=&quot;fill&quot;&lt;/code&gt;, meaning that the left part of the run is a different color.&lt;/p&gt;
+
+&lt;p&gt;A &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-radio-group&amp;gt;&lt;/code&gt; then contains a series of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-radio&amp;gt;&lt;/code&gt;, one of which is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;checked&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then we have a simple &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-textfield&amp;gt;&lt;/code&gt; with a placeholder text (I admit that to me it isn’t dimmed enough to look like a placeholder and it risks to be mistaken for the actual content).&lt;/p&gt;
+
+&lt;p&gt;All these elements are wrapped with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; that has a border color that happens to be OK no matter whether the theme is dark or light.&lt;/p&gt;
+
+&lt;p&gt;Finally, we’ve a row of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-action-button&amp;gt;&lt;/code&gt; elements: please note that the last one (with a custom icon that comes from the Spectrum set) has a color that varies slightly depending on the theme. You can fine tune such things checking against the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prefers-color-scheme&lt;/code&gt; in the media queries, as demonstrated in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;style&amp;gt;&lt;/code&gt; section.&lt;/p&gt;
+
+&lt;p&gt;The JavaScript part is super simple, and it’s all about collecting the UI values in an alert popup.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;photoshop&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// T-Shirt Color dropdown&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;change&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;evt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#shirt-img&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/wp-content/uploads/2021/02/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;evt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-shirt.jpg&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Buy button&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#buy&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;evt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;showAlert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Please pick a T-Shirt color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#order&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#message&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selectedSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[...&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelectorAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#size sp-radio&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+                     &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;radio&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;radio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;checked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;showAlert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;T-Shirt order&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;--------------&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Number: &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;order&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Size: &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;selectedSize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Color: &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Message: &lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There’s a listener for the T-Shirt Color &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-dropdown&amp;gt;&lt;/code&gt;’s   &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;change&lt;/code&gt; events, that switches the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;img&lt;/code&gt; source using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;value&lt;/code&gt; that comes in from the event to interpolate the filename string, appending the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-shirt.jpg&lt;/code&gt; suffix.&lt;/p&gt;
+
+&lt;p&gt;The Purchase button click handler initially checks whether the T-Shirt color has been chosen (otherwise it alerts the user and returns), then it goes on storing all the rest of the UI data.&lt;/p&gt;
+
+&lt;p&gt;Please note that it’s not possible to use just:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelectorAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#size sp-radio:checked&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It only works with native &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;input&amp;gt;&lt;/code&gt; elements. Hence the need to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;filter()&lt;/code&gt; the collection, select the first element in the resulting array and finally getting the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;value&lt;/code&gt;. In the end, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app.showAlert()&lt;/code&gt; is fired.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/02/popup.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;caveats&quot;&gt;Caveats&lt;/h3&gt;
+
+&lt;p&gt;I haven’t been able to use any &lt;strong&gt;Spectrum CSS Property&lt;/strong&gt;, the kind of which you can find e.g. in the &lt;a href=&quot;https://github.com/adobe/spectrum-web-components/blob/main/packages/styles/core-global.css&quot;&gt;core-global.css&lt;/a&gt;. That would have been useful e.g. for color tokens. Alas the following doesn’t work:&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.icon&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;py&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;--spectrum-global-color-static-orange-400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Besides, such named colors automatically vary on dark/light themes, slightly but noticeably to accomodate for the simultaneous contrast effect due to the background color change – something I’ve tried to take into account tweaking the   money icon’s green manually.&lt;/p&gt;
+
+&lt;p&gt;Please note that Spectrum UXP interfaces tend to be larger than CEP, especially if you were used to space-savvy CSS such as &lt;a href=&quot;http://topcoat.io/&quot;&gt;Topcoat&lt;/a&gt; – expect around an extra 20%+ area. I’ve asked whether there are plans for an even smaller version of Spectrum, specifically targeting Creative Cloud applications; I’ve got no answers yet, but that would be useful IMHO.&lt;/p&gt;
+
+&lt;p&gt;Finally, if you use Spectrum UXP with &lt;strong&gt;React.js&lt;/strong&gt; there are a few things that you should keep in mind:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Always check against &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;undefined&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;null&lt;/code&gt; for boolean attributes:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-checkbox&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;checked=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;{preview&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Preview&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-checkbox&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt; instead of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;className&lt;/code&gt;:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-textfield&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;absolute&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/sp-textfield&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Always close tags:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-slider&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;min=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;{1}&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;max=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;{150}&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;step=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;{1}&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/sp-slider&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;More details in &lt;a href=&quot;https://www.adobe.io/photoshop/uxp/uxp/reference-spectrum/Overview/Using%20with%20React/&quot;&gt;this page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrap-up&quot;&gt;Wrap up&lt;/h2&gt;
+
+&lt;p&gt;I think this wraps it up for this introduction to Spectrum UXP: you’ve seen where it comes from and how to use it – again, if you feel like there are any glitches, feel free to submit feature requests to the team. Spectrum is an important piece in the grand scheme of Adobe’s things so I’m confident that they’ll be addressed.&lt;/p&gt;
+
+&lt;p&gt;Thanks for following along! If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt;; in particular let me thank this group of fine persons who’ve supported my work &lt;a href=&quot;https://bit.ly/unDavide&quot;&gt;donating what they could afford&lt;/a&gt; – much appreciated! 🙏🏻&lt;/p&gt;
+
+&lt;p&gt;John Stevenson ⭐️, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki.&lt;/p&gt;
+
+&lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
+&lt;input type=&quot;image&quot; src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; title=&quot;PayPal - The safer, easier way to pay online!&quot; alt=&quot;Donate with PayPal button&quot; /&gt;
+&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;https://www.paypal.com/en_IT/i/scr/pixel.gif&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;
+&lt;/form&gt;
+
+&lt;p&gt;Stay safe, get the vaccine shot if/when you can – bye!&lt;/p&gt;
+
+&lt;h2 id=&quot;the-whole-series-so-far&quot;&gt;The whole series so far&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know.html&quot;&gt;#01 – Rundown on the UXP announcement @ the Adobe MAX 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 15 Feb 2021 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html</link>
+        <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html</guid>
+        
+        <category>UXP</category>
+        
+        <category>Adobe Spectrum</category>
+        
+        
+        <category>Development</category>
+        
+      </item>
     
       <item>
         <title>Adobe UXP: Things you need to know! #8 BatchPlay (part 3): the Alchemist plugin as an Inspector</title>
@@ -38,7 +453,8 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -91,7 +507,8 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -142,7 +559,8 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -191,7 +609,8 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -241,7 +660,8 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -305,7 +725,8 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -353,7 +774,8 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -378,7 +800,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
       </item>
     
       <item>
-        <title>Adobe UXP: Things you need to know!</title>
+        <title>Adobe UXP: Things you need to know! #1 Rundown on the UXP announcement</title>
         <description>&lt;p&gt;I am starting a new series on development, called “Adobe UXP: Things you need to know” (I’m getting fancy with titles 😊) In my intentions it’ll be very much along the lines of the old “HTML Panels Tips” series but in a different media. This first installment, a quick rundown on the news from the Adobe MAX 2020 announcement, is a 27 minutes video.&lt;/p&gt;
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/zAOUBpDjc1Q&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
@@ -406,7 +828,8 @@ Speaking of which: if you find this content useful, &lt;em&gt;please consider su
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -983,41 +1406,6 @@ see you in the next one. Stay safe! Bye.&lt;/p&gt;
         <category>UXP</category>
         
         <category>Adobe MAX</category>
-        
-        
-        <category>Development</category>
-        
-      </item>
-    
-      <item>
-        <title>JavaScript Native Applications for Photoshop</title>
-        <description>&lt;p&gt;I’m incredibly happy to announce that my new video-course has been published (confetti falls from the sky). Watch below a 3 minutes short presentation.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/8A4UEx8Gb1A&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;h2 id=&quot;want-to-know-more&quot;&gt;Want to know more?&lt;/h2&gt;
-
-&lt;p&gt;I’ve revamped my &lt;a href=&quot;https://www.ps-scripting.com&quot;&gt;PS-Scripting&lt;/a&gt; website, which is going to be the central hub for all my books and courses, including this new &lt;strong&gt;JavaScript Native Applications for Photoshop&lt;/strong&gt; video-series.&lt;/p&gt;
-
-&lt;div style=&quot;text-align:center; width:100%&quot;&gt;&lt;a href=&quot;https://www.ps-scripting.com/js-native-apps-for-photoshop.html&quot; target=&quot;_blank&quot; style=&quot;box-sizing: border-box; margin: 0; font-family: inherit; overflow: visible; text-transform: none; -webkit-appearance: button; display: inline-block; font-weight: 400; text-align: center; vertical-align: middle; user-select: none; border: 1px solid transparent; transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out; color: #fff; background-color: #673ab7; border-color: #673ab7; padding: .5rem 1rem; font-size: 1.25rem; line-height: 1.5; border-radius: .3rem; margin-top: .25rem; margin-bottom: .25rem; cursor: pointer;&quot;&gt;Visit the course website&lt;/a&gt;&lt;/div&gt;
-
-&lt;p&gt;To those of you who did express their interest via the contact form: you should have received a special coupon code – check your email. Everyone else: I’ve set an automatic &lt;em&gt;launch price&lt;/em&gt; discount code that is going to expire in the early days of July. Sample content available.&lt;/p&gt;
-
-&lt;h2 id=&quot;thanks&quot;&gt;Thanks!&lt;/h2&gt;
-
-&lt;p&gt;Thank you all for your support, and for checking this blog from time to time – my friends, 2020 is a tough year! I hope you’re all safe and… reasonably fine? I can’t push that any further giving the crazy times we’re living through. 🖐&lt;/p&gt;
-
-&lt;p&gt;Davide&lt;/p&gt;
-</description>
-        <pubDate>Wed, 17 Jun 2020 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/development/JavaScript-native-applications-for-photoshop.html</link>
-        <guid isPermaLink="true">http://localhost:4000/development/JavaScript-native-applications-for-photoshop.html</guid>
-        
-        <category>Native App</category>
-        
-        <category>JavaScript</category>
-        
-        <category>Machine Learning</category>
         
         
         <category>Development</category>
