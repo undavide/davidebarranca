@@ -5,9 +5,369 @@
     <description>Digital Caveman. Photoshop retoucher and plugins developer. Check out my Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Feb 2021 01:08:00 +0100</pubDate>
-    <lastBuildDate>Tue, 16 Feb 2021 01:08:00 +0100</lastBuildDate>
+    <pubDate>Fri, 05 Mar 2021 14:48:17 +0100</pubDate>
+    <lastBuildDate>Fri, 05 Mar 2021 14:48:17 +0100</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>Adobe UXP: Things you need to know! #10 Modal Dialogs</title>
+        <description>&lt;p&gt;In this episode we’ll learn how to build Modal Dialogs for UXP plugins. Feel free to watch the video or read the article, they cover the same ground.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/wwuevOgv72g&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;extendscript-history&quot;&gt;ExtendScript history&lt;/h2&gt;
+
+&lt;p&gt;ExtendScript was the language that we’ve been using to script Adobe applications literally forever. It was based on the ECMAScript spec version 3 (a.k.a. ES3), that was cutting edge in the decade 1999-2009. Trivia moment: ECMA stands for &lt;em&gt;European Computer Manufacturers Association&lt;/em&gt;, and it’s the organization that standardized the JavaScript language under the name ECMAScript. There’s a &lt;a href=&quot;https://www.youtube.com/watch?v=krB0enBeSiE&quot;&gt;terrific interview&lt;/a&gt; with Brendan Eich (who famously created JavaScript in a hurry in just 10 days) in Lex Fridman’s channel, check that out – trust me, the man is quite something.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/03/BrendanEich.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So in a way JavaScript and ExtendScript share a “common ancestor”, ES3, but their evolution diverged. Adobe &lt;em&gt;extended&lt;/em&gt; (hence the name) the ES3 spec with extra features e.g. the E4X library for XML literals support; while JavaScript went on with ES5 (JSON support, Array methods…), ES6 (new syntax…), etc.&lt;/p&gt;
+
+&lt;p&gt;Fast forward to the Adobe MAX 2020 conference and the adoption of a new, unified UI/Scripting engine in UXP. All the ExtendScript extras that we were familiar with are now &lt;em&gt;gone&lt;/em&gt;: disappeared, no more. This is the price we’ve got to pay to have a modern JavaScript engine – fair enough. Some fellow developers might not have realized this because there was a lot to sink in, but probably the most conspicuous feature that’s gone missing is the entire &lt;strong&gt;ScriptUI&lt;/strong&gt; class, that has always been the principal tool to build script-driven Windows both in the CEP era and also way before when the Cloud was not around and all we had was a Creative Suite.&lt;/p&gt;
+
+&lt;p&gt;Let’s be clear about terminology before going any further, so that no matter what your background is we’re all on the same page:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Dialog&lt;/strong&gt;: an independent window that pops up and can be:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Modal&lt;/strong&gt;: it steals the focus, you can’t interact with any other UI element but the dialog itself.&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Modeless&lt;/strong&gt;: the dialog stays around and you’re allowed to deal with the rest of the Photoshop interface.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The concept of Modal vs. Modeless UIs is present all over in the Photoshop interface, e.g. Adjustments: on the left a Modal dialog, on the right a Modeless panel.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/03/ColorBalance.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We used to build modals with ScriptUI Windows of type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'dialog'&lt;/code&gt;, and in theory modeless with ScriptUI Windows of type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'palette'&lt;/code&gt;, but those weren’t really supported in Photoshop – they acted weird and we’ve been officially advised against their use. Before CEP came about, ScriptUI was enough to build rich UIs:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/03/ScriptUI.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But as soon as Flash first, then CEP panels landed in Photoshop, ScriptUI was relegated to simpler dialogs or for backward compatibility only. You may not know it, but also those super-handy &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;alert()&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prompt()&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;confirm()&lt;/code&gt; dialogs were part of ScriptUI.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Old ExtendScript code&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;prompt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;What's the meaning of life?&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Feel free to think as long as you need to...&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/03/prompt.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;They’re all gone too, with the exception of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;alert()&lt;/code&gt; that’s been re-implemented in the Photoshop API as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;showAlert()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Photoshop API&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;photoshop&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;photoshop&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;photoshop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;showAlert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Get ready!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Right on&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/03/showAlert.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Even though it doesn’t differentiate between title vs. text yet (they’re both bold, only the title should be) – a minor cosmetic glitch.&lt;/p&gt;
+
+&lt;p&gt;Anyway, whatever code we used to write in the recent past to create dialogs, that’s gone now – thanks for all the fish. UXP provides alternatives for both modeless windows (as UXP panels, that I’ve extensively covered) and modal dialogs, which I’m going to show you in a moment.&lt;/p&gt;
+
+&lt;h2 id=&quot;️-disclaimer&quot;&gt;⚠️ Disclaimer&lt;/h2&gt;
+
+&lt;p&gt;UXP is a technology under very active development, so the code that I’m showing you may be subject to change in the future: this is the premise of all my work here, given nature of the topic – rest assured that I’ll post updates if/when needed.&lt;/p&gt;
+
+&lt;p&gt;That said, there are features that might be &lt;em&gt;already available&lt;/em&gt; for you to use, but not really (either partially or fully) documented yet. Incidentally this happens to be the case of some Dialogs, so I was dubious whether to include them here or not. I’ve decided that I will mention them anyway because IMHO it’s crucial for you to plan ahead and be informed about the actual realm of possibilities, so to speak. Although I would suggest not to use those features yet, for the risk that the API will change is even greater – be warned.&lt;/p&gt;
+
+&lt;p&gt;As a general rule, you won’t hear a word from me about anything that belongs to the prerelease, or that works in beta versions only – besides breaking all sort of NDAs, it would be pointless. Instead, if the feature is implemented in Photoshop-release I might mention/show it, essentially to inform you but deferring for the actual use to some time in the future when the official documentation covers it fully.&lt;/p&gt;
+
+&lt;p&gt;I’ve prepared two different UXP plugins to show you a few of the possible ways to use Dialogs – one using vanilla JS and the other based on React.js. I haven’t covered React here yet, but it felt wrong to leave that out. You can find both of the examples in my &lt;a href=&quot;https://github.com/undavide/Adobe-UXP/tree/main/Things-You-Need-To-Know/10-Dialogs&quot;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;vanilla-js-uxp-dialogs&quot;&gt;Vanilla JS UXP dialogs&lt;/h2&gt;
+
+&lt;p&gt;This vanilla JS example comes directly from the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ps-starter&lt;/code&gt; template that is available from the UXP Developer Tool (see &lt;a href=&quot;https://www.davidebarranca.com/development/adobe-uxp-things-you-need-to-know-3-uxp-developer-tool&quot;&gt;here&lt;/a&gt; if you still need pointers).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/03/dialog.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The base structure is very bare, just some Spectrum UXP components:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-heading&amp;gt;&lt;/span&gt;Dialog examples&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-heading&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-divider&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;large&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;margin-bottom:10px&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/sp-divider&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-body&amp;gt;&lt;/span&gt;
+  Two different ways to create modal dialogs.&lt;span class=&quot;nt&quot;&gt;&amp;lt;br&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+  Please note that Spectrum Dialogs API is still a work in progress.
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-body&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;margin: 20px; justify-content: space-around;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;openDialog()&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;dialog&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-button&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;openSpectrumDialog()&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;sp-dialog&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-button&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Version Info, to be filled by JS --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-detail&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;L&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;info&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/sp-detail&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Let’s cover what is &lt;em&gt;officially documented&lt;/em&gt; first, which is the result of the first “dialog” button. In order to create a modal dialog, you need to have an actual &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;dialog&amp;gt;&lt;/code&gt; element in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; first:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Standard Dialog --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;dialog&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;dialog&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-heading&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;L&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;margin: 0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;👋🏻 Hello there!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-heading&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-divider&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;large&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;margin:10px 0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/sp-divider&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-body&amp;gt;&lt;/span&gt;This is a rich modal dialog where you can use all
+  the available UI elements in UXP.&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-body&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;img/UXP.png&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;400&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;justify-content: flex-end; margin-top:30px&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;variant=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;secondary&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;margin-right:10px&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;document.querySelector('#dialog').close('NOPE')&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      Cancel
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-button&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;variant=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;primary&quot;&lt;/span&gt;
+               &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;document.querySelector('#dialog').close('OK')&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      Ok
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-button&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- ESC will return &quot;reasonCanceled&quot; --&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dialog&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;dialog&amp;gt;&lt;/code&gt; element itself is nothing special, I’ve used Spectrum elements that we’ve seen in the past episode like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-heading&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-divider&amp;gt;&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-body&amp;gt;&lt;/code&gt;. Please note that, as I’ve also mentioned in the &lt;a href=&quot;https://www.davidebarranca.com/development/adobe-uxp-things-you-need-to-know-9-adobe-spectrum-uxp&quot;&gt;Spectrum episode&lt;/a&gt;, a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt; of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;row&quot;&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;column&quot;&lt;/code&gt; triggers the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;display&lt;/code&gt; equals to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;flex&lt;/code&gt; in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; so it’s possible to use FlexBox-specific styles such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;justify-content&lt;/code&gt; etc.&lt;/p&gt;
+
+&lt;p&gt;The two &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-button&amp;gt;&lt;/code&gt; elements &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;onclick&lt;/code&gt; handlers both use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;close()&lt;/code&gt; method of the dialog, that in turn is retrieved with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;document.querySelector()&lt;/code&gt; passing the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt;, which is in fact &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;dialog&quot;&lt;/code&gt; (I hope this is not confusing).&lt;/p&gt;
+
+&lt;p&gt;Please note that even if the markup code is there, the dialog doesn’t pop up by default. In order to open it let’s have a look at the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openDialog()&lt;/code&gt; function that is triggered by the plugin’s “dialog” button.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;openDialog&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#dialog&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uxpShowModal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;About&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;resize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;both&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;464&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;380&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`The dialog closed with: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So, the dialog is retrieved with the same &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;querySelector()&lt;/code&gt; but to open it we run the UXP-specific &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uxpShowModal()&lt;/code&gt; method. That accepts an options object with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;title&lt;/code&gt; property (the dialog’s title bar); a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;resize&lt;/code&gt; prop, that controls whether the dialog is resizeable (either &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;horizontal&quot;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;vertical&quot;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;both&quot;&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;none&quot;&lt;/code&gt; – might still be a bit buggy, it was in the past); and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;size&lt;/code&gt;, an object with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;width&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;height&lt;/code&gt; properties (quite self explanatory).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;To sum up&lt;/strong&gt;: you add to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; one or more &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;dialog&amp;gt;&lt;/code&gt; elements (that you can get by &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt;) filled with whatever elements you need. You open the modal dialog with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uxpShowModal()&lt;/code&gt; passing an options object, and you can close the dialog with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;close()&lt;/code&gt; method optionally passing a return value (in the example I’ve got &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;close('NOPE')&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;close('OK')&lt;/code&gt;). Also note that opening a dialog is an asynchronous process (hence &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openDialog&lt;/code&gt; is an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;async&lt;/code&gt; callback, and it &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;await&lt;/code&gt;s for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uxpShowModal()&lt;/code&gt;) that allows the result &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;res&lt;/code&gt; to be stored/logged afterwards. If the user cancels, a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;reasonCanceled&quot;&lt;/code&gt; string is returned.&lt;/p&gt;
+
+&lt;h3 id=&quot;spectrum-dialog&quot;&gt;Spectrum dialog&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: this is, as I said earlier, still undocumented so please wait for the official documentation and/or use with caution.&lt;/p&gt;
+
+&lt;p&gt;Instead of a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;dialog&amp;gt;&lt;/code&gt; element, there’s the possibility to use a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-dialog&amp;gt;&lt;/code&gt; that allows some pre-defined styling as &lt;em&gt;slots&lt;/em&gt;. You still place it in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; markup:&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-dialog&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sp-dialog&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-heading&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;slot=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;margin: 0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Use with caution!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-heading&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-icon&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;slot=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;color: #ec5b62&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;m&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ui:AlertSmall&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/sp-icon&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-body&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;slot=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    Spectrum Dialogs are still undocumented, yet available in PS-release.
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;br&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    Be aware that this possibility exists and keep an eye on the Doc.
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-body&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-button-group&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;slot=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;buttongroup&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;sp-button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;variant=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;primary&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;document.querySelector('#sp-dialog').removeAttribute('open')&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    Ok
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-button&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-button-group&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/sp-dialog&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;But the result is strikingly different:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/03/sp-dialog.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The modal dialog is blocked in the screen’s center (you can’t move it) and the panel gets darkened. There are several slots such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;title&quot;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;icon&quot;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;description&quot;&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;buttongroup&quot;&lt;/code&gt;. I won’t go too much into any of those because, as I’ve mentioned, it’s better for us to wait for the official documentation. One major difference is that you don’t use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uxpShowModal()&lt;/code&gt; anymore:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;openSpectrumDialog&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#sp-dialog&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Instead you set the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;open&quot;&lt;/code&gt; attribute of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-dialog&amp;gt;&lt;/code&gt; element. Similarly, as you can see in the dialog “Ok” button’s click handler, to close the dialog you just remove &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;open&quot;&lt;/code&gt; via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;removeAttribute()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now you know that this is possible and it’ll be soon documented – you can play with it in Photoshop 22.2. Speaking of versions, if you’re wondering how the Photoshop/UXP line fills:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// fills the versions sp-detail&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;uxp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;uxp&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;`Photoshop &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uxp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uxp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;versions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uxp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;reactjs-uxp-dialog&quot;&gt;React.js UXP dialog&lt;/h2&gt;
+
+&lt;p&gt;As I said I’ve not introduced React.js in this series yet – it’s planned – but I want to include an example anyway. This comes straight from the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ps-react-starter&lt;/code&gt; template, cleaned of almost everything; I might assume that you know how to orient yourself in a React project, but If you don’t and want to follow/play with it, please download the React example from &lt;a href=&quot;https://github.com/undavide/Adobe-UXP/tree/main/Things-You-Need-To-Know/10-Dialogs/react&quot;&gt;this repository&lt;/a&gt;, then:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Do not &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install&lt;/code&gt; because it won’t deploy all the needed components. Then point the UXP Developer Tool to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;manifest.json&lt;/code&gt; that sits in the project’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dist&lt;/code&gt; folder – the distribution files come pre-compiled. If you want to modify the code, then you need to:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm run watch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This will watch the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;src&lt;/code&gt; folder and bundle with Webpack on each save to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dist&lt;/code&gt;: if you’re not familiar with React, usually you code separate components that a bundler (such as WebPack) merges alongside with the required dependencies in one or a few JavaScript files in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dist&lt;/code&gt;. Additionally, you need to watch the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dist&lt;/code&gt; folder in the UXP Developer Tool so that it knows when to reload the plugin.&lt;/p&gt;
+
+&lt;p&gt;The whole example is very simplified, it’s a dummy Preferences dialog that doesn’t really saves any preference, but is able to hand it to the UXP panel (I will suggest later on ways to improve it).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/03/react.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s concentrate on the only two files that matter here, both in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;src&lt;/code&gt; folder: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/panels/Dialogs.jsx&lt;/code&gt;, the outer container in the UXP plugin panel; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/components/Preferences.jsx&lt;/code&gt;, the content of the dialog that pops up.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/03/VSCode.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Dialogs.jsx&lt;/code&gt; file is not very fancy but there are two or three things I’d like to point out.&lt;/p&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ReactDOM&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;react-dom&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Preferences&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;../components/Preferences&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;uxp&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;uxp&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Dialogs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;preferencesDialog&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;openPreferences&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Make it better, e.g. loading data from localStorage passing it to the&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// dialog, and saving it thereafter&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preferencesDialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;preferencesDialog&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;dialog&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;ReactDOM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Preferences&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;dialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preferencesDialog&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&amp;gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;preferencesDialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appendChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preferencesDialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;preferencesDialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uxpShowModal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Preferences&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;resize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;both&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;250&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// Do whatever you need with the {smartObject, vectorContent} result&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;preferencesDialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;heading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;Dialog example in React&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;heading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;divider&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;large&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;marginBottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;divider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        Two different ways to create modal dialogs.&lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;br&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&amp;gt;&lt;/span&gt;
+        Please note that Spectrum Dialogs API is still a work in progress.
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;justifyContent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;space-around&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;openPreferences&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;160&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;slot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icon&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;svg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!--&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Long&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;SVG&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;things&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;going&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;here&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;svg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        Open Preferences&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;detail&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;L&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;Photoshop &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uxp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;, &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uxp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;versions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;uxp&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  );
+}
+
+export default Dialogs;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;openPreferences()&lt;/code&gt; function is in charge of opening the dialog: interestingly, it uses &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ReactDOM.render()&lt;/code&gt; to render the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Preferences&amp;gt;&lt;/code&gt; component, but first it needs to create a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;dialog&amp;gt;&lt;/code&gt; element (via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;createElement()&lt;/code&gt;) stored in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;preferencesDialog&lt;/code&gt; variable, and then append it to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;. Only then you’re allowed to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uxpShowModal()&lt;/code&gt;. Also note that when the modal is closed there’s no need to keep the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;dialog&amp;gt;&lt;/code&gt; around anymore and you can &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;remove()&lt;/code&gt; it.&lt;/p&gt;
+
+&lt;p&gt;Nothing relevant to mention in the HTML part, just a very simple Spectrum Component structure with a bit of extra styles to keep things properly spaced.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Preferences.jsx&lt;/code&gt; is as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-jsx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Preferences&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;({&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dialog&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;smartObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setSmartObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vectorContent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setVectorContent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;column&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;heading&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;S&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;marginBottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        Set Defaults
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;heading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;column&quot;&lt;/span&gt;
+      	&lt;span class=&quot;na&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;solid 1px #888&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                 &lt;span class=&quot;na&quot;&gt;borderRadius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;4px&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                 &lt;span class=&quot;na&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                 &lt;span class=&quot;na&quot;&gt;marginBottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;checkbox&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;checked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;smartObject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;onInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;evt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setSmartObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;evt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;checked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+          Smart Objects
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;checkbox&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;checkbox&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;checked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vectorContent&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;onInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;evt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setVectorContent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;evt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;checked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+          Vector Content
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;checkbox&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;row&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;justifyContent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;flex-end&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;variant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;secondary&quot;&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;reasonCanceled&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+          Cancel
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;variant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;primary&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;marginLeft&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dialog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;smartObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vectorContent&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+          Ok
+        &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Preferences&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;It’s a stateless function component where I’ve used the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;state&lt;/code&gt; hook to keep track of the two bits of information (the fictitious &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;smartObject&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vectorContent&lt;/code&gt;) that I want to pass along to the panel on close – see the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;onClick()&lt;/code&gt; handler for the “Ok” button, whereas the “Cancel” returns the same &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;reasonCanceled&quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;As I’ve mentioned in the previous video about Spectrum components, you always must use the ternary operator for checkboxes (and set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;null&lt;/code&gt; when needed) otherwise they won’t work properly. Please note that I’m using inline handler functions for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;onInput&lt;/code&gt; event just for convenience. Also note that, and this is peculiar to React.js, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;style&lt;/code&gt; must be an object – hence the double curly braces: one set to indicate inline JavaScript, one set for the object notation, with camelCase properties. And finally &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;className&lt;/code&gt; in lieu of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt;: but remember, only in standard elements, not Spectrum components that accept the usual &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;class&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is just an example; in the real world you may want to, say, always store the values (e.g. in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;localStorage&lt;/code&gt;) and pass them to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Preferences&amp;gt;&lt;/code&gt; component to populate the modal when it’s shown – but the goal here is to focus on dialog creation.&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;Dialogs as we knew them (as ScriptUI Windows, or various simple pop-ups like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prompt()&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;confirm()&lt;/code&gt;) are banned in UXP-land. UXP plugins deal with modeless panels natively, and can display modal dialogs as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;dialog&amp;gt;&lt;/code&gt; elements via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uxpShowModal()&lt;/code&gt;. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-dialogs&amp;gt;&lt;/code&gt; (that are slightly different) are coming in the near future so keep an eye at the official documentation. All in all UXP can manage dialogs quite nicely so the transition to the new system shouldn’t be too big of a deal!&lt;/p&gt;
+
+&lt;p&gt;Thanks for following along! If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt;; in particular let me thank this group of fine persons who’ve supported my work &lt;a href=&quot;https://bit.ly/unDavide&quot;&gt;donating what they could afford&lt;/a&gt; – much appreciated! 🙏🏻&lt;/p&gt;
+
+&lt;p&gt;John Stevenson ⭐️, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki.&lt;/p&gt;
+
+&lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
+&lt;input type=&quot;image&quot; src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; title=&quot;PayPal - The safer, easier way to pay online!&quot; alt=&quot;Donate with PayPal button&quot; /&gt;
+&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;https://www.paypal.com/en_IT/i/scr/pixel.gif&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;
+&lt;/form&gt;
+
+&lt;p&gt;Stay safe, get the vaccine shot if/when you can – bye!&lt;/p&gt;
+
+&lt;h2 id=&quot;the-whole-series-so-far&quot;&gt;The whole series so far&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know.html&quot;&gt;#01 – Rundown on the UXP announcement @ the Adobe MAX 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Mon, 01 Mar 2021 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html</link>
+        <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html</guid>
+        
+        <category>UXP</category>
+        
+        
+        <category>Development</category>
+        
+      </item>
     
       <item>
         <title>Adobe UXP: Things you need to know! #9 Adobe Spectrum</title>
@@ -306,7 +666,7 @@
 
 &lt;span class=&quot;c1&quot;&gt;// T-Shirt Color dropdown&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#color&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;change&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;evt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#shirt-img&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/wp-content/uploads/2021/02/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;evt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-shirt.jpg&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#shirt-img&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;`/wp-content/uploads/2021/02/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;evt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;-shirt.jpg`&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// Buy button&lt;/span&gt;
@@ -406,8 +766,9 @@
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -453,8 +814,9 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -507,8 +869,9 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -559,8 +922,9 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -609,8 +973,9 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -660,8 +1025,9 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -725,8 +1091,9 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -774,8 +1141,9 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -828,8 +1196,9 @@ Speaking of which: if you find this content useful, &lt;em&gt;please consider su
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#09 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -1330,78 +1699,6 @@ see you in the next one. Stay safe! Bye.&lt;/p&gt;
         <pubDate>Tue, 27 Oct 2020 00:00:00 +0100</pubDate>
         <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know.html</link>
         <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know.html</guid>
-        
-        <category>UXP</category>
-        
-        <category>Adobe MAX</category>
-        
-        
-        <category>Development</category>
-        
-      </item>
-    
-      <item>
-        <title>UXP launch at Adobe MAX 2020</title>
-        <description>&lt;p&gt;The &lt;a href=&quot;https://www.adobe.com/max.html&quot;&gt;Adobe MAX 2020&lt;/a&gt; conference is unfolding right now, free and online, carrying a number of major updates in the Creative Cloud apps lineup – Photoshop 2021 included. These are three of the major keynote’s highlights IMHO.&lt;/p&gt;
-
-&lt;h4 id=&quot;conan-obrien-mentioning-cep-10-on-stage&quot;&gt;Conan O’Brien mentioning CEP 10 on stage&lt;/h4&gt;
-
-&lt;p&gt;Read that again to sink it in.&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2020/10/Conan.jpg&quot; srcset=&quot;/wp-content/uploads/2020/10/Conan.jpg 1x, /wp-content/uploads/2020/10/Conan@2x.jpg 2x&quot; alt=&quot;Conan O'Brien on-stage at MAX 2020&quot; /&gt;
-&lt;figcaption&gt;Conan O'Brien on stage co-hosting MAX 2020. He really said &quot;CEP 10&quot;&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h4 id=&quot;adobe-photoshop-2021-supporting-the-new-uxp-plugins-architecture-for-3rd-party-developers&quot;&gt;Adobe Photoshop 2021 supporting the new UXP plugins architecture for 3rd-party developers.&lt;/h4&gt;
-
-&lt;p&gt;UXP stands for &lt;em&gt;Unified Extensibility Platform&lt;/em&gt;, a technology that was Guinea-pigged on Adobe XD and &lt;a href=&quot;https://medium.com/adobetech/announcing-uxp-in-photoshop-288496ab5e3e&quot;&gt;“enables JavaScript-based plugin development with near-native performance”&lt;/a&gt;, quoting Ari Fuchs (Product Lead for in-app extensibility at Adobe).&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2020/10/UXP.png&quot; srcset=&quot;/wp-content/uploads/2020/10/UXP.png 1x, /wp-content/uploads/2020/10/UXP@2x.png 2x&quot; alt=&quot;The UXP architecture&quot; /&gt;
-&lt;figcaption&gt;The UXP Architecture (don't worry it'll be fine)&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;My fellow developer, if this doesn’t get you excited feel worried then: &lt;strong&gt;in the long run UXP is going to replace CEP&lt;/strong&gt;, so you must care sooner or later. Let me stress that &lt;em&gt;it will not happen overnight&lt;/em&gt;, we’re just in the early stages and they’re going to overlap for a significant amount of time. Yet, be aware that UXP is clearly the future of plugins development in Adobe-land for all major CC apps. Which apps?&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2020/10/UXP-apps.png&quot; srcset=&quot;/wp-content/uploads/2020/10/UXP-apps.png 1x, /wp-content/uploads/2020/10/UXP-apps@2x.png 2x&quot; alt=&quot;The UXP architecture&quot; /&gt;
-&lt;figcaption&gt;Ari Fuchs on current UXP support for internal features; 3rd party support will follow sometimes in the future.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;h4 id=&quot;the-creative-cloud-marketplace-featuring-uxp-plugins-photoshop&quot;&gt;The Creative Cloud Marketplace featuring UXP plugins Photoshop&lt;/h4&gt;
-
-&lt;p&gt;We’ve been working behind the scenes for months now (“we” being yours truly and other amazing developers, with the invaluable support of Adobe employees) to build and launch our UXP plugins in time for MAX 2020. I’ve released new versions of ALCE, Double USM (that for a limited time are 50% off the original price), and the free utilities Theme Switcher and Floating Adjustments.&lt;/p&gt;
-
-&lt;figure&gt;
-&lt;img src=&quot;/wp-content/uploads/2020/10/UXP-Marketplace.jpg&quot; srcset=&quot;/wp-content/uploads/2020/10/UXP-Marketplace.jpg 1x, /wp-content/uploads/2020/10/UXP-Marketplace@2x.jpg 2x&quot; alt=&quot;The UXP architecture&quot; /&gt;
-&lt;figcaption&gt;The new Plugins panel and the CCD Marketplace &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-&lt;p&gt;The hub for plugins discovery and installation is now the CCD – Creative Cloud Desktop app – read more on &lt;a href=&quot;https://blog.adobe.com/en/2020/10/20/creative-cloud-ecosystem-update-max-2020.html&quot;&gt;this post&lt;/a&gt; by Vijay Vachani, (Sr. Director Product Management &amp;amp; Platform Partnerships at Adobe). Photoshop 2021 also sports a new Plugins menu and panel.&lt;/p&gt;
-
-&lt;h2 id=&quot;uxp-and-you--how-this-blog-can-help-&quot;&gt;UXP and you – how this blog can help 🚀&lt;/h2&gt;
-
-&lt;p&gt;In the past, I’ve extensively blogged about CEP in the apparently quite popular “HTML Panels Tip” series. I plan to do the very same here with UXP – with the difference that &lt;strong&gt;I’m also going to record videos&lt;/strong&gt;: the first being an extensive introduction/first-aid to the UXP platform that I’ll release here before the end of the month. So stay tuned! And let me know what you think in the comment below.&lt;/p&gt;
-
-&lt;p&gt;This is a collection of the available UXP resources at the moment:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/adobetech/announcing-uxp-in-photoshop-288496ab5e3e&quot;&gt;Announcing UXP in Photoshop&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.adobe.com/en/2020/10/20/creative-cloud-ecosystem-update-max-2020.html#gs.j8yw75&quot;&gt;Adobe expands Creative Cloud Platform capabilities and new marketplace for plugins and integrations&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/adobetech/the-next-iteration-of-adobe-plugin-distribution-47ba732dc20a&quot;&gt;The Next Iteration of Creative Cloud Plugin Distribution&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.adobe.io/photoshop/uxp/&quot;&gt;UXP for Adobe Photoshop Documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://forums.creativeclouddeveloper.com/&quot;&gt;Public Forums for UXP developers&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://helpx.adobe.com/creative-cloud/kb/troubleshoot-common-addon-installation-issues.html&quot;&gt;Fix common installation issues with Creative Cloud app extensions or plugins&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In the meantime, there are a number of freely available &lt;a href=&quot;https://www.adobe.com/max.html&quot;&gt;Adobe MAX sessions&lt;/a&gt; to watch and learn from – check them out. Stay safe and cheers from Italy! 🖐&lt;/p&gt;
-
-&lt;p&gt;Davide&lt;/p&gt;
-</description>
-        <pubDate>Tue, 20 Oct 2020 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/development/UXP-at-Adobe-MAX-2020.html</link>
-        <guid isPermaLink="true">http://localhost:4000/development/UXP-at-Adobe-MAX-2020.html</guid>
         
         <category>UXP</category>
         
