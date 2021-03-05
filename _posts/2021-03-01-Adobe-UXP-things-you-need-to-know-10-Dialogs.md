@@ -6,7 +6,7 @@ excerpt: "In this episode we'll learn how to build Modal Dialogs for UXP plugins
 layout: post
 description: "In this episode we'll learn how to build Modal Dialogs for UXP plugins. Feel free to watch the video or read the article, they cover the same ground."
 image: "/wp-content/uploads/2020/10/TYNTN.png"
-media_card: /wp-content/uploads/2021/02/TYNTN-twitter10.png
+media_card: /wp-content/uploads/2021/03/TYNTN-twitter10.png
 category:
   - Development
 tags:
