@@ -14,6 +14,32 @@ tags:
   - Frequency Separation
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.davidebarranca.com/retouching/frequency-separation-2021"
+  },
+  "headline": "Frequency Separation 2021",
+	"keywords": "frequency separation photoshop",
+  "image": [
+    "https://www.davidebarranca.com/wp-content/uploads/2021/03/fs/MediaCard.jpg",
+    "https://www.davidebarranca.com/wp-content/uploads/2021/03/fs/GaussianPyramid2.jpg",
+    "https://www.davidebarranca.com/wp-content/uploads/2021/03/fs/GaussianPyramid3.jpg"
+   ],
+  "dateCreated": "2021-03-10",
+  "datePublished": "2021-03-13",
+  "dateModified": "2021-03-13",
+  "author": {
+    "@type": "Person",
+    "name": "Davide Barranca"
+  },
+  "description": "A detailed overview of a variety of Frequency Separation techniques in Photoshop, updated to the year 2021"
+}
+</script>
+
 A long (long) time ago I wrote an essay on Frequency Separation, even if the main subject was disguised in the more approachable title "Notes on Sharpening". That was early 2009, way before Frequency Separation was cool, then popularized/mainstream, then possibly cool again. I've thought to revisit the original article to give the subject a new coat of 2021 paint, plus all sorts of new detours.
 
 **Spoiler alert**: I'm interested in Frequency Separation as a tool for a broader set of manipulations not limited to, nor particularly focused on, beauty/skin retouch.

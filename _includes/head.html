@@ -36,7 +36,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} |{% endif %} {{ site.name | escape }}" />
 
-  {% if page.summary %}
+  {% if page.description %}
   <meta name="twitter:description" content="{{ page.description }}">
   <meta property="og:description" content="{{ page.description }}">
   {% else %}
