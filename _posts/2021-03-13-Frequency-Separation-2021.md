@@ -36,6 +36,10 @@ tags:
     "@type": "Person",
     "name": "Davide Barranca"
   },
+	"publisher": {
+    "@type": "Person",
+    "name": "Davide Barranca"
+  },
   "description": "A detailed overview of a variety of Frequency Separation techniques in Photoshop, updated to the year 2021"
 }
 </script>
