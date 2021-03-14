@@ -18,6 +18,36 @@ tags:
 
 If you're into technical writing, read along. I've used Leanpub's services for two books of mine out of three, and I am still 100% sure that I couldn't make a better choice. But when you're more experienced, there might be reasons to look for alternatives: I'll tell you mine, how I've sorted my doubts out, and what I've eventually chosen.
 
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.davidebarranca.com/2019/10/2019-10-15-leanpub-alternatives-imho/"
+  },
+  "headline": "LeanPub alternatives",
+	"keywords": "Leanpub, ebook, Pandoc, LaTeX, self-publishing",
+  "image": [
+    "https://www.davidebarranca.com/wp-content/uploads/2019/10/PSScripting@2x.png",
+    "https://www.davidebarranca.com/wp-content/uploads/2019/10/texpad@2x.png",
+    "https://www.davidebarranca.com/wp-content/uploads/2019/10/listings@2x.png"
+   ],
+  "dateCreated": "2019-10-15",
+  "datePublished": "2019-10-15",
+  "dateModified": "2019-10-15",
+  "author": {
+    "@type": "Person",
+    "name": "Davide Barranca"
+  },
+	"publisher": {
+    "@type": "Person",
+    "name": "Davide Barranca"
+  },
+  "description": "A detailed overview of Leanpub alternatives for self-publishing"
+}
+</script>
+
 ## TL;DR
 
 Notable options among others are [Pandoc](https://pandoc.org/), [SoftCover](https://www.softcover.io/), [LaTeX](https://www.latex-project.org/), [Affinity Publisher](https://affinity.serif.com/en-gb/publisher/). Read along to see the piece of technology that I've embraced, and why.

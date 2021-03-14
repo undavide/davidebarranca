@@ -23,7 +23,7 @@ tags:
     "@id": "https://www.davidebarranca.com/retouching/frequency-separation-2021"
   },
   "headline": "Frequency Separation 2021",
-	"keywords": "frequency separation photoshop",
+	"keywords": "frequency separation, photoshop",
   "image": [
     "https://www.davidebarranca.com/wp-content/uploads/2021/03/fs/MediaCard.jpg",
     "https://www.davidebarranca.com/wp-content/uploads/2021/03/fs/GaussianPyramid2.jpg",
