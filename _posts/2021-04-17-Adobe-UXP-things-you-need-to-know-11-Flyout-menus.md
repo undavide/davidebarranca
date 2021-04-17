@@ -6,7 +6,7 @@ excerpt: "In this episode I'll show you how to setup Flyout Menus for UXP plugin
 layout: post
 description: "In this episode I'll show you how to setup Flyout Menus for UXP plugins. Feel free to watch the video or read the article, they cover the same ground."
 image: "/wp-content/uploads/2020/10/TYNTN.png"
-media_card: /wp-content/uploads/2021/03/TYNTN-twitter11.png
+media_card: /wp-content/uploads/2021/04/TYNTN-twitter11.png
 category:
   - Development
 tags:
