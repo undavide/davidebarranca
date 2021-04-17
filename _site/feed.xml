@@ -5,13 +5,290 @@
     <description>Digital Caveman. Photoshop retoucher and plugins developer. Check out my Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 13 Mar 2021 18:16:58 +0100</pubDate>
-    <lastBuildDate>Sat, 13 Mar 2021 18:16:58 +0100</lastBuildDate>
+    <pubDate>Sat, 17 Apr 2021 16:15:41 +0200</pubDate>
+    <lastBuildDate>Sat, 17 Apr 2021 16:15:41 +0200</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
+        <title>Adobe UXP: Things you need to know! #11 Flyout Menus and Entrypoints</title>
+        <description>&lt;p&gt;In this episode I’ll show you how to setup Flyout Menus for UXP plugins, while introducing UXP Entrypoints. Feel free to watch the video or read the article, they cover the same ground.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/v-x1ZrOtlzQ&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;flyouts&quot;&gt;Flyouts&lt;/h2&gt;
+
+&lt;p&gt;Flyouts are the kind of popup menus that appear when you click the top-right corner of UXP plugin’s panels. They’re traditionally used to launch info/about dialogs, or directly set Preferences in a remarkably unobtrusive way: the Flyout is easily reachable (stuff in there is always just one click away) and it helps you tremendously in keeping the precious real estate of the UI as uncluttered as possible.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/04/Panel.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Flyouts can store either single items, or group them inside submenus: which in turn can also be nested in a sort-of Russian doll fashion multiple times. In addition, all Flyout items can be dynamically set as &lt;em&gt;enabled&lt;/em&gt; or &lt;em&gt;disabled&lt;/em&gt; (grayed out), and &lt;em&gt;checked&lt;/em&gt; or &lt;em&gt;unchecked&lt;/em&gt; (with or without a flag besides their name).&lt;/p&gt;
+
+&lt;p&gt;A UXP panel is always (when you instruct it to do so, which we’ll see in a moment) listening for Flyout user interactions, i.e. clicks. There’s just one callback in charge of dealing with those clicks, and within that function we’ll write the logic to handle the appropriate event—in other words, to recognize which menu item’s been clicked and then act accordingly.&lt;/p&gt;
+
+&lt;p&gt;The subject of Flyout menus is also a way for me to introduce another crucial aspect of UXP plugins programming.&lt;/p&gt;
+
+&lt;h2 id=&quot;entrypoints&quot;&gt;Entrypoints&lt;/h2&gt;
+
+&lt;p&gt;You use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entrypoints&lt;/code&gt; to bootstrap the plugin and set lifecycles hooks, i.e. functions that are expected to run when a particular event happens in the plugin’s life. They operate on the level of the &lt;strong&gt;plugin&lt;/strong&gt; itself, or the &lt;strong&gt;panels&lt;/strong&gt; and the &lt;strong&gt;commands&lt;/strong&gt; that the plugin can be made of&lt;sup id=&quot;fnref:command&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:command&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;In addition, it’s used to setup the Flyout menu and its callback. Although at the time of this writing (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uxp-4.4.2-PR-6039.17&lt;/code&gt; in Photoshop 2021 v.22.3 release) many of the hooks aren’t functional yet, let me show you how to use it.&lt;/p&gt;
+
+&lt;p&gt;First you need to require &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uxp&lt;/code&gt; and use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entrypoints.setup()&lt;/code&gt; method, that accepts an object.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// index.js&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;entrypoints&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;uxp&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;entrypoints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* ... */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;panels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* ... */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;commands&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* ... */&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You’re allowed to call &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setup()&lt;/code&gt; only once in your code, otherwise an error will be thrown. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin&lt;/code&gt; property contains lifecycle hooks on the plugin level, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;create&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;destroy&lt;/code&gt;. Neither of them work so let’s skate over this; I won’t talk about &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;commands&lt;/code&gt; either (see &lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;episode #04&lt;/a&gt; if you need to catch up), so let’s focus on the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;panels&lt;/code&gt; entry.&lt;/p&gt;
+
+&lt;h3 id=&quot;panels-lifecycle-hooks&quot;&gt;Panel’s lifecycle hooks&lt;/h3&gt;
+
+&lt;p&gt;As I’ve already mentioned in this series, a single UXP plugin can contain more than one panel. Each panel can have its own &lt;em&gt;panel level&lt;/em&gt; entrypoint:  in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;panels&lt;/code&gt; object you should identify them through their &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt;, that you’ve set in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;manifest.json&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;manifest.json&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;com.davidebarranca.flyout&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;UXP Flyout example&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;version&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1.0.0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;index.html&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;host&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;app&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PS&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;minVersion&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;22.0.0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;manifestVersion&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;entrypoints&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;panel&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;vanilla&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;*/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/*&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;*/&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here we have only one panel, with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; equal to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vanilla&lt;/code&gt;, so the code in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entrypoints&lt;/code&gt; becomes:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// index.js&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;entrypoints&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;uxp&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;entrypoints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;plugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){},&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;destroy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// NOT WORKING&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;panels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;vanilla&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// Lifecycle hooks&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){},&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// NOT WORKING&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;hide&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){},&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;// NOT WORKING&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;destroy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){},&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// NOT WORKING&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){},&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// callback when panel is made visible&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// Flyout menu&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;menuItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// Flyout menu's structure&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;invokeMenu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){},&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// callback for Flyout menu click events&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As you see, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;create&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hide&lt;/code&gt;, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;destroy&lt;/code&gt; hooks (theoretically for when the panel is created the first time, hidden or destroyed) don’t fire yet. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;show&lt;/code&gt; runs fine instead, but only once (so it’s kind of a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;create&lt;/code&gt; I suppose).&lt;/p&gt;
+
+&lt;h3 id=&quot;panels-flyout-menu&quot;&gt;Panel’s Flyout menu&lt;/h3&gt;
+
+&lt;p&gt;The actual Flyout menu stuff we’re interested about is in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;menuItems&lt;/code&gt; array, and the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;invokeMenu&lt;/code&gt; callback. Let’s start with the former: the code to produce the Flyout from the first screenshot in this article is as follows.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// index.js&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;entrypoints&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;uxp&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;entrypoints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;panels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;vanilla&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;menuItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// by default all items are enabled and unchecked&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Preferences&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;submenu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;bell&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;🔔  Notifications&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;dynamite&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;🧨  Self-destruct&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;spacer&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// SPACER&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;enabler&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Enable  🧨&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;toggle&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Toggle me!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;checked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;about&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;About&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;reload&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Reload this panel&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Let me walk you through the code. The structure is basically JSON: everything in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;menuItems&lt;/code&gt; array will turn into a Flyout menu item, in the example we’ve got eight of them. Items are objects with a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;label&lt;/code&gt; property (please note that emoji do work there 🐋), and an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; where it makes sense. I’ve omitted the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; in the first object labelled &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;Preferences&quot;&lt;/code&gt;, because this acts as a container: in fact it has a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;submenu&lt;/code&gt; property, which holds another array of objects, each one provided with both &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;label&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Non-submenu items have the optional &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enabled&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;checked&lt;/code&gt; properties. By default, i.e. if you don’t explicitly set them, they’re always enabled and unchecked. Spacers are available too, you create them setting the label to a single minus &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;, then they get expanded to a full line and disabled by default.&lt;/p&gt;
+
+&lt;p&gt;Let me paste again the menu here to show what I’m after (keep in mind it’s just a dummy menu):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/04/Panel.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We have a “Preferences” menu, that contains two items. One of which is disabled (too dangerous!): clicking the “Enable 🧨” entry will re-enable it—actually it’s slightly more complex but we’ll see that in a minute.&lt;/li&gt;
+  &lt;li&gt;The “Toggle me!” item will check and uncheck itself.&lt;/li&gt;
+  &lt;li&gt;“About” is going to fire a popup dialog (I’ll use a very lame &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;alert&lt;/code&gt; instead), but it’s there as a placeholder for any kind of scripting code you may want to run&lt;/li&gt;
+  &lt;li&gt;“Reload this panel” is a handy utility that will do what it suggests.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As is, the menu is shown when accessed from the UI, but it lacks any interactivity. This is why we also need the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;invokeMenu&lt;/code&gt; callback.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// index.js&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;entrypoints&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;uxp&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;entrypoints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;panels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;vanilla&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;menuItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* ... */&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;invokeMenu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Clicked menu with ID&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Storing the menu items array&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;menuItems&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;entrypoints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getPanel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;vanilla&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;enabler&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;menuItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;dynamite&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;enabled&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+              &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;menuItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;dynamite&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;menuItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+              &lt;span class=&quot;nx&quot;&gt;menuItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;label&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Enable  🧨&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+                                             &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Disable  🧨&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+                                             &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Enable  🧨&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;toggle&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;menuItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;checked&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;menuItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;checked&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;reload&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;about&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;showAbout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;One thing to notice is that we have one callback, that receives the item’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; as the only parameter: so it makes sense to use a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;switch&lt;/code&gt; statement with multiple cases.&lt;/p&gt;
+
+&lt;p&gt;Let me start with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;toggle&quot;&lt;/code&gt;, which is simpler: it toggles its own &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;checked&lt;/code&gt; property. In order to reference itself, it uses the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getItem()&lt;/code&gt; method of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;menuItems&lt;/code&gt; array, which in turn you retrieve with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entrypoints.getPanel()&lt;/code&gt; function, passing the panel &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; (the one in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;manifest.json&lt;/code&gt;, here &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vanilla&lt;/code&gt;). So in the end it should be like:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;entrypoints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getPanel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;vanilla&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;menuItems&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;toggle&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In my code I’ve stored the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;menuItems&lt;/code&gt; in a constant in advance, for convenience: I’m going to need it multiple times. Also, there’s no need to explicitly write &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;toggle&quot;&lt;/code&gt;, as we already are in the case where this is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To recap, you &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getPanel()&lt;/code&gt; from the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;entrypoints&lt;/code&gt; via the panel &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt;, then you access the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;menuItems&lt;/code&gt; array from the panel, then you &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;getItem()&lt;/code&gt; from the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;menuItems&lt;/code&gt; via the item’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt;. Finally you access the property that you need (here &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;checked&lt;/code&gt;) and assign the new value.&lt;/p&gt;
+
+&lt;p&gt;A slightly more complex example is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;enabler&quot;&lt;/code&gt;, that toggles the boolean for the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;dynamite&quot;&lt;/code&gt;’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enabled&lt;/code&gt; property. In doing so, it also change it’s own &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;label&lt;/code&gt; (it toggles between &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;Enable 🧨&quot;&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;Disable 🧨&quot;&lt;/code&gt;). I’m not sure whether it’s really crucial from the UX point of view, but it was a nice way to show it’s possible to change labels too. Same &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;menuItems.getItem()&lt;/code&gt; dance than before.&lt;/p&gt;
+
+&lt;p&gt;The remaining two cases are the simplest ones: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;reload&quot;&lt;/code&gt; runs &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;window.location.reload()&lt;/code&gt; to refresh the panel’s view, while &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;about&quot;&lt;/code&gt; calls the external function &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;showAbout()&lt;/code&gt;, that is nothing but a bare wrapper for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;showAlert()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;photoshop&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;photoshop&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;showAbout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;photoshop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;showAlert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Hello everyone 🧢&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+    &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;This could also be a dialog...&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+    &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;See Episode #10&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In the real world, this could be a fully fledged dialog (see &lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;episode #10&lt;/a&gt;), or any command tapping directly into the host application Scripting API.&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+
+&lt;p&gt;Flyout menus are a quite convenient way to group commands and information, and it’s not really difficult to build them. Items are stored in a JSON structure: they’ve properties such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;label&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;enabled&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;checked&lt;/code&gt;, and can be nested in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;submenu&lt;/code&gt;s. A single handler function deals with user interaction via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt; of the clicked items. We’ve seen how to check/uncheck items, as well as enable/disable and change the labels too.&lt;/p&gt;
+
+&lt;p&gt;Flyouts are set up in the UXP plugin’s Entrypoints, a special object that is used to define lifecycle hooks both on the plugin’s and panel’s level (most of which aren’t functional yet, but they will in the future), commands (in conjunction with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;manifest.json&lt;/code&gt;), and the flyout itself.&lt;/p&gt;
+
+&lt;p&gt;Thanks for following along! If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt;; in particular let me thank this group of fine persons who’ve supported my work &lt;a href=&quot;https://bit.ly/unDavide&quot;&gt;donating what they could afford&lt;/a&gt; – much appreciated! 🙏🏻&lt;/p&gt;
+
+&lt;p&gt;John Stevenson ⭐️, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki, Wending Dai.&lt;/p&gt;
+
+&lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
+&lt;input type=&quot;image&quot; src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; title=&quot;PayPal - The safer, easier way to pay online!&quot; alt=&quot;Donate with PayPal button&quot; /&gt;
+&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;https://www.paypal.com/en_IT/i/scr/pixel.gif&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;
+&lt;/form&gt;
+
+&lt;p&gt;Stay safe, get the vaccine shot if/when you can – bye!&lt;/p&gt;
+
+&lt;h2 id=&quot;the-whole-series-so-far&quot;&gt;The whole series so far&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know.html&quot;&gt;#01 – Rundown on the UXP announcement @ the Adobe MAX 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:command&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;If you need a reminder, a Command is a GUI-less script that belongs to the plugin’s “Plugins” menu and is set via the Manifest. Look back to &lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;Episode #04 - Commands vs. Panels and the manifest.json&lt;/a&gt;. &lt;a href=&quot;#fnref:command&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 17 Apr 2021 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html</link>
+        <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html</guid>
+        
+        <category>UXP</category>
+        
+        
+        <category>Development</category>
+        
+      </item>
+    
+      <item>
         <title>Frequency Separation 2021</title>
-        <description>&lt;p&gt;A long (long) time ago I wrote an essay on Frequency Separation, even if the main subject was disguised in the more approachable title “Notes on Sharpening”. That was early 2009, way before Frequency Separation was cool, then popularized/mainstream, then possibly cool again. I’ve thought to revisit the original article to give the subject a new coat of 2021 paint, plus all sorts of new detours.&lt;/p&gt;
+        <description>&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+  &quot;@context&quot;: &quot;http://schema.org&quot;,
+  &quot;@type&quot;: &quot;Article&quot;,
+  &quot;mainEntityOfPage&quot;: {
+    &quot;@type&quot;: &quot;WebPage&quot;,
+    &quot;@id&quot;: &quot;https://www.davidebarranca.com/retouching/frequency-separation-2021&quot;
+  },
+  &quot;headline&quot;: &quot;Frequency Separation 2021&quot;,
+	&quot;keywords&quot;: &quot;frequency separation, photoshop&quot;,
+  &quot;image&quot;: [
+    &quot;https://www.davidebarranca.com/wp-content/uploads/2021/03/fs/MediaCard.jpg&quot;,
+    &quot;https://www.davidebarranca.com/wp-content/uploads/2021/03/fs/GaussianPyramid2.jpg&quot;,
+    &quot;https://www.davidebarranca.com/wp-content/uploads/2021/03/fs/GaussianPyramid3.jpg&quot;
+   ],
+  &quot;dateCreated&quot;: &quot;2021-03-10&quot;,
+  &quot;datePublished&quot;: &quot;2021-03-13&quot;,
+  &quot;dateModified&quot;: &quot;2021-03-13&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Person&quot;,
+    &quot;name&quot;: &quot;Davide Barranca&quot;
+  },
+	&quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Person&quot;,
+    &quot;name&quot;: &quot;Davide Barranca&quot;
+  },
+  &quot;description&quot;: &quot;A detailed overview of a variety of Frequency Separation techniques in Photoshop, updated to the year 2021&quot;
+}
+&lt;/script&gt;
+
+&lt;p&gt;A long (long) time ago I wrote an essay on Frequency Separation, even if the main subject was disguised in the more approachable title “Notes on Sharpening”. That was early 2009, way before Frequency Separation was cool, then popularized/mainstream, then possibly cool again. I’ve thought to revisit the original article to give the subject a new coat of 2021 paint, plus all sorts of new detours.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Spoiler alert&lt;/strong&gt;: I’m interested in Frequency Separation as a tool for a broader set of manipulations not limited to, nor particularly focused on, beauty/skin retouch.&lt;/p&gt;
 
@@ -570,8 +847,8 @@ D_n = U_{n-1} – U_n\]
 &lt;/div&gt;
 </description>
         <pubDate>Sat, 13 Mar 2021 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/retouching/Frequency-Separation.html</link>
-        <guid isPermaLink="true">http://localhost:4000/retouching/Frequency-Separation.html</guid>
+        <link>http://localhost:4000/retouching/Frequency-Separation-2021.html</link>
+        <guid isPermaLink="true">http://localhost:4000/retouching/Frequency-Separation-2021.html</guid>
         
         <category>Frequency Separation</category>
         
@@ -903,7 +1180,7 @@ export default Dialogs;
 
 &lt;p&gt;Thanks for following along! If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt;; in particular let me thank this group of fine persons who’ve supported my work &lt;a href=&quot;https://bit.ly/unDavide&quot;&gt;donating what they could afford&lt;/a&gt; – much appreciated! 🙏🏻&lt;/p&gt;
 
-&lt;p&gt;John Stevenson ⭐️, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki.&lt;/p&gt;
+&lt;p&gt;John Stevenson ⭐️, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki, Wending Dai.&lt;/p&gt;
 
 &lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
 &lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
@@ -926,6 +1203,7 @@ export default Dialogs;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -1317,7 +1595,7 @@ export default Dialogs;
 
 &lt;p&gt;Thanks for following along! If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt;; in particular let me thank this group of fine persons who’ve supported my work &lt;a href=&quot;https://bit.ly/unDavide&quot;&gt;donating what they could afford&lt;/a&gt; – much appreciated! 🙏🏻&lt;/p&gt;
 
-&lt;p&gt;John Stevenson ⭐️, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki.&lt;/p&gt;
+&lt;p&gt;John Stevenson ⭐️, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki, Wending Dai.&lt;/p&gt;
 
 &lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
 &lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
@@ -1340,6 +1618,7 @@ export default Dialogs;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -1388,6 +1667,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -1443,6 +1723,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -1496,6 +1777,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -1547,6 +1829,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -1599,6 +1882,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -1665,6 +1949,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -1679,59 +1964,6 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
         <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html</guid>
         
         <category>UXP</category>
-        
-        
-        <category>Development</category>
-        
-      </item>
-    
-      <item>
-        <title>Adobe UXP: Things you need to know! #2 Documentation</title>
-        <description>&lt;p&gt;In this episode I’m covering &lt;a href=&quot;https://www.adobe.io/&quot;&gt;adobe.io&lt;/a&gt;, the new developer portal that hosts the Photoshop UXP documentation among other things. And for once I’m glad they’re stealing my job – the material they’ve put together does stand out!&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/5SOUAWg-ghs&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt; – 2020 is a hell of a year. I don’t have a Patreon page, but I’ve got two fairly cheap plugins on the Photoshop Marketplace, &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=28db2e07&amp;amp;workflow=share&quot;&gt;ALCE&lt;/a&gt; (Advanced Local Contrast Enhancer) and &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=78c3cdaf&amp;amp;workflow=share&quot;&gt;Double USM&lt;/a&gt; (on sharpening). If you happen to buy them, please leave a positive rating/review, it would greatly help. Or, you can&lt;/p&gt;
-
-&lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
-&lt;input type=&quot;image&quot; src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; title=&quot;PayPal - The safer, easier way to pay online!&quot; alt=&quot;Donate with PayPal button&quot; /&gt;
-&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;https://www.paypal.com/en_IT/i/scr/pixel.gif&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;
-&lt;/form&gt;
-
-&lt;p&gt;If you cannot, or don’t want to, that’s OK anyway.&lt;br /&gt;
-Stay safe and thanks! 🙏🏻&lt;/p&gt;
-
-&lt;h2 id=&quot;the-whole-series-so-far&quot;&gt;The whole series so far&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know.html&quot;&gt;#01 – Rundown on the UXP announcement @ the Adobe MAX 2020&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
-
-&lt;p&gt;The transcripted video looks weird, but I’m told it helps to have it anyway because it’s easier to translate to other languages. Apologies for the lack of punctuation and the sloppy syntax.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Hey I’m Davide and this is Adobe UXP: Things you need to know! Today I’m talking about documentation. And I know this doesn’t really sound exciting, and a lot of you have already asked me to cover more advanced topics such as BatchPlay or the Alchemist plugin but this series tries to reach a larger audience, even people who have less experience in Adobe development. Hence learning how to navigate the new documentation portal is paramount; and by the way Adobe has put a lot of effort in the creation of such documentation so it’s fair for us at least to acknowledge their efforts and try to understand what’s in there. And by the way the UXP section of the Adobe portal for developers is a work-in-progress so let’s be forgiving if we find a link that is missing, or information that is a bit rough. So let me show you what we’re talking about. So this is the place to go Adobe.io and you might be tempted to just scroll down until you find the Adobe Photoshop API and click learn more. This is not really what you would expect if you’re looking for UXP content because the Photoshop API is something related to Photoshop as a Service, which is not the Photoshop-server thing but closer to it than it is to UXP. Quite interesting one, but not what we are after. You have to click this discover tab here and then you can find Photoshop, and here, right about here the UXP plugin API mini-site. so let’s click “View the docs” and here it is. This is the landing page with information on what to expect in this mini-site and let me pick the Guides and first thing that pops to the eye is that we have three levels of Navbars. So the top navbar here is the first level, and we have selected the Guides, and the second level is on the sidebar at the left, and the sidebar on the right just keeps track of where we are in the page as we scroll down or up. Other thing to notice is this “Edit in GitHub” link here and “Log an issue” because all this website, which by the way is based on something called the Gatsby Theme Parliament, Adobe Gatsby Theme Parliament or something like that, this is a template that uses Gatsby hence React.js that Adobe has made open source and you can look for it if you want. So everything here belongs to this AdobeDocs user, and this UXP-Photoshop repository also you can log an issue here if you find, I don’t know what, misleading information, or wrong statements or missing links, or whatnot. Again this is a working progress so it is to be expected to find missing pages and wrong links; that’s going to be okay. So I’m going to quickly browse through the documentation – not reading it, but just pointing out interesting elements so that you know where to find them when you will need it in the future. So the “Getting Started” is just a very quick overview of the UXP technology and “UXP for you” points you to different pages depending on your background so if you are a UXP developer in XD but not in Photoshop you start here, if you have CEP experience but not UXP then you go there and, so on and so forth. “UXP toolchain” is describing you what you need in case you want to use, you want to create UXP plugins vanilla javascript UXP plugin so the UXP developer tool and then Visual Studio Code, a code editor or a more advanced toolchain in case you want to create React based UXP plug-ins so Node.js, npm and so on and so forth, how to install them and and other other things. So for instance this Kitchen-Sink example here is a sample plug-in that shows all the elements that you can use in the interface. Quite useful. “UXP for Photoshop basics” well this is the DOM, or the scripting side of UXP in Photoshop, so they tell you synchronous versus asynchronous scripting, how to use the various objects that are provided in this required Photoshop object. So in the app you have documents layer and so on and so forth, so this is just scripting. The “UXP Developer Tool” is a brief section or introduction to it, more information in the “Developer Tool walkthrough” where they tell you how to watch, load, reload, create a new plugin from a template and so on and so forth. And in “Other topics” you can find info about the UXP manifest, how to localize your plugin, the flyout menu access, file system, networking and Spectrum CSS. So what else? “How do I…” this is a section that tells you how to perform basic tasks, so for instance: exporting and importing modules in your UXP plugin, how to use promises, async awaits. Specific snippets, these are things that you might find yourself using over and over again, especially for debugging purposes. FileIO, or other useful snippets, this shows you how to display a simple alert and mind you there is no equivalent in UXP to the prompt or the confirm functions, at least so far. Theme awareness: this goes into a theming for the plugin, and CSS vars so you can use –UXP-host-background-color so on and so forth. You also have examples on how to use them. Debugging your plugins shows you how to look for manifest problems, installation problems, javascript, CSS and what else, especially Gremlins. We have a lot of Gremlins in UXP. Photoshop API this is a section where you dig deeper into the scripting side of UXP, so you have all these modules for all the various objects that you have in the Photoshop: apps, action, action set, document, layer, and so on so forth. So let me just bring up the layer where you have all the various props and functions that you can run. So for instance how to duplicate a layer, right, and this is the place where to find all information. Mind you the DOM is still largely incomplete, so it is okay if you don’t find here what you were looking for, because you can always use BatchPlay which is here and this is the section where they tell you about the various BatchPlay options and how to run it. It’s quite bare as a section but I’m sure they’re going to add more information as time goes by. API extensions this is something I doubt I have already covered in my previous video and it’s interesting. I want to mention it here. We are now allowed to extend the prototype of a native object so you can add this custom prepend low-dash for instance function in the document prototype so that you can call it, for instance app.activedocument then you can run this prepend low dash that is going to rename all the layers prepending a low dash in their name so you can extend the prototype of the Photoshop document, layer, action set, and action. Then there’s this section about the communication between a UXP plugin and C++ plugins and how to listen to events. Also here they mentioned that app event notifier is not something that you want to use in commercial plugins because this is quite resource intensive and by the way it requires for the user to have the developer mode switched on in the Photoshop preferences, which users usually don’t have. So this is okay when developing a UXP plugins, this is not okay when these plugins are shipped to the marketplace. UXP API this is a section about instead the specific things of UXP, so not the host application, not Photoshop, not the scripting, but the panels and stuff. The javascript reference, global members, and modules these are all the things that you have access to in UXP so the clipboard websocket fetch and what else: data storage, you have local storage and a session based storage and all the various html events, html dom, and html elements, and the modules. These are specific to UXP so you have the “os” not to be confused to node.js “os” this is a different thing, you have three different methods for the platform: darwin is Mac, or windows-whatever is Windows. The release number, and then the architecture: 32-bit 64 and so on so forth. Mind you the release doesn’t correspond to the actual macOS version if you are on darwin. Let me show that to you: darwin versions, so for instance let me scroll down here if you have a darwin version of I don’t know 18.2 this is macOS 10.14, so you have to match them in order to know what operative system your users are using. Then the shell has just one method which is used to open a url in the default browser and then the ux well this is big I’m not going to cover this here because it’s going to have its own video but these are UXP specific things. For instance the entry points is an object that takes care of what happens during the UXP life cycle for instance the functions that you want to run when the panel shows or is created. And then you have storage, various information about it and key/value storage, version, host information and so on and so forth. The secure storage don’t be misled by the name: secure storage is encrypted but the user can decrypt it so you won’t store here information that you want to hide from the user, so for instance licensing information – this is not the right place. Just mentioning this. And then what we have CSS reference here, so what’s available in UXP in terms of CSS as I mentioned in a previous video not everything is available so you have all the general variables, units, you can also use a “calc” function, which is cool and then what: selectors, media queries, pseudo elements, pseudo classes, and styles. So all these things are available with some caveats: so for instance the opacity here sets the opacity of an element, that’s okay. You have the MDN link but then quirks and exceptions: red flag Photoshop does not support this property although UXP will parse it do not use this style to control visibility! So read all of that if you’re going to use these styles here. And then what else_ we have similarly an html reference with the general supported and unsupported elements. Let’s check the unsupported elements first: in the typography quite surprisingly you don’t have a italic, you don’t have a strong, you don’t have a blockquote, pre, or code, you don’t even have an ordered list nor ordered list. You can add them, they won’t display as you expect them to do so you have to add your own styling for that. You don’t have the title. And these are the unsupported attributes, and then you have all the things that are instead supported: the body, the head, the html, link, so on so forth. Hierarchy, let me pick this h4 here, they tell you that the h4 is equivalent to the Spectrum heading of size extra-small, okay thank you. And then you have this Spectrum UXP reference because you know you can use Spectrum web components, they are already available without the need for you to import anything, as sp-something: sp-button and so on and so forth. So let’s see what’s in there about Spectrum UXP, so what’s Spectrum UXP, and using it with React. React has some quirks in terms not of Spectrum web components but web components in general. For instance, you have to use a closing tag, not self-closing tags. With Spectrum web components you have to use class instead of classname, so if you have a div in React well then you have to use classname, if you have e.g. a Spectrum icon you have to use class. And then more and then this is really important boolean attributes, this which you would normally use with React is not going to work with Spectrum web component: instead you have to use the ternary operator, and check for the property and set explicitly to true or null or undefined. And then event handling. What else: typography here, these are the available Spectrum typography web components and by the way if you look at the Spectrum web components website, this here, you don’t have for instance the sp-body that instead you have available in UXP. So there is an overlap between Spectrum web components in UXP and Spectrum web components tout-court but it’s a funny kind of overlap. And then you have sp-detail, a heading, label and so on and so forth. If you want to see how they look uh well then you have to go to the Spectrum web components website and then you have here for instance the switch which by the way is not one of the available web components in UXP so you have it here you can see how it looks but in this case it’s not found among the UXP components but it will be introduced later on. So if you want to see for instance sp-detail let’s check, detail should be in the typography, probably… no no it turns out that not even sp-detail is found here but it should be found in the Spectrum CSS, so Spectrum CSS we should have the sp-detail I think in the typography here, please, yeah typography detail so you see it’s it’s kind of funny: some things are found in the Spectrum web components, other things are found in the Spectrum CSS, and some of them are in the UXP. Anyways, user interface these are all the available elements such as buttons, checkboxes, and whatnot. Again let me check for instance this here, yeah you have a graphic display of how they look like, not as interactive as the one in the Spectrum web component, so for instance let me check this slider here. These should be functional, yes, these are just images, yes, and then you have uh the code samples down below. Known issues, this is something really important that you should know like the back of your hand because many things won’t work as you would expect them to do, and so here you find all the known issues for UXP right? Sample code you find here javascript samples, React samples, and batch play samples. Then the design section is about designing a plug-in experience, so basically the Adobe guidelines in terms of the UI of the plug-in UX patterns. I don’t think these links work, yes they don’t but they will. So the user experience patterns, the user interface suggestions and so on and so forth. And then a section on the developer tool installation, plugin management, and working with React. And the UXP dev tool. The share tab is quite important as well because here is where Adobe tells you how to package your plugin, that is to say how to create the .ccx file, the options that you have for distribution, so for instance you can email they say your .ccx file, or upload it to the marketplace. The various guidelines for submission and review to the marketplace, and again: this is quite a strict process so you have to follow the Adobe guidelines otherwise your plugin is going to be rejected. And how to market your plugins t– his is not yet there but they’re going to add this kind of information as well. And finally the community: so we have now a Creative Cloud developer forums based on Discourse I think. Actually Adobe XD already had it I think, because this message is from August 2018, if I am correct. I should be. and the Photoshop section has been added quite recently so this is the place where you can meet other developers and discuss topics, and ask questions. Then you have the GitHub repo for the entire UXP doc minisite and the sample code repo where you can find all the available samples. So these are plugins that you can just, you know ,grab the code from and and learn from. WebSocket example, web service call example, and so on and so forth. And I think that with this I can wrap this video up. If you have enjoyed it please consider supporting me I don’t have any Patreon pages as I told you last time but I have Adobe development content and especially if you want to help: a purchase of my two extensions that are in the UXP marketplace would be a great thing, they’re still for sale at 16 bucks each, and if you happen to buy them just please leave a positive rating or review which will help immensely. If you cannot or don’t want to that’s okay right thank you for watching and see you in the next one. Stay safe! Bye.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 05 Nov 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-2-documentation.html</link>
-        <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-2-documentation.html</guid>
-        
-        <category>UXP</category>
-        
-        <category>Adobe MAX</category>
         
         
         <category>Development</category>

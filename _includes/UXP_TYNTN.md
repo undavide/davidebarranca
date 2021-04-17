@@ -10,3 +10,4 @@
 - [#08 - BatchPlay (part 3): Alchemist as a UXP Inspector]({% post_url  2020-12-14-Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector %})
 - [#09 - Adobe Spectrum UXP]({% post_url  2021-02-05-Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP %})
 - [#10 - Modal Dialogs]({% post_url  2021-03-01-Adobe-UXP-things-you-need-to-know-10-Dialogs %})
+- [#11 - Flyout Menus and Entrypoints]({% post_url  2021-04-17-Adobe-UXP-things-you-need-to-know-11-Flyout-menus %})
