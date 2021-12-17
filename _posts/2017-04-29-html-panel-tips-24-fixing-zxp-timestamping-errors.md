@@ -25,6 +25,9 @@ Adobe Configurator 4, which relies on it behind the scenes to export the (Flash)
 *   `http://timestamp.verisign.com/scripts/timstamp.dll`
 *   `http://timestamp.digicert.com`
 *   `http://time.certum.pl`
+*   `http://timestamp.apple.com/ts01`
+*   `http://timestamp.globalsign.com/scripts/timstamp.dll`
+*   `http://timestamp.sectigo.com`
 
 I assume you know how to use it. If this is not the case, check out my previous posts: [here](/2014/05/html-panels-tips-10-packaging-zxp-installers/) and also [here](/2014/08/html-panels-tips-13-automate-zxp-packaging-with-gulp-js/). Few notes: first, it might be that in the future Geotrust will be working again (I'll update the post, if/when).
 

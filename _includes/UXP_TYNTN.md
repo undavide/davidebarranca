@@ -11,3 +11,4 @@
 - [#09 - Adobe Spectrum UXP]({% post_url  2021-02-05-Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP %})
 - [#10 - Modal Dialogs]({% post_url  2021-03-01-Adobe-UXP-things-you-need-to-know-10-Dialogs %})
 - [#11 - Flyout Menus and Entrypoints]({% post_url  2021-04-17-Adobe-UXP-things-you-need-to-know-11-Flyout-menus %})
+- [#12 - React JS and the UXP plugins Course]({% post_url  2021-12-17-Adobe-UXP-things-you-need-to-know-12-React-JS %})

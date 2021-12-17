@@ -5,17 +5,200 @@
     <description>Digital Caveman. Photoshop retoucher and plugins developer. Check out my Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 17 Apr 2021 16:15:41 +0200</pubDate>
-    <lastBuildDate>Sat, 17 Apr 2021 16:15:41 +0200</lastBuildDate>
+    <pubDate>Fri, 17 Dec 2021 15:44:17 +0100</pubDate>
+    <lastBuildDate>Fri, 17 Dec 2021 15:44:17 +0100</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>Adobe UXP: Things you need to know! #12 React JS</title>
+        <description>&lt;p&gt;In this installment I’d like to tell you about ReactJS and take the chance to announce a brand new course of mine: &lt;strong&gt;Adobe UXP plugins development with ReactJS - Build products and Create a Business in the Creative Cloud Marketplace and Beyond&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;!-- iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/v-x1ZrOtlzQ&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe --&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The usual YouTube video I publish alongside with the article is taking more time than expected to edit, so I’ve decided to publish the written version first 😊 As soon as it’s ready I’ll add it here!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So far in this series I’ve only used Vanilla JavaScript to keep it simple, but in the real world a large part of plugin developers don’t like to reinvent the wheel themselves and end up using one of the available frameworks. And guess what, ReactJS is the most popular JavaScript library according to the StackOverflow 2021 survey. Even more than jQuery, check that out!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/11/frameworks.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;By the way, React JS is a Library and not a Framework (such Vue.js or Angular), do you know the difference? A &lt;strong&gt;Library&lt;/strong&gt; is something that you &lt;em&gt;“plug in your code”&lt;/em&gt;, whereas a &lt;strong&gt;Framework&lt;/strong&gt; is something &lt;em&gt;“you plug your code into”&lt;/em&gt;… subtle but meaningful difference! In other words, &lt;em&gt;your code uses a Library&lt;/em&gt;, whereas &lt;em&gt;your code is used by a Framework&lt;/em&gt;. This is what is generally referred to as &lt;em&gt;“Inversion of Control”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;According to this definition, it turns out that React JS is in fact a library, i.e. some code that enhances “regular” JavaScript adding useful features, but it doesn’t require you to buy into some opinionated way of structuring your source code, as Frameworks generally do.&lt;/p&gt;
+
+&lt;h2 id=&quot;react-feats&quot;&gt;React feats&lt;/h2&gt;
+
+&lt;p&gt;So, what kind of feats made React JS so popular over the years? First of all, &lt;strong&gt;Components&lt;/strong&gt;, a handy way to bundle into a custom element bits of user interface and logic.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;Heading&amp;gt;&amp;lt;/Heading&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;Slider&amp;gt;&amp;lt;/Slider&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;Buttons&amp;gt;&amp;lt;/Buttons&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Creating a component is as easy as writing a function: that in React can return markup, i.e. HTML elements.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-jsx&quot; data-lang=&quot;jsx&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Buttons&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;className&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;buttons&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;variant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;secondary&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;Cancel&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;Run&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This is referred to as JSX: JavaScript Syntax Extension, or JavaScript XML. Those components can be passed &lt;strong&gt;Properties&lt;/strong&gt; by the parent: they can make use of them, e.g. to display values via curly braces &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{}&lt;/code&gt; interpolation or to do whatever they have to do.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- In the Parent --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ToggleButton&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;message=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Click me&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;bigger=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Here we’re passing a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;message&lt;/code&gt; and a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bigger&lt;/code&gt; properties, that are then destructured and used in the component to set the Spectrum Button text and assign classes.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-jsx&quot; data-lang=&quot;jsx&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// In the Component&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ToggleButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bigger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bigger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;larger highlight&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Thanks to &lt;strong&gt;Hooks&lt;/strong&gt;, special React functions that give Components superpowers, you can e.g. create a &lt;strong&gt;State&lt;/strong&gt;: a &lt;em&gt;reactive&lt;/em&gt; property (alongside with its setter) that is able to trigger a component re-render when the property changes.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-jsx&quot; data-lang=&quot;jsx&quot;&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ToggleButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isOn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setIsOn&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;useState&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// &amp;lt;- State&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setIsOn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isOn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;si&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isOn&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Toggled ON&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Toggled OFF&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;sp&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In the example above, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;isOn&lt;/code&gt; is a boolean stored in the State; depending on its value, a different string is displayed in the Spectrum Action Button. The boolean is flipped in the button’s &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;onClick&lt;/code&gt; handler via its setter &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setIsOn()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Reactivity&lt;/strong&gt; is key here: you’re building &lt;em&gt;declarative&lt;/em&gt; interfaces based on data, that are going to reflect changes in data as they happen. On the other side, with &lt;em&gt;imperative&lt;/em&gt; code (e.g. jQuery) you have got to explicitly impart instructions to the UI on what to do, and when.&lt;/p&gt;
+
+&lt;p&gt;Obviously there’s much more to React than Components and Hooks, but thanks to them and to JSX (the possibility to use JavaScript to compute HTML code) you’re able to build remarkably powerful User Interfaces.&lt;/p&gt;
+
+&lt;p&gt;For all your needs there is a large ecosystem of plugins: take State Management as an example—i.e. a unique place to store reactive data that is accessible to all components no matter their parent/child relation. React provides you with solid foundations only, but you can easily plug-in the library you like the most among the available ones: Redux, Recoil, MobX, Zustand, etc.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-react&quot;&gt;Why React&lt;/h2&gt;
+
+&lt;p&gt;And not Vue, Angular, Svelte…? Because: Adobe! You might not like this, but let me explain.&lt;/p&gt;
+
+&lt;p&gt;UXP, as we’ve seen over and over again throughout this series, is heavily inspired by standards, but &lt;strong&gt;it shouldn’t be considered a Browser environment&lt;/strong&gt;. Hence, not everything that works in a Browser is to be expected to automatically work in a UXP plugin. As an example, until very (very!) recently, there wasn’t a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;document.createEvent()&lt;/code&gt; method, which is what Vue.js version 3 relies upon. Why was it missing? Because the UXP team has to willingly implement features, and that one didn’t happen to be high priority to them. As a result, for almost a year after the UXP announcement you couldn’t even load Vue.js v3.&lt;sup id=&quot;fnref:vuejs&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:vuejs&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;It also happens that &lt;strong&gt;React JS is exactly what Adobe uses for their own first-party features&lt;/strong&gt;, like for instance the Welcome screen, the New File dialog, the Neural Filters interfaces: all UXP plugins. And you can bet that if React-next-version is going to need some Browser API that didn’t make into UXP yet, that very feature is going to be implemented at once. Because they won’t risk Neural Filters to crash because of it, right? On the other hand, any other feature might take months to be implemented—as it’s happened with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;document.createEvent()&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In other words, not only React is a solid choice thanks to the popularity of the library in the JavaScript ecosystem and the amount of available resources; given its adoption by Adobe’s engineering teams it has to be considered the &lt;em&gt;safest choice&lt;/em&gt;, support-wise.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;With any other framework, although they might work, you’re… more on your own. The [insert your framework of choice] might or might not work now, and might stop working when its newer version is released. ¯\_(ツ)_/¯&lt;/p&gt;
+
+&lt;h2 id=&quot;the-uxp-and-react-js-course&quot;&gt;The UXP and React JS course&lt;/h2&gt;
+
+&lt;p&gt;I was chatting with a developer friend once, and they said: “I’ll start with Vanilla JS plugins, and when I’m familiar with the environment I’ll approach React JS. You know, I don’t want too much on my plate”.
+Although it may sound considerate at first, I don’t buy it, IMHO there’s a &lt;strong&gt;way better approach&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;On the one side, learning a tool&lt;sup id=&quot;fnref:react&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:react&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; such as React for React’s sake, in some abstract/generic environment &lt;em&gt;à la&lt;/em&gt; “let’s build a Todo app, or a Reddit clone” is always going to be an inferior way, compared to &lt;strong&gt;learning it in the actual context in which you’re gonna use it&lt;/strong&gt;: a UXP plugin. Not only you’re gonna save a huge lot of time, but it sucks way less.&lt;/p&gt;
+
+&lt;p&gt;Provided that somebody (i.e. yours truly) has figured out &lt;strong&gt;a learning path that combines UXP and React JS&lt;/strong&gt; in such a way that you’re presented with a UXP problem, and given a gradually more complex React tool to solve it. So, hopefully, next time you’ll run into the same kind of problem in your own UXP plugins, it’ll come natural for you to reach out for that same React tool to hammer it. Much better than trying to fit some abstract example into the case at hand.&lt;/p&gt;
+
+&lt;p&gt;Moreover, there’s a small(ish) subset of React features that allow you to accomplish a great deal of good in the UXP environment. Everybody love Venn Diagrams, isn’t that right?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/11/venn.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The overlapping area is evident &lt;em&gt;after&lt;/em&gt; you’ve drawn the two circles, i.e. after you’ve learned the two topics separately. But &lt;em&gt;while&lt;/em&gt; you’re drawing (i.e. learning) them on your own? You’ve no idea whether the React JS topic you’re approaching is going to be of fundamental importance, marginal, or just a waste of time. Wouldn’t it be better to start from this relatively approachable core of super-important topics instead, dealt with in the UXP plugins context to optimize your energies and time?&lt;/p&gt;
+
+&lt;p&gt;That’s precisely the Adobe UXP plugins development with React JS course’s agenda.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/11/UXP_Hero.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Subtitled: “Build products and Create a Business in the Creative Cloud Marketplace and Beyond”. There’s a fat section on the business of UXP plugins, from mundane but fundamental topics such as VAT, ecommerce providers etc. that I wish somebody told me when I started many years ago, up to a comparison of marketing strategies. With examples from a barely average marketeer and a very successful one (and by very successful I mean in the six-figures range) such as Micheal Bruny-Groth, the author of the Logo Package for Adobe Illustrator.&lt;/p&gt;
+
+&lt;p&gt;The course consists of a &lt;strong&gt;PDF ebook, ~290 pages&lt;/strong&gt; lusciously typeset in LaTeX (a pain in the ass, but still luscious).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/11/book.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then there are &lt;strong&gt;16 demo plugins&lt;/strong&gt; with fully commented code, from the ubiquitous “Action buttons” plugin, up more advanced topics such as React custom hooks, server-side communication, etc.&lt;/p&gt;
+
+&lt;p&gt;I’ve also recorded &lt;strong&gt;5 and a half hours of videotutorials&lt;/strong&gt;, with theory, live coding, bug fixing and whatnot.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2021/11/SiB_videos.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I definitely plan to add more content as UXP evolves. The course is offered in three different &lt;em&gt;packages&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gumroad.com/l/FrlXB?variant=Basic&quot;&gt;Basic&lt;/a&gt;: Book + Code samples&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gumroad.com/l/FrlXB?variant=Complete&quot;&gt;Complete&lt;/a&gt;: Book + Code samples + Videos (streaming only)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gumroad.com/l/YNFVJ&quot;&gt;Enterprise&lt;/a&gt;: Book + Code samples + Videos (downloadable, licensed for teams up to 10 seats strong)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For more info and FAQ check out the course home at &lt;a href=&quot;https://www.ps-scripting.com/uxp-react.html&quot;&gt;PS-Scripting.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Thanks for following along! If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt;: you can either purchase my latest &lt;a href=&quot;https://www.ps-scripting.com/uxp-react.html&quot;&gt;UXP Course&lt;/a&gt; or &lt;a href=&quot;https://bit.ly/unDavide&quot;&gt;donate what you want&lt;/a&gt; as the following fine people have done—it’ll be much appreciated! 🙏🏻&lt;/p&gt;
+
+&lt;p&gt;Thanks to: John Stevenson ⭐️, Adam Plouff, Dana Frenklach, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Wending Dai, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki.&lt;/p&gt;
+
+&lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
+&lt;input type=&quot;image&quot; src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; title=&quot;PayPal - The safer, easier way to pay online!&quot; alt=&quot;Donate with PayPal button&quot; /&gt;
+&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;https://www.paypal.com/en_IT/i/scr/pixel.gif&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;
+&lt;/form&gt;
+
+&lt;p&gt;Stay safe, get the Nth vaccine shot if/when you can – bye!&lt;/p&gt;
+
+&lt;h2 id=&quot;the-whole-series-so-far&quot;&gt;The whole series so far&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know.html&quot;&gt;#01 – Rundown on the UXP announcement @ the Adobe MAX 2020&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-12-React-JS.html&quot;&gt;#12 - React JS and the UXP plugins Course&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:vuejs&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Vue.js version 2 worked fine out of the box, instead. &lt;a href=&quot;#fnref:vuejs&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:react&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;To me, React is just a tool to get the job done: I’m not a zealot, I’m not interested in JavaScript frameworks religion wars. &lt;a href=&quot;#fnref:react&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 17 Dec 2021 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-12-React-JS.html</link>
+        <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-12-React-JS.html</guid>
+        
+        <category>UXP</category>
+        
+        
+        <category>Development</category>
+        
+      </item>
     
       <item>
         <title>Adobe UXP: Things you need to know! #11 Flyout Menus and Entrypoints</title>
         <description>&lt;p&gt;In this episode I’ll show you how to setup Flyout Menus for UXP plugins, while introducing UXP Entrypoints. Feel free to watch the video or read the article, they cover the same ground.&lt;/p&gt;
 
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/v-x1ZrOtlzQ&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;hr /&gt;
 
 &lt;h2 id=&quot;flyouts&quot;&gt;Flyouts&lt;/h2&gt;
 
@@ -208,9 +391,9 @@
 
 &lt;p&gt;Flyouts are set up in the UXP plugin’s Entrypoints, a special object that is used to define lifecycle hooks both on the plugin’s and panel’s level (most of which aren’t functional yet, but they will in the future), commands (in conjunction with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;manifest.json&lt;/code&gt;), and the flyout itself.&lt;/p&gt;
 
-&lt;p&gt;Thanks for following along! If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt;; in particular let me thank this group of fine persons who’ve supported my work &lt;a href=&quot;https://bit.ly/unDavide&quot;&gt;donating what they could afford&lt;/a&gt; – much appreciated! 🙏🏻&lt;/p&gt;
+&lt;p&gt;Thanks for following along! If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt;: you can either purchase my latest &lt;a href=&quot;https://www.ps-scripting.com/uxp-react.html&quot;&gt;UXP Course&lt;/a&gt; or &lt;a href=&quot;https://bit.ly/unDavide&quot;&gt;donate what you want&lt;/a&gt; as the following fine people have done—it’ll be much appreciated! 🙏🏻&lt;/p&gt;
 
-&lt;p&gt;John Stevenson ⭐️, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki, Wending Dai.&lt;/p&gt;
+&lt;p&gt;Thanks to: John Stevenson ⭐️, Adam Plouff, Dana Frenklach, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Wending Dai, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki.&lt;/p&gt;
 
 &lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
 &lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
@@ -234,6 +417,7 @@
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-12-React-JS.html&quot;&gt;#12 - React JS and the UXP plugins Course&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -1178,9 +1362,9 @@ export default Dialogs;
 
 &lt;p&gt;Dialogs as we knew them (as ScriptUI Windows, or various simple pop-ups like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;prompt()&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;confirm()&lt;/code&gt;) are banned in UXP-land. UXP plugins deal with modeless panels natively, and can display modal dialogs as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;dialog&amp;gt;&lt;/code&gt; elements via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;uxpShowModal()&lt;/code&gt;. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;sp-dialogs&amp;gt;&lt;/code&gt; (that are slightly different) are coming in the near future so keep an eye at the official documentation. All in all UXP can manage dialogs quite nicely so the transition to the new system shouldn’t be too big of a deal!&lt;/p&gt;
 
-&lt;p&gt;Thanks for following along! If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt;; in particular let me thank this group of fine persons who’ve supported my work &lt;a href=&quot;https://bit.ly/unDavide&quot;&gt;donating what they could afford&lt;/a&gt; – much appreciated! 🙏🏻&lt;/p&gt;
+&lt;p&gt;Thanks for following along! If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt;: you can either purchase my latest &lt;a href=&quot;https://www.ps-scripting.com/uxp-react.html&quot;&gt;UXP Course&lt;/a&gt; or &lt;a href=&quot;https://bit.ly/unDavide&quot;&gt;donate what you want&lt;/a&gt; as the following fine people have done—it’ll be much appreciated! 🙏🏻&lt;/p&gt;
 
-&lt;p&gt;John Stevenson ⭐️, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki, Wending Dai.&lt;/p&gt;
+&lt;p&gt;Thanks to: John Stevenson ⭐️, Adam Plouff, Dana Frenklach, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Wending Dai, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki.&lt;/p&gt;
 
 &lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
 &lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
@@ -1204,6 +1388,7 @@ export default Dialogs;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-12-React-JS.html&quot;&gt;#12 - React JS and the UXP plugins Course&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -1593,9 +1778,9 @@ export default Dialogs;
 
 &lt;p&gt;I think this wraps it up for this introduction to Spectrum UXP: you’ve seen where it comes from and how to use it – again, if you feel like there are any glitches, feel free to submit feature requests to the team. Spectrum is an important piece in the grand scheme of Adobe’s things so I’m confident that they’ll be addressed.&lt;/p&gt;
 
-&lt;p&gt;Thanks for following along! If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt;; in particular let me thank this group of fine persons who’ve supported my work &lt;a href=&quot;https://bit.ly/unDavide&quot;&gt;donating what they could afford&lt;/a&gt; – much appreciated! 🙏🏻&lt;/p&gt;
+&lt;p&gt;Thanks for following along! If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt;: you can either purchase my latest &lt;a href=&quot;https://www.ps-scripting.com/uxp-react.html&quot;&gt;UXP Course&lt;/a&gt; or &lt;a href=&quot;https://bit.ly/unDavide&quot;&gt;donate what you want&lt;/a&gt; as the following fine people have done—it’ll be much appreciated! 🙏🏻&lt;/p&gt;
 
-&lt;p&gt;John Stevenson ⭐️, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki, Wending Dai.&lt;/p&gt;
+&lt;p&gt;Thanks to: John Stevenson ⭐️, Adam Plouff, Dana Frenklach, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Wending Dai, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki.&lt;/p&gt;
 
 &lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
 &lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
@@ -1619,6 +1804,7 @@ export default Dialogs;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-12-React-JS.html&quot;&gt;#12 - React JS and the UXP plugins Course&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -1668,6 +1854,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-12-React-JS.html&quot;&gt;#12 - React JS and the UXP plugins Course&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -1724,6 +1911,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-12-React-JS.html&quot;&gt;#12 - React JS and the UXP plugins Course&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -1778,6 +1966,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-12-React-JS.html&quot;&gt;#12 - React JS and the UXP plugins Course&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -1830,6 +2019,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-12-React-JS.html&quot;&gt;#12 - React JS and the UXP plugins Course&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -1883,6 +2073,7 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-12-React-JS.html&quot;&gt;#12 - React JS and the UXP plugins Course&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
@@ -1911,57 +2102,6 @@ let’s add another command so let me duplicate the entire object because we are
         <pubDate>Wed, 18 Nov 2020 00:00:00 +0100</pubDate>
         <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html</link>
         <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html</guid>
-        
-        <category>UXP</category>
-        
-        
-        <category>Development</category>
-        
-      </item>
-    
-      <item>
-        <title>Adobe UXP: Things you need to know! #3 UXP Developer Tool</title>
-        <description>&lt;p&gt;In this episode I’ll talk about the new UXP Developer Tool, that you’re going to use to load, reload, watch, debug and scaffold new UXP plugins from templates!&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/jj9ZzT1iwRU&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt; – 2020 is a hell of a year. I don’t have a Patreon page, but I’ve got two fairly cheap plugins on the Photoshop Marketplace, &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=28db2e07&amp;amp;workflow=share&quot;&gt;ALCE&lt;/a&gt; (Advanced Local Contrast Enhancer) and &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=78c3cdaf&amp;amp;workflow=share&quot;&gt;Double USM&lt;/a&gt; (on sharpening). If you happen to buy them, please leave a positive rating/review, it would greatly help. Or, you can&lt;/p&gt;
-
-&lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
-&lt;input type=&quot;image&quot; src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; title=&quot;PayPal - The safer, easier way to pay online!&quot; alt=&quot;Donate with PayPal button&quot; /&gt;
-&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;https://www.paypal.com/en_IT/i/scr/pixel.gif&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;
-&lt;/form&gt;
-
-&lt;p&gt;If you cannot, or don’t want to, that’s OK anyway.&lt;br /&gt;
-Stay safe and thanks! 🙏🏻&lt;/p&gt;
-
-&lt;h2 id=&quot;the-whole-series-so-far&quot;&gt;The whole series so far&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know.html&quot;&gt;#01 – Rundown on the UXP announcement @ the Adobe MAX 2020&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
-
-&lt;p&gt;The transcripted video looks weird, but I’m told it helps to have it anyway because it’s easier to translate to other languages. Apologies for the lack of punctuation and the sloppy syntax.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;Hey I’m Davide and this is Adobe UXP things you need to know! Today I’m talking about the UXP Developer Tool. Which is what you use to load, reload, watch, debug and eventually package into a .ccx file your UXP plugin. So one thing to know among the things you need to know is that as opposed to CEP where you could just move or sim-link the folder of your extension into the directory whatever slash CEP slash extensions, with UXP this is not enough. Why? Because it’s the CCD app, the Creative Cloud Desktop app, that manages what plugin is loaded into what application. It has its own internal database to check against, so eventually it will move the plugin folder into whatever slash UXP slash whatever else, but you cannot do this manually, so it’s not enough. You need to use the UXP Developer Tool. So let’s install that: first head to the documentation website, which you know because you’ve watched my previous video, and there is this Developer Tool tab here that you will click and you can find the macOS installer and the Windows installer. When you install it and launch it the first time it will ask you to enable the “developer mode” and you need to be an administrator to do so. If your user isn’t you can always create a JSON file called settings.json and with this content: developer true, and put it into one of those two folders: one for Mac and for Windows. There is also in Photoshop and you should check this as well in the plugins tab this “Enable Developer Mode” checkbox, so with this you should be ready to go. And here is the UXP Developer Tool so let’s add an existing plugin. Which one? Well you know that in the documentation, in the community tab, there is this UXP for Photoshop sample repo code on GitHub, and then you can download the entire zip and you have all those beautiful plugins for you to test. I’ve already done that so I can go back to the UXP DevTool, click “Add existing plugin” and I can point to the manifest.json of the ui-kitchen-sync. You have to use the manifest.json to load the plugin not into Photoshop, but first into the UI, right? You must see on the left column the host application: Adobe Photoshop 22, which is Photoshop 2021, otherwise this won’t work, of course. So this version of Photoshop is currently running. Now that you have it here, you can explicitly load it and this should bring it up in Photoshop: here it is, the kitchen-sink; I think I showed you this in the first video maybe. This is the spectrum typography, then you have the widgets all the things you can add, the native elements, HTML events, and whatnot so this is not really about the kitchen-sink but the UXP DevTool. One thing that you can do is, after we have loaded a plugin, to reload it in case you have changed its source code. I should have it here in Atom so this is the heading, this thing that you’re seeing here, let me add some exclamation marks. And I’m going to save and those changes are not caught by default in the plugin you have to reload this so let’s click this three dot button again and click reload and sure enough you see that the changes have been applied, right? But it’s kind of boring to have to manually reload it each time you may want to watch it for changes, so with this each time that you change something in the source folder is going to be reloaded the plugin is going to be reloaded automatically for you so let me remove those exclamation marks, save again and back to Photoshop: sure enough they’ve been removed, right? Fine. So let me close this and another thing that you can do besides loading reloading watching and unwatching, so let me unwatch this, is to create a plug-in, scaffolding a plug-in. So let me do that: Create plug-in, you have to add name, let’s call this Test UXP plugin, and then you have to add an ID and this ID is given you by the Adobe Dev Console which is where you upload your plugin to for admission into the Adobe marketplace. You can change this later on so let me add zero-zero-zero-zero-zero here, right? Plugin version must be three numbers so 1.0.0 is fine the host application Photoshop okay and the version at least 22.0.0. Then you can select between two different templates: the ps-starter is the vanilla javascript one and then you have a React-based one, I’m going to show you the vanilla one. So select folder you have to enclose that in a new folder otherwise it would just throw the files in here so let me call this UXP Test Folder, and create that, right? Plugin’s been created successfully you have the toast, green toast here. Here it says that you will need to run additional commands from your terminal in order to install various dependencies, and this is true only if you are scaffolding a React plugin not a vanilla one: vanilla one is ready to go, right? So here we have it and so let’s load it in Photoshop. Plugin has been loaded successfully, and this is it. You can click populate layers and nothing happens, which is fine because this works when you have an open document. So, let me open this in Atom, it was UXP Test Folder, this here, and you see the code is very basic: and index.html and then there’s the JS and the manifest and this is the ID that you can always change later on as well as all the other data here, right? Okay, now that we have this plugin open we might want to debug it so let’s click Debug and this pops up this Chrome DevTool-like window. I say that it’s like a Chrome DevTool because it’s not fully-fledged, you see that there are a lot of things missing here: you cannot install other things for instance the React DevTool – yet might be possible in the future – but it works exactly as the Chrome DevTool: you have the Console with an error, and I’m going to show you why in a minute. And one thing that you can do which is quite helpful is to use the Console to experiment with the Photoshop API. Let me try to make this… Oh no, I cannot make the font size bigger, and this is one of the limitation of the Console as it is right now: some of the keyboard shortcuts don’t work. For instance you can clear the console with ctrl+L but you cannot use Command + for instance to change the font size. So what you can do is to use this as I said Console to experiment: so let’s say const photoshop equal require Photoshop I’m typing this a lot so I already have it here. And then you have the Photoshop object, for what? Well to play: photoshop, and then dot, and then you can see everything that you have the app, the core… So let me pick app and then you click dot and you just see what’s in there right? If you knew the documentation like the back of your hand you would know what everything here is. I don’t so I’m just, you know, picking things: the actionTree, so what is this Photoshop.app.actionTree? No idea, let’s check this out. So it turns out that it’s an array of actionSets and each actionSet is an object that contains properties, such as the action array, and the action array in turn has actions with an index, with the name, and an id. Okay, so I’ve learned a new thing, right? What can I do with an action? I don’t know, let’s try this again. So Photoshop.app.actionTree, so the actionTree is an array so let me pick the first element in the array, so the one with index of 0, so this is an object that has an actions property; the actions is an array so let me pick the first one, again. If I click dot I see all the things that I can do: and I can get the index, I can get the name, I can play it so this looks promising. Let’s try this: play seems an action so probably it’s going to be a function so let’s add a couple of parentheses here and click this, and it says… First of all something happened, which is cool, the command make is not currently available so let me stop, and what is this? Probably the action which is this one, so the first actionSet, the first action wants to make a snapshot but I don’t have any document open so this breaks which is fine. The point of all that is that you can use the Console and the auto-completion in the Console to just experiment things you can always then go back to the actual documentation and which is here Photoshop API, the modules, and Photoshop and here you see the actionTree then you have a confirmation that it outputs an actionSets array and so on so forth… You can educate yourself in the documentation; I would say that it’s better to use the documentation and then test things in the Console or you can also use the other way around it’s probably a little bit more fun. Okay, so back to our original panel here: when we click this populate layers we saw that we have an error. Cannot read property layers of null, so let’s debug the error. In the code, which is here, we see that we have this sp-button and mind you the plugin uses Spectrum Components so sp-something. You have an sp-body with id of layers and body is not really a body is like a paragraph, right? So it’s styled, it changes the color depending on the theme so it’s light when the theme is dark and vice versa. It says no layers, does it? Yes, and when you click this button with id of btn-populate what happens is that you have a listener for the click event for this button populate that runs the showLayerNames function which is up here. he showLayerNames uh first stores into the app constant the Photoshop app objectm and then checks for the layers of the active document and then maps all the layers so this is an array, allLayers is an array, and it creates a new array running this function here function that takes the layer as an argument and outputs or returns the layer name and stick that array of layer names into this allLayerNames array and then sorts it with the sort method and when you have this sortedNames array, so this is an array it, changes the innerHTML of this layers element which is this sp.body here so sp-body is not going to be “no layers” anymore but it’s going to be what? A string created using these backticks with an unordered list, and then you use – this is all modern JavaScript, so you have the backtick string and then you can interpolate with the dollar and open and closed curly braces. You have the sortedNames array then you map the sortedNames array so you run this function for each one of the sorted names: you take the name as a parameter, and then you output for each one of those a string with a list item, with the name in it, and then eventually you have this array of list item strings, and then you join it. So eventually it is just one long string of list items, and then you close the unordered list. By the way if you remember in the last video I told – last video? Yeah the last video – I told you that there is no such a thing as an unordered list in UXP, reason why in this plugin they are adding specific styles to the list items because otherwise it won’t have it by default, right? So let’s check this out in Photoshop, I want to create a dummy document and let me duplicate the layers some times and click Populate Layers. And you see that you have the background, layer one, copy, copy two, copy three, right? So this is okay but I want to fix this error here ,so let’s debug that. One thing that you can do is in the Sources to add a breaking point right? So you click here, it’s the same with Chrome DevTool, I’m showing this to you just in case you’re not really familiar with it. So you see that we have this Uncaught Type Error: cannot read property layers of null. So let me close the document so that we have no document, so we are able to recreate the error. I’ve added this breaking point; am I watching the source code? I’m not, so let me watch this, so that each time that I change the source code it’s automatically reloaded right? Okay and this time you should be able to click Populate Layers and have an error output, and when I click the button you see that the app is paused on that breakpoint: and I can use the step-over, step-in, step-out buttons as usual, so let me step-in. Let me try to make this a little bit bigger, I have the app object and it breaks here and the error is: “cannot read property layers of null” right? So we have seen how to create a breaking point we’ve got the error so now let’s fix this. Of course it can’t read the property layer because we don’t have any active document. So let’s get back to Atom, index.js, I want to stick that outside of the function because this might be useful to have for all the functions as well. So I need to check whether this app activeDocument exists or not so if not if we have no app activeDocument then just return, right? Well actually let’s say let’s console log something: console.log no docs and then return. All right, so let’s save this, Populate Layers: no docs, right? So this works. So one thing that I want to mention in this template: you have the index, you have the html, you have JavaScript, the manifest, but also this watch dot shell that uses this UXP plug-in load command. So if you try this if you try running this it’s not going to work because this was made when, in a pre-release, we had this UXP command-line utility. So the UXP DevTool initially existed as a command-line utility then evolved with the UI which is more easy to use and with more features. I am told that the command-line utility which I like very much because it’s easier if you will to plug into npm scripts, especially when you’re building a larger project, I’m told that this is going to be released as well so it’s going to be updated and matched feature-wise with the UXP DevTool with the GUI. So eventually in the future, probably, you’re going to have the choice to use either the command-line utility or this UXP DevTool as we use it now. So what else? We have loaded, reloaded, watched, debugged, logs, well logs just opens the the Console and there’s the possibility to package that plugin into a .ccx file. If you don’t remember where the folder is you can Open Folder and then it shows you in Finder and what? You have these options with breaking point and start, and all right: this Advanced with the plugin build folder here it says path should be relative to the selected manifest.json file. So this is useful when you use React plugins and should be documented in the DevTool working with React here watching your plugin. So basically the idea is that you tell the UXP DevTool to load the plugin based on the source manifest file, but when you use React you very likely have Webpack running and Webpack is going to output the final product into a /dist folder with its own manifest so you can tell the UXP DevTool where to find that distribution manifest so you say something like /dist, like that and this is better so that the UXP can manage with the hot-reloading thing. I think. What else? Here you can find the UXP DevTool preferences with the service port this is the port through which the UXP DevTool connects with Photoshop, and then you can change the theme from light to dark and vice versa of course this is built with spectrum components so it’s quite nice. All right I think this wraps it up I hope you enjoyed this one and if you did please consider supporting me, I’ve even added a donation button in my website. Or you can purchase ALCE and Double USM in the Photoshop marketplace and if you happen to buy them please leave a positive rating or review which will always help very much. Okay, thanks for watching and see you in the next one. Bye!&lt;/p&gt;
-</description>
-        <pubDate>Fri, 13 Nov 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html</link>
-        <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html</guid>
         
         <category>UXP</category>
         

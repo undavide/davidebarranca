@@ -1,6 +1,6 @@
-Thanks for following along! If you find this content useful, _please consider supporting me_; in particular let me thank this group of fine persons who've supported my work [donating what they could afford](https://bit.ly/unDavide) – much appreciated! 🙏🏻
+Thanks for following along! If you find this content useful, _please consider supporting me_: you can either purchase my latest [UXP Course](https://www.ps-scripting.com/uxp-react.html) or [donate what you want](https://bit.ly/unDavide) as the following fine people have done—it'll be much appreciated! 🙏🏻
 
-John Stevenson ⭐️, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki, Wending Dai.
+Thanks to: John Stevenson ⭐️, Adam Plouff, Dana Frenklach, Dmitry Egorov, Roberto Sabatini, Carlo Diamanti, Wending Dai, Pedro Marques, Anthony Kuyper, Gabriel Correia, Ben Wright, CtrlSoftware, Maiane Araujo, Mihály Dávid Paseczki.
 
 <form action="https://www.paypal.com/donate" method="post" target="_top">
 <input type="hidden" name="hosted_button_id" value="37N4GHTNJK8YE" />
