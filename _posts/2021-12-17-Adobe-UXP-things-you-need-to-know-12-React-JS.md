@@ -13,11 +13,9 @@ tags:
   - UXP
 ---
 
-In this installment I'd like to tell you about ReactJS and take the chance to announce a brand new course of mine: **Adobe UXP plugins development with ReactJS - Build products and Create a Business in the Creative Cloud Marketplace and Beyond**.
+In this instalment I'd like to tell you about ReactJS, and I'll take the chance to announce a brand new course of mine: **Adobe UXP plugins development with ReactJS - Build products and Create a Business in the Creative Cloud Marketplace and Beyond**.
 
-<!-- iframe width="560" height="315" src="https://www.youtube.com/embed/v-x1ZrOtlzQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe -->
-
-> The usual YouTube video I publish alongside with the article is taking more time than expected to edit, so I've decided to publish the written version first 😊 As soon as it's ready I'll add it here!
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ll84YImfMP4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 So far in this series I've only used Vanilla JavaScript to keep it simple, but in the real world a large part of plugin developers don't like to reinvent the wheel themselves and end up using one of the available frameworks. And guess what, ReactJS is the most popular JavaScript library according to the StackOverflow 2021 survey. Even more than jQuery, check that out!
 

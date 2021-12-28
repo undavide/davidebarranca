@@ -5,19 +5,15 @@
     <description>Digital Caveman. Photoshop retoucher and plugins developer. Check out my Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 Dec 2021 16:47:19 +0100</pubDate>
-    <lastBuildDate>Fri, 17 Dec 2021 16:47:19 +0100</lastBuildDate>
+    <pubDate>Tue, 28 Dec 2021 15:51:05 +0100</pubDate>
+    <lastBuildDate>Tue, 28 Dec 2021 15:51:05 +0100</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
     
       <item>
         <title>Adobe UXP: Things you need to know! #12 React JS</title>
-        <description>&lt;p&gt;In this installment I’d like to tell you about ReactJS and take the chance to announce a brand new course of mine: &lt;strong&gt;Adobe UXP plugins development with ReactJS - Build products and Create a Business in the Creative Cloud Marketplace and Beyond&lt;/strong&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;In this instalment I’d like to tell you about ReactJS, and I’ll take the chance to announce a brand new course of mine: &lt;strong&gt;Adobe UXP plugins development with ReactJS - Build products and Create a Business in the Creative Cloud Marketplace and Beyond&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;!-- iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/v-x1ZrOtlzQ&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe --&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The usual YouTube video I publish alongside with the article is taking more time than expected to edit, so I’ve decided to publish the written version first 😊 As soon as it’s ready I’ll add it here!&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/ll84YImfMP4&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;So far in this series I’ve only used Vanilla JavaScript to keep it simple, but in the real world a large part of plugin developers don’t like to reinvent the wheel themselves and end up using one of the available frameworks. And guess what, ReactJS is the most popular JavaScript library according to the StackOverflow 2021 survey. Even more than jQuery, check that out!&lt;/p&gt;
 
