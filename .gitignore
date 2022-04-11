@@ -5,3 +5,4 @@ psd
 docs
 _site/*
 _posts_MARKDOWN
+.DS_Store
