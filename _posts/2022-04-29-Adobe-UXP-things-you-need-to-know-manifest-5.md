@@ -21,9 +21,9 @@ Manifest v5 is officially supported since **Photoshop 2022** (version **23.3.0**
 
 What happens when you push an updated version of your UXP plugin with Manifest v5 to the CC Marketplace? It depends on what users currently have installed in their system.
 
-- Photoshop v23.3 and an older (Manifest v4) version of your plugin: they'll be able to update your plugin and use the latest one (with Manifest v5).
-- Photoshop older than v23.3 and an older (Manifest v4) version of your plugin: they must update Photoshop to be allowed to install the new one. Otherwise, they can keep using the older (Manifest v4) UXP plugin version.
-- Photoshop older than v23.3 but they've not acquired your plugin yet: they _will not_ be offered the older (Manifest v4) plugin. They must update Photoshop and get the newest (Manifest v5) plugin.
+- Photoshop v23.3: they'll be able to acquire/update your plugin and use the latest one (with Manifest v5).
+- Photoshop older than v23.3 and an older (Manifest v4) version of your plugin: they must update Photoshop first, then they'll be able to install the new plugin version.
+- Photoshop older than v23.3, and they've not acquired your plugin yet: they _will not_ be offered the older (Manifest v4) plugin. They must update Photoshop and get the newest (Manifest v5) plugin.
 
 In other words, **the CC Marketplace doesn't work like the Apple Store**, where you're deployed the latest product version that is compatible with your system. Here, only the latest product is made available, and users must keep up with the minimum requirements if they want to get it.
 
@@ -50,7 +50,7 @@ Few things to note:
 
 - `"host"` is now an _array_ of objects: in fact Manifest v5 supports multi-host UXP plugins (at the moment Photoshop and Adobe XD at best).
 - There's a new `"data"` property, where you can specify the `"apiVersion"`: set it to `2`.
-- As expected, `"manifestVersion"` is now `5`.
+- As expected, `"manifestVersion"` is now `5`, and please note the `"minVersion"` that must be at least `"23.3.0"`.
 
 You can still set `"apiVersion"` to `1` if you want, but you'll get a warning message in the Console and, most importantly, you'll miss all the new PS Scripting features[^api12].
 
