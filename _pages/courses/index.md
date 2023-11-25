@@ -4,33 +4,36 @@ title:  "Courses 📙"
 permalink: "/courses/"
 ---
 
-![Photoshop Development courses](/assets/img/courses/newcourses.jpg)
+[![UXP Courses](/assets/img/courses/uxp-bundle.jpg)](https://www.ps-scripting.com)
 
-In the last several years, I have authored a few courses about Adobe extensibility.
+In the last several years, I have authored many courses about Adobe extensibility. As technology progresses, the UXP books are the ones I'm currently working on. 
+
+## Professional Photoshop UXP
+
+[![Professional Photoshop UXP](/assets/img/courses/propsuxpcourse.jpg)](https://www.ps-scripting.com/professional-ps-uxp.html)
+
+Brand new book about the UXP Photoshop API. **325-page PDF** with **sample code**, covering topics from the DOM to the exciting novel Imaging API. [Check it!](https://www.ps-scripting.com/professional-ps-uxp.html)
 
 ## UXP plugins and React JS
 
 [![Adobe UXP plugins development with React JS](/assets/img/courses/uxpcourse.jpg)](https://www.ps-scripting.com/uxp-react.html)
 
-My latest one, the only available course that covers the new UXP environment and the React JS library. **290 pages PDF** with **16 demo plugins** and **5 and a half hours** of video-tutorials. [Check it!](https://www.ps-scripting.com/uxp-react.html)
+The only available course that covers the new UXP environment and the React JS library at the same time. **296 pages PDF** with **16 demo plugins** and **5 and a half hours** of video-tutorials, updated mid-2023. [Check it!](https://www.ps-scripting.com/uxp-react.html)
 
-## Photoshop Scripting
+---
 
-[![Professional Photoshop Scripting](/assets/img/courses/bundles-ps@2x.jpg)](https://www.ps-scripting.com/ps-scripting.html)
+A bundle of both courses is available at a discounted price 👉[here](https://www.ps-scripting.com/bundles.html).
 
-A complete course on Adobe Photoshop Scripting, from the basics up to advanced topics that aren't covered anywhere else. **409 pages PDF** with **sample code**. [Check it!](https://www.ps-scripting.com)
 
-## CEP Panels
+---
 
-[![Adobe Photoshop HTML Panels Development](/assets/img/courses/bundles-html@2x.jpg)](https://www.htmlpanelsbook.com/)
+## Legacy courses
 
-A complete course on Adobe Photoshop CEP (HTML) Panels Development – Build and Market Adobe CC Extensions. **300 pages PDF**, **28 Demo Panels** with fully commented code; **3 hours of HD video-tutorials**. [Check it!](https://www.htmlpanelsbook.com/)
+[![UXP Courses](/assets/img/courses/legacy.jpg)](https://www.ps-scripting.com/index.html#bloc-46)
 
-## Installers & Automation
+The following courses are still available, but they are not updated anymore. They are still useful if you need to support the old CEP environment, or if you want to learn about the ExtendScript flavour of Photoshop Scripting.
 
-[![The Ultimate Guide to Native Installers and Automated Build Systems](/assets/img/courses/bundles-automation@2x.jpg)](/2018/01/ultimate-guide-native-installers-automated-build-system/)
-Hands-on guide on Native Installers, and ways to automate the Extension building pipeline with Task Managers. **78 pages PDF**, with **sample code** (a demo hybrid Extension, and the fully working automation tasks). [Check it!](/2018/01/ultimate-guide-native-installers-automated-build-system/)
-
-## Bundles
-
-I also offer discounted bundles, check [this page](https://www.ps-scripting.com/bundles.html) if you're interested – or [here](https://www.ps-scripting.com/bundles.html#enterprise-bundles) if you need Enterprise/Team licenses.
+- [JavaScript Native applications for Photoshop](https://www.ps-scripting.com/js-native-apps-for-photoshop.html):A videocourse that walk you through a novel approach on extensibility: independent apps based on modern JS/Node.js (requires CEP in Photoshop). **9 hours HD video with sample code**.
+- [Professional Photoshop Scripting](https://www.ps-scripting.com/ps-scripting.html): a complete course on Adobe Photoshop Scripting, from the basics up to advanced topics that aren't covered anywhere else. **409 pages PDF** with **sample code**.
+- [Adobe Photoshop HTML Panels Development](https://www.ps-scripting.com/html-panels.html): a complete course on Adobe Photoshop CEP (HTML) Panels Development – Build and Market Adobe CC Extensions. **300 pages PDF**, **28 Demo Panels** with fully commented code; **3 hours of HD video-tutorials**. 
+- [The Ultimate Guide to Native Installers and Automated Build Systems](/2018/01/ultimate-guide-native-installers-automated-build-system/): hands-on guide on Native Installers, and ways to automate the Extension building pipeline with Task Managers. **78 pages PDF**, with **sample code** (a demo hybrid Extension, and the fully working automation tasks).

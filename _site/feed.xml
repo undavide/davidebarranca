@@ -5,9 +5,102 @@
     <description>Digital Caveman. Photoshop retoucher and plugins developer. Check out my Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Sep 2023 15:42:35 +0200</pubDate>
-    <lastBuildDate>Mon, 04 Sep 2023 15:42:35 +0200</lastBuildDate>
+    <pubDate>Sat, 25 Nov 2023 18:49:49 +0100</pubDate>
+    <lastBuildDate>Sat, 25 Nov 2023 18:49:49 +0100</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>The &apos;Professional Photoshop UXP&apos; book is out!</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/professional-ps-uxp.html&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2023/11/BeautyShot.jpg&quot; alt=&quot;Professional Photoshop UXP&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Hi everyone, I’m happy to announce that my new book on the UXP Photoshop API is available!  I’m genuinely surprised I made it in time for the mandatory Black Friday 2023 deal (promo code &lt;strong&gt;BF2023&lt;/strong&gt;), but I did.&lt;/p&gt;
+
+&lt;p&gt;You can read more about it on my &lt;a href=&quot;https://www.ps-scripting.com/professional-ps-uxp.html&quot;&gt;courses website&lt;/a&gt; page; it’s 325 pages, with a code bundle with 30 UXP scripts and plugins. Here’s one spread as a little teaser.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/professional-ps-uxp.html&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2023/11/teaser.jpg&quot; alt=&quot;Teaser&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And the Table of Contents.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/professional-ps-uxp.html&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2023/11/TOC.png&quot; alt=&quot;Table of Contents&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;More screenshots and info in the book’s &lt;a href=&quot;https://www.ps-scripting.com/professional-ps-uxp.html&quot;&gt;website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;-where-can-i-get-it&quot;&gt;👀 Where can I get it?&lt;/h3&gt;
+
+&lt;style&gt;
+.button-crosshair:hover { cursor: crosshair; }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.ps-scripting.com/professional-ps-uxp.html&quot; class=&quot;button-crosshair&quot; style=&quot;display: block; width: 50%; margin: 0 auto; padding: 10px; text-align: center; background-color: #7a53ff; color: white; border-radius: 50px; text-decoration: none;&quot;&gt;👉👉👉 HERE 👈👈👈&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You’ll also find a way to get a &lt;strong&gt;70-page&lt;/strong&gt; free sample there.&lt;/p&gt;
+
+&lt;h3 id=&quot;-how-does-this-compare-to-adobe-uxp-plugins-development-with-react-js&quot;&gt;❓ How does this compare to “Adobe UXP Plugins development with React JS”?&lt;/h3&gt;
+
+&lt;p&gt;Two main components make up Photoshop extensibility:&lt;/p&gt;
+
+&lt;p&gt;► &lt;strong&gt;UXP API&lt;/strong&gt;: the architecture that provides the runtime environment for creating scripts and plugins, integrated seamlessly into various Adobe Creative Cloud applications. Learning it involves understanding how plugins are structured, their lifecycle, commands, how to build their user interface, how to use shared features like Network and FileSystem modules, etc.&lt;/p&gt;
+
+&lt;p&gt;► &lt;strong&gt;Photoshop API&lt;/strong&gt;: the interface allowing direct access to the automation of Photoshop features at the core of Scrips and Plugin alike. It includes the Scripting Document Object Model, ActionJSON, Imaging API, and everything else the UXP API uses to interact with Photoshop as its host application.&lt;/p&gt;
+
+&lt;p&gt;Think about the UXP API as an office: it has a well-defined architecture, internal operational rules, processes and control systems, as well as features standard in every other workplace—like restrooms and hiding places. The Photoshop API instead is the team of people doing their job there—in our case, they are processing images. The InDesign API may inhabit the same office yet perform different tasks. To get stuff done, you must know about both the office and the people.&lt;/p&gt;
+
+&lt;p&gt;► &lt;strong&gt;Adobe UXP Plugins development with React JS&lt;/strong&gt; is primarily about the &lt;strong&gt;UXP API&lt;/strong&gt; and uses some Photoshop API for demonstrative purposes. It also teaches you ReactJS from scratch—one of the most popular JavaScript libraries, incredibly useful for building UXP plugins’ User Interfaces.&lt;/p&gt;
+
+&lt;p&gt;► &lt;strong&gt;Professional Photoshop UXP&lt;/strong&gt; is primarily about the &lt;strong&gt;Photoshop API&lt;/strong&gt; and uses some UXP API for demonstrative purposes.&lt;/p&gt;
+
+&lt;p&gt;They are specular in their approach and complementary at the same time. Reason why they’re available as a &lt;a href=&quot;https://www.ps-scripting.com/bundles.html&quot;&gt;bundle&lt;/a&gt;, too.&lt;/p&gt;
+
+&lt;h3 id=&quot;trivia&quot;&gt;Trivia&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The whole process has been comparatively fast, it was done in about eight months: past books have taken me 2-4x the time. My daughter is studying abroad 🇮🇪 and education is expensive: need is the mother of all inventions.&lt;/li&gt;
+  &lt;li&gt;It started as an update to the “Professional Photoshop Scripting” book, but it quickly became apparent that it was a different beast altogether. I’ve kept a few old bits (concepts, illustrations) here and there, but it’s mostly brand new content.&lt;/li&gt;
+  &lt;li&gt;I’ve laid down the structure using the &lt;a href=&quot;https://www.mindnode.com&quot;&gt;MindNode&lt;/a&gt; app. Then I disregarded it and wrote the book in a different order.&lt;/li&gt;
+  &lt;li&gt;The first two drafts were written in MarkDown with the &lt;a href=&quot;https://obsidian.md&quot;&gt;Obsidian&lt;/a&gt; app, which is beyond awesome.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2023/11/obsidian.jpg&quot; alt=&quot;Obsidian&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;All the vector graphics have been made in &lt;a href=&quot;https://affinity.serif.com/en-us/designer/&quot;&gt;Affinity Designer&lt;/a&gt; (sorry, Adobe), and are kept as vectors in the PDF.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2023/11/designer.jpg&quot; alt=&quot;Designer&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The book has entirely been designed with LaTeX, using the custom styles I’ve painfully crafted over the years. Recently, I’ve switched to &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop&quot;&gt;LaTeX Workshop&lt;/a&gt;, a free VSCode plugin, but &lt;a href=&quot;https://www.texifier.com/&quot;&gt;Texifier&lt;/a&gt; is also a great app if LaTeX is your poison.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2023/11/latex.jpg&quot; alt=&quot;Latex&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I might have finally learned how to use commas in the English language, thanks to &lt;a href=&quot;https://obsidian.md&quot;&gt;Grammarly&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;The cover comes from a &lt;a href=&quot;https://processing.org&quot;&gt;Processing&lt;/a&gt; Java sketch of a &lt;a href=&quot;https://en.wikipedia.org/wiki/Lissajous_curve&quot;&gt;Lissajous curve&lt;/a&gt; that I wrote, using &lt;a href=&quot;https://georgisworks.com/?p=959&quot;&gt;this project&lt;/a&gt; as a starting point.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2023/11/processing.jpg&quot; alt=&quot;Processing&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Yes, there’s a chapter dedicated to ChatGTP and AI-assisted coding, and I’m rather proud of it (bar one illustration, which will ruin my reputation—I’m not going to say more!).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;If you’re curious and want to know more, 👉 &lt;a href=&quot;https://www.ps-scripting.com/professional-ps-uxp.html&quot;&gt;check it out&lt;/a&gt;! 👈&lt;/p&gt;
+
+&lt;p&gt;Your support is always much appreciated ❤️ Thanks for your time, and happy coding!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 25 Nov 2023 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2023-11-25-professional-photoshop-uxp/</link>
+        <guid isPermaLink="true">http://localhost:4000/2023-11-25-professional-photoshop-uxp/</guid>
+        
+        <category>Professional Photoshop UXP</category>
+        
+        
+        <category>UXP</category>
+        
+      </item>
     
       <item>
         <title>Professional Photoshop Scripting (2nd edition) is in the work!</title>
@@ -2229,65 +2322,6 @@ Stay safe and thanks! 🙏🏻&lt;/p&gt;
         <pubDate>Mon, 14 Dec 2020 00:00:00 +0100</pubDate>
         <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html</link>
         <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html</guid>
-        
-        <category>UXP</category>
-        
-        <category>Alchemist plugin</category>
-        
-        
-        <category>Development</category>
-        
-      </item>
-    
-      <item>
-        <title>Adobe UXP: Things you need to know! #7 BatchPlay (part 2): the Alchemist plugin as a Listener</title>
-        <description>&lt;p&gt;In this episode I explore BatchPlay code with the Alchemist plugin as a powerful UXP Script Listener. BatchPlay is the subject of a three-parts mini-series.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/aZn_6X6nvUM&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Download the Alchemist plugin by Jaroslav Bereza &lt;a href=&quot;https://adobe.ly/33NvdhO&quot;&gt;here 🍺&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt; – 2020 is a hell of a year. I don’t have a Patreon page, but I’ve got two fairly cheap plugins on the Photoshop Marketplace, &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=28db2e07&amp;amp;workflow=share&quot;&gt;ALCE&lt;/a&gt; (Advanced Local Contrast Enhancer) and &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=78c3cdaf&amp;amp;workflow=share&quot;&gt;Double USM&lt;/a&gt; (on sharpening). If you happen to buy them, please leave a positive rating/review, it would greatly help. Or, you can&lt;/p&gt;
-
-&lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
-&lt;input type=&quot;image&quot; src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; title=&quot;PayPal - The safer, easier way to pay online!&quot; alt=&quot;Donate with PayPal button&quot; /&gt;
-&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;https://www.paypal.com/en_IT/i/scr/pixel.gif&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;
-&lt;/form&gt;
-
-&lt;p&gt;If you cannot, or don’t want to, that’s OK anyway.&lt;br /&gt;
-Stay safe and thanks! 🙏🏻&lt;/p&gt;
-
-&lt;h2 id=&quot;the-whole-series-so-far&quot;&gt;The whole series so far&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know.html&quot;&gt;#01 – Rundown on the UXP announcement @ the Adobe MAX 2020&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-12-React-JS.html&quot;&gt;#12 - React JS and the UXP plugins Course&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-manifest-5.html&quot;&gt;#13 - Manifest v5&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-UXP-Landscape-Guide.html&quot;&gt;#special - The UXP Landscape Guide&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
-
-&lt;p&gt;The transcripted video looks weird, but I’m told it helps to have it anyway because it’s easier to translate to other languages. Apologies for the lack of punctuation and the sloppy syntax.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Hey I’m Davide and this is Adobe UXP things you need to know! Today I’m talking about BatchPlay, again, and also the Alchemist plugin. So in the last video, and if you’ve missed it I suggest you to watch that first because it covers more theoretical grounds on ActionManager, which is a precursor of BatchPlay and the two of them are deeply linked, back then I have left you with the recommendation to go download and install the Alchemist plugin by Jaroslav Bereza. A quick reminder you can find it either on the UXP marketplace for free or on this GitHub page. I prefer the GitHub version because, due to the marketplace “strict vetting” for products, in order to be approved one feature has been implemented not in the most optimized way but both of them should work fine. And in case you’re not familiar with GitHub you get the entire repository as a zip clicking the green button, download zip and when you’ve unzipped it you can point the UXP Developer Tool to the manifest.json that sits in the /dist folder. Okay? Now we have the plugin loaded in Photoshop and let me dock it on the right, so the Alchemist plugin does at least a couple of very important things: it listens and it can inspect. So you have two buttons down here one for the listener and one for the inspector. Let me start with the listener first. As a reminder from the previous video you know that each user interaction with the user interface in Photoshop triggers events that carry payloads that are complex objects that describe the kind of event and allow it to be played back in the Actions palette or if you can listen to the underlying code you can play it back in your own script. And this is exactly what we’re going to do right now, so make sure that you click the listener button here at the very bottom and also make sure that you have listener as the type and category and you also have this exclude selected. These are all drop-down menus that have different values and we will look at them in a while. So “exclude” means that all those events that usually pollute the list of events that the Alchemist listens to are not displayed so they are just filtered out. Okay, now that we have clicked this listener we can start doing things, for instance let’s duplicate a document. So Image, Duplicate and let’s call this, I don’t know what, “foo”, okay? So now you see that, well a document is being duplicated and it’s called foo, but we also have this duplicate event here and it shows up with this kind of display where in the content and tree you have it displayed as a tree so with these arrows you can expand and collapse them you see that the event is the duplicate event and you have the target, the enum is the ordinal we’re referring to, a document and we’re getting the first one and we’re duplicating it calling it foo and giving it a document id of 889. You can inspect the listened code as a tree or in its raw form which I frankly prefer so this is a JSON like object as we saw in the previous video so you have the event the target which is an array in this case just one object so this one document, the name. the document id, and the command. Also if you go in this code tab you see the exact code that you can use to replay this same event so if you copy this and edit maybe a little bit just to change the name and the document id, because you cannot have two documents with the same id, you can duplicate a document with code. I think this is already possible in the DOM but just for the sake of experimentation let’s do that so let me copy this switch to Atom, just because it’s syntax highlighted, paste it here we first need to store the BatchPlay function requiring Photoshop, action, BatchPlay and then the result is equal to await BatchPlay because BatchPlay is an asynchronous function you see that it accepts an array which is this guy here as we saw in the previous video with the descriptor and also an option objects which is this red one with the synchronous execution set to false meaning that this is async; this can be true so in that case BatchPlay is going to act as a synchronous function which is something that is not really recommended unless you perform very quick tasks, and modal behavior well this is when you have modal dialog open and you tell BatchPlay what to do: in this case if there is a modal dialog it will fail. Okay so let’s say that instead of “foo” we wanna I don’t know what “moo” and the document id is going to be 999 okay? So let me copy everything and we have to run this code but we don’t have anything to run it into so let me take the debug console. We’re not going to debug the Alchemist plugin we’re going to just use this console, so let’s switch back to Photoshop, let me minimize the UXP dev tool, just the console, at this point I can paste in here everything and hopefully this document is going to be duplicated and it’s going to be called “zoo”, or “moo” sorry, with the document id of 999. So let’s try this and we have promise, the promise is resolved and in fact you have the moo document here okay? So this works, so let’s try something else we have duplicated this document let’s try with duplicating layers. And you can do that in a variety of different ways one of which is dragging the layer in the layer palette, to this icon and it has been duplicated and you see another duplicate event and if you select it you see that the target is not anymore a document but a layer and each time that you see in the target something that says “_ref” whatever it is, a layer a document. and then “_enum” ordinal and “_value” targetEnum this means the currently active document or layer so the target is the currently active layer. Version five no idea what this is and is command you can forget about it for the time being, and the option of the duplication is just the dialog option so we are not displaying any dialogue for this duplication event so this duplicates a layer. But you can do this in a different way so for instance you can use the keyboard shortcut Command J and this duplicates the layer but you see we have a very different event copyToLayer, let me select that and you see that the code is once more different the event is copyToLayer here we don’t have any descriptor because apparently this event doesn’t need any and again the dialog options are don’t display again synchronous execution false and modal behavior fail this is the default. We have yet another way to duplicate a layer and in this case with the option key pressed as well with the Command and J so Command Option J you have this dialog where you can input the layers details so the name let me call this “zoo” and for the sake of experimentation let’s set the color of the layer as blue, let’s change also the blending mode to screen and the opacity not 100 but 50. Okay so this time we have yet another event it’s “make” and so let’s inspect this make that the Alchemist plugin has listened to we have this object make, actually let me copy everything and paste it in Atom so that we maybe see it a little bit better all right so you see that the event is make we’re making what? A new, and this is a descriptor so this is the new descriptor so we are making a new layer with the name zoo with the mode that is an enum, a blend mode with a value of screen an opacity which is a unit percent unit, with a value that for some reason is not 50 but is 50 with a lot of decimal places and yet another enum for the color in this case blue we are then using this enum area selector with the value of selectionEnum I’m not 100 sure what this means probably it says it’s the active uh layer that we’re using as as a reference and then copy is true which is probably what is needed for the duplication to succeed and again is command is true and the option don’t display synchronous execution and modal behavior as the default so again you see that the BatchPlay takes one array which is this thing here and one option object that is this one and if you forget this object the BatchPlay call is going to fail if you don’t have to modify the default just add an empty object, right? and that’s going to work so having this kind of code you can do a lot of things for instance you can create a function that lets you duplicate layers setting all those parameters so let me try to make this, let’s call this a function like a const dupLayer and this is equal to a function with the arrow syntax and this takes everything okay so let me put everything inside here and I want to return this return and since I’m awaiting for something this makes this function asynchronous so I need to have this async keyword on the top so async okay I think this is it. No, actually it’s not, I need to be able to set what the name in this case this so name let me add it here so name and then also the blend mode that goes here let me call this blend mode so blend mode and then let’s add this to the list of the parameters and also the opacity that goes here. Okay so name blending mode opacity and then what oh the color, the color that goes here so let me call this color all right and I think this is it so let me copy everything this function let me check if the BatchPlay so let me switch to Photoshop first and let me put the console on the top let’s clear it I think that we already have the BatchPlay in memory yes it’s native code so I just need to paste the code for the dupLayer function all right so Photoshop and then the console this is the function and it returns undefined which is fine because we’re not calling this function and at this point I can do that so I can call dupLayer and this accepts the name and let me call this name “loo” and then what it wants blending mode let me have this screen as well well of course you need to know all the exact blending modes so you can properly error check here I’m just using the one that I’ve seen works for the sake of demonstration so screen the blending mode and then the opacity I want in this case 99 and the color let’s try red that should should work let me delete this zoo layer so we can start duplicating this background so that I know that the screen works and let’s close this and see what happens we have a promise that is pending and it’s been resolved and well actually I should have awaited for that so that I should have written await for the dupLayer etc in this case this is the reason why I’m getting a promise the layer has been created it is red it has the screen blending mode and the opacity 99 so it has worked fine okay I think at this point we can get rid of all those layers and by the way you can also clean the list from this button here that says clear, clear all, and then you get rid of everything one last thing that I want to show you is how to bundle multiple steps into one big routine that is called through BatchPlay, because BatchPlay has this unique feature that ActionManager lacked to run an array of descriptors and then we will wrap this in a function that will stick in the prototype of a native object but we’ll get to that in a moment, it’s really really cool. So, I’m still listening I’m duplicating the layer I’m not really interested into this copyToLayer event let’s say that we want to create a luminosity mask on the layer that is selected so we want to create a layer mask make sure that the layer mask is selected you see all the events here we’re going to look at them in a minute and at this point we can apply the RGB content of that layer as normal doesn’t make any difference because it was white normal and multiply are the same but let’s use the proper normal okay so we have those three events let me switch to the raw because I rather prefer it so we have this one let me copy it and paste it just as an object here this is the first one and then we have the select and this goes here let me call this select all right and then we have the last one which is the apply image event this descriptor here so this is apply image okay in the first one we are creating layer mask so you see that we are creating a new channel class channel and we are sticking that into the mask and the mask is reveal all so it’s white and not black and also the select we’re selecting what? Target that is an array in this case only one descriptor a channel the currently active channel making visible false and the apply image event is a calculation you see that you have in the reference couple of descriptors so one for the RGB channel so the composite channel and the fact that it is the merged view preserve transparency true whatever it is these are the steps that we have recorded okay so now we can create a function that runs all those three steps at once so let’s call this createLuma right so const createLumaMask I’m not sure if this is properly called luminosity mask or would have required the L channel from Lab whatever createLumaMask is fine for us here so it’s a function and this function calls BatchPlay so BatchPlay and actually it is an asynchronous function so let’s await for BatchPlay and let’s make this an async function and BatchPlay you know accepts an array of descriptors and an option object so let me use this as an empty object for the time being so into this array I’m going to copy and paste all those three descriptors one two and three okay so this function should have not made any mistakes which is really likely perform those three steps and create a luminosity mask on an existing layer so let’s try that Photoshop and the console let me clear the console and let’s paste the definition of the function BatchPlay should… Oh, unexpected token what am I missing? Oh, commas this is something that I do a lot, all right so let me try again paste and undefined which is cool so back to Photoshop and let’s bring the console up the function was called createLumaMask so let me get rid of that layer let me create another one and let’s see if this works createLumaMask let’s call this function and boom it goes so you have three BatchPlay steps merged into one and that is going to be way faster than the previous extension script way of calling three execute action in a row but there’s something even better you can and if you look at this a page in the documentation you can extend the prototype of some of the native object in this case in the doc they are extending the prototype of the Document we’re going to extend the prototype of the Layer so let me copy this and show you what I mean so you can say that require Photoshop app not document but we are working on a layer so layer and then prototype to the prototype we are going to add something called createLumaMask and this is an async function that in this case returns an await BatchPlay blah blah blah blah right so let me copy this and paste it into the console hopefully we have no errors or right at this point let me get rid of the layer duplicate another one and at this point I think I can say require Photoshop and then I’m gonna get the app and then in the app as you know there is something that is the active document and the active layers I already have this here I don’t need the color and the active layers I want just the first one so the one with index zero and at this point I can call the createLumaMask is this the correct name I already forgot it createLumaMask and hopefully this is going to work yep you see now that it’s not a function that is independent and lives on its own but it is a function in the prototype of the native layer object this is something that we weren’t allowed to do with ExtendScript and it is a nice addition of BatchPlay and by the way super cool so you can really extend the DOM with your own function on the one side you can fill the gaps so create in BatchPlay the function that the DOM should have or had in extend script but has not yet in UXP but you can also create your own routines that exploit the possibility of BatchPlay to use this array syntax so let me get rid of that and let me sum up what we have seen today. So the Alchemist plugin works with two different options, we’ve seen only the first one, the listener. In the next video we’re gonna show the inspector. While you interact with the Photoshop user interface all the events are listed on this column here and you can inspect them either in the content or the code, the difference is that the code is added the parts that allow you to just copy and paste them in your UXP plugins whereas the content is either just the raw descriptor or this tree which is a little bit more pleasing to the eye. Make sure to have the listener set both in the type and the category and also this exclude filter because otherwise if you have none you see that there is a lot of junk that we don’t really need. You can then copy and paste the code, rework it, wrap it with your own function, or combine multiple events in one single BatchPlay array and even store them and extends the Photoshop API assigning your function to the prototype of some of the native objects in this case you can extend the Photoshop, the Document, the Layer, Actionset and Action. Okay I think this is it for this time, it came out a bit long but there is so much to say about BatchPlay and also the Alchemist plug-in. First thing that you have to do is go to the marketplace, the UXP marketplace, get the Alchemist plugin and make sure that you remember to add a positive rating because: hats off to Jaroslav Bereza for his amazing work. I want to thank all the people that have already contributed with a big or small donation it has really, really been appreciated, thank you! There is a donation button either on my website or in the YouTube video description. I also have the usual products on the marketplace myself too. In the next video we’re going to complete this BatchPlay mini-series covering more of the Alchemist plugin but for now that’s it. Thank you for watching, bye.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 07 Dec 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html</link>
-        <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html</guid>
         
         <category>UXP</category>
         

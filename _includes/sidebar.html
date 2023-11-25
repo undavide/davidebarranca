@@ -7,7 +7,8 @@
     </div>
 
     <div class="compact-header">
-        <a class="avatar" href="{{ site.baseurl | prepend: site.url }}"><img alt="Avatar" src="{% if site.avatar %}{{site.avatar}}{% else %}{{ site.email | to_gravatar:140 }}{% endif %}" /></a>
+        <a class="avatar" href="{{ site.baseurl | prepend: site.url }}"><img alt="Avatar"
+                src="{% if site.avatar %}{{site.avatar}}{% else %}{{ site.email | to_gravatar:140 }}{% endif %}" /></a>
         <div class="my-info">
             <strong class="my-name">{{ site.name }}</strong>
             <span class="my-job-title">{{ site.job_title }}</span>
@@ -15,33 +16,50 @@
     </div>
 
     {% if site.show_menu == 1 %}
-        {% if site.pages %}
-        <div class="mainmenu">
-            <a href="{{ site.baseurl | prepend: site.url }}" {% if page.url == "/" %}class="active"{% endif %}>Blog</a>
-            {% for p in site.pages %}
-                {% if p.layout == 'page' %}
-                    <a href="{{ p.url | prepend: site.baseurl | prepend: site.url }}" {% if p.url == page.url %}class="active"{% endif %}>{{ p.title }}</a>
-                {% endif %}
-            {% endfor %}
-        </div>
+    {% if site.pages %}
+    <div class="mainmenu">
+        <a href="{{ site.baseurl | prepend: site.url }}" {% if page.url=="/" %}class="active" {% endif %}>Blog</a>
+        {% for p in site.pages %}
+        {% if p.layout == 'page' %}
+        <a href="{{ p.url | prepend: site.baseurl | prepend: site.url }}" {% if p.url==page.url %}class="active" {%
+            endif %}>{{ p.title }}</a>
         {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
     {% endif %}
 
     <!-- <p class="about-me">{{ site.description }}</p> -->
     <div>
-      <a href="https://www.ps-scripting.com/uxp-react.html"><img alt="Adobe UXP plugins development" src="/assets/img/UXP@2x.png" width="250" height="294"/></a>
+        <a href="https://www.ps-scripting.com/professional-ps-uxp.html"><img alt="Adobe UXP plugins development"
+                src="/assets/img/UXP@2x.png" width="250" height="294" /></a>
     </div>
 
     <ul class="socials">
-        {% for social in site.social_networks %}{% if social.url != '' %}<li><a href="{{social.url}}"><svg title="{{social.name}}" width="16" height="16" {% if social.name == 'applemusic' %} style="margin: 0 0 0 -2px" {% endif %}><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ site.baseurl | prepend: site.url }}/assets/svg/social-icons.svg#{{social.name}}-icon"></use></svg></a></li>{% endif %}{% endfor %}
+        {% for social in site.social_networks %}{% if social.url != '' %}<li><a href="{{social.url}}"><svg
+                    title="{{social.name}}" width="16" height="16" {% if social.name=='applemusic' %}
+                    style="margin: 0 0 0 -2px" {% endif %}>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xlink:href="{{ site.baseurl | prepend: site.url }}/assets/svg/social-icons.svg#{{social.name}}-icon">
+                    </use>
+                </svg></a></li>{% endif %}{% endfor %}
 
         {% if site.email != blank and site.show_email == 1 %}
-            <!-- WAS: <a href="mailto:{{site.email}}">  -->
-            <li><a href="javascript:linkTo_UnCryptMailto('nbjmup;ebwjef/cbssbodbAhnbjm/dpn');" title="Drop me an email"><svg title="{{social.name}}" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ site.baseurl | prepend: site.url }}/assets/svg/social-icons.svg#email-icon"></use></svg></a></li>
+        <!-- WAS: <a href="mailto:{{site.email}}">  -->
+        <li><a href="javascript:linkTo_UnCryptMailto('nbjmup;ebwjef/cbssbodbAhnbjm/dpn');" title="Drop me an email"><svg
+                    title="{{social.name}}" width="16" height="16">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xlink:href="{{ site.baseurl | prepend: site.url }}/assets/svg/social-icons.svg#email-icon">
+                    </use>
+                </svg></a></li>
         {% endif %}
 
         {% if site.show_rss == 1 %}
-         <li><a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"><svg title="{{social.name}}" width="16" height="16"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ site.baseurl | prepend: site.url }}/assets/svg/social-icons.svg#rss-icon"></use></svg></a></li>
+        <li><a href="{{ " /feed.xml" | prepend: site.baseurl | prepend: site.url }}"><svg title="{{social.name}}"
+                    width="16" height="16">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xlink:href="{{ site.baseurl | prepend: site.url }}/assets/svg/social-icons.svg#rss-icon"></use>
+                </svg></a></li>
         {% endif %}
     </ul>
 </aside>
