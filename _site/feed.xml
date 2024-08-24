@@ -5,9 +5,39 @@
     <description>Digital Caveman. Photoshop retoucher and plugins developer. Check out my Courses page!</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 25 Nov 2023 18:49:49 +0100</pubDate>
-    <lastBuildDate>Sat, 25 Nov 2023 18:49:49 +0100</lastBuildDate>
+    <pubDate>Sat, 24 Aug 2024 18:35:04 +0200</pubDate>
+    <lastBuildDate>Sat, 24 Aug 2024 18:35:04 +0200</lastBuildDate>
     <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>I&apos;m joining Adobe!</title>
+        <description>&lt;p&gt;Hi everyone! Yep, you read it right… I’ve joined the Adobe mothership as a &lt;strong&gt;Senior Product Marketing Engineer&lt;/strong&gt;! I’ll be on the Developer Experience team with amazing people, some of whom I’ve known for years now. I’m not saying this lightly: I’m genuinely excited.&lt;/p&gt;
+
+&lt;h2 id=&quot;wait-what&quot;&gt;Wait, what?&lt;/h2&gt;
+
+&lt;p&gt;You may have noticed this blog hasn’t received much love lately, except for book announcements. In addition to my usual mix of gigs, in the last couple of years I’ve been working with Adobe as a contractor: first as a software developer in the Photoshop UXP DOM project, then helping with Adobe Express add-on documentation.&lt;/p&gt;
+
+&lt;p&gt;When a position opened, I applied, interviewed, and went through the usual process. I’ve spent the last quarter of a century as a freelancer or with my own company: working full-time in a Fortune 100 tech company with 30.000 employees worldwide is a hell of a pivot, but I’ve fully embraced it. It was time for me to switch gears and take the challenge. I’m joining the Developer Experience (DevEx) team, a group of wonderful people with whom I had the chance to work before.&lt;/p&gt;
+
+&lt;p&gt;If you’ve been around long enough, you know that there was a time when third-party extensibility wasn’t the recipient of much interest (&lt;em&gt;understatement&lt;/em&gt;). Then, the wheels started moving again: forums, social channels, new features, documentation, office hours, and developer meetings have flourished. It’s an effort that involved multiple teams and people: DevEx has been a central driver, and I’m proud to work with them now.&lt;/p&gt;
+
+&lt;p&gt;I’m writing a longer post, rich in mumblings and rantish in spirit (not “radish” Grammarly, thank you), where I go through the last 20+ years of my career, if you’re curious—there are things that I want to put on a page before I move on, weird bits and memories included. 
+Rest assured that I’ll carry on collecting my (personal) opinions in this space. For now, thanks so much to those who’ve supported me; I’ve &lt;em&gt;loved&lt;/em&gt; every email and chat with you over the years. Please keep reaching out if you feel like it, feedback from the community is more important than ever for me now.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-note-on-my-books&quot;&gt;A note on my books&lt;/h3&gt;
+
+&lt;p&gt;Given my new role, I don’t plan to write new books on Adobe extensibility in the foreseeable future. However, I am still committed to keeping &lt;a href=&quot;https://www.ps-scripting.com/professional-ps-uxp.html&quot;&gt;Professional Photoshop UXP&lt;/a&gt; and &lt;a href=&quot;https://www.ps-scripting.com/uxp-react.html&quot;&gt;Adobe UXP plugin development with ReactJS&lt;/a&gt; relevant and up-to-date with the latest platform changes—they’re still for sale on &lt;a href=&quot;https://www.ps-scripting.com&quot;&gt;PS Scripting&lt;/a&gt;, and they’re one of my accomplishments that I’m still the most proud of.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 24 Aug 2024 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2024-08-24-joining-adobe-fulltime/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024-08-24-joining-adobe-fulltime/</guid>
+        
+        <category>Adobe</category>
+        
+        
+        <category>Career</category>
+        
+      </item>
     
       <item>
         <title>The &apos;Professional Photoshop UXP&apos; book is out!</title>
@@ -2267,65 +2297,6 @@ export default Dialogs;
         <category>UXP</category>
         
         <category>Adobe Spectrum</category>
-        
-        
-        <category>Development</category>
-        
-      </item>
-    
-      <item>
-        <title>Adobe UXP: Things you need to know! #8 BatchPlay (part 3): the Alchemist plugin as an Inspector</title>
-        <description>&lt;p&gt;In this episode I inspect the various Photoshop app’s BatchPlay objects with the Alchemist plugin. BatchPlay has been the subject of a three-parts mini-series, of which this is the third and last one.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/qDw3mdGAG2o&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Download the Alchemist plugin by Jaroslav Bereza &lt;a href=&quot;https://adobe.ly/33NvdhO&quot;&gt;here 🍺&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;If you find this content useful, &lt;em&gt;please consider supporting me&lt;/em&gt; – 2020 is a hell of a year. I don’t have a Patreon page, but I’ve got two fairly cheap plugins on the Photoshop Marketplace, &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=28db2e07&amp;amp;workflow=share&quot;&gt;ALCE&lt;/a&gt; (Advanced Local Contrast Enhancer) and &lt;a href=&quot;https://adobe.com/go/cc_plugins_discover_plugin?pluginId=78c3cdaf&amp;amp;workflow=share&quot;&gt;Double USM&lt;/a&gt; (on sharpening). If you happen to buy them, please leave a positive rating/review, it would greatly help. Or, you can&lt;/p&gt;
-
-&lt;form action=&quot;https://www.paypal.com/donate&quot; method=&quot;post&quot; target=&quot;_top&quot;&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;hosted_button_id&quot; value=&quot;37N4GHTNJK8YE&quot; /&gt;
-&lt;input type=&quot;image&quot; src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot; border=&quot;0&quot; name=&quot;submit&quot; title=&quot;PayPal - The safer, easier way to pay online!&quot; alt=&quot;Donate with PayPal button&quot; /&gt;
-&lt;img alt=&quot;&quot; border=&quot;0&quot; src=&quot;https://www.paypal.com/en_IT/i/scr/pixel.gif&quot; width=&quot;1&quot; height=&quot;1&quot; /&gt;
-&lt;/form&gt;
-
-&lt;p&gt;If you cannot, or don’t want to, that’s OK anyway.&lt;br /&gt;
-Stay safe and thanks! 🙏🏻&lt;/p&gt;
-
-&lt;h2 id=&quot;the-whole-series-so-far&quot;&gt;The whole series so far&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know.html&quot;&gt;#01 – Rundown on the UXP announcement @ the Adobe MAX 2020&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-2-documentation.html&quot;&gt;#02 - Documentation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-3-UXP-developer-tool.html&quot;&gt;#03 - UXP Developer Tool&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-4-commands-panels-manifest.html&quot;&gt;#04 - Commands vs. Panels and the manifest.json&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-5-async-vs-sync-in-photoshop-dom-scripting.html&quot;&gt;#05 - Sync vs. Async code in Photoshop DOM Scripting&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-6-BatchPlay-part-1-ActionManager-roots.html&quot;&gt;#06 - BatchPlay (part 1): the ActionManager roots&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-7-BatchPlay-part-2-Alchemist-plugin-listener.html&quot;&gt;#07 - BatchPlay (part 2): Alchemist as a UXP Script Listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html&quot;&gt;#08 - BatchPlay (part 3): Alchemist as a UXP Inspector&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-9-Adobe-Spectrum-UXP.html&quot;&gt;#09 - Adobe Spectrum UXP&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-10-Dialogs.html&quot;&gt;#10 - Modal Dialogs&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-11-Flyout-menus.html&quot;&gt;#11 - Flyout Menus and Entrypoints&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-12-React-JS.html&quot;&gt;#12 - React JS and the UXP plugins Course&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-manifest-5.html&quot;&gt;#13 - Manifest v5&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/development/Adobe-UXP-things-you-need-to-know-UXP-Landscape-Guide.html&quot;&gt;#special - The UXP Landscape Guide&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;transcription&quot;&gt;Transcription&lt;/h2&gt;
-
-&lt;p&gt;The transcripted video looks weird, but I’m told it helps to have it anyway because it’s easier to translate to other languages. Apologies for the lack of punctuation and the sloppy syntax.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;em&gt;To be added soon&lt;/em&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 14 Dec 2020 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html</link>
-        <guid isPermaLink="true">http://localhost:4000/development/Adobe-UXP-things-you-need-to-know-8-BatchPlay-part-3-Alchemist-plugin-inspector.html</guid>
-        
-        <category>UXP</category>
-        
-        <category>Alchemist plugin</category>
         
         
         <category>Development</category>

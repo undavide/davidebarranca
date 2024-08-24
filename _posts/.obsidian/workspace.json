@@ -1,0 +1,176 @@
+{
+  "main": {
+    "id": "879ef9c5af4aa3e9",
+    "type": "split",
+    "children": [
+      {
+        "id": "0a06a0cf8e206501",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d3e853e13d1f78f7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_2024-08-5-reflecting-on-my-postproducer-career.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e03b610222697c3f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2024-08-24-joining-adobe-fulltime.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "610a3db30e7dbdd9",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0f489041d587ed00",
+    "type": "split",
+    "children": [
+      {
+        "id": "06fefcaa5f48dc2b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "db19c1edcdfc8a3b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6c91c5715dee51b3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "592f0142c2be44fc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e41d228e4efb99ba",
+    "type": "split",
+    "children": [
+      {
+        "id": "ce62bcb6fa0369e7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "edf908c3f9cfa285",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2024-08-24-joining-adobe-fulltime.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "67552af269b6f793",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "2024-08-24-joining-adobe-fulltime.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c59360b6cf985c73",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "627ddb6ac84b9ac8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "2024-08-24-joining-adobe-fulltime.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "e03b610222697c3f",
+  "lastOpenFiles": [
+    "2023-11-25-professional-photoshop-uxp.md",
+    "_2024-08-5-reflecting-on-my-postproducer-career.md",
+    "2024-08-24-joining-adobe-fulltime.md"
+  ]
+}
