@@ -2,18 +2,18 @@
 title: I'm joining Adobe!
 date: 2024-08-24
 author: Davide Barranca
-excerpt: Whoa! I'm joining Adobe as a Sr. Product Marketing Engineer.
+excerpt: Whoa! I'm joining Adobe as a Sr. Developer Relations Engineer.
 layout: post
 permalink: 2024-08-24-joining-adobe-fulltime/
 image: /wp-content/uploads/2024/08/adbe.png
-description: Whoa! I'm joining Adobe as a Sr. Product Marketing Engineer.
+description: Whoa! I'm joining Adobe as a Sr. Developer Relations Engineer.
 category:
   - Career
 tags:
   - Adobe
 ---
 
-Hi everyone! Yep, you read it right... I've joined the Adobe mothership as a **Senior Product Marketing Engineer**! I'll be on the Developer Experience team with amazing people, some of whom I've known for years now. I'm not saying this lightly: I'm genuinely excited.
+Hi everyone! Yep, you read it right... I've joined the Adobe mothership as a **Senior Developer Relations Engineer**! I'll be on the Developer Experience team with amazing people, some of whom I've known for years now. I'm not saying this lightly: I'm genuinely excited.
 
 ## Wait, what?
 
@@ -28,4 +28,4 @@ Rest assured that I'll carry on collecting my (personal) opinions in this space.
 
 ### A note on my books
 
-Given my new role, I don't plan to write new books on Adobe extensibility in the foreseeable future. However, I am still committed to keeping [Professional Photoshop UXP](https://www.ps-scripting.com/professional-ps-uxp.html) and [Adobe UXP plugin development with ReactJS](https://www.ps-scripting.com/uxp-react.html) relevant and up-to-date with the latest platform changes—they're still for sale on [PS Scripting](https://www.ps-scripting.com), and they're one of my accomplishments that I'm still the most proud of.
+Given my new role, I don't plan to write new books on Adobe extensibility in the foreseeable future. However, I am still committed to keeping [Professional Photoshop UXP](https://www.ps-scripting.com/professional-ps-uxp.html) and [Adobe UXP plugin development with ReactJS](https://www.ps-scripting.com/uxp-react.html) relevant and up-to-date with the latest platform changes—they're still for sale on [PS Scripting](https://www.ps-scripting.com), and among my accomplishments they're the ones that I'm still the most proud of.
